@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
+// Fully static site: `next build` writes plain HTML/JS to out/, no server needed.
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  output: "export",
+  images: { unoptimized: true },
   turbopack: {
     rules: {
       "*.css": {
