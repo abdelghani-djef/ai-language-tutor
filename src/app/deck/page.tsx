@@ -4,6 +4,7 @@ import { ArrowLeft, Check, Pencil, Plus, Trash2, X } from "lucide-react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useState, type FormEvent } from "react";
+import { toast } from "sonner";
 import { SpeakButton } from "@/components/speak-button";
 import {
   AlertDialog,
@@ -27,6 +28,7 @@ import {
   deleteDeck,
   dueTime,
   renameDeck,
+  restoreCard,
   updateCard,
   useHydrated,
   useStore,
@@ -184,8 +186,8 @@ function DeckPage() {
           <AlertDialogHeader>
             <AlertDialogTitle>Delete “{deck.name}”?</AlertDialogTitle>
             <AlertDialogDescription>
-              This removes the deck, its {deckCards.length} cards and their review history. Export a backup first if you
-              might want them back.
+              This removes the deck and its {deckCards.length} cards. Days you studied still count toward your streak and
+              heatmap. Export a backup first if you might want the cards back.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
@@ -267,7 +269,15 @@ function CardRow({ card }: { card: Flashcard }) {
       >
         <Pencil />
       </Button>
-      <Button variant="ghost" size="icon-sm" aria-label="Delete card" onClick={() => deleteCard(card.id)}>
+      <Button
+        variant="ghost"
+        size="icon-sm"
+        aria-label="Delete card"
+        onClick={() => {
+          deleteCard(card.id);
+          toast("Card deleted", { action: { label: "Undo", onClick: () => restoreCard(card) } });
+        }}
+      >
         <Trash2 />
       </Button>
     </li>

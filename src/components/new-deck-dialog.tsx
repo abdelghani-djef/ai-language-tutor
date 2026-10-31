@@ -22,6 +22,13 @@ export function NewDeckDialog({
 }) {
   const [name, setName] = useState("");
   const [pairId, setPairId] = useState(defaultPair);
+  // Start from the caller's current pair each time the dialog opens. Opening is
+  // controlled by the parent, so onOpenChange doesn't fire for it.
+  const [wasOpen, setWasOpen] = useState(open);
+  if (open !== wasOpen) {
+    setWasOpen(open);
+    if (open) setPairId(defaultPair);
+  }
 
   function submit(e: FormEvent) {
     e.preventDefault();
@@ -34,13 +41,7 @@ export function NewDeckDialog({
   }
 
   return (
-    <Dialog
-      open={open}
-      onOpenChange={(o) => {
-        if (o) setPairId(defaultPair);
-        onOpenChange(o);
-      }}
-    >
+    <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent>
         <form onSubmit={submit} className="grid gap-4">
           <DialogHeader>

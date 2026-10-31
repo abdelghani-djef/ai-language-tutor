@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LANGUAGES } from "@/lib/languages";
-import { checkAnswer, choicesFor, shuffle, type Verdict } from "@/lib/quiz";
+import { checkAnswer, choicesFor, distinctCount, shuffle, type Verdict } from "@/lib/quiz";
 import { useHydrated, useStore, type Flashcard } from "@/lib/store";
 import { cn } from "@/lib/utils";
 
@@ -23,6 +23,8 @@ interface Question {
   prompt: string;
   promptLang: string;
   answer: string;
+  /** Every answer accepted for this prompt: other cards may share the same front. */
+  accepted: string[];
   answerLang: string;
   choices: string[];
 }
@@ -58,7 +60,8 @@ function QuizPage() {
     );
   }
   const deckCards = cards.filter((c) => c.deckId === deck.id);
-  const canChoose = deckCards.length >= 4;
+  // Multiple choice needs four answers that actually look different.
+  const canChoose = distinctCount(deckCards.map((c) => (direction === "forward" ? c.back : c.front))) >= 4;
   const effectiveMode = canChoose ? mode : "type";
 
   return (
@@ -72,7 +75,7 @@ function QuizPage() {
           <Tabs value={effectiveMode} onValueChange={(v) => setMode(v as Mode)}>
             <TabsList>
               <TabsTrigger value="type">Type answer</TabsTrigger>
-              <TabsTrigger value="choice" disabled={!canChoose} title={canChoose ? undefined : "Needs at least 4 cards"}>
+              <TabsTrigger value="choice" disabled={!canChoose}>
                 Multiple choice
               </TabsTrigger>
             </TabsList>
@@ -90,6 +93,10 @@ function QuizPage() {
         </div>
       </div>
 
+      {!canChoose && deckCards.length > 0 && (
+        <p className="-mt-3 text-xs text-muted-foreground">Multiple choice needs at least 4 different answers.</p>
+      )}
+
       {deckCards.length === 0 ? (
         <p className="text-muted-foreground">This deck has no cards yet.</p>
       ) : (
@@ -105,20 +112,37 @@ function QuizPage() {
   );
 }
 
+/** Groups prompts that are the same word. Accents are kept: "pêche" and "pèche" are different words. */
+function promptKey(s: string): string {
+  return s
+    .normalize("NFC")
+    .toLowerCase()
+    .replace(/[^\p{L}\p{M}\p{N}\s]/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function buildQuestions(cards: Flashcard[], direction: Direction): Question[] {
-  const answers = cards.map((c) => (direction === "forward" ? c.back : c.front));
+  const fwd = direction === "forward";
+  const promptOf = (c: Flashcard) => (fwd ? c.front : c.back);
+  const answerOf = (c: Flashcard) => (fwd ? c.back : c.front);
   return shuffle(cards)
     .slice(0, QUIZ_LENGTH)
     .map((card) => {
-      const fwd = direction === "forward";
-      const answer = fwd ? card.back : card.front;
+      const prompt = promptOf(card);
+      const key = promptKey(prompt);
+      const same = cards.filter((c) => promptKey(promptOf(c)) === key);
+      const others = cards.filter((c) => promptKey(promptOf(c)) !== key);
+      const answer = answerOf(card);
       return {
         card,
-        prompt: fwd ? card.front : card.back,
+        prompt,
         promptLang: fwd ? card.src : card.tgt,
         answer,
+        accepted: same.map(answerOf),
         answerLang: fwd ? card.tgt : card.src,
-        choices: choicesFor(answer, answers),
+        // Distractors come only from cards with a different prompt, so none of them is also right.
+        choices: choicesFor(answer, others.map(answerOf)),
       };
     });
 }
@@ -142,26 +166,32 @@ function QuizRun({
   const [score, setScore] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
+  const firstChoiceRef = useRef<HTMLButtonElement>(null);
+  const restartRef = useRef<HTMLButtonElement>(null);
 
   const q = questions[index];
+  // If this prompt's other answers leave too few distinct options, type it instead.
+  const asChoice = mode === "choice" && !!q && q.choices.length >= 4;
 
   useEffect(() => {
-    if (verdict) nextRef.current?.focus();
+    if (!q) restartRef.current?.focus();
+    else if (verdict) nextRef.current?.focus();
+    else if (asChoice) firstChoiceRef.current?.focus();
     else inputRef.current?.focus();
-  }, [verdict, index]);
+  }, [q, verdict, asChoice]);
 
   if (!q) {
     const pct = Math.round((score / questions.length) * 100);
     return (
       <Card className="items-center py-12 text-center">
-        <CardContent className="grid justify-items-center gap-3">
+        <CardContent className="grid justify-items-center gap-3" role="status">
           <p className="font-display text-5xl font-semibold">
             {score}/{questions.length}
           </p>
           <p className="text-muted-foreground">
             {pct === 100 ? "Perfect score!" : pct >= 70 ? "Nice work." : "Keep studying — you’ll get there."}
           </p>
-          <Button onClick={onRestart}>
+          <Button ref={restartRef} onClick={onRestart}>
             <RotateCcw /> Try another round
           </Button>
         </CardContent>
@@ -169,9 +199,8 @@ function QuizRun({
     );
   }
 
-  function submit(answer: string) {
+  function submit(v: Verdict) {
     if (verdict) return;
-    const v = checkAnswer(answer, q.answer);
     setVerdict(v);
     if (v !== "wrong") setScore((s) => s + 1);
   }
@@ -210,13 +239,13 @@ function QuizRun({
         </CardContent>
       </Card>
 
-      {mode === "type" ? (
+      {!asChoice ? (
         <form
           className="flex gap-2"
           onSubmit={(e: FormEvent) => {
             e.preventDefault();
             if (verdict) next();
-            else submit(typed);
+            else submit(checkAnswer(typed, q.accepted));
           }}
         >
           <Input
@@ -239,11 +268,12 @@ function QuizRun({
         </form>
       ) : (
         <div className="grid gap-2 sm:grid-cols-2">
-          {q.choices.map((c) => {
+          {q.choices.map((c, i) => {
             const isAnswer = c === q.answer;
             return (
               <Button
                 key={c}
+                ref={i === 0 ? firstChoiceRef : undefined}
                 variant="outline"
                 dir={answerDir}
                 className={cn(
@@ -252,8 +282,9 @@ function QuizRun({
                   verdict && picked === c && !isAnswer && "border-red-500 bg-red-500/10",
                 )}
                 onClick={() => {
+                  // A picked option is right or wrong; "close enough" only applies to typing.
                   setPicked(c);
-                  submit(c);
+                  submit(isAnswer ? "correct" : "wrong");
                 }}
                 disabled={!!verdict && !isAnswer && picked !== c}
               >
@@ -263,6 +294,16 @@ function QuizRun({
           })}
         </div>
       )}
+
+      <p className="sr-only" aria-live="polite">
+        {verdict === "correct"
+          ? "Correct!"
+          : verdict === "close"
+            ? `Close enough. Correct spelling: ${q.answer}`
+            : verdict
+              ? `Not quite. Correct answer: ${q.answer}`
+              : ""}
+      </p>
 
       {verdict && (
         <div

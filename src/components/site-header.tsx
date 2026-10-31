@@ -1,12 +1,12 @@
 "use client";
 
-import { Flame, Moon, Sun } from "lucide-react";
+import { Flame, Moon, Sun, TriangleAlert } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { dueToday, useHydrated, useStore } from "@/lib/store";
+import { dueToday, useHydrated, useSaveError, useStore } from "@/lib/store";
 import { studyStreak } from "@/lib/stats";
 import { cn } from "@/lib/utils";
 
@@ -21,6 +21,7 @@ export function SiteHeader() {
   const pathname = usePathname();
   const { cards, reviews } = useStore();
   const hydrated = useHydrated();
+  const saveError = useSaveError();
   const { resolvedTheme, setTheme } = useTheme();
   const due = dueToday(cards).length;
   const streak = studyStreak(reviews.map((r) => r.day));
@@ -66,6 +67,13 @@ export function SiteHeader() {
           <Moon className="dark:hidden" />
         </Button>
       </div>
+      {saveError && (
+        <div role="alert" className="border-t border-destructive/30 bg-destructive/10 px-4 py-2 text-center text-sm text-destructive">
+          <TriangleAlert className="mr-1.5 inline size-4 align-text-bottom" />
+          Your browser refused to save ({saveError}). New progress will be lost when you close this tab — export a
+          backup from the Decks page.
+        </div>
+      )}
     </header>
   );
 }

@@ -1,10 +1,14 @@
-/** Lowercase, drop accents/diacritics (incl. Arabic harakat), punctuation and extra spaces. */
+/**
+ * Lowercase, drop Latin accents, Arabic harakat and tatweel, punctuation and extra spaces.
+ * Other combining marks are kept: in Hindi or Japanese they change the word.
+ */
 export function normalizeAnswer(s: string): string {
   return s
     .normalize("NFD")
-    .replace(/\p{M}/gu, "")
+    .replace(/[\u0300-\u036f\u064b-\u065f\u0670\u0640]/g, "")
+    .normalize("NFC")
     .toLowerCase()
-    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .replace(/[^\p{L}\p{M}\p{N}\s]/gu, " ")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -25,14 +29,26 @@ export function levenshtein(a: string, b: string): number {
 
 export type Verdict = "correct" | "close" | "wrong";
 
-/** Exact match after normalizing is correct; one typo per ~6 letters counts as "close". */
-export function checkAnswer(given: string, expected: string): Verdict {
+/**
+ * Exact match after normalizing is correct; one typo per ~6 letters counts as "close".
+ * `expected` may list several acceptable answers (the same word saved on more than one card).
+ */
+export function checkAnswer(given: string, expected: string | readonly string[]): Verdict {
   const g = normalizeAnswer(given);
-  const e = normalizeAnswer(expected);
   if (!g) return "wrong";
-  if (g === e) return "correct";
-  const allowed = Math.floor(e.length / 6);
-  return allowed > 0 && levenshtein(g, e) <= allowed ? "close" : "wrong";
+  let best: Verdict = "wrong";
+  for (const answer of typeof expected === "string" ? [expected] : expected) {
+    const e = normalizeAnswer(answer);
+    if (g === e) return "correct";
+    const allowed = Math.floor(e.length / 6);
+    if (allowed > 0 && levenshtein(g, e) <= allowed) best = "close";
+  }
+  return best;
+}
+
+/** How many different answers a list holds once case, accents and punctuation are ignored. */
+export function distinctCount(answers: readonly string[]): number {
+  return new Set(answers.map(normalizeAnswer)).size;
 }
 
 export function shuffle<T>(arr: readonly T[]): T[] {

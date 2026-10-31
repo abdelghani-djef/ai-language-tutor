@@ -5,17 +5,32 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { toast } from "sonner";
 import { NewDeckDialog } from "@/components/new-deck-dialog";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { pairLabel } from "@/lib/languages";
 import { isLearned } from "@/lib/srs";
-import { dueToday, exportData, importData, useHydrated, useStore } from "@/lib/store";
+import { dueToday, exportData, importData, parseBackup, useHydrated, useStore, type Data } from "@/lib/store";
 
 export default function DecksPage() {
   const { decks, cards } = useStore();
   const hydrated = useHydrated();
   const [open, setOpen] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
+  // A checked backup waiting for the user to confirm it should replace everything,
+  // with the current counts captured when the dialog opened. Kept while the dialog
+  // animates closed so its text doesn't change.
+  const [pending, setPending] = useState<{ backup: Data; decks: number; cards: number } | null>(null);
+  const [importOpen, setImportOpen] = useState(false);
 
   function download() {
     const url = URL.createObjectURL(new Blob([exportData()], { type: "application/json" }));
@@ -28,11 +43,18 @@ export default function DecksPage() {
 
   async function upload(file: File) {
     try {
-      importData(await file.text());
-      toast.success("Backup restored");
+      setPending({ backup: parseBackup(await file.text()), decks: decks.length, cards: cards.length });
+      setImportOpen(true);
     } catch (e) {
       toast.error(e instanceof Error ? e.message : "Could not read that file");
     }
+  }
+
+  function confirmImport() {
+    if (!pending) return;
+    setImportOpen(false);
+    if (importData(pending.backup)) toast.success("Backup restored");
+    else toast.error("The backup is loaded but your browser refused to save it. Free some space and try again.");
   }
 
   return (
@@ -122,8 +144,35 @@ export default function DecksPage() {
       </div>
 
       <NewDeckDialog open={open} onOpenChange={setOpen} />
+
+      <AlertDialog open={importOpen} onOpenChange={setImportOpen}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Replace all your data?</AlertDialogTitle>
+            <AlertDialogDescription>
+              The backup has {count(pending?.backup.decks.length ?? 0, "deck")},{" "}
+              {count(pending?.backup.cards.length ?? 0, "card")} and {count(pending?.backup.reviews.length ?? 0, "review")}.
+              It replaces what is in this browser now ({count(pending?.decks ?? 0, "deck")},{" "}
+              {count(pending?.cards ?? 0, "card")}). Export first if you want to keep the current data.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <Button variant="outline" onClick={download}>
+              <Download /> Export current
+            </Button>
+            <AlertDialogAction variant="destructive" onClick={confirmImport}>
+              Replace
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
+}
+
+function count(n: number, word: string): string {
+  return `${n} ${word}${n === 1 ? "" : "s"}`;
 }
 
 function Stat({ label, value, accent }: { label: string; value: number; accent?: boolean }) {

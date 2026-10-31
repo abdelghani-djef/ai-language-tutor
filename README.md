@@ -7,7 +7,7 @@ Language-learning flashcards that run entirely in your browser:
 3. **Study**: flip the card and rate it **Again / Hard / Good / Easy**. The FSRS spaced-repetition algorithm decides when you see it next.
 4. **Track**: see cards learned, your study streak, recall rate, and a heatmap of your study activity.
 
-There is **no backend, no database and no account**. Decks, cards and review history are stored in your browser's `localStorage`. Translation models are downloaded from the Hugging Face Hub the first time you use a language pair, and the browser caches them after that.
+There is **no backend, no database and no account**. Decks, cards and review history are stored in your browser's `localStorage`. Translation models are downloaded from the Hugging Face Hub the first time you use them, and the browser caches them after that.
 
 ## Stack
 
@@ -36,18 +36,22 @@ npm run lint
 npm run build      # static site in out/, which you can host anywhere (GitHub Pages, Netlify, S3…)
 ```
 
-To serve the production build locally: `npx serve out`.
+To serve the production build locally: `npm start` (runs `npx serve out`). The export uses trailing slashes (`out/deck/index.html`), so reloading `/deck/?id=…` works on any static host.
 
 ## Features
 
-- **Translate** (`/`): pick a language pair (EN↔FR, EN↔ES, EN↔DE, EN↔IT, EN↔AR), use **swap** to reverse it, then press **Translate** or Ctrl+Enter. You can edit the translation before you save it. Speaker buttons read either side aloud.
-- **Decks** (`/decks`): create, rename and delete decks. Each deck shows its total, due and learned counts. **Export/Import** downloads or restores a JSON backup, which matters because your data lives only in this browser.
-- **Deck** (`/deck?id=…`): add cards by hand, edit or delete cards, and see each card's FSRS state and next due time.
-- **Study** (`/study`, or `/study?deck=…` for one deck): reviews every card due today, most overdue first. Each rating button shows the interval it would give (for example `10m`, `3d`). Keyboard shortcuts: Space flips, 1–4 rates, P pronounces. Cards you get wrong come back later in the same session (learning steps), and the page waits for them.
-- **Quiz** (`/quiz?deck=…`): ten random cards in either direction, answered by **typing** or by **multiple choice** (needs at least 4 cards). Typed answers ignore case, accents, punctuation and Arabic diacritics, and a small typo counts as "close enough". The quiz is practice only and does not change the FSRS schedule.
+- **Translate** (`/`): pick a **From** and **To** language, use **swap** to reverse them, choose a model (**Opus-MT** or **NLLB-200**, see below), then press **Translate** or Ctrl+Enter. Long text is translated sentence by sentence, keeping line breaks. You can edit the translation before you save it. Speaker buttons read either side aloud.
+- **Decks** (`/decks`): create, rename and delete decks. Each deck shows its total, due and learned counts. **Export/Import** downloads or restores a JSON backup, which matters because your data lives only in this browser. Import checks the file first, shows what it contains and asks before replacing your data, with an **Export current** button right there.
+- **Deck** (`/deck?id=…`): add cards by hand, edit or delete cards (with **Undo**), and see each card's FSRS state and next due time. Deleting cards or decks keeps their review log, so past study days still count toward your streak and heatmap.
+- **Study** (`/study`, or `/study?deck=…` for one deck): reviews every card due today, most overdue first. Each rating button shows the interval it would give (for example `10m`, `3d`). Keyboard shortcuts: Space flips, 1–4 rates, P pronounces; they stay out of the way of focused buttons and links. Cards you get wrong come back after a short learning step in the same session, and the page waits for them. **Check again** on the finished screen starts a new session, for example after midnight.
+- **Quiz** (`/quiz?deck=…`): ten random cards in either direction, answered by **typing** or by **multiple choice** (needs at least 4 different answers). Typed answers ignore case, Latin accents, punctuation and Arabic diacritics, and a small typo counts as "close enough". If several cards share a prompt, any of their answers is accepted. Picking an option is simply right or wrong. The quiz is practice only and does not change the FSRS schedule.
 - **Stats** (`/stats`): cards learned, current and longest streak, cards due, reviews today, 30-day recall rate, a 26-week activity heatmap, and per-deck progress.
 
 ## Translation models
+
+Decks can use any two of 14 languages: English, French, Spanish, German, Italian, Arabic, Portuguese, Dutch, Russian, Turkish, Hindi, Chinese, Japanese and Korean. You choose one of two engines on the Translate page, and the choice is remembered.
+
+### Opus-MT (default)
 
 Each direction uses one small MarianMT model from the [opus-mt](https://huggingface.co/Helsinki-NLP) family, converted to ONNX by Xenova:
 
@@ -61,9 +65,13 @@ Each direction uses one small MarianMT model from the [opus-mt](https://huggingf
 
 The app loads them with 8-bit quantization (`dtype: "q8"`), which is about 75 MB per direction. They run in a Web Worker (`src/lib/translator.worker.ts`) so the page stays responsive while a model downloads or generates text.
 
-To add a pair, add the language to `LANGUAGES` and the code to the list in `src/lib/languages.ts`. That only works if a matching `Xenova/opus-mt-xx-yy` model exists.
+To add an Opus-MT pair, add the language code to `OPUS_LANGS` in `src/lib/languages.ts`. That only works if a matching `Xenova/opus-mt-xx-yy` model exists.
 
-**Alternative:** `Xenova/nllb-200-distilled-600M` covers about 200 languages with one model, but the download is about 600 MB or more. To use it, swap the model ID and pass `src_lang` / `tgt_lang` (FLORES-200 codes such as `eng_Latn`, `fra_Latn`) in the worker's translator call.
+### NLLB-200 (optional)
+
+[`Xenova/nllb-200-distilled-600M`](https://huggingface.co/Xenova/nllb-200-distilled-600M) is Meta's *No Language Left Behind* model. One model translates between any two of its 200 languages, so it also covers pairs Opus-MT can't, such as French → Arabic or English → Japanese. The cost is size: the 8-bit encoder and decoder are about **900 MB** together, and translation is slower. If you pick a pair Opus-MT has no model for, the page offers to switch to NLLB.
+
+The worker passes `src_lang` / `tgt_lang` as FLORES-200 codes (`eng_Latn`, `arb_Arab`, `jpn_Jpan`…), which are stored per language in `LANGUAGES`. To add a language, add an entry with its FLORES-200 code and a speech tag.
 
 ## How the spaced repetition works (FSRS)
 
@@ -104,7 +112,8 @@ FSRS's default parameters were fitted on hundreds of millions of real Anki revie
 
 - `src/lib/srs.ts` creates the scheduler (`DefaultScheduler` with FSRS-7, 90% retention, learning steps `1m, 10m`, relearning step `10m`, fuzz on), and provides `newSrsCard`, `reviewSrsCard`, and `previewIntervals`, which produces the labels on the rating buttons.
 - `src/lib/store.ts` → `gradeCard` saves the updated card and appends a review log entry, which feeds the streak and heatmap.
-- `src/app/study/page.tsx` runs the review session: it picks the most overdue card whose `dueAt ≤ now` and keeps "Again" cards in the session until they are due again.
+- `src/lib/store.ts` → `isDue` decides what can be studied now. FSRS schedules to the minute, but people think in days, so New and Review cards are available for their whole due day. Learning and relearning steps (1m, 10m) wait for their exact time.
+- `src/app/study/page.tsx` runs the review session: it picks the most overdue available card and keeps "Again" cards in the session until their step is up.
 
 ## Project layout
 
@@ -123,7 +132,7 @@ src/
     srs.ts              ts-fsrs wrapper
     stats.ts            Streaks, heatmap grid
     quiz.ts             Answer normalization, fuzzy matching, distractors
-    languages.ts        Language pairs → model IDs, speech voices
+    languages.ts        Languages, engines, pair → model (Opus-MT / NLLB), speech voices
     speech.ts           speechSynthesis helper
     translator.worker.ts / useTranslator.ts   Transformers.js in a Web Worker
 ```
@@ -134,3 +143,4 @@ src/
 - `localStorage` holds about 5 MB, which is plenty for many thousands of text cards.
 - Available pronunciation voices depend on your OS and browser. Arabic in particular may have no voice on some systems.
 - opus-mt models are small. They handle words and short sentences well but are not as fluent as large cloud translators, so you can edit translations before saving.
+- NLLB needs about 900 MB of download and cache space and a fair amount of memory. It works best in a desktop browser.

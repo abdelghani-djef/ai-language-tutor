@@ -21,33 +21,31 @@ export function FlipCard({
   onFlip: () => void;
 }) {
   return (
-    // A div, not a <button>, because the faces contain their own pronounce buttons.
-    // Space/Enter flipping is handled by the study page's keyboard shortcuts.
-    <div
-      role="button"
-      tabIndex={0}
-      onClick={onFlip}
-      aria-label={flipped ? "Show front" : "Show answer"}
-      className="group w-full cursor-pointer perspective-[1200px] outline-none"
-    >
+    // Clicking anywhere flips the card. It is not a button for keyboard and
+    // screen-reader users: they use the "Show answer" button and Space, and the
+    // card's text is read as normal content.
+    <div onClick={onFlip} className="w-full cursor-pointer perspective-[1200px]">
       <div
         className={cn(
           "relative h-72 w-full transition-transform duration-500 transform-3d",
           flipped && "rotate-y-180",
         )}
       >
-        <Face side={front} label={LANGUAGES[front.lang].name} />
-        <Face side={back} label={LANGUAGES[back.lang].name} className="rotate-y-180 bg-primary/5" />
+        <Face side={front} label={LANGUAGES[front.lang].name} hidden={flipped} />
+        <Face side={back} label={LANGUAGES[back.lang].name} hidden={!flipped} className="rotate-y-180 bg-primary/5" />
       </div>
     </div>
   );
 }
 
-function Face({ side, label, className }: { side: Side; label: string; className?: string }) {
+function Face({ side, label, hidden, className }: { side: Side; label: string; hidden: boolean; className?: string }) {
   return (
+    // The face turned away is inert so its text and pronounce button can't be reached.
     <div
+      inert={hidden}
+      aria-hidden={hidden}
       className={cn(
-        "absolute inset-0 flex flex-col items-center justify-center gap-3 rounded-2xl border bg-card p-8 shadow-sm backface-hidden group-focus-visible:ring-3 group-focus-visible:ring-ring/50",
+        "absolute inset-0 flex flex-col items-center justify-center gap-3 rounded-2xl border bg-card p-8 shadow-sm backface-hidden",
         className,
       )}
     >

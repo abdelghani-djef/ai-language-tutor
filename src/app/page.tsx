@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowLeftRight, Languages, Loader2, Plus, Save } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { toast } from "sonner";
 import { NewDeckDialog } from "@/components/new-deck-dialog";
 import { PairSelect } from "@/components/pair-select";
@@ -10,22 +10,28 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
-import { getPair, LANGUAGES, PAIRS } from "@/lib/languages";
+import { ENGINES, getPair, LANGUAGES, modelFor, pairId, pairLabel, type Engine } from "@/lib/languages";
 import { addCard, usePref, useStore } from "@/lib/store";
 import { useTranslator } from "@/lib/useTranslator";
-
 
 export default function TranslatePage() {
   const { decks } = useStore();
   const { translate, status, progress, error } = useTranslator();
-  const [pairId, setPairId] = usePref("linguacards:pair", "en-fr");
+  const [currentPair, setPairPref] = usePref("linguacards:pair", "en-fr");
+  const [enginePref, setEngine] = usePref("linguacards:engine", "opus");
+  const engine: Engine = enginePref === "nllb" ? "nllb" : "opus";
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [deckId, setDeckId] = useState<string | null>(null);
   const [newDeckOpen, setNewDeckOpen] = useState(false);
 
-  const pair = getPair(pairId);
+  const pair = getPair(currentPair);
+  const choice = modelFor(pair, engine);
+  // Bumped whenever the input, pair or engine changes, so a translation that
+  // finishes afterwards is dropped instead of landing next to the wrong text.
+  const runToken = useRef(0);
   const src = LANGUAGES[pair.src];
   const tgt = LANGUAGES[pair.tgt];
   const pairDecks = useMemo(() => decks.filter((d) => d.src === pair.src && d.tgt === pair.tgt), [decks, pair]);
@@ -33,14 +39,13 @@ export default function TranslatePage() {
   const busy = status === "loading" || status === "translating";
 
   function changePair(id: string) {
-    setPairId(id);
+    runToken.current++;
+    setPairPref(id);
     setOutput("");
   }
 
   function swap() {
-    const reverse = PAIRS.find((p) => p.src === pair.tgt && p.tgt === pair.src);
-    if (!reverse) return;
-    changePair(reverse.id);
+    changePair(pairId(pair.tgt, pair.src));
     if (output) {
       setInput(output);
       setOutput(input);
@@ -49,17 +54,29 @@ export default function TranslatePage() {
 
   async function run() {
     const text = input.trim();
-    if (!text || busy) return;
-    const result = await translate(text, pair.model);
-    if (result !== null) setOutput(result);
+    if (!text || busy || !choice) return;
+    const token = ++runToken.current;
+    const result = await translate(text, choice);
+    if (result !== null && token === runToken.current) setOutput(result);
   }
 
   async function save() {
-    if (!selectedDeck || !input.trim() || !output.trim()) return;
+    const deck = selectedDeck;
+    const front = input;
+    const back = output;
+    if (!deck || !front.trim() || !back.trim() || busy) return;
+    // Clear first so anything typed while the card is being created isn't wiped.
+    runToken.current++;
     setInput("");
     setOutput("");
-    await addCard(selectedDeck.id, input, output, pair.src, pair.tgt);
-    toast.success(`Saved to “${selectedDeck.name}”`);
+    try {
+      await addCard(deck.id, front, back, pair.src, pair.tgt);
+      toast.success(`Saved to “${deck.name}”`);
+    } catch {
+      setInput((v) => v || front);
+      setOutput((v) => v || back);
+      toast.error("Could not save the card");
+    }
   }
 
   return (
@@ -67,17 +84,53 @@ export default function TranslatePage() {
       <div>
         <h1 className="font-display text-3xl font-semibold tracking-tight">Translate &amp; collect</h1>
         <p className="text-muted-foreground">
-          Translation runs entirely in your browser. The first time you use a language pair, its model (~75&nbsp;MB) is
-          downloaded and cached.
+          Translation runs entirely in your browser. The first time you use a model it is downloaded and cached.
         </p>
       </div>
 
-      <div className="flex flex-wrap items-center gap-2">
-        <PairSelect value={pairId} onChange={changePair} className="w-56" />
-        <Button variant="outline" size="icon" onClick={swap} aria-label="Swap languages" title="Swap languages">
-          <ArrowLeftRight />
-        </Button>
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+        <div className="flex w-full items-center gap-2 sm:w-96">
+          <PairSelect value={pair.id} onChange={changePair} disabled={busy} className="flex-1" />
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={swap}
+            disabled={busy}
+            aria-label="Swap languages"
+            title="Swap languages"
+          >
+            <ArrowLeftRight />
+          </Button>
+        </div>
+        <Tabs
+          value={engine}
+          onValueChange={(v) => {
+            runToken.current++;
+            setEngine(v as Engine);
+          }}
+        >
+          <TabsList aria-label="Translation model">
+            {(Object.keys(ENGINES) as Engine[]).map((e) => (
+              <TabsTrigger key={e} value={e} disabled={busy}>
+                {ENGINES[e].name}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </Tabs>
+        <p className="w-full text-xs text-muted-foreground">{ENGINES[engine].description}</p>
       </div>
+
+      {!choice && (
+        <div className="flex flex-wrap items-center gap-3 rounded-xl border border-amber-500/40 bg-amber-500/5 p-4 text-sm">
+          <p className="flex-1">
+            {ENGINES.opus.name} has no model for {pairLabel(pair)}. {ENGINES.nllb.name} can translate it, but it is a
+            ~900&nbsp;MB download.
+          </p>
+          <Button variant="outline" size="sm" onClick={() => setEngine("nllb")}>
+            Use {ENGINES.nllb.name}
+          </Button>
+        </div>
+      )}
 
       <div className="grid gap-4 md:grid-cols-2">
         <Card className="gap-0 py-0">
@@ -89,7 +142,10 @@ export default function TranslatePage() {
             <Textarea
               value={input}
               dir={src.rtl ? "rtl" : "auto"}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={(e) => {
+                runToken.current++;
+                setInput(e.target.value);
+              }}
               onKeyDown={(e) => {
                 if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) run();
               }}
@@ -119,7 +175,7 @@ export default function TranslatePage() {
       {status === "loading" && (
         <div className="grid gap-1.5">
           <p className="text-sm text-muted-foreground">
-            Downloading {pair.model}… {progress !== null && `${Math.round(progress * 100)}%`}
+            Downloading {choice?.model}… {progress !== null && `${Math.round(progress * 100)}%`}
           </p>
           <Progress value={progress === null ? null : progress * 100} />
         </div>
@@ -127,7 +183,7 @@ export default function TranslatePage() {
       {error && <p className="text-sm text-destructive">Translation failed: {error}</p>}
 
       <div className="flex flex-wrap items-center gap-2">
-        <Button size="lg" onClick={run} disabled={!input.trim() || busy}>
+        <Button size="lg" onClick={run} disabled={!input.trim() || busy || !choice}>
           {busy ? <Loader2 className="animate-spin" /> : <Languages />}
           {status === "loading" ? "Loading model…" : status === "translating" ? "Translating…" : "Translate"}
         </Button>
@@ -157,7 +213,12 @@ export default function TranslatePage() {
           <Button variant="outline" size="lg" onClick={() => setNewDeckOpen(true)}>
             <Plus /> New deck
           </Button>
-          <Button size="lg" variant="secondary" onClick={save} disabled={!selectedDeck || !input.trim() || !output.trim()}>
+          <Button
+            size="lg"
+            variant="secondary"
+            onClick={save}
+            disabled={!selectedDeck || !input.trim() || !output.trim() || busy}
+          >
             <Save /> Save card
           </Button>
         </div>
@@ -166,7 +227,7 @@ export default function TranslatePage() {
       <NewDeckDialog
         open={newDeckOpen}
         onOpenChange={setNewDeckOpen}
-        defaultPair={pairId}
+        defaultPair={pair.id}
         onCreated={(d) => setDeckId(d.id)}
       />
     </div>
