@@ -42,6 +42,25 @@ npm run build      # static site in out/, which you can host anywhere (GitHub Pa
 
 To serve the production build locally: `npm start` (runs `npx serve out`). The export uses trailing slashes (`out/deck/index.html`), so reloading `/deck/?id=…` works on any static host.
 
+## Deploying to Render
+
+The site is fully static, so it runs as a free [Render static site](https://render.com/docs/static-sites). `render.yaml` in the repo root is a Render Blueprint that sets everything up:
+
+- Build: `npm ci --ignore-scripts && npm run build`. The skipped install scripts only download native Node binaries, which the in-browser models don't use.
+- Publish directory: `out`.
+- Node version: from `.node-version` (24).
+- Headers: long-lived caching for the hashed files in `/_next/static/`, plus `nosniff` and a referrer policy.
+- Auto-deploy: every push to the connected branch.
+
+To deploy:
+
+1. Push this repository to GitHub, GitLab or Bitbucket.
+2. In the Render Dashboard, choose **New → Blueprint**, pick the repository, and apply. Render creates the `linguacards` static site and gives it an `onrender.com` URL.
+
+To set it up by hand instead, choose **New → Static Site** with the same build command and `out` as the publish directory.
+
+Data stays in each visitor's browser (`localStorage`), so each domain has its own data. Moving from `localhost` to the Render URL, or later to a custom domain, starts empty. Use **Export** and **Import** on the Decks page to carry data over.
+
 ## Features
 
 - **Translate** (`/`): pick a **From** and **To** language, use **swap** to reverse them, choose a model (**Opus-MT** or **NLLB-200**, see below), then press **Translate** or Ctrl+Enter. Long text is translated sentence by sentence, keeping line breaks. You can edit the translation before you save it. Speaker buttons read either side aloud.
