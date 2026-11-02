@@ -48,7 +48,8 @@ export const home = defineMessages({
     p7Text: "A few relaxed minutes every day, tied to a routine you already have. A missed day never wipes out your progress.",
     p7Evidence:
       "Habits form through repetition in a fixed context (18 to 254 days), if-then plans help people follow through (d = 0.65), and lower anxiety goes with higher achievement.",
-    mythsTitle: "What the research doesn’t support",
+    mythsTitle: "Common myths about learning English",
+    mythsIntro: "You may have heard these ideas. Research shows they are wrong or exaggerated.",
     myth1Name: "“Find your learning style.”",
     myth1Text: "Matching lessons to visual or auditory “styles” has no good evidence behind it.",
     myth2Name: "“It’s too late after childhood.”",
@@ -121,7 +122,8 @@ export const home = defineMessages({
       "Quelques minutes détendues chaque jour, liées à une habitude que vous avez déjà. Un jour manqué n’efface jamais vos progrès.",
     p7Evidence:
       "Une habitude se forme en répétant dans le même contexte (18 à 254 jours), les plans « si… alors » aident à s’y tenir (d = 0,65), et moins d’anxiété va avec de meilleurs résultats.",
-    mythsTitle: "Ce que la recherche ne confirme pas",
+    mythsTitle: "Idées reçues sur l’apprentissage de l’anglais",
+    mythsIntro: "Vous avez peut-être entendu ces idées. La recherche montre qu’elles sont fausses ou exagérées.",
     myth1Name: "« Trouvez votre style d’apprentissage. »",
     myth1Text: "Adapter les leçons à un « style » visuel ou auditif ne repose sur aucune preuve solide.",
     myth2Name: "« Après l’enfance, c’est trop tard. »",
@@ -186,7 +188,8 @@ export const home = defineMessages({
     p7Text: "دقائق هادئة كل يوم، مرتبطة بعادة لديك أصلًا. ويوم فائت لا يمحو تقدّمك أبدًا.",
     p7Evidence:
       "تتكوّن العادة بالتكرار في السياق نفسه (من 18 إلى 254 يومًا)، وخطط «إذا… فإن» تساعد على الالتزام (d = 0.65)، وقلّة القلق تقترن بتحصيل أعلى.",
-    mythsTitle: "ما لا يدعمه البحث",
+    mythsTitle: "أفكار خاطئة شائعة عن تعلّم الإنجليزية",
+    mythsIntro: "ربما سمعت هذه الأفكار. لكن البحث يبيّن أنها خاطئة أو مبالغ فيها.",
     myth1Name: "«اعرف أسلوب تعلّمك»",
     myth1Text: "مطابقة الدروس مع «أسلوب» بصري أو سمعي لا يقوم على دليل جيد.",
     myth2Name: "«بعد الطفولة يفوت الأوان»",

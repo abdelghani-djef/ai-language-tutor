@@ -158,9 +158,12 @@ export default function HomePage() {
       </section>
 
       <section aria-labelledby="myths-title" className="grid gap-6 rounded-3xl bg-muted/50 p-6 sm:p-10">
-        <h2 id="myths-title" className="font-display text-3xl font-semibold tracking-tight">
-          {t("mythsTitle")}
-        </h2>
+        <div className="grid gap-2">
+          <h2 id="myths-title" className="font-display text-3xl font-semibold tracking-tight">
+            {t("mythsTitle")}
+          </h2>
+          <p className="text-muted-foreground">{t("mythsIntro")}</p>
+        </div>
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {MYTHS.map((m) => (
             <li key={m.key} className="grid content-start gap-1.5">
