@@ -1,11 +1,10 @@
 "use client";
 
-import { Flame, Moon, Sun, TriangleAlert } from "lucide-react";
+import { Flame, TriangleAlert } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useTheme } from "next-themes";
+import { ThemeMenu } from "@/components/theme-menu";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { dueToday, useHydrated, useSaveError, useStore } from "@/lib/store";
 import { studyStreak } from "@/lib/stats";
 import { cn } from "@/lib/utils";
@@ -22,7 +21,6 @@ export function SiteHeader() {
   const { cards, reviews } = useStore();
   const hydrated = useHydrated();
   const saveError = useSaveError();
-  const { resolvedTheme, setTheme } = useTheme();
   const due = dueToday(cards).length;
   const streak = studyStreak(reviews.map((r) => r.day));
 
@@ -57,15 +55,7 @@ export function SiteHeader() {
           <Flame className={cn("size-4", streak > 0 ? "text-orange-500" : "text-muted-foreground")} />
           {hydrated ? streak : 0}
         </span>
-        <Button
-          variant="ghost"
-          size="icon-sm"
-          aria-label="Toggle dark mode"
-          onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-        >
-          <Sun className="hidden dark:block" />
-          <Moon className="dark:hidden" />
-        </Button>
+        <ThemeMenu />
       </div>
       {saveError && (
         <div role="alert" className="border-t border-destructive/30 bg-destructive/10 px-4 py-2 text-center text-sm text-destructive">

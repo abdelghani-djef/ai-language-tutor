@@ -118,6 +118,75 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Kids themes: bright and light, with rounder corners and a rounded font. */
+.pink {
+  color-scheme: light;
+  --background: oklch(0.97 0.025 350);
+  --foreground: oklch(0.3 0.09 350);
+  --card: oklch(0.995 0.008 350);
+  --card-foreground: oklch(0.3 0.09 350);
+  --popover: oklch(0.995 0.008 350);
+  --popover-foreground: oklch(0.3 0.09 350);
+  --primary: oklch(0.58 0.22 355);
+  --primary-foreground: oklch(0.99 0.01 350);
+  --secondary: oklch(0.93 0.05 350);
+  --secondary-foreground: oklch(0.35 0.12 350);
+  --muted: oklch(0.94 0.035 350);
+  --muted-foreground: oklch(0.48 0.09 350);
+  --accent: oklch(0.92 0.06 340);
+  --accent-foreground: oklch(0.32 0.12 350);
+  --destructive: oklch(0.56 0.22 25);
+  --border: oklch(0.89 0.05 350);
+  --input: oklch(0.87 0.06 350);
+  --ring: oklch(0.7 0.17 355);
+  --chart-1: oklch(0.85 0.09 350);
+  --chart-2: oklch(0.72 0.16 352);
+  --chart-3: oklch(0.6 0.21 355);
+  --chart-4: oklch(0.5 0.19 355);
+  --chart-5: oklch(0.4 0.15 355);
+  --radius: 1rem;
+}
+
+.blue {
+  color-scheme: light;
+  --background: oklch(0.97 0.02 235);
+  --foreground: oklch(0.28 0.08 255);
+  --card: oklch(0.995 0.006 235);
+  --card-foreground: oklch(0.28 0.08 255);
+  --popover: oklch(0.995 0.006 235);
+  --popover-foreground: oklch(0.28 0.08 255);
+  --primary: oklch(0.55 0.18 250);
+  --primary-foreground: oklch(0.99 0.01 235);
+  --secondary: oklch(0.93 0.04 235);
+  --secondary-foreground: oklch(0.33 0.1 250);
+  --muted: oklch(0.94 0.03 235);
+  --muted-foreground: oklch(0.48 0.08 250);
+  --accent: oklch(0.91 0.05 230);
+  --accent-foreground: oklch(0.3 0.1 250);
+  --destructive: oklch(0.56 0.22 25);
+  --border: oklch(0.88 0.04 235);
+  --input: oklch(0.86 0.05 235);
+  --ring: oklch(0.68 0.15 245);
+  --chart-1: oklch(0.85 0.07 235);
+  --chart-2: oklch(0.72 0.13 240);
+  --chart-3: oklch(0.6 0.17 248);
+  --chart-4: oklch(0.5 0.16 252);
+  --chart-5: oklch(0.4 0.13 255);
+  --radius: 1rem;
+}
+
+/* html.x beats the font classes next/font puts on <html>. */
+html:is(.pink, .blue) {
+  --font-sans: var(--font-kids);
+  --font-display: var(--font-kids-display);
+}
+
+/* A soft polka-dot backdrop in the primary color. */
+:is(.pink, .blue) body {
+  background-image: radial-gradient(color-mix(in oklch, var(--primary) 14%, transparent) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

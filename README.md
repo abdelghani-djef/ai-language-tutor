@@ -14,7 +14,7 @@ There is **no backend, no database and no account**. Decks, cards and review his
 | Concern | Choice |
 | --- | --- |
 | Framework | [Next.js 16](https://nextjs.org) App Router, exported as a static site (`output: "export"`) |
-| UI | [shadcn/ui](https://ui.shadcn.com) (Base UI primitives) + Tailwind CSS v4, light and dark themes |
+| UI | [shadcn/ui](https://ui.shadcn.com) (Base UI primitives) + Tailwind CSS v4, themes: System, Light, Dark, and Pink / Blue for kids (rounded fonts, bigger corners), picked from the palette button in the header |
 | Translation | [Transformers.js](https://huggingface.co/docs/transformers.js) (`@huggingface/transformers`) running in a Web Worker |
 | Spaced repetition | [`ts-fsrs`](https://github.com/open-spaced-repetition/ts-fsrs) (FSRS-7) |
 | Pronunciation | The browser's built-in `speechSynthesis` (free, offline on most systems) |
