@@ -5,11 +5,14 @@ export { Rating, State, type Grade };
 type Scheduler = Awaited<ReturnType<typeof DefaultScheduler<'FSRS-7'>>>;
 export type SrsCard = DefaultSchedulerCard;
 
-export const GRADES: { grade: Grade; label: string; key: string }[] = [
-  { grade: Rating.Again, label: 'Again', key: '1' },
-  { grade: Rating.Hard, label: 'Hard', key: '2' },
-  { grade: Rating.Good, label: 'Good', key: '3' },
-  { grade: Rating.Easy, label: 'Easy', key: '4' },
+export type GradeLabelKey = 'gradeAgain' | 'gradeHard' | 'gradeGood' | 'gradeEasy';
+
+// labelKey names the button text in src/messages/study.ts.
+export const GRADES: { grade: Grade; labelKey: GradeLabelKey; key: string }[] = [
+  { grade: Rating.Again, labelKey: 'gradeAgain', key: '1' },
+  { grade: Rating.Hard, labelKey: 'gradeHard', key: '2' },
+  { grade: Rating.Good, labelKey: 'gradeGood', key: '3' },
+  { grade: Rating.Easy, labelKey: 'gradeEasy', key: '4' },
 ];
 
 let scheduler: Scheduler | null = null;
@@ -34,25 +37,34 @@ export async function reviewSrsCard(card: SrsCard, grade: Grade, now = new Date(
   return (await getScheduler()).review({ card, grade, now }).card;
 }
 
-/** Human-readable interval each grade would produce, e.g. "10m", "3d". */
-export async function previewIntervals(card: SrsCard, now = new Date()): Promise<Record<number, string>> {
-  const out: Record<number, string> = {};
+/** How long until the card would be due after each grade, in milliseconds. */
+export async function previewIntervals(card: SrsCard, now = new Date()): Promise<Record<number, number>> {
+  const out: Record<number, number> = {};
   for (const p of (await getScheduler()).preview({ card, now })) {
-    out[p.grade] = formatInterval(new Date(p.card.dueAt).getTime() - now.getTime());
+    out[p.grade] = new Date(p.card.dueAt).getTime() - now.getTime();
   }
   return out;
 }
 
-export function formatInterval(ms: number): string {
+export type IntervalUnit = 'minute' | 'hour' | 'day' | 'month' | 'year';
+
+/** Rounds a duration to the one unit people would say it in, e.g. 3 days or 1.5 months. */
+export function intervalParts(ms: number): { value: number; unit: IntervalUnit } {
   const min = Math.max(1, Math.round(ms / 60_000));
-  if (min < 60) return `${min}m`;
+  if (min < 60) return { value: min, unit: 'minute' };
   const h = Math.round(min / 60);
-  if (h < 24) return `${h}h`;
+  if (h < 24) return { value: h, unit: 'hour' };
   const d = Math.round(h / 24);
-  if (d < 30) return `${d}d`;
-  const mo = d / 30;
-  if (mo < 12) return `${mo.toFixed(1).replace(/\.0$/, '')}mo`;
-  return `${(d / 365).toFixed(1).replace(/\.0$/, '')}y`;
+  if (d < 30) return { value: d, unit: 'day' };
+  const mo = Math.round((d / 30) * 10) / 10;
+  if (mo < 12) return { value: mo, unit: 'month' };
+  return { value: Math.round((d / 365) * 10) / 10, unit: 'year' };
+}
+
+/** A short interval label in the given Intl locale, e.g. "3 days" or "3 j". */
+export function formatInterval(ms: number, locale = 'en'): string {
+  const { value, unit } = intervalParts(ms);
+  return new Intl.NumberFormat(locale, { style: 'unit', unit, unitDisplay: 'short', maximumFractionDigits: 1 }).format(value);
 }
 
 /** A card counts as "learned" once it has graduated to the Review state. */

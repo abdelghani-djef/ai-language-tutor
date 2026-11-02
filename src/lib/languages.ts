@@ -45,23 +45,14 @@ export function pairId(src: string, tgt: string): string {
   return `${src}-${tgt}`;
 }
 
-export function pairLabel(p: { src: string; tgt: string }): string {
-  return `${LANGUAGES[p.src].name} → ${LANGUAGES[p.tgt].name}`;
-}
-
 // ---------- translation engines ----------
 
 export type Engine = 'opus' | 'nllb';
 
-export const ENGINES: Record<Engine, { name: string; description: string }> = {
-  opus: {
-    name: 'Opus-MT',
-    description: 'One small model per direction (~75 MB each). English ↔ French, Spanish, German, Italian, Arabic.',
-  },
-  nllb: {
-    name: 'NLLB-200',
-    description: 'One large model (~900 MB) that translates between any two of the languages here. Slower.',
-  },
+// Model names stay untranslated; their descriptions live in src/messages/translate.ts.
+export const ENGINES: Record<Engine, { name: string }> = {
+  opus: { name: 'Opus-MT' },
+  nllb: { name: 'NLLB-200' },
 };
 
 // opus-mt has one MarianMT model per direction. Only these are wired up.

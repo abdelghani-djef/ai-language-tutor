@@ -1,16 +1,22 @@
 "use client"
 
 import { useTheme } from "next-themes"
+import { LOCALES, useLocale, useT } from "@/lib/i18n"
+import { ui } from "@/messages/ui"
 import { Toaster as Sonner, type ToasterProps } from "sonner"
 import { CircleCheckIcon, InfoIcon, TriangleAlertIcon, OctagonXIcon, Loader2Icon } from "lucide-react"
 
 const Toaster = ({ ...props }: ToasterProps) => {
   // Sonner only knows light and dark; the kids themes are light.
   const { resolvedTheme } = useTheme()
+  const [locale] = useLocale()
+  const t = useT(ui)
 
   return (
     <Sonner
       theme={resolvedTheme === "dark" ? "dark" : "light"}
+      dir={LOCALES[locale].dir}
+      containerAriaLabel={t("notifications")}
       className="toaster group"
       icons={{
         success: (
@@ -38,6 +44,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
         } as React.CSSProperties
       }
       toastOptions={{
+        closeButtonAriaLabel: t("closeToast"),
         classNames: {
           toast: "cn-toast",
         },

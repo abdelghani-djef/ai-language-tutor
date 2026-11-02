@@ -10,10 +10,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { confetti } from "@/lib/confetti";
+import { useFormat } from "@/lib/format";
+import { useT } from "@/lib/i18n";
 import { LANGUAGES } from "@/lib/languages";
 import { checkAnswer, choicesFor, distinctCount, shuffle, type Verdict } from "@/lib/quiz";
-import { useHydrated, useStore, type Flashcard } from "@/lib/store";
+import { hasTag, recordQuiz, useHydrated, useStore, type Flashcard } from "@/lib/store";
 import { cn } from "@/lib/utils";
+import { quiz } from "@/messages/quiz";
 
 type Mode = "type" | "choice";
 type Direction = "forward" | "reverse";
@@ -40,26 +44,31 @@ export default function QuizPageWrapper() {
 }
 
 function QuizPage() {
-  const deckId = useSearchParams().get("deck");
+  const params = useSearchParams();
+  const deckId = params.get("deck");
+  const tag = params.get("tag");
   const hydrated = useHydrated();
   const { decks, cards } = useStore();
   const [mode, setMode] = useState<Mode>("type");
   const [direction, setDirection] = useState<Direction>("forward");
   const [round, setRound] = useState(0);
+  const t = useT(quiz);
+  const fmt = useFormat();
 
   if (!hydrated) return null;
   const deck = decks.find((d) => d.id === deckId);
   if (!deck) {
     return (
       <div className="grid justify-items-start gap-3">
-        <p>Pick a deck to quiz yourself on.</p>
+        <p>{t("pickDeck")}</p>
         <Link href="/decks" className={buttonVariants({ variant: "outline" })}>
-          Go to decks
+          {t("goToDecks")}
         </Link>
       </div>
     );
   }
-  const deckCards = cards.filter((c) => c.deckId === deck.id);
+  const allDeckCards = cards.filter((c) => c.deckId === deck.id);
+  const deckCards = allDeckCards.filter((c) => hasTag(c, tag));
   // Multiple choice needs four answers that actually look different.
   const canChoose = distinctCount(deckCards.map((c) => (direction === "forward" ? c.back : c.front))) >= 4;
   const effectiveMode = canChoose ? mode : "type";
@@ -68,25 +77,39 @@ function QuizPage() {
     <div className="mx-auto grid max-w-2xl gap-6">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h1 className="font-display text-2xl font-semibold">Quiz · {deck.name}</h1>
-          <p className="text-sm text-muted-foreground">Practice only — quizzes don’t change your review schedule.</p>
+          <h1 className="font-display text-2xl font-semibold">
+            {t("title", { deck: deck.name })}
+            {/* bdi keeps a Latin tag next to a Latin deck name from running together in Arabic. */}
+            {tag && (
+              <>
+                {" · "}
+                <bdi>#{tag}</bdi>
+              </>
+            )}
+          </h1>
+          <p className="text-sm text-muted-foreground">{t("practiceOnly")}</p>
         </div>
         <div className="flex flex-wrap gap-2">
           <Tabs value={effectiveMode} onValueChange={(v) => setMode(v as Mode)}>
             <TabsList>
-              <TabsTrigger value="type">Type answer</TabsTrigger>
+              <TabsTrigger value="type">{t("modeType")}</TabsTrigger>
               <TabsTrigger value="choice" disabled={!canChoose}>
-                Multiple choice
+                {t("modeChoice")}
               </TabsTrigger>
             </TabsList>
           </Tabs>
           <Tabs value={direction} onValueChange={(v) => setDirection(v as Direction)}>
             <TabsList>
-              <TabsTrigger value="forward">
-                {deck.src.toUpperCase()} → {deck.tgt.toUpperCase()}
+              {/* Latin language codes always read left to right, even in Arabic. */}
+              <TabsTrigger value="forward" title={fmt.pairLabel(deck)}>
+                <span dir="ltr">
+                  {t("direction", { from: deck.src.toUpperCase(), arrow: "→", to: deck.tgt.toUpperCase() })}
+                </span>
               </TabsTrigger>
-              <TabsTrigger value="reverse">
-                {deck.tgt.toUpperCase()} → {deck.src.toUpperCase()}
+              <TabsTrigger value="reverse" title={fmt.pairLabel({ src: deck.tgt, tgt: deck.src })}>
+                <span dir="ltr">
+                  {t("direction", { from: deck.tgt.toUpperCase(), arrow: "→", to: deck.src.toUpperCase() })}
+                </span>
               </TabsTrigger>
             </TabsList>
           </Tabs>
@@ -94,14 +117,23 @@ function QuizPage() {
       </div>
 
       {!canChoose && deckCards.length > 0 && (
-        <p className="-mt-3 text-xs text-muted-foreground">Multiple choice needs at least 4 different answers.</p>
+        <p className="-mt-3 text-xs text-muted-foreground">{t("choiceNeeds", { count: 4 })}</p>
       )}
 
-      {deckCards.length === 0 ? (
-        <p className="text-muted-foreground">This deck has no cards yet.</p>
+      {deckCards.length === 0 && tag && allDeckCards.length > 0 ? (
+        <div className="grid justify-items-start gap-3">
+          <p className="text-muted-foreground" dir="auto">
+            {t("noTagged", { tag: fmt.tag(tag) })}
+          </p>
+          <Link href={`/quiz?deck=${deck.id}`} className={buttonVariants({ variant: "outline" })}>
+            {t("wholeDeck")}
+          </Link>
+        </div>
+      ) : deckCards.length === 0 ? (
+        <p className="text-muted-foreground">{t("noCards")}</p>
       ) : (
         <QuizRun
-          key={`${effectiveMode}-${direction}-${round}`}
+          key={`${effectiveMode}-${direction}-${tag ?? ""}-${round}`}
           cards={deckCards}
           mode={effectiveMode}
           direction={direction}
@@ -168,10 +200,21 @@ function QuizRun({
   const nextRef = useRef<HTMLButtonElement>(null);
   const firstChoiceRef = useRef<HTMLButtonElement>(null);
   const restartRef = useRef<HTMLButtonElement>(null);
+  const t = useT(quiz);
+  const fmt = useFormat();
 
   const q = questions[index];
   // If this prompt's other answers leave too few distinct options, type it instead.
   const asChoice = mode === "choice" && !!q && q.choices.length >= 4;
+
+  // Count the finished round once: a perfect score counts toward badges.
+  const finished = !q;
+  useEffect(() => {
+    if (!finished) return;
+    const celebrated = recordQuiz(score, questions.length);
+    if (!celebrated && questions.length > 0 && score === questions.length) confetti();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- runs when the round ends
+  }, [finished]);
 
   useEffect(() => {
     if (!q) restartRef.current?.focus();
@@ -186,13 +229,13 @@ function QuizRun({
       <Card className="items-center py-12 text-center">
         <CardContent className="grid justify-items-center gap-3" role="status">
           <p className="font-display text-5xl font-semibold">
-            {score}/{questions.length}
+            {t("finalScore", { score, total: questions.length })}
           </p>
           <p className="text-muted-foreground">
-            {pct === 100 ? "Perfect score!" : pct >= 70 ? "Nice work." : "Keep studying — you’ll get there."}
+            {pct === 100 ? t("perfect") : pct >= 70 ? t("niceWork") : t("keepStudying")}
           </p>
           <Button ref={restartRef} onClick={onRestart}>
-            <RotateCcw /> Try another round
+            <RotateCcw /> {t("tryAgain")}
           </Button>
         </CardContent>
       </Card>
@@ -218,20 +261,21 @@ function QuizRun({
     <div className="grid gap-4">
       <div className="flex items-center gap-3 text-sm text-muted-foreground">
         <span className="tabular-nums">
-          {index + 1} / {questions.length}
+          {t("position", { index: index + 1, total: questions.length })}
         </span>
         <Progress value={(index / questions.length) * 100} className="flex-1" />
-        <span className="tabular-nums">Score {score}</span>
+        <span className="tabular-nums">{t("score", { score })}</span>
       </div>
 
       <Card>
         <CardContent className="grid justify-items-center gap-2 py-10">
           <span className="text-xs font-medium tracking-wider text-muted-foreground uppercase">
-            Translate to {LANGUAGES[q.answerLang].name}
+            {t("translateTo", { language: fmt.languageName(q.answerLang) })}
           </span>
           <p
             className="flex items-center gap-2 text-center font-display text-3xl font-medium"
             dir={LANGUAGES[q.promptLang].rtl ? "rtl" : "auto"}
+            lang={q.promptLang}
           >
             {q.prompt}
             <SpeakButton text={q.prompt} lang={q.promptLang} />
@@ -252,9 +296,10 @@ function QuizRun({
             ref={inputRef}
             value={typed}
             dir={answerDir}
+            lang={q.answerLang}
             onChange={(e) => setTyped(e.target.value)}
             readOnly={!!verdict}
-            placeholder="Your answer…"
+            placeholder={t("placeholder")}
             className="h-11 text-lg"
             autoComplete="off"
             autoCapitalize="off"
@@ -262,7 +307,7 @@ function QuizRun({
           />
           {!verdict && (
             <Button type="submit" size="lg" className="h-11" disabled={!typed.trim()}>
-              Check
+              {t("check")}
             </Button>
           )}
         </form>
@@ -276,8 +321,9 @@ function QuizRun({
                 ref={i === 0 ? firstChoiceRef : undefined}
                 variant="outline"
                 dir={answerDir}
+                lang={q.answerLang}
                 className={cn(
-                  "h-auto justify-start py-3 text-left text-base whitespace-normal",
+                  "h-auto justify-start py-3 text-start text-base whitespace-normal",
                   verdict && isAnswer && "border-emerald-500 bg-emerald-500/10",
                   verdict && picked === c && !isAnswer && "border-red-500 bg-red-500/10",
                 )}
@@ -297,11 +343,11 @@ function QuizRun({
 
       <p className="sr-only" aria-live="polite">
         {verdict === "correct"
-          ? "Correct!"
+          ? t("correct")
           : verdict === "close"
-            ? `Close enough. Correct spelling: ${q.answer}`
+            ? t("closeLive", { answer: q.answer })
             : verdict
-              ? `Not quite. Correct answer: ${q.answer}`
+              ? t("wrongLive", { answer: q.answer })
               : ""}
       </p>
 
@@ -319,17 +365,17 @@ function QuizRun({
           )}
           <div className="flex-1">
             <p className="font-medium">
-              {verdict === "correct" ? "Correct!" : verdict === "close" ? "Close enough — watch the spelling." : "Not quite."}
+              {verdict === "correct" ? t("correct") : verdict === "close" ? t("close") : t("wrong")}
             </p>
             {verdict !== "correct" && (
               <p className="flex items-center gap-1 text-sm text-muted-foreground" dir="auto">
-                Answer: <span className="font-medium text-foreground">{q.answer}</span>
+                {t.rich("answer", { answer: <span className="font-medium text-foreground">{q.answer}</span> })}
                 <SpeakButton text={q.answer} lang={q.answerLang} />
               </p>
             )}
           </div>
           <Button ref={nextRef} onClick={next}>
-            {index + 1 < questions.length ? "Next" : "See results"} <ArrowRight />
+            {index + 1 < questions.length ? t("next") : t("seeResults")} <ArrowRight className="rtl:rotate-180" />
           </Button>
         </div>
       )}

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { formatInterval, isLearned, newSrsCard, previewIntervals, Rating, reviewSrsCard, State } from "../srs";
+import { formatInterval, intervalParts, isLearned, newSrsCard, previewIntervals, Rating, reviewSrsCard, State } from "../srs";
 
 const t0 = new Date("2026-10-31T10:00:00Z");
 
@@ -36,9 +36,18 @@ describe("FSRS scheduling", () => {
     expect(Object.keys(p).sort()).toEqual(["1", "2", "3", "4"]);
   });
 
-  it("formats intervals", () => {
-    expect(formatInterval(60_000)).toBe("1m");
-    expect(formatInterval(3 * 86_400_000)).toBe("3d");
-    expect(formatInterval(400 * 86_400_000)).toBe("1.1y");
+  it("rounds intervals to one unit", () => {
+    expect(intervalParts(20_000)).toEqual({ value: 1, unit: "minute" });
+    expect(intervalParts(3 * 86_400_000)).toEqual({ value: 3, unit: "day" });
+    expect(intervalParts(45 * 86_400_000)).toEqual({ value: 1.5, unit: "month" });
+    expect(intervalParts(400 * 86_400_000)).toEqual({ value: 1.1, unit: "year" });
+  });
+
+  it("formats intervals per locale", () => {
+    expect(formatInterval(60_000)).toBe("1 min");
+    expect(formatInterval(3 * 86_400_000)).toBe("3 days");
+    // French puts a narrow no-break space before the unit.
+    expect(formatInterval(3 * 86_400_000, "fr")).toBe("3\u202fj");
+    expect(formatInterval(45 * 86_400_000, "fr")).toBe("1,5\u202fm.");
   });
 });

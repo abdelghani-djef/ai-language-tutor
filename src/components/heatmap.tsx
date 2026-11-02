@@ -1,11 +1,13 @@
 "use client";
 
+import { useFormat } from "@/lib/format";
+import { useT } from "@/lib/i18n";
 import { heatmapGrid } from "@/lib/stats";
 import { cn } from "@/lib/utils";
+import { stats } from "@/messages/stats";
 
 // Single-hue sequential scale: empty, then four steps of the primary color.
 const LEVELS = ["bg-muted", "bg-primary/25", "bg-primary/50", "bg-primary/75", "bg-primary"];
-const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 function level(count: number, max: number): number {
   if (count === 0) return 0;
@@ -13,6 +15,8 @@ function level(count: number, max: number): number {
 }
 
 export function Heatmap({ counts, weeks = 26 }: { counts: Map<string, number>; weeks?: number }) {
+  const t = useT(stats);
+  const fmt = useFormat();
   const grid = heatmapGrid(weeks);
   const max = Math.max(0, ...counts.values());
 
@@ -29,7 +33,7 @@ export function Heatmap({ counts, weeks = 26 }: { counts: Map<string, number>; w
             const show = first && (!prev || prev.slice(5, 7) !== first.slice(5, 7));
             return (
               <span key={i} className="h-4 overflow-visible text-[10px] whitespace-nowrap text-muted-foreground">
-                {show ? MONTHS[m] : ""}
+                {show ? fmt.date(new Date(2026, m, 1), { month: "short" }) : ""}
               </span>
             );
           })}
@@ -40,11 +44,11 @@ export function Heatmap({ counts, weeks = 26 }: { counts: Map<string, number>; w
         </div>
       </div>
       <div className="flex items-center gap-1 self-end text-xs text-muted-foreground">
-        Less
+        {t("less")}
         {LEVELS.map((c) => (
           <span key={c} className={cn("size-3 rounded-[3px]", c)} />
         ))}
-        More
+        {t("more")}
       </div>
     </div>
   );
@@ -61,20 +65,20 @@ function Row({
   counts: Map<string, number>;
   max: number;
 }) {
+  const t = useT(stats);
+  const fmt = useFormat();
+  // 4 Jan 2026 is a Sunday, so this is the weekday for the row.
+  const weekday = row % 2 ? fmt.date(new Date(2026, 0, 4 + row), { weekday: "short" }) : "";
+
   return (
     <>
-      <span className="pr-1 text-[10px] leading-3.5 text-muted-foreground">
-        {row === 1 ? "Mon" : row === 3 ? "Wed" : row === 5 ? "Fri" : ""}
-      </span>
+      <span className="pe-1 text-[10px] leading-3.5 text-muted-foreground">{weekday}</span>
       {grid.map((col, i) => {
         const day = col[row];
         if (!day) return <span key={i} className="size-3.5" />;
         const n = counts.get(day) ?? 0;
-        const label = `${n} review${n === 1 ? "" : "s"} on ${new Date(`${day}T12:00:00`).toLocaleDateString(undefined, {
-          weekday: "short",
-          month: "short",
-          day: "numeric",
-        })}`;
+        const date = fmt.date(new Date(`${day}T12:00:00`), { weekday: "short", month: "short", day: "numeric" });
+        const label = t("dayReviews", { count: n, date });
         return <span key={i} title={label} aria-label={label} className={cn("size-3.5 rounded-[3px]", LEVELS[level(n, max)])} />;
       })}
     </>

@@ -8,9 +8,12 @@ import { FlipCard } from "@/components/flip-card";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { speak } from "@/lib/speech";
-import { formatInterval, GRADES, previewIntervals, type Grade } from "@/lib/srs";
-import { dueTime, endOfToday, gradeCard, isDue, useHydrated, useStore, type Flashcard } from "@/lib/store";
+import { useFormat } from "@/lib/format";
+import { useT } from "@/lib/i18n";
+import { GRADES, previewIntervals, type Grade } from "@/lib/srs";
+import { dueTime, endOfToday, gradeCard, hasTag, isDue, useHydrated, useStore, type Flashcard } from "@/lib/store";
 import { cn } from "@/lib/utils";
+import { study } from "@/messages/study";
 
 const GRADE_STYLE: Record<number, string> = {
   1: "border-red-500/40 hover:bg-red-500/10 text-red-600 dark:text-red-400",
@@ -28,14 +31,17 @@ export default function StudyPageWrapper() {
 }
 
 function StudyPage() {
-  const deckId = useSearchParams().get("deck");
+  const params = useSearchParams();
+  const deckId = params.get("deck");
+  const tag = params.get("tag");
   const hydrated = useHydrated();
   // Bumped by "Check again" to start a fresh session (e.g. after midnight).
   const [round, setRound] = useState(0);
   return hydrated ? (
     <Session
-      key={`${deckId ?? "all"}:${round}`}
+      key={`${deckId ?? "all"}:${tag ?? ""}:${round}`}
       deckId={deckId}
+      tag={tag}
       restarted={round > 0}
       onRestart={() => setRound((r) => r + 1)}
     />
@@ -52,10 +58,12 @@ function inSession(c: Flashcard, now: number, sessionEnd: number): boolean {
 
 function Session({
   deckId,
+  tag,
   restarted,
   onRestart,
 }: {
   deckId: string | null;
+  tag: string | null;
   restarted: boolean;
   onRestart: () => void;
 }) {
@@ -69,7 +77,9 @@ function Session({
   const [sessionIds] = useState(
     () =>
       new Set(
-        cards.filter((c) => (!deckId || c.deckId === deckId) && inSession(c, start, sessionEnd)).map((c) => c.id),
+        cards
+          .filter((c) => (!deckId || c.deckId === deckId) && hasTag(c, tag) && inSession(c, start, sessionEnd))
+          .map((c) => c.id),
       ),
   );
   const [now, setNow] = useState(start);
@@ -78,7 +88,9 @@ function Session({
   const [currentId, setCurrentId] = useState<string | null>(null);
   const [flipped, setFlipped] = useState(false);
   const [reviewed, setReviewed] = useState(0);
-  const [intervals, setIntervals] = useState<Record<number, string>>({});
+  const [intervals, setIntervals] = useState<Record<number, number>>({});
+  const fmt = useFormat();
+  const t = useT(study);
   const grading = useRef(false);
 
   const remaining = useMemo(
@@ -140,7 +152,7 @@ function Session({
   });
 
   const total = reviewed + remaining.length;
-  const title = deck ? deck.name : "All decks";
+  const title = `${deck ? deck.name : t("allDecks")}${tag ? ` · ${fmt.tag(tag)}` : ""}`;
 
   if (!current) {
     return (
@@ -148,43 +160,42 @@ function Session({
         {nextLater ? (
           <>
             <Clock className="size-12 text-muted-foreground" />
-            <h1 className="font-display text-2xl font-semibold">Short break</h1>
+            <h1 className="font-display text-2xl font-semibold">{t("breakTitle")}</h1>
             <p className="text-muted-foreground" aria-live="polite">
-              {remaining.length} card{remaining.length > 1 ? "s" : ""} in learning will be back in{" "}
-              {formatInterval(dueTime(nextLater) - now)}. Keep this tab open, or come back later.
+              {t("breakText", { count: remaining.length, time: fmt.interval(dueTime(nextLater) - now) })}
             </p>
           </>
         ) : (
           <>
             <CheckCircle2 className="size-12 text-emerald-500" />
             <h1 className="font-display text-2xl font-semibold">
-              {reviewed > 0 ? "Done for today!" : restarted ? "Still nothing due" : "Nothing due right now"}
+              {reviewed > 0 ? t("doneTitle") : restarted ? t("stillNothingTitle") : t("nothingTitle")}
             </h1>
             <p className="text-muted-foreground">
               {reviewed > 0
-                ? `You reviewed ${reviewed} card${reviewed > 1 ? "s" : ""} in ${title}. FSRS will bring them back right before you’re likely to forget.`
+                ? t("doneText", { count: reviewed, title })
                 : restarted
-                  ? "Check back later, or try a quiz to practise in the meantime."
-                  : "Save some new cards from the Translate page, or try a quiz to practise."}
+                  ? t("stillNothingText")
+                  : t("nothingText")}
             </p>
           </>
         )}
         <div className="flex flex-wrap justify-center gap-2">
           {!nextLater && (
             <Button variant="outline" onClick={onRestart}>
-              <RotateCw /> Check again
+              <RotateCw /> {t("checkAgain")}
             </Button>
           )}
           <Link href="/" className={buttonVariants({ variant: "outline" })}>
-            Translate
+            {t("translate")}
           </Link>
           {deck && (
             <Link href={`/quiz?deck=${deck.id}`} className={buttonVariants({ variant: "outline" })}>
-              Quiz this deck
+              {t("quizDeck")}
             </Link>
           )}
           <Link href="/stats" className={buttonVariants()}>
-            See stats
+            {t("seeStats")}
           </Link>
         </div>
       </div>
@@ -195,9 +206,9 @@ function Session({
     <div className="mx-auto grid max-w-2xl gap-6">
       <div className="flex items-center justify-between gap-4">
         <div>
-          <h1 className="font-display text-2xl font-semibold">Study · {title}</h1>
+          <h1 className="font-display text-2xl font-semibold">{t("sessionTitle", { title })}</h1>
           <p className="text-sm text-muted-foreground">
-            {remaining.length} left · {reviewed} reviewed
+            {t("left", { count: remaining.length })} · {t("reviewed", { count: reviewed })}
           </p>
         </div>
         <Progress value={total ? (reviewed / total) * 100 : 0} className="w-40" />
@@ -207,6 +218,7 @@ function Session({
         key={current.id}
         front={{ text: current.front, lang: current.src }}
         back={{ text: current.back, lang: current.tgt }}
+        extras={{ example: current.example, notes: current.notes, image: current.image }}
         flipped={flipped}
         onFlip={() => setFlipped((f) => !f)}
       />
@@ -220,23 +232,34 @@ function Session({
               className={cn("h-auto flex-col gap-0.5 py-3", GRADE_STYLE[g.grade])}
               onClick={() => grade(g.grade)}
             >
-              <span className="font-semibold">{g.label}</span>
-              <span className="text-xs opacity-75">{intervals[g.grade] ?? "…"}</span>
+              <span className="font-semibold">{t(g.labelKey)}</span>
+              <span className="text-xs opacity-75">
+                {intervals[g.grade] === undefined ? "…" : fmt.interval(intervals[g.grade])}
+              </span>
             </Button>
           ))}
         </div>
       ) : (
         <Button size="lg" className="h-14 text-base" onClick={() => setFlipped(true)}>
-          Show answer
+          {t("showAnswer")}
         </Button>
       )}
 
       <p className="sr-only" aria-live="polite">
-        {flipped ? `Answer: ${current.back}` : ""}
+        {flipped
+          ? current.example
+            ? t("answerWithExample", { back: current.back, example: current.example })
+            : t("answer", { back: current.back })
+          : ""}
       </p>
 
       <p className="text-center text-xs text-muted-foreground">
-        Space to flip · 1 Again · 2 Hard · 3 Good · 4 Easy · P to pronounce
+        {t("keyHint", {
+          again: t("gradeAgain"),
+          hard: t("gradeHard"),
+          good: t("gradeGood"),
+          easy: t("gradeEasy"),
+        })}
       </p>
     </div>
   );

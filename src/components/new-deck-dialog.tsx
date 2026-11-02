@@ -6,8 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useT } from "@/lib/i18n";
 import { getPair } from "@/lib/languages";
 import { createDeck, type Deck } from "@/lib/store";
+import { decks } from "@/messages/decks";
 
 export function NewDeckDialog({
   open,
@@ -20,6 +22,7 @@ export function NewDeckDialog({
   defaultPair?: string;
   onCreated?: (deck: Deck) => void;
 }) {
+  const t = useT(decks);
   const [name, setName] = useState("");
   const [pairId, setPairId] = useState(defaultPair);
   // Start from the caller's current pair each time the dialog opens. Opening is
@@ -45,20 +48,20 @@ export function NewDeckDialog({
       <DialogContent>
         <form onSubmit={submit} className="grid gap-4">
           <DialogHeader>
-            <DialogTitle>New deck</DialogTitle>
-            <DialogDescription>Group cards by topic, e.g. “Travel phrases” or “Kitchen”.</DialogDescription>
+            <DialogTitle>{t("dialogTitle")}</DialogTitle>
+            <DialogDescription>{t("dialogDescription")}</DialogDescription>
           </DialogHeader>
           <div className="grid gap-2">
-            <Label htmlFor="deck-name">Name</Label>
+            <Label htmlFor="deck-name">{t("name")}</Label>
             <Input id="deck-name" value={name} onChange={(e) => setName(e.target.value)} autoFocus required />
           </div>
           <div className="grid gap-2">
-            <Label>Language pair</Label>
+            <Label>{t("languagePair")}</Label>
             <PairSelect value={pairId} onChange={setPairId} className="w-full" />
           </div>
           <DialogFooter>
             <Button type="submit" disabled={!name.trim()}>
-              Create deck
+              {t("create")}
             </Button>
           </DialogFooter>
         </form>

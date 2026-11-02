@@ -17,13 +17,17 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { pairLabel } from "@/lib/languages";
+import { useFormat } from "@/lib/format";
+import { useT } from "@/lib/i18n";
 import { isLearned } from "@/lib/srs";
 import { dueToday, exportData, importData, parseBackup, useHydrated, useStore, type Data } from "@/lib/store";
+import { decks as decksMessages } from "@/messages/decks";
 
 export default function DecksPage() {
   const { decks, cards } = useStore();
   const hydrated = useHydrated();
+  const t = useT(decksMessages);
+  const fmt = useFormat();
   const [open, setOpen] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
   // A checked backup waiting for the user to confirm it should replace everything,
@@ -45,35 +49,36 @@ export default function DecksPage() {
     try {
       setPending({ backup: parseBackup(await file.text()), decks: decks.length, cards: cards.length });
       setImportOpen(true);
-    } catch (e) {
-      toast.error(e instanceof Error ? e.message : "Could not read that file");
+    } catch {
+      // parseBackup's errors are English; any failure means the file isn't usable.
+      toast.error(t("invalidBackup"));
     }
   }
 
   function confirmImport() {
     if (!pending) return;
     setImportOpen(false);
-    if (importData(pending.backup)) toast.success("Backup restored");
-    else toast.error("The backup is loaded but your browser refused to save it. Free some space and try again.");
+    if (importData(pending.backup)) toast.success(t("restored"));
+    else toast.error(t("saveRefused"));
   }
 
   return (
     <div className="grid gap-6">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h1 className="font-display text-3xl font-semibold tracking-tight">Decks</h1>
-          <p className="text-muted-foreground">Everything is saved in this browser’s local storage.</p>
+          <h1 className="font-display text-3xl font-semibold tracking-tight">{t("title")}</h1>
+          <p className="text-muted-foreground">{t("savedLocally")}</p>
         </div>
         <div className="flex flex-wrap gap-2">
-          <Button variant="ghost" onClick={download} title="Download a JSON backup">
-            <Download /> Export
+          <Button variant="ghost" onClick={download} title={t("exportTitle")}>
+            <Download /> {t("export")}
           </Button>
           <Button
             variant="ghost"
             onClick={() => fileRef.current?.click()}
-            title="Restore from a JSON backup (replaces current data)"
+            title={t("importTitle")}
           >
-            <Upload /> Import
+            <Upload /> {t("import")}
           </Button>
           <input
             ref={fileRef}
@@ -87,7 +92,7 @@ export default function DecksPage() {
             }}
           />
           <Button onClick={() => setOpen(true)}>
-            <Plus /> New deck
+            <Plus /> {t("newDeck")}
           </Button>
         </div>
       </div>
@@ -95,11 +100,11 @@ export default function DecksPage() {
       {hydrated && decks.length === 0 && (
         <Card className="items-center py-12 text-center">
           <CardHeader className="w-full">
-            <CardTitle>No decks yet</CardTitle>
-            <CardDescription>Create one, then save translations into it from the Translate page.</CardDescription>
+            <CardTitle>{t("emptyTitle")}</CardTitle>
+            <CardDescription>{t("emptyDescription")}</CardDescription>
           </CardHeader>
           <Button onClick={() => setOpen(true)}>
-            <Plus /> Create your first deck
+            <Plus /> {t("createFirst")}
           </Button>
         </Card>
       )}
@@ -117,25 +122,25 @@ export default function DecksPage() {
                     {d.name}
                   </Link>
                 </CardTitle>
-                <CardDescription>{pairLabel(d)}</CardDescription>
+                <CardDescription>{fmt.pairLabel(d)}</CardDescription>
               </CardHeader>
               <div className="grid grid-cols-3 px-6 text-center">
-                <Stat label="cards" value={deckCards.length} />
-                <Stat label="due" value={due} accent={due > 0} />
-                <Stat label="learned" value={learned} />
+                <Stat label={t("statCards", { count: deckCards.length })} value={fmt.number(deckCards.length)} />
+                <Stat label={t("statDue", { count: due })} value={fmt.number(due)} accent={due > 0} />
+                <Stat label={t("statLearned", { count: learned })} value={fmt.number(learned)} />
               </div>
               <CardFooter className="gap-2">
                 <Link
                   href={`/study?deck=${d.id}`}
                   className={buttonVariants({ size: "sm", variant: due > 0 ? "default" : "outline" })}
                 >
-                  <GraduationCap /> Study
+                  <GraduationCap /> {t("study")}
                 </Link>
                 <Link href={`/quiz?deck=${d.id}`} className={buttonVariants({ size: "sm", variant: "outline" })}>
-                  Quiz
+                  {t("quiz")}
                 </Link>
                 <Link href={`/deck?id=${d.id}`} className={buttonVariants({ size: "sm", variant: "ghost" })}>
-                  Manage
+                  {t("manage")}
                 </Link>
               </CardFooter>
             </Card>
@@ -148,21 +153,27 @@ export default function DecksPage() {
       <AlertDialog open={importOpen} onOpenChange={setImportOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Replace all your data?</AlertDialogTitle>
+            <AlertDialogTitle>{t("replaceTitle")}</AlertDialogTitle>
             <AlertDialogDescription>
-              The backup has {count(pending?.backup.decks.length ?? 0, "deck")},{" "}
-              {count(pending?.backup.cards.length ?? 0, "card")} and {count(pending?.backup.reviews.length ?? 0, "review")}.
-              It replaces what is in this browser now ({count(pending?.decks ?? 0, "deck")},{" "}
-              {count(pending?.cards ?? 0, "card")}). Export first if you want to keep the current data.
+              {t("backupHas", {
+                decks: t("deckCount", { count: pending?.backup.decks.length ?? 0 }),
+                cards: t("cardCount", { count: pending?.backup.cards.length ?? 0 }),
+                reviews: t("reviewCount", { count: pending?.backup.reviews.length ?? 0 }),
+              })}{" "}
+              {t("replacesNow", {
+                decks: t("deckCount", { count: pending?.decks ?? 0 }),
+                cards: t("cardCount", { count: pending?.cards ?? 0 }),
+              })}{" "}
+              {t("exportFirst")}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel>{t("cancel")}</AlertDialogCancel>
             <Button variant="outline" onClick={download}>
-              <Download /> Export current
+              <Download /> {t("exportCurrent")}
             </Button>
             <AlertDialogAction variant="destructive" onClick={confirmImport}>
-              Replace
+              {t("replace")}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
@@ -171,11 +182,7 @@ export default function DecksPage() {
   );
 }
 
-function count(n: number, word: string): string {
-  return `${n} ${word}${n === 1 ? "" : "s"}`;
-}
-
-function Stat({ label, value, accent }: { label: string; value: number; accent?: boolean }) {
+function Stat({ label, value, accent }: { label: string; value: string; accent?: boolean }) {
   return (
     <div>
       <div className={`text-2xl font-semibold tabular-nums ${accent ? "text-primary" : ""}`}>{value}</div>

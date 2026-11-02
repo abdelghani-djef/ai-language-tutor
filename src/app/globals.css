@@ -7,10 +7,11 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  /* Arabic letters fall through to Noto Sans Arabic. */
+  --font-sans: var(--font-sans), var(--font-arabic), sans-serif;
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-display);
-  --font-display: var(--font-display);
+  --font-heading: var(--font-display), var(--font-arabic), serif;
+  --font-display: var(--font-display), var(--font-arabic), serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -179,6 +180,19 @@
 html:is(.pink, .blue) {
   --font-sans: var(--font-kids);
   --font-display: var(--font-kids-display);
+}
+
+/*
+ * Arabic gets Noto Sans Arabic first. Further down the stack it is never
+ * reached: next/font's fallback faces for the Latin fonts are local Arial and
+ * Times, which have Arabic letters of their own.
+ */
+html:lang(ar) {
+  --font-sans: var(--font-arabic);
+  --font-display: var(--font-arabic);
+}
+[lang="ar"]:not(html) {
+  font-family: var(--font-arabic), sans-serif;
 }
 
 /* A soft polka-dot backdrop in the primary color. */

@@ -6,6 +6,9 @@ Language-learning flashcards that run entirely in your browser:
 2. **Save**: keep the translation (edited if you like) as a flashcard in a deck.
 3. **Study**: flip the card and rate it **Again / Hard / Good / Easy**. The FSRS spaced-repetition algorithm decides when you see it next.
 4. **Track**: see cards learned, your study streak, recall rate, and a heatmap of your study activity.
+5. **Stay motivated**: set a daily goal and collect badges along the way.
+
+The interface is available in **English, French and Arabic** (right-to-left).
 
 There is **no backend, no database and no account**. Decks, cards and review history are stored in your browser's `localStorage`. Translation models are downloaded from the Hugging Face Hub the first time you use them, and the browser caches them after that.
 
@@ -19,6 +22,7 @@ There is **no backend, no database and no account**. Decks, cards and review his
 | Spaced repetition | [`ts-fsrs`](https://github.com/open-spaced-repetition/ts-fsrs) (FSRS-7) |
 | Pronunciation | The browser's built-in `speechSynthesis` (free, offline on most systems) |
 | Storage | `localStorage`, with JSON export and import for backups |
+| Interface languages | English, French, Arabic: a small typed message system (`src/lib/i18n.ts`) with `Intl` for plurals, numbers, dates and language names |
 | Tests | Vitest |
 
 ## Getting started
@@ -31,7 +35,7 @@ npm run dev        # http://localhost:3000
 Other scripts:
 
 ```bash
-npm test           # unit tests (FSRS wrapper, streaks/heatmap, quiz answer checking)
+npm test           # unit tests (FSRS wrapper, streaks/heatmap, quiz answers, rewards, translations)
 npm run lint
 npm run build      # static site in out/, which you can host anywhere (GitHub Pages, Netlify, S3…)
 ```
@@ -42,10 +46,13 @@ To serve the production build locally: `npm start` (runs `npx serve out`). The e
 
 - **Translate** (`/`): pick a **From** and **To** language, use **swap** to reverse them, choose a model (**Opus-MT** or **NLLB-200**, see below), then press **Translate** or Ctrl+Enter. Long text is translated sentence by sentence, keeping line breaks. You can edit the translation before you save it. Speaker buttons read either side aloud.
 - **Decks** (`/decks`): create, rename and delete decks. Each deck shows its total, due and learned counts. **Export/Import** downloads or restores a JSON backup, which matters because your data lives only in this browser. Import checks the file first, shows what it contains and asks before replacing your data, with an **Export current** button right there.
-- **Deck** (`/deck?id=…`): add cards by hand, edit or delete cards (with **Undo**), and see each card's FSRS state and next due time. Deleting cards or decks keeps their review log, so past study days still count toward your streak and heatmap.
-- **Study** (`/study`, or `/study?deck=…` for one deck): reviews every card due today, most overdue first. Each rating button shows the interval it would give (for example `10m`, `3d`). Keyboard shortcuts: Space flips, 1–4 rates, P pronounces; they stay out of the way of focused buttons and links. Cards you get wrong come back after a short learning step in the same session, and the page waits for them. **Check again** on the finished screen starts a new session, for example after midnight.
+- **Deck** (`/deck?id=…`): add cards by hand, edit or delete cards (with **Undo**), and see each card's FSRS state and next due time. Deleting cards or decks keeps their review log, so past study days still count toward your streak and heatmap. Search the deck's cards, or filter them by tag and then study or quiz only that tag.
+- **Richer cards**: the card editor (**More details…**, or the pencil on a card) adds an **example sentence** (with a speaker button), **notes**, **tags** and a **picture**. You can pick a picture file or paste one. Pictures are shrunk to 320 px WebP (or JPEG) of about 10–30 KB, because they are stored in `localStorage` with everything else. The example, notes and picture show on the answer side while you study.
+- **Study** (`/study`, or `/study?deck=…` for one deck): reviews every card due today, most overdue first. Each rating button shows the interval it would give (for example `10 min`, `3 days`). Keyboard shortcuts: Space flips, 1–4 rates, P pronounces; they stay out of the way of focused buttons and links. Cards you get wrong come back after a short learning step in the same session, and the page waits for them. **Check again** on the finished screen starts a new session, for example after midnight.
 - **Quiz** (`/quiz?deck=…`): ten random cards in either direction, answered by **typing** or by **multiple choice** (needs at least 4 different answers). Typed answers ignore case, Latin accents, punctuation and Arabic diacritics, and a small typo counts as "close enough". If several cards share a prompt, any of their answers is accepted. Picking an option is simply right or wrong. The quiz is practice only and does not change the FSRS schedule.
-- **Stats** (`/stats`): cards learned, current and longest streak, cards due, reviews today, 30-day recall rate, a 26-week activity heatmap, and per-deck progress.
+- **Stats** (`/stats`): your daily goal, cards learned, current and longest streak, cards due, reviews today, 30-day recall rate, a 26-week activity heatmap, badges, and per-deck progress.
+- **Daily goal and badges**: choose how many reviews a day you aim for (5 to 100, default 20). The ring in the header fills up as you review. Reaching the goal, or earning a badge, sets off confetti and a toast (no animation if your system asks for reduced motion). There are 14 badges for reviews, streaks, learned cards, goal days and perfect quizzes. Once earned, a badge is kept, even if a card later lapses or a streak breaks. The goal, goal days and badges are saved in the same data and included in backups.
+- **Interface language**: the language button in the header switches between English, Français and العربية. The first visit follows the browser's language. Arabic switches the whole layout to right-to-left. The direction is set before the first paint, so the page doesn't flip after loading. Numbers use Western digits.
 
 ## Translation models
 
@@ -126,11 +133,16 @@ src/
     study/page.tsx      Flip-and-rate review session
     quiz/page.tsx       Typing / multiple-choice quiz
     stats/page.tsx      Stats + heatmap
-  components/           App components (flip card, heatmap, pair picker…) and shadcn/ui in components/ui
+  components/           App components (flip card, card editor, heatmap, goal ring, badges…) and shadcn/ui in components/ui
+  messages/             Interface strings per screen, in English, French and Arabic
   lib/
     store.ts            localStorage-backed store (useSyncExternalStore) + actions
     srs.ts              ts-fsrs wrapper
     stats.ts            Streaks, heatmap grid
+    rewards.ts          Daily goal and badge rules
+    i18n.ts / format.ts Interface language, messages, Intl formatting
+    image.ts            Picture shrinking for cards
+    confetti.ts         Celebration animation
     quiz.ts             Answer normalization, fuzzy matching, distractors
     languages.ts        Languages, engines, pair → model (Opus-MT / NLLB), speech voices
     speech.ts           speechSynthesis helper
@@ -140,7 +152,7 @@ src/
 ## Limitations
 
 - Data is per browser and per device. Use **Export** to back it up or move it. Clearing site data erases it.
-- `localStorage` holds about 5 MB, which is plenty for many thousands of text cards.
+- `localStorage` holds about 5 MB, which is plenty for many thousands of text cards, or a few hundred cards with pictures. If the browser refuses to save, a banner says so.
 - Available pronunciation voices depend on your OS and browser. Arabic in particular may have no voice on some systems.
 - opus-mt models are small. They handle words and short sentences well but are not as fluent as large cloud translators, so you can edit translations before saving.
 - NLLB needs about 900 MB of download and cache space and a fair amount of memory. It works best in a desktop browser.

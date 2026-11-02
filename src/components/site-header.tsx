@@ -3,65 +3,91 @@
 import { Flame, TriangleAlert } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { GoalRing } from "@/components/goal-ring";
+import { LanguageMenu } from "@/components/language-menu";
 import { ThemeMenu } from "@/components/theme-menu";
 import { Badge } from "@/components/ui/badge";
-import { dueToday, useHydrated, useSaveError, useStore } from "@/lib/store";
+import { useFormat } from "@/lib/format";
+import { useT } from "@/lib/i18n";
+import { reviewsOn } from "@/lib/rewards";
 import { studyStreak } from "@/lib/stats";
+import { dueToday, useHydrated, useSaveError, useStore, useToday } from "@/lib/store";
 import { cn } from "@/lib/utils";
+import { common } from "@/messages/common";
+import { rewards } from "@/messages/rewards";
 
 const LINKS = [
-  { href: "/", label: "Translate" },
-  { href: "/decks", label: "Decks" },
-  { href: "/study", label: "Study" },
-  { href: "/stats", label: "Stats" },
-];
+  { href: "/", label: "navTranslate" },
+  { href: "/decks", label: "navDecks" },
+  { href: "/study", label: "navStudy" },
+  { href: "/stats", label: "navStats" },
+] as const;
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const { cards, reviews } = useStore();
+  const data = useStore();
   const hydrated = useHydrated();
   const saveError = useSaveError();
-  const due = dueToday(cards).length;
-  const streak = studyStreak(reviews.map((r) => r.day));
+  const t = useT(common);
+  const tr = useT(rewards);
+  const fmt = useFormat();
+  const today = useToday();
+  const due = dueToday(data.cards).length;
+  const streak = hydrated ? studyStreak(data.reviews.map((r) => r.day)) : 0;
+  const done = hydrated ? reviewsOn(data, today) : 0;
+  const goal = data.settings.dailyGoal;
 
   return (
     <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
-      <div className="mx-auto flex h-14 w-full max-w-5xl items-center gap-4 px-4 sm:px-6">
-        <Link href="/" className="font-display text-xl font-semibold tracking-tight">
+      <div className="mx-auto flex h-14 w-full max-w-5xl items-center gap-3 px-4 sm:gap-4 sm:px-6">
+        {/* The brand name stays in Latin letters in every language. */}
+        <Link href="/" dir="ltr" className="font-display text-xl font-semibold tracking-tight">
           Lingua<span className="text-primary">Cards</span>
         </Link>
-        <nav className="flex flex-1 items-center gap-1 overflow-x-auto">
+        <nav aria-label={t("mainNav")} className="flex flex-1 items-center gap-1 overflow-x-auto">
           {LINKS.map((l) => {
             const active = l.href === "/" ? pathname === "/" : pathname.startsWith(l.href);
             return (
               <Link
                 key={l.href}
                 href={l.href}
+                aria-current={active ? "page" : undefined}
                 className={cn(
-                  "flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground",
+                  "flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-sm whitespace-nowrap text-muted-foreground transition-colors hover:text-foreground",
                   active && "bg-muted text-foreground",
                 )}
               >
-                {l.label}
-                {l.href === "/study" && hydrated && due > 0 && <Badge className="h-5 px-1.5">{due}</Badge>}
+                {t(l.label)}
+                {l.href === "/study" && hydrated && due > 0 && <Badge className="h-5 px-1.5">{fmt.number(due)}</Badge>}
               </Link>
             );
           })}
         </nav>
-        <span
-          className="flex items-center gap-1 text-sm font-medium tabular-nums"
-          title="Study streak: days in a row with at least one review"
+        <Link
+          href="/stats#goal"
+          className="flex items-center gap-1.5 rounded-md px-1 py-1 text-sm font-medium tabular-nums hover:bg-muted"
+          title={tr("goalRing", { done, count: goal })}
+          aria-label={tr("goalRing", { done, count: goal })}
         >
-          <Flame className={cn("size-4", streak > 0 ? "text-orange-500" : "text-muted-foreground")} />
-          {hydrated ? streak : 0}
+          <GoalRing done={done} goal={goal} />
+          <span className="hidden sm:inline">
+            {fmt.number(Math.min(done, goal))}/{fmt.number(goal)}
+          </span>
+        </Link>
+        <span className="flex items-center gap-1 text-sm font-medium tabular-nums" title={t("streakTitle")}>
+          <Flame className={cn("size-4", streak > 0 ? "text-orange-500" : "text-muted-foreground")} aria-hidden />
+          <span aria-hidden>{fmt.number(streak)}</span>
+          <span className="sr-only">{t("streakLabel", { count: streak })}</span>
         </span>
-        <ThemeMenu />
+        <div className="flex items-center">
+          <LanguageMenu />
+          <ThemeMenu />
+        </div>
       </div>
       {saveError && (
         <div role="alert" className="border-t border-destructive/30 bg-destructive/10 px-4 py-2 text-center text-sm text-destructive">
-          <TriangleAlert className="mr-1.5 inline size-4 align-text-bottom" />
-          Your browser refused to save ({saveError}). New progress will be lost when you close this tab — export a
-          backup from the Decks page.
+          <TriangleAlert className="me-1.5 inline size-4 align-text-bottom" />
+          {t("saveError", { error: saveError })}
         </div>
       )}
     </header>
