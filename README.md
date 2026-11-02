@@ -42,24 +42,30 @@ npm run build      # static site in out/, which you can host anywhere (GitHub Pa
 
 To serve the production build locally: `npm start` (runs `npx serve out`). The export uses trailing slashes (`out/deck/index.html`), so reloading `/deck/?id=…` works on any static host.
 
-## Deploying to Render
+## Deploying to Vercel
 
-The site is fully static, so it runs as a free [Render static site](https://render.com/docs/static-sites). `render.yaml` in the repo root is a Render Blueprint that sets everything up:
+The site is fully static (`output: "export"`), and Vercel serves it from its CDN with no server functions. `vercel.json` sets:
 
-- Build: `npm ci --ignore-scripts && npm run build`. The skipped install scripts only download native Node binaries, which the in-browser models don't use.
-- Publish directory: `out`.
-- Node version: from `.node-version` (24).
-- Headers: long-lived caching for the hashed files in `/_next/static/`, plus `nosniff` and a referrer policy.
-- Auto-deploy: every push to the connected branch.
+- Install: `npm ci --ignore-scripts`. The skipped install scripts only download native Node binaries (for example `onnxruntime-node`), which the in-browser models don't use.
+- Build: `npm run build`, with the Next.js framework preset.
+- Headers: `nosniff` and a referrer policy. Vercel already caches the hashed files in `/_next/static/` for a long time.
+- Node version: 24, from `engines` in `package.json`.
 
-To deploy:
+To deploy from Git:
 
 1. Push this repository to GitHub, GitLab or Bitbucket.
-2. In the Render Dashboard, choose **New → Blueprint**, pick the repository, and apply. Render creates the `linguacards` static site and gives it an `onrender.com` URL.
+2. On [vercel.com/new](https://vercel.com/new), import the repository and click **Deploy**. The settings come from `vercel.json`, so nothing needs changing.
 
-To set it up by hand instead, choose **New → Static Site** with the same build command and `out` as the publish directory.
+Every push to `main` then goes to production, and other branches get preview URLs.
 
-Data stays in each visitor's browser (`localStorage`), so each domain has its own data. Moving from `localhost` to the Render URL, or later to a custom domain, starts empty. Use **Export** and **Import** on the Decks page to carry data over.
+To deploy from your machine instead:
+
+```bash
+npx vercel        # preview deployment (asks you to log in and link the project the first time)
+npx vercel --prod # production
+```
+
+Data stays in each visitor's browser (`localStorage`), so each domain has its own data. Moving from `localhost` to the Vercel URL, or later to a custom domain, starts empty. Use **Export** and **Import** on the Decks page to carry data over.
 
 ## Features
 
