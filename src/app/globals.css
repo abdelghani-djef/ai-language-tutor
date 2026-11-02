@@ -201,6 +201,29 @@ html:lang(ar) {
   background-size: 22px 22px;
 }
 
+/* Home page: the spaced-review curve draws itself once, then its review dots appear. */
+@media (prefers-reduced-motion: no-preference) {
+  .curve-draw {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: curve-draw 2s ease-out 0.3s forwards;
+  }
+  .curve-dot {
+    opacity: 0;
+    animation: curve-dot 0.3s ease-out forwards;
+  }
+}
+@keyframes curve-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes curve-dot {
+  to {
+    opacity: 1;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

@@ -247,7 +247,7 @@ function DeckPage() {
         <p className="text-muted-foreground">
           {t.rich("empty", {
             link: (
-              <Link href="/" className="underline">
+              <Link href="/add" className="underline">
                 {t("emptyLink")}
               </Link>
             ),

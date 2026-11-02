@@ -186,7 +186,7 @@ function Session({
               <RotateCw /> {t("checkAgain")}
             </Button>
           )}
-          <Link href="/" className={buttonVariants({ variant: "outline" })}>
+          <Link href="/add" className={buttonVariants({ variant: "outline" })}>
             {t("translate")}
           </Link>
           {deck && (

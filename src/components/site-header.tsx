@@ -17,7 +17,7 @@ import { common } from "@/messages/common";
 import { rewards } from "@/messages/rewards";
 
 const LINKS = [
-  { href: "/", label: "navTranslate" },
+  { href: "/add", label: "navTranslate" },
   { href: "/decks", label: "navDecks" },
   { href: "/study", label: "navStudy" },
   { href: "/stats", label: "navStats" },
@@ -47,7 +47,7 @@ export function SiteHeader() {
         </Link>
         <nav aria-label={t("mainNav")} className="order-last flex basis-full items-center gap-1 overflow-x-auto sm:order-none sm:flex-1 sm:basis-auto">
           {LINKS.map((l) => {
-            const active = l.href === "/" ? pathname === "/" : pathname.startsWith(l.href);
+            const active = pathname.startsWith(l.href);
             return (
               <Link
                 key={l.href}

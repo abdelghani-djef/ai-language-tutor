@@ -1,0 +1,208 @@
+import { defineMessages } from "@/lib/i18n";
+
+// The home page: the learning method and the research it comes from.
+export const home = defineMessages({
+  en: {
+    title: "Learn English the way memory works",
+    intro:
+      "Our method comes from a review of {count} research papers on how people learn languages. You recall words instead of rereading them, review each one just before you would forget it, and practise a little every day.",
+    start: "Start learning",
+    readStudy: "Read the research",
+    chartTitle:
+      "Illustration: without review, memory of a new word fades within days. With four spaced reviews it stays high, and fades more slowly after each one.",
+    withReview: "With spaced reviews",
+    withoutReview: "Without review",
+    review: "Review",
+    tickToday: "Today",
+    tickWeek: "1 week",
+    tickTwoWeeks: "2 weeks",
+    tickMonth: "1 month",
+    chartNote: "An illustration of the spacing effect, not measured data. Sources: {sources}.",
+    methodTitle: "The method, in seven principles",
+    methodIntro:
+      "Each principle is a result that holds across many studies, most of them meta-analyses. The links open the original papers.",
+    inDevelopment: "In development",
+    sources: "Sources",
+    p1Name: "Recall, don’t reread",
+    p1Text: "You try to remember the answer before you see it, and then you see exactly what to fix.",
+    p1Evidence: "Recalling beats restudying across 61 studies (g = 0.50), and more so with feedback (g = 0.73).",
+    p2Name: "Space it out",
+    p2Text: "Each word comes back just before you are likely to forget it, over days and weeks instead of all at once.",
+    p2Evidence: "Spacing has a medium-to-large effect on second-language learning, and longer gaps win on later tests.",
+    p3Name: "Read and listen a lot",
+    p3Text: "Every day you read, listen to and watch stories at your level, with English captions, and keep the words you want.",
+    p3Evidence:
+      "Extensive reading improves reading, and captions help word learning (g = 0.56). Input alone teaches only part of the new words, so it is paired with review.",
+    p4Name: "Common words first",
+    p4Text: "You learn the most useful English words first, each with a picture, a translation and audio.",
+    p4Evidence:
+      "Understanding a text takes knowing 95–98% of its words, and studying words on purpose, with pictures and translations, speeds this up.",
+    p5Name: "Speak and get feedback",
+    p5Text: "You talk and write with a tutor that asks questions, helps you correct yourself and explains patterns in a sentence or two.",
+    p5Evidence: "Corrective feedback has lasting effects, prompts to self-correct work well, and two-way interaction helps by chat and by voice.",
+    p6Name: "Train your ear",
+    p6Text: "You hear tricky sounds from many different voices, so you understand people and they understand you, accent and all.",
+    p6Evidence:
+      "Training with many voices carries over to new speakers (g = 0.72) and lasts (g = 1.09). A strong accent does not by itself make speech harder to understand.",
+    p7Name: "Little and often",
+    p7Text: "A few relaxed minutes every day, tied to a routine you already have. A missed day never wipes out your progress.",
+    p7Evidence:
+      "Habits form through repetition in a fixed context (18 to 254 days), if-then plans help people follow through (d = 0.65), and lower anxiety goes with higher achievement.",
+    mythsTitle: "What the research doesn’t support",
+    myth1Name: "“Find your learning style.”",
+    myth1Text: "Matching lessons to visual or auditory “styles” has no good evidence behind it.",
+    myth2Name: "“It’s too late after childhood.”",
+    myth2Text: "Ability declines gradually with age rather than stopping, and how much good input you get matters a lot.",
+    myth3Name: "“Just immerse yourself.”",
+    myth3Text: "Input matters, but focused study gives large, lasting gains that input alone does not.",
+    myth4Name: "“Streaks and points mean learning.”",
+    myth4Text: "Gamification effects are small. Rewards keep you coming back; recall and spacing make you remember.",
+    myth5Name: "“You must sound like a native.”",
+    myth5Text: "Being understood is the goal. An accent is part of who you are.",
+    kidsTitle: "For children",
+    kidsText:
+      "The same principles work for children through illustrated, narrated stories read together with a parent, which have solid support in research.",
+    limitsTitle: "What we don’t know yet",
+    limitsText:
+      "Much of this research tests memory and vocabulary with teenagers and adults, and few studies test apps or AI tutors directly. We will update the method as the evidence changes.",
+    finalTitle: "Start with a few words today",
+    finalText: "Add the words you want to learn. The app brings each one back at the right moment.",
+  },
+  fr: {
+    title: "Apprendre l’anglais comme fonctionne la mémoire",
+    intro:
+      "Notre méthode s’appuie sur une revue de {count} publications scientifiques sur l’apprentissage des langues. Vous vous rappelez les mots au lieu de les relire, vous révisez chacun juste avant de l’oublier, et vous pratiquez un peu chaque jour.",
+    start: "Commencer",
+    readStudy: "Lire l’étude",
+    chartTitle:
+      "Illustration : sans révision, le souvenir d’un nouveau mot s’efface en quelques jours. Avec quatre révisions espacées, il reste élevé et s’efface plus lentement après chacune.",
+    withReview: "Avec des révisions espacées",
+    withoutReview: "Sans révision",
+    review: "Révision",
+    tickToday: "Aujourd’hui",
+    tickWeek: "1 semaine",
+    tickTwoWeeks: "2 semaines",
+    tickMonth: "1 mois",
+    chartNote: "Une illustration de l’effet d’espacement, pas des données mesurées. Sources : {sources}.",
+    methodTitle: "La méthode en sept principes",
+    methodIntro:
+      "Chaque principe est un résultat confirmé par de nombreuses études, pour la plupart des méta-analyses. Les liens ouvrent les articles d’origine.",
+    inDevelopment: "En développement",
+    sources: "Sources",
+    p1Name: "Se rappeler, pas relire",
+    p1Text: "Vous essayez de retrouver la réponse avant de la voir, puis vous voyez exactement quoi corriger.",
+    p1Evidence:
+      "Se rappeler est plus efficace que relire sur 61 études (g = 0,50), et encore plus avec une correction (g = 0,73).",
+    p2Name: "Espacer les révisions",
+    p2Text: "Chaque mot revient juste avant que vous risquiez de l’oublier, sur des jours et des semaines plutôt que d’un coup.",
+    p2Evidence:
+      "L’espacement a un effet moyen à fort sur l’apprentissage d’une langue seconde, et les écarts plus longs l’emportent aux tests ultérieurs.",
+    p3Name: "Lire et écouter beaucoup",
+    p3Text:
+      "Chaque jour, vous lisez, écoutez et regardez des histoires à votre niveau, avec sous-titres en anglais, et vous gardez les mots qui vous intéressent.",
+    p3Evidence:
+      "La lecture extensive améliore la lecture, et les sous-titres aident à apprendre des mots (g = 0,56). L’exposition seule n’enseigne qu’une partie des mots nouveaux : elle va donc avec la révision.",
+    p4Name: "Les mots courants d’abord",
+    p4Text: "Vous apprenez d’abord les mots anglais les plus utiles, chacun avec une image, une traduction et l’audio.",
+    p4Evidence:
+      "Comprendre un texte demande d’en connaître 95 à 98 % des mots, et étudier les mots volontairement, avec images et traductions, accélère l’apprentissage.",
+    p5Name: "Parler et être corrigé",
+    p5Text:
+      "Vous parlez et écrivez avec un tuteur qui vous pose des questions, vous aide à vous corriger vous-même et explique les règles en une phrase ou deux.",
+    p5Evidence:
+      "La correction a des effets durables, inviter à se corriger soi-même fonctionne bien, et l’échange aide à l’écrit comme à l’oral.",
+    p6Name: "Entraîner l’oreille",
+    p6Text:
+      "Vous entendez les sons difficiles prononcés par de nombreuses voix, pour comprendre les gens et être compris, avec votre accent.",
+    p6Evidence:
+      "S’entraîner avec beaucoup de voix se transfère à de nouveaux locuteurs (g = 0,72) et dure (g = 1,09). Un accent marqué ne rend pas à lui seul la parole plus difficile à comprendre.",
+    p7Name: "Peu mais souvent",
+    p7Text:
+      "Quelques minutes détendues chaque jour, liées à une habitude que vous avez déjà. Un jour manqué n’efface jamais vos progrès.",
+    p7Evidence:
+      "Une habitude se forme en répétant dans le même contexte (18 à 254 jours), les plans « si… alors » aident à s’y tenir (d = 0,65), et moins d’anxiété va avec de meilleurs résultats.",
+    mythsTitle: "Ce que la recherche ne confirme pas",
+    myth1Name: "« Trouvez votre style d’apprentissage. »",
+    myth1Text: "Adapter les leçons à un « style » visuel ou auditif ne repose sur aucune preuve solide.",
+    myth2Name: "« Après l’enfance, c’est trop tard. »",
+    myth2Text: "La capacité diminue progressivement avec l’âge sans s’arrêter, et la quantité d’exposition de qualité compte beaucoup.",
+    myth3Name: "« Il suffit de s’immerger. »",
+    myth3Text: "L’exposition compte, mais l’étude ciblée apporte des progrès importants et durables que l’exposition seule n’apporte pas.",
+    myth4Name: "« Séries et points = apprentissage. »",
+    myth4Text:
+      "Les effets de la ludification sont faibles. Les récompenses vous font revenir ; le rappel et l’espacement vous font retenir.",
+    myth5Name: "« Il faut parler comme un natif. »",
+    myth5Text: "Le but est d’être compris. Un accent fait partie de qui vous êtes.",
+    kidsTitle: "Pour les enfants",
+    kidsText:
+      "Les mêmes principes marchent pour les enfants grâce à des histoires illustrées et racontées, lues avec un parent, ce que la recherche soutient solidement.",
+    limitsTitle: "Ce que l’on ne sait pas encore",
+    limitsText:
+      "Une grande partie de ces recherches porte sur la mémoire et le vocabulaire chez des adolescents et des adultes, et peu d’études testent directement des applications ou des tuteurs IA. Nous ferons évoluer la méthode avec les données.",
+    finalTitle: "Commencez par quelques mots aujourd’hui",
+    finalText: "Ajoutez les mots que vous voulez apprendre. L’application ramène chacun au bon moment.",
+  },
+  ar: {
+    title: "تعلّم الإنجليزية بالطريقة التي تعمل بها الذاكرة",
+    intro:
+      "تستند طريقتنا إلى مراجعة {count} بحثًا علميًا عن كيفية تعلّم الناس للغات. تستحضر الكلمات بدل إعادة قراءتها، وتراجع كل كلمة قبل أن تنساها بقليل، وتتدرّب قليلًا كل يوم.",
+    start: "ابدأ التعلّم",
+    readStudy: "اقرأ الدراسة",
+    chartTitle:
+      "رسم توضيحي: بلا مراجعة تتلاشى ذكرى الكلمة الجديدة خلال أيام. ومع أربع مراجعات متباعدة تبقى مرتفعة، ويصبح تلاشيها أبطأ بعد كل مراجعة.",
+    withReview: "مع مراجعات متباعدة",
+    withoutReview: "بلا مراجعة",
+    review: "مراجعة",
+    tickToday: "اليوم",
+    tickWeek: "أسبوع",
+    tickTwoWeeks: "أسبوعان",
+    tickMonth: "شهر",
+    chartNote: "رسم توضيحي لأثر التباعد، وليس بيانات مقيسة. المصادر: {sources}.",
+    methodTitle: "الطريقة في سبعة مبادئ",
+    methodIntro: "كل مبدأ نتيجة تؤكدها دراسات كثيرة، معظمها تحليلات بعدية. الروابط تفتح الأبحاث الأصلية.",
+    inDevelopment: "قيد التطوير",
+    sources: "المصادر",
+    p1Name: "استحضر ولا تُعِد القراءة",
+    p1Text: "تحاول تذكّر الإجابة قبل أن تراها، ثم ترى بالضبط ما يجب تصحيحه.",
+    p1Evidence: "الاستحضار أفضل من إعادة الدراسة في 61 دراسة (g = 0.50)، ويزداد أثره مع التصحيح (g = 0.73).",
+    p2Name: "باعِد بين المراجعات",
+    p2Text: "تعود كل كلمة قبل أن تنساها بقليل، على مدى أيام وأسابيع بدل أن تُحفظ دفعة واحدة.",
+    p2Evidence: "للتباعد أثر متوسط إلى كبير في تعلّم اللغة الثانية، والفواصل الأطول تتفوّق في الاختبارات اللاحقة.",
+    p3Name: "اقرأ واستمع كثيرًا",
+    p3Text: "كل يوم تقرأ وتستمع وتشاهد قصصًا تناسب مستواك، مع ترجمة نصية بالإنجليزية، وتحتفظ بالكلمات التي تريدها.",
+    p3Evidence:
+      "القراءة الموسّعة تحسّن القراءة، والترجمة النصية تساعد على تعلّم الكلمات (g = 0.56). لكن التعرّض وحده لا يعلّم إلا جزءًا من الكلمات الجديدة، لذا يُقرن بالمراجعة.",
+    p4Name: "الكلمات الشائعة أولًا",
+    p4Text: "تتعلّم أولًا أكثر الكلمات الإنجليزية فائدة، كل كلمة مع صورة وترجمة ونطق.",
+    p4Evidence: "فهم نص يتطلب معرفة 95 إلى 98% من كلماته، ودراسة الكلمات عن قصد مع الصور والترجمة تسرّع التعلّم.",
+    p5Name: "تكلّم واحصل على تصحيح",
+    p5Text: "تتحدث وتكتب مع معلّم يطرح عليك الأسئلة، ويساعدك على تصحيح نفسك، ويشرح القواعد في جملة أو جملتين.",
+    p5Evidence: "للتصحيح أثر دائم، ودعوتك إلى تصحيح نفسك فعّالة، والتفاعل في الاتجاهين يفيد كتابةً وصوتًا.",
+    p6Name: "درّب أذنك",
+    p6Text: "تسمع الأصوات الصعبة بأصوات متحدثين كثيرين، لتفهم الناس ويفهموك، بلكنتك كما هي.",
+    p6Evidence:
+      "التدرّب مع أصوات كثيرة ينتقل إلى متحدثين جدد (g = 0.72) ويدوم (g = 1.09). واللكنة القوية لا تجعل الكلام وحدها أصعب فهمًا.",
+    p7Name: "قليل ودائم",
+    p7Text: "دقائق هادئة كل يوم، مرتبطة بعادة لديك أصلًا. ويوم فائت لا يمحو تقدّمك أبدًا.",
+    p7Evidence:
+      "تتكوّن العادة بالتكرار في السياق نفسه (من 18 إلى 254 يومًا)، وخطط «إذا… فإن» تساعد على الالتزام (d = 0.65)، وقلّة القلق تقترن بتحصيل أعلى.",
+    mythsTitle: "ما لا يدعمه البحث",
+    myth1Name: "«اعرف أسلوب تعلّمك»",
+    myth1Text: "مطابقة الدروس مع «أسلوب» بصري أو سمعي لا يقوم على دليل جيد.",
+    myth2Name: "«بعد الطفولة يفوت الأوان»",
+    myth2Text: "القدرة تتراجع تدريجيًا مع العمر ولا تتوقف، وكمية التعرّض الجيد للغة مهمة جدًا.",
+    myth3Name: "«انغمس في اللغة فقط»",
+    myth3Text: "التعرّض للغة مهم، لكن الدراسة المركّزة تحقق تقدّمًا كبيرًا ودائمًا لا يحققه التعرّض وحده.",
+    myth4Name: "«السلاسل والنقاط تعني التعلّم»",
+    myth4Text: "أثر التلعيب صغير. المكافآت تعيدك إلى التطبيق؛ أما الاستحضار والتباعد فهما ما يجعلك تتذكّر.",
+    myth5Name: "«يجب أن تتكلم كأهل اللغة»",
+    myth5Text: "الهدف أن تُفهَم. ولكنتك جزء من هويتك.",
+    kidsTitle: "للأطفال",
+    kidsText: "المبادئ نفسها تنفع الأطفال عبر قصص مصوّرة ومسموعة يقرؤونها مع أحد الوالدين، وهذا ما يدعمه البحث بقوة.",
+    limitsTitle: "ما لا نعرفه بعد",
+    limitsText:
+      "معظم هذه الأبحاث يدرس الذاكرة والمفردات لدى المراهقين والبالغين، وقليل من الدراسات يختبر التطبيقات أو المعلّمين بالذكاء الاصطناعي مباشرة. سنحدّث الطريقة كلما تغيّرت الأدلة.",
+    finalTitle: "ابدأ ببضع كلمات اليوم",
+    finalText: "أضف الكلمات التي تريد تعلّمها، وسيعيد التطبيق كل كلمة في الوقت المناسب.",
+  },
+});

@@ -1,6 +1,7 @@
 # LinguaCards
 
-Language-learning flashcards that run entirely in your browser:
+Language-learning flashcards that run entirely in your browser, following a learning method based on research. The evidence review behind it is in [`docs/research/learning-english.md`](docs/research/learning-english.md): 74 sources, many of them meta-analyses, on retrieval practice, spacing, input, vocabulary, feedback, pronunciation, habits and children.
+
 
 1. **Add words**: type a word, get its translation on-device with Transformers.js, and press Enter to add it as a flashcard.
 2. **Study**: flip the card and rate it **Again / Hard / Good / Easy**. The FSRS spaced-repetition algorithm decides when you see it next.
@@ -68,7 +69,8 @@ Data stays in each visitor's browser (`localStorage`), so each domain has its ow
 
 ## Features
 
-- **Add words** (`/`): the input looks like the flashcard it becomes, with the word on the front and the translation on the back. Pick the two languages (or swap them), type a word and press Enter to translate. Edit the translation or type your own, then press Enter again to add the card. The translator is chosen for you: the small Opus-MT model when the pair has one, otherwise NLLB-200, which is downloaded only after you click **Download and translate**. The first card for a language pair starts a deck (for example "My French words"). Cards typed after a swap go into the same deck, stored the deck's way round. **Recently added** lists the latest cards, each with a pencil to edit its details, and a link to study the deck.
+- **Home** (`/`): explains the method in seven principles, each linked to its sources, with a forgetting-curve illustration of spaced review, the myths the research doesn't support, and its limits. Principles the app doesn't implement yet are marked "In development".
+- **Add words** (`/add`): the input looks like the flashcard it becomes, with the word on the front and the translation on the back. Pick the two languages (or swap them), type a word and press Enter to translate. Edit the translation or type your own, then press Enter again to add the card. The translator is chosen for you: the small Opus-MT model when the pair has one, otherwise NLLB-200, which is downloaded only after you click **Download and translate**. The first card for a language pair starts a deck (for example "My French words"). Cards typed after a swap go into the same deck, stored the deck's way round. **Recently added** lists the latest cards, each with a pencil to edit its details, and a link to study the deck.
 - **Decks** (`/decks`): create, rename and delete decks. Each deck shows its total, due and learned counts. **Export/Import** downloads or restores a JSON backup, which matters because your data lives only in this browser. Import checks the file first, shows what it contains and asks before replacing your data, with an **Export current** button right there.
 - **Deck** (`/deck?id=…`): add cards by hand, edit or delete cards (with **Undo**), and see each card's FSRS state and next due time. Deleting cards or decks keeps their review log, so past study days still count toward your streak and heatmap. Search the deck's cards, or filter them by tag and then study or quiz only that tag.
 - **Richer cards**: the card editor (**More details…**, or the pencil on a card) adds an **example sentence** (with a speaker button), **notes**, **tags** and a **picture**. You can pick a picture file or paste one. Pictures are shrunk to 320 px WebP (or JPEG) of about 10–30 KB, because they are stored in `localStorage` with everything else. The example, notes and picture show on the answer side while you study.
@@ -151,7 +153,8 @@ FSRS's default parameters were fitted on hundreds of millions of real Anki revie
 ```
 src/
   app/
-    page.tsx            Add words (translate a word, add it as a card)
+    page.tsx            Home: the research-based method
+    add/page.tsx        Add words (translate a word, add it as a card)
     decks/page.tsx      Deck list, export/import
     deck/page.tsx       One deck: add/edit/delete cards
     study/page.tsx      Flip-and-rate review session

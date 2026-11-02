@@ -1,470 +1,221 @@
 "use client";
 
-import { ArrowLeftRight, Download, Languages, Loader2, Pencil, Plus } from "lucide-react";
 import Link from "next/link";
-import { useRef, useState, type FormEvent, type KeyboardEvent, type ReactNode } from "react";
-import { toast } from "sonner";
-import { CardEditor } from "@/components/card-editor";
-import { NewDeckDialog } from "@/components/new-deck-dialog";
-import { PairSelect } from "@/components/pair-select";
-import { SpeakButton } from "@/components/speak-button";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useFormat } from "@/lib/format";
-import { useLocale, useT } from "@/lib/i18n";
-import { getPair, LANGUAGES, modelFor, pairId, type ModelChoice } from "@/lib/languages";
-import {
-  addCard,
-  createDeck,
-  saveFailed,
-  useHydrated,
-  usePref,
-  useStore,
-  type Deck,
-  type Flashcard,
-} from "@/lib/store";
-import { useTranslator } from "@/lib/useTranslator";
-import { cn } from "@/lib/utils";
-import { cards as cardMessages } from "@/messages/cards";
-import { common } from "@/messages/common";
-import { translate as messages } from "@/messages/translate";
+import { ForgettingCurve } from "@/components/forgetting-curve";
+import { buttonVariants } from "@/components/ui/button";
+import { useT, type Translate } from "@/lib/i18n";
+import { home } from "@/messages/home";
 
-// "nllb" once the user agreed to the large translator, which is only needed for
-// pairs the small per-direction models don't cover. (Kept under the old key.)
-const BIG_MODEL_KEY = "linguacards:engine";
-/** JSON list of models that have loaded at least once, so "downloads about N MB" isn't repeated. */
-const LOADED_KEY = "linguacards:loaded-models";
-/** JSON map of language pair → the deck new cards go to. */
-const DECK_KEY = "linguacards:decks";
-const NEW_DECK = "__new";
-const RECENT = 5;
+// The method and its evidence, from docs/research/learning-english.md.
+const STUDY_URL = "https://github.com/abdelghani-djef/ai-language-tutor/blob/main/docs/research/learning-english.md";
+const SOURCE_COUNT = 74;
 
-function parseJson<T>(raw: string, fallback: T): T {
-  try {
-    return JSON.parse(raw) as T;
-  } catch {
-    return fallback;
-  }
-}
-
-export default function AddWordsPage() {
-  const t = useT(messages);
-  const tc = useT(cardMessages);
-  const tcommon = useT(common);
-  const fmt = useFormat();
-  const [locale] = useLocale();
-  const hydrated = useHydrated();
-  const { decks, cards } = useStore();
-  const { translate, status, progress, error, clearError } = useTranslator();
-  const [pairPref, setPairPref] = usePref("linguacards:pair", "en-fr");
-  const [bigModelPref, setBigModelPref] = usePref(BIG_MODEL_KEY, "opus");
-  const [loadedPref, setLoadedPref] = usePref(LOADED_KEY, "[]");
-  const [deckPref, setDeckPref] = usePref(DECK_KEY, "{}");
-  const [front, setFront] = useState("");
-  const [back, setBack] = useState("");
-  // A translation from the model is replaced when the word changes; one the user typed is kept.
-  const [backFromModel, setBackFromModel] = useState(false);
-  const [live, setLive] = useState("");
-  const [adding, setAdding] = useState(false);
-  const [lastAddedId, setLastAddedId] = useState<string | null>(null);
-  const [newDeckOpen, setNewDeckOpen] = useState(false);
-  const [editing, setEditing] = useState<Flashcard | null>(null);
-  // Bumped whenever the word, the pair or a typed translation changes, so a
-  // translation that finishes afterwards is dropped instead of overwriting it.
-  const runToken = useRef(0);
-  const frontRef = useRef<HTMLInputElement>(null);
-  const downloadRef = useRef<HTMLButtonElement>(null);
-
-  const pair = getPair(pairPref);
-  const src = LANGUAGES[pair.src];
-  const tgt = LANGUAGES[pair.tgt];
-  const smallModel = modelFor(pair, "opus");
-  const bigModel = modelFor(pair, "nllb");
-  const choice = smallModel ?? (bigModelPref === "nllb" ? bigModel : null);
-  const needsConsent = !choice;
-  const busy = status === "loading" || status === "translating";
-  const loadedModels = parseJson<string[]>(loadedPref, []);
-
-  // Cards for this pair go to a deck in either direction: after a swap, the
-  // learner's words stay together (stored the deck's way round).
-  const sameWay = decks.filter((d) => d.src === pair.src && d.tgt === pair.tgt);
-  const otherWay = decks.filter((d) => d.src === pair.tgt && d.tgt === pair.src);
-  const pairDecks = [...sameWay, ...otherWay];
-  const deckChoice = parseJson<Record<string, string>>(deckPref, {});
-  const deck = pairDecks.find((d) => d.id === deckChoice[pair.id]) ?? sameWay[0] ?? otherWay[0];
-  const recent = cards
-    .filter((c) => (c.src === pair.src && c.tgt === pair.tgt) || (c.src === pair.tgt && c.tgt === pair.src))
-    .sort((a, b) => b.createdAt - a.createdAt)
-    .slice(0, RECENT);
-  // Name a new deck after the language being learned: the side that isn't the interface language.
-  const learning = pair.tgt === locale && pair.src !== locale ? pair.src : pair.tgt;
-  const defaultDeckName = t("defaultDeckName", { lang: fmt.languageNameInline(learning) });
-
-  function chooseDeck(d: Deck) {
-    setDeckPref(JSON.stringify({ ...deckChoice, [pairId(d.src, d.tgt)]: d.id, [pairId(d.tgt, d.src)]: d.id }));
-  }
-
-  function clearModelBack() {
-    if (backFromModel) setBack("");
-    setBackFromModel(false);
-  }
-
-  function changePair(id: string) {
-    runToken.current++;
-    setPairPref(id);
-    clearModelBack();
-    clearError();
-  }
-
-  function swap() {
-    changePair(pairId(pair.tgt, pair.src));
-    // With only a word typed, keep it as the word: the learner is switching which language they type in.
-    if (back.trim()) {
-      setFront(back);
-      setBack(front);
-      setBackFromModel(false);
-    }
-  }
-
-  async function run(model: ModelChoice | null = choice) {
-    const text = front.trim();
-    if (!text || busy || !model) return;
-    const token = ++runToken.current;
-    setLive(t("translating"));
-    const result = await translate(text, model);
-    if (token !== runToken.current) return;
-    if (result === null) {
-      setLive("");
-      // If the large translator failed, ask again next time instead of retrying silently.
-      if (model === bigModel) setBigModelPref("opus");
-      return;
-    }
-    // The models end single words with a full stop ("bonjour" → "Bonjour."); a card shouldn't.
-    const translation = /[.!?。！？]$/.test(text) ? result : result.replace(/[.。]$/, "");
-    setBack(translation);
-    setBackFromModel(true);
-    setLive(t("translatedLive", { text: translation }));
-    if (!loadedModels.includes(model.model)) setLoadedPref(JSON.stringify([...loadedModels, model.model]));
-  }
-
-  async function add() {
-    const f = front.trim();
-    const b = back.trim();
-    if (!f || !b || adding) return;
-    setAdding(true);
-    // Clear first so the next word can be typed while the card is saved.
-    runToken.current++;
-    setFront("");
-    setBack("");
-    setBackFromModel(false);
-    setLive("");
-    clearError();
-    try {
-      // The first card for a pair starts its own deck, so there is nothing to set up first.
-      const target = deck ?? createDeck(defaultDeckName, pair.src, pair.tgt);
-      if (!deck) chooseDeck(target);
-      const sameDirection = target.src === pair.src;
-      const card = await addCard(
-        target.id,
-        sameDirection ? f : b,
-        sameDirection ? b : f,
-        target.src,
-        target.tgt,
-      );
-      setLastAddedId(card.id);
-      if (saveFailed()) toast.error(tc("saveFailed"));
-      else toast.success(t("added", { deck: target.name }));
-    } catch {
-      setFront((v) => v || f);
-      setBack((v) => v || b);
-      toast.error(t("addFailed"));
-    } finally {
-      setAdding(false);
-      frontRef.current?.focus();
-    }
-  }
-
-  // Enter translates; once there is a translation, Enter adds the card.
-  function next() {
-    if (back.trim()) add();
-    // A 900 MB download needs a deliberate click, so Enter only points at the button.
-    else if (needsConsent) downloadRef.current?.focus();
-    else run();
-  }
-
-  function submit(e: FormEvent) {
-    e.preventDefault();
-    next();
-  }
-
-  // Handled here rather than by the browser: with two fields and no submit
-  // button (the download case), Enter would otherwise do nothing.
-  function onFieldKeyDown(e: KeyboardEvent<HTMLInputElement>) {
-    if (e.key !== "Enter" || e.nativeEvent.isComposing || e.keyCode === 229) return;
-    e.preventDefault();
-    next();
-  }
-
-  const primary = back.trim() ? (
-    // Adding doesn't need the translator, so it works even while a model is still loading.
-    <Button type="submit" size="lg" disabled={!front.trim() || adding}>
-      <Plus /> {t("addCard")}
-    </Button>
-  ) : needsConsent ? (
-    <Button
-      ref={downloadRef}
-      type="button"
-      size="lg"
-      disabled={!front.trim() || busy}
-      aria-describedby="big-download"
-      onClick={() => {
-        setBigModelPref("nllb");
-        run(bigModel);
-      }}
-    >
-      <Download /> {t("downloadAndTranslate")}
-    </Button>
-  ) : (
-    <Button type="submit" size="lg" disabled={!front.trim() || busy}>
-      {busy ? <Loader2 className="animate-spin" /> : <Languages />}
-      {busy ? t("translating") : t("translate")}
-    </Button>
-  );
-
-  const loadingModel = busy ? (choice ?? bigModel) : null;
-  const firstLoad = loadingModel ? !loadedModels.includes(loadingModel.model) : false;
-
-  return (
-    <div className="mx-auto grid max-w-2xl gap-6">
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div className="grid gap-1">
-          <h1 className="font-display text-3xl font-semibold tracking-tight">{t("title")}</h1>
-          <p className="text-muted-foreground">{t("intro", { lang: fmt.languageNameInline(pair.src) })}</p>
-        </div>
-        <div className="flex w-full items-center gap-2 sm:w-auto">
-          <PairSelect value={pair.id} onChange={changePair} className="flex-1 sm:w-80" />
-          <Button variant="outline" size="icon" onClick={swap} aria-label={t("swap")} title={t("swap")}>
-            <ArrowLeftRight />
-          </Button>
-        </div>
-      </div>
-
-      <form onSubmit={submit} className="grid gap-3">
-        {/* The input is laid out as the flashcard it becomes: the word on the front, the answer on the back. */}
-        <div className="overflow-hidden rounded-2xl border bg-card shadow-sm focus-within:ring-3 focus-within:ring-ring/40">
-          <Side label={fmt.languageName(src.code)} htmlFor="word-front" speak={front} lang={src.code}>
-            <input
-              ref={frontRef}
-              id="word-front"
-              onKeyDown={onFieldKeyDown}
-              value={front}
-              // Empty, the field follows the page, so the placeholder in the interface language reads right.
-              dir={front ? (src.rtl ? "rtl" : "auto") : undefined}
-              lang={front ? src.code : undefined}
-              autoComplete="off"
-              autoFocus
-              onChange={(e) => {
-                runToken.current++;
-                setFront(e.target.value);
-                clearModelBack();
-                clearError();
-              }}
-              placeholder={t("frontPlaceholder")}
-              className="w-full bg-transparent font-display text-2xl font-medium outline-none placeholder:text-muted-foreground sm:text-3xl"
-            />
-          </Side>
-          <div className="mx-5 border-t border-dashed" aria-hidden />
-          <Side
-            label={fmt.languageName(tgt.code)}
-            htmlFor="word-back"
-            speak={back}
-            lang={tgt.code}
-            className="bg-primary/5"
-          >
-            <input
-              id="word-back"
-              onKeyDown={onFieldKeyDown}
-              value={back}
-              dir={back ? (tgt.rtl ? "rtl" : "auto") : undefined}
-              lang={back ? tgt.code : undefined}
-              autoComplete="off"
-              onChange={(e) => {
-                // A translation the user types wins over one the model is still working on.
-                runToken.current++;
-                setBack(e.target.value);
-                setBackFromModel(false);
-              }}
-              placeholder={busy ? t("translating") : t("backPlaceholder")}
-              className="w-full bg-transparent font-display text-xl outline-none placeholder:text-muted-foreground sm:text-2xl"
-            />
-            {status === "loading" && loadingModel && (
-              <div className="mt-3 grid gap-1.5 text-sm text-muted-foreground">
-                <p>
-                  {firstLoad ? t("preparing", { size: smallModel ? 75 : 900 }) : t("loadingTranslator")}{" "}
-                  {progress !== null && <span className="tabular-nums">{fmt.percent(progress)}</span>}
-                </p>
-                <Progress value={progress === null ? null : progress * 100} aria-label={t("progressLabel")} />
-              </div>
-            )}
-            {needsConsent && !back && (
-              <p id="big-download" className="mt-3 text-sm text-muted-foreground">
-                {t("bigDownload", { src: fmt.languageNameInline(pair.src), tgt: fmt.languageNameInline(pair.tgt) })}
-              </p>
-            )}
-            {error && (
-              <p
-                role="alert"
-                className="mt-3 text-sm text-destructive"
-                title={error.code === "failed" ? error.message : undefined}
-              >
-                {t("failed")}
-              </p>
-            )}
-          </Side>
-        </div>
-        {/* Always in the page, so screen readers hear the translation they are about to save. */}
-        <p className="sr-only" role="status" aria-live="polite">
-          {live}
-        </p>
-
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-          {primary}
-          {hydrated && (
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              {pairDecks.length > 0 ? (
-                <>
-                  <span id="add-to">{t("addTo")}</span>
-                  <Select
-                    items={[
-                      ...pairDecks.map((d) => ({ value: d.id, label: d.name })),
-                      { value: NEW_DECK, label: t("newDeckOption") },
-                    ]}
-                    value={deck?.id ?? null}
-                    onValueChange={(v) => {
-                      if (v === NEW_DECK) setNewDeckOpen(true);
-                      else {
-                        const d = pairDecks.find((x) => x.id === v);
-                        if (d) chooseDeck(d);
-                      }
-                    }}
-                  >
-                    <SelectTrigger className="w-48" aria-labelledby="add-to">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {pairDecks.map((d) => (
-                        <SelectItem key={d.id} value={d.id}>
-                          {d.name}
-                        </SelectItem>
-                      ))}
-                      <SelectItem value={NEW_DECK}>{t("newDeckOption")}</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </>
-              ) : (
-                <span>{t("willCreate", { deck: defaultDeckName })}</span>
-              )}
-            </div>
-          )}
-        </div>
-        {!(needsConsent && !back) && <p className="text-xs text-muted-foreground">{t("hint")}</p>}
-      </form>
-
-      {hydrated && recent.length > 0 && (
-        <section aria-labelledby="recent-title" className="grid gap-3">
-          <div className="flex flex-wrap items-baseline justify-between gap-3">
-            <h2 id="recent-title" className="font-display text-xl font-semibold">
-              {t("recentTitle")}
-            </h2>
-            {deck && (
-              <Link href={`/study?deck=${deck.id}`} className={buttonVariants({ variant: "outline", size: "sm" })}>
-                {t("studyDeck", { deck: deck.name })}
-              </Link>
-            )}
-          </div>
-          <ul className="divide-y rounded-xl border bg-card">
-            {recent.map((c) => (
-              <li
-                key={c.id}
-                className={cn(
-                  "flex items-center gap-3 px-4 py-2.5",
-                  // The one motion on the page: the card you just added lands in the list.
-                  c.id === lastAddedId && "motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-top-2",
-                )}
-              >
-                {c.image && (
-                  // eslint-disable-next-line @next/next/no-img-element -- a local data: URL, nothing to optimize
-                  <img src={c.image} alt="" className="size-9 shrink-0 rounded-md border object-cover" />
-                )}
-                <span className="min-w-0 flex-1 truncate font-medium" dir="auto" lang={c.src}>
-                  {c.front}
-                </span>
-                <span className="flex min-w-0 flex-1 items-center gap-1 text-muted-foreground" dir="auto" lang={c.tgt}>
-                  <span className="truncate">{c.back}</span>
-                  <SpeakButton text={c.back} lang={c.tgt} label={tcommon("pronounceWord", { word: c.back })} />
-                </span>
-                <Button
-                  variant="ghost"
-                  size="icon-sm"
-                  aria-label={t("editCard", { word: c.front })}
-                  title={t("editCard", { word: c.front })}
-                  onClick={() => setEditing(c)}
-                >
-                  <Pencil />
-                </Button>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      <NewDeckDialog
-        open={newDeckOpen}
-        onOpenChange={setNewDeckOpen}
-        defaultPair={pair.id}
-        onCreated={(d) => {
-          chooseDeck(d);
-          if (d.src !== pair.src || d.tgt !== pair.tgt) changePair(pairId(d.src, d.tgt));
-        }}
-      />
-      {editing && decks.some((d) => d.id === editing.deckId) && (
-        <CardEditor
-          open
-          onOpenChange={(open) => !open && setEditing(null)}
-          deck={decks.find((d) => d.id === editing.deckId)!}
-          card={cards.find((c) => c.id === editing.id) ?? editing}
-        />
-      )}
-    </div>
-  );
-}
-
-/** One side of the card being written: its language, a pronounce button and the field. */
-function Side({
-  label,
-  htmlFor,
-  speak,
-  lang,
-  className,
-  children,
-}: {
+type HomeKey = Parameters<Translate<keyof (typeof home)["en"]>>[0];
+interface Source {
   label: string;
-  htmlFor: string;
-  speak: string;
-  lang: string;
-  className?: string;
-  children: ReactNode;
-}) {
+  url: string;
+}
+
+const src = (label: string, doi: string): Source => ({ label, url: `https://doi.org/${doi}` });
+
+// `ready` marks principles the app already follows; the rest are planned.
+const PRINCIPLES: { key: "p1" | "p2" | "p3" | "p4" | "p5" | "p6" | "p7"; ready: boolean; sources: Source[] }[] = [
+  {
+    key: "p1",
+    ready: true,
+    sources: [src("Rowland 2014", "10.1037/a0037559"), src("Yang et al. 2021", "10.1037/bul0000309")],
+  },
+  {
+    key: "p2",
+    ready: true,
+    sources: [
+      src("Kim & Webb 2022", "10.1111/lang.12479"),
+      src("Cepeda et al. 2006", "10.1037/0033-2909.132.3.354"),
+      src("Lindsey et al. 2014", "10.1177/0956797613504302"),
+    ],
+  },
+  {
+    key: "p3",
+    ready: false,
+    sources: [
+      src("Jeon & Day 2016", "10.64152/10125/66901"),
+      src("Webb et al. 2023", "10.1017/S0261444822000507"),
+      src("Kurokawa et al. 2025", "10.1111/lang.12697"),
+    ],
+  },
+  {
+    key: "p4",
+    ready: false,
+    sources: [
+      src("Nation 2006", "10.3138/cmlr.63.1.59"),
+      src("Webb et al. 2020", "10.1111/modl.12671"),
+      src("Zhang et al. 2025", "10.1016/j.edurev.2025.100681"),
+    ],
+  },
+  {
+    key: "p5",
+    ready: false,
+    sources: [
+      src("Lyster & Saito 2010", "10.1017/S0272263109990520"),
+      src("Li 2010", "10.1111/j.1467-9922.2010.00561.x"),
+      src("Ziegler 2016", "10.1017/S027226311500025X"),
+    ],
+  },
+  {
+    key: "p6",
+    ready: false,
+    sources: [
+      src("Thomson 2018", "10.1075/jslp.17038.tho"),
+      src("Zhang et al. 2021", "10.1044/2021_JSLHR-21-00181"),
+      src("Munro & Derwing 1995", "10.1111/j.1467-1770.1995.tb00963.x"),
+    ],
+  },
+  {
+    key: "p7",
+    ready: true,
+    sources: [
+      src("Lally et al. 2010", "10.1002/ejsp.674"),
+      src("Gollwitzer & Sheeran 2006", "10.1016/S0065-2601(06)38002-1"),
+      src("Teimouri et al. 2019", "10.1017/S0272263118000311"),
+    ],
+  },
+];
+
+const MYTHS: { key: "myth1" | "myth2" | "myth3" | "myth4" | "myth5"; source: Source }[] = [
+  { key: "myth1", source: src("Pashler et al. 2008", "10.1111/j.1539-6053.2009.01038.x") },
+  { key: "myth2", source: src("van der Slik et al. 2022", "10.1111/lang.12470") },
+  { key: "myth3", source: src("Norris & Ortega 2000", "10.1111/0023-8333.00136") },
+  { key: "myth4", source: src("Sailer & Homner 2020", "10.1007/s10648-019-09498-w") },
+  { key: "myth5", source: src("Munro & Derwing 1995", "10.1111/j.1467-1770.1995.tb00963.x") },
+];
+
+const CHART_SOURCES = [src("Cepeda et al. 2006", "10.1037/0033-2909.132.3.354"), src("Kim & Webb 2022", "10.1111/lang.12479")];
+const KIDS_SOURCE = src("Fitton et al. 2018", "10.3102/0034654318790909");
+
+export default function HomePage() {
+  const t = useT(home);
+
   return (
-    <div className={cn("grid gap-2 px-5 pt-4 pb-5", className)}>
-      <div className="flex items-center justify-between">
-        <label htmlFor={htmlFor} className="text-sm text-muted-foreground">
-          {label}
-        </label>
-        <SpeakButton text={speak} lang={lang} />
-      </div>
-      {children}
+    <div className="grid gap-20 pb-8 sm:gap-24">
+      <section className="grid items-center gap-10 pt-4 md:grid-cols-[1fr_1.1fr] md:gap-12">
+        <div className="grid gap-6">
+          <h1 className="font-display text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
+            {t("title")}
+          </h1>
+          <p className="max-w-[46ch] text-lg text-muted-foreground">{t("intro", { count: SOURCE_COUNT })}</p>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/add" className={buttonVariants({ size: "lg" })}>
+              {t("start")}
+            </Link>
+            <a href={STUDY_URL} target="_blank" rel="noreferrer" className={buttonVariants({ size: "lg", variant: "outline" })}>
+              {t("readStudy")}
+            </a>
+          </div>
+        </div>
+        <div className="grid gap-3 rounded-3xl border bg-card p-5 shadow-sm sm:p-6">
+          <ForgettingCurve
+            labels={{
+              title: t("chartTitle"),
+              withReview: t("withReview"),
+              withoutReview: t("withoutReview"),
+              review: t("review"),
+              ticks: [t("tickToday"), t("tickWeek"), t("tickTwoWeeks"), t("tickMonth")],
+            }}
+          />
+          <p className="text-xs text-muted-foreground">
+            {t.rich("chartNote", { sources: <SourceLinks sources={CHART_SOURCES} /> })}
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="method-title" className="grid gap-8">
+        <div className="grid max-w-2xl gap-2">
+          <h2 id="method-title" className="font-display text-3xl font-semibold tracking-tight">
+            {t("methodTitle")}
+          </h2>
+          <p className="text-muted-foreground">{t("methodIntro")}</p>
+        </div>
+        <ul className="grid gap-x-12 md:grid-cols-2">
+          {PRINCIPLES.map((p) => (
+            <li key={p.key} className="grid content-start gap-2 border-t py-6">
+              <h3 className="flex flex-wrap items-baseline gap-x-3 gap-y-1 font-display text-2xl font-semibold">
+                {t(`${p.key}Name` as HomeKey)}
+                {!p.ready && (
+                  <span className="rounded-full bg-muted px-2 py-0.5 font-sans text-xs font-medium text-muted-foreground">
+                    {t("inDevelopment")}
+                  </span>
+                )}
+              </h3>
+              <p className="text-lg leading-relaxed">{t(`${p.key}Text` as HomeKey)}</p>
+              <p className="text-sm leading-relaxed text-muted-foreground">{t(`${p.key}Evidence` as HomeKey)}</p>
+              <p className="text-sm text-muted-foreground">
+                <span className="sr-only">{t("sources")}: </span>
+                <SourceLinks sources={p.sources} />
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="myths-title" className="grid gap-6 rounded-3xl bg-muted/50 p-6 sm:p-10">
+        <h2 id="myths-title" className="font-display text-3xl font-semibold tracking-tight">
+          {t("mythsTitle")}
+        </h2>
+        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {MYTHS.map((m) => (
+            <li key={m.key} className="grid content-start gap-1.5">
+              <p className="font-display text-xl font-semibold text-muted-foreground line-through decoration-primary/60 decoration-2">
+                {t(`${m.key}Name` as HomeKey)}
+              </p>
+              <p>{t(`${m.key}Text` as HomeKey)}</p>
+              <p className="text-sm text-muted-foreground">
+                <SourceLinks sources={[m.source]} />
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="grid gap-10 md:grid-cols-2">
+        <div className="grid content-start gap-2">
+          <h2 className="font-display text-2xl font-semibold">{t("kidsTitle")}</h2>
+          <p className="leading-relaxed">{t("kidsText")}</p>
+          <p className="text-sm text-muted-foreground">
+            <SourceLinks sources={[KIDS_SOURCE]} />
+          </p>
+        </div>
+        <div className="grid content-start gap-2">
+          <h2 className="font-display text-2xl font-semibold">{t("limitsTitle")}</h2>
+          <p className="leading-relaxed text-muted-foreground">{t("limitsText")}</p>
+        </div>
+      </section>
+
+      <section className="grid justify-items-start gap-4 border-t pt-12">
+        <h2 className="font-display text-3xl font-semibold tracking-tight">{t("finalTitle")}</h2>
+        <p className="max-w-[52ch] text-lg text-muted-foreground">{t("finalText")}</p>
+        <Link href="/add" className={buttonVariants({ size: "lg" })}>
+          {t("start")}
+        </Link>
+      </section>
     </div>
+  );
+}
+
+/** Author-year links to the papers. Kept left to right, as the citations are in Latin script. */
+function SourceLinks({ sources }: { sources: Source[] }) {
+  return (
+    <span className="inline-flex flex-wrap gap-x-3 gap-y-1" dir="ltr">
+      {sources.map((s) => (
+        <a
+          key={s.url}
+          href={s.url}
+          target="_blank"
+          rel="noreferrer"
+          className="underline decoration-muted-foreground/40 underline-offset-2 hover:text-foreground hover:decoration-current"
+        >
+          {s.label}
+        </a>
+      ))}
+    </span>
   );
 }
