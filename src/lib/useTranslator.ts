@@ -92,5 +92,11 @@ export function useTranslator() {
     });
   }, []);
 
-  return { translate, status, progress, error };
+  /** Hides a past error, e.g. once the word it was about has changed. */
+  const clearError = useCallback(() => {
+    setError(null);
+    setStatus((s) => (s === 'error' ? 'idle' : s));
+  }, []);
+
+  return { translate, status, progress, error, clearError };
 }

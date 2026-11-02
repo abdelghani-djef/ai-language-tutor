@@ -2,11 +2,10 @@
 
 Language-learning flashcards that run entirely in your browser:
 
-1. **Translate**: type a word or sentence and translate it on-device with Transformers.js.
-2. **Save**: keep the translation (edited if you like) as a flashcard in a deck.
-3. **Study**: flip the card and rate it **Again / Hard / Good / Easy**. The FSRS spaced-repetition algorithm decides when you see it next.
-4. **Track**: see cards learned, your study streak, recall rate, and a heatmap of your study activity.
-5. **Stay motivated**: set a daily goal and collect badges along the way.
+1. **Add words**: type a word, get its translation on-device with Transformers.js, and press Enter to add it as a flashcard.
+2. **Study**: flip the card and rate it **Again / Hard / Good / Easy**. The FSRS spaced-repetition algorithm decides when you see it next.
+3. **Track**: see cards learned, your study streak, recall rate, and a heatmap of your study activity.
+4. **Stay motivated**: set a daily goal and collect badges along the way.
 
 The interface is available in **English, French and Arabic** (right-to-left).
 
@@ -69,7 +68,7 @@ Data stays in each visitor's browser (`localStorage`), so each domain has its ow
 
 ## Features
 
-- **Translate** (`/`): pick a **From** and **To** language, use **swap** to reverse them, choose a model (**Opus-MT** or **NLLB-200**, see below), then press **Translate** or Ctrl+Enter. Long text is translated sentence by sentence, keeping line breaks. You can edit the translation before you save it. Speaker buttons read either side aloud.
+- **Add words** (`/`): the input looks like the flashcard it becomes, with the word on the front and the translation on the back. Pick the two languages (or swap them), type a word and press Enter to translate. Edit the translation or type your own, then press Enter again to add the card. The translator is chosen for you: the small Opus-MT model when the pair has one, otherwise NLLB-200, which is downloaded only after you click **Download and translate**. The first card for a language pair starts a deck (for example "My French words"). Cards typed after a swap go into the same deck, stored the deck's way round. **Recently added** lists the latest cards, each with a pencil to edit its details, and a link to study the deck.
 - **Decks** (`/decks`): create, rename and delete decks. Each deck shows its total, due and learned counts. **Export/Import** downloads or restores a JSON backup, which matters because your data lives only in this browser. Import checks the file first, shows what it contains and asks before replacing your data, with an **Export current** button right there.
 - **Deck** (`/deck?id=…`): add cards by hand, edit or delete cards (with **Undo**), and see each card's FSRS state and next due time. Deleting cards or decks keeps their review log, so past study days still count toward your streak and heatmap. Search the deck's cards, or filter them by tag and then study or quiz only that tag.
 - **Richer cards**: the card editor (**More details…**, or the pencil on a card) adds an **example sentence** (with a speaker button), **notes**, **tags** and a **picture**. You can pick a picture file or paste one. Pictures are shrunk to 320 px WebP (or JPEG) of about 10–30 KB, because they are stored in `localStorage` with everything else. The example, notes and picture show on the answer side while you study.
@@ -81,7 +80,7 @@ Data stays in each visitor's browser (`localStorage`), so each domain has its ow
 
 ## Translation models
 
-Decks can use any two of 14 languages: English, French, Spanish, German, Italian, Arabic, Portuguese, Dutch, Russian, Turkish, Hindi, Chinese, Japanese and Korean. You choose one of two engines on the Translate page, and the choice is remembered.
+Decks can use any two of 14 languages: English, French, Spanish, German, Italian, Arabic, Portuguese, Dutch, Russian, Turkish, Hindi, Chinese, Japanese and Korean. The Add words page picks the engine for you. It uses Opus-MT when there is a model for the pair, and asks once before downloading NLLB-200 for the others.
 
 ### Opus-MT (default)
 
@@ -101,7 +100,7 @@ To add an Opus-MT pair, add the language code to `OPUS_LANGS` in `src/lib/langua
 
 ### NLLB-200 (optional)
 
-[`Xenova/nllb-200-distilled-600M`](https://huggingface.co/Xenova/nllb-200-distilled-600M) is Meta's *No Language Left Behind* model. One model translates between any two of its 200 languages, so it also covers pairs Opus-MT can't, such as French → Arabic or English → Japanese. The cost is size: the 8-bit encoder and decoder are about **900 MB** together, and translation is slower. If you pick a pair Opus-MT has no model for, the page offers to switch to NLLB.
+[`Xenova/nllb-200-distilled-600M`](https://huggingface.co/Xenova/nllb-200-distilled-600M) is Meta's *No Language Left Behind* model. One model translates between any two of its 200 languages, so it also covers pairs Opus-MT can't, such as French → Arabic or English → Japanese. The cost is size: the 8-bit encoder and decoder are about **900 MB** together, and translation is slower. If you pick a pair Opus-MT has no model for, the page asks before downloading it. You can also type the translation yourself instead.
 
 The worker passes `src_lang` / `tgt_lang` as FLORES-200 codes (`eng_Latn`, `arb_Arab`, `jpn_Jpan`…), which are stored per language in `LANGUAGES`. To add a language, add an entry with its FLORES-200 code and a speech tag.
 
@@ -152,7 +151,7 @@ FSRS's default parameters were fitted on hundreds of millions of real Anki revie
 ```
 src/
   app/
-    page.tsx            Translate
+    page.tsx            Add words (translate a word, add it as a card)
     decks/page.tsx      Deck list, export/import
     deck/page.tsx       One deck: add/edit/delete cards
     study/page.tsx      Flip-and-rate review session

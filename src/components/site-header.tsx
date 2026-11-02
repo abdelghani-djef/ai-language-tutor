@@ -39,12 +39,13 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
-      <div className="mx-auto flex h-14 w-full max-w-5xl items-center gap-3 px-4 sm:gap-4 sm:px-6">
+      {/* On phones the nav gets its own row under the logo and controls, so every link fits. */}
+      <div className="mx-auto flex w-full max-w-5xl flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2 sm:h-14 sm:flex-nowrap sm:gap-4 sm:px-6 sm:py-0">
         {/* The brand name stays in Latin letters in every language. */}
         <Link href="/" dir="ltr" className="font-display text-xl font-semibold tracking-tight">
           Lingua<span className="text-primary">Cards</span>
         </Link>
-        <nav aria-label={t("mainNav")} className="flex flex-1 items-center gap-1 overflow-x-auto">
+        <nav aria-label={t("mainNav")} className="order-last flex basis-full items-center gap-1 overflow-x-auto sm:order-none sm:flex-1 sm:basis-auto">
           {LINKS.map((l) => {
             const active = l.href === "/" ? pathname === "/" : pathname.startsWith(l.href);
             return (
@@ -65,7 +66,7 @@ export function SiteHeader() {
         </nav>
         <Link
           href="/stats#goal"
-          className="flex items-center gap-1.5 rounded-md px-1 py-1 text-sm font-medium tabular-nums hover:bg-muted"
+          className="ms-auto flex items-center gap-1.5 rounded-md px-1 py-1 text-sm font-medium tabular-nums hover:bg-muted sm:ms-0"
           title={tr("goalRing", { done, count: goal })}
           aria-label={tr("goalRing", { done, count: goal })}
         >

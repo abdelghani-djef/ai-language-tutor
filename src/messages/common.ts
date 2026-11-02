@@ -3,7 +3,7 @@ import { defineMessages } from "@/lib/i18n";
 // Header, menus and small shared components.
 export const common = defineMessages({
   en: {
-    navTranslate: "Translate",
+    navTranslate: "Add words",
     navDecks: "Decks",
     navStudy: "Study",
     navStats: "Stats",
@@ -23,11 +23,12 @@ export const common = defineMessages({
     changeLanguage: "Change language",
     language: "Interface language",
     pronounce: "Pronounce",
+    pronounceWord: "Pronounce “{word}”",
     fromLanguage: "From language",
     toLanguage: "To language",
   },
   fr: {
-    navTranslate: "Traduire",
+    navTranslate: "Ajouter des mots",
     navDecks: "Paquets",
     navStudy: "Réviser",
     navStats: "Stats",
@@ -47,11 +48,12 @@ export const common = defineMessages({
     changeLanguage: "Changer de langue",
     language: "Langue de l’interface",
     pronounce: "Prononcer",
+    pronounceWord: "Prononcer « {word} »",
     fromLanguage: "Langue de départ",
     toLanguage: "Langue d’arrivée",
   },
   ar: {
-    navTranslate: "ترجمة",
+    navTranslate: "أضف كلمات",
     navDecks: "المجموعات",
     navStudy: "مراجعة",
     navStats: "الإحصاءات",
@@ -78,6 +80,7 @@ export const common = defineMessages({
     changeLanguage: "تغيير اللغة",
     language: "لغة الواجهة",
     pronounce: "نطق",
+    pronounceWord: "انطق «{word}»",
     fromLanguage: "لغة المصدر",
     toLanguage: "لغة الهدف",
   },

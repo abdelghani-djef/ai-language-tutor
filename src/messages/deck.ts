@@ -16,8 +16,8 @@ export const deck = defineMessages({
     frontPlaceholder: "{lang} (front)",
     backPlaceholder: "{lang} (back)",
     add: "Add",
-    empty: "No cards yet. Add one above or save translations from the {link} page.",
-    emptyLink: "Translate",
+    empty: "No cards yet. Add one above or on the {link} page.",
+    emptyLink: "Add words",
     deleteTitle: "Delete “{name}”?",
     deleteDescription: {
       one: "This removes the deck and its {count} card. Days you studied still count toward your streak and heatmap. Export a backup first if you might want the card back.",
@@ -51,8 +51,8 @@ export const deck = defineMessages({
     frontPlaceholder: "{lang} (recto)",
     backPlaceholder: "{lang} (verso)",
     add: "Ajouter",
-    empty: "Aucune carte pour l’instant. Ajoutez-en une ci-dessus ou enregistrez des traductions depuis la page {link}.",
-    emptyLink: "Traduire",
+    empty: "Aucune carte pour l’instant. Ajoutez-en une ci-dessus ou sur la page « {link} ».",
+    emptyLink: "Ajouter des mots",
     deleteTitle: "Supprimer « {name} » ?",
     // French uses "one" for 0 too, so the count stays in brackets rather than "sa carte".
     deleteDescription: {
@@ -94,8 +94,8 @@ export const deck = defineMessages({
     frontPlaceholder: "{lang} (الوجه)",
     backPlaceholder: "{lang} (الظهر)",
     add: "إضافة",
-    empty: "لا توجد بطاقات بعد. أضف بطاقة في الأعلى أو احفظ ترجمات من صفحة {link}.",
-    emptyLink: "الترجمة",
+    empty: "لا توجد بطاقات بعد. أضف بطاقة في الأعلى أو من صفحة «{link}».",
+    emptyLink: "أضف كلمات",
     deleteTitle: "هل تريد حذف «{name}»؟",
     deleteDescription: {
       zero: "ستُحذف هذه المجموعة الفارغة. ستبقى الأيام التي راجعت فيها محسوبة في سلسلتك وخريطة نشاطك.",

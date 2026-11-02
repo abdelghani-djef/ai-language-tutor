@@ -7,7 +7,18 @@ import { speak, speechSupported } from "@/lib/speech";
 import { useHydrated } from "@/lib/store";
 import { common } from "@/messages/common";
 
-export function SpeakButton({ text, lang, className }: { text: string; lang: string; className?: string }) {
+export function SpeakButton({
+  text,
+  lang,
+  label,
+  className,
+}: {
+  text: string;
+  lang: string;
+  /** Accessible name; defaults to "Pronounce". Name the word when several buttons sit together. */
+  label?: string;
+  className?: string;
+}) {
   // speechSynthesis only exists in the browser; render nothing until hydrated.
   const hydrated = useHydrated();
   const t = useT(common);
@@ -19,8 +30,8 @@ export function SpeakButton({ text, lang, className }: { text: string; lang: str
       variant="ghost"
       size="icon-sm"
       className={className}
-      aria-label={t("pronounce")}
-      title={t("pronounce")}
+      aria-label={label ?? t("pronounce")}
+      title={label ?? t("pronounce")}
       disabled={!text}
       onClick={(e) => {
         e.stopPropagation();

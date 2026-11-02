@@ -49,12 +49,6 @@ export function pairId(src: string, tgt: string): string {
 
 export type Engine = 'opus' | 'nllb';
 
-// Model names stay untranslated; their descriptions live in src/messages/translate.ts.
-export const ENGINES: Record<Engine, { name: string }> = {
-  opus: { name: 'Opus-MT' },
-  nllb: { name: 'NLLB-200' },
-};
-
 // opus-mt has one MarianMT model per direction. Only these are wired up.
 const OPUS_LANGS = ['fr', 'es', 'de', 'it', 'ar'];
 

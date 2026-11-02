@@ -19,6 +19,8 @@ export function formatter(locale: Locale) {
   };
 
   return {
+    /** The language name as written inside a sentence ("français", not "Français"). */
+    languageNameInline: (code: string) => names.of(code) ?? LANGUAGES[code]?.name ?? code,
     locale,
     intl,
     dir,
