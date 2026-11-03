@@ -27,6 +27,7 @@ The strongest evidence says that people remember language best when they **try t
 
 **What this means for the app.**
 - Every card makes the learner produce the answer (type, say, or recall before reveal). No "show and flip" as the default.
+- Recalling silently counts: in three experiments, retrieving the answer in your head ("covert" retrieval) helped later recall as much as saying or typing it [75]. So "think of the answer, then tap to check" is valid retrieval practice, as long as the learner tries before revealing. *(Added 2026-11-03, when the app dropped typed answers to keep practice effortless.)*
 - Prefer cued recall over multiple choice for partly known items; use recognition only as an easier fallback.
 - Always show corrective feedback immediately, saying what was wrong and how to fix it, not just a score.
 - Keep tasks effortful but winnable; when a learner's success rate on an item falls low, drop to an easier format.
@@ -268,3 +269,4 @@ The LinguaCards method has seven principles. Each one is drawn from the evidence
 72. Muñoz, C. (2008). Symmetries and asymmetries of age effects in naturalistic and instructed L2 learning. *Applied Linguistics, 29*(4), 578–596. https://doi.org/10.1093/applin/amm056
 73. Sisk, V. F., Burgoyne, A. P., Sun, J., Butler, J. L., & Macnamara, B. N. (2018). To what extent and under which circumstances are growth mind-sets important to academic achievement? Two meta-analyses. *Psychological Science, 29*(4), 549–571. https://doi.org/10.1177/0956797617739704
 74. Macnamara, B. N., & Burgoyne, A. P. (2023). Do growth mindset interventions impact students' academic achievement? A systematic review and meta-analysis with recommendations for best practices. *Psychological Bulletin, 149*(3–4), 133–173. https://doi.org/10.1037/bul0000352
+75. Smith, M. A., Roediger, H. L., & Karpicke, J. D. (2013). Covert retrieval practice benefits retention as much as overt retrieval practice. *Journal of Experimental Psychology: Learning, Memory, and Cognition, 39*(6), 1712–1725. https://doi.org/10.1037/a0033569

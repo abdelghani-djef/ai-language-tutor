@@ -8,7 +8,7 @@ import { home } from "@/messages/home";
 
 // The method and its evidence, from docs/research/learning-english.md.
 const STUDY_URL = "https://github.com/abdelghani-djef/ai-language-tutor/blob/main/docs/research/learning-english.md";
-const SOURCE_COUNT = 74;
+const SOURCE_COUNT = 75;
 
 type HomeKey = Parameters<Translate<keyof (typeof home)["en"]>>[0];
 interface Source {
@@ -23,7 +23,11 @@ const PRINCIPLES: { key: "p1" | "p2" | "p3" | "p4" | "p5" | "p6" | "p7"; ready: 
   {
     key: "p1",
     ready: true,
-    sources: [src("Rowland 2014", "10.1037/a0037559"), src("Yang et al. 2021", "10.1037/bul0000309")],
+    sources: [
+      src("Rowland 2014", "10.1037/a0037559"),
+      src("Yang et al. 2021", "10.1037/bul0000309"),
+      src("Smith et al. 2013", "10.1037/a0033569"),
+    ],
   },
   {
     key: "p2",
