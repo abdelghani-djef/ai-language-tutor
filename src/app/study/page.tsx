@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle2, Clock, RotateCw, Sparkles } from "lucide-react";
+import { BookOpen, CheckCircle2, Clock, RotateCw, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
@@ -33,6 +33,9 @@ import {
   type StudyItem,
 } from "@/lib/store";
 import { cn } from "@/lib/utils";
+import { STARTER_STORIES } from "@/data/starter-stories";
+import { rankStories, todaysCards } from "@/lib/story";
+import { story } from "@/messages/story";
 import { study } from "@/messages/study";
 
 const GRADE_STYLE: Record<number, string> = {
@@ -119,6 +122,7 @@ function Session({
   const today = useToday();
   const fmt = useFormat();
   const t = useT(study);
+  const ts = useT(story);
 
   // Fix the session's items and their order when it starts: due reviews, with
   // the new words today's limit allows mixed in (one after every two reviews),
@@ -252,6 +256,11 @@ function Session({
   });
 
   const total = reviewed + remaining.length;
+  // A story to read at the end of the lesson, if one uses the words just studied.
+  const storyReady =
+    !current &&
+    (rankStories(STARTER_STORIES, new Set(cards.map((c) => c.pack).filter((p): p is string => !!p)), todaysCards(cards, reviews, today, deckId))[0]
+      ?.used ?? 0) > 0;
   const title = `${deck ? deck.name : t("allDecks")}${tag ? ` · ${fmt.tag(tag)}` : ""}`;
 
   if (!current) {
@@ -279,6 +288,12 @@ function Session({
                   : t("nothingText")}
             </p>
           </>
+        )}
+        {!nextLater && reviewed > 0 && storyReady && (
+          // The end of a lesson: read the words just practised in a story (more input, same words).
+          <Link href={deck ? `/story?deck=${deck.id}` : "/story"} className={buttonVariants({ size: "lg" })}>
+            <BookOpen /> {ts("readStory")}
+          </Link>
         )}
         <div className="flex flex-wrap justify-center gap-2">
           {!nextLater && (

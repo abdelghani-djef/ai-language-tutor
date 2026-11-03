@@ -75,6 +75,7 @@ Data stays in each visitor's browser (`localStorage`), so each domain has its ow
 - **Deck** (`/deck?id=…`): add cards by hand, edit or delete cards (with **Undo**), and see each card's FSRS state and next due time. Deleting cards or decks keeps their review log, so past study days still count toward your streak and heatmap. Search the deck's cards, or filter them by tag and then study or quiz only that tag.
 - **Richer cards**: the card editor (**More details…**, or the pencil on a card) adds an **example sentence** (with a speaker button), **notes**, **tags** and a **picture**. You can pick a picture file or paste one. Pictures are shrunk to 320 px WebP (or JPEG) of about 10–30 KB, because they are stored in `localStorage` with everything else. The example, notes and picture show on the answer side while you study.
 - **Starter words** (`/words`): about 500 of the most frequent English words in 20 themed packs (greetings, people, numbers, food, core verbs…). Each word has a French or Arabic translation, an emoji picture where one fits, and an English example. Adding a pack puts its words in a "Starter words (French)" or "(Arabic)" deck, in frequency order.
+- **Stories** (`/story`): 40 short reading stories, two per starter pack, with French and Arabic translations. They were written with AI and checked by a second reviewer, and each uses only words from its own pack and earlier packs (plus basic words like "the" or "is"), so you know almost every word. After a study session, **Read a story with these words** opens the story that uses the most of the words you just studied. Every word you've met is tappable and shows its meaning, picture, example and audio; words studied today stand out. **Read aloud** uses the browser's voice. An in-browser story writer was tried first (Qwen2.5-0.5B), but it was slow without WebGPU and often wrote chat replies instead of stories, so the stories are written ahead of time instead.
 - **Study** (`/study`, or `/study?deck=…` for one deck), following the research method:
   - **Recall first, no typing**: a word appears and you think of the answer, then tap **Show answer** (or Space). One tap says how it went: **Forgot**, **Almost** or **Knew it**. Recalling in your head works about as well as typing the answer (Smith, Roediger & Karpicke 2013), as long as you try before you look. For children, or anyone who prefers it, the **Pick** mode shows four answers to tap instead, graded automatically. The choice is remembered.
   - **A first look at new words**: a brand-new word is shown first (both sides, picture, example, audio) and asked a minute later. The first look isn't given to the scheduler as a rating.
@@ -168,6 +169,7 @@ src/
     stats/page.tsx      Stats + heatmap
   components/           App components (flip card, card editor, heatmap, goal ring, badges…) and shadcn/ui in components/ui
   messages/             Interface strings per screen, in English, French and Arabic
+  data/                 Starter word packs and their stories
   lib/
     store.ts            localStorage-backed store (useSyncExternalStore) + actions
     srs.ts              ts-fsrs wrapper
@@ -175,6 +177,7 @@ src/
     rewards.ts          Daily goal and badge rules
     i18n.ts / format.ts Interface language, messages, Intl formatting
     image.ts            Picture shrinking for cards
+    story.ts            Story word matching (word forms, phrases) and story choice
     confetti.ts         Celebration animation
     quiz.ts             Answer normalization, fuzzy matching, distractors
     languages.ts        Languages, engines, pair → model (Opus-MT / NLLB), speech voices

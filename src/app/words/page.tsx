@@ -164,9 +164,12 @@ export default function StarterWordsPage() {
         <h2 className="font-display text-xl font-semibold">{t("why")}</h2>
         <p className="text-muted-foreground">{t("whyText")}</p>
         {deck && (
-          <div>
-            <Link href={`/study?deck=${deck.id}`} className={buttonVariants({ className: "mt-2" })}>
+          <div className="mt-2 flex flex-wrap gap-2">
+            <Link href={`/study?deck=${deck.id}`} className={buttonVariants()}>
               {t("study")}
+            </Link>
+            <Link href="/story" className={buttonVariants({ variant: "outline" })}>
+              {t("stories")}
             </Link>
           </div>
         )}

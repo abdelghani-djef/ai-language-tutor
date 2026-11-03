@@ -15,6 +15,7 @@ export const words = defineMessages({
     addedHint: { one: "New words come in at {count} a day.", other: "New words come in at {count} a day." },
     study: "Study now",
     deckName: "Starter words ({lang})",
+    stories: "Read stories with your words",
     why: "Why these words?",
     whyText:
       "A small number of very common words make up most of what people say and read. Knowing them first lets you understand much more, much sooner.",
@@ -33,6 +34,7 @@ export const words = defineMessages({
     addedHint: { one: "Les nouveaux mots arrivent au rythme de {count} par jour.", other: "Les nouveaux mots arrivent au rythme de {count} par jour." },
     study: "Réviser maintenant",
     deckName: "Mots de base ({lang})",
+    stories: "Lire des histoires avec vos mots",
     why: "Pourquoi ces mots ?",
     whyText:
       "Un petit nombre de mots très courants représente l’essentiel de ce qu’on dit et lit. Les connaître d’abord permet de comprendre beaucoup plus, beaucoup plus vite.",
@@ -70,6 +72,7 @@ export const words = defineMessages({
     },
     study: "راجع الآن",
     deckName: "كلمات أساسية ({lang})",
+    stories: "اقرأ قصصًا بكلماتك",
     why: "لماذا هذه الكلمات؟",
     whyText: "عدد قليل من الكلمات الشائعة جدًا يشكّل معظم ما يقوله الناس ويقرؤونه. معرفتها أولًا تجعلك تفهم أكثر بكثير، وبسرعة أكبر.",
     andMore: { one: "وكلمة أخرى", two: "وكلمتان أخريان", few: "و{count} كلمات أخرى", many: "و{count} كلمة أخرى", other: "و{count} كلمة أخرى" },
