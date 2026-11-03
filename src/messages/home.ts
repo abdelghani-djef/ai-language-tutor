@@ -34,7 +34,7 @@ export const home = defineMessages({
     p3Evidence:
       "Extensive reading improves reading, and captions help word learning (g = 0.56). Input alone teaches only part of the new words, so it is paired with review.",
     p4Name: "Common words first",
-    p4Text: "You learn the most useful English words first, each with a picture, a translation and audio.",
+    p4Text: "You learn the most useful English words first, each with a translation, audio, an example and a picture where one helps.",
     p4Evidence:
       "Understanding a text takes knowing 95–98% of its words, and studying words on purpose, with pictures and translations, speeds this up.",
     p5Name: "Speak and get feedback",
@@ -67,7 +67,7 @@ export const home = defineMessages({
     limitsText:
       "Much of this research tests memory and vocabulary with teenagers and adults, and few studies test apps or AI tutors directly. We will update the method as the evidence changes.",
     finalTitle: "Start with a few words today",
-    finalText: "Add the words you want to learn. The app brings each one back at the right moment.",
+    finalText: "Begin with the most useful English words, or add your own. The app brings each one back at the right moment.",
   },
   fr: {
     title: "Apprendre l’anglais comme fonctionne la mémoire",
@@ -104,7 +104,7 @@ export const home = defineMessages({
     p3Evidence:
       "La lecture extensive améliore la lecture, et les sous-titres aident à apprendre des mots (g = 0,56). L’exposition seule n’enseigne qu’une partie des mots nouveaux : elle va donc avec la révision.",
     p4Name: "Les mots courants d’abord",
-    p4Text: "Vous apprenez d’abord les mots anglais les plus utiles, chacun avec une image, une traduction et l’audio.",
+    p4Text: "Vous apprenez d’abord les mots anglais les plus utiles, chacun avec une traduction, l’audio, un exemple et une image quand elle aide.",
     p4Evidence:
       "Comprendre un texte demande d’en connaître 95 à 98 % des mots, et étudier les mots volontairement, avec images et traductions, accélère l’apprentissage.",
     p5Name: "Parler et être corrigé",
@@ -142,7 +142,7 @@ export const home = defineMessages({
     limitsText:
       "Une grande partie de ces recherches porte sur la mémoire et le vocabulaire chez des adolescents et des adultes, et peu d’études testent directement des applications ou des tuteurs IA. Nous ferons évoluer la méthode avec les données.",
     finalTitle: "Commencez par quelques mots aujourd’hui",
-    finalText: "Ajoutez les mots que vous voulez apprendre. L’application ramène chacun au bon moment.",
+    finalText: "Commencez par les mots anglais les plus utiles, ou ajoutez les vôtres. L’application ramène chacun au bon moment.",
   },
   ar: {
     title: "تعلّم الإنجليزية بالطريقة التي تعمل بها الذاكرة",
@@ -175,7 +175,7 @@ export const home = defineMessages({
     p3Evidence:
       "القراءة الموسّعة تحسّن القراءة، والترجمة النصية تساعد على تعلّم الكلمات (g = 0.56). لكن التعرّض وحده لا يعلّم إلا جزءًا من الكلمات الجديدة، لذا يُقرن بالمراجعة.",
     p4Name: "الكلمات الشائعة أولًا",
-    p4Text: "تتعلّم أولًا أكثر الكلمات الإنجليزية فائدة، كل كلمة مع صورة وترجمة ونطق.",
+    p4Text: "تتعلّم أولًا أكثر الكلمات الإنجليزية فائدة، كل كلمة مع ترجمة ونطق ومثال، وصورة حين تفيد.",
     p4Evidence: "فهم نص يتطلب معرفة 95 إلى 98% من كلماته، ودراسة الكلمات عن قصد مع الصور والترجمة تسرّع التعلّم.",
     p5Name: "تكلّم واحصل على تصحيح",
     p5Text: "تتحدث وتكتب مع معلّم يطرح عليك الأسئلة، ويساعدك على تصحيح نفسك، ويشرح القواعد في جملة أو جملتين.",
@@ -206,6 +206,6 @@ export const home = defineMessages({
     limitsText:
       "معظم هذه الأبحاث يدرس الذاكرة والمفردات لدى المراهقين والبالغين، وقليل من الدراسات يختبر التطبيقات أو المعلّمين بالذكاء الاصطناعي مباشرة. سنحدّث الطريقة كلما تغيّرت الأدلة.",
     finalTitle: "ابدأ ببضع كلمات اليوم",
-    finalText: "أضف الكلمات التي تريد تعلّمها، وسيعيد التطبيق كل كلمة في الوقت المناسب.",
+    finalText: "ابدأ بأكثر الكلمات الإنجليزية فائدة، أو أضف كلماتك. وسيعيد التطبيق كل كلمة في الوقت المناسب.",
   },
 });

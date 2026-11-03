@@ -18,6 +18,11 @@ export interface Extras {
   example?: string;
   notes?: string;
   image?: string;
+  emoji?: string;
+  /** The example's language when it isn't the answer side's. */
+  exampleLang?: string;
+  /** Repeat the asked side small on the answer side, so both are seen together. */
+  echoFront?: boolean;
 }
 
 export function FlipCard({
@@ -35,6 +40,7 @@ export function FlipCard({
 }) {
   const t = useT(cards);
   const fmt = useFormat();
+  const exampleLang = extras.exampleLang ?? back.lang;
   return (
     // Clicking anywhere flips the card. It is not a button for keyboard and
     // screen-reader users: they use the "Show answer" button and Space, and the
@@ -44,6 +50,17 @@ export function FlipCard({
       <div className={cn("grid transition-transform duration-500 transform-3d", flipped && "rotate-y-180")}>
         <Face side={front} label={fmt.languageName(front.lang)} hidden={flipped} />
         <Face side={back} label={fmt.languageName(back.lang)} hidden={!flipped} className="rotate-y-180 bg-primary/5">
+          {extras.echoFront && (
+            <p className="order-first flex items-center gap-1 text-lg text-muted-foreground" dir="auto" lang={front.lang}>
+              {front.text}
+              <SpeakButton text={front.text} lang={front.lang} />
+            </p>
+          )}
+          {extras.emoji && !extras.image && (
+            <span className="order-first text-6xl leading-none" aria-hidden>
+              {extras.emoji}
+            </span>
+          )}
           {extras.image && (
             // eslint-disable-next-line @next/next/no-img-element -- a local data: URL, nothing to optimize
             <img
@@ -55,10 +72,10 @@ export function FlipCard({
           {extras.example && (
             <p className="flex max-w-prose items-center gap-1 text-center text-base text-muted-foreground italic">
               <span className="sr-only">{t("exampleLabel")}: </span>
-              <span dir={LANGUAGES[back.lang].rtl ? "rtl" : "auto"} lang={back.lang}>
+              <span dir={LANGUAGES[exampleLang].rtl ? "rtl" : "auto"} lang={exampleLang}>
                 {extras.example}
               </span>
-              <SpeakButton text={extras.example} lang={back.lang} />
+              <SpeakButton text={extras.example} lang={exampleLang} />
             </p>
           )}
           {extras.notes && (

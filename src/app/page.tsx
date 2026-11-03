@@ -45,7 +45,7 @@ const PRINCIPLES: { key: "p1" | "p2" | "p3" | "p4" | "p5" | "p6" | "p7"; ready: 
   },
   {
     key: "p4",
-    ready: false,
+    ready: true,
     sources: [
       src("Nation 2006", "10.3138/cmlr.63.1.59"),
       src("Webb et al. 2020", "10.1111/modl.12671"),
@@ -104,7 +104,7 @@ export default function HomePage() {
           </h1>
           <p className="max-w-[46ch] text-lg text-muted-foreground">{t("intro", { count: SOURCE_COUNT })}</p>
           <div className="flex flex-wrap gap-3">
-            <Link href="/add" className={buttonVariants({ size: "lg" })}>
+            <Link href="/words" className={buttonVariants({ size: "lg" })}>
               {t("start")}
             </Link>
             <a href={STUDY_URL} target="_blank" rel="noreferrer" className={buttonVariants({ size: "lg", variant: "outline" })}>
@@ -196,7 +196,7 @@ export default function HomePage() {
       <section className="grid justify-items-start gap-4 border-t pt-12">
         <h2 className="font-display text-3xl font-semibold tracking-tight">{t("finalTitle")}</h2>
         <p className="max-w-[52ch] text-lg text-muted-foreground">{t("finalText")}</p>
-        <Link href="/add" className={buttonVariants({ size: "lg" })}>
+        <Link href="/words" className={buttonVariants({ size: "lg" })}>
           {t("start")}
         </Link>
       </section>

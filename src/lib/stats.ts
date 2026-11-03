@@ -12,32 +12,45 @@ function addDays(d: Date, n: number): Date {
 }
 
 /**
- * Consecutive days with at least one review, ending today. If today has no
- * reviews yet the streak still counts from yesterday, so it isn't "lost"
- * until the day is over.
+ * Study days in a row, where one missed day doesn't break the run; two in a row
+ * do. A missed day shouldn't wipe out progress (habits take weeks to form), and
+ * today doesn't count against you until it is over.
  */
 export function studyStreak(days: Iterable<string>, today = new Date()): number {
   const set = new Set(days);
-  let cursor = set.has(dayKey(today)) ? today : addDays(today, -1);
+  if (set.size === 0) return 0;
+  const first = [...set].sort()[0];
   let streak = 0;
-  while (set.has(dayKey(cursor))) {
-    streak++;
-    cursor = addDays(cursor, -1);
+  let missed = 0;
+  for (let d = today, isToday = true; dayKey(d) >= first; d = addDays(d, -1), isToday = false) {
+    if (set.has(dayKey(d))) {
+      streak++;
+      missed = 0;
+    } else if (!isToday && ++missed === 2) {
+      break;
+    }
   }
   return streak;
 }
 
+/** The longest run of study days with the same rule: one missed day in between is allowed. */
 export function longestStreak(days: Iterable<string>): number {
   const sorted = [...new Set(days)].sort();
   let best = 0;
   let run = 0;
   let prev: string | null = null;
   for (const d of sorted) {
-    run = prev !== null && dayKey(addDays(new Date(`${prev}T12:00:00`), 1)) === d ? run + 1 : 1;
+    const gapOk = prev !== null && dayKey(addDays(new Date(`${prev}T12:00:00`), 2)) >= d;
+    run = gapOk ? run + 1 : 1;
     best = Math.max(best, run);
     prev = d;
   }
   return best;
+}
+
+/** Every day with at least one review, ever. */
+export function totalStudyDays(days: Iterable<string>): number {
+  return new Set(days).size;
 }
 
 export function countByDay(days: Iterable<string>): Map<string, number> {

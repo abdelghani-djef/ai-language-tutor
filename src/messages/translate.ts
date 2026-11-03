@@ -30,6 +30,7 @@ export const translate = defineMessages({
     recentTitle: "Recently added",
     studyDeck: "Study “{deck}”",
     editCard: "Edit “{word}”",
+    starterLink: "New to English? Start with the starter words.",
   },
   fr: {
     title: "Ajouter des mots",
@@ -59,6 +60,7 @@ export const translate = defineMessages({
     recentTitle: "Ajoutées récemment",
     studyDeck: "Réviser « {deck} »",
     editCard: "Modifier « {word} »",
+    starterLink: "Vous débutez en anglais ? Commencez par les mots de base.",
   },
   ar: {
     title: "أضف كلمات",
@@ -87,5 +89,6 @@ export const translate = defineMessages({
     recentTitle: "أضيفت مؤخرًا",
     studyDeck: "راجع «{deck}»",
     editCard: "تعديل «{word}»",
+    starterLink: "مبتدئ في الإنجليزية؟ ابدأ بالكلمات الأساسية.",
   },
 });

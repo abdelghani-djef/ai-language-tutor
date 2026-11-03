@@ -241,6 +241,9 @@ export default function AddWordsPage() {
         <div className="grid gap-1">
           <h1 className="font-display text-3xl font-semibold tracking-tight">{t("title")}</h1>
           <p className="text-muted-foreground">{t("intro", { lang: fmt.languageNameInline(pair.src) })}</p>
+          <Link href="/words" className="text-sm font-medium text-primary underline-offset-4 hover:underline">
+            {t("starterLink")}
+          </Link>
         </div>
         <div className="flex w-full items-center gap-2 sm:w-auto">
           <PairSelect value={pair.id} onChange={changePair} className="flex-1 sm:w-80" />

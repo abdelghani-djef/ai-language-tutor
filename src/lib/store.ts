@@ -2,7 +2,7 @@
 
 import { useSyncExternalStore } from "react";
 import { LANGUAGES } from "./languages";
-import { DEFAULT_GOAL, EMPTY_REWARDS, evaluate, type RewardEvent } from "./rewards";
+import { DEFAULT_GOAL, DEFAULT_NEW_PER_DAY, EMPTY_REWARDS, evaluate, ROUTINES, type RewardEvent } from "./rewards";
 import { newSrsCard, reviewSrsCard, State, type Grade, type SrsCard } from "./srs";
 import { dayKey } from "./stats";
 
@@ -27,16 +27,47 @@ export interface Flashcard {
   tgt: string;
   srs: SrsCard;
   createdAt: number;
-  /** A sentence using the word, in the back (target) language. */
+  /** A sentence using the word, in the back (target) language unless `exampleLang` says otherwise. */
   example?: string;
+  exampleLang?: string;
   notes?: string;
   tags?: string[];
   /** A small picture as a data: URL, shrunk before saving to fit in localStorage. */
   image?: string;
+  /** A picture for the meaning, from the starter word packs. */
+  emoji?: string;
+  /** The starter pack the card came from, if any. */
+  pack?: string;
+  /**
+   * Review state for the other direction (back → front). It starts once the
+   * word is known the first way: producing a word fades faster than recognising it.
+   */
+  srsReverse?: SrsCard;
+  /**
+   * When a new word was first shown. The first look isn't a recall, so it isn't
+   * given to the scheduler; the first real recall follows a minute later.
+   */
+  introducedAt?: number;
+}
+
+/** How long after the first look at a new word it is asked for the first time. */
+export const INTRO_DELAY = 60_000;
+
+/** Which way a card is asked: front → back, or back → front. */
+export type Direction = "forward" | "reverse";
+
+/** One thing to study: a card asked one way, with that direction's review state. */
+export interface StudyItem {
+  key: string;
+  card: Flashcard;
+  dir: Direction;
+  srs: SrsCard;
+  /** Not to be asked before this time (a word just introduced). */
+  waitUntil?: number;
 }
 
 /** The optional parts of a card, edited in the card editor. */
-export type CardDetails = Pick<Flashcard, "example" | "notes" | "tags" | "image">;
+export type CardDetails = Pick<Flashcard, "example" | "notes" | "tags" | "image" | "emoji">;
 
 export interface Review {
   cardId: string;
@@ -44,11 +75,27 @@ export interface Review {
   reviewedAt: number;
   /** Local calendar day, YYYY-MM-DD, used for streaks and the heatmap. */
   day: string;
+  direction?: Direction;
+  /** The first review of a new word, counted against the daily limit on new words. */
+  wasNew?: boolean;
+  /** A first look at a new word (shown, not recalled), so it doesn't count as a review. */
+  intro?: boolean;
+  /** The item's state before this review: recall rate counts only reviews after a delay. */
+  prevState?: number;
+}
+
+/** An if-then plan: "When I {routine}, I will study for {minutes} minutes." */
+export interface StudyPlan {
+  routine: string;
+  minutes: number;
 }
 
 export interface Settings {
   /** Reviews per day that count as meeting the daily goal. */
   dailyGoal: number;
+  /** New words introduced per day, so reviews never pile up. */
+  newPerDay: number;
+  plan?: StudyPlan;
 }
 
 export interface Rewards {
@@ -74,7 +121,7 @@ const EMPTY: Data = {
   decks: [],
   cards: [],
   reviews: [],
-  settings: { dailyGoal: DEFAULT_GOAL },
+  settings: { dailyGoal: DEFAULT_GOAL, newPerDay: DEFAULT_NEW_PER_DAY },
   rewards: EMPTY_REWARDS,
 };
 
@@ -109,7 +156,16 @@ const text = (v: unknown) => (typeof v === "string" && v.trim() ? v.trim() : und
 function cleanDetails(d: Partial<Record<keyof CardDetails, unknown>>): CardDetails {
   const tags = Array.isArray(d.tags) ? cleanTags(d.tags.filter((t): t is string => typeof t === "string")) : [];
   const image = typeof d.image === "string" && /^data:image\/(png|jpeg|webp|gif);base64,/.test(d.image) ? d.image : undefined;
-  return { example: text(d.example), notes: text(d.notes), tags: tags.length ? tags : undefined, image };
+  // An emoji is a few code points at most, and never letters or markup. Keycaps
+  // ("1️⃣") start with a digit, so they are checked with the keycap taken out.
+  const emoji =
+    typeof d.emoji === "string" &&
+    d.emoji.trim() &&
+    d.emoji.length <= 16 &&
+    !/[\p{L}\p{N}<>]/u.test(d.emoji.replace(/[0-9#*]\uFE0F?\u20E3/gu, ""))
+      ? d.emoji.trim()
+      : undefined;
+  return { example: text(d.example), notes: text(d.notes), tags: tags.length ? tags : undefined, image, emoji };
 }
 
 function cleanRewards(r: Partial<Rewards> | undefined): Rewards {
@@ -124,9 +180,34 @@ function cleanRewards(r: Partial<Rewards> | undefined): Rewards {
   };
 }
 
+const positiveInt = (v: unknown, fallback: number) => (typeof v === "number" && Number.isInteger(v) && v > 0 ? v : fallback);
+
 function cleanSettings(s: Partial<Settings> | undefined): Settings {
-  const goal = s?.dailyGoal;
-  return { dailyGoal: typeof goal === "number" && Number.isInteger(goal) && goal > 0 ? goal : DEFAULT_GOAL };
+  const plan = s?.plan;
+  return {
+    dailyGoal: positiveInt(s?.dailyGoal, DEFAULT_GOAL),
+    newPerDay: positiveInt(s?.newPerDay, DEFAULT_NEW_PER_DAY),
+    plan:
+      plan && (ROUTINES as readonly string[]).includes(plan.routine)
+        ? { routine: plan.routine, minutes: positiveInt(plan.minutes, 5) }
+        : undefined,
+  };
+}
+
+function reviveSrs(srs: SrsCard): SrsCard {
+  return { ...srs, dueAt: new Date(srs.dueAt), lastReviewAt: srs.lastReviewAt ? new Date(srs.lastReviewAt) : null };
+}
+
+/** A well-formed review state from a backup, or undefined. */
+function validSrs(v: unknown): v is SrsCard {
+  const srs = v as Partial<SrsCard> | null;
+  return (
+    !!srs &&
+    !Number.isNaN(new Date(srs.dueAt as unknown as string).getTime()) &&
+    typeof srs.state === "number" &&
+    typeof srs.stability === "number" &&
+    typeof srs.difficulty === "number"
+  );
 }
 
 /** JSON turns Dates into strings; ts-fsrs needs them back as Dates. Older data has no settings or rewards yet. */
@@ -140,11 +221,11 @@ function revive(raw: Data): Data {
     cards: (raw.cards ?? []).map((c) => ({
       ...c,
       ...cleanDetails(c),
-      srs: {
-        ...c.srs,
-        dueAt: new Date(c.srs.dueAt),
-        lastReviewAt: c.srs.lastReviewAt ? new Date(c.srs.lastReviewAt) : null,
-      },
+      pack: typeof c.pack === "string" ? c.pack : undefined,
+      exampleLang: typeof c.exampleLang === "string" && c.exampleLang in LANGUAGES ? c.exampleLang : undefined,
+      introducedAt: typeof c.introducedAt === "number" ? c.introducedAt : undefined,
+      srs: reviveSrs(c.srs),
+      srsReverse: validSrs(c.srsReverse) ? reviveSrs(c.srsReverse) : undefined,
     })),
   };
 }
@@ -366,16 +447,96 @@ export function restoreCard(card: Flashcard) {
   set({ ...d, cards: [...d.cards, card] });
 }
 
-export async function gradeCard(card: Flashcard, grade: Grade): Promise<Flashcard> {
+function startOfTomorrow(now: Date): Date {
+  const d = new Date(now);
+  d.setHours(24, 0, 0, 0);
+  return d;
+}
+
+export async function gradeCard(
+  card: Flashcard,
+  grade: Grade,
+  dir: Direction = "forward",
+  { intro = false }: { intro?: boolean } = {},
+): Promise<Flashcard> {
   const now = new Date();
-  const updated = { ...card, srs: await reviewSrsCard(card.srs, grade, now) };
+  const srs = dir === "reverse" && card.srsReverse ? card.srsReverse : card.srs;
+  // A first look leaves the review state alone: the first real recall is its first rating.
+  const next = intro ? srs : await reviewSrsCard(srs, grade, now);
+  const updated: Flashcard = intro
+    ? { ...card, introducedAt: now.getTime() }
+    : dir === "reverse"
+      ? { ...card, srsReverse: next }
+      : { ...card, srs: next };
+  const startsWord = dir === "forward" && srs.state === State.New && (intro || !card.introducedAt);
+  // Once the word is known one way, start asking it the other way, from tomorrow
+  // so it isn't crammed into the same sitting.
+  if (dir === "forward" && !card.srsReverse && next.state === State.Review) {
+    updated.srsReverse = await newSrsCard(startOfTomorrow(now));
+  }
   const d = getSnapshot();
   setAndReward({
     ...d,
     cards: d.cards.map((c) => (c.id === card.id ? updated : c)),
-    reviews: [...d.reviews, { cardId: card.id, rating: grade, reviewedAt: now.getTime(), day: dayKey(now) }],
+    reviews: [
+      ...d.reviews,
+      {
+        cardId: card.id,
+        rating: grade,
+        reviewedAt: now.getTime(),
+        day: dayKey(now),
+        direction: dir,
+        wasNew: startsWord || undefined,
+        intro: intro || undefined,
+        prevState: srs.state,
+      },
+    ],
   });
   return updated;
+}
+
+/** Several cards in one save, kept in the given order (e.g. most frequent word first). */
+export async function addCards(
+  deckId: string,
+  src: string,
+  tgt: string,
+  items: { front: string; back: string; details?: CardDetails; pack?: string; exampleLang?: string }[],
+): Promise<Flashcard[]> {
+  const base = Date.now();
+  const made: Flashcard[] = [];
+  for (const [i, item] of items.entries()) {
+    made.push({
+      id: crypto.randomUUID(),
+      deckId,
+      front: item.front.trim(),
+      back: item.back.trim(),
+      src,
+      tgt,
+      srs: await newSrsCard(),
+      // Spread by a millisecond each, so "oldest first" follows the list order.
+      createdAt: base + i,
+      pack: item.pack,
+      exampleLang: item.exampleLang,
+      ...cleanDetails(item.details ?? {}),
+    });
+  }
+  set({ ...getSnapshot(), cards: [...data.cards, ...made] });
+  return made;
+}
+
+export function setNewPerDay(n: number) {
+  const d = getSnapshot();
+  set({ ...d, settings: { ...d.settings, newPerDay: n } });
+}
+
+export function setPlan(plan: StudyPlan | undefined) {
+  const d = getSnapshot();
+  set({ ...d, settings: { ...d.settings, plan } });
+}
+
+/** New words already started today, which count against the daily limit. */
+export function newStartedOn(reviews: Review[], day: string): number {
+  return reviews.filter((r) => r.day === day && r.wasNew).length;
 }
 
 /** Lowering the goal can meet it straight away, which counts. */
@@ -457,27 +618,69 @@ export function endOfToday(now = new Date()): number {
   return d.getTime();
 }
 
-export function dueTime(c: Flashcard): number {
-  return new Date(c.srs.dueAt).getTime();
+export function dueTime(item: { srs: SrsCard; waitUntil?: number }): number {
+  return Math.max(new Date(item.srs.dueAt).getTime(), item.waitUntil ?? 0);
 }
 
 /**
- * Whether a card can be studied now. New and Review cards are available for
+ * Whether something can be studied now. New and Review items are available for
  * their whole due day (FSRS schedules them to the minute, but a day is the
  * unit people think in); Learning/Relearning steps wait for their exact time.
  */
-export function isDue(c: Flashcard, now = Date.now(), dayEnd = endOfToday(new Date(now))): boolean {
-  const t = dueTime(c);
+export function isDue(
+  item: { srs: SrsCard; waitUntil?: number },
+  now = Date.now(),
+  dayEnd = endOfToday(new Date(now)),
+): boolean {
+  if (item.waitUntil && item.waitUntil > now) return false;
+  const t = dueTime(item);
   if (t <= now) return true;
-  const inStep = c.srs.state === State.Learning || c.srs.state === State.Relearning;
+  const inStep = item.srs.state === State.Learning || item.srs.state === State.Relearning;
   return !inStep && t <= dayEnd;
 }
 
-/** Cards that can be studied now, most overdue first. */
-export function dueToday(cards: Flashcard[], deckId?: string | null, now = Date.now()): Flashcard[] {
+/** A card's study items: always front → back, and back → front once that has started. */
+export function itemsOf(card: Flashcard): StudyItem[] {
+  const forward: StudyItem = { key: `${card.id}:f`, card, dir: "forward", srs: card.srs };
+  // A word just shown for the first time is asked a minute later.
+  if (card.srs.state === State.New && card.introducedAt) forward.waitUntil = card.introducedAt + INTRO_DELAY;
+  const items: StudyItem[] = [forward];
+  if (card.srsReverse) items.push({ key: `${card.id}:r`, card, dir: "reverse", srs: card.srsReverse });
+  return items;
+}
+
+/** A new word nobody has looked at yet. */
+const notStarted = (i: StudyItem) => i.dir === "forward" && i.srs.state === State.New && !i.card.introducedAt;
+
+/** Started items (everything but words not yet shown) that pass `keep`, soonest first. */
+export function startedItems(
+  cards: Flashcard[],
+  deckId: string | null | undefined,
+  keep: (i: StudyItem) => boolean,
+): StudyItem[] {
   return cards
-    .filter((c) => (!deckId || c.deckId === deckId) && isDue(c, now))
+    .filter((c) => !deckId || c.deckId === deckId)
+    .flatMap(itemsOf)
+    .filter((i) => !notStarted(i) && keep(i))
     .sort((a, b) => dueTime(a) - dueTime(b));
+}
+
+/** Reviews (not new words) that can be studied now, most overdue first. */
+export function dueReviews(cards: Flashcard[], deckId?: string | null, now = Date.now()): StudyItem[] {
+  return startedItems(cards, deckId, (i) => isDue(i, now));
+}
+
+/** New words not started yet, in the order they were added (starter packs: most frequent first). */
+export function newWords(cards: Flashcard[], deckId?: string | null): Flashcard[] {
+  return cards
+    .filter((c) => (!deckId || c.deckId === deckId) && c.srs.state === State.New && !c.introducedAt)
+    .sort((a, b) => a.createdAt - b.createdAt);
+}
+
+/** How many items are waiting today: due reviews plus the new words today's limit still allows. */
+export function dueCount(data: Pick<Data, "cards" | "reviews" | "settings">, today: string, deckId?: string | null): number {
+  const left = Math.max(0, data.settings.newPerDay - newStartedOn(data.reviews, today));
+  return dueReviews(data.cards, deckId).length + Math.min(left, newWords(data.cards, deckId).length);
 }
 
 /** Case-insensitive tag match; no tag means every card. */

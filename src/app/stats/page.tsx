@@ -3,17 +3,19 @@
 import { useState } from "react";
 import { BadgesCard } from "@/components/badges-card";
 import { GoalCard } from "@/components/goal-card";
+import { PlanCard } from "@/components/plan-card";
 import { Heatmap } from "@/components/heatmap";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useFormat } from "@/lib/format";
 import { useT } from "@/lib/i18n";
-import { isLearned, Rating } from "@/lib/srs";
-import { countByDay, dayKey, longestStreak, studyStreak } from "@/lib/stats";
-import { dueToday, useHydrated, useStore } from "@/lib/store";
+import { isLearned, Rating, State } from "@/lib/srs";
+import { countByDay, dayKey, studyStreak, totalStudyDays } from "@/lib/stats";
+import { dueCount, useHydrated, useStore } from "@/lib/store";
 import { stats } from "@/messages/stats";
 
 export default function StatsPage() {
-  const { decks, cards, reviews } = useStore();
+  const store = useStore();
+  const { decks, cards, reviews } = store;
   const hydrated = useHydrated();
   const [now] = useState(Date.now);
   const t = useT(stats);
@@ -23,18 +25,23 @@ export default function StatsPage() {
   const days = reviews.map((r) => r.day);
   const today = dayKey(new Date());
   const monthAgo = now - 30 * 86_400_000;
-  const recent = reviews.filter((r) => r.reviewedAt >= monthAgo);
+  // Recall rate is about remembering over time: only reviews of words already in
+  // long-term review count, not first looks or practice within the same session.
+  const recent = reviews.filter(
+    (r) => r.reviewedAt >= monthAgo && !r.intro && (r.prevState === undefined || r.prevState === State.Review),
+  );
   const recalled = recent.filter((r) => r.rating !== Rating.Again).length;
   const learned = cards.filter((c) => isLearned(c.srs)).length;
 
   const streak = studyStreak(days);
-  const longest = longestStreak(days);
-  const due = dueToday(cards).length;
+  const studiedDays = totalStudyDays(days);
+  const due = dueCount(store, today);
   const reviewedToday = days.filter((d) => d === today).length;
   const tiles = [
     { label: t("cardsLearned"), value: fmt.number(learned), hint: t("cardsLearnedHint", { count: cards.length }) },
     { label: t("currentStreak"), value: fmt.number(streak), hint: t("currentStreakHint", { count: streak }) },
-    { label: t("longestStreak"), value: fmt.number(longest), hint: t("longestStreakHint", { count: longest }) },
+    // A running total next to the streak: progress that a missed day can't take away.
+    { label: t("daysStudied"), value: fmt.number(studiedDays), hint: t("daysStudiedHint", { count: studiedDays }) },
     { label: t("dueToday"), value: fmt.number(due), hint: t("cardsHint", { count: due }) },
     { label: t("reviewsToday"), value: fmt.number(reviewedToday), hint: t("cardsHint", { count: reviewedToday }) },
     {
@@ -52,6 +59,7 @@ export default function StatsPage() {
       </div>
 
       <GoalCard />
+      <PlanCard />
 
       <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
         {tiles.map((tile) => (

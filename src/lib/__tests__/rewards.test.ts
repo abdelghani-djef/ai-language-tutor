@@ -10,7 +10,7 @@ function data(reviews: Review[], extra: Partial<Data> = {}): Data {
     decks: [],
     cards: [],
     reviews,
-    settings: { dailyGoal: 3 },
+    settings: { dailyGoal: 3, newPerDay: 10 },
     rewards: EMPTY_REWARDS,
     ...extra,
   };

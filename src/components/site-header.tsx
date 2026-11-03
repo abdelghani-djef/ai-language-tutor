@@ -11,7 +11,7 @@ import { useFormat } from "@/lib/format";
 import { useT } from "@/lib/i18n";
 import { reviewsOn } from "@/lib/rewards";
 import { studyStreak } from "@/lib/stats";
-import { dueToday, useHydrated, useSaveError, useStore, useToday } from "@/lib/store";
+import { dueCount, useHydrated, useSaveError, useStore, useToday } from "@/lib/store";
 import { cn } from "@/lib/utils";
 import { common } from "@/messages/common";
 import { rewards } from "@/messages/rewards";
@@ -32,7 +32,7 @@ export function SiteHeader() {
   const tr = useT(rewards);
   const fmt = useFormat();
   const today = useToday();
-  const due = dueToday(data.cards).length;
+  const due = dueCount(data, today);
   const streak = hydrated ? studyStreak(data.reviews.map((r) => r.day)) : 0;
   const done = hydrated ? reviewsOn(data, today) : 0;
   const goal = data.settings.dailyGoal;

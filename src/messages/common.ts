@@ -8,7 +8,7 @@ export const common = defineMessages({
     navStudy: "Study",
     navStats: "Stats",
     mainNav: "Main",
-    streakTitle: "Study streak: days in a row with at least one review",
+    streakTitle: "Study streak: days with at least one review. One missed day never breaks it; two in a row do.",
     streakLabel: { one: "{count}-day streak", other: "{count}-day streak" },
     saveError:
       "Your browser refused to save ({error}). New progress will be lost when you close this tab — export a backup from the Decks page.",
@@ -33,7 +33,7 @@ export const common = defineMessages({
     navStudy: "Réviser",
     navStats: "Stats",
     mainNav: "Navigation principale",
-    streakTitle: "Série de révisions : jours d’affilée avec au moins une révision",
+    streakTitle: "Série de révisions : jours avec au moins une révision. Un jour manqué ne la casse jamais ; deux jours d’affilée, si.",
     streakLabel: { one: "Série de {count} jour", other: "Série de {count} jours" },
     saveError:
       "Votre navigateur a refusé d’enregistrer ({error}). Vos progrès récents seront perdus à la fermeture de cet onglet — exportez une sauvegarde depuis la page Paquets.",
@@ -58,7 +58,7 @@ export const common = defineMessages({
     navStudy: "مراجعة",
     navStats: "الإحصاءات",
     mainNav: "القائمة الرئيسية",
-    streakTitle: "سلسلة المراجعة: أيام متتالية فيها مراجعة واحدة على الأقل",
+    streakTitle: "سلسلة المراجعة: أيام فيها مراجعة واحدة على الأقل. يوم واحد فائت لا يقطعها أبدًا، أما يومان متتاليان فيقطعانها.",
     streakLabel: {
       zero: "لا توجد سلسلة",
       one: "سلسلة يوم واحد",

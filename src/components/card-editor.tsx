@@ -37,6 +37,8 @@ interface Draft {
   notes: string;
   tags: string[];
   image?: string;
+  /** Kept as it is: starter-pack cards carry an emoji picture the editor doesn't change. */
+  emoji?: string;
 }
 
 function draftOf(card?: Flashcard, initial?: Initial): Draft {
@@ -47,6 +49,7 @@ function draftOf(card?: Flashcard, initial?: Initial): Draft {
     notes: card?.notes ?? "",
     tags: card?.tags ?? initial?.tags ?? [],
     image: card?.image,
+    emoji: card?.emoji,
   };
 }
 
@@ -111,7 +114,7 @@ export function CardEditor({
   async function submit(e: FormEvent) {
     e.preventDefault();
     if (!draft.front.trim() || !draft.back.trim() || saving) return;
-    const details = { example: draft.example, notes: draft.notes, tags: draft.tags, image: draft.image };
+    const details = { example: draft.example, notes: draft.notes, tags: draft.tags, image: draft.image, emoji: draft.emoji };
     setSaving(true);
     try {
       if (card) updateCard(card.id, draft.front, draft.back, details);

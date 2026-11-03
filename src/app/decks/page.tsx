@@ -20,11 +20,22 @@ import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/comp
 import { useFormat } from "@/lib/format";
 import { useT } from "@/lib/i18n";
 import { isLearned } from "@/lib/srs";
-import { dueToday, exportData, importData, parseBackup, useHydrated, useStore, type Data } from "@/lib/store";
+import {
+  dueCount,
+  exportData,
+  importData,
+  parseBackup,
+  useHydrated,
+  useStore,
+  useToday,
+  type Data,
+} from "@/lib/store";
 import { decks as decksMessages } from "@/messages/decks";
 
 export default function DecksPage() {
-  const { decks, cards } = useStore();
+  const store = useStore();
+  const { decks, cards } = store;
+  const today = useToday();
   const hydrated = useHydrated();
   const t = useT(decksMessages);
   const fmt = useFormat();
@@ -112,7 +123,7 @@ export default function DecksPage() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {decks.map((d) => {
           const deckCards = cards.filter((c) => c.deckId === d.id);
-          const due = dueToday(deckCards).length;
+          const due = dueCount(store, today, d.id);
           const learned = deckCards.filter((c) => isLearned(c.srs)).length;
           return (
             <Card key={d.id} className="transition-shadow hover:shadow-md">

@@ -8,6 +8,11 @@ import type { Data, Rewards } from "./store";
 
 export const GOAL_OPTIONS = [5, 10, 20, 30, 50, 100];
 export const DEFAULT_GOAL = 20;
+export const NEW_PER_DAY_OPTIONS = [5, 10, 15, 20, 30];
+export const DEFAULT_NEW_PER_DAY = 10;
+
+// Moments most people already have every day, for the if-then study plan.
+export const ROUTINES = ["breakfast", "commute", "lunch", "home", "dinner", "bed"] as const;
 
 export type Metric = "reviews" | "streak" | "learned" | "goalDays" | "perfectQuizzes";
 
@@ -37,13 +42,14 @@ export const BADGES: BadgeDef[] = [
 
 export const EMPTY_REWARDS: Rewards = { badges: {}, goalDays: [], perfectQuizzes: 0 };
 
+/** Reviews on a day; first looks at new words aren't reviews. */
 export function reviewsOn(data: Data, day: string): number {
-  return data.reviews.filter((r) => r.day === day).length;
+  return data.reviews.filter((r) => r.day === day && !r.intro).length;
 }
 
 export function metrics(data: Data): Record<Metric, number> {
   return {
-    reviews: data.reviews.length,
+    reviews: data.reviews.filter((r) => !r.intro).length,
     streak: longestStreak(data.reviews.map((r) => r.day)),
     learned: data.cards.filter((c) => isLearned(c.srs)).length,
     goalDays: data.rewards.goalDays.length,
