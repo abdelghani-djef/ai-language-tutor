@@ -2,7 +2,8 @@
 
 import { ArrowLeftRight, Download, Languages, Loader2, Pencil, Plus } from "lucide-react";
 import Link from "next/link";
-import { useRef, useState, type FormEvent, type KeyboardEvent, type ReactNode } from "react";
+import { useSearchParams } from "next/navigation";
+import { Suspense, useRef, useState, type FormEvent, type KeyboardEvent, type ReactNode } from "react";
 import { toast } from "sonner";
 import { CardEditor } from "@/components/card-editor";
 import { NewDeckDialog } from "@/components/new-deck-dialog";
@@ -26,6 +27,7 @@ import {
 } from "@/lib/store";
 import { useTranslator } from "@/lib/useTranslator";
 import { cn } from "@/lib/utils";
+import { targetFromCard, wordHref } from "@/lib/word/target";
 import { cards as cardMessages } from "@/messages/cards";
 import { common } from "@/messages/common";
 import { translate as messages } from "@/messages/translate";
@@ -48,7 +50,16 @@ function parseJson<T>(raw: string, fallback: T): T {
   }
 }
 
-export default function AddWordsPage() {
+export default function AddWordsPageWrapper() {
+  return (
+    <Suspense>
+      <AddWordsPage />
+    </Suspense>
+  );
+}
+
+function AddWordsPage() {
+  const deckParam = useSearchParams().get("deck");
   const t = useT(messages);
   const tc = useT(cardMessages);
   const tcommon = useT(common);
@@ -100,6 +111,17 @@ export default function AddWordsPage() {
   // Name a new deck after the language being learned: the side that isn't the interface language.
   const learning = pair.tgt === locale && pair.src !== locale ? pair.src : pair.tgt;
   const defaultDeckName = t("defaultDeckName", { lang: fmt.languageNameInline(learning) });
+
+  // Opened from a list ("Translate a word for this list"): use its languages and save into it.
+  const [appliedDeck, setAppliedDeck] = useState<string | null>(null);
+  if (hydrated && deckParam && appliedDeck !== deckParam) {
+    setAppliedDeck(deckParam);
+    const d = decks.find((x) => x.id === deckParam);
+    if (d) {
+      if (d.src !== pair.src || d.tgt !== pair.tgt) setPairPref(pairId(d.src, d.tgt));
+      chooseDeck(d);
+    }
+  }
 
   function chooseDeck(d: Deck) {
     setDeckPref(JSON.stringify({ ...deckChoice, [pairId(d.src, d.tgt)]: d.id, [pairId(d.tgt, d.src)]: d.id }));
@@ -400,9 +422,14 @@ export default function AddWordsPage() {
                   // eslint-disable-next-line @next/next/no-img-element -- a local data: URL, nothing to optimize
                   <img src={c.image} alt="" className="size-9 shrink-0 rounded-md border object-cover" />
                 )}
-                <span className="min-w-0 flex-1 truncate font-medium" dir="auto" lang={c.src}>
+                <Link
+                  href={wordHref(targetFromCard(c))}
+                  className="min-w-0 flex-1 truncate font-medium underline-offset-2 hover:underline"
+                  dir="auto"
+                  lang={c.src}
+                >
                   {c.front}
-                </span>
+                </Link>
                 <span className="flex min-w-0 flex-1 items-center gap-1 text-muted-foreground" dir="auto" lang={c.tgt}>
                   <span className="truncate">{c.back}</span>
                   <SpeakButton text={c.back} lang={c.tgt} label={tcommon("pronounceWord", { word: c.back })} />

@@ -1,6 +1,6 @@
 "use client";
 
-import { Download, GraduationCap, Plus, Upload } from "lucide-react";
+import { Download, GraduationCap, Library, PenLine, Plus, Upload } from "lucide-react";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { toast } from "sonner";
@@ -74,52 +74,56 @@ export default function DecksPage() {
   }
 
   return (
-    <div className="grid gap-6">
-      <div className="flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <h1 className="font-display text-3xl font-semibold tracking-tight">{t("title")}</h1>
-          <p className="text-muted-foreground">{t("savedLocally")}</p>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          <Button variant="ghost" onClick={download} title={t("exportTitle")}>
-            <Download /> {t("export")}
-          </Button>
-          <Button
-            variant="ghost"
-            onClick={() => fileRef.current?.click()}
-            title={t("importTitle")}
-          >
-            <Upload /> {t("import")}
-          </Button>
-          <input
-            ref={fileRef}
-            type="file"
-            accept="application/json"
-            hidden
-            onChange={(e) => {
-              const f = e.target.files?.[0];
-              if (f) upload(f);
-              e.target.value = "";
-            }}
-          />
-          <Button onClick={() => setOpen(true)}>
-            <Plus /> {t("newDeck")}
-          </Button>
-        </div>
+    <div className="grid gap-8">
+      <div className="grid gap-1">
+        <h1 className="font-display text-3xl font-semibold tracking-tight">{t("title")}</h1>
+        <p className="text-muted-foreground">{t("intro")}</p>
       </div>
 
-      {hydrated && decks.length === 0 && (
-        <Card className="items-center py-12 text-center">
-          <CardHeader className="w-full">
-            <CardTitle>{t("emptyTitle")}</CardTitle>
-            <CardDescription>{t("emptyDescription")}</CardDescription>
-          </CardHeader>
-          <Button onClick={() => setOpen(true)}>
-            <Plus /> {t("createFirst")}
-          </Button>
-        </Card>
-      )}
+      {/* Three ways to add words. Ready-made lists are the start for beginners, so they get the big tile. */}
+      <section aria-labelledby="ways-title" className="grid gap-3">
+        <h2 id="ways-title" className="text-sm text-muted-foreground">
+          {t("waysTitle")}
+        </h2>
+        <div className="grid gap-3 md:grid-cols-[1.4fr_1fr]">
+          <Link
+            href="/words"
+            className="group grid content-between gap-6 rounded-3xl border-2 border-primary/40 bg-primary/5 p-6 transition-colors hover:border-primary hover:bg-primary/10"
+          >
+            <span className="grid gap-2">
+              <Library className="size-9 text-primary" aria-hidden />
+              <span className="font-display text-2xl font-semibold">{t("readyTitle")}</span>
+              <span className="text-muted-foreground">{t("readyText")}</span>
+            </span>
+            <span className={buttonVariants({ className: "justify-self-start" })}>{t("readyCta")}</span>
+          </Link>
+          <div className="grid gap-3">
+            <Link
+              href="/add"
+              className="grid gap-1 rounded-2xl border bg-card p-5 transition-colors hover:border-primary/60 hover:bg-muted/50"
+            >
+              <span className="flex items-center gap-2 font-display text-lg font-semibold">
+                <PenLine className="size-5 text-primary" aria-hidden /> {t("ownTitle")}
+              </span>
+              <span className="text-sm text-muted-foreground">{t("ownText")}</span>
+            </Link>
+            <button
+              type="button"
+              onClick={() => setOpen(true)}
+              className="grid gap-1 rounded-2xl border bg-card p-5 text-start transition-colors hover:border-primary/60 hover:bg-muted/50"
+            >
+              <span className="flex items-center gap-2 font-display text-lg font-semibold">
+                <Plus className="size-5 text-primary" aria-hidden /> {t("emptyListTitle")}
+              </span>
+              <span className="text-sm text-muted-foreground">{t("emptyListText")}</span>
+            </button>
+          </div>
+        </div>
+      </section>
 
+      {hydrated && decks.length > 0 && (
+        <h2 className="font-display text-2xl font-semibold">{t("yourLists", { count: decks.length })}</h2>
+      )}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {decks.map((d) => {
           const deckCards = cards.filter((c) => c.deckId === d.id);
@@ -158,6 +162,32 @@ export default function DecksPage() {
           );
         })}
       </div>
+
+      <section aria-labelledby="backup-title" className="grid gap-2 border-t pt-6">
+        <h2 id="backup-title" className="font-medium">
+          {t("backupTitle")}
+        </h2>
+        <p className="max-w-[60ch] text-sm text-muted-foreground">{t("savedLocally")}</p>
+        <div className="flex flex-wrap gap-2">
+          <Button variant="outline" size="sm" onClick={download} title={t("exportTitle")}>
+            <Download /> {t("export")}
+          </Button>
+          <Button variant="outline" size="sm" onClick={() => fileRef.current?.click()} title={t("importTitle")}>
+            <Upload /> {t("import")}
+          </Button>
+          <input
+            ref={fileRef}
+            type="file"
+            accept="application/json"
+            hidden
+            onChange={(e) => {
+              const f = e.target.files?.[0];
+              if (f) upload(f);
+              e.target.value = "";
+            }}
+          />
+        </div>
+      </section>
 
       <NewDeckDialog open={open} onOpenChange={setOpen} />
 

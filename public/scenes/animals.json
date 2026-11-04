@@ -1,0 +1,3479 @@
+{
+  "pack": "animals",
+  "complete": true,
+  "words": {
+    "animal": {
+      "scenes": [
+        {
+          "place": "zoo",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Which animal do you like best?",
+                "fr": "Quel animal tu préfères ?",
+                "ar": "أي حيوان تحب أكثر؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "I like the elephant!",
+                "fr": "J’aime l’éléphant !",
+                "ar": "أحب الفيل!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "La maîtresse",
+                "ar": "المعلمة"
+              },
+              "text": {
+                "en": "Today, we draw an animal.",
+                "fr": "Aujourd’hui, on dessine un animal.",
+                "ar": "اليوم نرسم حيوانا."
+              }
+            },
+            {
+              "who": {
+                "en": "Amina",
+                "fr": "Amina",
+                "ar": "أمينة"
+              },
+              "text": {
+                "en": "Can I draw a cat?",
+                "fr": "Je peux dessiner un chat ?",
+                "ar": "هل يمكنني أن أرسم قطة؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "La maîtresse",
+                "ar": "المعلمة"
+              },
+              "text": {
+                "en": "Yes, of course!",
+                "fr": "Oui, bien sûr !",
+                "ar": "نعم، بالطبع!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "forest",
+          "lines": [
+            {
+              "who": {
+                "en": "Karim",
+                "fr": "Karim",
+                "ar": "كريم"
+              },
+              "text": {
+                "en": "Look! What animal is that?",
+                "fr": "Regarde ! C’est quel animal ?",
+                "ar": "انظر! ما هذا الحيوان؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "It is a fox, I think.",
+                "fr": "C’est un renard, je crois.",
+                "ar": "إنه ثعلب، على ما أظن."
+              }
+            },
+            {
+              "who": {
+                "en": "Karim",
+                "fr": "Karim",
+                "ar": "كريم"
+              },
+              "text": {
+                "en": "It is very beautiful!",
+                "fr": "Il est très beau !",
+                "ar": "إنه جميل جدا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "library",
+          "lines": [
+            {
+              "who": {
+                "en": "Lina",
+                "fr": "Lina",
+                "ar": "لينا"
+              },
+              "text": {
+                "en": "I want a book about animals.",
+                "fr": "Je veux un livre sur les animaux.",
+                "ar": "أريد كتابا عن الحيوانات."
+              }
+            },
+            {
+              "who": {
+                "en": "Librarian",
+                "fr": "Le bibliothécaire",
+                "ar": "أمين المكتبة"
+              },
+              "text": {
+                "en": "The animal books are here.",
+                "fr": "Les livres sur les animaux sont ici.",
+                "ar": "كتب الحيوانات هنا."
+              }
+            },
+            {
+              "who": {
+                "en": "Lina",
+                "fr": "Lina",
+                "ar": "لينا"
+              },
+              "text": {
+                "en": "Thank you!",
+                "fr": "Merci !",
+                "ar": "شكرا!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "dog": {
+      "scenes": [
+        {
+          "place": "park",
+          "lines": [
+            {
+              "who": {
+                "en": "Omar",
+                "fr": "Omar",
+                "ar": "عمر"
+              },
+              "text": {
+                "en": "Is this your dog?",
+                "fr": "C’est ton chien ?",
+                "ar": "هل هذا كلبك؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes! His name is Max.",
+                "fr": "Oui ! Il s’appelle Max.",
+                "ar": "نعم! اسمه ماكس."
+              }
+            },
+            {
+              "who": {
+                "en": "Omar",
+                "fr": "Omar",
+                "ar": "عمر"
+              },
+              "text": {
+                "en": "He likes to run!",
+                "fr": "Il aime courir !",
+                "ar": "إنه يحب الجري!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "vet",
+          "lines": [
+            {
+              "who": {
+                "en": "Vet",
+                "fr": "La vétérinaire",
+                "ar": "الطبيبة البيطرية"
+              },
+              "text": {
+                "en": "What is wrong with your dog?",
+                "fr": "Qu’est-ce qu’il a, ton chien ?",
+                "ar": "ماذا أصاب كلبك؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "He does not want to eat.",
+                "fr": "Il ne veut pas manger.",
+                "ar": "إنه لا يريد أن يأكل."
+              }
+            },
+            {
+              "who": {
+                "en": "Vet",
+                "fr": "La vétérinaire",
+                "ar": "الطبيبة البيطرية"
+              },
+              "text": {
+                "en": "Let me look at him.",
+                "fr": "Je vais l’examiner.",
+                "ar": "دعني أفحصه."
+              }
+            }
+          ]
+        },
+        {
+          "place": "street",
+          "lines": [
+            {
+              "who": {
+                "en": "Sara",
+                "fr": "Sara",
+                "ar": "سارة"
+              },
+              "text": {
+                "en": "Mum, look at that big dog!",
+                "fr": "Maman, regarde ce gros chien !",
+                "ar": "انظري يا أمي إلى ذلك الكلب الكبير!"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Don’t touch it, Sara. Ask first.",
+                "fr": "Ne le touche pas, Sara. Demande d’abord.",
+                "ar": "لا تلمسيه يا سارة. اسألي أولا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "home",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Can you walk the dog, please?",
+                "fr": "Tu peux promener le chien, s’il te plaît ?",
+                "ar": "هل يمكنك أن تخرج الكلب في نزهة، من فضلك؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, Dad. Come on, Max!",
+                "fr": "Oui, papa. Viens, Max !",
+                "ar": "نعم يا أبي. هيا يا ماكس!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Callie_the_golden_retriever_puppy.jpg/330px-Callie_the_golden_retriever_puppy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Callie_the_golden_retriever_puppy.jpg",
+          "author": "MichaelMcPhee",
+          "licence": "CC BY 3.0",
+          "caption": "A golden puppy looks over a fence."
+        }
+      ]
+    },
+    "cat": {
+      "scenes": [
+        {
+          "place": "bedroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Leo",
+                "fr": "Leo",
+                "ar": "ليو"
+              },
+              "text": {
+                "en": "Mum, the cat is sleeping on my bed!",
+                "fr": "Maman, le chat dort sur mon lit !",
+                "ar": "أمي، القط نائم على سريري!"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Let it sleep, Leo. It is tired.",
+                "fr": "Laisse-le dormir, Leo. Il est fatigué.",
+                "ar": "دعه ينام يا ليو. إنه متعب."
+              }
+            }
+          ]
+        },
+        {
+          "place": "grandparents-house",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandma",
+                "fr": "Mamie",
+                "ar": "الجدة"
+              },
+              "text": {
+                "en": "Can you give the cat some food?",
+                "fr": "Tu peux donner à manger au chat ?",
+                "ar": "هل يمكنك أن تعطي القط بعض الطعام؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Of course, Grandma!",
+                "fr": "Bien sûr, mamie !",
+                "ar": "بالطبع يا جدتي!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "garden",
+          "lines": [
+            {
+              "who": {
+                "en": "Yasmin",
+                "fr": "Yasmin",
+                "ar": "ياسمين"
+              },
+              "text": {
+                "en": "Whose cat is this?",
+                "fr": "C’est le chat de qui ?",
+                "ar": "قط من هذا؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Adam",
+                "fr": "Adam",
+                "ar": "آدم"
+              },
+              "text": {
+                "en": "It is our neighbour’s cat.",
+                "fr": "C’est le chat de notre voisine.",
+                "ar": "إنه قط جارتنا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "pet-shop",
+          "lines": [
+            {
+              "who": {
+                "en": "Shopkeeper",
+                "fr": "La vendeuse",
+                "ar": "البائعة"
+              },
+              "text": {
+                "en": "This little cat needs a home.",
+                "fr": "Ce petit chat cherche une famille.",
+                "ar": "هذا القط الصغير يحتاج إلى بيت."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Oh, he is very beautiful!",
+                "fr": "Oh, il est très beau !",
+                "ar": "آه، إنه جميل جدا!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/330px-Cat_November_2010-1a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Cat_November_2010-1a.jpg",
+          "author": "Alvesgaspar",
+          "licence": "CC BY-SA 3.0",
+          "caption": "A striped cat sits on a wall."
+        }
+      ]
+    },
+    "bird": {
+      "scenes": [
+        {
+          "place": "garden",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "Listen! A small bird is singing.",
+                "fr": "Écoute ! Un petit oiseau chante.",
+                "ar": "اسمع! طائر صغير يغني."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Where is it?",
+                "fr": "Où est-il ?",
+                "ar": "أين هو؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "There, in the tree!",
+                "fr": "Là, dans l’arbre !",
+                "ar": "هناك، في الشجرة!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "balcony",
+          "lines": [
+            {
+              "who": {
+                "en": "Mei",
+                "fr": "Mei",
+                "ar": "مي"
+              },
+              "text": {
+                "en": "Mum, there is a bird on the balcony!",
+                "fr": "Maman, il y a un oiseau sur le balcon !",
+                "ar": "أمي، يوجد طائر على الشرفة!"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Shh, Mei. Don’t move.",
+                "fr": "Chut, Mei. Ne bouge pas.",
+                "ar": "صه يا مي. لا تتحركي."
+              }
+            }
+          ]
+        },
+        {
+          "place": "park",
+          "lines": [
+            {
+              "who": {
+                "en": "Hugo",
+                "fr": "Hugo",
+                "ar": "هوغو"
+              },
+              "text": {
+                "en": "The birds want our bread!",
+                "fr": "Les oiseaux veulent notre pain !",
+                "ar": "الطيور تريد خبزنا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Zoe",
+                "fr": "Zoe",
+                "ar": "زوي"
+              },
+              "text": {
+                "en": "Let’s give them a little.",
+                "fr": "On leur en donne un peu.",
+                "ar": "لنعطها قليلا منه."
+              }
+            }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "Le maître",
+                "ar": "المعلم"
+              },
+              "text": {
+                "en": "What can a bird do?",
+                "fr": "Que sait faire un oiseau ?",
+                "ar": "ماذا يستطيع الطائر أن يفعل؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Ravi",
+                "fr": "Ravi",
+                "ar": "رافي"
+              },
+              "text": {
+                "en": "A bird can fly!",
+                "fr": "Un oiseau sait voler !",
+                "ar": "الطائر يستطيع أن يطير!"
+              }
+            },
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "Le maître",
+                "ar": "المعلم"
+              },
+              "text": {
+                "en": "Very good, Ravi!",
+                "fr": "Très bien, Ravi !",
+                "ar": "أحسنت يا رافي!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Erithacus_rubecula_with_cocked_head.jpg/330px-Erithacus_rubecula_with_cocked_head.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Erithacus_rubecula_with_cocked_head.jpg",
+          "author": "Francis C. Franklin",
+          "licence": "CC BY-SA 3.0",
+          "caption": "A small robin sits on a branch."
+        }
+      ]
+    },
+    "fish": {
+      "scenes": [
+        {
+          "place": "lake",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Look in the water. Can you see the fish?",
+                "fr": "Regarde dans l’eau. Tu vois les poissons ?",
+                "ar": "انظر في الماء. هل ترى السمك؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes! They are so small!",
+                "fr": "Oui ! Ils sont tout petits !",
+                "ar": "نعم! إنها صغيرة جدا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "living-room",
+          "lines": [
+            {
+              "who": {
+                "en": "Nadia",
+                "fr": "Nadia",
+                "ar": "نادية"
+              },
+              "text": {
+                "en": "This is my new fish!",
+                "fr": "Voici mon nouveau poisson !",
+                "ar": "هذه سمكتي الجديدة!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "It is beautiful! What does it eat?",
+                "fr": "Il est beau ! Qu’est-ce qu’il mange ?",
+                "ar": "إنها جميلة! ماذا تأكل؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Nadia",
+                "fr": "Nadia",
+                "ar": "نادية"
+              },
+              "text": {
+                "en": "Fish food, two times a day.",
+                "fr": "De la nourriture pour poissons, deux fois par jour.",
+                "ar": "طعام السمك، مرتين في اليوم."
+              }
+            }
+          ]
+        },
+        {
+          "place": "boat",
+          "lines": [
+            {
+              "who": {
+                "en": "Kofi",
+                "fr": "Kofi",
+                "ar": "كوفي"
+              },
+              "text": {
+                "en": "Dad, a fish! It is jumping out of the water!",
+                "fr": "Papa, un poisson ! Il saute hors de l’eau !",
+                "ar": "أبي، سمكة! إنها تقفز من الماء!"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Yes, there are many fish in the sea.",
+                "fr": "Oui, il y a beaucoup de poissons dans la mer.",
+                "ar": "نعم، يوجد سمك كثير في البحر."
+              }
+            }
+          ]
+        },
+        {
+          "place": "river",
+          "lines": [
+            {
+              "who": {
+                "en": "Ines",
+                "fr": "Ines",
+                "ar": "إيناس"
+              },
+              "text": {
+                "en": "Can fish live in this river?",
+                "fr": "Est-ce que des poissons vivent dans cette rivière ?",
+                "ar": "هل يعيش السمك في هذا النهر؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "Yes, the water is very clean.",
+                "fr": "Oui, l’eau est très propre.",
+                "ar": "نعم، الماء نظيف جدا."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Goldfish_Fantail.jpg/330px-Goldfish_Fantail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Goldfish_Fantail.jpg",
+          "author": "Pogrebnoj-Alexandroff",
+          "licence": "CC BY 3.0",
+          "caption": "An orange goldfish swims in the water."
+        }
+      ]
+    },
+    "horse": {
+      "scenes": [
+        {
+          "place": "farm",
+          "lines": [
+            {
+              "who": {
+                "en": "Farmer",
+                "fr": "La fermière",
+                "ar": "المزارعة"
+              },
+              "text": {
+                "en": "Do you want to ride the horse?",
+                "fr": "Tu veux monter sur le cheval ?",
+                "ar": "هل تريد أن تركب الحصان؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, please! Is he nice?",
+                "fr": "Oui, s’il vous plaît ! Il est gentil ?",
+                "ar": "نعم، من فضلك! هل هو لطيف؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Farmer",
+                "fr": "La fermière",
+                "ar": "المزارعة"
+              },
+              "text": {
+                "en": "Very nice. Sit here.",
+                "fr": "Très gentil. Assieds-toi ici.",
+                "ar": "لطيف جدا. اجلس هنا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "field",
+          "lines": [
+            {
+              "who": {
+                "en": "Emma",
+                "fr": "Emma",
+                "ar": "إيما"
+              },
+              "text": {
+                "en": "Look, a white horse in the field!",
+                "fr": "Regarde, un cheval blanc dans le champ !",
+                "ar": "انظر، حصان أبيض في الحقل!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "It runs so fast!",
+                "fr": "Il court si vite !",
+                "ar": "إنه يركض بسرعة كبيرة!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "bookshop",
+          "lines": [
+            {
+              "who": {
+                "en": "Maya",
+                "fr": "Maya",
+                "ar": "مايا"
+              },
+              "text": {
+                "en": "Dad, I want this book about horses.",
+                "fr": "Papa, je veux ce livre sur les chevaux.",
+                "ar": "أبي، أريد هذا الكتاب عن الخيول."
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Okay. You love horses!",
+                "fr": "D’accord. Tu adores les chevaux !",
+                "ar": "حسنا. أنت تحبين الخيول كثيرا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "village",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "When I was young, I had a horse.",
+                "fr": "Quand j’étais petit, j’avais un cheval.",
+                "ar": "عندما كنت صغيرا، كان عندي حصان."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Really? What was his name?",
+                "fr": "C’est vrai ? Comment il s’appelait ?",
+                "ar": "حقا؟ ما كان اسمه؟"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/20181129_White_Horse.jpg/330px-20181129_White_Horse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:20181129_White_Horse.jpg",
+          "author": "Flocci Nivis",
+          "licence": "CC BY-SA 4.0",
+          "caption": "A white horse stands in a field."
+        }
+      ]
+    },
+    "cow": {
+      "scenes": [
+        {
+          "place": "farm",
+          "lines": [
+            {
+              "who": {
+                "en": "Farmer",
+                "fr": "Le fermier",
+                "ar": "المزارع"
+              },
+              "text": {
+                "en": "This cow gives us milk every day.",
+                "fr": "Cette vache nous donne du lait tous les jours.",
+                "ar": "هذه البقرة تعطينا الحليب كل يوم."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Can I touch her?",
+                "fr": "Je peux la caresser ?",
+                "ar": "هل يمكنني أن ألمسها؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Farmer",
+                "fr": "Le fermier",
+                "ar": "المزارع"
+              },
+              "text": {
+                "en": "Yes, she is very nice.",
+                "fr": "Oui, elle est très gentille.",
+                "ar": "نعم، إنها لطيفة جدا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "field",
+          "lines": [
+            {
+              "who": {
+                "en": "Tom",
+                "fr": "Tom",
+                "ar": "توم"
+              },
+              "text": {
+                "en": "How many cows are in the field?",
+                "fr": "Combien de vaches il y a dans le champ ?",
+                "ar": "كم بقرة في الحقل؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Amina",
+                "fr": "Amina",
+                "ar": "أمينة"
+              },
+              "text": {
+                "en": "One, two, three… ten cows!",
+                "fr": "Une, deux, trois… dix vaches !",
+                "ar": "واحدة، اثنتان، ثلاث... عشر بقرات!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "kitchen",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Mum, where does milk come from?",
+                "fr": "Maman, d’où vient le lait ?",
+                "ar": "أمي، من أين يأتي الحليب؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "It comes from cows.",
+                "fr": "Il vient des vaches.",
+                "ar": "يأتي من الأبقار."
+              }
+            }
+          ]
+        },
+        {
+          "place": "car",
+          "lines": [
+            {
+              "who": {
+                "en": "Leo",
+                "fr": "Leo",
+                "ar": "ليو"
+              },
+              "text": {
+                "en": "Dad, look! Cows on the road!",
+                "fr": "Papa, regarde ! Des vaches sur la route !",
+                "ar": "أبي، انظر! أبقار على الطريق!"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Okay, I will drive slowly.",
+                "fr": "D’accord, je vais rouler doucement.",
+                "ar": "حسنا، سأقود ببطء."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/New_born_Frisian_red_white_calf.jpg/330px-New_born_Frisian_red_white_calf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:New_born_Frisian_red_white_calf.jpg",
+          "author": "Uberprutser",
+          "licence": "CC BY-SA 3.0",
+          "caption": "A cow with her baby calf."
+        }
+      ]
+    },
+    "pet": {
+      "scenes": [
+        {
+          "place": "classroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "La maîtresse",
+                "ar": "المعلمة"
+              },
+              "text": {
+                "en": "Do you have a pet?",
+                "fr": "Tu as un animal de compagnie ?",
+                "ar": "هل عندك حيوان أليف؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, I have a rabbit.",
+                "fr": "Oui, j’ai un lapin.",
+                "ar": "نعم، عندي أرنب."
+              }
+            }
+          ]
+        },
+        {
+          "place": "pet-shop",
+          "lines": [
+            {
+              "who": {
+                "en": "Ali",
+                "fr": "Ali",
+                "ar": "علي"
+              },
+              "text": {
+                "en": "Dad, can I have a pet?",
+                "fr": "Papa, je peux avoir un animal de compagnie ?",
+                "ar": "أبي، هل يمكنني أن أقتني حيوانا أليفا؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "A pet needs a lot of love and work.",
+                "fr": "Un animal de compagnie demande beaucoup d’amour et de travail.",
+                "ar": "الحيوان الأليف يحتاج إلى الكثير من الحب والعمل."
+              }
+            },
+            {
+              "who": {
+                "en": "Ali",
+                "fr": "Ali",
+                "ar": "علي"
+              },
+              "text": {
+                "en": "I know. I will take care of it!",
+                "fr": "Je sais. Je vais bien m’en occuper !",
+                "ar": "أعرف. سأعتني به!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "vet",
+          "lines": [
+            {
+              "who": {
+                "en": "Vet",
+                "fr": "Le vétérinaire",
+                "ar": "الطبيب البيطري"
+              },
+              "text": {
+                "en": "Your pet is fine. Don’t worry.",
+                "fr": "Ton animal va bien. Ne t’inquiète pas.",
+                "ar": "حيوانك الأليف بخير. لا تقلق."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Thank you, doctor!",
+                "fr": "Merci, docteur !",
+                "ar": "شكرا يا دكتور!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "friends-house",
+          "lines": [
+            {
+              "who": {
+                "en": "Zoe",
+                "fr": "Zoe",
+                "ar": "زوي"
+              },
+              "text": {
+                "en": "Do you want to see my pets?",
+                "fr": "Tu veux voir mes animaux ?",
+                "ar": "هل تريد أن ترى حيواناتي الأليفة؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes! What do you have?",
+                "fr": "Oui ! Qu’est-ce que tu as ?",
+                "ar": "نعم! ماذا عندك؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Zoe",
+                "fr": "Zoe",
+                "ar": "زوي"
+              },
+              "text": {
+                "en": "Two fish and a cat.",
+                "fr": "Deux poissons et un chat.",
+                "ar": "سمكتان وقطة."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "sheep": {
+      "scenes": [
+        {
+          "place": "farm",
+          "lines": [
+            {
+              "who": {
+                "en": "Farmer",
+                "fr": "La fermière",
+                "ar": "المزارعة"
+              },
+              "text": {
+                "en": "The sheep eat grass all day.",
+                "fr": "Les moutons mangent de l’herbe toute la journée.",
+                "ar": "الخراف تأكل العشب طوال اليوم."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Can I give them some grass?",
+                "fr": "Je peux leur donner de l’herbe ?",
+                "ar": "هل يمكنني أن أعطيها بعض العشب؟"
+              }
+            }
+          ]
+        },
+        {
+          "place": "mountain",
+          "lines": [
+            {
+              "who": {
+                "en": "Karim",
+                "fr": "Karim",
+                "ar": "كريم"
+              },
+              "text": {
+                "en": "Look at all the sheep on the mountain!",
+                "fr": "Regarde tous ces moutons sur la montagne !",
+                "ar": "انظري إلى كل هذه الخراف على الجبل!"
+              }
+            },
+            {
+              "who": {
+                "en": "Nadia",
+                "fr": "Nadia",
+                "ar": "نادية"
+              },
+              "text": {
+                "en": "They are white, like clouds!",
+                "fr": "Ils sont blancs, comme des nuages !",
+                "ar": "إنها بيضاء مثل الغيوم!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "You can’t sleep? Count sheep!",
+                "fr": "Tu n’arrives pas à dormir ? Compte les moutons !",
+                "ar": "لا تستطيع النوم؟ عد الخراف!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "One sheep, two sheep, three sheep…",
+                "fr": "Un mouton, deux moutons, trois moutons…",
+                "ar": "خروف واحد، خروفان، ثلاثة خراف..."
+              }
+            }
+          ]
+        },
+        {
+          "place": "village",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandma",
+                "fr": "Mamie",
+                "ar": "الجدة"
+              },
+              "text": {
+                "en": "Our neighbour has twenty sheep.",
+                "fr": "Notre voisin a vingt moutons.",
+                "ar": "جارنا عنده عشرون خروفا."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Wow! That is a lot!",
+                "fr": "Waouh ! C’est beaucoup !",
+                "ar": "واو! هذا كثير!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Light_brown_and_white_lamb_grazing_in_a_grassy_field%2C_Bangladesh_2026_03.jpg/330px-Light_brown_and_white_lamb_grazing_in_a_grassy_field%2C_Bangladesh_2026_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Light_brown_and_white_lamb_grazing_in_a_grassy_field,_Bangladesh_2026_03.jpg",
+          "author": "A S M Jobaer",
+          "licence": "CC BY-SA 4.0",
+          "caption": "Sheep eat grass in a field."
+        }
+      ]
+    },
+    "chicken": {
+      "scenes": [
+        {
+          "place": "farm",
+          "lines": [
+            {
+              "who": {
+                "en": "Farmer",
+                "fr": "Le fermier",
+                "ar": "المزارع"
+              },
+              "text": {
+                "en": "This chicken lays an egg every morning.",
+                "fr": "Cette poule pond un œuf chaque matin.",
+                "ar": "هذه الدجاجة تبيض بيضة كل صباح."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Can I look for the eggs?",
+                "fr": "Je peux chercher les œufs ?",
+                "ar": "هل يمكنني أن أبحث عن البيض؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Farmer",
+                "fr": "Le fermier",
+                "ar": "المزارع"
+              },
+              "text": {
+                "en": "Yes, here is a basket.",
+                "fr": "Oui, voici un panier.",
+                "ar": "نعم، هذه سلة."
+              }
+            }
+          ]
+        },
+        {
+          "place": "grandparents-house",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandma",
+                "fr": "Mamie",
+                "ar": "الجدة"
+              },
+              "text": {
+                "en": "Can you give the chickens their food?",
+                "fr": "Tu peux donner à manger aux poules ?",
+                "ar": "هل يمكنك أن تطعم الدجاجات؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, Grandma! Come, chickens!",
+                "fr": "Oui, mamie ! Venez, les poules !",
+                "ar": "نعم يا جدتي! تعالين أيتها الدجاجات!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "garden",
+          "lines": [
+            {
+              "who": {
+                "en": "Lina",
+                "fr": "Lina",
+                "ar": "لينا"
+              },
+              "text": {
+                "en": "Why is the chicken running?",
+                "fr": "Pourquoi elle court, la poule ?",
+                "ar": "لماذا تركض الدجاجة؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Omar",
+                "fr": "Omar",
+                "ar": "عمر"
+              },
+              "text": {
+                "en": "She is hungry, I think.",
+                "fr": "Elle a faim, je crois.",
+                "ar": "إنها جائعة، على ما أظن."
+              }
+            }
+          ]
+        },
+        {
+          "place": "market",
+          "lines": [
+            {
+              "who": {
+                "en": "Seller",
+                "fr": "La marchande",
+                "ar": "البائعة"
+              },
+              "text": {
+                "en": "These eggs are from my chickens.",
+                "fr": "Ces œufs viennent de mes poules.",
+                "ar": "هذا البيض من دجاجاتي."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Six eggs, please.",
+                "fr": "Six œufs, s’il vous plaît.",
+                "ar": "ست بيضات، من فضلك."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Hen_with_chicks%2C_Raisen_district%2C_MP%2C_India.jpg/330px-Hen_with_chicks%2C_Raisen_district%2C_MP%2C_India.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Hen_with_chicks,_Raisen_district,_MP,_India.jpg",
+          "author": "Yann",
+          "licence": "CC BY-SA 4.0",
+          "caption": "A chicken with her little chicks."
+        }
+      ]
+    },
+    "mouse": {
+      "scenes": [
+        {
+          "place": "kitchen",
+          "lines": [
+            {
+              "who": {
+                "en": "Sara",
+                "fr": "Sara",
+                "ar": "سارة"
+              },
+              "text": {
+                "en": "Mum! A mouse in the kitchen!",
+                "fr": "Maman ! Une souris dans la cuisine !",
+                "ar": "أمي! فأر في المطبخ!"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Don’t worry, it is very small.",
+                "fr": "Ne t’inquiète pas, elle est toute petite.",
+                "ar": "لا تقلقي، إنه صغير جدا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "garage",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "Look, the cat is running after a mouse!",
+                "fr": "Regarde, le chat court après une souris !",
+                "ar": "انظر، القط يجري وراء فأر!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Run, little mouse!",
+                "fr": "Cours, petite souris !",
+                "ar": "اركض أيها الفأر الصغير!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "cinema",
+          "lines": [
+            {
+              "who": {
+                "en": "Amina",
+                "fr": "Amina",
+                "ar": "أمينة"
+              },
+              "text": {
+                "en": "I love this film about a little mouse.",
+                "fr": "J’adore ce film sur une petite souris.",
+                "ar": "أحب هذا الفيلم عن فأر صغير."
+              }
+            },
+            {
+              "who": {
+                "en": "Tom",
+                "fr": "Tom",
+                "ar": "توم"
+              },
+              "text": {
+                "en": "Me too! The mouse is so funny.",
+                "fr": "Moi aussi ! La souris est trop drôle.",
+                "ar": "وأنا أيضا! الفأر مضحك جدا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "science-lab",
+          "lines": [
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "Le professeur",
+                "ar": "المعلم"
+              },
+              "text": {
+                "en": "This white mouse is our class pet.",
+                "fr": "Cette souris blanche est l’animal de notre classe.",
+                "ar": "هذا الفأر الأبيض هو الحيوان الأليف لصفنا."
+              }
+            },
+            {
+              "who": {
+                "en": "Ines",
+                "fr": "Ines",
+                "ar": "إيناس"
+              },
+              "text": {
+                "en": "Can I give it some food?",
+                "fr": "Je peux lui donner à manger ?",
+                "ar": "هل يمكنني أن أطعمه؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "Le professeur",
+                "ar": "المعلم"
+              },
+              "text": {
+                "en": "Yes, a little.",
+                "fr": "Oui, un petit peu.",
+                "ar": "نعم، قليلا."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/%D0%94%D0%BE%D0%BC%D0%BE%D0%B2%D0%B0%D1%8F_%D0%BC%D1%8B%D1%88%D1%8C_%28Mus_musculus%29%2C_%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0.jpg/330px-%D0%94%D0%BE%D0%BC%D0%BE%D0%B2%D0%B0%D1%8F_%D0%BC%D1%8B%D1%88%D1%8C_%28Mus_musculus%29%2C_%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:%D0%94%D0%BE%D0%BC%D0%BE%D0%B2%D0%B0%D1%8F_%D0%BC%D1%8B%D1%88%D1%8C_(Mus_musculus),_%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0.jpg",
+          "author": "Dion Art",
+          "licence": "CC BY-SA 4.0",
+          "caption": "A small brown mouse."
+        }
+      ]
+    },
+    "rabbit": {
+      "scenes": [
+        {
+          "place": "garden",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Dad, a rabbit is eating our carrots!",
+                "fr": "Papa, un lapin mange nos carottes !",
+                "ar": "أبي، أرنب يأكل جزرنا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Ha! He is very hungry.",
+                "fr": "Ha ! Il a très faim.",
+                "ar": "ها! إنه جائع جدا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "pet-shop",
+          "lines": [
+            {
+              "who": {
+                "en": "Shopkeeper",
+                "fr": "Le vendeur",
+                "ar": "البائع"
+              },
+              "text": {
+                "en": "Do you like this rabbit?",
+                "fr": "Tu aimes ce lapin ?",
+                "ar": "هل يعجبك هذا الأرنب؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes! He has long ears.",
+                "fr": "Oui ! Il a de longues oreilles.",
+                "ar": "نعم! له أذنان طويلتان."
+              }
+            }
+          ]
+        },
+        {
+          "place": "forest",
+          "lines": [
+            {
+              "who": {
+                "en": "Hugo",
+                "fr": "Hugo",
+                "ar": "هوغو"
+              },
+              "text": {
+                "en": "Shh! A rabbit, behind the tree.",
+                "fr": "Chut ! Un lapin, derrière l’arbre.",
+                "ar": "صه! أرنب، خلف الشجرة."
+              }
+            },
+            {
+              "who": {
+                "en": "Mei",
+                "fr": "Mei",
+                "ar": "مي"
+              },
+              "text": {
+                "en": "Oh, it ran away!",
+                "fr": "Oh, il s’est sauvé !",
+                "ar": "آه، لقد هرب!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "friends-house",
+          "lines": [
+            {
+              "who": {
+                "en": "Maya",
+                "fr": "Maya",
+                "ar": "مايا"
+              },
+              "text": {
+                "en": "This is my rabbit. He is all white.",
+                "fr": "Voici mon lapin. Il est tout blanc.",
+                "ar": "هذا أرنبي. إنه أبيض تماما."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "What does he eat?",
+                "fr": "Qu’est-ce qu’il mange ?",
+                "ar": "ماذا يأكل؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Maya",
+                "fr": "Maya",
+                "ar": "مايا"
+              },
+              "text": {
+                "en": "Carrots and grass.",
+                "fr": "Des carottes et de l’herbe.",
+                "ar": "الجزر والعشب."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Heimtier_004_2023_08_26.jpg/330px-Heimtier_004_2023_08_26.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Heimtier_004_2023_08_26.jpg",
+          "author": "Friedrich Haag",
+          "licence": "CC BY-SA 4.0",
+          "caption": "A rabbit with long ears."
+        }
+      ]
+    },
+    "duck": {
+      "scenes": [
+        {
+          "place": "lake",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Grandma, look at the ducks on the lake!",
+                "fr": "Mamie, regarde les canards sur le lac !",
+                "ar": "جدتي، انظري إلى البط على البحيرة!"
+              }
+            },
+            {
+              "who": {
+                "en": "Grandma",
+                "fr": "Mamie",
+                "ar": "الجدة"
+              },
+              "text": {
+                "en": "There are baby ducks too!",
+                "fr": "Il y a aussi des bébés canards !",
+                "ar": "وهناك صغار البط أيضا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "park",
+          "lines": [
+            {
+              "who": {
+                "en": "Kofi",
+                "fr": "Kofi",
+                "ar": "كوفي"
+              },
+              "text": {
+                "en": "The duck is coming to us!",
+                "fr": "Le canard vient vers nous !",
+                "ar": "البطة قادمة نحونا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Emma",
+                "fr": "Emma",
+                "ar": "إيما"
+              },
+              "text": {
+                "en": "Maybe it is hungry.",
+                "fr": "Il a peut-être faim.",
+                "ar": "ربما هي جائعة."
+              }
+            }
+          ]
+        },
+        {
+          "place": "river",
+          "lines": [
+            {
+              "who": {
+                "en": "Ravi",
+                "fr": "Ravi",
+                "ar": "رافي"
+              },
+              "text": {
+                "en": "Dad, the duck is going under the water!",
+                "fr": "Papa, le canard plonge sous l’eau !",
+                "ar": "أبي، البطة تغوص تحت الماء!"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Yes, it is looking for food.",
+                "fr": "Oui, il cherche à manger.",
+                "ar": "نعم، إنها تبحث عن الطعام."
+              }
+            }
+          ]
+        },
+        {
+          "place": "bathroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Here is your yellow duck for the bath.",
+                "fr": "Voici ton canard jaune pour le bain.",
+                "ar": "هذه بطتك الصفراء لوقت الاستحمام."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Thank you, Mum! Quack quack!",
+                "fr": "Merci, maman ! Coin-coin !",
+                "ar": "شكرا يا أمي! كواك كواك!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Male_mallard_duck_2.jpg/330px-Male_mallard_duck_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Male_mallard_duck_2.jpg",
+          "author": "Acarpentier",
+          "licence": "CC BY 3.0",
+          "caption": "A duck by the water."
+        }
+      ]
+    },
+    "goat": {
+      "scenes": [
+        {
+          "place": "mountain",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "Look! A goat is climbing the mountain.",
+                "fr": "Regarde ! Une chèvre grimpe sur la montagne.",
+                "ar": "انظر! عنزة تتسلق الجبل."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Wow! It is not afraid!",
+                "fr": "Waouh ! Elle n’a pas peur !",
+                "ar": "واو! إنها لا تخاف!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "farm",
+          "lines": [
+            {
+              "who": {
+                "en": "Farmer",
+                "fr": "La fermière",
+                "ar": "المزارعة"
+              },
+              "text": {
+                "en": "This goat likes to eat everything!",
+                "fr": "Cette chèvre aime manger de tout !",
+                "ar": "هذه العنزة تحب أن تأكل كل شيء!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Oh no! She is eating my paper!",
+                "fr": "Oh non ! Elle mange mon papier !",
+                "ar": "يا إلهي! إنها تأكل ورقتي!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "market",
+          "lines": [
+            {
+              "who": {
+                "en": "Ali",
+                "fr": "Ali",
+                "ar": "علي"
+              },
+              "text": {
+                "en": "Is this goat cheese?",
+                "fr": "C’est du fromage de chèvre ?",
+                "ar": "هل هذا جبن ماعز؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Seller",
+                "fr": "Le marchand",
+                "ar": "البائع"
+              },
+              "text": {
+                "en": "Yes, from my goats.",
+                "fr": "Oui, de mes chèvres.",
+                "ar": "نعم، من ماعزي."
+              }
+            }
+          ]
+        },
+        {
+          "place": "desert",
+          "lines": [
+            {
+              "who": {
+                "en": "Nadia",
+                "fr": "Nadia",
+                "ar": "نادية"
+              },
+              "text": {
+                "en": "Dad, look, goats in the desert!",
+                "fr": "Papa, regarde, des chèvres dans le désert !",
+                "ar": "أبي، انظر، ماعز في الصحراء!"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Yes, goats can live with very little water.",
+                "fr": "Oui, les chèvres peuvent vivre avec très peu d’eau.",
+                "ar": "نعم، يمكن للماعز أن تعيش بقليل جدا من الماء."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Capra_aegagrus_hircus_in_isla_Margarita.jpg/330px-Capra_aegagrus_hircus_in_isla_Margarita.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Capra_aegagrus_hircus_in_isla_Margarita.jpg",
+          "author": "Wilfredor",
+          "licence": "CC0",
+          "caption": "A goat stands on the grass."
+        }
+      ]
+    },
+    "lion": {
+      "scenes": [
+        {
+          "place": "zoo",
+          "lines": [
+            {
+              "who": {
+                "en": "Zookeeper",
+                "fr": "Le soigneur",
+                "ar": "حارس الحديقة"
+              },
+              "text": {
+                "en": "The lion is sleeping in the sun.",
+                "fr": "Le lion dort au soleil.",
+                "ar": "الأسد نائم في الشمس."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "He is so big!",
+                "fr": "Il est tellement grand !",
+                "ar": "إنه كبير جدا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "cinema",
+          "lines": [
+            {
+              "who": {
+                "en": "Omar",
+                "fr": "Omar",
+                "ar": "عمر"
+              },
+              "text": {
+                "en": "Do you want to see the film about the lion?",
+                "fr": "Tu veux voir le film sur le lion ?",
+                "ar": "هل تريد أن تشاهد الفيلم عن الأسد؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes! I love lions!",
+                "fr": "Oui ! J’adore les lions !",
+                "ar": "نعم! أحب الأسود!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "museum",
+          "lines": [
+            {
+              "who": {
+                "en": "Guide",
+                "fr": "La guide",
+                "ar": "المرشدة"
+              },
+              "text": {
+                "en": "This lion is very old. It is made of stone.",
+                "fr": "Ce lion est très vieux. Il est en pierre.",
+                "ar": "هذا الأسد قديم جدا. إنه مصنوع من الحجر."
+              }
+            },
+            {
+              "who": {
+                "en": "Sam",
+                "fr": "Sam",
+                "ar": "سام"
+              },
+              "text": {
+                "en": "It looks real!",
+                "fr": "On dirait un vrai !",
+                "ar": "يبدو حقيقيا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "playground",
+          "lines": [
+            {
+              "who": {
+                "en": "Lina",
+                "fr": "Lina",
+                "ar": "لينا"
+              },
+              "text": {
+                "en": "I am a lion! Roar!",
+                "fr": "Je suis un lion ! Grrr !",
+                "ar": "أنا أسد! غررر!"
+              }
+            },
+            {
+              "who": {
+                "en": "Adam",
+                "fr": "Adam",
+                "ar": "آدم"
+              },
+              "text": {
+                "en": "Help! Run!",
+                "fr": "Au secours ! Courez !",
+                "ar": "النجدة! اهربوا!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/011_The_lion_king_Tryggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg/330px-011_The_lion_king_Tryggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:011_The_lion_king_Tryggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg",
+          "author": "Giles Laurent",
+          "licence": "CC BY-SA 4.0",
+          "caption": "A lion with a big mane."
+        }
+      ]
+    },
+    "elephant": {
+      "scenes": [
+        {
+          "place": "zoo",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Look, the elephant is drinking water.",
+                "fr": "Regarde, l’éléphant boit de l’eau.",
+                "ar": "انظر، الفيل يشرب الماء."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "He has very big ears!",
+                "fr": "Il a de très grandes oreilles !",
+                "ar": "له أذنان كبيرتان جدا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "toy-shop",
+          "lines": [
+            {
+              "who": {
+                "en": "Tom",
+                "fr": "Tom",
+                "ar": "توم"
+              },
+              "text": {
+                "en": "Grandma, I want this blue elephant!",
+                "fr": "Mamie, je veux cet éléphant bleu !",
+                "ar": "جدتي، أريد هذا الفيل الأزرق!"
+              }
+            },
+            {
+              "who": {
+                "en": "Grandma",
+                "fr": "Mamie",
+                "ar": "الجدة"
+              },
+              "text": {
+                "en": "Okay, it is a present for you.",
+                "fr": "D’accord, c’est un cadeau pour toi.",
+                "ar": "حسنا، إنه هدية لك."
+              }
+            }
+          ]
+        },
+        {
+          "place": "library",
+          "lines": [
+            {
+              "who": {
+                "en": "Yasmin",
+                "fr": "Yasmin",
+                "ar": "ياسمين"
+              },
+              "text": {
+                "en": "Did you know? An elephant can live seventy years.",
+                "fr": "Tu savais ? Un éléphant peut vivre soixante-dix ans.",
+                "ar": "هل كنت تعرف؟ يمكن للفيل أن يعيش سبعين سنة."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Wow, like Grandpa!",
+                "fr": "Waouh, comme papi !",
+                "ar": "واو، مثل جدي!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "La maîtresse",
+                "ar": "المعلمة"
+              },
+              "text": {
+                "en": "Which animal is very big and grey?",
+                "fr": "Quel animal est très gros et gris ?",
+                "ar": "أي حيوان كبير جدا ورمادي؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Children",
+                "fr": "Les enfants",
+                "ar": "الأطفال"
+              },
+              "text": {
+                "en": "The elephant!",
+                "fr": "L’éléphant !",
+                "ar": "الفيل!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/African_bush_elephants_%28Loxodonta_africana%29_female_with_six-week-old_baby.jpg/330px-African_bush_elephants_%28Loxodonta_africana%29_female_with_six-week-old_baby.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:African_bush_elephants_(Loxodonta_africana)_female_with_six-week-old_baby.jpg",
+          "author": "Charles J. Sharp",
+          "licence": "CC BY-SA 4.0",
+          "caption": "An elephant and her baby."
+        }
+      ]
+    },
+    "monkey": {
+      "scenes": [
+        {
+          "place": "zoo",
+          "lines": [
+            {
+              "who": {
+                "en": "Zoe",
+                "fr": "Zoe",
+                "ar": "زوي"
+              },
+              "text": {
+                "en": "The monkey is eating a banana!",
+                "fr": "Le singe mange une banane !",
+                "ar": "القرد يأكل موزة!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Look, he is jumping now!",
+                "fr": "Regarde, il saute maintenant !",
+                "ar": "انظري، إنه يقفز الآن!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "playground",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "You climb like a monkey!",
+                "fr": "Tu grimpes comme un singe !",
+                "ar": "أنت تتسلق مثل القرد!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Ha ha! Look at me, Dad!",
+                "fr": "Ha ha ! Regarde-moi, papa !",
+                "ar": "ها ها! انظر إلي يا أبي!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "living-room",
+          "lines": [
+            {
+              "who": {
+                "en": "Ravi",
+                "fr": "Ravi",
+                "ar": "رافي"
+              },
+              "text": {
+                "en": "Mum, can we watch the film about monkeys?",
+                "fr": "Maman, on peut regarder le film sur les singes ?",
+                "ar": "أمي، هل يمكننا أن نشاهد الفيلم عن القرود؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Yes, after your homework.",
+                "fr": "Oui, après tes devoirs.",
+                "ar": "نعم، بعد واجباتك."
+              }
+            }
+          ]
+        },
+        {
+          "place": "bookshop",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Do you have a book about monkeys?",
+                "fr": "Vous avez un livre sur les singes ?",
+                "ar": "هل عندكم كتاب عن القرود؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Bookseller",
+                "fr": "La libraire",
+                "ar": "بائعة الكتب"
+              },
+              "text": {
+                "en": "Yes, here you are.",
+                "fr": "Oui, voilà.",
+                "ar": "نعم، تفضل."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Rhesus_macaque_%28Macaca_mulatta_mulatta%29%2C_male%2C_Gokarna.jpg/330px-Rhesus_macaque_%28Macaca_mulatta_mulatta%29%2C_male%2C_Gokarna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Rhesus_macaque_(Macaca_mulatta_mulatta),_male,_Gokarna.jpg",
+          "author": "Charles J. Sharp",
+          "licence": "CC BY-SA 4.0",
+          "caption": "A monkey sits on the grass."
+        }
+      ]
+    },
+    "bear": {
+      "scenes": [
+        {
+          "place": "zoo",
+          "lines": [
+            {
+              "who": {
+                "en": "Zookeeper",
+                "fr": "La soigneuse",
+                "ar": "حارسة الحديقة"
+              },
+              "text": {
+                "en": "The bear likes fish and honey.",
+                "fr": "L’ours aime le poisson et le miel.",
+                "ar": "الدب يحب السمك والعسل."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Me too!",
+                "fr": "Moi aussi !",
+                "ar": "وأنا أيضا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "campsite",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Bears live in this forest.",
+                "fr": "Des ours vivent dans cette forêt.",
+                "ar": "تعيش الدببة في هذه الغابة."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Can we see one?",
+                "fr": "On peut en voir un ?",
+                "ar": "هل يمكننا أن نرى واحدا؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Only from very far away!",
+                "fr": "Seulement de très loin !",
+                "ar": "من بعيد جدا فقط!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "Le maître",
+                "ar": "المعلم"
+              },
+              "text": {
+                "en": "The bear sleeps all winter.",
+                "fr": "L’ours dort tout l’hiver.",
+                "ar": "الدب ينام طوال الشتاء."
+              }
+            },
+            {
+              "who": {
+                "en": "Karim",
+                "fr": "Karim",
+                "ar": "كريم"
+              },
+              "text": {
+                "en": "All winter? Lucky bear!",
+                "fr": "Tout l’hiver ? Il a de la chance !",
+                "ar": "طوال الشتاء؟ يا له من دب محظوظ!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "museum",
+          "lines": [
+            {
+              "who": {
+                "en": "Ines",
+                "fr": "Ines",
+                "ar": "إيناس"
+              },
+              "text": {
+                "en": "Mum, look, a big brown bear!",
+                "fr": "Maman, regarde, un grand ours brun !",
+                "ar": "أمي، انظري، دب بني كبير!"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Don’t worry, it is not real.",
+                "fr": "Ne t’inquiète pas, il n’est pas vrai.",
+                "ar": "لا تقلقي، إنه ليس حقيقيا."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Kamchatka_Brown_Bear_near_Dvuhyurtochnoe_on_2015-07-23.jpg/330px-Kamchatka_Brown_Bear_near_Dvuhyurtochnoe_on_2015-07-23.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Kamchatka_Brown_Bear_near_Dvuhyurtochnoe_on_2015-07-23.jpg",
+          "author": "Robert F. Tobler",
+          "licence": "CC BY-SA 4.0",
+          "caption": "A brown bear stands in the river."
+        }
+      ]
+    },
+    "tiger": {
+      "scenes": [
+        {
+          "place": "zoo",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Which one is the tiger?",
+                "fr": "Lequel est le tigre ?",
+                "ar": "أي واحد هو النمر؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Kofi",
+                "fr": "Kofi",
+                "ar": "كوفي"
+              },
+              "text": {
+                "en": "The orange one, with black stripes.",
+                "fr": "Celui qui est orange, avec des rayures noires.",
+                "ar": "البرتقالي، ذو الخطوط السوداء."
+              }
+            }
+          ]
+        },
+        {
+          "place": "birthday-party",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Do you want a tiger face?",
+                "fr": "Tu veux un maquillage de tigre ?",
+                "ar": "هل تريد أن أرسم لك وجه نمر؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes! Grrr! I am a tiger!",
+                "fr": "Oui ! Grrr ! Je suis un tigre !",
+                "ar": "نعم! غررر! أنا نمر!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "library",
+          "lines": [
+            {
+              "who": {
+                "en": "Sam",
+                "fr": "Sam",
+                "ar": "سام"
+              },
+              "text": {
+                "en": "This book says tigers love water.",
+                "fr": "Ce livre dit que les tigres aiment l’eau.",
+                "ar": "هذا الكتاب يقول إن النمور تحب الماء."
+              }
+            },
+            {
+              "who": {
+                "en": "Lina",
+                "fr": "Lina",
+                "ar": "لينا"
+              },
+              "text": {
+                "en": "Really? Cats don’t!",
+                "fr": "C’est vrai ? Les chats, non !",
+                "ar": "حقا؟ القطط لا تحبه!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "toy-shop",
+          "lines": [
+            {
+              "who": {
+                "en": "Emma",
+                "fr": "Emma",
+                "ar": "إيما"
+              },
+              "text": {
+                "en": "Dad, I love this big tiger!",
+                "fr": "Papa, j’adore ce gros tigre !",
+                "ar": "أبي، أحب هذا النمر الكبير!"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "It is softer than a real tiger!",
+                "fr": "Il est plus doux qu’un vrai tigre !",
+                "ar": "إنه أنعم من نمر حقيقي!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Bengal_tiger_%28Panthera_tigris_tigris%29_female_3.jpg/330px-Bengal_tiger_%28Panthera_tigris_tigris%29_female_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Bengal_tiger_(Panthera_tigris_tigris)_female_3.jpg",
+          "author": "Charles J. Sharp",
+          "licence": "CC BY-SA 4.0",
+          "caption": "A tiger with orange and black stripes."
+        }
+      ]
+    },
+    "snake": {
+      "scenes": [
+        {
+          "place": "zoo",
+          "lines": [
+            {
+              "who": {
+                "en": "Zookeeper",
+                "fr": "Le soigneur",
+                "ar": "حارس الحديقة"
+              },
+              "text": {
+                "en": "This snake is very long.",
+                "fr": "Ce serpent est très long.",
+                "ar": "هذا الثعبان طويل جدا."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Is it dangerous?",
+                "fr": "Il est dangereux ?",
+                "ar": "هل هو خطير؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Zookeeper",
+                "fr": "Le soigneur",
+                "ar": "حارس الحديقة"
+              },
+              "text": {
+                "en": "No, but don’t touch the glass.",
+                "fr": "Non, mais ne touche pas la vitre.",
+                "ar": "لا، لكن لا تلمس الزجاج."
+              }
+            }
+          ]
+        },
+        {
+          "place": "desert",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Be careful, there is a snake!",
+                "fr": "Attention, il y a un serpent !",
+                "ar": "انتبه، هناك ثعبان!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Where? I can’t see it.",
+                "fr": "Où ça ? Je ne le vois pas.",
+                "ar": "أين؟ لا أراه."
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Under that stone. Let’s go back slowly.",
+                "fr": "Sous cette pierre. On recule doucement.",
+                "ar": "تحت ذلك الحجر. لنرجع ببطء."
+              }
+            }
+          ]
+        },
+        {
+          "place": "garden",
+          "lines": [
+            {
+              "who": {
+                "en": "Amina",
+                "fr": "Amina",
+                "ar": "أمينة"
+              },
+              "text": {
+                "en": "Grandpa, there is a small snake in the grass!",
+                "fr": "Papi, il y a un petit serpent dans l’herbe !",
+                "ar": "جدي، هناك ثعبان صغير في العشب!"
+              }
+            },
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "Leave it. It is afraid of you.",
+                "fr": "Laisse-le. Il a peur de toi.",
+                "ar": "اتركيه. إنه يخاف منك."
+              }
+            }
+          ]
+        },
+        {
+          "place": "science-lab",
+          "lines": [
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "La professeure",
+                "ar": "المعلمة"
+              },
+              "text": {
+                "en": "A snake has no legs.",
+                "fr": "Un serpent n’a pas de pattes.",
+                "ar": "الثعبان ليس له أرجل."
+              }
+            },
+            {
+              "who": {
+                "en": "Leo",
+                "fr": "Leo",
+                "ar": "ليو"
+              },
+              "text": {
+                "en": "So how does it move?",
+                "fr": "Alors, comment il avance ?",
+                "ar": "إذن كيف يتحرك؟"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/AD2009Aug07_Natrix_helvetica_01.jpg/330px-AD2009Aug07_Natrix_helvetica_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:AD2009Aug07_Natrix_helvetica_01.jpg",
+          "author": "Bernie",
+          "licence": "Public domain",
+          "caption": "A snake shows its tongue."
+        }
+      ]
+    },
+    "insect": {
+      "scenes": [
+        {
+          "place": "garden",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Mum, what is this little insect?",
+                "fr": "Maman, c’est quoi, ce petit insecte ?",
+                "ar": "أمي، ما هذه الحشرة الصغيرة؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "It is an ant.",
+                "fr": "C’est une fourmi.",
+                "ar": "إنها نملة."
+              }
+            }
+          ]
+        },
+        {
+          "place": "science-lab",
+          "lines": [
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "Le professeur",
+                "ar": "المعلم"
+              },
+              "text": {
+                "en": "How many legs does an insect have?",
+                "fr": "Combien de pattes a un insecte ?",
+                "ar": "كم عدد أرجل الحشرة؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Mei",
+                "fr": "Mei",
+                "ar": "مي"
+              },
+              "text": {
+                "en": "Six legs!",
+                "fr": "Six pattes !",
+                "ar": "ست أرجل!"
+              }
+            },
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "Le professeur",
+                "ar": "المعلم"
+              },
+              "text": {
+                "en": "Very good, Mei!",
+                "fr": "Très bien, Mei !",
+                "ar": "أحسنت يا مي!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "campsite",
+          "lines": [
+            {
+              "who": {
+                "en": "Hugo",
+                "fr": "Hugo",
+                "ar": "هوغو"
+              },
+              "text": {
+                "en": "Dad, there is an insect on my arm!",
+                "fr": "Papa, il y a un insecte sur mon bras !",
+                "ar": "أبي، هناك حشرة على ذراعي!"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "It is only a little fly. Don’t worry.",
+                "fr": "C’est juste une petite mouche. Ne t’inquiète pas.",
+                "ar": "إنها مجرد ذبابة صغيرة. لا تقلق."
+              }
+            }
+          ]
+        },
+        {
+          "place": "museum",
+          "lines": [
+            {
+              "who": {
+                "en": "Guide",
+                "fr": "Le guide",
+                "ar": "المرشد"
+              },
+              "text": {
+                "en": "In this room, there are insects from many countries.",
+                "fr": "Dans cette salle, il y a des insectes de beaucoup de pays.",
+                "ar": "في هذه القاعة حشرات من بلدان كثيرة."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Wow, look at this big blue one!",
+                "fr": "Waouh, regarde ce gros insecte bleu !",
+                "ar": "واو، انظر إلى هذه الحشرة الكبيرة الزرقاء!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Adalia_bipunctata_MDj1.jpg/330px-Adalia_bipunctata_MDj1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Adalia_bipunctata_MDj1.jpg",
+          "author": "Milan Đurić",
+          "licence": "CC BY-SA 4.0",
+          "caption": "A ladybird is a small insect."
+        }
+      ]
+    },
+    "bee": {
+      "scenes": [
+        {
+          "place": "garden",
+          "lines": [
+            {
+              "who": {
+                "en": "Sara",
+                "fr": "Sara",
+                "ar": "سارة"
+              },
+              "text": {
+                "en": "Grandma, a bee!",
+                "fr": "Mamie, une abeille !",
+                "ar": "جدتي، نحلة!"
+              }
+            },
+            {
+              "who": {
+                "en": "Grandma",
+                "fr": "Mamie",
+                "ar": "الجدة"
+              },
+              "text": {
+                "en": "Don’t move. The bee only wants the flowers.",
+                "fr": "Ne bouge pas. L’abeille veut seulement les fleurs.",
+                "ar": "لا تتحركي. النحلة تريد الزهور فقط."
+              }
+            }
+          ]
+        },
+        {
+          "place": "flower-shop",
+          "lines": [
+            {
+              "who": {
+                "en": "Florist",
+                "fr": "La fleuriste",
+                "ar": "بائعة الزهور"
+              },
+              "text": {
+                "en": "Bees love these yellow flowers.",
+                "fr": "Les abeilles adorent ces fleurs jaunes.",
+                "ar": "النحل يحب هذه الزهور الصفراء."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Then I want them for my garden!",
+                "fr": "Alors je les veux pour mon jardin !",
+                "ar": "إذن أريدها لحديقتي!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "market",
+          "lines": [
+            {
+              "who": {
+                "en": "Seller",
+                "fr": "Le marchand",
+                "ar": "البائع"
+              },
+              "text": {
+                "en": "This honey is from my bees.",
+                "fr": "Ce miel vient de mes abeilles.",
+                "ar": "هذا العسل من نحلي."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "It is very good!",
+                "fr": "Il est très bon !",
+                "ar": "إنه لذيذ جدا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "field",
+          "lines": [
+            {
+              "who": {
+                "en": "Ali",
+                "fr": "Ali",
+                "ar": "علي"
+              },
+              "text": {
+                "en": "Listen! Bzzz… so many bees!",
+                "fr": "Écoute ! Bzzz… plein d’abeilles !",
+                "ar": "اسمعي! بززز... نحل كثير!"
+              }
+            },
+            {
+              "who": {
+                "en": "Nadia",
+                "fr": "Nadia",
+                "ar": "نادية"
+              },
+              "text": {
+                "en": "They are making honey.",
+                "fr": "Elles fabriquent du miel.",
+                "ar": "إنها تصنع العسل."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/European_honey_bee_extracts_nectar.jpg/330px-European_honey_bee_extracts_nectar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:European_honey_bee_extracts_nectar.jpg",
+          "author": "John Severns (Severnjc)",
+          "licence": "Public domain",
+          "caption": "A bee on a purple flower."
+        }
+      ]
+    },
+    "frog": {
+      "scenes": [
+        {
+          "place": "lake",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Look! A green frog!",
+                "fr": "Regarde ! Une grenouille verte !",
+                "ar": "انظر! ضفدع أخضر!"
+              }
+            },
+            {
+              "who": {
+                "en": "Tom",
+                "fr": "Tom",
+                "ar": "توم"
+              },
+              "text": {
+                "en": "Oh, it jumped into the water!",
+                "fr": "Oh, elle a sauté dans l’eau !",
+                "ar": "آه، لقد قفز في الماء!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "river",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "Can you hear the frogs?",
+                "fr": "Tu entends les grenouilles ?",
+                "ar": "هل تسمع الضفادع؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes! They are so loud!",
+                "fr": "Oui ! Elles font beaucoup de bruit !",
+                "ar": "نعم! صوتها عال جدا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "garden",
+          "lines": [
+            {
+              "who": {
+                "en": "Maya",
+                "fr": "Maya",
+                "ar": "مايا"
+              },
+              "text": {
+                "en": "Mum, there is a frog in the garden!",
+                "fr": "Maman, il y a une grenouille dans le jardin !",
+                "ar": "أمي، يوجد ضفدع في الحديقة!"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "It is raining. Frogs love the rain.",
+                "fr": "Il pleut. Les grenouilles adorent la pluie.",
+                "ar": "السماء تمطر. الضفادع تحب المطر."
+              }
+            }
+          ]
+        },
+        {
+          "place": "gym",
+          "lines": [
+            {
+              "who": {
+                "en": "Coach",
+                "fr": "L’entraîneur",
+                "ar": "المدرب"
+              },
+              "text": {
+                "en": "Now jump like a frog, everyone!",
+                "fr": "Maintenant, sautez comme des grenouilles, tout le monde !",
+                "ar": "والآن اقفزوا مثل الضفادع جميعا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Children",
+                "fr": "Les enfants",
+                "ar": "الأطفال"
+              },
+              "text": {
+                "en": "Ha ha! Like this?",
+                "fr": "Ha ha ! Comme ça ?",
+                "ar": "ها ها! هكذا؟"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Australia_green_tree_frog_%28Litoria_caerulea%29_crop.jpg/330px-Australia_green_tree_frog_%28Litoria_caerulea%29_crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Australia_green_tree_frog_(Litoria_caerulea)_crop.jpg",
+          "author": "LiquidGhoul",
+          "licence": "Public domain",
+          "caption": "A green frog on a branch."
+        }
+      ]
+    },
+    "wolf": {
+      "scenes": [
+        {
+          "place": "forest",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "A wolf lives in this forest.",
+                "fr": "Un loup vit dans cette forêt.",
+                "ar": "يعيش ذئب في هذه الغابة."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Really? Can we see it?",
+                "fr": "C’est vrai ? On peut le voir ?",
+                "ar": "حقا؟ هل يمكننا أن نراه؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "No, wolves are afraid of people.",
+                "fr": "Non, les loups ont peur des gens.",
+                "ar": "لا، الذئاب تخاف من الناس."
+              }
+            }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Tonight’s story is about a little wolf.",
+                "fr": "L’histoire de ce soir parle d’un petit loup.",
+                "ar": "قصة الليلة عن ذئب صغير."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Is he nice?",
+                "fr": "Il est gentil ?",
+                "ar": "هل هو لطيف؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Yes, very nice!",
+                "fr": "Oui, très gentil !",
+                "ar": "نعم، لطيف جدا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "zoo",
+          "lines": [
+            {
+              "who": {
+                "en": "Zoe",
+                "fr": "Zoe",
+                "ar": "زوي"
+              },
+              "text": {
+                "en": "Is that a dog?",
+                "fr": "C’est un chien ?",
+                "ar": "هل هذا كلب؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Zookeeper",
+                "fr": "La soigneuse",
+                "ar": "حارسة الحديقة"
+              },
+              "text": {
+                "en": "No, it is a wolf.",
+                "fr": "Non, c’est un loup.",
+                "ar": "لا، إنه ذئب."
+              }
+            }
+          ]
+        },
+        {
+          "place": "mountain",
+          "lines": [
+            {
+              "who": {
+                "en": "Ravi",
+                "fr": "Ravi",
+                "ar": "رافي"
+              },
+              "text": {
+                "en": "Grandpa, listen! Is that a wolf?",
+                "fr": "Papi, écoute ! C’est un loup ?",
+                "ar": "جدي، اسمع! هل هذا ذئب؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "Yes, but it is very far away.",
+                "fr": "Oui, mais il est très loin.",
+                "ar": "نعم، لكنه بعيد جدا."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Front_view_of_a_resting_Canis_lupus_ssp.jpg/330px-Front_view_of_a_resting_Canis_lupus_ssp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Front_view_of_a_resting_Canis_lupus_ssp.jpg",
+          "author": "Gary Kramer",
+          "licence": "Public domain",
+          "caption": "A grey wolf rests on a rock."
+        }
+      ]
+    },
+    "fox": {
+      "scenes": [
+        {
+          "place": "garden",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Mum, there is a fox in our garden!",
+                "fr": "Maman, il y a un renard dans notre jardin !",
+                "ar": "أمي، يوجد ثعلب في حديقتنا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Look at its red tail!",
+                "fr": "Regarde sa queue rousse !",
+                "ar": "انظر إلى ذيله الأحمر!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "forest",
+          "lines": [
+            {
+              "who": {
+                "en": "Emma",
+                "fr": "Emma",
+                "ar": "إيما"
+              },
+              "text": {
+                "en": "I saw a fox this morning!",
+                "fr": "J’ai vu un renard ce matin !",
+                "ar": "رأيت ثعلبا هذا الصباح!"
+              }
+            },
+            {
+              "who": {
+                "en": "Kofi",
+                "fr": "Kofi",
+                "ar": "كوفي"
+              },
+              "text": {
+                "en": "Lucky you! Foxes are hard to see.",
+                "fr": "Tu as de la chance ! Les renards sont difficiles à voir.",
+                "ar": "أنت محظوظة! من الصعب رؤية الثعالب."
+              }
+            }
+          ]
+        },
+        {
+          "place": "farm",
+          "lines": [
+            {
+              "who": {
+                "en": "Farmer",
+                "fr": "Le fermier",
+                "ar": "المزارع"
+              },
+              "text": {
+                "en": "We close the door at night because of the fox.",
+                "fr": "On ferme la porte la nuit à cause du renard.",
+                "ar": "نغلق الباب في الليل بسبب الثعلب."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Because the fox wants the chickens?",
+                "fr": "Parce que le renard veut les poules ?",
+                "ar": "لأن الثعلب يريد الدجاجات؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Farmer",
+                "fr": "Le fermier",
+                "ar": "المزارع"
+              },
+              "text": {
+                "en": "Yes!",
+                "fr": "Oui !",
+                "ar": "نعم!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "street",
+          "lines": [
+            {
+              "who": {
+                "en": "Adam",
+                "fr": "Adam",
+                "ar": "آدم"
+              },
+              "text": {
+                "en": "Mum, look, a fox in the street!",
+                "fr": "Maman, regarde, un renard dans la rue !",
+                "ar": "أمي، انظري، ثعلب في الشارع!"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Yes, some foxes live in the city.",
+                "fr": "Oui, certains renards vivent en ville.",
+                "ar": "نعم، بعض الثعالب تعيش في المدينة."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Red_Fox_drinking_from_a_lake_in_Gennevilliers%2C_France.jpg/330px-Red_Fox_drinking_from_a_lake_in_Gennevilliers%2C_France.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Red_Fox_drinking_from_a_lake_in_Gennevilliers,_France.jpg",
+          "author": "Alexis Lours",
+          "licence": "CC BY 4.0",
+          "caption": "A red fox drinks from a lake."
+        }
+      ]
+    }
+  }
+}

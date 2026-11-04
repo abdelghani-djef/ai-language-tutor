@@ -1,0 +1,3471 @@
+{
+  "pack": "places",
+  "complete": true,
+  "words": {
+    "city": {
+      "scenes": [
+        {
+          "place": "bus",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Look! We are in the city now.",
+                "fr": "Regarde ! Nous sommes en ville maintenant.",
+                "ar": "انظري! نحن في المدينة الآن."
+              }
+            },
+            {
+              "who": {
+                "en": "Yasmin",
+                "fr": "Yasmin",
+                "ar": "ياسمين"
+              },
+              "text": {
+                "en": "The city is very big!",
+                "fr": "La ville est très grande !",
+                "ar": "المدينة كبيرة جدا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "street",
+          "lines": [
+            {
+              "who": {
+                "en": "Leo",
+                "fr": "Léo",
+                "ar": "ليو"
+              },
+              "text": {
+                "en": "Do you live in the city?",
+                "fr": "Tu habites en ville ?",
+                "ar": "هل تعيش في المدينة؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, I live in the city with my family.",
+                "fr": "Oui, j’habite en ville avec ma famille.",
+                "ar": "نعم، أعيش في المدينة مع عائلتي."
+              }
+            }
+          ]
+        },
+        {
+          "place": "train",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "Look out of the window. We are near the city.",
+                "fr": "Regarde par la fenêtre. Nous arrivons en ville.",
+                "ar": "انظري من النافذة. نحن قريبون من المدينة."
+              }
+            },
+            {
+              "who": {
+                "en": "Amira",
+                "fr": "Amira",
+                "ar": "أميرة"
+              },
+              "text": {
+                "en": "Yes! I can see big buildings.",
+                "fr": "Oui ! Je vois de grands bâtiments.",
+                "ar": "نعم! أرى مباني كبيرة."
+              }
+            }
+          ]
+        },
+        {
+          "place": "balcony",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Look at the city at night!",
+                "fr": "Regarde la ville la nuit !",
+                "ar": "انظر إلى المدينة في الليل!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "It is beautiful. I can see many lights.",
+                "fr": "Elle est belle. Je vois beaucoup de lumières.",
+                "ar": "إنها جميلة. أرى أضواء كثيرة."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Skyline_of_Skyscrapers_in_Taipei_Xinyi_District.jpg/330px-Skyline_of_Skyscrapers_in_Taipei_Xinyi_District.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Skyline_of_Skyscrapers_in_Taipei_Xinyi_District.jpg",
+          "author": "MiNe",
+          "licence": "CC BY 2.0",
+          "caption": "Tall buildings in a big city"
+        }
+      ]
+    },
+    "town": {
+      "scenes": [
+        {
+          "place": "village",
+          "lines": [
+            {
+              "who": {
+                "en": "Nadia",
+                "fr": "Nadia",
+                "ar": "نادية"
+              },
+              "text": {
+                "en": "Do you go to town on Saturdays?",
+                "fr": "Tu vas en ville le samedi ?",
+                "ar": "هل تذهب إلى البلدة أيام السبت؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, I go to town with my mother.",
+                "fr": "Oui, je vais en ville avec ma mère.",
+                "ar": "نعم، أذهب إلى البلدة مع أمي."
+              }
+            }
+          ]
+        },
+        {
+          "place": "town-square",
+          "lines": [
+            {
+              "who": {
+                "en": "Neighbour",
+                "fr": "La voisine",
+                "ar": "الجارة"
+              },
+              "text": {
+                "en": "Our town is small, but it is beautiful.",
+                "fr": "Notre ville est petite, mais elle est belle.",
+                "ar": "بلدتنا صغيرة، لكنها جميلة."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, I like our town very much.",
+                "fr": "Oui, j’aime beaucoup notre ville.",
+                "ar": "نعم، أحب بلدتنا كثيرا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "train-station",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Excuse me, when is the next train to town?",
+                "fr": "Excusez-moi, à quelle heure est le prochain train pour la ville ?",
+                "ar": "عفوا، متى ينطلق القطار القادم إلى البلدة؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Station worker",
+                "fr": "L’agent de gare",
+                "ar": "موظف المحطة"
+              },
+              "text": {
+                "en": "At ten o’clock. Have a good day!",
+                "fr": "À dix heures. Bonne journée !",
+                "ar": "في الساعة العاشرة. أتمنى لك يوما سعيدا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "hotel",
+          "lines": [
+            {
+              "who": {
+                "en": "Receptionist",
+                "fr": "La réceptionniste",
+                "ar": "موظفة الاستقبال"
+              },
+              "text": {
+                "en": "Welcome to our town!",
+                "fr": "Bienvenue dans notre ville !",
+                "ar": "مرحبا بك في بلدتنا!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Thank you! It is a very nice town.",
+                "fr": "Merci ! C’est une très jolie petite ville.",
+                "ar": "شكرا! إنها بلدة جميلة جدا."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/The_High_Street%2C_Newport_Pagnell_-_geograph.org.uk_-_368877.jpg/330px-The_High_Street%2C_Newport_Pagnell_-_geograph.org.uk_-_368877.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:The_High_Street,_Newport_Pagnell_-_geograph.org.uk_-_368877.jpg",
+          "author": "Richard Schmidt",
+          "licence": "CC BY-SA 2.0",
+          "caption": "The main street of a small town"
+        }
+      ]
+    },
+    "street": {
+      "scenes": [
+        {
+          "place": "crossing",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Take my hand. Let’s cross the street now.",
+                "fr": "Donne-moi la main. On traverse la rue maintenant.",
+                "ar": "أعطني يدك. لنعبر الشارع الآن."
+              }
+            },
+            {
+              "who": {
+                "en": "Rayan",
+                "fr": "Rayan",
+                "ar": "ريان"
+              },
+              "text": {
+                "en": "Okay, Dad!",
+                "fr": "D’accord, papa !",
+                "ar": "حسنا يا أبي!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "taxi",
+          "lines": [
+            {
+              "who": {
+                "en": "Taxi driver",
+                "fr": "Le chauffeur de taxi",
+                "ar": "سائق التاكسي"
+              },
+              "text": {
+                "en": "Is this your street?",
+                "fr": "C’est votre rue ?",
+                "ar": "هل هذا شارعك؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, my house is here. Thank you!",
+                "fr": "Oui, ma maison est ici. Merci !",
+                "ar": "نعم، بيتي هنا. شكرا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "home",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Don’t play in the street!",
+                "fr": "Ne joue pas dans la rue !",
+                "ar": "لا تلعب في الشارع!"
+              }
+            },
+            {
+              "who": {
+                "en": "Adam",
+                "fr": "Adam",
+                "ar": "آدم"
+              },
+              "text": {
+                "en": "Okay, Mum. I can play in the garden.",
+                "fr": "D’accord, maman. Je vais jouer dans le jardin.",
+                "ar": "حسنا يا أمي. سألعب في الحديقة."
+              }
+            }
+          ]
+        },
+        {
+          "place": "friends-house",
+          "lines": [
+            {
+              "who": {
+                "en": "Zara",
+                "fr": "Zara",
+                "ar": "زارا"
+              },
+              "text": {
+                "en": "Welcome to my new house!",
+                "fr": "Bienvenue dans ma nouvelle maison !",
+                "ar": "مرحبا بك في بيتي الجديد!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "I like it! And your street is very nice.",
+                "fr": "Elle me plaît ! Et ta rue est très jolie.",
+                "ar": "يعجبني! وشارعك جميل جدا."
+              }
+            },
+            {
+              "who": {
+                "en": "Zara",
+                "fr": "Zara",
+                "ar": "زارا"
+              },
+              "text": {
+                "en": "Thank you! Come and play in my room.",
+                "fr": "Merci ! Viens jouer dans ma chambre.",
+                "ar": "شكرا! تعال لنلعب في غرفتي."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Houses_and_parked_cars%2C_Culm_Lea_-_geograph.org.uk_-_5585915.jpg/330px-Houses_and_parked_cars%2C_Culm_Lea_-_geograph.org.uk_-_5585915.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Houses_and_parked_cars,_Culm_Lea_-_geograph.org.uk_-_5585915.jpg",
+          "author": "Rob Purvis",
+          "licence": "CC BY-SA 2.0",
+          "caption": "A quiet street with houses"
+        }
+      ]
+    },
+    "shop": {
+      "scenes": [
+        {
+          "place": "toy-shop",
+          "lines": [
+            {
+              "who": {
+                "en": "Sofia",
+                "fr": "Sofia",
+                "ar": "صوفيا"
+              },
+              "text": {
+                "en": "Dad, can we go into this shop?",
+                "fr": "Papa, on peut entrer dans ce magasin ?",
+                "ar": "أبي، هل يمكننا أن ندخل هذا المتجر؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Yes, but only for ten minutes.",
+                "fr": "Oui, mais seulement dix minutes.",
+                "ar": "نعم، لكن لعشر دقائق فقط."
+              }
+            }
+          ]
+        },
+        {
+          "place": "clothes-shop",
+          "lines": [
+            {
+              "who": {
+                "en": "Shop assistant",
+                "fr": "La vendeuse",
+                "ar": "البائعة"
+              },
+              "text": {
+                "en": "Hello! The shop closes at six.",
+                "fr": "Bonjour ! Le magasin ferme à six heures.",
+                "ar": "مرحبا! يغلق المتجر في الساعة السادسة."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Okay, thank you. I only need five minutes.",
+                "fr": "D’accord, merci. Il me faut juste cinq minutes.",
+                "ar": "حسنا، شكرا. أحتاج إلى خمس دقائق فقط."
+              }
+            }
+          ]
+        },
+        {
+          "place": "street",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Excuse me, where can I buy milk?",
+                "fr": "Excusez-moi, où est-ce que je peux acheter du lait ?",
+                "ar": "عفوا، أين يمكنني أن أشتري الحليب؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Man",
+                "fr": "Le monsieur",
+                "ar": "الرجل"
+              },
+              "text": {
+                "en": "There is a small shop on the corner.",
+                "fr": "Il y a un petit magasin au coin de la rue.",
+                "ar": "يوجد متجر صغير عند الزاوية."
+              }
+            }
+          ]
+        },
+        {
+          "place": "kitchen",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "We have no bread. Can you go to the shop?",
+                "fr": "Nous n’avons plus de pain. Tu peux aller au magasin ?",
+                "ar": "ليس عندنا خبز. هل يمكنك أن تذهب إلى المتجر؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, Mum. I can buy some eggs too.",
+                "fr": "Oui, maman. Je peux aussi acheter des œufs.",
+                "ar": "نعم يا أمي. يمكنني أن أشتري بعض البيض أيضا."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "road": {
+      "scenes": [
+        {
+          "place": "car",
+          "lines": [
+            {
+              "who": {
+                "en": "Lina",
+                "fr": "Lina",
+                "ar": "لينا"
+              },
+              "text": {
+                "en": "Dad, is this the road to Grandma’s house?",
+                "fr": "Papa, c’est la route pour aller chez mamie ?",
+                "ar": "أبي، هل هذا هو الطريق إلى بيت جدتي؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Yes. It is a long road!",
+                "fr": "Oui. C’est une longue route !",
+                "ar": "نعم. إنه طريق طويل!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "crossing",
+          "lines": [
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "La maîtresse",
+                "ar": "المعلمة"
+              },
+              "text": {
+                "en": "Wait! Look at the road first.",
+                "fr": "Attends ! Regarde d’abord la route.",
+                "ar": "انتظر! انظر إلى الطريق أولا."
+              }
+            },
+            {
+              "who": {
+                "en": "Ali",
+                "fr": "Ali",
+                "ar": "علي"
+              },
+              "text": {
+                "en": "Okay. No cars. Now I can go.",
+                "fr": "D’accord. Pas de voitures. Maintenant, je peux y aller.",
+                "ar": "حسنا. لا توجد سيارات. الآن يمكنني أن أعبر."
+              }
+            }
+          ]
+        },
+        {
+          "place": "farm",
+          "lines": [
+            {
+              "who": {
+                "en": "Farmer",
+                "fr": "Le fermier",
+                "ar": "المزارع"
+              },
+              "text": {
+                "en": "This road goes to the village.",
+                "fr": "Cette route mène au village.",
+                "ar": "هذا الطريق يؤدي إلى القرية."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Thank you! I want to walk there.",
+                "fr": "Merci ! Je veux y aller à pied.",
+                "ar": "شكرا! أريد أن أمشي إلى هناك."
+              }
+            }
+          ]
+        },
+        {
+          "place": "mountain",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "This road goes up the mountain. Walk slowly.",
+                "fr": "Cette route monte dans la montagne. Marche doucement.",
+                "ar": "هذا الطريق يصعد إلى الجبل. امشِ ببطء."
+              }
+            },
+            {
+              "who": {
+                "en": "Karim",
+                "fr": "Karim",
+                "ar": "كريم"
+              },
+              "text": {
+                "en": "Okay, Mum. Take my hand.",
+                "fr": "D’accord, maman. Donne-moi la main.",
+                "ar": "حسنا يا أمي. أمسكي بيدي."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Shaded_asphalt_road_with_dense_tree_canopy_in_Bangladesh_02.jpg/330px-Shaded_asphalt_road_with_dense_tree_canopy_in_Bangladesh_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Shaded_asphalt_road_with_dense_tree_canopy_in_Bangladesh_02.jpg",
+          "author": "A S M Jobaer",
+          "licence": "CC BY-SA 4.0",
+          "caption": "A road through the trees"
+        }
+      ]
+    },
+    "village": {
+      "scenes": [
+        {
+          "place": "grandparents-house",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandma",
+                "fr": "Mamie",
+                "ar": "الجدة"
+              },
+              "text": {
+                "en": "Welcome to our village!",
+                "fr": "Bienvenue dans notre village !",
+                "ar": "مرحبا بك في قريتنا!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Thank you, Grandma! It is very beautiful.",
+                "fr": "Merci, mamie ! Il est très beau.",
+                "ar": "شكرا يا جدتي! إنها جميلة جدا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "field",
+          "lines": [
+            {
+              "who": {
+                "en": "Omar",
+                "fr": "Omar",
+                "ar": "عمر"
+              },
+              "text": {
+                "en": "Look! That is my village.",
+                "fr": "Regarde ! C’est mon village.",
+                "ar": "انظر! تلك قريتي."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "I like your village very much.",
+                "fr": "J’aime beaucoup ton village.",
+                "ar": "أحب قريتك كثيرا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "bus",
+          "lines": [
+            {
+              "who": {
+                "en": "Bus driver",
+                "fr": "Le chauffeur de bus",
+                "ar": "سائق الحافلة"
+              },
+              "text": {
+                "en": "Here is the village. This is your stop!",
+                "fr": "Voilà le village. C’est votre arrêt !",
+                "ar": "ها هي القرية. هذه محطتك!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Thank you. Goodbye!",
+                "fr": "Merci. Au revoir !",
+                "ar": "شكرا. مع السلامة!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "market",
+          "lines": [
+            {
+              "who": {
+                "en": "Market seller",
+                "fr": "La marchande",
+                "ar": "البائعة"
+              },
+              "text": {
+                "en": "These eggs are from my village.",
+                "fr": "Ces œufs viennent de mon village.",
+                "ar": "هذا البيض من قريتي."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "They look very good. Six eggs, please.",
+                "fr": "Ils ont l’air très bons. Six œufs, s’il vous plaît.",
+                "ar": "يبدو جيدا جدا. ست بيضات، من فضلك."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Small_countryside_village%2C_Lishui%2C_China.jpg/330px-Small_countryside_village%2C_Lishui%2C_China.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Small_countryside_village,_Lishui,_China.jpg",
+          "author": "Lishuilynn",
+          "licence": "CC BY-SA 4.0",
+          "caption": "Houses in a small village"
+        }
+      ]
+    },
+    "market": {
+      "scenes": [
+        {
+          "place": "kitchen",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "We need fruit. Let’s go to the market.",
+                "fr": "Nous avons besoin de fruits. Allons au marché.",
+                "ar": "نحتاج إلى فاكهة. لنذهب إلى السوق."
+              }
+            },
+            {
+              "who": {
+                "en": "Maya",
+                "fr": "Maya",
+                "ar": "مايا"
+              },
+              "text": {
+                "en": "Can I come too?",
+                "fr": "Je peux venir aussi ?",
+                "ar": "هل يمكنني أن آتي أيضا؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Of course!",
+                "fr": "Bien sûr !",
+                "ar": "طبعا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "town-square",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "On Sunday, there is a market in the square.",
+                "fr": "Le dimanche, il y a un marché sur la place.",
+                "ar": "يوم الأحد، يوجد سوق في الساحة."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Good! I want to buy apples.",
+                "fr": "Super ! Je veux acheter des pommes.",
+                "ar": "جيد! أريد أن أشتري التفاح."
+              }
+            }
+          ]
+        },
+        {
+          "place": "village",
+          "lines": [
+            {
+              "who": {
+                "en": "Fatima",
+                "fr": "Fatima",
+                "ar": "فاطمة"
+              },
+              "text": {
+                "en": "I go to the market every Saturday.",
+                "fr": "Je vais au marché tous les samedis.",
+                "ar": "أذهب إلى السوق كل يوم سبت."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "What do you buy there?",
+                "fr": "Qu’est-ce que tu y achètes ?",
+                "ar": "ماذا تشترين هناك؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Fatima",
+                "fr": "Fatima",
+                "ar": "فاطمة"
+              },
+              "text": {
+                "en": "Vegetables, eggs and cheese.",
+                "fr": "Des légumes, des œufs et du fromage.",
+                "ar": "الخضروات والبيض والجبن."
+              }
+            }
+          ]
+        },
+        {
+          "place": "bus-stop",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "This bus goes to the market.",
+                "fr": "Ce bus va au marché.",
+                "ar": "هذه الحافلة تذهب إلى السوق."
+              }
+            },
+            {
+              "who": {
+                "en": "Yusuf",
+                "fr": "Youssef",
+                "ar": "يوسف"
+              },
+              "text": {
+                "en": "Good! I can help you with the bags.",
+                "fr": "Super ! Je peux t’aider à porter les sacs.",
+                "ar": "جيد! يمكنني أن أساعدك في حمل الأكياس."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Fruit_and_vegetable_stalls%2C_Surrey_Street_Market%2C_Croydon_-_geograph.org.uk_-_6286398.jpg/330px-Fruit_and_vegetable_stalls%2C_Surrey_Street_Market%2C_Croydon_-_geograph.org.uk_-_6286398.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Fruit_and_vegetable_stalls,_Surrey_Street_Market,_Croydon_-_geograph.org.uk_-_6286398.jpg",
+          "author": "Robin Webster",
+          "licence": "CC BY-SA 2.0",
+          "caption": "Fruit and vegetable stalls at a market"
+        }
+      ]
+    },
+    "hospital": {
+      "scenes": [
+        {
+          "place": "home",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Grandpa is in the hospital. We can visit him today.",
+                "fr": "Papi est à l’hôpital. Nous pouvons aller le voir aujourd’hui.",
+                "ar": "جدك في المستشفى. يمكننا أن نزوره اليوم."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Can I give him a picture?",
+                "fr": "Je peux lui donner un dessin ?",
+                "ar": "هل يمكنني أن أعطيه رسمة؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Yes! He likes your pictures.",
+                "fr": "Oui ! Il aime tes dessins.",
+                "ar": "نعم! إنه يحب رسوماتك."
+              }
+            }
+          ]
+        },
+        {
+          "place": "doctor",
+          "lines": [
+            {
+              "who": {
+                "en": "Doctor",
+                "fr": "Le médecin",
+                "ar": "الطبيب"
+              },
+              "text": {
+                "en": "You are fine. You don’t need to go to the hospital.",
+                "fr": "Tu vas bien. Tu n’as pas besoin d’aller à l’hôpital.",
+                "ar": "أنت بخير. لا تحتاج إلى الذهاب إلى المستشفى."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Thank you, doctor!",
+                "fr": "Merci, docteur !",
+                "ar": "شكرا يا دكتور!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "bus-stop",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Excuse me, does this bus go to the hospital?",
+                "fr": "Excusez-moi, ce bus va à l’hôpital ?",
+                "ar": "عفوا، هل تذهب هذه الحافلة إلى المستشفى؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Woman",
+                "fr": "La dame",
+                "ar": "السيدة"
+              },
+              "text": {
+                "en": "Yes, it stops at the hospital.",
+                "fr": "Oui, il s’arrête à l’hôpital.",
+                "ar": "نعم، إنها تتوقف عند المستشفى."
+              }
+            }
+          ]
+        },
+        {
+          "place": "living-room",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Mum and the new baby are at the hospital.",
+                "fr": "Maman et le nouveau bébé sont à l’hôpital.",
+                "ar": "أمك والمولود الجديد في المستشفى."
+              }
+            },
+            {
+              "who": {
+                "en": "Ines",
+                "fr": "Inès",
+                "ar": "إيناس"
+              },
+              "text": {
+                "en": "My baby brother! Can we go and see them?",
+                "fr": "Mon petit frère ! On peut aller les voir ?",
+                "ar": "أخي الصغير! هل يمكننا أن نذهب لرؤيتهما؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Yes, tomorrow morning.",
+                "fr": "Oui, demain matin.",
+                "ar": "نعم، صباح الغد."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/A%26E_ambulance_entrance%2C_RCH_Treliske%2C_Truro%2C_Cornwall_-_July_2022.jpg/330px-A%26E_ambulance_entrance%2C_RCH_Treliske%2C_Truro%2C_Cornwall_-_July_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:A%26E_ambulance_entrance,_RCH_Treliske,_Truro,_Cornwall_-_July_2022.jpg",
+          "author": "Mutney",
+          "licence": "CC BY-SA 4.0",
+          "caption": "Ambulances outside a hospital"
+        }
+      ]
+    },
+    "bank": {
+      "scenes": [
+        {
+          "place": "street",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Come with me. I need to go to the bank.",
+                "fr": "Viens avec moi. Je dois aller à la banque.",
+                "ar": "تعال معي. أحتاج إلى الذهاب إلى البنك."
+              }
+            },
+            {
+              "who": {
+                "en": "Sami",
+                "fr": "Sami",
+                "ar": "سامي"
+              },
+              "text": {
+                "en": "Okay. Is it on this street?",
+                "fr": "D’accord. Elle est dans cette rue ?",
+                "ar": "حسنا. هل هو في هذا الشارع؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Yes, next to the post office.",
+                "fr": "Oui, à côté de la poste.",
+                "ar": "نعم، بجانب مكتب البريد."
+              }
+            }
+          ]
+        },
+        {
+          "place": "town-square",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Excuse me, is there a bank near here?",
+                "fr": "Excusez-moi, il y a une banque près d’ici ?",
+                "ar": "عفوا، هل يوجد بنك قريب من هنا؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Man",
+                "fr": "Le monsieur",
+                "ar": "الرجل"
+              },
+              "text": {
+                "en": "Yes, the bank is on the corner of the square.",
+                "fr": "Oui, la banque est au coin de la place.",
+                "ar": "نعم، البنك عند زاوية الساحة."
+              }
+            }
+          ]
+        },
+        {
+          "place": "bank",
+          "lines": [
+            {
+              "who": {
+                "en": "Bank clerk",
+                "fr": "L’employée de banque",
+                "ar": "موظفة البنك"
+              },
+              "text": {
+                "en": "Good morning! How can I help you?",
+                "fr": "Bonjour ! Comment puis-je vous aider ?",
+                "ar": "صباح الخير! كيف يمكنني مساعدتك؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Good morning. I want to put some money in the bank.",
+                "fr": "Bonjour. Je voudrais déposer de l’argent à la banque.",
+                "ar": "صباح الخير. أريد أن أضع بعض المال في البنك."
+              }
+            }
+          ]
+        },
+        {
+          "place": "car",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "The bank closes at five. We need to go now!",
+                "fr": "La banque ferme à cinq heures. Nous devons y aller maintenant !",
+                "ar": "يغلق البنك في الساعة الخامسة. يجب أن نذهب الآن!"
+              }
+            },
+            {
+              "who": {
+                "en": "Nour",
+                "fr": "Nour",
+                "ar": "نور"
+              },
+              "text": {
+                "en": "What time is it now?",
+                "fr": "Quelle heure est-il ?",
+                "ar": "كم الساعة الآن؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "It is four. We have one hour.",
+                "fr": "Il est quatre heures. Nous avons une heure.",
+                "ar": "إنها الساعة الرابعة. لدينا ساعة واحدة."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Main_facade_of_First_National_Bank_Building_in_Portland_%282018%29.jpg/330px-Main_facade_of_First_National_Bank_Building_in_Portland_%282018%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Main_facade_of_First_National_Bank_Building_in_Portland_(2018).jpg",
+          "author": "Steve Morgan",
+          "licence": "CC BY-SA 4.0",
+          "caption": "A big bank building"
+        }
+      ]
+    },
+    "park": {
+      "scenes": [
+        {
+          "place": "home",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Mum, can we go to the park?",
+                "fr": "Maman, on peut aller au parc ?",
+                "ar": "أمي، هل يمكننا أن نذهب إلى الحديقة العامة؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Yes, after lunch.",
+                "fr": "Oui, après le déjeuner.",
+                "ar": "نعم، بعد الغداء."
+              }
+            }
+          ]
+        },
+        {
+          "place": "playground",
+          "lines": [
+            {
+              "who": {
+                "en": "Leo",
+                "fr": "Léo",
+                "ar": "ليو"
+              },
+              "text": {
+                "en": "I like this park. Let’s play here!",
+                "fr": "J’aime bien ce parc. Jouons ici !",
+                "ar": "أحب هذه الحديقة. لنلعب هنا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Hana",
+                "fr": "Hana",
+                "ar": "هناء"
+              },
+              "text": {
+                "en": "Yes! Let’s run!",
+                "fr": "Oui ! Courons !",
+                "ar": "نعم! لنركض!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "school-gate",
+          "lines": [
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "La maîtresse",
+                "ar": "المعلمة"
+              },
+              "text": {
+                "en": "Tomorrow, we have lunch in the park.",
+                "fr": "Demain, nous allons déjeuner au parc.",
+                "ar": "غدا، سنتناول الغداء في الحديقة العامة."
+              }
+            },
+            {
+              "who": {
+                "en": "Children",
+                "fr": "Les enfants",
+                "ar": "الأطفال"
+              },
+              "text": {
+                "en": "Yes! We like the park!",
+                "fr": "Super ! Nous aimons le parc !",
+                "ar": "رائع! نحن نحب الحديقة!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "lake",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "Many people walk in the park on Sunday.",
+                "fr": "Beaucoup de gens se promènent dans le parc le dimanche.",
+                "ar": "كثير من الناس يتمشون في الحديقة العامة يوم الأحد."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, and the children play near the lake.",
+                "fr": "Oui, et les enfants jouent près du lac.",
+                "ar": "نعم، والأطفال يلعبون قرب البحيرة."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Trees_and_Lawn_in_Washington_Square_Park._Part_of_the_the_WSP_Eco_Projects_Phenology_program.jpg/330px-Trees_and_Lawn_in_Washington_Square_Park._Part_of_the_the_WSP_Eco_Projects_Phenology_program.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Trees_and_Lawn_in_Washington_Square_Park._Part_of_the_the_WSP_Eco_Projects_Phenology_program.jpg",
+          "author": "LocalNatureLab",
+          "licence": "CC BY 4.0",
+          "caption": "People sitting on the grass in a park"
+        }
+      ]
+    },
+    "restaurant": {
+      "scenes": [
+        {
+          "place": "restaurant",
+          "lines": [
+            {
+              "who": {
+                "en": "Waiter",
+                "fr": "Le serveur",
+                "ar": "النادل"
+              },
+              "text": {
+                "en": "Welcome to our restaurant! A table for two?",
+                "fr": "Bienvenue dans notre restaurant ! Une table pour deux ?",
+                "ar": "مرحبا بكم في مطعمنا! طاولة لشخصين؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, please. By the window.",
+                "fr": "Oui, s’il vous plaît. Près de la fenêtre.",
+                "ar": "نعم، من فضلك. بجانب النافذة."
+              }
+            }
+          ]
+        },
+        {
+          "place": "living-room",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Tonight, we have dinner at a restaurant.",
+                "fr": "Ce soir, nous dînons au restaurant.",
+                "ar": "الليلة، سنتناول العشاء في مطعم."
+              }
+            },
+            {
+              "who": {
+                "en": "Aya",
+                "fr": "Aya",
+                "ar": "آية"
+              },
+              "text": {
+                "en": "Yes! Can I have soup and cake?",
+                "fr": "Oui ! Je peux prendre de la soupe et du gâteau ?",
+                "ar": "رائع! هل يمكنني أن آكل حساء وكعكة؟"
+              }
+            }
+          ]
+        },
+        {
+          "place": "street",
+          "lines": [
+            {
+              "who": {
+                "en": "Mateo",
+                "fr": "Mateo",
+                "ar": "ماتيو"
+              },
+              "text": {
+                "en": "I am hungry. Is there a restaurant near here?",
+                "fr": "J’ai faim. Il y a un restaurant près d’ici ?",
+                "ar": "أنا جائع. هل يوجد مطعم قريب من هنا؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, there is a small restaurant on the corner.",
+                "fr": "Oui, il y a un petit restaurant au coin de la rue.",
+                "ar": "نعم، يوجد مطعم صغير عند الزاوية."
+              }
+            }
+          ]
+        },
+        {
+          "place": "kitchen",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Dad, this rice is very good!",
+                "fr": "Papa, ce riz est très bon !",
+                "ar": "أبي، هذا الأرز لذيذ جدا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Thank you! Now our kitchen is a restaurant!",
+                "fr": "Merci ! Maintenant, notre cuisine est un restaurant !",
+                "ar": "شكرا! الآن صار مطبخنا مطعما!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Family_eating_at_Pho_Hung_Vietnamese_restaurant_in_Toronto_Chinatown.jpg/330px-Family_eating_at_Pho_Hung_Vietnamese_restaurant_in_Toronto_Chinatown.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Family_eating_at_Pho_Hung_Vietnamese_restaurant_in_Toronto_Chinatown.jpg",
+          "author": "atallasianguy",
+          "licence": "CC BY-SA 4.0",
+          "caption": "People eating in a restaurant"
+        }
+      ]
+    },
+    "building": {
+      "scenes": [
+        {
+          "place": "city-centre",
+          "lines": [
+            {
+              "who": {
+                "en": "Ben",
+                "fr": "Ben",
+                "ar": "بن"
+              },
+              "text": {
+                "en": "Look at that building! It is so big.",
+                "fr": "Regarde ce bâtiment ! Il est tellement grand.",
+                "ar": "انظر إلى ذلك المبنى! إنه كبير جدا."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes! It has many windows.",
+                "fr": "Oui ! Il a beaucoup de fenêtres.",
+                "ar": "نعم! فيه نوافذ كثيرة."
+              }
+            }
+          ]
+        },
+        {
+          "place": "building-site",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "What is this new building?",
+                "fr": "Qu’est-ce que c’est, ce nouveau bâtiment ?",
+                "ar": "ما هذا المبنى الجديد؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Builder",
+                "fr": "L’ouvrier",
+                "ar": "عامل البناء"
+              },
+              "text": {
+                "en": "It is a new library. It opens next year!",
+                "fr": "C’est une nouvelle bibliothèque. Elle ouvre l’année prochaine !",
+                "ar": "إنها مكتبة جديدة. ستفتح في السنة القادمة!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Great! I love books.",
+                "fr": "Génial ! J’adore les livres.",
+                "ar": "رائع! أحب الكتب كثيرا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "school-gate",
+          "lines": [
+            {
+              "who": {
+                "en": "Malik",
+                "fr": "Malik",
+                "ar": "مالك"
+              },
+              "text": {
+                "en": "Mum, my new school is in this building!",
+                "fr": "Maman, ma nouvelle école est dans ce bâtiment !",
+                "ar": "أمي، مدرستي الجديدة في هذا المبنى!"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "It is very big! Do you like it?",
+                "fr": "Il est très grand ! Il te plaît ?",
+                "ar": "إنه كبير جدا! هل يعجبك؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Malik",
+                "fr": "Malik",
+                "ar": "مالك"
+              },
+              "text": {
+                "en": "Yes, very much!",
+                "fr": "Oui, beaucoup !",
+                "ar": "نعم، كثيرا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "hotel",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Excuse me, is my room in this building?",
+                "fr": "Excusez-moi, ma chambre est dans ce bâtiment ?",
+                "ar": "عفوا، هل غرفتي في هذا المبنى؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Receptionist",
+                "fr": "Le réceptionniste",
+                "ar": "موظف الاستقبال"
+              },
+              "text": {
+                "en": "No, it is in the small building near the garden.",
+                "fr": "Non, elle est dans le petit bâtiment près du jardin.",
+                "ar": "لا، إنها في المبنى الصغير قرب الحديقة."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Tall_office_building_at_Leith_-_geograph.org.uk_-_3729795.jpg/330px-Tall_office_building_at_Leith_-_geograph.org.uk_-_3729795.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Tall_office_building_at_Leith_-_geograph.org.uk_-_3729795.jpg",
+          "author": "Bill Boaden",
+          "licence": "CC BY-SA 2.0",
+          "caption": "A tall office building"
+        }
+      ]
+    },
+    "church": {
+      "scenes": [
+        {
+          "place": "village",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandma",
+                "fr": "Mamie",
+                "ar": "الجدة"
+              },
+              "text": {
+                "en": "The church in our village is very old.",
+                "fr": "L’église de notre village est très ancienne.",
+                "ar": "الكنيسة في قريتنا قديمة جدا."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, and it is very beautiful.",
+                "fr": "Oui, et elle est très belle.",
+                "ar": "نعم، وهي جميلة جدا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "wedding",
+          "lines": [
+            {
+              "who": {
+                "en": "Clara",
+                "fr": "Clara",
+                "ar": "كلارا"
+              },
+              "text": {
+                "en": "Today is my aunt’s wedding. It is in this church.",
+                "fr": "Aujourd’hui, c’est le mariage de ma tante. Il a lieu dans cette église.",
+                "ar": "اليوم زفاف خالتي. إنه في هذه الكنيسة."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "That is nice! Is all your family here?",
+                "fr": "C’est chouette ! Toute ta famille est là ?",
+                "ar": "جميل! هل كل عائلتك هنا؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Clara",
+                "fr": "Clara",
+                "ar": "كلارا"
+              },
+              "text": {
+                "en": "Yes, and many friends too.",
+                "fr": "Oui, et beaucoup d’amis aussi.",
+                "ar": "نعم، وكثير من الأصدقاء أيضا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "town-square",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "What is that old building?",
+                "fr": "Quel est ce vieux bâtiment ?",
+                "ar": "ما هذا المبنى القديم؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Man",
+                "fr": "Le monsieur",
+                "ar": "الرجل"
+              },
+              "text": {
+                "en": "That is the church. It has a big bell.",
+                "fr": "C’est l’église. Elle a une grosse cloche.",
+                "ar": "تلك هي الكنيسة. فيها جرس كبير."
+              }
+            }
+          ]
+        },
+        {
+          "place": "street",
+          "lines": [
+            {
+              "who": {
+                "en": "Paul",
+                "fr": "Paul",
+                "ar": "بول"
+              },
+              "text": {
+                "en": "Where is your house?",
+                "fr": "Où est ta maison ?",
+                "ar": "أين بيتك؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "It is on this street, next to the church.",
+                "fr": "Elle est dans cette rue, à côté de l’église.",
+                "ar": "إنه في هذا الشارع، بجانب الكنيسة."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Ainderby-Steeple-Parish-Church.jpg/330px-Ainderby-Steeple-Parish-Church.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Ainderby-Steeple-Parish-Church.jpg",
+          "author": "Kreuzschnabel",
+          "licence": "CC BY-SA 3.0",
+          "caption": "A church with a tower"
+        }
+      ]
+    },
+    "library": {
+      "scenes": [
+        {
+          "place": "library",
+          "lines": [
+            {
+              "who": {
+                "en": "Librarian",
+                "fr": "La bibliothécaire",
+                "ar": "أمينة المكتبة"
+              },
+              "text": {
+                "en": "Hello! You can borrow three books.",
+                "fr": "Bonjour ! Tu peux emprunter trois livres.",
+                "ar": "مرحبا! يمكنك أن تستعير ثلاثة كتب."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Thank you! I like this library.",
+                "fr": "Merci ! J’aime bien cette bibliothèque.",
+                "ar": "شكرا! أحب هذه المكتبة."
+              }
+            }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Are these books from the library?",
+                "fr": "Ces livres viennent de la bibliothèque ?",
+                "ar": "هل هذه الكتب من المكتبة؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes. I need to give them back on Friday.",
+                "fr": "Oui. Je dois les rendre vendredi.",
+                "ar": "نعم. يجب أن أعيدها يوم الجمعة."
+              }
+            }
+          ]
+        },
+        {
+          "place": "university",
+          "lines": [
+            {
+              "who": {
+                "en": "Ahmed",
+                "fr": "Ahmed",
+                "ar": "أحمد"
+              },
+              "text": {
+                "en": "I read in the university library every afternoon.",
+                "fr": "Je lis à la bibliothèque de l’université tous les après-midi.",
+                "ar": "أقرأ في مكتبة الجامعة كل يوم بعد الظهر."
+              }
+            },
+            {
+              "who": {
+                "en": "Julia",
+                "fr": "Julia",
+                "ar": "جوليا"
+              },
+              "text": {
+                "en": "Me too! I like it there.",
+                "fr": "Moi aussi ! J’aime bien cet endroit.",
+                "ar": "وأنا أيضا! أحب ذلك المكان."
+              }
+            }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "Le maître",
+                "ar": "المعلم"
+              },
+              "text": {
+                "en": "Today, we go to the library. Take your books!",
+                "fr": "Aujourd’hui, nous allons à la bibliothèque. Prenez vos livres !",
+                "ar": "اليوم، سنذهب إلى المكتبة. خذوا كتبكم!"
+              }
+            },
+            {
+              "who": {
+                "en": "Noah",
+                "fr": "Noah",
+                "ar": "نوح"
+              },
+              "text": {
+                "en": "Can I find a book about animals there?",
+                "fr": "Je pourrai trouver un livre sur les animaux là-bas ?",
+                "ar": "هل يمكنني أن أجد هناك كتابا عن الحيوانات؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "Le maître",
+                "ar": "المعلم"
+              },
+              "text": {
+                "en": "Of course!",
+                "fr": "Bien sûr !",
+                "ar": "طبعا!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Shinshiro_City_Public_Library_bookshelves_ac_%281%29.jpg/330px-Shinshiro_City_Public_Library_bookshelves_ac_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Shinshiro_City_Public_Library_bookshelves_ac_(1).jpg",
+          "author": "Asturio Cantabrio",
+          "licence": "CC BY-SA 4.0",
+          "caption": "Shelves of books in a library"
+        }
+      ]
+    },
+    "post office": {
+      "scenes": [
+        {
+          "place": "post-office",
+          "lines": [
+            {
+              "who": {
+                "en": "Post office worker",
+                "fr": "Le postier",
+                "ar": "موظف البريد"
+              },
+              "text": {
+                "en": "Welcome to the post office! Can I help you?",
+                "fr": "Bienvenue à la poste ! Je peux vous aider ?",
+                "ar": "مرحبا بك في مكتب البريد! هل يمكنني مساعدتك؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes. Two stamps, please.",
+                "fr": "Oui. Deux timbres, s’il vous plaît.",
+                "ar": "نعم. طابعان بريديان، من فضلك."
+              }
+            }
+          ]
+        },
+        {
+          "place": "home",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Can you take this letter to the post office?",
+                "fr": "Tu peux apporter cette lettre à la poste ?",
+                "ar": "هل يمكنك أن تأخذ هذه الرسالة إلى مكتب البريد؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, Dad. I can go now.",
+                "fr": "Oui, papa. Je peux y aller maintenant.",
+                "ar": "نعم يا أبي. يمكنني أن أذهب الآن."
+              }
+            }
+          ]
+        },
+        {
+          "place": "street",
+          "lines": [
+            {
+              "who": {
+                "en": "Woman",
+                "fr": "La dame",
+                "ar": "السيدة"
+              },
+              "text": {
+                "en": "Excuse me, is the post office open today?",
+                "fr": "Excusez-moi, la poste est ouverte aujourd’hui ?",
+                "ar": "عفوا، هل مكتب البريد مفتوح اليوم؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, but it closes at twelve.",
+                "fr": "Oui, mais elle ferme à midi.",
+                "ar": "نعم، لكنه يغلق في الساعة الثانية عشرة ظهرا."
+              }
+            },
+            {
+              "who": {
+                "en": "Woman",
+                "fr": "La dame",
+                "ar": "السيدة"
+              },
+              "text": {
+                "en": "Thank you!",
+                "fr": "Merci !",
+                "ar": "شكرا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "grandparents-house",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Grandpa, did you work at the post office?",
+                "fr": "Papi, tu as travaillé à la poste ?",
+                "ar": "جدي، هل عملت في مكتب البريد؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "Yes, for twenty years! I liked my work.",
+                "fr": "Oui, pendant vingt ans ! J’aimais mon travail.",
+                "ar": "نعم، لمدة عشرين سنة! كنت أحب عملي."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "police station": {
+      "scenes": [
+        {
+          "place": "police-station",
+          "lines": [
+            {
+              "who": {
+                "en": "Police officer",
+                "fr": "La policière",
+                "ar": "الشرطية"
+              },
+              "text": {
+                "en": "Welcome to the police station. How can I help you?",
+                "fr": "Bienvenue au commissariat. Comment puis-je vous aider ?",
+                "ar": "مرحبا بك في مركز الشرطة. كيف يمكنني مساعدتك؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "I can’t find my bag.",
+                "fr": "Je ne trouve plus mon sac.",
+                "ar": "لا أجد حقيبتي."
+              }
+            },
+            {
+              "who": {
+                "en": "Police officer",
+                "fr": "La policière",
+                "ar": "الشرطية"
+              },
+              "text": {
+                "en": "Okay. Sit down, please. We can help you.",
+                "fr": "D’accord. Asseyez-vous, s’il vous plaît. Nous pouvons vous aider.",
+                "ar": "حسنا. اجلس من فضلك. يمكننا مساعدتك."
+              }
+            }
+          ]
+        },
+        {
+          "place": "street",
+          "lines": [
+            {
+              "who": {
+                "en": "Karim",
+                "fr": "Karim",
+                "ar": "كريم"
+              },
+              "text": {
+                "en": "Look! A phone. It is not my phone.",
+                "fr": "Regarde ! Un téléphone. Ce n’est pas mon téléphone.",
+                "ar": "انظر! هاتف. هذا ليس هاتفي."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Let’s take it to the police station.",
+                "fr": "Apportons-le au commissariat.",
+                "ar": "لنأخذه إلى مركز الشرطة."
+              }
+            },
+            {
+              "who": {
+                "en": "Karim",
+                "fr": "Karim",
+                "ar": "كريم"
+              },
+              "text": {
+                "en": "Okay. It is near the bridge.",
+                "fr": "D’accord. Il est près du pont.",
+                "ar": "حسنا. إنه قرب الجسر."
+              }
+            }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "La maîtresse",
+                "ar": "المعلمة"
+              },
+              "text": {
+                "en": "Tomorrow, we visit the police station.",
+                "fr": "Demain, nous visitons le commissariat.",
+                "ar": "غدا، سنزور مركز الشرطة."
+              }
+            },
+            {
+              "who": {
+                "en": "Lucas",
+                "fr": "Lucas",
+                "ar": "لوكاس"
+              },
+              "text": {
+                "en": "Can we see the police cars?",
+                "fr": "On pourra voir les voitures de police ?",
+                "ar": "هل يمكننا أن نرى سيارات الشرطة؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "La maîtresse",
+                "ar": "المعلمة"
+              },
+              "text": {
+                "en": "Yes, of course!",
+                "fr": "Oui, bien sûr !",
+                "ar": "نعم، طبعا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "bridge",
+          "lines": [
+            {
+              "who": {
+                "en": "Woman",
+                "fr": "La dame",
+                "ar": "السيدة"
+              },
+              "text": {
+                "en": "Excuse me, is the police station near here?",
+                "fr": "Excusez-moi, le commissariat est près d’ici ?",
+                "ar": "عفوا، هل مركز الشرطة قريب من هنا؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, it is just after the bridge.",
+                "fr": "Oui, il est juste après le pont.",
+                "ar": "نعم، إنه بعد الجسر مباشرة."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/British_Virgin_Islands_%E2%80%94_Jost_van_Dyke_%E2%80%94_Police_station_with_Patrol_car_Toyota_RAV4_%28XA30%2C_2008%29_2015-02-27_Mattes.JPG/330px-British_Virgin_Islands_%E2%80%94_Jost_van_Dyke_%E2%80%94_Police_station_with_Patrol_car_Toyota_RAV4_%28XA30%2C_2008%29_2015-02-27_Mattes.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:British_Virgin_Islands_%E2%80%94_Jost_van_Dyke_%E2%80%94_Police_station_with_Patrol_car_Toyota_RAV4_(XA30,_2008)_2015-02-27_Mattes.JPG",
+          "author": "Mattes",
+          "licence": "CC BY 2.0 de",
+          "caption": "A police car outside a police station"
+        }
+      ]
+    },
+    "bridge": {
+      "scenes": [
+        {
+          "place": "bridge",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "This bridge is very old.",
+                "fr": "Ce pont est très vieux.",
+                "ar": "هذا الجسر قديم جدا."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Can we walk across it?",
+                "fr": "On peut le traverser à pied ?",
+                "ar": "هل يمكننا أن نعبره مشيا؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "Yes, let’s go!",
+                "fr": "Oui, allons-y !",
+                "ar": "نعم، هيا بنا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "river",
+          "lines": [
+            {
+              "who": {
+                "en": "Mia",
+                "fr": "Mia",
+                "ar": "ميا"
+              },
+              "text": {
+                "en": "Look at the boats under the bridge!",
+                "fr": "Regarde les bateaux sous le pont !",
+                "ar": "انظر إلى القوارب تحت الجسر!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "I can see five boats.",
+                "fr": "Je vois cinq bateaux.",
+                "ar": "أرى خمسة قوارب."
+              }
+            }
+          ]
+        },
+        {
+          "place": "car",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "We go over the bridge, and then we are home.",
+                "fr": "On passe le pont, et après, on est à la maison.",
+                "ar": "سنعبر الجسر، ثم نصل إلى البيت."
+              }
+            },
+            {
+              "who": {
+                "en": "Sara",
+                "fr": "Sara",
+                "ar": "سارة"
+              },
+              "text": {
+                "en": "Good! I want to sleep in my bed.",
+                "fr": "Super ! Je veux dormir dans mon lit.",
+                "ar": "جيد! أريد أن أنام في سريري."
+              }
+            }
+          ]
+        },
+        {
+          "place": "train",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Wow! The train is on a very high bridge!",
+                "fr": "Waouh ! Le train est sur un pont très haut !",
+                "ar": "يا للروعة! القطار على جسر عال جدا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Yes. Look down at the river!",
+                "fr": "Oui. Regarde la rivière en bas !",
+                "ar": "نعم. انظر إلى النهر في الأسفل!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/A_stone_arch_bridge_in_L%C3%A6rdalen%2C_2013_June.jpg/330px-A_stone_arch_bridge_in_L%C3%A6rdalen%2C_2013_June.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:A_stone_arch_bridge_in_L%C3%A6rdalen,_2013_June.jpg",
+          "author": "Ximonic (Simo Räsänen)",
+          "licence": "CC BY-SA 3.0",
+          "caption": "A stone bridge over a river"
+        }
+      ]
+    },
+    "square": {
+      "scenes": [
+        {
+          "place": "town-square",
+          "lines": [
+            {
+              "who": {
+                "en": "Ali",
+                "fr": "Ali",
+                "ar": "علي"
+              },
+              "text": {
+                "en": "Let’s meet in the square at four.",
+                "fr": "Rendez-vous sur la place à quatre heures.",
+                "ar": "لنلتق في الساحة في الساعة الرابعة."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Okay! See you later.",
+                "fr": "D’accord ! À plus tard.",
+                "ar": "حسنا! أراك لاحقا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "cafe",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "I like this cafe. We can see the square from here.",
+                "fr": "J’aime bien ce café. On voit la place d’ici.",
+                "ar": "أحب هذا المقهى. يمكننا أن نرى الساحة من هنا."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Look, a man is singing in the square!",
+                "fr": "Regarde, un monsieur chante sur la place !",
+                "ar": "انظري، رجل يغني في الساحة!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "village",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "There is a big tree in the village square.",
+                "fr": "Il y a un grand arbre sur la place du village.",
+                "ar": "توجد شجرة كبيرة في ساحة القرية."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Can we sit under it?",
+                "fr": "On peut s’asseoir dessous ?",
+                "ar": "هل يمكننا أن نجلس تحتها؟"
+              }
+            }
+          ]
+        },
+        {
+          "place": "city-centre",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Today, there is music in the big square.",
+                "fr": "Aujourd’hui, il y a de la musique sur la grande place.",
+                "ar": "اليوم، توجد موسيقى في الساحة الكبيرة."
+              }
+            },
+            {
+              "who": {
+                "en": "Lea",
+                "fr": "Léa",
+                "ar": "ليا"
+              },
+              "text": {
+                "en": "Can we go and listen?",
+                "fr": "On peut aller écouter ?",
+                "ar": "هل يمكننا أن نذهب ونستمع؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Yes! Let’s go.",
+                "fr": "Oui ! Allons-y.",
+                "ar": "نعم! هيا بنا."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Fountain_at_the_Town_Hall_square_%288123188170%29.jpg/330px-Fountain_at_the_Town_Hall_square_%288123188170%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Fountain_at_the_Town_Hall_square_(8123188170).jpg",
+          "author": "Guillaume Speurt",
+          "licence": "CC BY-SA 2.0",
+          "caption": "A town square with a fountain"
+        }
+      ]
+    },
+    "corner": {
+      "scenes": [
+        {
+          "place": "street",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Excuse me, is the bus stop near here?",
+                "fr": "Excusez-moi, l’arrêt de bus est près d’ici ?",
+                "ar": "عفوا، هل محطة الحافلات قريبة من هنا؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Woman",
+                "fr": "La dame",
+                "ar": "السيدة"
+              },
+              "text": {
+                "en": "Yes, it is just round the corner.",
+                "fr": "Oui, il est juste au coin de la rue.",
+                "ar": "نعم، إنها عند زاوية الشارع."
+              }
+            }
+          ]
+        },
+        {
+          "place": "corner-shop",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "I like this little shop on the corner.",
+                "fr": "J’aime bien cette petite boutique au coin de la rue.",
+                "ar": "أحب هذا المتجر الصغير عند الزاوية."
+              }
+            },
+            {
+              "who": {
+                "en": "Shopkeeper",
+                "fr": "Le commerçant",
+                "ar": "صاحب المتجر"
+              },
+              "text": {
+                "en": "Thank you! See you tomorrow.",
+                "fr": "Merci ! À demain.",
+                "ar": "شكرا! إلى اللقاء غدا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "taxi",
+          "lines": [
+            {
+              "who": {
+                "en": "Taxi driver",
+                "fr": "Le chauffeur de taxi",
+                "ar": "سائق التاكسي"
+              },
+              "text": {
+                "en": "Where do you want to stop?",
+                "fr": "Où voulez-vous que je m’arrête ?",
+                "ar": "أين تريد أن أتوقف؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "At the corner, please. Thank you!",
+                "fr": "Au coin de la rue, s’il vous plaît. Merci !",
+                "ar": "عند الزاوية، من فضلك. شكرا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "crossing",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Stop at the corner and wait for me.",
+                "fr": "Arrête-toi au coin et attends-moi.",
+                "ar": "توقف عند الزاوية وانتظرني."
+              }
+            },
+            {
+              "who": {
+                "en": "Ben",
+                "fr": "Ben",
+                "ar": "بن"
+              },
+              "text": {
+                "en": "Okay, Dad. I am waiting!",
+                "fr": "D’accord, papa. Je t’attends !",
+                "ar": "حسنا يا أبي. أنا أنتظرك!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "city centre": {
+      "scenes": [
+        {
+          "place": "city-centre",
+          "lines": [
+            {
+              "who": {
+                "en": "Sofia",
+                "fr": "Sofia",
+                "ar": "صوفيا"
+              },
+              "text": {
+                "en": "There are many people in the city centre today!",
+                "fr": "Il y a beaucoup de monde au centre-ville aujourd’hui !",
+                "ar": "يوجد كثير من الناس في وسط المدينة اليوم!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, it is Saturday.",
+                "fr": "Oui, c’est samedi.",
+                "ar": "نعم، اليوم هو السبت."
+              }
+            }
+          ]
+        },
+        {
+          "place": "bus",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Does this bus go to the city centre?",
+                "fr": "Ce bus va au centre-ville ?",
+                "ar": "هل تذهب هذه الحافلة إلى وسط المدينة؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Bus driver",
+                "fr": "La conductrice de bus",
+                "ar": "سائقة الحافلة"
+              },
+              "text": {
+                "en": "Yes, it does. It takes ten minutes.",
+                "fr": "Oui. Le trajet dure dix minutes.",
+                "ar": "نعم. تستغرق الرحلة عشر دقائق."
+              }
+            }
+          ]
+        },
+        {
+          "place": "home",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "We go to the city centre to buy a new bag.",
+                "fr": "Nous allons au centre-ville pour acheter un nouveau sac.",
+                "ar": "سنذهب إلى وسط المدينة لنشتري حقيبة جديدة."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Can we eat lunch there too?",
+                "fr": "On peut aussi déjeuner là-bas ?",
+                "ar": "هل يمكننا أن نتناول الغداء هناك أيضا؟"
+              }
+            }
+          ]
+        },
+        {
+          "place": "car-park",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "The car stays here. We walk to the city centre.",
+                "fr": "La voiture reste ici. Nous allons au centre-ville à pied.",
+                "ar": "تبقى السيارة هنا. سنمشي إلى وسط المدينة."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Good! I like to walk.",
+                "fr": "Super ! J’aime marcher.",
+                "ar": "جيد! أحب المشي."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Pedestrian_precinct%2C_Coventry_city_centre_-_geograph.org.uk_-_3944911.jpg/330px-Pedestrian_precinct%2C_Coventry_city_centre_-_geograph.org.uk_-_3944911.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Pedestrian_precinct,_Coventry_city_centre_-_geograph.org.uk_-_3944911.jpg",
+          "author": "David Martin",
+          "licence": "CC BY-SA 2.0",
+          "caption": "Shops and people in a city centre"
+        }
+      ]
+    },
+    "museum": {
+      "scenes": [
+        {
+          "place": "museum",
+          "lines": [
+            {
+              "who": {
+                "en": "Guide",
+                "fr": "La guide",
+                "ar": "المرشدة"
+              },
+              "text": {
+                "en": "In this museum, you can see very old things.",
+                "fr": "Dans ce musée, vous pouvez voir des objets très anciens.",
+                "ar": "في هذا المتحف، يمكنكم أن تروا أشياء قديمة جدا."
+              }
+            },
+            {
+              "who": {
+                "en": "Adam",
+                "fr": "Adam",
+                "ar": "آدم"
+              },
+              "text": {
+                "en": "Wow! Is this cup very old?",
+                "fr": "Waouh ! Cette tasse est très ancienne ?",
+                "ar": "يا للروعة! هل هذا الكوب قديم جدا؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Guide",
+                "fr": "La guide",
+                "ar": "المرشدة"
+              },
+              "text": {
+                "en": "Yes, it is two thousand years old!",
+                "fr": "Oui, elle a deux mille ans !",
+                "ar": "نعم، عمره ألفا سنة!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "La maîtresse",
+                "ar": "المعلمة"
+              },
+              "text": {
+                "en": "On Friday, we go to the museum.",
+                "fr": "Vendredi, nous allons au musée.",
+                "ar": "يوم الجمعة، سنذهب إلى المتحف."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Can we take pictures there?",
+                "fr": "On peut prendre des photos là-bas ?",
+                "ar": "هل يمكننا أن نلتقط صورا هناك؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "La maîtresse",
+                "ar": "المعلمة"
+              },
+              "text": {
+                "en": "Yes, you can.",
+                "fr": "Oui, vous pouvez.",
+                "ar": "نعم، يمكنكم ذلك."
+              }
+            }
+          ]
+        },
+        {
+          "place": "town-square",
+          "lines": [
+            {
+              "who": {
+                "en": "Kenji",
+                "fr": "Kenji",
+                "ar": "كينجي"
+              },
+              "text": {
+                "en": "Excuse me, is the museum open on Monday?",
+                "fr": "Excusez-moi, le musée est ouvert le lundi ?",
+                "ar": "عفوا، هل المتحف مفتوح يوم الاثنين؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "No, the museum is closed on Monday.",
+                "fr": "Non, le musée est fermé le lundi.",
+                "ar": "لا، المتحف مغلق يوم الاثنين."
+              }
+            }
+          ]
+        },
+        {
+          "place": "dining-table",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "What do you want to do on Sunday?",
+                "fr": "Qu’est-ce que tu veux faire dimanche ?",
+                "ar": "ماذا تريدين أن تفعلي يوم الأحد؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Rania",
+                "fr": "Rania",
+                "ar": "رانيا"
+              },
+              "text": {
+                "en": "I want to go to the museum with Grandpa!",
+                "fr": "Je veux aller au musée avec papi !",
+                "ar": "أريد أن أذهب إلى المتحف مع جدي!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Duck-Billed_Dinosaur_skeletons_at_American_Museum_of_Natural_History.jpg/330px-Duck-Billed_Dinosaur_skeletons_at_American_Museum_of_Natural_History.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Duck-Billed_Dinosaur_skeletons_at_American_Museum_of_Natural_History.jpg",
+          "author": "Vicpeters",
+          "licence": "CC BY 4.0",
+          "caption": "Dinosaur skeletons in a museum"
+        }
+      ]
+    },
+    "cinema": {
+      "scenes": [
+        {
+          "place": "cinema",
+          "lines": [
+            {
+              "who": {
+                "en": "Cinema worker",
+                "fr": "L’employé du cinéma",
+                "ar": "موظف السينما"
+              },
+              "text": {
+                "en": "Welcome to the cinema! The film starts at six.",
+                "fr": "Bienvenue au cinéma ! Le film commence à six heures.",
+                "ar": "مرحبا بك في السينما! يبدأ الفيلم في الساعة السادسة."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Good! Two tickets, please.",
+                "fr": "Super ! Deux places, s’il vous plaît.",
+                "ar": "جيد! تذكرتان، من فضلك."
+              }
+            }
+          ]
+        },
+        {
+          "place": "living-room",
+          "lines": [
+            {
+              "who": {
+                "en": "Maya",
+                "fr": "Maya",
+                "ar": "مايا"
+              },
+              "text": {
+                "en": "Let’s watch a film at the cinema on Saturday!",
+                "fr": "Allons voir un film au cinéma samedi !",
+                "ar": "لنشاهد فيلما في السينما يوم السبت!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes! I want to see the new film about a cat.",
+                "fr": "Oui ! Je veux voir le nouveau film sur un chat.",
+                "ar": "نعم! أريد أن أشاهد الفيلم الجديد عن قطة."
+              }
+            }
+          ]
+        },
+        {
+          "place": "shopping-centre",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "The cinema is upstairs.",
+                "fr": "Le cinéma est en haut.",
+                "ar": "السينما في الطابق العلوي."
+              }
+            },
+            {
+              "who": {
+                "en": "Nina",
+                "fr": "Nina",
+                "ar": "نينا"
+              },
+              "text": {
+                "en": "Let’s take the stairs!",
+                "fr": "Prenons l’escalier !",
+                "ar": "لنصعد الدرج!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "ice-cream-shop",
+          "lines": [
+            {
+              "who": {
+                "en": "Omar",
+                "fr": "Omar",
+                "ar": "عمر"
+              },
+              "text": {
+                "en": "The film at the cinema was very good!",
+                "fr": "Le film au cinéma était super !",
+                "ar": "كان الفيلم في السينما رائعا جدا!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes! And now, ice cream!",
+                "fr": "Oui ! Et maintenant, une glace !",
+                "ar": "نعم! والآن، حان وقت المثلجات!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/4DX_seats_in_cinema_%28motion_and_environmental_effects_synced_with_the_on-screen_action%29_bench_rows_in_a_movie_theater_hall_Kinostoler_kinosal_Kilden_kino_T%C3%B8nsberg%2C_Norway_2023_IMG_7849.jpg/330px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:4DX_seats_in_cinema_(motion_and_environmental_effects_synced_with_the_on-screen_action)_bench_rows_in_a_movie_theater_hall_Kinostoler_kinosal_Kilden_kino_T%C3%B8nsberg,_Norway_2023_IMG_7849.jpg",
+          "author": "Wolfmann",
+          "licence": "CC BY-SA 4.0",
+          "caption": "Rows of seats in a cinema"
+        }
+      ]
+    },
+    "theatre": {
+      "scenes": [
+        {
+          "place": "theatre",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Sit here. The play starts in five minutes.",
+                "fr": "Assieds-toi ici. La pièce commence dans cinq minutes.",
+                "ar": "اجلس هنا. ستبدأ المسرحية بعد خمس دقائق."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "This theatre is very big and beautiful!",
+                "fr": "Ce théâtre est très grand et très beau !",
+                "ar": "هذا المسرح كبير وجميل جدا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "Le maître",
+                "ar": "المعلم"
+              },
+              "text": {
+                "en": "On Friday, we do a play at the theatre.",
+                "fr": "Vendredi, nous jouons une pièce au théâtre.",
+                "ar": "يوم الجمعة، سنقدم مسرحية في المسرح."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Can my parents come?",
+                "fr": "Mes parents peuvent venir ?",
+                "ar": "هل يمكن لوالدي أن يأتيا؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "Le maître",
+                "ar": "المعلم"
+              },
+              "text": {
+                "en": "Of course! All the families can come.",
+                "fr": "Bien sûr ! Toutes les familles peuvent venir.",
+                "ar": "طبعا! يمكن لكل العائلات أن تأتي."
+              }
+            }
+          ]
+        },
+        {
+          "place": "music-room",
+          "lines": [
+            {
+              "who": {
+                "en": "Leila",
+                "fr": "Leïla",
+                "ar": "ليلى"
+              },
+              "text": {
+                "en": "I am singing at the theatre tonight.",
+                "fr": "Je chante au théâtre ce soir.",
+                "ar": "سأغني في المسرح الليلة."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Good luck, Leila!",
+                "fr": "Bonne chance, Leïla !",
+                "ar": "حظا سعيدا يا ليلى!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "city-centre",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandma",
+                "fr": "Mamie",
+                "ar": "الجدة"
+              },
+              "text": {
+                "en": "This old building is the theatre.",
+                "fr": "Ce vieux bâtiment, c’est le théâtre.",
+                "ar": "هذا المبنى القديم هو المسرح."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Can we go in?",
+                "fr": "On peut entrer ?",
+                "ar": "هل يمكننا أن ندخل؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Grandma",
+                "fr": "Mamie",
+                "ar": "الجدة"
+              },
+              "text": {
+                "en": "Yes, we have tickets for tonight!",
+                "fr": "Oui, nous avons des billets pour ce soir !",
+                "ar": "نعم، لدينا تذاكر لهذه الليلة!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/His_Majesty%27s_Theatre_-_Dome_and_Curtain_-_ROBERT_GARVEY.jpg/330px-His_Majesty%27s_Theatre_-_Dome_and_Curtain_-_ROBERT_GARVEY.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:His_Majesty%27s_Theatre_-_Dome_and_Curtain_-_ROBERT_GARVEY.jpg",
+          "author": "Perth Theatre Trust",
+          "licence": "CC BY-SA 4.0",
+          "caption": "The stage and seats of a theatre"
+        }
+      ]
+    },
+    "swimming pool": {
+      "scenes": [
+        {
+          "place": "swimming-pool",
+          "lines": [
+            {
+              "who": {
+                "en": "Swimming teacher",
+                "fr": "Le maître-nageur",
+                "ar": "مدرب السباحة"
+              },
+              "text": {
+                "en": "Wait! Don’t run near the swimming pool.",
+                "fr": "Attends ! Ne cours pas près de la piscine.",
+                "ar": "انتظري! لا تركضي قرب المسبح."
+              }
+            },
+            {
+              "who": {
+                "en": "Ella",
+                "fr": "Ella",
+                "ar": "إيلا"
+              },
+              "text": {
+                "en": "Sorry! I am walking now.",
+                "fr": "Pardon ! Je marche, maintenant.",
+                "ar": "آسفة! أنا أمشي الآن."
+              }
+            }
+          ]
+        },
+        {
+          "place": "hotel",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Does the hotel have a swimming pool?",
+                "fr": "L’hôtel a une piscine ?",
+                "ar": "هل يوجد مسبح في الفندق؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Receptionist",
+                "fr": "La réceptionniste",
+                "ar": "موظفة الاستقبال"
+              },
+              "text": {
+                "en": "Yes, it is open from eight in the morning.",
+                "fr": "Oui, elle est ouverte à partir de huit heures du matin.",
+                "ar": "نعم، إنه مفتوح من الساعة الثامنة صباحا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "gym",
+          "lines": [
+            {
+              "who": {
+                "en": "Tariq",
+                "fr": "Tarik",
+                "ar": "طارق"
+              },
+              "text": {
+                "en": "Do you swim?",
+                "fr": "Tu nages ?",
+                "ar": "هل تسبح؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, I go to the swimming pool every Wednesday.",
+                "fr": "Oui, je vais à la piscine tous les mercredis.",
+                "ar": "نعم، أذهب إلى المسبح كل يوم أربعاء."
+              }
+            }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Do you have your bag for the swimming pool?",
+                "fr": "Tu as ton sac pour la piscine ?",
+                "ar": "هل معك حقيبة المسبح؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Sam",
+                "fr": "Sam",
+                "ar": "سام"
+              },
+              "text": {
+                "en": "Yes, Mum. It is on my bed.",
+                "fr": "Oui, maman. Il est sur mon lit.",
+                "ar": "نعم يا أمي. إنها على سريري."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Public_Swimming_Pool_in_Melbourne_VIC_Australia.jpg/330px-Public_Swimming_Pool_in_Melbourne_VIC_Australia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Public_Swimming_Pool_in_Melbourne_VIC_Australia.jpg",
+          "author": "KeepActive Australia",
+          "licence": "CC BY-SA 4.0",
+          "caption": "People swimming in a swimming pool"
+        }
+      ]
+    },
+    "town hall": {
+      "scenes": [
+        {
+          "place": "town-hall",
+          "lines": [
+            {
+              "who": {
+                "en": "Town hall worker",
+                "fr": "L’employée de mairie",
+                "ar": "موظفة البلدية"
+              },
+              "text": {
+                "en": "Good morning. Welcome to the town hall.",
+                "fr": "Bonjour. Bienvenue à la mairie.",
+                "ar": "صباح الخير. مرحبا بك في مقر البلدية."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Good morning. I need some help, please.",
+                "fr": "Bonjour. J’ai besoin d’aide, s’il vous plaît.",
+                "ar": "صباح الخير. أحتاج إلى بعض المساعدة، من فضلك."
+              }
+            }
+          ]
+        },
+        {
+          "place": "town-square",
+          "lines": [
+            {
+              "who": {
+                "en": "Ines",
+                "fr": "Inès",
+                "ar": "إيناس"
+              },
+              "text": {
+                "en": "Look at the big clock, Grandpa!",
+                "fr": "Regarde la grande horloge, papi !",
+                "ar": "انظر إلى الساعة الكبيرة يا جدي!"
+              }
+            },
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "That is the town hall. The clock is one hundred years old.",
+                "fr": "C’est la mairie. L’horloge a cent ans.",
+                "ar": "ذلك مقر البلدية. عمر الساعة مئة سنة."
+              }
+            }
+          ]
+        },
+        {
+          "place": "family-party",
+          "lines": [
+            {
+              "who": {
+                "en": "Uncle Yanis",
+                "fr": "Tonton Yanis",
+                "ar": "العم يانيس"
+              },
+              "text": {
+                "en": "My wedding is at the town hall on Saturday.",
+                "fr": "Mon mariage a lieu à la mairie samedi.",
+                "ar": "زفافي في مقر البلدية يوم السبت."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Oh, nice! Can I come?",
+                "fr": "Oh, super ! Je peux venir ?",
+                "ar": "جميل! هل يمكنني أن آتي؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Uncle Yanis",
+                "fr": "Tonton Yanis",
+                "ar": "العم يانيس"
+              },
+              "text": {
+                "en": "Of course! All the family can come.",
+                "fr": "Bien sûr ! Toute la famille peut venir.",
+                "ar": "طبعا! يمكن للعائلة كلها أن تأتي."
+              }
+            }
+          ]
+        },
+        {
+          "place": "street",
+          "lines": [
+            {
+              "who": {
+                "en": "Man",
+                "fr": "Le monsieur",
+                "ar": "الرجل"
+              },
+              "text": {
+                "en": "Where is the town hall, please?",
+                "fr": "Où est la mairie, s’il vous plaît ?",
+                "ar": "أين مقر البلدية، من فضلك؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "It is in the square, next to the church.",
+                "fr": "Elle est sur la place, à côté de l’église.",
+                "ar": "إنه في الساحة، بجانب الكنيسة."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Town_hall_of_Aosta_%283%29.jpg/330px-Town_hall_of_Aosta_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "page": "https://commons.wikimedia.org/wiki/File:Town_hall_of_Aosta_(3).jpg",
+          "author": "Krzysztof Golik",
+          "licence": "CC BY-SA 4.0",
+          "caption": "A town hall with flags"
+        }
+      ]
+    }
+  }
+}

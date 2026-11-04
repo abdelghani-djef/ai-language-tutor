@@ -1,0 +1,133 @@
+{
+  "data": [
+    {
+      "id": 8320159,
+      "text": "Eat bread.",
+      "lang": "eng",
+      "script": null,
+      "license": "CC BY 2.0 FR",
+      "owner": "ichawiyen",
+      "is_unapproved": false,
+      "translations": [
+        {
+          "id": 8320175,
+          "text": "Mangez du pain.",
+          "lang": "fra",
+          "script": null,
+          "license": "CC BY 2.0 FR",
+          "owner": "ichawiyen",
+          "is_unapproved": false,
+          "is_direct": true
+        }
+      ]
+    },
+    {
+      "id": 13828273,
+      "text": "They cut bread.",
+      "lang": "eng",
+      "script": null,
+      "license": "CC BY 2.0 FR",
+      "owner": "tieguy",
+      "is_unapproved": false,
+      "translations": [
+        {
+          "id": 5255620,
+          "text": "Ils coupèrent du pain.",
+          "lang": "fra",
+          "script": null,
+          "license": "CC BY 2.0 FR",
+          "owner": "martin9",
+          "is_unapproved": false,
+          "is_direct": true
+        }
+      ]
+    },
+    {
+      "id": 13740652,
+      "text": "You like bread.",
+      "lang": "eng",
+      "script": null,
+      "license": "CC BY 2.0 FR",
+      "owner": "supermarinete",
+      "is_unapproved": false,
+      "translations": [
+        {
+          "id": 13742182,
+          "text": "Tu aimes le pain.",
+          "lang": "fra",
+          "script": null,
+          "license": "CC BY 2.0 FR",
+          "owner": "mervert1",
+          "is_unapproved": false,
+          "is_direct": true
+        }
+      ]
+    },
+    {
+      "id": 13187344,
+      "text": "Buy some bread.",
+      "lang": "eng",
+      "script": null,
+      "license": "CC BY 2.0 FR",
+      "owner": "frpzzd",
+      "is_unapproved": false,
+      "translations": [
+        {
+          "id": 2104431,
+          "text": "Tu achètes du pain.",
+          "lang": "fra",
+          "script": null,
+          "license": "CC BY 2.0 FR",
+          "owner": "Amastan",
+          "is_unapproved": false,
+          "is_direct": false
+        },
+        {
+          "id": 2112701,
+          "text": "Il achète du pain.",
+          "lang": "fra",
+          "script": null,
+          "license": "CC BY 2.0 FR",
+          "owner": "Amastan",
+          "is_unapproved": false,
+          "is_direct": false
+        },
+        {
+          "id": 2112705,
+          "text": "Elle achète du pain.",
+          "lang": "fra",
+          "script": null,
+          "license": "CC BY 2.0 FR",
+          "owner": "Amastan",
+          "is_unapproved": false,
+          "is_direct": false
+        },
+        {
+          "id": 2112711,
+          "text": "Vous achetez du pain.",
+          "lang": "fra",
+          "script": null,
+          "license": "CC BY 2.0 FR",
+          "owner": "Amastan",
+          "is_unapproved": false,
+          "is_direct": false
+        },
+        {
+          "id": 12586383,
+          "text": "Achetez du pain.",
+          "lang": "fra",
+          "script": null,
+          "license": "CC BY 2.0 FR",
+          "owner": "LdjuherTaqvaylit",
+          "is_unapproved": false,
+          "is_direct": false
+        }
+      ]
+    }
+  ],
+  "paging": {
+    "total": 658,
+    "has_next": true,
+    "next": "https://api.tatoeba.org/unstable/sentences?lang=eng&q=bread&sort=relevance&limit=10&trans%3Alang=fra&showtrans=matching&after=10097%2C11984094"
+  }
+}

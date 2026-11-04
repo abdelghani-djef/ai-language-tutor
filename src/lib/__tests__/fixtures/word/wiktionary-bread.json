@@ -1,0 +1,86 @@
+{
+  "en": [
+    {
+      "partOfSpeech": "Noun",
+      "language": "English",
+      "definitions": [
+        {
+          "definition": "<span class=\"usage-label-sense\" about=\"#mwt100\" typeof=\"mw:Transclusion\"></span>\n<ol><li class=\"mw-empty-elt\"></li><li class=\"senseid\" id=\"English:_Q7802\" data-lang=\"en\" data-id=\"Q7802\" about=\"#mwt101\" typeof=\"mw:Transclusion\"> A <a rel=\"mw:WikiLink\" href=\"/wiki/foodstuff\" title=\"foodstuff\">foodstuff</a> made by <a rel=\"mw:WikiLink\" href=\"/wiki/bake\" title=\"bake\">baking</a> <a rel=\"mw:WikiLink\" href=\"/wiki/dough\" title=\"dough\">dough</a> made from <a rel=\"mw:WikiLink\" href=\"/wiki/cereal\" title=\"cereal\">cereals</a>.",
+          "parsedExamples": [
+            {
+              "example": "We made sandwiches with the <b>bread</b> we bought from the bakery."
+            },
+            {
+              "example": "My mother used to send me for the <b>bread</b>."
+            }
+          ],
+          "examples": [
+            "We made sandwiches with the <b>bread</b> we bought from the bakery.",
+            "My mother used to send me for the <b>bread</b>."
+          ]
+        },
+        {
+          "definition": ""
+        },
+        {
+          "definition": "A <a rel=\"mw:WikiLink\" href=\"/wiki/foodstuff\" title=\"foodstuff\">foodstuff</a> made by <a rel=\"mw:WikiLink\" href=\"/wiki/bake\" title=\"bake\">baking</a> <a rel=\"mw:WikiLink\" href=\"/wiki/dough\" title=\"dough\">dough</a> made from <a rel=\"mw:WikiLink\" href=\"/wiki/cereal\" title=\"cereal\">cereals</a>.",
+          "parsedExamples": [
+            {
+              "example": "We made sandwiches with the <b>bread</b> we bought from the bakery."
+            },
+            {
+              "example": "My mother used to send me for the <b>bread</b>."
+            }
+          ],
+          "examples": [
+            "We made sandwiches with the <b>bread</b> we bought from the bakery.",
+            "My mother used to send me for the <b>bread</b>."
+          ]
+        },
+        {
+          "definition": "<span class=\"usage-label-sense\"></span> Such foodstuff that is not difficult to <a rel=\"mw:WikiLink\" href=\"/wiki/chew#Verb\" title=\"chew\">chew</a>, being not extremely hard, dense, and dry.",
+          "parsedExamples": [
+            {
+              "example": "We made sandwiches with the <b>bread</b> we bought from the bakery."
+            },
+            {
+              "example": "My mother used to send me for the <b>bread</b>."
+            }
+          ],
+          "examples": [
+            "We made sandwiches with the <b>bread</b> we bought from the bakery.",
+            "My mother used to send me for the <b>bread</b>."
+          ]
+        }
+      ]
+    },
+    {
+      "partOfSpeech": "Verb",
+      "language": "English",
+      "definitions": [
+        {
+          "definition": "<span class=\"usage-label-sense\" about=\"#mwt169\" typeof=\"mw:Transclusion\"></span> To <a rel=\"mw:WikiLink\" href=\"/wiki/coat\" title=\"coat\">coat</a> with <a rel=\"mw:WikiLink\" href=\"/wiki/breadcrumb\" title=\"breadcrumb\">breadcrumbs</a>.",
+          "parsedExamples": [
+            {
+              "example": "<b>breaded</b> fish"
+            }
+          ],
+          "examples": [
+            "<b>breaded</b> fish"
+          ]
+        }
+      ]
+    }
+  ],
+  "es": [
+    {
+      "partOfSpeech": "Verb",
+      "language": "Spanish",
+      "definitions": [
+        {
+          "definition": "<span class=\"form-of-definition use-with-mention\" about=\"#mwt247\" typeof=\"mw:Transclusion\"><a rel=\"mw:WikiLink\" href=\"/wiki/Appendix:Glossary#second_person\" title=\"Appendix:Glossary\">second-person</a> <a rel=\"mw:WikiLink\" href=\"/wiki/Appendix:Glossary#plural_number\" title=\"Appendix:Glossary\">plural</a> <a rel=\"mw:WikiLink\" href=\"/wiki/Appendix:Glossary#imperative_mood\" title=\"Appendix:Glossary\">imperative</a> of <span class=\"form-of-definition-link\"><i class=\"Latn mention\" lang=\"es\"><a rel=\"mw:WikiLink\" href=\"/wiki/brear#Spanish\" title=\"brear\">brear</a></i></span></span>"
+        }
+      ]
+    }
+  ]
+}

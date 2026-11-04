@@ -1,0 +1,839 @@
+{
+  "pack": "questions",
+  "complete": true,
+  "words": {
+    "what": {
+      "scenes": [
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "What is this?", "fr": "Qu’est-ce que c’est ?", "ar": "ما هذا؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "It is a map!", "fr": "C’est une carte !", "ar": "إنها خريطة!" } }
+          ]
+        },
+        {
+          "place": "kitchen",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "What do you want for lunch, Adam?", "fr": "Qu’est-ce que tu veux pour le déjeuner, Adam ?", "ar": "ماذا تريد للغداء يا آدم؟" } },
+            { "who": { "en": "Adam", "fr": "Adam", "ar": "آدم" }, "text": { "en": "Rice and chicken, please!", "fr": "Du riz et du poulet, s’il te plaît !", "ar": "أرزا ودجاجا، من فضلك!" } }
+          ]
+        },
+        {
+          "place": "birthday-party",
+          "lines": [
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "What is in the box?", "fr": "Qu’est-ce qu’il y a dans la boîte ?", "ar": "ماذا يوجد في الصندوق؟" } },
+            { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "Open it and see!", "fr": "Ouvre-la et regarde !", "ar": "افتحيه وانظري!" } },
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "A ball! Thank you, Sam!", "fr": "Un ballon ! Merci, Sam !", "ar": "كرة! شكرا يا سام!" } }
+          ]
+        },
+        {
+          "place": "toy-shop",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "What is that?", "fr": "Qu’est-ce que c’est, ça ?", "ar": "ما ذلك؟" } },
+            { "who": { "en": "Seller", "fr": "Le vendeur", "ar": "البائع" }, "text": { "en": "It is a kite. It can fly!", "fr": "C’est un cerf-volant. Il peut voler !", "ar": "إنها طائرة ورقية. يمكنها أن تطير!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "where": {
+      "scenes": [
+        {
+          "place": "school-gate",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Yusuf, where is your bag?", "fr": "Yusuf, où est ton sac ?", "ar": "يا يوسف، أين حقيبتك؟" } },
+            { "who": { "en": "Yusuf", "fr": "Yusuf", "ar": "يوسف" }, "text": { "en": "Oh no! It is in the classroom.", "fr": "Oh non ! Il est dans la classe.", "ar": "أوه، لا! إنها في الصف." } }
+          ]
+        },
+        {
+          "place": "train-station",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Excuse me, where is the train to Paris?", "fr": "Excusez-moi, où est le train pour Paris ?", "ar": "عفوا، أين القطار المتجه إلى باريس؟" } },
+            { "who": { "en": "Station worker", "fr": "L’agent de gare", "ar": "موظف المحطة" }, "text": { "en": "It is over there, on the left.", "fr": "Il est là-bas, à gauche.", "ar": "إنه هناك، على اليسار." } }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            { "who": { "en": "Leo", "fr": "Léo", "ar": "ليو" }, "text": { "en": "Mum, where are my shoes?", "fr": "Maman, où sont mes chaussures ?", "ar": "أمي، أين حذائي؟" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "They are under your bed.", "fr": "Elles sont sous ton lit.", "ar": "إنه تحت سريرك." } }
+          ]
+        },
+        {
+          "place": "street",
+          "lines": [
+            { "who": { "en": "Tourist", "fr": "La touriste", "ar": "السائحة" }, "text": { "en": "Where is the museum, please?", "fr": "Où est le musée, s’il vous plaît ?", "ar": "أين المتحف، من فضلك؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Go straight on. It is next to the bank.", "fr": "Allez tout droit. Il est à côté de la banque.", "ar": "سيري إلى الأمام مباشرة. إنه بجانب البنك." } },
+            { "who": { "en": "Tourist", "fr": "La touriste", "ar": "السائحة" }, "text": { "en": "Thank you very much!", "fr": "Merci beaucoup !", "ar": "شكرا جزيلا!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "who": {
+      "scenes": [
+        {
+          "place": "front-door",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Sara, who is at the door?", "fr": "Sara, qui est à la porte ?", "ar": "يا سارة، من عند الباب؟" } },
+            { "who": { "en": "Sara", "fr": "Sara", "ar": "سارة" }, "text": { "en": "It is Grandpa!", "fr": "C’est papi !", "ar": "إنه جدي!" } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Who wants to read?", "fr": "Qui veut lire ?", "ar": "من يريد أن يقرأ؟" } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Me! Me!", "fr": "Moi ! Moi !", "ar": "أنا! أنا!" } }
+          ]
+        },
+        {
+          "place": "football-pitch",
+          "lines": [
+            { "who": { "en": "Coach", "fr": "L’entraîneur", "ar": "المدرب" }, "text": { "en": "Who has the ball?", "fr": "Qui a le ballon ?", "ar": "من معه الكرة؟" } },
+            { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "I have it, Coach!", "fr": "C’est moi qui l’ai, coach !", "ar": "إنها معي أيها المدرب!" } }
+          ]
+        },
+        {
+          "place": "family-party",
+          "lines": [
+            { "who": { "en": "Ana", "fr": "Ana", "ar": "آنا" }, "text": { "en": "Who is that man?", "fr": "Qui est cet homme ?", "ar": "من ذلك الرجل؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "He is my uncle Ali.", "fr": "C’est mon oncle Ali.", "ar": "إنه عمي علي." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "when": {
+      "scenes": [
+        {
+          "place": "friends-house",
+          "lines": [
+            { "who": { "en": "Nora", "fr": "Nora", "ar": "نورا" }, "text": { "en": "When is your birthday?", "fr": "C’est quand, ton anniversaire ?", "ar": "متى عيد ميلادك؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "It is in May.", "fr": "C’est en mai.", "ar": "إنه في شهر مايو." } }
+          ]
+        },
+        {
+          "place": "bus-stop",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Excuse me, when does the bus come?", "fr": "Excusez-moi, quand est-ce que le bus arrive ?", "ar": "عفوا، متى تصل الحافلة؟" } },
+            { "who": { "en": "Old man", "fr": "Le vieux monsieur", "ar": "الرجل المسن" }, "text": { "en": "In five minutes.", "fr": "Dans cinq minutes.", "ar": "بعد خمس دقائق." } }
+          ]
+        },
+        {
+          "place": "swimming-pool",
+          "lines": [
+            { "who": { "en": "Leo", "fr": "Léo", "ar": "ليو" }, "text": { "en": "Dad, when can I swim in the big pool?", "fr": "Papa, quand est-ce que je peux nager dans le grand bassin ?", "ar": "أبي، متى يمكنني أن أسبح في المسبح الكبير؟" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "When you are older.", "fr": "Quand tu seras plus grand.", "ar": "عندما تكبر." } }
+          ]
+        },
+        {
+          "place": "doctor",
+          "lines": [
+            { "who": { "en": "Doctor", "fr": "La docteure", "ar": "الطبيبة" }, "text": { "en": "When did your head start to hurt?", "fr": "Quand est-ce que tu as commencé à avoir mal à la tête ?", "ar": "متى بدأ رأسك يؤلمك؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yesterday, after school.", "fr": "Hier, après l’école.", "ar": "أمس، بعد المدرسة." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "why": {
+      "scenes": [
+        {
+          "place": "park",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "Why are you sad, Mia?", "fr": "Pourquoi tu es triste, Mia ?", "ar": "لماذا أنت حزينة يا ميا؟" } },
+            { "who": { "en": "Mia", "fr": "Mia", "ar": "ميا" }, "text": { "en": "I lost my ball.", "fr": "J’ai perdu mon ballon.", "ar": "أضعت كرتي." } },
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "Look, it is there, under the tree!", "fr": "Regarde, il est là, sous l’arbre !", "ar": "انظري، إنها هناك، تحت الشجرة!" } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "Why are you late, Omar?", "fr": "Pourquoi tu es en retard, Omar ?", "ar": "لماذا تأخرت يا عمر؟" } },
+            { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "The bus was late. Sorry!", "fr": "Le bus était en retard. Pardon !", "ar": "تأخرت الحافلة. آسف!" } }
+          ]
+        },
+        {
+          "place": "zoo",
+          "lines": [
+            { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "Why does the giraffe have a long neck?", "fr": "Pourquoi la girafe a un long cou ?", "ar": "لماذا للزرافة عنق طويل؟" } },
+            { "who": { "en": "Zookeeper", "fr": "La soigneuse", "ar": "حارسة الحديقة" }, "text": { "en": "To eat leaves from tall trees.", "fr": "Pour manger les feuilles des grands arbres.", "ar": "لكي تأكل أوراق الأشجار العالية." } }
+          ]
+        },
+        {
+          "place": "kitchen",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Why is the floor wet?", "fr": "Pourquoi le sol est mouillé ?", "ar": "لماذا الأرض مبللة؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Sorry, I dropped my glass of water.", "fr": "Pardon, j’ai renversé mon verre d’eau.", "ar": "آسف، أوقعت كأس الماء." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "how": {
+      "scenes": [
+        {
+          "place": "school-gate",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "How do you get to school?", "fr": "Comment tu viens à l’école ?", "ar": "كيف تأتي إلى المدرسة؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I walk with my sister.", "fr": "Je viens à pied avec ma sœur.", "ar": "آتي مشيا مع أختي." } }
+          ]
+        },
+        {
+          "place": "kitchen",
+          "lines": [
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "Grandma, how do you make this cake?", "fr": "Mamie, comment tu fais ce gâteau ?", "ar": "جدتي، كيف تصنعين هذه الكعكة؟" } },
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "With eggs, flour and a lot of love!", "fr": "Avec des œufs, de la farine et beaucoup d’amour !", "ar": "بالبيض والدقيق والكثير من الحب!" } }
+          ]
+        },
+        {
+          "place": "library",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "How do I find a book about cats?", "fr": "Comment je trouve un livre sur les chats ?", "ar": "كيف أجد كتابا عن القطط؟" } },
+            { "who": { "en": "Librarian", "fr": "La bibliothécaire", "ar": "أمينة المكتبة" }, "text": { "en": "Look on the computer. I can show you.", "fr": "Regarde sur l’ordinateur. Je peux te montrer.", "ar": "ابحث في الحاسوب. يمكنني أن أريك." } }
+          ]
+        },
+        {
+          "place": "music-room",
+          "lines": [
+            { "who": { "en": "Ben", "fr": "Ben", "ar": "بن" }, "text": { "en": "How do you play this song?", "fr": "Comment tu joues cette chanson ?", "ar": "كيف تعزفين هذه الأغنية؟" } },
+            { "who": { "en": "Music teacher", "fr": "La prof de musique", "ar": "معلمة الموسيقى" }, "text": { "en": "Like this. Watch my fingers.", "fr": "Comme ça. Regarde mes doigts.", "ar": "هكذا. انظر إلى أصابعي." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "and": {
+      "scenes": [
+        {
+          "place": "market",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Three apples and two bananas, please.", "fr": "Trois pommes et deux bananes, s’il vous plaît.", "ar": "ثلاث تفاحات وموزتان، من فضلك." } },
+            { "who": { "en": "Seller", "fr": "La marchande", "ar": "البائعة" }, "text": { "en": "Here you are. Anything else?", "fr": "Voilà. Autre chose ?", "ar": "تفضل. هل تريد شيئا آخر؟" } }
+          ]
+        },
+        {
+          "place": "pet-shop",
+          "lines": [
+            { "who": { "en": "Zara", "fr": "Zara", "ar": "زارا" }, "text": { "en": "I have a cat and a dog at home.", "fr": "J’ai un chat et un chien à la maison.", "ar": "عندي قطة وكلب في البيت." } },
+            { "who": { "en": "Seller", "fr": "Le vendeur", "ar": "البائع" }, "text": { "en": "Lovely! And do you want a fish too?", "fr": "Super ! Et tu veux aussi un poisson ?", "ar": "رائع! وهل تريدين سمكة أيضا؟" } }
+          ]
+        },
+        {
+          "place": "dining-table",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Do you want bread and butter?", "fr": "Tu veux du pain et du beurre ?", "ar": "هل تريد خبزا وزبدة؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yes, and some milk, please.", "fr": "Oui, et du lait, s’il te plaît.", "ar": "نعم، وبعض الحليب، من فضلك." } }
+          ]
+        },
+        {
+          "place": "garden",
+          "lines": [
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "Look, Mia! Red and yellow flowers.", "fr": "Regarde, Mia ! Des fleurs rouges et jaunes.", "ar": "انظري يا ميا! أزهار حمراء وصفراء." } },
+            { "who": { "en": "Mia", "fr": "Mia", "ar": "ميا" }, "text": { "en": "They are very pretty, Grandpa!", "fr": "Elles sont très jolies, papi !", "ar": "إنها جميلة جدا يا جدي!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "but": {
+      "scenes": [
+        {
+          "place": "cafe",
+          "lines": [
+            { "who": { "en": "Waiter", "fr": "Le serveur", "ar": "النادل" }, "text": { "en": "Tea or coffee?", "fr": "Thé ou café ?", "ar": "شاي أم قهوة؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I like tea, but not coffee.", "fr": "J’aime le thé, mais pas le café.", "ar": "أحب الشاي، لكن لا أحب القهوة." } },
+            { "who": { "en": "Waiter", "fr": "Le serveur", "ar": "النادل" }, "text": { "en": "No problem. One tea!", "fr": "Pas de problème. Un thé !", "ar": "لا مشكلة. كوب شاي واحد!" } }
+          ]
+        },
+        {
+          "place": "beach",
+          "lines": [
+            { "who": { "en": "Leo", "fr": "Léo", "ar": "ليو" }, "text": { "en": "I want to swim, but the water is cold!", "fr": "Je veux nager, mais l’eau est froide !", "ar": "أريد أن أسبح، لكن الماء بارد!" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Wait a little. The sun is coming.", "fr": "Attends un peu. Le soleil arrive.", "ar": "انتظر قليلا. الشمس قادمة." } }
+          ]
+        },
+        {
+          "place": "shoe-shop",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I like these shoes, but they are too small.", "fr": "J’aime ces chaussures, mais elles sont trop petites.", "ar": "يعجبني هذا الحذاء، لكنه صغير جدا." } },
+            { "who": { "en": "Seller", "fr": "Le vendeur", "ar": "البائع" }, "text": { "en": "Try this size. It is bigger.", "fr": "Essayez cette taille. Elle est plus grande.", "ar": "جرب هذا المقاس. إنه أكبر." } }
+          ]
+        },
+        {
+          "place": "playground",
+          "lines": [
+            { "who": { "en": "Adam", "fr": "Adam", "ar": "آدم" }, "text": { "en": "Can I go on the slide with you?", "fr": "Je peux faire du toboggan avec toi ?", "ar": "هل يمكنني أن ألعب على الزلاقة معك؟" } },
+            { "who": { "en": "Yasmin", "fr": "Yasmin", "ar": "ياسمين" }, "text": { "en": "Yes, but it is my turn first!", "fr": "Oui, mais c’est d’abord mon tour !", "ar": "نعم، لكن دوري أولا!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "or": {
+      "scenes": [
+        {
+          "place": "restaurant",
+          "lines": [
+            { "who": { "en": "Waiter", "fr": "Le serveur", "ar": "النادل" }, "text": { "en": "Do you want water or juice?", "fr": "Vous voulez de l’eau ou du jus ?", "ar": "هل تريد ماء أو عصيرا؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Juice, please.", "fr": "Du jus, s’il vous plaît.", "ar": "عصيرا، من فضلك." } }
+          ]
+        },
+        {
+          "place": "ice-cream-shop",
+          "lines": [
+            { "who": { "en": "Seller", "fr": "La vendeuse", "ar": "البائعة" }, "text": { "en": "Chocolate or strawberry?", "fr": "Chocolat ou fraise ?", "ar": "شوكولاتة أم فراولة؟" } },
+            { "who": { "en": "Nina", "fr": "Nina", "ar": "نينا" }, "text": { "en": "Chocolate! No, strawberry! Or both?", "fr": "Chocolat ! Non, fraise ! Ou les deux ?", "ar": "شوكولاتة! لا، فراولة! أم الاثنتان معا؟" } },
+            { "who": { "en": "Seller", "fr": "La vendeuse", "ar": "البائعة" }, "text": { "en": "OK, both!", "fr": "D’accord, les deux !", "ar": "حسنا، الاثنتان!" } }
+          ]
+        },
+        {
+          "place": "clothes-shop",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "The blue shirt or the green one?", "fr": "La chemise bleue ou la verte ?", "ar": "القميص الأزرق أم الأخضر؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "The blue one, please.", "fr": "La bleue, s’il te plaît.", "ar": "الأزرق، من فضلك." } }
+          ]
+        },
+        {
+          "place": "living-room",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Shall we read a book or watch a film?", "fr": "On lit un livre ou on regarde un film ?", "ar": "هل نقرأ كتابا أو نشاهد فيلما؟" } },
+            { "who": { "en": "Sara", "fr": "Sara", "ar": "سارة" }, "text": { "en": "Read a book, please!", "fr": "On lit un livre, s’il te plaît !", "ar": "نقرأ كتابا، من فضلك!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "because": {
+      "scenes": [
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Why are you so happy today?", "fr": "Pourquoi tu es si content aujourd’hui ?", "ar": "لماذا أنت سعيد جدا اليوم؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Because it is my birthday!", "fr": "Parce que c’est mon anniversaire !", "ar": "لأنه عيد ميلادي!" } }
+          ]
+        },
+        {
+          "place": "park",
+          "lines": [
+            { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "I am happy because it is sunny.", "fr": "Je suis content parce qu’il fait beau.", "ar": "أنا سعيد لأن الجو مشمس." } },
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "Me too! Let’s play ball.", "fr": "Moi aussi ! On joue au ballon ?", "ar": "وأنا أيضا! هيا نلعب بالكرة." } }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Omar, why are you in bed?", "fr": "Omar, pourquoi tu es au lit ?", "ar": "يا عمر، لماذا أنت في السرير؟" } },
+            { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "Because I am very tired.", "fr": "Parce que je suis très fatigué.", "ar": "لأنني متعب جدا." } }
+          ]
+        },
+        {
+          "place": "pharmacy",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I need something for my dad, because he has a cold.", "fr": "Il me faut quelque chose pour mon père, parce qu’il est enrhumé.", "ar": "أحتاج إلى شيء لأبي، لأنه مصاب بالزكام." } },
+            { "who": { "en": "Pharmacist", "fr": "La pharmacienne", "ar": "الصيدلانية" }, "text": { "en": "Here you are. I hope he feels better soon.", "fr": "Voilà. J’espère qu’il ira vite mieux.", "ar": "تفضل. أتمنى له الشفاء العاجل." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "which": {
+      "scenes": [
+        {
+          "place": "bookshop",
+          "lines": [
+            { "who": { "en": "Seller", "fr": "La vendeuse", "ar": "البائعة" }, "text": { "en": "Which book do you want?", "fr": "Quel livre veux-tu ?", "ar": "أي كتاب تريد؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "The one about dinosaurs, please.", "fr": "Celui sur les dinosaures, s’il vous plaît.", "ar": "كتاب الديناصورات، من فضلك." } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "Which colour do you like, Maya?", "fr": "Quelle couleur tu aimes, Maya ?", "ar": "أي لون تحبين يا مايا؟" } },
+            { "who": { "en": "Maya", "fr": "Maya", "ar": "مايا" }, "text": { "en": "I like purple!", "fr": "J’aime le violet !", "ar": "أحب اللون البنفسجي!" } }
+          ]
+        },
+        {
+          "place": "train-station",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Excuse me, which train goes to the beach?", "fr": "Excusez-moi, quel train va à la plage ?", "ar": "عفوا، أي قطار يذهب إلى الشاطئ؟" } },
+            { "who": { "en": "Lady", "fr": "La dame", "ar": "السيدة" }, "text": { "en": "The red one, at ten o’clock.", "fr": "Le rouge, à dix heures.", "ar": "القطار الأحمر، في الساعة العاشرة." } }
+          ]
+        },
+        {
+          "place": "cinema",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Which film shall we see?", "fr": "Quel film on va voir ?", "ar": "أي فيلم سنشاهد؟" } },
+            { "who": { "en": "Ali", "fr": "Ali", "ar": "علي" }, "text": { "en": "The one with the funny dog!", "fr": "Celui avec le chien rigolo !", "ar": "الفيلم الذي فيه الكلب المضحك!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "how much": {
+      "scenes": [
+        {
+          "place": "market",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "How much are the oranges?", "fr": "Combien coûtent les oranges ?", "ar": "بكم البرتقال؟" } },
+            { "who": { "en": "Seller", "fr": "Le marchand", "ar": "البائع" }, "text": { "en": "Two euros a kilo.", "fr": "Deux euros le kilo.", "ar": "يوروان للكيلو." } }
+          ]
+        },
+        {
+          "place": "kitchen",
+          "lines": [
+            { "who": { "en": "Lea", "fr": "Léa", "ar": "ليا" }, "text": { "en": "Dad, how much sugar do I put in?", "fr": "Papa, je mets combien de sucre ?", "ar": "أبي، كم أضع من السكر؟" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Just one spoon.", "fr": "Juste une cuillère.", "ar": "ملعقة واحدة فقط." } }
+          ]
+        },
+        {
+          "place": "toy-shop",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "How much is this ball?", "fr": "Combien coûte ce ballon ?", "ar": "بكم هذه الكرة؟" } },
+            { "who": { "en": "Seller", "fr": "La vendeuse", "ar": "البائعة" }, "text": { "en": "Five euros.", "fr": "Cinq euros.", "ar": "خمسة يوروهات." } }
+          ]
+        },
+        {
+          "place": "bakery",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "How much is a croissant?", "fr": "Combien coûte un croissant ?", "ar": "بكم الكرواسون؟" } },
+            { "who": { "en": "Baker", "fr": "Le boulanger", "ar": "الخباز" }, "text": { "en": "One euro.", "fr": "Un euro.", "ar": "يورو واحد." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Two, please!", "fr": "Deux, s’il vous plaît !", "ar": "اثنان، من فضلك!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "how many": {
+      "scenes": [
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "How many children are in the class today?", "fr": "Il y a combien d’enfants en classe aujourd’hui ?", "ar": "كم تلميذا في الصف اليوم؟" } },
+            { "who": { "en": "Hana", "fr": "Hana", "ar": "هناء" }, "text": { "en": "Twenty!", "fr": "Vingt !", "ar": "عشرون!" } }
+          ]
+        },
+        {
+          "place": "family-party",
+          "lines": [
+            { "who": { "en": "Aunt", "fr": "La tante", "ar": "العمة" }, "text": { "en": "How many brothers do you have?", "fr": "Tu as combien de frères ?", "ar": "كم أخا لديك؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I have two brothers and one sister.", "fr": "J’ai deux frères et une sœur.", "ar": "لدي أخوان وأخت واحدة." } }
+          ]
+        },
+        {
+          "place": "farm",
+          "lines": [
+            { "who": { "en": "Farmer", "fr": "Le fermier", "ar": "المزارع" }, "text": { "en": "How many eggs can you find, Ben?", "fr": "Combien d’œufs tu peux trouver, Ben ?", "ar": "كم بيضة يمكنك أن تجد يا بن؟" } },
+            { "who": { "en": "Ben", "fr": "Ben", "ar": "بن" }, "text": { "en": "One, two, three… four eggs!", "fr": "Un, deux, trois… quatre œufs !", "ar": "واحدة، اثنتان، ثلاث… أربع بيضات!" } }
+          ]
+        },
+        {
+          "place": "birthday-party",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "How many candles are on the cake?", "fr": "Il y a combien de bougies sur le gâteau ?", "ar": "كم شمعة على الكعكة؟" } },
+            { "who": { "en": "Leo", "fr": "Léo", "ar": "ليو" }, "text": { "en": "Seven! I am seven today!", "fr": "Sept ! J’ai sept ans aujourd’hui !", "ar": "سبع! عمري سبع سنوات اليوم!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "so": {
+      "scenes": [
+        {
+          "place": "living-room",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "It is raining, so we stay home.", "fr": "Il pleut, donc on reste à la maison.", "ar": "إنها تمطر، لذلك نبقى في البيت." } },
+            { "who": { "en": "Mia", "fr": "Mia", "ar": "ميا" }, "text": { "en": "OK! Let’s play a game.", "fr": "D’accord ! On fait un jeu ?", "ar": "حسنا! هيا نلعب لعبة." } }
+          ]
+        },
+        {
+          "place": "canteen",
+          "lines": [
+            { "who": { "en": "Adam", "fr": "Adam", "ar": "آدم" }, "text": { "en": "I am very hungry, so I want a big lunch!", "fr": "J’ai très faim, donc je veux un gros déjeuner !", "ar": "أنا جائع جدا، لذلك أريد غداء كبيرا!" } },
+            { "who": { "en": "Cook", "fr": "La cantinière", "ar": "الطباخة" }, "text": { "en": "Here you are: rice, fish and salad.", "fr": "Voilà : du riz, du poisson et de la salade.", "ar": "تفضل: أرز وسمك وسلطة." } }
+          ]
+        },
+        {
+          "place": "bus-stop",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "The bus is late, so I will walk.", "fr": "Le bus est en retard, donc je vais y aller à pied.", "ar": "الحافلة متأخرة، لذلك سأذهب مشيا." } },
+            { "who": { "en": "Nadia", "fr": "Nadia", "ar": "نادية" }, "text": { "en": "I will walk with you!", "fr": "Je viens avec toi !", "ar": "سأمشي معك!" } }
+          ]
+        },
+        {
+          "place": "supermarket",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "We have no milk, so we need to buy some.", "fr": "On n’a plus de lait, donc il faut en acheter.", "ar": "ليس لدينا حليب، لذلك علينا أن نشتري حليبا." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "And eggs too!", "fr": "Et des œufs aussi !", "ar": "والبيض أيضا!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "if": {
+      "scenes": [
+        {
+          "place": "garden",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "Look at the sky, Tom. If it rains, we go inside.", "fr": "Regarde le ciel, Tom. S’il pleut, on rentre.", "ar": "انظر إلى السماء يا توم. إذا أمطرت، ندخل إلى البيت." } },
+            { "who": { "en": "Tom", "fr": "Tom", "ar": "توم" }, "text": { "en": "OK, Grandma. Can we read a book inside?", "fr": "D’accord, mamie. On pourra lire un livre ?", "ar": "حسنا يا جدتي. هل يمكننا أن نقرأ كتابا في الداخل؟" } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "If you finish, you can draw.", "fr": "Si tu as fini, tu peux dessiner.", "ar": "إذا انتهيت، يمكنك أن ترسم." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I am finished!", "fr": "J’ai fini !", "ar": "لقد انتهيت!" } }
+          ]
+        },
+        {
+          "place": "vet",
+          "lines": [
+            { "who": { "en": "Vet", "fr": "La vétérinaire", "ar": "الطبيبة البيطرية" }, "text": { "en": "If your cat is still sick tomorrow, come back.", "fr": "Si ton chat est encore malade demain, reviens.", "ar": "إذا بقيت قطتك مريضة غدا، فعودي." } },
+            { "who": { "en": "Sara", "fr": "Sara", "ar": "سارة" }, "text": { "en": "OK. Thank you, doctor.", "fr": "D’accord. Merci, docteure.", "ar": "حسنا. شكرا يا دكتورة." } }
+          ]
+        },
+        {
+          "place": "street",
+          "lines": [
+            { "who": { "en": "Leo", "fr": "Léo", "ar": "ليو" }, "text": { "en": "Mum, can we go to the park?", "fr": "Maman, on peut aller au parc ?", "ar": "أمي، هل يمكننا أن نذهب إلى الحديقة؟" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Yes, if you put your coat on.", "fr": "Oui, si tu mets ton manteau.", "ar": "نعم، إذا لبست معطفك." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "then": {
+      "scenes": [
+        {
+          "place": "bathroom",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "First wash your hands, then come and eat.", "fr": "D’abord, lave-toi les mains, ensuite viens manger.", "ar": "اغسل يديك أولا، ثم تعال لتأكل." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "OK, Mum!", "fr": "D’accord, maman !", "ar": "حسنا يا أمي!" } }
+          ]
+        },
+        {
+          "place": "crossing",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Look left, look right, then cross.", "fr": "Regarde à gauche, regarde à droite, ensuite traverse.", "ar": "انظر إلى اليسار، انظر إلى اليمين، ثم اعبر." } },
+            { "who": { "en": "Amir", "fr": "Amir", "ar": "أمير" }, "text": { "en": "OK, Dad. No cars!", "fr": "D’accord, papa. Pas de voitures !", "ar": "حسنا يا أبي. لا توجد سيارات!" } }
+          ]
+        },
+        {
+          "place": "school-gate",
+          "lines": [
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "What do you do after school?", "fr": "Qu’est-ce que tu fais après l’école ?", "ar": "ماذا تفعل بعد المدرسة؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I do my homework, then I play.", "fr": "Je fais mes devoirs, ensuite je joue.", "ar": "أقوم بواجباتي، ثم ألعب." } }
+          ]
+        },
+        {
+          "place": "zoo",
+          "lines": [
+            { "who": { "en": "Zookeeper", "fr": "Le soigneur", "ar": "حارس الحديقة" }, "text": { "en": "First we see the lions, then the monkeys.", "fr": "D’abord, on va voir les lions, ensuite les singes.", "ar": "أولا نرى الأسود، ثم القرود." } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Yes! The monkeys!", "fr": "Youpi ! Les singes !", "ar": "رائع! القرود!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "also": {
+      "scenes": [
+        {
+          "place": "restaurant",
+          "lines": [
+            { "who": { "en": "Waiter", "fr": "Le serveur", "ar": "النادل" }, "text": { "en": "One pizza. Anything else?", "fr": "Une pizza. Autre chose ?", "ar": "بيتزا واحدة. هل تريد شيئا آخر؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I also want a salad, please.", "fr": "Je veux aussi une salade, s’il vous plaît.", "ar": "أريد أيضا سلطة، من فضلك." } }
+          ]
+        },
+        {
+          "place": "music-room",
+          "lines": [
+            { "who": { "en": "Music teacher", "fr": "Le prof de musique", "ar": "معلم الموسيقى" }, "text": { "en": "You sing very well, Rania.", "fr": "Tu chantes très bien, Rania.", "ar": "أنت تغنين جيدا جدا يا رانيا." } },
+            { "who": { "en": "Rania", "fr": "Rania", "ar": "رانيا" }, "text": { "en": "Thank you! I also play the piano.", "fr": "Merci ! Je joue aussi du piano.", "ar": "شكرا! أعزف أيضا على البيانو." } }
+          ]
+        },
+        {
+          "place": "friends-house",
+          "lines": [
+            { "who": { "en": "Max", "fr": "Max", "ar": "ماكس" }, "text": { "en": "This is my dog, Biscuit. I also have a fish.", "fr": "Voici mon chien, Biscuit. J’ai aussi un poisson.", "ar": "هذا كلبي بسكويت. لدي أيضا سمكة." } },
+            { "who": { "en": "Yuki", "fr": "Yuki", "ar": "يوكي" }, "text": { "en": "Can I see it?", "fr": "Je peux le voir ?", "ar": "هل يمكنني أن أراها؟" } }
+          ]
+        },
+        {
+          "place": "gym",
+          "lines": [
+            { "who": { "en": "Coach", "fr": "L’entraîneuse", "ar": "المدربة" }, "text": { "en": "Today we run. We also jump.", "fr": "Aujourd’hui, on court. On saute aussi.", "ar": "اليوم نجري. ونقفز أيضا." } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Great!", "fr": "Super !", "ar": "رائع!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "how old": {
+      "scenes": [
+        {
+          "place": "park",
+          "lines": [
+            { "who": { "en": "Lady", "fr": "La dame", "ar": "السيدة" }, "text": { "en": "What a nice dog! How old is he?", "fr": "Quel joli chien ! Quel âge a-t-il ?", "ar": "يا له من كلب جميل! كم عمره؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "He is three.", "fr": "Il a trois ans.", "ar": "عمره ثلاث سنوات." } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "How old are you, Elif?", "fr": "Quel âge as-tu, Elif ?", "ar": "كم عمرك يا إليف؟" } },
+            { "who": { "en": "Elif", "fr": "Elif", "ar": "إليف" }, "text": { "en": "I am eight.", "fr": "J’ai huit ans.", "ar": "عمري ثماني سنوات." } }
+          ]
+        },
+        {
+          "place": "grandparents-house",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Grandpa, how old is this house?", "fr": "Papi, quel âge a cette maison ?", "ar": "جدي، كم عمر هذا البيت؟" } },
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "It is very old: a hundred years!", "fr": "Elle est très vieille : cent ans !", "ar": "إنه قديم جدا: عمره مئة سنة!" } }
+          ]
+        },
+        {
+          "place": "hospital",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Leo, this is your new baby sister.", "fr": "Léo, voici ta petite sœur.", "ar": "يا ليو، هذه أختك الصغيرة الجديدة." } },
+            { "who": { "en": "Nurse", "fr": "L’infirmier", "ar": "الممرض" }, "text": { "en": "And how old are you, big brother?", "fr": "Et toi, grand frère, quel âge as-tu ?", "ar": "وأنت أيها الأخ الكبير، كم عمرك؟" } },
+            { "who": { "en": "Leo", "fr": "Léo", "ar": "ليو" }, "text": { "en": "I am six!", "fr": "J’ai six ans !", "ar": "عمري ست سنوات!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "whose": {
+      "scenes": [
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "Whose book is this?", "fr": "À qui est ce livre ?", "ar": "لمن هذا الكتاب؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "It is mine. Thank you!", "fr": "C’est le mien. Merci !", "ar": "إنه لي. شكرا!" } }
+          ]
+        },
+        {
+          "place": "football-pitch",
+          "lines": [
+            { "who": { "en": "Coach", "fr": "L’entraîneur", "ar": "المدرب" }, "text": { "en": "Whose bottle is this?", "fr": "À qui est cette bouteille ?", "ar": "لمن هذه القارورة؟" } },
+            { "who": { "en": "Yusuf", "fr": "Yusuf", "ar": "يوسف" }, "text": { "en": "It is Ali’s.", "fr": "C’est celle d’Ali.", "ar": "إنها لعلي." } }
+          ]
+        },
+        {
+          "place": "car-park",
+          "lines": [
+            { "who": { "en": "Lily", "fr": "Lily", "ar": "ليلي" }, "text": { "en": "Whose car is that? It is very big!", "fr": "À qui est cette voiture ? Elle est très grande !", "ar": "لمن تلك السيارة؟ إنها كبيرة جدا!" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "It is our neighbour’s.", "fr": "C’est celle de notre voisin.", "ar": "إنها لجارنا." } }
+          ]
+        },
+        {
+          "place": "living-room",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Whose socks are these on the floor?", "fr": "À qui sont ces chaussettes par terre ?", "ar": "لمن هذه الجوارب على الأرض؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Oops! They are mine. Sorry, Mum.", "fr": "Oups ! Ce sont les miennes. Pardon, maman.", "ar": "أوه! إنها لي. آسف يا أمي." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "than": {
+      "scenes": [
+        {
+          "place": "park",
+          "lines": [
+            { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "My brother is taller than me.", "fr": "Mon frère est plus grand que moi.", "ar": "أخي أطول مني." } },
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "My sister is taller than my mum!", "fr": "Ma sœur est plus grande que ma maman !", "ar": "أختي أطول من أمي!" } }
+          ]
+        },
+        {
+          "place": "fruit-shop",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Are the apples cheaper than the pears?", "fr": "Les pommes sont moins chères que les poires ?", "ar": "هل التفاح أرخص من الإجاص؟" } },
+            { "who": { "en": "Seller", "fr": "Le marchand", "ar": "البائع" }, "text": { "en": "Yes, and they are sweeter!", "fr": "Oui, et elles sont plus sucrées !", "ar": "نعم، وهو أحلى أيضا!" } }
+          ]
+        },
+        {
+          "place": "zoo",
+          "lines": [
+            { "who": { "en": "Kofi", "fr": "Kofi", "ar": "كوفي" }, "text": { "en": "Wow! The elephant is bigger than our car!", "fr": "Waouh ! L’éléphant est plus grand que notre voiture !", "ar": "واو! الفيل أكبر من سيارتنا!" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Yes, it is very big!", "fr": "Oui, il est très grand !", "ar": "نعم، إنه كبير جدا!" } }
+          ]
+        },
+        {
+          "place": "gym",
+          "lines": [
+            { "who": { "en": "Coach", "fr": "L’entraîneur", "ar": "المدرب" }, "text": { "en": "Good! You ran faster than last week.", "fr": "Bravo ! Tu as couru plus vite que la semaine dernière.", "ar": "أحسنت! جريت أسرع من الأسبوع الماضي." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yes! I am very happy!", "fr": "Oui ! Je suis très content !", "ar": "نعم! أنا سعيد جدا!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "that": {
+      "scenes": [
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "What is five and five, Noor?", "fr": "Combien font cinq et cinq, Noor ?", "ar": "كم يساوي خمسة زائد خمسة يا نور؟" } },
+            { "who": { "en": "Noor", "fr": "Noor", "ar": "نور" }, "text": { "en": "I think that the answer is ten.", "fr": "Je pense que la réponse est dix.", "ar": "أظن أن الجواب هو عشرة." } },
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Yes, very good!", "fr": "Oui, très bien !", "ar": "نعم، أحسنت!" } }
+          ]
+        },
+        {
+          "place": "football-pitch",
+          "lines": [
+            { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "I think that we can win today!", "fr": "Je pense qu’on peut gagner aujourd’hui !", "ar": "أظن أننا نستطيع الفوز اليوم!" } },
+            { "who": { "en": "Coach", "fr": "L’entraîneur", "ar": "المدرب" }, "text": { "en": "Yes, if you all play together.", "fr": "Oui, si vous jouez tous ensemble.", "ar": "نعم، إذا لعبتم جميعا معا." } }
+          ]
+        },
+        {
+          "place": "kitchen",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "I know that you like pancakes.", "fr": "Je sais que tu aimes les crêpes.", "ar": "أعرف أنك تحب الفطائر." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yes! Thank you, Mum!", "fr": "Oui ! Merci, maman !", "ar": "نعم! شكرا يا أمي!" } }
+          ]
+        },
+        {
+          "place": "bus-stop",
+          "lines": [
+            { "who": { "en": "Rosa", "fr": "Rosa", "ar": "روزا" }, "text": { "en": "Grandpa, I hope that the bus comes soon.", "fr": "Papi, j’espère que le bus va bientôt arriver.", "ar": "جدي، أتمنى أن تصل الحافلة قريبا." } },
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "Look, it is here!", "fr": "Regarde, le voilà !", "ar": "انظري، ها هي!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "while": {
+      "scenes": [
+        {
+          "place": "kitchen",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "I listen to music while I cook.", "fr": "J’écoute de la musique pendant que je cuisine.", "ar": "أستمع إلى الموسيقى بينما أطبخ." } },
+            { "who": { "en": "Mia", "fr": "Mia", "ar": "ميا" }, "text": { "en": "Me too! Can I help you?", "fr": "Moi aussi ! Je peux t’aider ?", "ar": "وأنا أيضا! هل يمكنني أن أساعدك؟" } }
+          ]
+        },
+        {
+          "place": "car",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Read your book while I drive.", "fr": "Lis ton livre pendant que je conduis.", "ar": "اقرأ كتابك بينما أقود السيارة." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "OK. Are we there soon?", "fr": "D’accord. On arrive bientôt ?", "ar": "حسنا. هل سنصل قريبا؟" } }
+          ]
+        },
+        {
+          "place": "living-room",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "Omar, can you watch the baby while I make tea?", "fr": "Omar, tu peux surveiller le bébé pendant que je fais le thé ?", "ar": "يا عمر، هل يمكنك أن تراقب الطفل بينما أعد الشاي؟" } },
+            { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "Yes, Grandma!", "fr": "Oui, mamie !", "ar": "نعم يا جدتي!" } }
+          ]
+        },
+        {
+          "place": "hairdresser",
+          "lines": [
+            { "who": { "en": "Hairdresser", "fr": "La coiffeuse", "ar": "مصففة الشعر" }, "text": { "en": "You can draw a picture while you wait.", "fr": "Tu peux faire un dessin pendant que tu attends.", "ar": "يمكنك أن ترسم صورة بينما تنتظر." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Thank you!", "fr": "Merci !", "ar": "شكرا!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "although": {
+      "scenes": [
+        {
+          "place": "forest",
+          "lines": [
+            { "who": { "en": "Nadia", "fr": "Nadia", "ar": "نادية" }, "text": { "en": "Although it is cold, I love the forest.", "fr": "Bien qu’il fasse froid, j’adore la forêt.", "ar": "مع أن الجو بارد، أحب الغابة." } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Me too. Look, a squirrel!", "fr": "Moi aussi. Regarde, un écureuil !", "ar": "وأنا أيضا. انظري، سنجاب!" } }
+          ]
+        },
+        {
+          "place": "stadium",
+          "lines": [
+            { "who": { "en": "Hassan", "fr": "Hassan", "ar": "حسن" }, "text": { "en": "We lost, although we played very well.", "fr": "On a perdu, bien qu’on ait très bien joué.", "ar": "خسرنا، مع أننا لعبنا جيدا جدا." } },
+            { "who": { "en": "Coach", "fr": "L’entraîneur", "ar": "المدرب" }, "text": { "en": "I am proud of you all.", "fr": "Je suis fier de vous tous.", "ar": "أنا فخور بكم جميعا." } }
+          ]
+        },
+        {
+          "place": "bathroom",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Although you are tired, please brush your teeth.", "fr": "Bien que tu sois fatigué, brosse-toi les dents, s’il te plaît.", "ar": "مع أنك متعب، نظف أسنانك من فضلك." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "OK, Mum…", "fr": "D’accord, maman…", "ar": "حسنا يا أمي…" } }
+          ]
+        },
+        {
+          "place": "library",
+          "lines": [
+            { "who": { "en": "Ella", "fr": "Ella", "ar": "إيلا" }, "text": { "en": "Although this book is long, it is very good.", "fr": "Bien que ce livre soit long, il est très bien.", "ar": "مع أن هذا الكتاب طويل، فهو جيد جدا." } },
+            { "who": { "en": "Librarian", "fr": "Le bibliothécaire", "ar": "أمين المكتبة" }, "text": { "en": "Great! You can take it home for two weeks.", "fr": "Super ! Tu peux l’emprunter pour deux semaines.", "ar": "رائع! يمكنك أن تستعيريه لمدة أسبوعين." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "however": {
+      "scenes": [
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "The test was hard. However, you all passed!", "fr": "Le contrôle était difficile. Cependant, vous avez tous réussi !", "ar": "كان الاختبار صعبا. ومع ذلك، نجحتم جميعا!" } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Hooray!", "fr": "Hourra !", "ar": "مرحى!" } }
+          ]
+        },
+        {
+          "place": "campsite",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "It is raining. However, our tent is dry.", "fr": "Il pleut. Cependant, notre tente est sèche.", "ar": "إنها تمطر. ومع ذلك، خيمتنا جافة." } },
+            { "who": { "en": "Leila", "fr": "Leila", "ar": "ليلى" }, "text": { "en": "Good! Let’s play cards inside.", "fr": "Tant mieux ! Jouons aux cartes à l’intérieur.", "ar": "جيد! هيا نلعب الورق في الداخل." } }
+          ]
+        },
+        {
+          "place": "mountain",
+          "lines": [
+            { "who": { "en": "Guide", "fr": "Le guide", "ar": "المرشد" }, "text": { "en": "The path is long. However, the view is beautiful.", "fr": "Le chemin est long. Cependant, la vue est magnifique.", "ar": "الطريق طويل. ومع ذلك، المنظر جميل." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I can see the lake from here!", "fr": "Je vois le lac d’ici !", "ar": "أستطيع أن أرى البحيرة من هنا!" } }
+          ]
+        },
+        {
+          "place": "train-station",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Our train is late. However, we can still see Grandma today.", "fr": "Notre train est en retard. Cependant, on peut quand même voir mamie aujourd’hui.", "ar": "قطارنا متأخر. ومع ذلك، ما زال بإمكاننا أن نرى جدتنا اليوم." } },
+            { "who": { "en": "Sami", "fr": "Sami", "ar": "سامي" }, "text": { "en": "Great!", "fr": "Super !", "ar": "رائع!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "for example": {
+      "scenes": [
+        {
+          "place": "fruit-shop",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I want some fruit, for example bananas and oranges.", "fr": "Je voudrais des fruits, par exemple des bananes et des oranges.", "ar": "أريد بعض الفواكه، مثلا الموز والبرتقال." } },
+            { "who": { "en": "Seller", "fr": "La marchande", "ar": "البائعة" }, "text": { "en": "Here you are. They are very sweet.", "fr": "Voilà. Ils sont très sucrés.", "ar": "تفضل. إنها حلوة جدا." } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Which animals live on a farm?", "fr": "Quels animaux vivent à la ferme ?", "ar": "أي الحيوانات تعيش في المزرعة؟" } },
+            { "who": { "en": "Ibrahim", "fr": "Ibrahim", "ar": "إبراهيم" }, "text": { "en": "Cows, sheep and hens, for example.", "fr": "Les vaches, les moutons et les poules, par exemple.", "ar": "الأبقار والخراف والدجاج، مثلا." } }
+          ]
+        },
+        {
+          "place": "library",
+          "lines": [
+            { "who": { "en": "Librarian", "fr": "La bibliothécaire", "ar": "أمينة المكتبة" }, "text": { "en": "We have lots of books about animals, for example this one about bears.", "fr": "Nous avons beaucoup de livres sur les animaux, par exemple celui-ci sur les ours.", "ar": "لدينا كتب كثيرة عن الحيوانات، مثلا هذا الكتاب عن الدببة." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Great! Can I take it home?", "fr": "Super ! Je peux l’emprunter ?", "ar": "رائع! هل يمكنني أن أستعيره؟" } }
+          ]
+        },
+        {
+          "place": "supermarket",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "We need some vegetables, for example carrots and onions.", "fr": "Il nous faut des légumes, par exemple des carottes et des oignons.", "ar": "نحتاج إلى بعض الخضار، مثلا الجزر والبصل." } },
+            { "who": { "en": "Jun", "fr": "Jun", "ar": "جون" }, "text": { "en": "I can get the carrots!", "fr": "Je peux prendre les carottes !", "ar": "يمكنني أن أحضر الجزر!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    }
+  }
+}

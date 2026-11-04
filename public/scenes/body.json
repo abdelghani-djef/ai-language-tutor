@@ -1,0 +1,3799 @@
+{
+  "pack": "body",
+  "complete": true,
+  "words": {
+    "body": {
+      "scenes": [
+        {
+          "place": "gym",
+          "lines": [
+            {
+              "who": {
+                "en": "Coach",
+                "fr": "L’entraîneur",
+                "ar": "المدرب"
+              },
+              "text": {
+                "en": "Running is good for your body.",
+                "fr": "Courir, c’est bon pour le corps.",
+                "ar": "الجري مفيد لجسمك."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "And for my heart, too!",
+                "fr": "Et pour le cœur aussi !",
+                "ar": "ولقلبي أيضا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Coach",
+                "fr": "L’entraîneur",
+                "ar": "المدرب"
+              },
+              "text": {
+                "en": "Yes! Now drink some water.",
+                "fr": "Oui ! Maintenant, bois un peu d’eau.",
+                "ar": "نعم! والآن اشرب بعض الماء."
+              }
+            }
+          ]
+        },
+        {
+          "place": "science-lab",
+          "lines": [
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "Le professeur",
+                "ar": "المعلم"
+              },
+              "text": {
+                "en": "Look at this picture of the human body.",
+                "fr": "Regardez cette image du corps humain.",
+                "ar": "انظروا إلى هذه الصورة لجسم الإنسان."
+              }
+            },
+            {
+              "who": {
+                "en": "Omar",
+                "fr": "Omar",
+                "ar": "عمر"
+              },
+              "text": {
+                "en": "Where is the heart?",
+                "fr": "Où est le cœur ?",
+                "ar": "أين القلب؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "Le professeur",
+                "ar": "المعلم"
+              },
+              "text": {
+                "en": "Here, in the middle.",
+                "fr": "Ici, au milieu.",
+                "ar": "هنا، في الوسط."
+              }
+            }
+          ]
+        },
+        {
+          "place": "swimming-pool",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Swimming is good for your whole body.",
+                "fr": "La natation, c’est bon pour tout le corps.",
+                "ar": "السباحة مفيدة لجسمك كله."
+              }
+            },
+            {
+              "who": {
+                "en": "Adam",
+                "fr": "Adam",
+                "ar": "آدم"
+              },
+              "text": {
+                "en": "And I love the water!",
+                "fr": "Et moi, j’adore l’eau !",
+                "ar": "وأنا أحب الماء!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Go to bed now. Your body needs sleep.",
+                "fr": "Va au lit maintenant. Ton corps a besoin de sommeil.",
+                "ar": "اذهب إلى السرير الآن. جسمك يحتاج إلى النوم."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Okay. Good night, Dad!",
+                "fr": "D’accord. Bonne nuit, papa !",
+                "ar": "حسنا. تصبح على خير يا أبي!"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Good night!",
+                "fr": "Bonne nuit !",
+                "ar": "وأنت من أهله!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Human_silhouette_gender_neutral_front.svg/330px-Human_silhouette_gender_neutral_front.svg.png",
+          "page": "https://commons.wikimedia.org/wiki/File:Human_silhouette_gender_neutral_front.svg",
+          "author": "Sebastian Wallroth",
+          "licence": "CC0",
+          "caption": "Outline of a human body"
+        }
+      ]
+    },
+    "head": {
+      "scenes": [
+        {
+          "place": "clothes-shop",
+          "lines": [
+            {
+              "who": {
+                "en": "Shop assistant",
+                "fr": "La vendeuse",
+                "ar": "البائعة"
+              },
+              "text": {
+                "en": "This hat is too small for your head.",
+                "fr": "Ce chapeau est trop petit pour votre tête.",
+                "ar": "هذه القبعة صغيرة جدا على رأسك."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Do you have a bigger one, please?",
+                "fr": "Vous en avez un plus grand, s’il vous plaît ?",
+                "ar": "هل عندك واحدة أكبر، من فضلك؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Shop assistant",
+                "fr": "La vendeuse",
+                "ar": "البائعة"
+              },
+              "text": {
+                "en": "Yes. Here you are.",
+                "fr": "Oui. Voilà.",
+                "ar": "نعم. تفضل."
+              }
+            }
+          ]
+        },
+        {
+          "place": "doctor",
+          "lines": [
+            {
+              "who": {
+                "en": "Doctor",
+                "fr": "La médecin",
+                "ar": "الطبيبة"
+              },
+              "text": {
+                "en": "Hello, Karim. How are you?",
+                "fr": "Bonjour, Karim. Comment ça va ?",
+                "ar": "مرحبا يا كريم. كيف حالك؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Karim",
+                "fr": "Karim",
+                "ar": "كريم"
+              },
+              "text": {
+                "en": "Not very well. My head hurts.",
+                "fr": "Pas très bien. J’ai mal à la tête.",
+                "ar": "لست بخير. رأسي يؤلمني."
+              }
+            },
+            {
+              "who": {
+                "en": "Doctor",
+                "fr": "La médecin",
+                "ar": "الطبيبة"
+              },
+              "text": {
+                "en": "Drink more water and sleep well tonight.",
+                "fr": "Bois plus d’eau et dors bien ce soir.",
+                "ar": "اشرب مزيدا من الماء ونم جيدا الليلة."
+              }
+            }
+          ]
+        },
+        {
+          "place": "football-pitch",
+          "lines": [
+            {
+              "who": {
+                "en": "Coach",
+                "fr": "L’entraîneur",
+                "ar": "المدرب"
+              },
+              "text": {
+                "en": "Hit the ball with your head, Lucas!",
+                "fr": "Frappe le ballon avec la tête, Lucas !",
+                "ar": "اضرب الكرة برأسك يا لوكاس!"
+              }
+            },
+            {
+              "who": {
+                "en": "Lucas",
+                "fr": "Lucas",
+                "ar": "لوكاس"
+              },
+              "text": {
+                "en": "Like this?",
+                "fr": "Comme ça ?",
+                "ar": "هكذا؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Coach",
+                "fr": "L’entraîneur",
+                "ar": "المدرب"
+              },
+              "text": {
+                "en": "Yes! What a goal!",
+                "fr": "Oui ! Quel but !",
+                "ar": "نعم! يا له من هدف!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "garden",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "The sun is very hot. Put a hat on your head.",
+                "fr": "Le soleil tape fort. Mets un chapeau sur ta tête.",
+                "ar": "الشمس حارة جدا. ضع قبعة على رأسك."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Okay, Mum.",
+                "fr": "D’accord, maman.",
+                "ar": "حسنا يا أمي."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Human_head_2.svg/330px-Human_head_2.svg.png",
+          "page": "https://commons.wikimedia.org/wiki/File:Human_head_2.svg",
+          "author": "Ilzolende",
+          "licence": "CC0",
+          "caption": "A drawing of a head"
+        }
+      ]
+    },
+    "hand": {
+      "scenes": [
+        {
+          "place": "bathroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Wash your hands before dinner.",
+                "fr": "Lave-toi les mains avant le dîner.",
+                "ar": "اغسل يديك قبل العشاء."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "With soap?",
+                "fr": "Avec du savon ?",
+                "ar": "بالصابون؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Yes, with soap and water.",
+                "fr": "Oui, avec du savon et de l’eau.",
+                "ar": "نعم، بالصابون والماء."
+              }
+            }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "La maîtresse",
+                "ar": "المعلمة"
+              },
+              "text": {
+                "en": "What is five and five? Put your hand up.",
+                "fr": "Combien font cinq plus cinq ? Levez la main.",
+                "ar": "كم يساوي خمسة زائد خمسة؟ ارفعوا أيديكم."
+              }
+            },
+            {
+              "who": {
+                "en": "Aya",
+                "fr": "Aya",
+                "ar": "آية"
+              },
+              "text": {
+                "en": "Me! Ten!",
+                "fr": "Moi ! Dix !",
+                "ar": "أنا! عشرة!"
+              }
+            },
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "La maîtresse",
+                "ar": "المعلمة"
+              },
+              "text": {
+                "en": "Yes! Very good, Aya.",
+                "fr": "Oui ! Bravo, Aya.",
+                "ar": "نعم! أحسنت يا آية."
+              }
+            }
+          ]
+        },
+        {
+          "place": "crossing",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Give me your hand. We are going to cross the street.",
+                "fr": "Donne-moi la main. On va traverser la rue.",
+                "ar": "أعطني يدك. سنعبر الشارع."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Is the light green?",
+                "fr": "Le feu est vert ?",
+                "ar": "هل الإشارة خضراء؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Yes. Let’s go!",
+                "fr": "Oui. On y va !",
+                "ar": "نعم. هيا بنا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "meeting-room",
+          "lines": [
+            {
+              "who": {
+                "en": "Sara",
+                "fr": "Sara",
+                "ar": "سارة"
+              },
+              "text": {
+                "en": "Good morning, Mr Brown. Brr! My hands are very cold.",
+                "fr": "Bonjour, monsieur Brown. Brr ! J’ai les mains très froides.",
+                "ar": "صباح الخير يا سيد براون. برر! يداي باردتان جدا."
+              }
+            },
+            {
+              "who": {
+                "en": "Mr Brown",
+                "fr": "M. Brown",
+                "ar": "السيد براون"
+              },
+              "text": {
+                "en": "Good morning, Sara! Here, have a cup of hot tea.",
+                "fr": "Bonjour, Sara ! Tenez, prenez une tasse de thé chaud.",
+                "ar": "صباح الخير يا سارة! تفضلي، خذي كوبا من الشاي الساخن."
+              }
+            },
+            {
+              "who": {
+                "en": "Sara",
+                "fr": "Sara",
+                "ar": "سارة"
+              },
+              "text": {
+                "en": "Thank you!",
+                "fr": "Merci !",
+                "ar": "شكرا!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Right_Hand_Palm.png/330px-Right_Hand_Palm.png",
+          "page": "https://commons.wikimedia.org/wiki/File:Right_Hand_Palm.png",
+          "author": "Eyefive45",
+          "licence": "CC BY-SA 4.0",
+          "caption": "An open hand"
+        }
+      ]
+    },
+    "eye": {
+      "scenes": [
+        {
+          "place": "bedroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Close your eyes. It is time to sleep.",
+                "fr": "Ferme les yeux. C’est l’heure de dormir.",
+                "ar": "أغمض عينيك. حان وقت النوم."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Can you read me a story first?",
+                "fr": "Tu peux me lire une histoire d’abord ?",
+                "ar": "هل يمكنك أن تقرئي لي قصة أولا؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Okay, just one story.",
+                "fr": "D’accord, juste une histoire.",
+                "ar": "حسنا، قصة واحدة فقط."
+              }
+            }
+          ]
+        },
+        {
+          "place": "playground",
+          "lines": [
+            {
+              "who": {
+                "en": "Nadia",
+                "fr": "Nadia",
+                "ar": "نادية"
+              },
+              "text": {
+                "en": "Close your eyes and count to ten!",
+                "fr": "Ferme les yeux et compte jusqu’à dix !",
+                "ar": "أغمض عينيك وعد حتى عشرة!"
+              }
+            },
+            {
+              "who": {
+                "en": "Hugo",
+                "fr": "Hugo",
+                "ar": "هوغو"
+              },
+              "text": {
+                "en": "One, two, three…",
+                "fr": "Un, deux, trois…",
+                "ar": "واحد، اثنان، ثلاثة…"
+              }
+            },
+            {
+              "who": {
+                "en": "Nadia",
+                "fr": "Nadia",
+                "ar": "نادية"
+              },
+              "text": {
+                "en": "Don’t look!",
+                "fr": "Ne regarde pas !",
+                "ar": "لا تنظر!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "pet-shop",
+          "lines": [
+            {
+              "who": {
+                "en": "Ali",
+                "fr": "Ali",
+                "ar": "علي"
+              },
+              "text": {
+                "en": "Mum, look at this little cat! It has blue eyes.",
+                "fr": "Maman, regarde ce petit chat ! Il a les yeux bleus.",
+                "ar": "يا أمي، انظري إلى هذه القطة الصغيرة! عيناها زرقاوان."
+              }
+            },
+            {
+              "who": {
+                "en": "Shop assistant",
+                "fr": "Le vendeur",
+                "ar": "البائع"
+              },
+              "text": {
+                "en": "Yes, and it is only three months old.",
+                "fr": "Oui, et il n’a que trois mois.",
+                "ar": "نعم، وعمرها ثلاثة أشهر فقط."
+              }
+            }
+          ]
+        },
+        {
+          "place": "car",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "The sun is in my eyes. Where are my sunglasses?",
+                "fr": "J’ai le soleil dans les yeux. Où sont mes lunettes de soleil ?",
+                "ar": "الشمس في عيني. أين نظارتي الشمسية؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Here they are, Dad!",
+                "fr": "Les voilà, papa !",
+                "ar": "ها هي يا أبي!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Auge_iris_braun_brown_eye_human_menschlich_Bjoern_markmann.JPG/330px-Auge_iris_braun_brown_eye_human_menschlich_Bjoern_markmann.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Auge_iris_braun_brown_eye_human_menschlich_Bjoern_markmann.JPG",
+          "author": "Björn Markmann",
+          "licence": "CC BY 3.0",
+          "caption": "A brown eye"
+        }
+      ]
+    },
+    "face": {
+      "scenes": [
+        {
+          "place": "bathroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Good morning! Wash your face and brush your teeth.",
+                "fr": "Bonjour ! Lave-toi le visage et brosse-toi les dents.",
+                "ar": "صباح الخير! اغسل وجهك ونظف أسنانك."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Brr! The water is cold!",
+                "fr": "Brr ! L’eau est froide !",
+                "ar": "برر! الماء بارد!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "birthday-party",
+          "lines": [
+            {
+              "who": {
+                "en": "Yasmine",
+                "fr": "Yasmine",
+                "ar": "ياسمين"
+              },
+              "text": {
+                "en": "You have cake on your face!",
+                "fr": "Tu as du gâteau sur le visage !",
+                "ar": "يوجد كعك على وجهك!"
+              }
+            },
+            {
+              "who": {
+                "en": "Malik",
+                "fr": "Malik",
+                "ar": "مالك"
+              },
+              "text": {
+                "en": "Oh no! Where?",
+                "fr": "Oh non ! Où ça ?",
+                "ar": "أوه لا! أين؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Yasmine",
+                "fr": "Yasmine",
+                "ar": "ياسمين"
+              },
+              "text": {
+                "en": "On your nose! Ha ha!",
+                "fr": "Sur le nez ! Ha ha !",
+                "ar": "على أنفك! ها ها!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "family-party",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandma",
+                "fr": "Mamie",
+                "ar": "الجدة"
+              },
+              "text": {
+                "en": "Come here, Zoe! Let me see your face. You are so big now!",
+                "fr": "Viens ici, Zoe ! Fais-moi voir ton visage. Tu es si grande maintenant !",
+                "ar": "تعالي هنا يا زوي! دعيني أرى وجهك. لقد كبرت كثيرا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Zoe",
+                "fr": "Zoe",
+                "ar": "زوي"
+              },
+              "text": {
+                "en": "Hello, Grandma!",
+                "fr": "Bonjour, mamie !",
+                "ar": "مرحبا يا جدتي!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "living-room",
+          "lines": [
+            {
+              "who": {
+                "en": "Lina",
+                "fr": "Lina",
+                "ar": "لينا"
+              },
+              "text": {
+                "en": "Look at the baby’s face in this picture!",
+                "fr": "Regarde le visage du bébé sur cette photo !",
+                "ar": "انظري إلى وجه الطفل في هذه الصورة!"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "That is you, Lina!",
+                "fr": "C’est toi, Lina !",
+                "ar": "هذه أنت يا لينا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Lina",
+                "fr": "Lina",
+                "ar": "لينا"
+              },
+              "text": {
+                "en": "Me? Really?",
+                "fr": "Moi ? C’est vrai ?",
+                "ar": "أنا؟ حقا؟"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Ni%C3%B1a_en_maracaibo.jpg/330px-Ni%C3%B1a_en_maracaibo.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Ni%C3%B1a_en_maracaibo.jpg",
+          "author": "Jaimeluisgg",
+          "licence": "CC0",
+          "caption": "A smiling girl’s face"
+        }
+      ]
+    },
+    "arm": {
+      "scenes": [
+        {
+          "place": "hospital",
+          "lines": [
+            {
+              "who": {
+                "en": "Nurse",
+                "fr": "L’infirmière",
+                "ar": "الممرضة"
+              },
+              "text": {
+                "en": "How is your arm today, Kofi?",
+                "fr": "Comment va ton bras aujourd’hui, Kofi ?",
+                "ar": "كيف حال ذراعك اليوم يا كوفي؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Kofi",
+                "fr": "Kofi",
+                "ar": "كوفي"
+              },
+              "text": {
+                "en": "It still hurts a little.",
+                "fr": "Il me fait encore un peu mal.",
+                "ar": "ما زالت تؤلمني قليلا."
+              }
+            },
+            {
+              "who": {
+                "en": "Nurse",
+                "fr": "L’infirmière",
+                "ar": "الممرضة"
+              },
+              "text": {
+                "en": "The doctor is coming at ten o’clock.",
+                "fr": "Le médecin passe à dix heures.",
+                "ar": "سيأتي الطبيب في الساعة العاشرة."
+              }
+            }
+          ]
+        },
+        {
+          "place": "gym",
+          "lines": [
+            {
+              "who": {
+                "en": "Coach",
+                "fr": "L’entraîneuse",
+                "ar": "المدربة"
+              },
+              "text": {
+                "en": "Arms up! Now arms down!",
+                "fr": "Lève les bras ! Maintenant, baisse les bras !",
+                "ar": "ارفع ذراعيك! والآن أنزلهما!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "One, two! One, two!",
+                "fr": "Un, deux ! Un, deux !",
+                "ar": "واحد، اثنان! واحد، اثنان!"
+              }
+            },
+            {
+              "who": {
+                "en": "Coach",
+                "fr": "L’entraîneuse",
+                "ar": "المدربة"
+              },
+              "text": {
+                "en": "Good! Again!",
+                "fr": "Bien ! Encore une fois !",
+                "ar": "جيد! مرة أخرى!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "airport",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Give me the baby. Your arms are tired.",
+                "fr": "Donne-moi le bébé. Tu as les bras fatigués.",
+                "ar": "أعطني الطفل. ذراعاك متعبتان."
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Thank you. He is a big boy now!",
+                "fr": "Merci. Il est grand maintenant !",
+                "ar": "شكرا. لقد أصبح ولدا كبيرا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "swimming-pool",
+          "lines": [
+            {
+              "who": {
+                "en": "Swimming teacher",
+                "fr": "Le maître-nageur",
+                "ar": "مدرب السباحة"
+              },
+              "text": {
+                "en": "Move your arms like this, Mei.",
+                "fr": "Bouge les bras comme ça, Mei.",
+                "ar": "حركي ذراعيك هكذا يا مي."
+              }
+            },
+            {
+              "who": {
+                "en": "Mei",
+                "fr": "Mei",
+                "ar": "مي"
+              },
+              "text": {
+                "en": "Like this? Look, I can swim!",
+                "fr": "Comme ça ? Regarde, je sais nager !",
+                "ar": "هكذا؟ انظر، أستطيع السباحة!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Extended_arm.jpg/330px-Extended_arm.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Extended_arm.jpg",
+          "author": "Genusfotografen (Tomas Gunnarsson) / Wikimedia Sverige",
+          "licence": "CC BY-SA 4.0",
+          "caption": "An arm stretched out"
+        }
+      ]
+    },
+    "leg": {
+      "scenes": [
+        {
+          "place": "football-pitch",
+          "lines": [
+            {
+              "who": {
+                "en": "Ravi",
+                "fr": "Ravi",
+                "ar": "رافي"
+              },
+              "text": {
+                "en": "Ow! My leg!",
+                "fr": "Aïe ! Ma jambe !",
+                "ar": "آه! ساقي!"
+              }
+            },
+            {
+              "who": {
+                "en": "Coach",
+                "fr": "L’entraîneur",
+                "ar": "المدرب"
+              },
+              "text": {
+                "en": "Sit down, Ravi. Let me see.",
+                "fr": "Assieds-toi, Ravi. Fais-moi voir.",
+                "ar": "اجلس يا رافي. دعني أرى."
+              }
+            },
+            {
+              "who": {
+                "en": "Ravi",
+                "fr": "Ravi",
+                "ar": "رافي"
+              },
+              "text": {
+                "en": "It is okay now.",
+                "fr": "Ça va maintenant.",
+                "ar": "أنا بخير الآن."
+              }
+            }
+          ]
+        },
+        {
+          "place": "mountain",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Are your legs tired?",
+                "fr": "Tu as les jambes fatiguées ?",
+                "ar": "هل ساقاك متعبتان؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, a little. Can we stop?",
+                "fr": "Oui, un peu. On peut s’arrêter ?",
+                "ar": "نعم، قليلا. هل يمكننا التوقف؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Okay, five minutes.",
+                "fr": "D’accord, cinq minutes.",
+                "ar": "حسنا، خمس دقائق."
+              }
+            }
+          ]
+        },
+        {
+          "place": "car",
+          "lines": [
+            {
+              "who": {
+                "en": "Lucas",
+                "fr": "Lucas",
+                "ar": "لوكاس"
+              },
+              "text": {
+                "en": "Mum, my legs hurt. The car is too small!",
+                "fr": "Maman, j’ai mal aux jambes. La voiture est trop petite !",
+                "ar": "يا أمي، ساقاي تؤلمانني. السيارة صغيرة جدا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "We can stop in ten minutes.",
+                "fr": "On peut s’arrêter dans dix minutes.",
+                "ar": "يمكننا التوقف بعد عشر دقائق."
+              }
+            }
+          ]
+        },
+        {
+          "place": "bike-path",
+          "lines": [
+            {
+              "who": {
+                "en": "Noah",
+                "fr": "Noah",
+                "ar": "نوح"
+              },
+              "text": {
+                "en": "I ride my bike every day.",
+                "fr": "Je fais du vélo tous les jours.",
+                "ar": "أركب دراجتي كل يوم."
+              }
+            },
+            {
+              "who": {
+                "en": "Aunt",
+                "fr": "La tante",
+                "ar": "العمة"
+              },
+              "text": {
+                "en": "That is good for your legs!",
+                "fr": "C’est bon pour les jambes !",
+                "ar": "هذا مفيد لساقيك!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "foot": {
+      "scenes": [
+        {
+          "place": "shoe-shop",
+          "lines": [
+            {
+              "who": {
+                "en": "Shop assistant",
+                "fr": "Le vendeur",
+                "ar": "البائع"
+              },
+              "text": {
+                "en": "Are the shoes okay?",
+                "fr": "Elles te vont, ces chaussures ?",
+                "ar": "هل الحذاء مناسب؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "No, they are too small for my feet.",
+                "fr": "Non, elles sont trop petites pour mes pieds.",
+                "ar": "لا، إنه صغير جدا على قدمي."
+              }
+            },
+            {
+              "who": {
+                "en": "Shop assistant",
+                "fr": "Le vendeur",
+                "ar": "البائع"
+              },
+              "text": {
+                "en": "Try these.",
+                "fr": "Essaie celles-ci.",
+                "ar": "جرب هذا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "beach",
+          "lines": [
+            {
+              "who": {
+                "en": "Sara",
+                "fr": "Sara",
+                "ar": "سارة"
+              },
+              "text": {
+                "en": "The sand is very hot!",
+                "fr": "Le sable est très chaud !",
+                "ar": "الرمل ساخن جدا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Omar",
+                "fr": "Omar",
+                "ar": "عمر"
+              },
+              "text": {
+                "en": "Ow! My feet!",
+                "fr": "Aïe ! Mes pieds !",
+                "ar": "آه! قدماي!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "doctor",
+          "lines": [
+            {
+              "who": {
+                "en": "Doctor",
+                "fr": "Le médecin",
+                "ar": "الطبيب"
+              },
+              "text": {
+                "en": "Where does it hurt, Fatima?",
+                "fr": "Où as-tu mal, Fatima ?",
+                "ar": "أين تشعرين بالألم يا فاطمة؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Fatima",
+                "fr": "Fatima",
+                "ar": "فاطمة"
+              },
+              "text": {
+                "en": "My left foot hurts.",
+                "fr": "J’ai mal au pied gauche.",
+                "ar": "قدمي اليسرى تؤلمني."
+              }
+            },
+            {
+              "who": {
+                "en": "Doctor",
+                "fr": "Le médecin",
+                "ar": "الطبيب"
+              },
+              "text": {
+                "en": "Let me see. Can you walk?",
+                "fr": "Fais-moi voir. Tu peux marcher ?",
+                "ar": "دعيني أرى. هل تستطيعين المشي؟"
+              }
+            }
+          ]
+        },
+        {
+          "place": "river",
+          "lines": [
+            {
+              "who": {
+                "en": "Kofi",
+                "fr": "Kofi",
+                "ar": "كوفي"
+              },
+              "text": {
+                "en": "Put your feet in the water, Ines!",
+                "fr": "Mets tes pieds dans l’eau, Ines !",
+                "ar": "ضعي قدميك في الماء يا إيناس!"
+              }
+            },
+            {
+              "who": {
+                "en": "Ines",
+                "fr": "Ines",
+                "ar": "إيناس"
+              },
+              "text": {
+                "en": "Brr! It is very cold!",
+                "fr": "Brr ! Elle est glacée !",
+                "ar": "برر! إنه بارد جدا!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Sole_of_foot_of_a_two_week_old_Asian_infant_on_a_white_bed_sheet%2C_focus_stacking.jpg/330px-Sole_of_foot_of_a_two_week_old_Asian_infant_on_a_white_bed_sheet%2C_focus_stacking.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Sole_of_foot_of_a_two_week_old_Asian_infant_on_a_white_bed_sheet,_focus_stacking.jpg",
+          "author": "Basile Morin",
+          "licence": "CC BY-SA 4.0",
+          "caption": "A baby’s foot"
+        }
+      ]
+    },
+    "hair": {
+      "scenes": [
+        {
+          "place": "hairdresser",
+          "lines": [
+            {
+              "who": {
+                "en": "Hairdresser",
+                "fr": "La coiffeuse",
+                "ar": "مصففة الشعر"
+              },
+              "text": {
+                "en": "Sit here, please. First, I will wash your hair.",
+                "fr": "Assieds-toi ici, s’il te plaît. D’abord, je vais te laver les cheveux.",
+                "ar": "اجلس هنا، من فضلك. سأغسل شعرك أولا."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Okay, thank you!",
+                "fr": "D’accord, merci !",
+                "ar": "حسنا، شكرا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "bathroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Come here. Let me brush your hair.",
+                "fr": "Viens ici. Je vais te brosser les cheveux.",
+                "ar": "تعال هنا. سأمشط شعرك."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Ow! Slowly, please!",
+                "fr": "Aïe ! Doucement, s’il te plaît !",
+                "ar": "آه! ببطء، من فضلك!"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Sorry! There, all done.",
+                "fr": "Pardon ! Voilà, c’est fini.",
+                "ar": "آسف! ها قد انتهينا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "dining-table",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Oh! There is a hair in my soup!",
+                "fr": "Oh ! Il y a un cheveu dans ma soupe !",
+                "ar": "أوه! توجد شعرة في حسائي!"
+              }
+            },
+            {
+              "who": {
+                "en": "Lina",
+                "fr": "Lina",
+                "ar": "لينا"
+              },
+              "text": {
+                "en": "It is not my hair. My hair is black!",
+                "fr": "Ce n’est pas un de mes cheveux. Les miens sont noirs !",
+                "ar": "ليست من شعري. شعري أسود!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "wedding",
+          "lines": [
+            {
+              "who": {
+                "en": "Aunt",
+                "fr": "La tante",
+                "ar": "العمة"
+              },
+              "text": {
+                "en": "Your hair is very nice today, Nadia!",
+                "fr": "Tes cheveux sont très jolis aujourd’hui, Nadia !",
+                "ar": "شعرك جميل جدا اليوم يا نادية!"
+              }
+            },
+            {
+              "who": {
+                "en": "Nadia",
+                "fr": "Nadia",
+                "ar": "نادية"
+              },
+              "text": {
+                "en": "Thank you! My mother did it for the wedding.",
+                "fr": "Merci ! C’est ma mère qui me les a coiffés pour le mariage.",
+                "ar": "شكرا! أمي سرحته لي من أجل العرس."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Woman_with_shiny_long_black_hair_from_behind.png/330px-Woman_with_shiny_long_black_hair_from_behind.png",
+          "page": "https://commons.wikimedia.org/wiki/File:Woman_with_shiny_long_black_hair_from_behind.png",
+          "author": "Alex Neman",
+          "licence": "CC BY-SA 4.0",
+          "caption": "Long black hair"
+        }
+      ]
+    },
+    "mouth": {
+      "scenes": [
+        {
+          "place": "dentist",
+          "lines": [
+            {
+              "who": {
+                "en": "Dentist",
+                "fr": "La dentiste",
+                "ar": "طبيبة الأسنان"
+              },
+              "text": {
+                "en": "Open your mouth, please.",
+                "fr": "Ouvre la bouche, s’il te plaît.",
+                "ar": "افتح فمك، من فضلك."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Aaah.",
+                "fr": "Aaah.",
+                "ar": "آآآه."
+              }
+            },
+            {
+              "who": {
+                "en": "Dentist",
+                "fr": "La dentiste",
+                "ar": "طبيبة الأسنان"
+              },
+              "text": {
+                "en": "Very good! Your teeth are clean.",
+                "fr": "Très bien ! Tes dents sont propres.",
+                "ar": "ممتاز! أسنانك نظيفة."
+              }
+            }
+          ]
+        },
+        {
+          "place": "dining-table",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Adam! Don’t talk with food in your mouth!",
+                "fr": "Adam ! Ne parle pas la bouche pleine !",
+                "ar": "يا آدم! لا تتكلم وفي فمك طعام!"
+              }
+            },
+            {
+              "who": {
+                "en": "Adam",
+                "fr": "Adam",
+                "ar": "آدم"
+              },
+              "text": {
+                "en": "Sorry, Mum.",
+                "fr": "Pardon, maman.",
+                "ar": "آسف يا أمي."
+              }
+            }
+          ]
+        },
+        {
+          "place": "canteen",
+          "lines": [
+            {
+              "who": {
+                "en": "Malik",
+                "fr": "Malik",
+                "ar": "مالك"
+              },
+              "text": {
+                "en": "This soup is very hot! My mouth is on fire!",
+                "fr": "Cette soupe est brûlante ! J’ai la bouche en feu !",
+                "ar": "هذا الحساء ساخن جدا! فمي يحترق!"
+              }
+            },
+            {
+              "who": {
+                "en": "Hugo",
+                "fr": "Hugo",
+                "ar": "هوغو"
+              },
+              "text": {
+                "en": "Drink some water!",
+                "fr": "Bois un peu d’eau !",
+                "ar": "اشرب بعض الماء!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "ice-cream-shop",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Leo, you have ice cream all around your mouth!",
+                "fr": "Leo, tu as de la glace tout autour de la bouche !",
+                "ar": "يا ليو، المثلجات حول فمك كله!"
+              }
+            },
+            {
+              "who": {
+                "en": "Leo",
+                "fr": "Leo",
+                "ar": "ليو"
+              },
+              "text": {
+                "en": "But it is so good!",
+                "fr": "Mais elle est trop bonne !",
+                "ar": "لكنها لذيذة جدا!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Lips_2023.jpg/330px-Lips_2023.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Lips_2023.jpg",
+          "author": "PumpkinMan1943",
+          "licence": "CC BY-SA 4.0",
+          "caption": "A mouth with lips"
+        }
+      ]
+    },
+    "ear": {
+      "scenes": [
+        {
+          "place": "doctor",
+          "lines": [
+            {
+              "who": {
+                "en": "Doctor",
+                "fr": "La médecin",
+                "ar": "الطبيبة"
+              },
+              "text": {
+                "en": "Let me look in your ear, Noah.",
+                "fr": "Je vais regarder dans ton oreille, Noah.",
+                "ar": "دعني أنظر في أذنك يا نوح."
+              }
+            },
+            {
+              "who": {
+                "en": "Noah",
+                "fr": "Noah",
+                "ar": "نوح"
+              },
+              "text": {
+                "en": "It hurts a little.",
+                "fr": "Ça fait un peu mal.",
+                "ar": "إنها تؤلمني قليلا."
+              }
+            },
+            {
+              "who": {
+                "en": "Doctor",
+                "fr": "La médecin",
+                "ar": "الطبيبة"
+              },
+              "text": {
+                "en": "Take this medicine and you will feel better.",
+                "fr": "Prends ce médicament, et ça ira mieux.",
+                "ar": "تناول هذا الدواء وستتحسن."
+              }
+            }
+          ]
+        },
+        {
+          "place": "music-room",
+          "lines": [
+            {
+              "who": {
+                "en": "Music teacher",
+                "fr": "Le professeur de musique",
+                "ar": "معلم الموسيقى"
+              },
+              "text": {
+                "en": "Close your eyes and listen with your ears.",
+                "fr": "Fermez les yeux et écoutez avec vos oreilles.",
+                "ar": "أغمضوا أعينكم واستمعوا بآذانكم."
+              }
+            },
+            {
+              "who": {
+                "en": "Aya",
+                "fr": "Aya",
+                "ar": "آية"
+              },
+              "text": {
+                "en": "I can hear a piano!",
+                "fr": "J’entends un piano !",
+                "ar": "أسمع بيانو!"
+              }
+            },
+            {
+              "who": {
+                "en": "Music teacher",
+                "fr": "Le professeur de musique",
+                "ar": "معلم الموسيقى"
+              },
+              "text": {
+                "en": "Yes, very good!",
+                "fr": "Oui, très bien !",
+                "ar": "نعم، أحسنت!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "library",
+          "lines": [
+            {
+              "who": {
+                "en": "Ines",
+                "fr": "Ines",
+                "ar": "إيناس"
+              },
+              "text": {
+                "en": "Can I tell you a secret?",
+                "fr": "Je peux te dire un secret ?",
+                "ar": "هل يمكنني أن أخبرك بسر؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Zoe",
+                "fr": "Zoe",
+                "ar": "زوي"
+              },
+              "text": {
+                "en": "Yes! Say it in my ear.",
+                "fr": "Oui ! Dis-le-moi à l’oreille.",
+                "ar": "نعم! قوليه في أذني."
+              }
+            },
+            {
+              "who": {
+                "en": "Ines",
+                "fr": "Ines",
+                "ar": "إيناس"
+              },
+              "text": {
+                "en": "I have a new cat!",
+                "fr": "J’ai un nouveau chat !",
+                "ar": "عندي قطة جديدة!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "grandparents-house",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "Sorry? Speak into this ear, please. I hear better with it.",
+                "fr": "Pardon ? Parle dans cette oreille, s’il te plaît. J’entends mieux avec.",
+                "ar": "عفوا؟ تكلم في هذه الأذن، من فضلك. أسمع بها أفضل."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Okay! Good morning, Grandpa!",
+                "fr": "D’accord ! Bonjour, papi !",
+                "ar": "حسنا! صباح الخير يا جدي!"
+              }
+            },
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "Ah, good morning to you too!",
+                "fr": "Ah, bonjour à toi aussi !",
+                "ar": "آه، صباح النور!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Close_up_of_man%27s_ear.jpg/330px-Close_up_of_man%27s_ear.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Close_up_of_man%27s_ear.jpg",
+          "author": "BIT0865",
+          "licence": "CC BY-SA 4.0",
+          "caption": "An ear"
+        }
+      ]
+    },
+    "nose": {
+      "scenes": [
+        {
+          "place": "living-room",
+          "lines": [
+            {
+              "who": {
+                "en": "Sam",
+                "fr": "Sam",
+                "ar": "سام"
+              },
+              "text": {
+                "en": "Achoo!",
+                "fr": "Atchoum !",
+                "ar": "أتشو!"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Here is a tissue for your nose.",
+                "fr": "Tiens, un mouchoir pour ton nez.",
+                "ar": "خذ، هذا منديل لأنفك."
+              }
+            },
+            {
+              "who": {
+                "en": "Sam",
+                "fr": "Sam",
+                "ar": "سام"
+              },
+              "text": {
+                "en": "Thank you, Mum.",
+                "fr": "Merci, maman.",
+                "ar": "شكرا يا أمي."
+              }
+            }
+          ]
+        },
+        {
+          "place": "flower-shop",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "These flowers smell so nice!",
+                "fr": "Ces fleurs sentent si bon !",
+                "ar": "رائحة هذه الزهور جميلة جدا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Florist",
+                "fr": "La fleuriste",
+                "ar": "بائعة الزهور"
+              },
+              "text": {
+                "en": "Put your nose here. This one is a rose.",
+                "fr": "Approche ton nez ici. Celle-ci, c’est une rose.",
+                "ar": "قرب أنفك هنا. هذه وردة."
+              }
+            }
+          ]
+        },
+        {
+          "place": "bakery",
+          "lines": [
+            {
+              "who": {
+                "en": "Omar",
+                "fr": "Omar",
+                "ar": "عمر"
+              },
+              "text": {
+                "en": "Mmm! My nose loves this place!",
+                "fr": "Mmm ! Mon nez adore cet endroit !",
+                "ar": "ممم! أنفي يحب هذا المكان!"
+              }
+            },
+            {
+              "who": {
+                "en": "Baker",
+                "fr": "Le boulanger",
+                "ar": "الخباز"
+              },
+              "text": {
+                "en": "The bread is hot from the oven!",
+                "fr": "Le pain sort tout juste du four !",
+                "ar": "الخبز خرج من الفرن للتو!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "park",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Your nose is red! Are you cold?",
+                "fr": "Ton nez est tout rouge ! Tu as froid ?",
+                "ar": "أنفك أحمر! هل تشعر بالبرد؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, a little.",
+                "fr": "Oui, un peu.",
+                "ar": "نعم، قليلا."
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Let’s go home and have some hot tea.",
+                "fr": "Rentrons boire un thé chaud à la maison.",
+                "ar": "لنعد إلى البيت ونشرب شايا ساخنا."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Human_Nose.JPG/330px-Human_Nose.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Human_Nose.JPG",
+          "author": "Faceofwiki",
+          "licence": "Public domain",
+          "caption": "A nose, seen from the side"
+        }
+      ]
+    },
+    "tooth": {
+      "scenes": [
+        {
+          "place": "dentist",
+          "lines": [
+            {
+              "who": {
+                "en": "Dentist",
+                "fr": "Le dentiste",
+                "ar": "طبيب الأسنان"
+              },
+              "text": {
+                "en": "Do you brush your teeth every day?",
+                "fr": "Tu te brosses les dents tous les jours ?",
+                "ar": "هل تنظف أسنانك كل يوم؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, every morning and every night.",
+                "fr": "Oui, chaque matin et chaque soir.",
+                "ar": "نعم، كل صباح وكل ليلة."
+              }
+            },
+            {
+              "who": {
+                "en": "Dentist",
+                "fr": "Le dentiste",
+                "ar": "طبيب الأسنان"
+              },
+              "text": {
+                "en": "Very good!",
+                "fr": "Très bien !",
+                "ar": "ممتاز!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "school-gate",
+          "lines": [
+            {
+              "who": {
+                "en": "Mei",
+                "fr": "Mei",
+                "ar": "مي"
+              },
+              "text": {
+                "en": "Look! I lost a tooth!",
+                "fr": "Regarde ! J’ai perdu une dent !",
+                "ar": "انظر! سقطت إحدى أسناني!"
+              }
+            },
+            {
+              "who": {
+                "en": "Kofi",
+                "fr": "Kofi",
+                "ar": "كوفي"
+              },
+              "text": {
+                "en": "Wow! Did it hurt?",
+                "fr": "Waouh ! Ça t’a fait mal ?",
+                "ar": "واو! هل آلمك ذلك؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Mei",
+                "fr": "Mei",
+                "ar": "مي"
+              },
+              "text": {
+                "en": "No, not at all!",
+                "fr": "Non, pas du tout !",
+                "ar": "لا، أبدا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "home",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Look! The baby has her first tooth!",
+                "fr": "Regarde ! Le bébé a sa première dent !",
+                "ar": "انظر! ظهرت أول سن للطفلة!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Where? I can’t see it.",
+                "fr": "Où ça ? Je ne la vois pas.",
+                "ar": "أين؟ لا أراها."
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Here, at the front. It is very small.",
+                "fr": "Ici, devant. Elle est toute petite.",
+                "ar": "هنا، في الأمام. إنها صغيرة جدا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "corner-shop",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "Too many sweets are bad for your teeth.",
+                "fr": "Trop de bonbons, c’est mauvais pour les dents.",
+                "ar": "الكثير من الحلوى مضر بأسنانك."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Just one, please!",
+                "fr": "Juste un, s’il te plaît !",
+                "ar": "واحدة فقط، من فضلك!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Teeth_by_David_Shankbone.jpg/330px-Teeth_by_David_Shankbone.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Teeth_by_David_Shankbone.jpg",
+          "author": "David Shankbone",
+          "licence": "CC BY-SA 3.0",
+          "caption": "White teeth"
+        }
+      ]
+    },
+    "back": {
+      "scenes": [
+        {
+          "place": "garage",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Ow, my back! This box is very heavy.",
+                "fr": "Aïe, mon dos ! Cette boîte est très lourde.",
+                "ar": "آه، ظهري! هذا الصندوق ثقيل جدا."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Can I help you, Dad?",
+                "fr": "Je peux t’aider, papa ?",
+                "ar": "هل يمكنني مساعدتك يا أبي؟"
+              }
+            }
+          ]
+        },
+        {
+          "place": "office",
+          "lines": [
+            {
+              "who": {
+                "en": "Karim",
+                "fr": "Karim",
+                "ar": "كريم"
+              },
+              "text": {
+                "en": "Does your back hurt again, Nadia?",
+                "fr": "Tu as encore mal au dos, Nadia ?",
+                "ar": "هل يؤلمك ظهرك مرة أخرى يا نادية؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Nadia",
+                "fr": "Nadia",
+                "ar": "نادية"
+              },
+              "text": {
+                "en": "Yes. This chair is not good.",
+                "fr": "Oui. Cette chaise n’est pas bonne.",
+                "ar": "نعم. هذا الكرسي ليس جيدا."
+              }
+            },
+            {
+              "who": {
+                "en": "Karim",
+                "fr": "Karim",
+                "ar": "كريم"
+              },
+              "text": {
+                "en": "Stand up and walk a little.",
+                "fr": "Lève-toi et marche un peu.",
+                "ar": "قومي وامشي قليلا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "garden",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "I worked in the garden all day. Now my back hurts!",
+                "fr": "J’ai travaillé dans le jardin toute la journée. Maintenant, j’ai mal au dos !",
+                "ar": "عملت في الحديقة طوال اليوم. والآن ظهري يؤلمني!"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Sit down, Grandpa. I can help.",
+                "fr": "Assieds-toi, papi. Je peux t’aider.",
+                "ar": "اجلس يا جدي. يمكنني أن أساعدك."
+              }
+            }
+          ]
+        },
+        {
+          "place": "school-gate",
+          "lines": [
+            {
+              "who": {
+                "en": "Lucas",
+                "fr": "Lucas",
+                "ar": "لوكاس"
+              },
+              "text": {
+                "en": "My school bag is so heavy!",
+                "fr": "Mon cartable est trop lourd !",
+                "ar": "حقيبتي المدرسية ثقيلة جدا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Aya",
+                "fr": "Aya",
+                "ar": "آية"
+              },
+              "text": {
+                "en": "Carry it on your back. It is easier.",
+                "fr": "Porte-le sur ton dos. C’est plus facile.",
+                "ar": "احملها على ظهرك. هذا أسهل."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Dolor_espalda.png/330px-Dolor_espalda.png",
+          "page": "https://commons.wikimedia.org/wiki/File:Dolor_espalda.png",
+          "author": "madartzgraphics",
+          "licence": "CC0",
+          "caption": "Hands on a sore back"
+        }
+      ]
+    },
+    "heart": {
+      "scenes": [
+        {
+          "place": "playground",
+          "lines": [
+            {
+              "who": {
+                "en": "Sam",
+                "fr": "Sam",
+                "ar": "سام"
+              },
+              "text": {
+                "en": "We ran a lot! Put your hand on your heart.",
+                "fr": "On a beaucoup couru ! Mets ta main sur ton cœur.",
+                "ar": "ركضنا كثيرا! ضعي يدك على قلبك."
+              }
+            },
+            {
+              "who": {
+                "en": "Lina",
+                "fr": "Lina",
+                "ar": "لينا"
+              },
+              "text": {
+                "en": "Wow, it is going so fast!",
+                "fr": "Waouh, il bat super vite !",
+                "ar": "واو، إنه يدق بسرعة كبيرة!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "doctor",
+          "lines": [
+            {
+              "who": {
+                "en": "Doctor",
+                "fr": "Le médecin",
+                "ar": "الطبيب"
+              },
+              "text": {
+                "en": "I want to listen to your heart. Breathe in, please.",
+                "fr": "Je veux écouter ton cœur. Inspire, s’il te plaît.",
+                "ar": "أريد أن أستمع إلى قلبك. خذ نفسا عميقا، من فضلك."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Is it okay?",
+                "fr": "Il va bien ?",
+                "ar": "هل هو بخير؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Doctor",
+                "fr": "Le médecin",
+                "ar": "الطبيب"
+              },
+              "text": {
+                "en": "Yes, your heart is fine!",
+                "fr": "Oui, ton cœur va très bien !",
+                "ar": "نعم، قلبك بخير!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "science-lab",
+          "lines": [
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "La professeure",
+                "ar": "المعلمة"
+              },
+              "text": {
+                "en": "The heart moves blood around the body.",
+                "fr": "Le cœur fait circuler le sang dans tout le corps.",
+                "ar": "القلب ينقل الدم في الجسم كله."
+              }
+            },
+            {
+              "who": {
+                "en": "Omar",
+                "fr": "Omar",
+                "ar": "عمر"
+              },
+              "text": {
+                "en": "All day and all night?",
+                "fr": "Toute la journée et toute la nuit ?",
+                "ar": "طوال النهار وطوال الليل؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "La professeure",
+                "ar": "المعلمة"
+              },
+              "text": {
+                "en": "Yes, always!",
+                "fr": "Oui, toujours !",
+                "ar": "نعم، دائما!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "stadium",
+          "lines": [
+            {
+              "who": {
+                "en": "Karim",
+                "fr": "Karim",
+                "ar": "كريم"
+              },
+              "text": {
+                "en": "It is the last minute! My heart is beating so fast!",
+                "fr": "C’est la dernière minute ! Mon cœur bat trop vite !",
+                "ar": "إنها الدقيقة الأخيرة! قلبي يدق بسرعة كبيرة!"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Goal! We won!",
+                "fr": "But ! On a gagné !",
+                "ar": "هدف! لقد فزنا!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Heart_anterior_exterior_view.jpg/330px-Heart_anterior_exterior_view.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Heart_anterior_exterior_view.jpg",
+          "author": "Patrick J. Lynch, medical illustrator",
+          "licence": "CC BY 2.5",
+          "caption": "A drawing of the human heart"
+        }
+      ]
+    },
+    "finger": {
+      "scenes": [
+        {
+          "place": "kitchen",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Ow! I cut my finger.",
+                "fr": "Aïe ! Je me suis coupé le doigt.",
+                "ar": "آه! جرحت إصبعي."
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Let me see. Wash it with water.",
+                "fr": "Fais-moi voir. Lave-le avec de l’eau.",
+                "ar": "دعني أرى. اغسله بالماء."
+              }
+            }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "La maîtresse",
+                "ar": "المعلمة"
+              },
+              "text": {
+                "en": "How many fingers do you have, Yasmine?",
+                "fr": "Combien de doigts as-tu, Yasmine ?",
+                "ar": "كم إصبعا لديك يا ياسمين؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Yasmine",
+                "fr": "Yasmine",
+                "ar": "ياسمين"
+              },
+              "text": {
+                "en": "Ten! Five on each hand.",
+                "fr": "Dix ! Cinq à chaque main.",
+                "ar": "عشرة! خمسة في كل يد."
+              }
+            }
+          ]
+        },
+        {
+          "place": "front-door",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Can I ring the bell?",
+                "fr": "Je peux sonner ?",
+                "ar": "هل يمكنني أن أقرع الجرس؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Yes. Press it with your finger.",
+                "fr": "Oui. Appuie dessus avec ton doigt.",
+                "ar": "نعم. اضغط عليه بإصبعك."
+              }
+            },
+            {
+              "who": {
+                "en": "Grandma",
+                "fr": "Mamie",
+                "ar": "الجدة"
+              },
+              "text": {
+                "en": "Hello! Come in!",
+                "fr": "Bonjour ! Entrez !",
+                "ar": "مرحبا! تفضلوا بالدخول!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "birthday-party",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Don’t put your finger in the cake, Hugo!",
+                "fr": "Ne mets pas ton doigt dans le gâteau, Hugo !",
+                "ar": "لا تضع إصبعك في الكعكة يا هوغو!"
+              }
+            },
+            {
+              "who": {
+                "en": "Hugo",
+                "fr": "Hugo",
+                "ar": "هوغو"
+              },
+              "text": {
+                "en": "But it is my birthday!",
+                "fr": "Mais c’est mon anniversaire !",
+                "ar": "لكنه عيد ميلادي!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Index_finger_2.JPG/330px-Index_finger_2.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Index_finger_2.JPG",
+          "author": "Than Ball - Than217 at English Wikipedia",
+          "licence": "Public domain",
+          "caption": "A finger pointing"
+        }
+      ]
+    },
+    "health": {
+      "scenes": [
+        {
+          "place": "fruit-shop",
+          "lines": [
+            {
+              "who": {
+                "en": "Fruit seller",
+                "fr": "Le marchand de fruits",
+                "ar": "بائع الفواكه"
+              },
+              "text": {
+                "en": "Fruit is good for your health.",
+                "fr": "Les fruits, c’est bon pour la santé.",
+                "ar": "الفواكه مفيدة لصحتك."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "I eat an apple every day!",
+                "fr": "Je mange une pomme tous les jours !",
+                "ar": "آكل تفاحة كل يوم!"
+              }
+            },
+            {
+              "who": {
+                "en": "Fruit seller",
+                "fr": "Le marchand de fruits",
+                "ar": "بائع الفواكه"
+              },
+              "text": {
+                "en": "Very good! Here, take an orange too.",
+                "fr": "Très bien ! Tiens, prends aussi une orange.",
+                "ar": "ممتاز! خذ برتقالة أيضا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "living-room",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Turn off the television. Sleep is good for your health.",
+                "fr": "Éteins la télévision. Dormir, c’est bon pour la santé.",
+                "ar": "أطفئ التلفاز. النوم مفيد لصحتك."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Five more minutes, please!",
+                "fr": "Encore cinq minutes, s’il te plaît !",
+                "ar": "خمس دقائق أخرى، من فضلك!"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "No. Good night!",
+                "fr": "Non. Bonne nuit !",
+                "ar": "لا. تصبح على خير!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "family-party",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandma",
+                "fr": "Mamie",
+                "ar": "الجدة"
+              },
+              "text": {
+                "en": "Here is some juice for everyone!",
+                "fr": "Voilà du jus pour tout le monde !",
+                "ar": "هذا عصير للجميع!"
+              }
+            },
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "To your health!",
+                "fr": "À votre santé !",
+                "ar": "بصحتكم!"
+              }
+            },
+            {
+              "who": {
+                "en": "Children",
+                "fr": "Les enfants",
+                "ar": "الأطفال"
+              },
+              "text": {
+                "en": "To your health, Grandpa!",
+                "fr": "À ta santé, papi !",
+                "ar": "بصحتك يا جدي!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "doctor",
+          "lines": [
+            {
+              "who": {
+                "en": "Doctor",
+                "fr": "La médecin",
+                "ar": "الطبيبة"
+              },
+              "text": {
+                "en": "Your health is very good, Mr Haddad.",
+                "fr": "Vous êtes en très bonne santé, monsieur Haddad.",
+                "ar": "صحتك جيدة جدا يا سيد حداد."
+              }
+            },
+            {
+              "who": {
+                "en": "Mr Haddad",
+                "fr": "M. Haddad",
+                "ar": "السيد حداد"
+              },
+              "text": {
+                "en": "Thank you! I walk every morning.",
+                "fr": "Merci ! Je marche tous les matins.",
+                "ar": "شكرا! أمشي كل صباح."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "sick": {
+      "scenes": [
+        {
+          "place": "classroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "Le maître",
+                "ar": "المعلم"
+              },
+              "text": {
+                "en": "Where is Omar today?",
+                "fr": "Où est Omar aujourd’hui ?",
+                "ar": "أين عمر اليوم؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Sara",
+                "fr": "Sara",
+                "ar": "سارة"
+              },
+              "text": {
+                "en": "He is sick. He is at home.",
+                "fr": "Il est malade. Il est à la maison.",
+                "ar": "إنه مريض. هو في البيت."
+              }
+            }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "You are very hot. Are you sick?",
+                "fr": "Tu es tout chaud. Tu es malade ?",
+                "ar": "حرارتك مرتفعة. هل أنت مريض؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, a little. My head hurts.",
+                "fr": "Oui, un peu. J’ai mal à la tête.",
+                "ar": "نعم، قليلا. رأسي يؤلمني."
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Stay in bed today. No school!",
+                "fr": "Reste au lit aujourd’hui. Pas d’école !",
+                "ar": "ابق في السرير اليوم. لا مدرسة!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "vet",
+          "lines": [
+            {
+              "who": {
+                "en": "Yuki",
+                "fr": "Yuki",
+                "ar": "يوكي"
+              },
+              "text": {
+                "en": "My cat is sick. He is not eating.",
+                "fr": "Mon chat est malade. Il ne mange pas.",
+                "ar": "قطي مريض. إنه لا يأكل."
+              }
+            },
+            {
+              "who": {
+                "en": "Vet",
+                "fr": "La vétérinaire",
+                "ar": "الطبيبة البيطرية"
+              },
+              "text": {
+                "en": "Let me see him. Poor little cat!",
+                "fr": "Fais-moi voir. Pauvre petit chat !",
+                "ar": "دعيني أراه. يا له من قط مسكين!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "home",
+          "lines": [
+            {
+              "who": {
+                "en": "Nadia",
+                "fr": "Nadia",
+                "ar": "نادية"
+              },
+              "text": {
+                "en": "Hello, Mr Brown. I am sick today. I can’t come to work.",
+                "fr": "Bonjour, monsieur Brown. Je suis malade aujourd’hui. Je ne peux pas venir au travail.",
+                "ar": "مرحبا يا سيد براون. أنا مريضة اليوم. لا أستطيع أن آتي إلى العمل."
+              }
+            },
+            {
+              "who": {
+                "en": "Mr Brown",
+                "fr": "M. Brown",
+                "ar": "السيد براون"
+              },
+              "text": {
+                "en": "Oh no! Stay at home and rest.",
+                "fr": "Oh non ! Restez chez vous et reposez-vous.",
+                "ar": "أوه لا! ابقي في البيت واستريحي."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "pain": {
+      "scenes": [
+        {
+          "place": "hospital",
+          "lines": [
+            {
+              "who": {
+                "en": "Nurse",
+                "fr": "L’infirmier",
+                "ar": "الممرض"
+              },
+              "text": {
+                "en": "Do you have any pain?",
+                "fr": "Est-ce que tu as mal ?",
+                "ar": "هل تشعر بألم؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Yes, in my arm.",
+                "fr": "Oui, au bras.",
+                "ar": "نعم، في ذراعي."
+              }
+            },
+            {
+              "who": {
+                "en": "Nurse",
+                "fr": "L’infirmier",
+                "ar": "الممرض"
+              },
+              "text": {
+                "en": "Okay. This medicine helps with the pain.",
+                "fr": "D’accord. Ce médicament calme la douleur.",
+                "ar": "حسنا. هذا الدواء يخفف الألم."
+              }
+            }
+          ]
+        },
+        {
+          "place": "dentist",
+          "lines": [
+            {
+              "who": {
+                "en": "Dentist",
+                "fr": "La dentiste",
+                "ar": "طبيبة الأسنان"
+              },
+              "text": {
+                "en": "Where is the pain, Malik?",
+                "fr": "Où as-tu mal, Malik ?",
+                "ar": "أين الألم يا مالك؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Malik",
+                "fr": "Malik",
+                "ar": "مالك"
+              },
+              "text": {
+                "en": "Here, on the left.",
+                "fr": "Ici, à gauche.",
+                "ar": "هنا، على اليسار."
+              }
+            },
+            {
+              "who": {
+                "en": "Dentist",
+                "fr": "La dentiste",
+                "ar": "طبيبة الأسنان"
+              },
+              "text": {
+                "en": "Okay. Open your mouth, please.",
+                "fr": "D’accord. Ouvre la bouche, s’il te plaît.",
+                "ar": "حسنا. افتح فمك، من فضلك."
+              }
+            }
+          ]
+        },
+        {
+          "place": "pharmacy",
+          "lines": [
+            {
+              "who": {
+                "en": "Pharmacist",
+                "fr": "Le pharmacien",
+                "ar": "الصيدلي"
+              },
+              "text": {
+                "en": "Good morning. Can I help you?",
+                "fr": "Bonjour. Je peux vous aider ?",
+                "ar": "صباح الخير. هل يمكنني مساعدتك؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Amina",
+                "fr": "Amina",
+                "ar": "أمينة"
+              },
+              "text": {
+                "en": "Yes, please. I have a pain in my back.",
+                "fr": "Oui, s’il vous plaît. J’ai une douleur au dos.",
+                "ar": "نعم، من فضلك. أشعر بألم في ظهري."
+              }
+            },
+            {
+              "who": {
+                "en": "Pharmacist",
+                "fr": "Le pharmacien",
+                "ar": "الصيدلي"
+              },
+              "text": {
+                "en": "Take this two times a day.",
+                "fr": "Prenez ceci deux fois par jour.",
+                "ar": "تناولي هذا مرتين في اليوم."
+              }
+            }
+          ]
+        },
+        {
+          "place": "gym",
+          "lines": [
+            {
+              "who": {
+                "en": "Coach",
+                "fr": "L’entraîneur",
+                "ar": "المدرب"
+              },
+              "text": {
+                "en": "Stop if you feel any pain, Hugo.",
+                "fr": "Arrête-toi si tu sens une douleur, Hugo.",
+                "ar": "توقف إذا شعرت بأي ألم يا هوغو."
+              }
+            },
+            {
+              "who": {
+                "en": "Hugo",
+                "fr": "Hugo",
+                "ar": "هوغو"
+              },
+              "text": {
+                "en": "I am okay. No pain!",
+                "fr": "Ça va. Je n’ai pas mal !",
+                "ar": "أنا بخير. لا ألم!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "hurt": {
+      "scenes": [
+        {
+          "place": "park",
+          "lines": [
+            {
+              "who": {
+                "en": "Ali",
+                "fr": "Ali",
+                "ar": "علي"
+              },
+              "text": {
+                "en": "Are you okay, Zoe?",
+                "fr": "Ça va, Zoe ?",
+                "ar": "هل أنت بخير يا زوي؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Zoe",
+                "fr": "Zoe",
+                "ar": "زوي"
+              },
+              "text": {
+                "en": "My leg hurts a little.",
+                "fr": "J’ai un peu mal à la jambe.",
+                "ar": "ساقي تؤلمني قليلا."
+              }
+            },
+            {
+              "who": {
+                "en": "Ali",
+                "fr": "Ali",
+                "ar": "علي"
+              },
+              "text": {
+                "en": "Sit here. I will get your mum.",
+                "fr": "Assieds-toi ici. Je vais chercher ta maman.",
+                "ar": "اجلسي هنا. سأنادي أمك."
+              }
+            }
+          ]
+        },
+        {
+          "place": "doctor",
+          "lines": [
+            {
+              "who": {
+                "en": "Doctor",
+                "fr": "Le médecin",
+                "ar": "الطبيب"
+              },
+              "text": {
+                "en": "Does it hurt here?",
+                "fr": "Ça fait mal ici ?",
+                "ar": "هل يؤلمك هنا؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "No.",
+                "fr": "Non.",
+                "ar": "لا."
+              }
+            },
+            {
+              "who": {
+                "en": "Doctor",
+                "fr": "Le médecin",
+                "ar": "الطبيب"
+              },
+              "text": {
+                "en": "And here?",
+                "fr": "Et ici ?",
+                "ar": "وهنا؟"
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Ow! Yes, it hurts!",
+                "fr": "Aïe ! Oui, ça fait mal !",
+                "ar": "آه! نعم، يؤلمني!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "shopping-centre",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Can we sit down? My new shoes hurt my feet.",
+                "fr": "On peut s’asseoir ? Mes nouvelles chaussures me font mal aux pieds.",
+                "ar": "هل يمكننا أن نجلس؟ حذائي الجديد يؤلم قدمي."
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Okay, let’s sit here.",
+                "fr": "D’accord, asseyons-nous ici.",
+                "ar": "حسنا، لنجلس هنا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "bus",
+          "lines": [
+            {
+              "who": {
+                "en": "Woman",
+                "fr": "La dame",
+                "ar": "السيدة"
+              },
+              "text": {
+                "en": "My legs hurt. Can I sit here, please?",
+                "fr": "J’ai mal aux jambes. Je peux m’asseoir ici, s’il te plaît ?",
+                "ar": "ساقاي تؤلمانني. هل يمكنني الجلوس هنا، من فضلك؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Noah",
+                "fr": "Noah",
+                "ar": "نوح"
+              },
+              "text": {
+                "en": "Of course! Sit here.",
+                "fr": "Bien sûr ! Asseyez-vous, madame.",
+                "ar": "بالطبع! تفضلي بالجلوس."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "medicine": {
+      "scenes": [
+        {
+          "place": "pharmacy",
+          "lines": [
+            {
+              "who": {
+                "en": "Pharmacist",
+                "fr": "La pharmacienne",
+                "ar": "الصيدلانية"
+              },
+              "text": {
+                "en": "Here is your medicine.",
+                "fr": "Voici votre médicament.",
+                "ar": "هذا دواؤك."
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Thank you. Before or after meals?",
+                "fr": "Merci. Avant ou après les repas ?",
+                "ar": "شكرا. قبل الأكل أم بعده؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Pharmacist",
+                "fr": "La pharmacienne",
+                "ar": "الصيدلانية"
+              },
+              "text": {
+                "en": "After meals, three times a day.",
+                "fr": "Après les repas, trois fois par jour.",
+                "ar": "بعد الأكل، ثلاث مرات في اليوم."
+              }
+            }
+          ]
+        },
+        {
+          "place": "kitchen",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Take your medicine with some water.",
+                "fr": "Prends ton médicament avec un peu d’eau.",
+                "ar": "تناول دواءك مع قليل من الماء."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "It is not nice!",
+                "fr": "Ce n’est pas bon !",
+                "ar": "طعمه ليس لذيذا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "I know. Have some juice after.",
+                "fr": "Je sais. Bois un peu de jus après.",
+                "ar": "أعرف. اشرب قليلا من العصير بعده."
+              }
+            }
+          ]
+        },
+        {
+          "place": "vet",
+          "lines": [
+            {
+              "who": {
+                "en": "Vet",
+                "fr": "Le vétérinaire",
+                "ar": "الطبيب البيطري"
+              },
+              "text": {
+                "en": "Give your dog this medicine every morning.",
+                "fr": "Donne ce médicament à ton chien chaque matin.",
+                "ar": "أعط كلبك هذا الدواء كل صباح."
+              }
+            },
+            {
+              "who": {
+                "en": "Kofi",
+                "fr": "Kofi",
+                "ar": "كوفي"
+              },
+              "text": {
+                "en": "In his food?",
+                "fr": "Dans sa nourriture ?",
+                "ar": "في طعامه؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Vet",
+                "fr": "Le vétérinaire",
+                "ar": "الطبيب البيطري"
+              },
+              "text": {
+                "en": "Yes, that is a good idea.",
+                "fr": "Oui, c’est une bonne idée.",
+                "ar": "نعم، هذه فكرة جيدة."
+              }
+            }
+          ]
+        },
+        {
+          "place": "grandparents-house",
+          "lines": [
+            {
+              "who": {
+                "en": "Grandma",
+                "fr": "Mamie",
+                "ar": "الجدة"
+              },
+              "text": {
+                "en": "Where is my medicine? I take it at lunch.",
+                "fr": "Où est mon médicament ? Je le prends au déjeuner.",
+                "ar": "أين دوائي؟ أتناوله وقت الغداء."
+              }
+            },
+            {
+              "who": {
+                "en": "Lina",
+                "fr": "Lina",
+                "ar": "لينا"
+              },
+              "text": {
+                "en": "Here it is, Grandma, on the table.",
+                "fr": "Le voilà, mamie, sur la table.",
+                "ar": "ها هو يا جدتي، على الطاولة."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Cough_medicine_in_a_medicine_measure_cup.jpg/330px-Cough_medicine_in_a_medicine_measure_cup.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cough_medicine_in_a_medicine_measure_cup.jpg",
+          "author": "Redvelvetcake5",
+          "licence": "CC BY-SA 4.0",
+          "caption": "Cough medicine in a small cup"
+        }
+      ]
+    },
+    "neck": {
+      "scenes": [
+        {
+          "place": "zoo",
+          "lines": [
+            {
+              "who": {
+                "en": "Amina",
+                "fr": "Amina",
+                "ar": "أمينة"
+              },
+              "text": {
+                "en": "Look, Grandpa! The giraffe has a very long neck!",
+                "fr": "Regarde, papi ! La girafe a un très long cou !",
+                "ar": "انظر يا جدي! للزرافة رقبة طويلة جدا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Grandpa",
+                "fr": "Papi",
+                "ar": "الجد"
+              },
+              "text": {
+                "en": "Yes. It can eat from tall trees.",
+                "fr": "Oui. Elle peut manger les feuilles en haut des arbres.",
+                "ar": "نعم. تستطيع أن تأكل من الأشجار العالية."
+              }
+            }
+          ]
+        },
+        {
+          "place": "street",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "It is very cold today. Put your scarf around your neck.",
+                "fr": "Il fait très froid aujourd’hui. Mets ton écharpe autour du cou.",
+                "ar": "الجو بارد جدا اليوم. لف وشاحك حول رقبتك."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Okay, Mum.",
+                "fr": "D’accord, maman.",
+                "ar": "حسنا يا أمي."
+              }
+            }
+          ]
+        },
+        {
+          "place": "office",
+          "lines": [
+            {
+              "who": {
+                "en": "Karim",
+                "fr": "Karim",
+                "ar": "كريم"
+              },
+              "text": {
+                "en": "My neck hurts. I work at the computer all day.",
+                "fr": "J’ai mal au cou. Je travaille sur l’ordinateur toute la journée.",
+                "ar": "رقبتي تؤلمني. أعمل على الحاسوب طوال اليوم."
+              }
+            },
+            {
+              "who": {
+                "en": "Sara",
+                "fr": "Sara",
+                "ar": "سارة"
+              },
+              "text": {
+                "en": "Stop for five minutes and move your head.",
+                "fr": "Fais une pause de cinq minutes et bouge la tête.",
+                "ar": "توقف خمس دقائق وحرك رأسك."
+              }
+            }
+          ]
+        },
+        {
+          "place": "clothes-shop",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "This shirt is too small at the neck.",
+                "fr": "Cette chemise est trop serrée au cou.",
+                "ar": "هذا القميص ضيق عند الرقبة."
+              }
+            },
+            {
+              "who": {
+                "en": "Shop assistant",
+                "fr": "Le vendeur",
+                "ar": "البائع"
+              },
+              "text": {
+                "en": "Try this one. It is bigger.",
+                "fr": "Essayez celle-ci. Elle est plus grande.",
+                "ar": "جرب هذا. إنه أكبر."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Giraffe_Head_and_Neck_Profile_%2821582364055%29.jpg/330px-Giraffe_Head_and_Neck_Profile_%2821582364055%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Giraffe_Head_and_Neck_Profile_(21582364055).jpg",
+          "author": "Eric Kilby from Somerville, MA, USA",
+          "licence": "CC BY-SA 2.0",
+          "caption": "A giraffe’s long neck"
+        }
+      ]
+    },
+    "stomach": {
+      "scenes": [
+        {
+          "place": "dining-table",
+          "lines": [
+            {
+              "who": {
+                "en": "Leo",
+                "fr": "Leo",
+                "ar": "ليو"
+              },
+              "text": {
+                "en": "I ate too much cake. My stomach hurts!",
+                "fr": "J’ai mangé trop de gâteau. J’ai mal au ventre !",
+                "ar": "أكلت كثيرا من الكعك. بطني يؤلمني!"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Go and lie down a little.",
+                "fr": "Va t’allonger un peu.",
+                "ar": "اذهب واستلق قليلا."
+              }
+            }
+          ]
+        },
+        {
+          "place": "canteen",
+          "lines": [
+            {
+              "who": {
+                "en": "Omar",
+                "fr": "Omar",
+                "ar": "عمر"
+              },
+              "text": {
+                "en": "Mmm, rice and meat! My stomach says thank you!",
+                "fr": "Mmm, du riz et de la viande ! Mon ventre dit merci !",
+                "ar": "ممم، أرز ولحم! بطني يقول شكرا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Sara",
+                "fr": "Sara",
+                "ar": "سارة"
+              },
+              "text": {
+                "en": "Ha ha! Mine too!",
+                "fr": "Ha ha ! Le mien aussi !",
+                "ar": "ها ها! وبطني أيضا!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "doctor",
+          "lines": [
+            {
+              "who": {
+                "en": "Doctor",
+                "fr": "La médecin",
+                "ar": "الطبيبة"
+              },
+              "text": {
+                "en": "Lie down, please, Ines. Does your stomach hurt here?",
+                "fr": "Allonge-toi, s’il te plaît, Ines. Tu as mal au ventre ici ?",
+                "ar": "استلقي، من فضلك يا إيناس. هل يؤلمك بطنك هنا؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Ines",
+                "fr": "Ines",
+                "ar": "إيناس"
+              },
+              "text": {
+                "en": "Yes, a little.",
+                "fr": "Oui, un peu.",
+                "ar": "نعم، قليلا."
+              }
+            },
+            {
+              "who": {
+                "en": "Doctor",
+                "fr": "La médecin",
+                "ar": "الطبيبة"
+              },
+              "text": {
+                "en": "Okay. No more sweets today!",
+                "fr": "D’accord. Plus de bonbons aujourd’hui !",
+                "ar": "حسنا. لا مزيد من الحلوى اليوم!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "train",
+          "lines": [
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Mum, my stomach is making noises!",
+                "fr": "Maman, mon ventre fait du bruit !",
+                "ar": "يا أمي، بطني يصدر أصواتا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "You are hungry! Here is an apple.",
+                "fr": "Tu as faim ! Tiens, une pomme.",
+                "ar": "أنت جائع! خذ تفاحة."
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "blood": {
+      "scenes": [
+        {
+          "place": "hospital",
+          "lines": [
+            {
+              "who": {
+                "en": "Nurse",
+                "fr": "L’infirmière",
+                "ar": "الممرضة"
+              },
+              "text": {
+                "en": "We need a little blood for a test.",
+                "fr": "Il nous faut un peu de sang pour une analyse.",
+                "ar": "نحتاج إلى قليل من الدم للتحليل."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Will it hurt?",
+                "fr": "Ça va faire mal ?",
+                "ar": "هل سيؤلمني؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Nurse",
+                "fr": "L’infirmière",
+                "ar": "الممرضة"
+              },
+              "text": {
+                "en": "Only a little. Look out of the window.",
+                "fr": "Juste un peu. Regarde par la fenêtre.",
+                "ar": "قليلا فقط. انظر من النافذة."
+              }
+            }
+          ]
+        },
+        {
+          "place": "science-lab",
+          "lines": [
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "Le professeur",
+                "ar": "المعلم"
+              },
+              "text": {
+                "en": "What colour is blood?",
+                "fr": "De quelle couleur est le sang ?",
+                "ar": "ما لون الدم؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Children",
+                "fr": "Les enfants",
+                "ar": "الأطفال"
+              },
+              "text": {
+                "en": "Red!",
+                "fr": "Rouge !",
+                "ar": "أحمر!"
+              }
+            },
+            {
+              "who": {
+                "en": "Teacher",
+                "fr": "Le professeur",
+                "ar": "المعلم"
+              },
+              "text": {
+                "en": "Yes! Very good.",
+                "fr": "Oui ! Très bien.",
+                "ar": "نعم! أحسنتم."
+              }
+            }
+          ]
+        },
+        {
+          "place": "playground",
+          "lines": [
+            {
+              "who": {
+                "en": "Kofi",
+                "fr": "Kofi",
+                "ar": "كوفي"
+              },
+              "text": {
+                "en": "Look, there is blood on my finger.",
+                "fr": "Regarde, il y a du sang sur mon doigt.",
+                "ar": "انظري، يوجد دم على إصبعي."
+              }
+            },
+            {
+              "who": {
+                "en": "Lina",
+                "fr": "Lina",
+                "ar": "لينا"
+              },
+              "text": {
+                "en": "Let’s go to the teacher. She has plasters.",
+                "fr": "Allons voir la maîtresse. Elle a des pansements.",
+                "ar": "لنذهب إلى المعلمة. عندها ضمادات لاصقة."
+              }
+            }
+          ]
+        },
+        {
+          "place": "town-hall",
+          "lines": [
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "Today I want to give blood. It helps sick people.",
+                "fr": "Aujourd’hui, je veux donner mon sang. Ça aide les malades.",
+                "ar": "اليوم أريد أن أتبرع بالدم. هذا يساعد المرضى."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Can I give blood too?",
+                "fr": "Je peux donner mon sang aussi ?",
+                "ar": "هل يمكنني أن أتبرع بالدم أيضا؟"
+              }
+            },
+            {
+              "who": {
+                "en": "Dad",
+                "fr": "Papa",
+                "ar": "الأب"
+              },
+              "text": {
+                "en": "When you are big!",
+                "fr": "Quand tu seras grand !",
+                "ar": "عندما تكبر!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": [
+        {
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Blood_drop_%28NIH_BioArt_660%29.png/330px-Blood_drop_%28NIH_BioArt_660%29.png",
+          "page": "https://commons.wikimedia.org/wiki/File:Blood_drop_(NIH_BioArt_660).png",
+          "author": "NIH NIAID",
+          "licence": "Public domain",
+          "caption": "A drop of blood"
+        }
+      ]
+    },
+    "skin": {
+      "scenes": [
+        {
+          "place": "beach",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Put on some sun cream. The sun can burn your skin.",
+                "fr": "Mets de la crème solaire. Le soleil peut brûler ta peau.",
+                "ar": "ضع واقي الشمس. الشمس قد تحرق جلدك."
+              }
+            },
+            {
+              "who": {
+                "en": "You",
+                "fr": "Toi",
+                "ar": "أنت"
+              },
+              "text": {
+                "en": "Okay, Mum!",
+                "fr": "D’accord, maman !",
+                "ar": "حسنا يا أمي!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "pharmacy",
+          "lines": [
+            {
+              "who": {
+                "en": "Nadia",
+                "fr": "Nadia",
+                "ar": "نادية"
+              },
+              "text": {
+                "en": "My skin is very dry in winter.",
+                "fr": "J’ai la peau très sèche en hiver.",
+                "ar": "جلدي جاف جدا في الشتاء."
+              }
+            },
+            {
+              "who": {
+                "en": "Pharmacist",
+                "fr": "La pharmacienne",
+                "ar": "الصيدلانية"
+              },
+              "text": {
+                "en": "Try this cream.",
+                "fr": "Essayez cette crème.",
+                "ar": "جربي هذا الكريم."
+              }
+            }
+          ]
+        },
+        {
+          "place": "home",
+          "lines": [
+            {
+              "who": {
+                "en": "Mum",
+                "fr": "Maman",
+                "ar": "الأم"
+              },
+              "text": {
+                "en": "Touch the baby’s hand. Her skin is so soft!",
+                "fr": "Touche la main du bébé. Sa peau est si douce !",
+                "ar": "المسي يد الطفلة. جلدها ناعم جدا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Sara",
+                "fr": "Sara",
+                "ar": "سارة"
+              },
+              "text": {
+                "en": "Wow! Hello, little baby!",
+                "fr": "Waouh ! Coucou, petit bébé !",
+                "ar": "واو! مرحبا أيتها الصغيرة!"
+              }
+            }
+          ]
+        },
+        {
+          "place": "zoo",
+          "lines": [
+            {
+              "who": {
+                "en": "Zookeeper",
+                "fr": "La soigneuse",
+                "ar": "حارسة حديقة الحيوانات"
+              },
+              "text": {
+                "en": "Touch the snake’s skin. It is dry, not wet!",
+                "fr": "Touche la peau du serpent. Elle est sèche, pas mouillée !",
+                "ar": "المس جلد الأفعى. إنه جاف، وليس مبللا!"
+              }
+            },
+            {
+              "who": {
+                "en": "Adam",
+                "fr": "Adam",
+                "ar": "آدم"
+              },
+              "text": {
+                "en": "Wow! And it is cold, too!",
+                "fr": "Waouh ! Et elle est froide aussi !",
+                "ar": "واو! وهو بارد أيضا!"
+              }
+            }
+          ]
+        }
+      ],
+      "pictures": []
+    }
+  }
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, Check, MessageSquareQuote, NotebookPen, Pencil, Plus, Search, Trash2 } from "lucide-react";
+import { ArrowLeft, Check, Languages, MessageSquareQuote, NotebookPen, Pencil, Plus, Search, Trash2 } from "lucide-react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useState, type FormEvent, type ReactNode } from "react";
@@ -37,6 +37,7 @@ import {
   type Flashcard,
 } from "@/lib/store";
 import { cn } from "@/lib/utils";
+import { targetFromCard, wordHref } from "@/lib/word/target";
 import { cards as cardMessages } from "@/messages/cards";
 import { deck as deckMessages } from "@/messages/deck";
 
@@ -179,7 +180,12 @@ function DeckPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle>{t("addManually")}</CardTitle>
+          <CardTitle className="flex flex-wrap items-center justify-between gap-2">
+            {t("addManually")}
+            <Link href={`/add?deck=${deck.id}`} className={buttonVariants({ size: "sm", variant: "outline" })}>
+              <Languages /> {t("translateForList")}
+            </Link>
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={add} className="flex flex-col gap-2 sm:flex-row">
@@ -247,7 +253,7 @@ function DeckPage() {
         <p className="text-muted-foreground">
           {t.rich("empty", {
             link: (
-              <Link href="/add" className="underline">
+              <Link href={`/add?deck=${deck.id}`} className="underline">
                 {t("emptyLink")}
               </Link>
             ),
@@ -324,7 +330,9 @@ function CardRow({ card, onEdit }: { card: Flashcard; onEdit: () => void }) {
       <div className="grid min-w-0 flex-1 gap-1">
         <div className="grid gap-0.5 sm:grid-cols-2 sm:gap-4">
           <span className="flex min-w-0 items-center gap-1 font-medium" dir="auto" lang={card.src}>
-            <span className="truncate">{card.front}</span>
+            <Link href={wordHref(targetFromCard(card))} className="truncate underline-offset-2 hover:underline">
+              {card.front}
+            </Link>
             <SpeakButton text={card.front} lang={card.src} />
           </span>
           <span className="flex min-w-0 items-center gap-1 text-muted-foreground" dir="auto" lang={card.tgt}>

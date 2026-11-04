@@ -1,11 +1,12 @@
 "use client";
 
-import { BookOpen, CheckCircle2, Clock, RotateCw, Sparkles } from "lucide-react";
+import { BookA, BookOpen, CheckCircle2, Clock, RotateCw, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { FlipCard } from "@/components/flip-card";
 import { PlanCard } from "@/components/plan-card";
+import { WordOverlay } from "@/components/word/word-overlay";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -33,10 +34,12 @@ import {
   type StudyItem,
 } from "@/lib/store";
 import { cn } from "@/lib/utils";
+import { targetFromCard, type WordTarget } from "@/lib/word/target";
 import { STARTER_STORIES } from "@/data/starter-stories";
 import { rankStories, todaysCards } from "@/lib/story";
 import { story } from "@/messages/story";
 import { study } from "@/messages/study";
+import { word as wordMessages } from "@/messages/word";
 
 const GRADE_STYLE: Record<number, string> = {
   1: "border-red-500/40 hover:bg-red-500/10 text-red-600 dark:text-red-400",
@@ -123,6 +126,7 @@ function Session({
   const fmt = useFormat();
   const t = useT(study);
   const ts = useT(story);
+  const tw = useT(wordMessages);
 
   // Fix the session's items and their order when it starts: due reviews, with
   // the new words today's limit allows mixed in (one after every two reviews),
@@ -151,6 +155,8 @@ function Session({
   const [reviewed, setReviewed] = useState(0);
   const [intervals, setIntervals] = useState<Record<number, number>>({});
   const grading = useRef(false);
+  // The word page, opened over the session so the session stays as it is.
+  const [wordPage, setWordPage] = useState<WordTarget | null>(null);
   const actionRef = useRef<HTMLButtonElement>(null);
 
   const byKey = useMemo(() => new Map(cards.flatMap(itemsOf).map((i) => [i.key, i])), [cards]);
@@ -372,6 +378,16 @@ function Session({
             if (phase.kind === "ask" && !phase.choices) setPhase({ kind: "revealed", picked: null, right: false });
           }}
         />
+        {revealed && (
+          <Button
+            variant="ghost"
+            size="sm"
+            className="justify-self-center text-muted-foreground"
+            onClick={() => setWordPage(targetFromCard(current.card))}
+          >
+            <BookA /> {tw("seeAll")}
+          </Button>
+        )}
       </div>
 
       {phase.kind === "intro" && (
@@ -465,6 +481,8 @@ function Session({
       </p>
 
       <p className="text-center text-xs text-muted-foreground">{t(mode === "pick" ? "keyHintPick" : "keyHint")}</p>
+
+      <WordOverlay target={wordPage} onClose={() => setWordPage(null)} />
     </div>
   );
 }

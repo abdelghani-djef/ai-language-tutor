@@ -7,15 +7,22 @@ import { State } from "./srs";
 /** Straight and curly apostrophes count as the same letter. */
 const apostrophes = (s: string) => s.replace(/[‘’]/g, "'");
 
+/**
+ * A word as it would appear in running text: notes in brackets ("loin (de)")
+ * and end punctuation ("how are you?") aren't part of the words, and curly
+ * apostrophes become straight ones.
+ */
+export function cleanEntry(text: string): string {
+  return apostrophes(text.replace(/\s*\([^)]*\)/g, ""))
+    .replace(/[?!.]+$/, "")
+    .trim();
+}
+
 /** The English side of a card as it would appear in running text, or null when neither side is English. */
 export function englishWord(card: Flashcard): string | null {
   const text = card.src === "en" ? card.front : card.tgt === "en" ? card.back : null;
   if (!text) return null;
-  // Notes in brackets ("loin (de)") and end punctuation ("how are you?") aren't part of the words.
-  const word = apostrophes(text.replace(/\s*\([^)]*\)/g, ""))
-    .replace(/[?!.]+$/, "")
-    .trim();
-  return word || null;
+  return cleanEntry(text) || null;
 }
 
 // Common irregular forms of words in the starter packs.

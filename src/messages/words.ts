@@ -1,20 +1,20 @@
 import { defineMessages } from "@/lib/i18n";
 
-// The starter word packs page.
+// The ready-made lists page.
 export const words = defineMessages({
   en: {
-    title: "Starter words",
+    title: "Ready-made lists",
     intro:
-      "About 500 of the most useful English words, in 20 themed packs. Add a pack, and the app teaches its words a few each day, with a picture, a translation, audio and an example.",
+      "About 500 of the most useful English words, in 20 themed ready-made lists. Add a list, and the app teaches its words a few each day, with a picture, a translation, audio and an example.",
     translations: "Translations in",
     startHere: "Start here",
     wordCount: { one: "{count} word", other: "{count} words" },
-    addPack: "Add pack",
+    addPack: "Add list",
     added: "Added",
+    openList: "Open list",
     addedToast: { one: "Added {count} word to “{deck}”.", other: "Added {count} words to “{deck}”." },
     addedHint: { one: "New words come in at {count} a day.", other: "New words come in at {count} a day." },
     study: "Study now",
-    deckName: "Starter words ({lang})",
     stories: "Read stories with your words",
     why: "Why these words?",
     whyText:
@@ -22,18 +22,18 @@ export const words = defineMessages({
     andMore: { one: "and {count} more", other: "and {count} more" },
   },
   fr: {
-    title: "Mots de base",
+    title: "Listes toutes prêtes",
     intro:
-      "Environ 500 des mots anglais les plus utiles, en 20 paquets par thème. Ajoutez un paquet : l’application vous apprend quelques mots chaque jour, avec une image, une traduction, l’audio et un exemple.",
+      "Environ 500 des mots anglais les plus utiles, en 20 listes toutes prêtes par thème. Ajoutez une liste : l’application vous apprend quelques mots chaque jour, avec une image, une traduction, l’audio et un exemple.",
     translations: "Traductions en",
     startHere: "Commencez ici",
     wordCount: { one: "{count} mot", other: "{count} mots" },
-    addPack: "Ajouter le paquet",
-    added: "Ajouté",
+    addPack: "Ajouter la liste",
+    added: "Ajoutée",
+    openList: "Ouvrir la liste",
     addedToast: { one: "{count} mot ajouté à « {deck} ».", other: "{count} mots ajoutés à « {deck} »." },
     addedHint: { one: "Les nouveaux mots arrivent au rythme de {count} par jour.", other: "Les nouveaux mots arrivent au rythme de {count} par jour." },
     study: "Réviser maintenant",
-    deckName: "Mots de base ({lang})",
     stories: "Lire des histoires avec vos mots",
     why: "Pourquoi ces mots ?",
     whyText:
@@ -41,9 +41,9 @@ export const words = defineMessages({
     andMore: { one: "et {count} autre", other: "et {count} autres" },
   },
   ar: {
-    title: "كلمات أساسية",
+    title: "قوائم جاهزة",
     intro:
-      "حوالي 500 من أكثر الكلمات الإنجليزية فائدة، في 20 مجموعة حسب الموضوع. أضف مجموعة، وسيعلّمك التطبيق بضع كلمات منها كل يوم، مع صورة وترجمة ونطق ومثال.",
+      "حوالي 500 من أكثر الكلمات الإنجليزية فائدة، في 20 قائمة جاهزة حسب الموضوع. أضف قائمة، وسيعلّمك التطبيق بضع كلمات منها كل يوم، مع صورة وترجمة ونطق ومثال.",
     translations: "الترجمة إلى",
     startHere: "ابدأ من هنا",
     wordCount: {
@@ -54,8 +54,9 @@ export const words = defineMessages({
       many: "{count} كلمة",
       other: "{count} كلمة",
     },
-    addPack: "أضف المجموعة",
+    addPack: "أضف القائمة",
     added: "أضيفت",
+    openList: "افتح القائمة",
     addedToast: {
       one: "أضيفت كلمة واحدة إلى «{deck}».",
       two: "أضيفت كلمتان إلى «{deck}».",
@@ -71,7 +72,6 @@ export const words = defineMessages({
       other: "تصلك {count} كلمة جديدة كل يوم.",
     },
     study: "راجع الآن",
-    deckName: "كلمات أساسية ({lang})",
     stories: "اقرأ قصصًا بكلماتك",
     why: "لماذا هذه الكلمات؟",
     whyText: "عدد قليل من الكلمات الشائعة جدًا يشكّل معظم ما يقوله الناس ويقرؤونه. معرفتها أولًا تجعلك تفهم أكثر بكثير، وبسرعة أكبر.",

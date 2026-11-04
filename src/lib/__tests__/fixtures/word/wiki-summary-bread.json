@@ -1,0 +1,49 @@
+{
+  "type": "standard",
+  "title": "Bread",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Bread</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q7802",
+  "titles": {
+    "canonical": "Bread",
+    "normalized": "Bread",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Bread</span></span>"
+  },
+  "pageid": 36969,
+  "thumbnail": {
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Korb_mit_Br%C3%B6tchen.JPG/330px-Korb_mit_Br%C3%B6tchen.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "width": 330,
+    "height": 248
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Korb_mit_Br%C3%B6tchen.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "width": 3456,
+    "height": 2592
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1383452075",
+  "tid": "6892a22a-d6f4-11f1-ad0b-94888c93f98e",
+  "timestamp": "2026-11-02T19:34:24Z",
+  "description": "Food made of flour and water",
+  "description_source": "local",
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Bread",
+      "revisions": "https://en.wikipedia.org/wiki/Bread?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Bread?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Bread"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Bread",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Bread",
+      "edit": "https://en.wikipedia.org/wiki/Bread?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Bread"
+    }
+  },
+  "extract": "Bread is a baked food product made from water, flour, and often yeast. It is a staple food across the world, particularly in Europe and the Middle East. Throughout recorded history and around the world, it has been an important part of many cultures' diets. It is one of the oldest human-made foods, having been of significance since the dawn of agriculture, and plays an essential role in both religious rituals and secular culture.",
+  "extract_html": "<p><b>Bread</b> is a baked food product made from water, flour, and often yeast. It is a staple food across the world, particularly in Europe and the Middle East. Throughout recorded history and around the world, it has been an important part of many cultures' diets. It is one of the oldest human-made foods, having been of significance since the dawn of agriculture, and plays an essential role in both religious rituals and secular culture.</p>"
+}

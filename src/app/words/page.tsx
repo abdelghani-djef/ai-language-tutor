@@ -3,7 +3,7 @@
 import { Check, Plus } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { toast } from "sonner";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -12,12 +12,13 @@ import { useFormat } from "@/lib/format";
 import { useLocale, useT } from "@/lib/i18n";
 import { addCards, createDeck, saveFailed, useHydrated, usePref, useStore, type Deck } from "@/lib/store";
 import { cn } from "@/lib/utils";
+import { wordHref } from "@/lib/word/target";
 import { cards as cardMessages } from "@/messages/cards";
 import { words as messages } from "@/messages/words";
 
 const LANG_KEY = "linguacards:starter-lang";
-/** JSON map of translation language → the starter deck's id. */
-const DECK_KEY = "linguacards:starter-decks";
+/** Where each ready-made list went: JSON map of "lang:pack" → list id. */
+const DECK_KEY = "linguacards:pack-decks";
 const PREVIEW = 8;
 
 const isStarterLang = (v: string): v is StarterLang => (STARTER_LANGS as readonly string[]).includes(v);
@@ -40,21 +41,25 @@ export default function StarterWordsPage() {
   try {
     deckIds = JSON.parse(deckPref);
   } catch {
-    // A damaged preference just means the deck is looked up again.
+    // A damaged preference just means the lists are looked up again.
   }
-  // The saved deck, or after a restore (preferences aren't in backups) the deck that holds this language's pack cards.
-  const deck: Deck | undefined =
-    decks.find((d) => d.id === deckIds[lang] && d.src === "en" && d.tgt === lang) ??
-    decks.find((d) => d.src === "en" && d.tgt === lang && cards.some((c) => c.deckId === d.id && c.pack));
-  const addedPacks = new Set(cards.filter((c) => deck && c.deckId === deck.id && c.pack).map((c) => c.pack));
-  const firstNotAdded = STARTER_PACKS.find((p) => !addedPacks.has(p.id))?.id;
+  /** The list a pack was added to for this language: saved, or found by its cards (preferences aren't in backups). */
+  const deckFor = (packId: string): Deck | undefined => {
+    const saved = decks.find((d) => d.id === deckIds[`${lang}:${packId}`]);
+    if (saved) return saved;
+    const card = cards.find((c) => c.pack === packId && c.tgt === lang);
+    return card ? decks.find((d) => d.id === card.deckId) : undefined;
+  };
+  const firstNotAdded = STARTER_PACKS.find((p) => !deckFor(p.id))?.id;
 
+  // Each ready-made pack becomes its own list, named after the pack, so the
+  // group you chose is the group you see in My words.
   async function addPack(pack: StarterPack) {
     if (adding) return;
     setAdding(pack.id);
     try {
-      const target = deck ?? createDeck(t("deckName", { lang: fmt.languageNameInline(lang) }), "en", lang);
-      if (!deck) setDeckPref(JSON.stringify({ ...deckIds, [lang]: target.id }));
+      const target = createDeck(pack.title[locale], "en", lang);
+      setDeckPref(JSON.stringify({ ...deckIds, [`${lang}:${pack.id}`]: target.id }));
       const made = await addCards(
         target.id,
         "en",
@@ -64,7 +69,7 @@ export default function StarterWordsPage() {
           back: lang === "fr" ? fr : ar,
           pack: pack.id,
           exampleLang: "en",
-          details: { example, emoji: emoji || undefined, tags: [pack.title[locale]] },
+          details: { example, emoji: emoji || undefined },
         })),
       );
       if (saveFailed()) toast.error(tc("saveFailed"));
@@ -104,7 +109,7 @@ export default function StarterWordsPage() {
       {hydrated && (
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {STARTER_PACKS.map((pack) => {
-            const added = addedPacks.has(pack.id);
+            const list = deckFor(pack.id);
             const highlight = pack.id === firstNotAdded;
             return (
               <li
@@ -130,18 +135,30 @@ export default function StarterWordsPage() {
                 <p className="text-sm text-muted-foreground">
                   {/* The English list is its own left-to-right run inside the page's direction. */}
                   <bdi lang="en" dir="ltr">
-                    {pack.words
-                      .slice(0, PREVIEW)
-                      .map(([en]) => en)
-                      .join(", ")}
+                    {pack.words.slice(0, PREVIEW).map(([en], i) => (
+                      <Fragment key={en}>
+                        {i > 0 && ", "}
+                        <Link
+                          href={wordHref({ word: en, lang: "en", to: lang, pack: pack.id })}
+                          className="underline-offset-2 hover:text-foreground hover:underline"
+                        >
+                          {en}
+                        </Link>
+                      </Fragment>
+                    ))}
                   </bdi>{" "}
                   {t("andMore", { count: pack.words.length - PREVIEW })}
                 </p>
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-sm text-muted-foreground">{t("wordCount", { count: pack.words.length })}</span>
-                  {added ? (
-                    <span className="flex items-center gap-1 text-sm font-medium text-emerald-600 dark:text-emerald-400">
-                      <Check className="size-4" aria-hidden /> {t("added")}
+                  {list ? (
+                    <span className="flex items-center gap-3">
+                      <span className="flex items-center gap-1 text-sm font-medium text-emerald-600 dark:text-emerald-400">
+                        <Check className="size-4" aria-hidden /> {t("added")}
+                      </span>
+                      <Link href={`/deck?id=${list.id}`} className={buttonVariants({ size: "sm", variant: "outline" })}>
+                        {t("openList")}
+                      </Link>
                     </span>
                   ) : (
                     <Button
@@ -163,9 +180,9 @@ export default function StarterWordsPage() {
       <section className="grid max-w-2xl gap-2">
         <h2 className="font-display text-xl font-semibold">{t("why")}</h2>
         <p className="text-muted-foreground">{t("whyText")}</p>
-        {deck && (
+        {STARTER_PACKS.some((p) => deckFor(p.id)) && (
           <div className="mt-2 flex flex-wrap gap-2">
-            <Link href={`/study?deck=${deck.id}`} className={buttonVariants()}>
+            <Link href="/study" className={buttonVariants()}>
               {t("study")}
             </Link>
             <Link href="/story" className={buttonVariants({ variant: "outline" })}>

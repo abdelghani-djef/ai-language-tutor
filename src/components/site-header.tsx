@@ -16,10 +16,11 @@ import { cn } from "@/lib/utils";
 import { common } from "@/messages/common";
 import { rewards } from "@/messages/rewards";
 
+// "My words" covers every page about your lists: the lists, one list, ready-made lists, adding words and a word's page.
 const LINKS = [
-  { href: "/add", label: "navTranslate" },
-  { href: "/decks", label: "navDecks" },
+  { href: "/decks", label: "navDecks", also: ["/deck", "/words", "/add", "/word"] },
   { href: "/study", label: "navStudy" },
+  { href: "/story", label: "navStories" },
   { href: "/stats", label: "navStats" },
 ] as const;
 
@@ -47,7 +48,10 @@ export function SiteHeader() {
         </Link>
         <nav aria-label={t("mainNav")} className="order-last flex basis-full items-center gap-1 overflow-x-auto sm:order-none sm:flex-1 sm:basis-auto">
           {LINKS.map((l) => {
-            const active = pathname.startsWith(l.href);
+            const active =
+              pathname.startsWith(`${l.href}/`) ||
+              pathname === l.href ||
+              ("also" in l && l.also.some((p) => pathname === p || pathname.startsWith(`${p}/`)));
             return (
               <Link
                 key={l.href}

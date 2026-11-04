@@ -1,0 +1,93 @@
+{
+  "revision": "1383452075",
+  "tid": "6892a2b5-d6f4-11f1-8d68-370991982147",
+  "items": [
+    {
+      "title": "File:Korb_mit_Brötchen.JPG",
+      "leadImage": true,
+      "section_id": 0,
+      "type": "image",
+      "showInGallery": true,
+      "srcset": [
+        {
+          "src": "//thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Korb_mit_Br%C3%B6tchen.JPG/500px-Korb_mit_Br%C3%B6tchen.JPG?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "scale": "1x"
+        },
+        {
+          "src": "//thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Korb_mit_Br%C3%B6tchen.JPG/1280px-Korb_mit_Br%C3%B6tchen.JPG?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "scale": "2x"
+        }
+      ]
+    },
+    {
+      "title": "File:Woman_baking_bread-E_25213-IMG_4514-gradient.jpg",
+      "leadImage": false,
+      "section_id": 2,
+      "type": "image",
+      "caption": {
+        "html": "<i id=\"mwXw\">Woman baking bread</i> (<abbr title=\"circa\" about=\"#mwt41\" typeof=\"mw:Transclusion\" data-mw=\"{&quot;parts&quot;:[{&quot;template&quot;:{&quot;target&quot;:{&quot;wt&quot;:&quot;circa&quot;,&quot;href&quot;:&quot;./Template:Circa&quot;},&quot;params&quot;:{&quot;1&quot;:{&quot;wt&quot;:&quot;2200 BC&quot;}},&quot;i&quot;:0}}]}\" id=\"mwYA\">c.</abbr><span style=\"white-space:nowrap;\" about=\"#mwt41\" id=\"mwYQ\"><span typeof=\"mw:Entity\"> </span>2200 BC</span>); <a rel=\"mw:WikiLink\" href=\"./Louvre\" title=\"Louvre\" id=\"mwYg\">Louvre</a>",
+        "text": "Woman baking bread (c. 2200 BC); Louvre"
+      },
+      "showInGallery": true,
+      "srcset": [
+        {
+          "src": "//thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Woman_baking_bread-E_25213-IMG_4514-gradient.jpg/500px-Woman_baking_bread-E_25213-IMG_4514-gradient.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "scale": "1x"
+        },
+        {
+          "src": "//thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Woman_baking_bread-E_25213-IMG_4514-gradient.jpg/1280px-Woman_baking_bread-E_25213-IMG_4514-gradient.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "scale": "2x"
+        }
+      ]
+    },
+    {
+      "title": "File:Breadindia.jpg",
+      "leadImage": false,
+      "section_id": 3,
+      "type": "image",
+      "showInGallery": true,
+      "srcset": [
+        {
+          "src": "//thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Breadindia.jpg/500px-Breadindia.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "scale": "1x"
+        }
+      ]
+    },
+    {
+      "title": "File:Rhof-brotBacken.ogv",
+      "leadImage": false,
+      "section_id": 6,
+      "type": "video",
+      "caption": {
+        "html": "Baking bread at the <a rel=\"mw:WikiLink\" href=\"./Roscheider_Hof_Open_Air_Museum\" title=\"Roscheider Hof Open Air Museum\" class=\"mw-redirect\" id=\"mwAT0\">Roscheider Hof Open Air Museum</a>",
+        "text": "Baking bread at the Roscheider Hof Open Air Museum"
+      },
+      "sources": [
+        {
+          "url": "//upload.wikimedia.org/wikipedia/commons/transcoded/5/5f/Rhof-brotBacken.ogv/Rhof-brotBacken.ogv.240p.vp9.webm",
+          "mime": "video/webm",
+          "codecs": [
+            "vp9",
+            "opus"
+          ],
+          "name": null,
+          "short_name": null,
+          "width": "312",
+          "height": "240"
+        },
+        {
+          "url": "//upload.wikimedia.org/wikipedia/commons/transcoded/5/5f/Rhof-brotBacken.ogv/Rhof-brotBacken.ogv.360p.mpeg4.mov",
+          "mime": "video/quicktime",
+          "codecs": [
+            "mp4v"
+          ],
+          "name": null,
+          "short_name": null,
+          "width": "416",
+          "height": "320"
+        }
+      ],
+      "showInGallery": true
+    }
+  ]
+}

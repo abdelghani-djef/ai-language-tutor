@@ -1,0 +1,840 @@
+{
+  "pack": "school",
+  "complete": true,
+  "words": {
+    "school": {
+      "scenes": [
+        {
+          "place": "school-gate",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Have a good day at school!", "fr": "Bonne journée à l’école !", "ar": "يوما سعيدا في المدرسة!" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Thank you, Mum. See you after school!", "fr": "Merci, maman. À tout à l’heure, après l’école !", "ar": "شكرا يا أمي. أراك بعد المدرسة!" } }
+          ]
+        },
+        {
+          "place": "bus",
+          "lines": [
+            { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "Is this the bus to school?", "fr": "C’est bien le bus pour l’école ?", "ar": "هل هذه هي الحافلة إلى المدرسة؟" } },
+            { "who": { "en": "Driver", "fr": "Le chauffeur", "ar": "السائق" }, "text": { "en": "Yes, it is. Sit down, please.", "fr": "Oui, c’est ça. Assieds-toi, s’il te plaît.", "ar": "نعم. اجلس من فضلك." } }
+          ]
+        },
+        {
+          "place": "kitchen",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Eat your breakfast. School starts at eight.", "fr": "Mange ton petit-déjeuner. L’école commence à huit heures.", "ar": "تناولي فطورك. تبدأ المدرسة في الساعة الثامنة." } },
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "I am ready, Dad!", "fr": "Je suis prête, papa !", "ar": "أنا جاهزة يا أبي!" } }
+          ]
+        },
+        {
+          "place": "park",
+          "lines": [
+            { "who": { "en": "Yasmine", "fr": "Yasmine", "ar": "ياسمين" }, "text": { "en": "Do you like your new school?", "fr": "Tu aimes ta nouvelle école ?", "ar": "هل تحب مدرستك الجديدة؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yes! It is big, and my teacher is nice.", "fr": "Oui ! Elle est grande, et ma maîtresse est gentille.", "ar": "نعم! إنها كبيرة، ومعلمتي لطيفة." } }
+          ]
+        }
+      ],
+      "pictures": [{"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Rajshahi_University_School.jpg/330px-Rajshahi_University_School.jpg", "page": "https://commons.wikimedia.org/wiki/File:Rajshahi_University_School.jpg", "author": "Rocky Masum", "licence": "CC BY-SA 4.0", "caption": "A school building"}]
+    },
+    "teacher": {
+      "scenes": [
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Good morning, everyone. I am your new teacher, Mrs Haddad.", "fr": "Bonjour à tous. Je suis votre nouvelle maîtresse, madame Haddad.", "ar": "صباح الخير جميعا. أنا معلمتكم الجديدة، السيدة حداد." } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Good morning, Mrs Haddad!", "fr": "Bonjour, madame Haddad !", "ar": "صباح الخير يا سيدة حداد!" } }
+          ]
+        },
+        {
+          "place": "home",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Who is your teacher this year?", "fr": "Qui est ton maître cette année ?", "ar": "من معلمك هذه السنة؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Mr Lopez. He is very kind.", "fr": "Monsieur Lopez. Il est très gentil.", "ar": "السيد لوبيز. إنه لطيف جدا." } }
+          ]
+        },
+        {
+          "place": "music-room",
+          "lines": [
+            { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "Our music teacher sings very well.", "fr": "Notre professeure de musique chante très bien.", "ar": "معلمة الموسيقى عندنا تغني جيدا جدا." } },
+            { "who": { "en": "Maya", "fr": "Maya", "ar": "مايا" }, "text": { "en": "Yes, and she is fun too!", "fr": "Oui, et elle est drôle aussi !", "ar": "نعم، وهي مرحة أيضا!" } }
+          ]
+        },
+        {
+          "place": "playground",
+          "lines": [
+            { "who": { "en": "Inès", "fr": "Inès", "ar": "إيناس" }, "text": { "en": "Where is the teacher?", "fr": "Où est la maîtresse ?", "ar": "أين المعلمة؟" } },
+            { "who": { "en": "Adam", "fr": "Adam", "ar": "آدم" }, "text": { "en": "She is in the classroom. Let’s go and ask her.", "fr": "Elle est dans la classe. Allons lui demander.", "ar": "إنها في الصف. هيا نذهب ونسألها." } }
+          ]
+        }
+      ],
+      "pictures": [{"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/African_teacher_teaching_under_a_tree.jpg/330px-African_teacher_teaching_under_a_tree.jpg", "page": "https://commons.wikimedia.org/wiki/File:African_teacher_teaching_under_a_tree.jpg", "author": "Tamandani-Lungu", "licence": "CC BY-SA 4.0", "caption": "A teacher with her students"}]
+    },
+    "student": {
+      "scenes": [
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "We have a new student today. This is Kenji.", "fr": "Nous avons un nouvel élève aujourd’hui. Voici Kenji.", "ar": "لدينا طالب جديد اليوم. هذا كينجي." } },
+            { "who": { "en": "Kenji", "fr": "Kenji", "ar": "كينجي" }, "text": { "en": "Hello, everyone!", "fr": "Bonjour à tous !", "ar": "مرحبا بالجميع!" } }
+          ]
+        },
+        {
+          "place": "library",
+          "lines": [
+            { "who": { "en": "Librarian", "fr": "La bibliothécaire", "ar": "أمينة المكتبة" }, "text": { "en": "Students can take three books.", "fr": "Les élèves peuvent prendre trois livres.", "ar": "يمكن للطلاب أن يأخذوا ثلاثة كتب." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Great! I want these three, please.", "fr": "Super ! Je voudrais ces trois-là, s’il vous plaît.", "ar": "رائع! أريد هذه الثلاثة، من فضلك." } }
+          ]
+        },
+        {
+          "place": "museum",
+          "lines": [
+            { "who": { "en": "Guide", "fr": "Le guide", "ar": "المرشد" }, "text": { "en": "Hello, students! Please stay with me.", "fr": "Bonjour, les élèves ! Restez avec moi, s’il vous plaît.", "ar": "مرحبا أيها الطلاب! ابقوا معي من فضلكم." } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Yes, sir!", "fr": "Oui, monsieur !", "ar": "حاضر يا سيدي!" } }
+          ]
+        },
+        {
+          "place": "school-gate",
+          "lines": [
+            { "who": { "en": "Mrs Okafor", "fr": "Madame Okafor", "ar": "السيدة أوكافور" }, "text": { "en": "Excuse me, are you a student at this school?", "fr": "Pardon, tu es élève dans cette école ?", "ar": "عفوا، هل أنت طالبة في هذه المدرسة؟" } },
+            { "who": { "en": "Sofia", "fr": "Sofia", "ar": "صوفيا" }, "text": { "en": "Yes, I am. I am in Mr Ali’s class.", "fr": "Oui. Je suis dans la classe de monsieur Ali.", "ar": "نعم. أنا في صف السيد علي." } }
+          ]
+        }
+      ],
+      "pictures": [{"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Primary_Laos2.jpg/330px-Primary_Laos2.jpg", "page": "https://commons.wikimedia.org/wiki/File:Primary_Laos2.jpg", "author": "Masae", "licence": "Public domain", "caption": "Students working together at school"}, {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Schoolgirls_in_Street_-_Asahikawa_-_Hokkaido_-_Japan_%2848018181627%29.jpg/330px-Schoolgirls_in_Street_-_Asahikawa_-_Hokkaido_-_Japan_%2848018181627%29.jpg", "page": "https://commons.wikimedia.org/wiki/File:Schoolgirls_in_Street_-_Asahikawa_-_Hokkaido_-_Japan_(48018181627).jpg", "author": "Adam Jones from Kelowna, BC, Canada", "licence": "CC BY-SA 2.0", "caption": "Students with their school bags"}]
+    },
+    "learn": {
+      "scenes": [
+        {
+          "place": "swimming-pool",
+          "lines": [
+            { "who": { "en": "Zara", "fr": "Zara", "ar": "زارا" }, "text": { "en": "I want to learn to swim.", "fr": "Je veux apprendre à nager.", "ar": "أريد أن أتعلم السباحة." } },
+            { "who": { "en": "Swimming teacher", "fr": "Le maître-nageur", "ar": "مدرب السباحة" }, "text": { "en": "Good! We can start today.", "fr": "Très bien ! On peut commencer aujourd’hui.", "ar": "جيد! يمكننا أن نبدأ اليوم." } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Today we learn ten new words.", "fr": "Aujourd’hui, nous apprenons dix nouveaux mots.", "ar": "اليوم نتعلم عشر كلمات جديدة." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Ten? That is a lot!", "fr": "Dix ? C’est beaucoup !", "ar": "عشر؟ هذا كثير!" } }
+          ]
+        },
+        {
+          "place": "bike-path",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "You learned to ride a bike so fast!", "fr": "Tu as appris à faire du vélo si vite !", "ar": "لقد تعلمت ركوب الدراجة بسرعة كبيرة!" } },
+            { "who": { "en": "Mei", "fr": "Mei", "ar": "مي" }, "text": { "en": "Thank you, Dad! Look at me!", "fr": "Merci, papa ! Regarde-moi !", "ar": "شكرا يا أبي! انظر إلي!" } }
+          ]
+        },
+        {
+          "place": "kitchen",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "Do you want to learn to make bread?", "fr": "Tu veux apprendre à faire du pain ?", "ar": "هل تريد أن تتعلم صنع الخبز؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yes, please, Grandma!", "fr": "Oui, s’il te plaît, mamie !", "ar": "نعم، من فضلك يا جدتي!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "class": {
+      "scenes": [
+        {
+          "place": "school-gate",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Which class are you in this year?", "fr": "Tu es dans quelle classe cette année ?", "ar": "في أي صف أنت هذه السنة؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I am in Mrs Benali’s class.", "fr": "Je suis dans la classe de madame Benali.", "ar": "أنا في صف السيدة بنعلي." } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "Well done, class! You all worked very hard.", "fr": "Bravo, la classe ! Vous avez tous très bien travaillé.", "ar": "أحسنتم يا تلاميذ الصف! لقد عملتم جميعا بجد كبير." } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Thank you, sir!", "fr": "Merci, maître !", "ar": "شكرا يا أستاذ!" } }
+          ]
+        },
+        {
+          "place": "canteen",
+          "lines": [
+            { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "Is Leo in your class?", "fr": "Léo est dans ta classe ?", "ar": "هل ليو في صفك؟" } },
+            { "who": { "en": "Aisha", "fr": "Aïcha", "ar": "عائشة" }, "text": { "en": "Yes! He sits next to me.", "fr": "Oui ! Il est assis à côté de moi.", "ar": "نعم! إنه يجلس بجانبي." } }
+          ]
+        },
+        {
+          "place": "zoo",
+          "lines": [
+            { "who": { "en": "Zookeeper", "fr": "Le soigneur", "ar": "حارس الحديقة" }, "text": { "en": "Hello! Is this your class?", "fr": "Bonjour ! C’est votre classe ?", "ar": "مرحبا! هل هذا صفك؟" } },
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Yes, twenty children. They love animals!", "fr": "Oui, vingt enfants. Ils adorent les animaux !", "ar": "نعم، عشرون طفلا. إنهم يحبون الحيوانات!" } }
+          ]
+        }
+      ],
+      "pictures": [{"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/PikiWiki_Israel_13790_Givat_Brenner_Children_Education.jpg/330px-PikiWiki_Israel_13790_Givat_Brenner_Children_Education.jpg", "page": "https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_13790_Givat_Brenner_Children_Education.jpg", "author": "חנן בהיר", "licence": "Public domain", "caption": "A class of children at their desks"}]
+    },
+    "book": {
+      "scenes": [
+        {
+          "place": "library",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Can I take this book home?", "fr": "Je peux emporter ce livre à la maison ?", "ar": "هل يمكنني أخذ هذا الكتاب إلى البيت؟" } },
+            { "who": { "en": "Librarian", "fr": "Le bibliothécaire", "ar": "أمين المكتبة" }, "text": { "en": "Yes. Bring it back next week.", "fr": "Oui. Rapporte-le la semaine prochaine.", "ar": "نعم. أعده الأسبوع القادم." } }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Time for bed. Do you want a book?", "fr": "C’est l’heure de dormir. Tu veux un livre ?", "ar": "حان وقت النوم. هل تريدين كتابا؟" } },
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "Yes! The book about the little cat, please.", "fr": "Oui ! Le livre sur le petit chat, s’il te plaît.", "ar": "نعم! كتاب القطة الصغيرة، من فضلك." } }
+          ]
+        },
+        {
+          "place": "bookshop",
+          "lines": [
+            { "who": { "en": "Bookseller", "fr": "La libraire", "ar": "البائعة" }, "text": { "en": "This book is for children. It has a lot of pictures.", "fr": "Ce livre est pour les enfants. Il y a beaucoup d’images.", "ar": "هذا الكتاب للأطفال. فيه صور كثيرة." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I like it. How much is it?", "fr": "Il me plaît. Il coûte combien ?", "ar": "يعجبني. كم ثمنه؟" } }
+          ]
+        },
+        {
+          "place": "train",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "The trip is long. Did you bring your book?", "fr": "Le voyage est long. Tu as pris ton livre ?", "ar": "الرحلة طويلة. هل أحضرت كتابك؟" } },
+            { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "Yes, it is in my bag.", "fr": "Oui, il est dans mon sac.", "ar": "نعم، إنه في حقيبتي." } }
+          ]
+        }
+      ],
+      "pictures": [{"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Stack_of_multicolored_books_on_a_table.jpg/330px-Stack_of_multicolored_books_on_a_table.jpg", "page": "https://commons.wikimedia.org/wiki/File:Stack_of_multicolored_books_on_a_table.jpg", "author": "Alexander Grey", "licence": "CC0", "caption": "A pile of books"}, {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Latin_dictionary.jpg/330px-Latin_dictionary.jpg", "page": "https://commons.wikimedia.org/wiki/File:Latin_dictionary.jpg", "author": "Dr. Marcus Gossler", "licence": "CC BY-SA 3.0", "caption": "An open book on a table"}]
+    },
+    "lesson": {
+      "scenes": [
+        {
+          "place": "music-room",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le professeur", "ar": "المعلم" }, "text": { "en": "Today’s lesson is a new song.", "fr": "La leçon d’aujourd’hui, c’est une nouvelle chanson.", "ar": "درس اليوم أغنية جديدة." } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Yay! We love singing!", "fr": "Youpi ! On adore chanter !", "ar": "رائع! نحن نحب الغناء!" } }
+          ]
+        },
+        {
+          "place": "swimming-pool",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Your swimming lesson starts at ten.", "fr": "Ta leçon de natation commence à dix heures.", "ar": "يبدأ درس السباحة في الساعة العاشرة." } },
+            { "who": { "en": "Adam", "fr": "Adam", "ar": "آدم" }, "text": { "en": "I have my towel!", "fr": "J’ai ma serviette !", "ar": "معي منشفتي!" } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Close your books. The lesson is over.", "fr": "Fermez vos livres. La leçon est finie.", "ar": "أغلقوا كتبكم. انتهى الدرس." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Thank you, Miss!", "fr": "Merci, maîtresse !", "ar": "شكرا يا معلمتي!" } }
+          ]
+        },
+        {
+          "place": "living-room",
+          "lines": [
+            { "who": { "en": "Fatima", "fr": "Fatima", "ar": "فاطمة" }, "text": { "en": "I liked the lesson today. It was about the sea.", "fr": "J’ai aimé la leçon d’aujourd’hui. C’était sur la mer.", "ar": "أعجبني درس اليوم. كان عن البحر." } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Tell me about it!", "fr": "Raconte-moi !", "ar": "احكي لي عنه!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "study": {
+      "scenes": [
+        {
+          "place": "library",
+          "lines": [
+            { "who": { "en": "Malik", "fr": "Malik", "ar": "مالك" }, "text": { "en": "Shh! I am studying for my test.", "fr": "Chut ! Je révise pour mon contrôle.", "ar": "صه! أنا أدرس لاختباري." } },
+            { "who": { "en": "Chen", "fr": "Chen", "ar": "تشين" }, "text": { "en": "Sorry! Can I study with you?", "fr": "Pardon ! Je peux réviser avec toi ?", "ar": "آسف! هل يمكنني أن أدرس معك؟" } }
+          ]
+        },
+        {
+          "place": "university",
+          "lines": [
+            { "who": { "en": "Sofia", "fr": "Sofia", "ar": "صوفيا" }, "text": { "en": "What do you study here?", "fr": "Qu’est-ce que tu étudies ici ?", "ar": "ماذا تدرس هنا؟" } },
+            { "who": { "en": "Ravi", "fr": "Ravi", "ar": "رافي" }, "text": { "en": "I study languages: English and Arabic.", "fr": "J’étudie les langues : l’anglais et l’arabe.", "ar": "أدرس اللغات: الإنجليزية والعربية." } }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "It is late. Stop studying and go to sleep.", "fr": "Il est tard. Arrête de travailler et va dormir.", "ar": "الوقت متأخر. توقفي عن الدراسة واذهبي إلى النوم." } },
+            { "who": { "en": "Yasmine", "fr": "Yasmine", "ar": "ياسمين" }, "text": { "en": "OK, Mum. Good night!", "fr": "D’accord, maman. Bonne nuit !", "ar": "حسنا يا أمي. تصبحين على خير!" } }
+          ]
+        },
+        {
+          "place": "cafe",
+          "lines": [
+            { "who": { "en": "Amara", "fr": "Amara", "ar": "أمارا" }, "text": { "en": "My brother studies here every afternoon.", "fr": "Mon frère étudie ici tous les après-midi.", "ar": "أخي يدرس هنا كل يوم بعد الظهر." } },
+            { "who": { "en": "Hugo", "fr": "Hugo", "ar": "هوغو" }, "text": { "en": "It is quiet, and the tea is good!", "fr": "C’est calme, et le thé est bon !", "ar": "المكان هادئ، والشاي لذيذ!" } }
+          ]
+        }
+      ],
+      "pictures": [{"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Sias_Library_-_Students_Studying_2017.jpg/330px-Sias_Library_-_Students_Studying_2017.jpg", "page": "https://commons.wikimedia.org/wiki/File:Sias_Library_-_Students_Studying_2017.jpg", "author": "Gary Todd", "licence": "CC0", "caption": "Students studying in a library"}]
+    },
+    "teach": {
+      "scenes": [
+        {
+          "place": "garden",
+          "lines": [
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "Come, I can teach you about plants.", "fr": "Viens, je vais t’apprendre des choses sur les plantes.", "ar": "تعال، سأعلّمك أشياء عن النباتات." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yes! What is this flower?", "fr": "Oui ! C’est quoi, cette fleur ?", "ar": "نعم! ما هذه الزهرة؟" } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Inès", "fr": "Inès", "ar": "إيناس" }, "text": { "en": "What do you teach, Mr Kim?", "fr": "Qu’est-ce que vous enseignez, monsieur Kim ?", "ar": "ماذا تعلّم يا سيد كيم؟" } },
+            { "who": { "en": "Teacher", "fr": "Le professeur", "ar": "المعلم" }, "text": { "en": "I teach English and music.", "fr": "J’enseigne l’anglais et la musique.", "ar": "أعلّم اللغة الإنجليزية والموسيقى." } }
+          ]
+        },
+        {
+          "place": "football-pitch",
+          "lines": [
+            { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "Can you teach me to kick the ball like you?", "fr": "Tu peux m’apprendre à taper dans le ballon comme toi ?", "ar": "هل يمكنك أن تعلّمني ركل الكرة مثلك؟" } },
+            { "who": { "en": "Big brother", "fr": "Le grand frère", "ar": "الأخ الأكبر" }, "text": { "en": "Sure! Watch my foot.", "fr": "Bien sûr ! Regarde mon pied.", "ar": "بالتأكيد! انظر إلى قدمي." } }
+          ]
+        },
+        {
+          "place": "dining-table",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Aunt Nadia teaches at a big school.", "fr": "Tante Nadia enseigne dans une grande école.", "ar": "العمة نادية تدرّس في مدرسة كبيرة." } },
+            { "who": { "en": "Zara", "fr": "Zara", "ar": "زارا" }, "text": { "en": "Wow! I want to be a teacher too.", "fr": "Waouh ! Moi aussi, je veux être maîtresse.", "ar": "رائع! أريد أن أصبح معلمة أنا أيضا." } }
+          ]
+        }
+      ],
+      "pictures": [{"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/ASC_Leiden_-_Coutinho_Collection_-_F_18_-_School_in_Candjambary%2C_Guinea-Bissau_-_Teacher_explaining_-_1974.tif/lossy-page1-330px-ASC_Leiden_-_Coutinho_Collection_-_F_18_-_School_in_Candjambary%2C_Guinea-Bissau_-_Teacher_explaining_-_1974.tif.jpg", "page": "https://commons.wikimedia.org/wiki/File:ASC_Leiden_-_Coutinho_Collection_-_F_18_-_School_in_Candjambary,_Guinea-Bissau_-_Teacher_explaining_-_1974.tif", "author": "Roel Coutinho", "licence": "CC BY-SA 4.0", "caption": "A teacher teaching at the board"}]
+    },
+    "question": {
+      "scenes": [
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Excuse me, can I ask a question?", "fr": "Pardon, je peux poser une question ?", "ar": "عفوا، هل يمكنني أن أطرح سؤالا؟" } },
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Of course. What is it?", "fr": "Bien sûr. Qu’est-ce qu’il y a ?", "ar": "بالتأكيد. ما هو؟" } }
+          ]
+        },
+        {
+          "place": "museum",
+          "lines": [
+            { "who": { "en": "Guide", "fr": "La guide", "ar": "المرشدة" }, "text": { "en": "Do you have any questions?", "fr": "Vous avez des questions ?", "ar": "هل لديكم أي أسئلة؟" } },
+            { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "Yes! How old is this boat?", "fr": "Oui ! Quel âge a ce bateau ?", "ar": "نعم! كم عمر هذا القارب؟" } }
+          ]
+        },
+        {
+          "place": "car",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "So many questions! We are nearly there.", "fr": "Que de questions ! On est presque arrivés.", "ar": "ما أكثر أسئلتك! لقد اقتربنا من الوصول." } },
+            { "who": { "en": "Lucas", "fr": "Lucas", "ar": "لوكاس" }, "text": { "en": "One more question: are we there yet?", "fr": "Encore une question : on est arrivés ?", "ar": "سؤال أخير: هل وصلنا؟" } }
+          ]
+        },
+        {
+          "place": "doctor",
+          "lines": [
+            { "who": { "en": "Doctor", "fr": "La médecin", "ar": "الطبيبة" }, "text": { "en": "I have a question for you. Does your arm hurt?", "fr": "J’ai une question pour toi. Tu as mal au bras ?", "ar": "لدي سؤال لك. هل تؤلمك ذراعك؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Only a little.", "fr": "Juste un peu.", "ar": "قليلا فقط." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "answer": {
+      "scenes": [
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "Who knows the answer?", "fr": "Qui connaît la réponse ?", "ar": "من يعرف الإجابة؟" } },
+            { "who": { "en": "Aisha", "fr": "Aïcha", "ar": "عائشة" }, "text": { "en": "Me! It is twelve.", "fr": "Moi ! C’est douze.", "ar": "أنا! الجواب اثنا عشر." } },
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "Yes, that is the right answer!", "fr": "Oui, c’est la bonne réponse !", "ar": "نعم، هذه هي الإجابة الصحيحة!" } }
+          ]
+        },
+        {
+          "place": "living-room",
+          "lines": [
+            { "who": { "en": "Mei", "fr": "Mei", "ar": "مي" }, "text": { "en": "Dad, what is the answer to number three?", "fr": "Papa, quelle est la réponse à la question trois ?", "ar": "أبي، ما الإجابة عن السؤال رقم ثلاثة؟" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Think again. You can find it!", "fr": "Réfléchis encore. Tu peux la trouver !", "ar": "فكري مرة أخرى. يمكنك أن تجديها!" } }
+          ]
+        },
+        {
+          "place": "family-party",
+          "lines": [
+            { "who": { "en": "Uncle", "fr": "L’oncle", "ar": "العم" }, "text": { "en": "Here is a question: which animal says moo?", "fr": "Voici une question : quel animal fait meuh ?", "ar": "إليك سؤالا: أي حيوان يقول موو؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I know the answer: a cow!", "fr": "Je connais la réponse : la vache !", "ar": "أعرف الإجابة: البقرة!" } }
+          ]
+        },
+        {
+          "place": "science-lab",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La professeure", "ar": "المعلمة" }, "text": { "en": "Look at the plant. Then write your answer on the paper.", "fr": "Regardez la plante. Ensuite, écrivez votre réponse sur la feuille.", "ar": "انظروا إلى النبتة. ثم اكتبوا إجابتكم على الورقة." } },
+            { "who": { "en": "Hugo", "fr": "Hugo", "ar": "هوغو" }, "text": { "en": "Can I use a pencil?", "fr": "Je peux utiliser un crayon ?", "ar": "هل يمكنني استخدام قلم رصاص؟" } },
+            { "who": { "en": "Teacher", "fr": "La professeure", "ar": "المعلمة" }, "text": { "en": "Yes, of course.", "fr": "Oui, bien sûr.", "ar": "نعم، بالتأكيد." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "word": {
+      "scenes": [
+        {
+          "place": "library",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "What does this word mean?", "fr": "Qu’est-ce que ce mot veut dire ?", "ar": "ما معنى هذه الكلمة؟" } },
+            { "who": { "en": "Librarian", "fr": "La bibliothécaire", "ar": "أمينة المكتبة" }, "text": { "en": "Look in this big book. It has all the words!", "fr": "Regarde dans ce gros livre. Tous les mots sont dedans !", "ar": "ابحث في هذا الكتاب الكبير. فيه كل الكلمات!" } }
+          ]
+        },
+        {
+          "place": "home",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Listen! The baby said her first word!", "fr": "Écoute ! Le bébé a dit son premier mot !", "ar": "اسمعي! قالت الطفلة كلمتها الأولى!" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Really? What was it?", "fr": "C’est vrai ? C’était quoi ?", "ar": "حقا؟ ما هي؟" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Mama!", "fr": "Maman !", "ar": "ماما!" } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "Write five new words in your book.", "fr": "Écrivez cinq nouveaux mots dans votre cahier.", "ar": "اكتبوا خمس كلمات جديدة في دفاتركم." } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Five words? OK!", "fr": "Cinq mots ? D’accord !", "ar": "خمس كلمات؟ حسنا!" } }
+          ]
+        },
+        {
+          "place": "playground",
+          "lines": [
+            { "who": { "en": "Mei", "fr": "Mei", "ar": "مي" }, "text": { "en": "Say a word, any word!", "fr": "Dis un mot, n’importe lequel !", "ar": "قل كلمة، أي كلمة!" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Banana!", "fr": "Banane !", "ar": "موزة!" } },
+            { "who": { "en": "Mei", "fr": "Mei", "ar": "مي" }, "text": { "en": "Ha ha! Good one!", "fr": "Ha ha ! Bien trouvé !", "ar": "ها ها! اختيار جيد!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "test": {
+      "scenes": [
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "We have a test tomorrow. Study page twenty.", "fr": "Nous avons un contrôle demain. Révisez la page vingt.", "ar": "لدينا اختبار غدا. ادرسوا الصفحة العشرين." } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "OK, Mr Ali.", "fr": "D’accord, monsieur Ali.", "ar": "حسنا يا سيد علي." } }
+          ]
+        },
+        {
+          "place": "school-gate",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "How was your test?", "fr": "Comment s’est passé ton contrôle ?", "ar": "كيف كان اختبارك؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Good! I knew all the answers.", "fr": "Bien ! Je connaissais toutes les réponses.", "ar": "كان جيدا! كنت أعرف كل الإجابات." } }
+          ]
+        },
+        {
+          "place": "dining-table",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "You look sad. What is wrong?", "fr": "Tu as l’air triste. Qu’est-ce qui ne va pas ?", "ar": "تبدو حزينا. ما المشكلة؟" } },
+            { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "I made mistakes in my test.", "fr": "J’ai fait des erreurs à mon contrôle.", "ar": "ارتكبت أخطاء في اختباري." } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "That is OK. Next time you can do better.", "fr": "Ce n’est pas grave. La prochaine fois, tu feras mieux.", "ar": "لا بأس. في المرة القادمة ستكون أفضل." } }
+          ]
+        },
+        {
+          "place": "bus",
+          "lines": [
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "Are you ready for the science test?", "fr": "Tu es prêt pour le contrôle de sciences ?", "ar": "هل أنت مستعد لاختبار العلوم؟" } },
+            { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "Yes, I studied all weekend!", "fr": "Oui, j’ai révisé tout le week-end !", "ar": "نعم، درست طوال عطلة نهاية الأسبوع!" } }
+          ]
+        }
+      ],
+      "pictures": [{"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Students_writing_exams.jpg/330px-Students_writing_exams.jpg", "page": "https://commons.wikimedia.org/wiki/File:Students_writing_exams.jpg", "author": "Abdul-Hanan Chambihi", "licence": "CC BY-SA 4.0", "caption": "Pupils doing a test in class"}]
+    },
+    "homework": {
+      "scenes": [
+        {
+          "place": "living-room",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "No TV now. Do your homework first.", "fr": "Pas de télé maintenant. Fais d’abord tes devoirs.", "ar": "لا تلفاز الآن. أنجز واجبك أولا." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "OK, Mum. It is only one page.", "fr": "D’accord, maman. C’est juste une page.", "ar": "حسنا يا أمي. إنها صفحة واحدة فقط." } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Please give me your homework.", "fr": "Donnez-moi vos devoirs, s’il vous plaît.", "ar": "أعطوني واجباتكم من فضلكم." } },
+            { "who": { "en": "Lucas", "fr": "Lucas", "ar": "لوكاس" }, "text": { "en": "Oh no, my homework is at home!", "fr": "Oh non, mes devoirs sont à la maison !", "ar": "أوه، لا! واجبي في البيت!" } }
+          ]
+        },
+        {
+          "place": "grandparents-house",
+          "lines": [
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "Do you have homework today?", "fr": "Tu as des devoirs aujourd’hui ?", "ar": "هل لديك واجب منزلي اليوم؟" } },
+            { "who": { "en": "Inès", "fr": "Inès", "ar": "إيناس" }, "text": { "en": "Yes. Can you help me, Grandpa?", "fr": "Oui. Tu peux m’aider, papi ?", "ar": "نعم. هل يمكنك مساعدتي يا جدي؟" } }
+          ]
+        },
+        {
+          "place": "kitchen",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Dinner is ready! Is your homework finished?", "fr": "Le dîner est prêt ! Tes devoirs sont finis ?", "ar": "العشاء جاهز! هل أنهيت واجبك؟" } },
+            { "who": { "en": "Chen", "fr": "Chen", "ar": "تشين" }, "text": { "en": "Yes, Dad. I finished it!", "fr": "Oui, papa. Je les ai finis !", "ar": "نعم يا أبي. أنهيته!" } }
+          ]
+        }
+      ],
+      "pictures": [{"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Homework_02.jpg/330px-Homework_02.jpg", "page": "https://commons.wikimedia.org/wiki/File:Homework_02.jpg", "author": "Kwameghana (Bright Kwame Ayisi)", "licence": "CC0", "caption": "A girl doing her homework with her mum"}]
+    },
+    "page": {
+      "scenes": [
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "Open your books. Turn to page ten.", "fr": "Ouvrez vos livres. Allez à la page dix.", "ar": "افتحوا كتبكم. انتقلوا إلى الصفحة العاشرة." } },
+            { "who": { "en": "Sofia", "fr": "Sofia", "ar": "صوفيا" }, "text": { "en": "OK! I am on page ten.", "fr": "D’accord ! Je suis à la page dix.", "ar": "حسنا! أنا في الصفحة العاشرة." } }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "One more page, then sleep.", "fr": "Encore une page, et après, au lit.", "ar": "صفحة واحدة أخرى، ثم النوم." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Please, Mum, two more pages!", "fr": "S’il te plaît, maman, encore deux pages !", "ar": "من فضلك يا أمي، صفحتان أخريان!" } }
+          ]
+        },
+        {
+          "place": "library",
+          "lines": [
+            { "who": { "en": "Malik", "fr": "Malik", "ar": "مالك" }, "text": { "en": "Look at this page. The pictures are beautiful!", "fr": "Regarde cette page. Les images sont magnifiques !", "ar": "انظري إلى هذه الصفحة. الصور جميلة جدا!" } },
+            { "who": { "en": "Amara", "fr": "Amara", "ar": "أمارا" }, "text": { "en": "Wow! It is a book about birds.", "fr": "Waouh ! C’est un livre sur les oiseaux.", "ar": "رائع! إنه كتاب عن الطيور." } }
+          ]
+        },
+        {
+          "place": "plane",
+          "lines": [
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "Dad, can I draw something?", "fr": "Papa, je peux dessiner quelque chose ?", "ar": "أبي، هل يمكنني أن أرسم شيئا؟" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Yes. Here is a clean page.", "fr": "Oui. Voici une page blanche.", "ar": "نعم. تفضلي، هذه صفحة بيضاء." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "pen": {
+      "scenes": [
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Kenji", "fr": "Kenji", "ar": "كينجي" }, "text": { "en": "Can I borrow your pen?", "fr": "Je peux t’emprunter ton stylo ?", "ar": "هل يمكنني أن أستعير قلمك؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Sure. Here you are.", "fr": "Bien sûr. Tiens.", "ar": "بالتأكيد. تفضل." } }
+          ]
+        },
+        {
+          "place": "bank",
+          "lines": [
+            { "who": { "en": "Tariq", "fr": "Tariq", "ar": "طارق" }, "text": { "en": "Excuse me, do you have a pen?", "fr": "Excusez-moi, vous avez un stylo ?", "ar": "عفوا، هل لديك قلم؟" } },
+            { "who": { "en": "Bank worker", "fr": "L’employée", "ar": "الموظفة" }, "text": { "en": "Yes, here is a blue pen.", "fr": "Oui, voici un stylo bleu.", "ar": "نعم، هذا قلم أزرق." } }
+          ]
+        },
+        {
+          "place": "corner-shop",
+          "lines": [
+            { "who": { "en": "Shopkeeper", "fr": "Le vendeur", "ar": "البائع" }, "text": { "en": "Do you want a red pen or a blue pen?", "fr": "Tu veux un stylo rouge ou un stylo bleu ?", "ar": "هل تريد قلما أحمر أم قلما أزرق؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "A red one, please.", "fr": "Un rouge, s’il vous plaît.", "ar": "أحمر، من فضلك." } }
+          ]
+        },
+        {
+          "place": "post-office",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "I need a pen to write the address.", "fr": "J’ai besoin d’un stylo pour écrire l’adresse.", "ar": "أحتاج إلى قلم لأكتب العنوان." } },
+            { "who": { "en": "Post office worker", "fr": "Le postier", "ar": "موظف البريد" }, "text": { "en": "Here you are, madam.", "fr": "Tenez, madame.", "ar": "تفضلي يا سيدتي." } }
+          ]
+        }
+      ],
+      "pictures": [{"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/04-BICcristal2008-03-26.jpg/330px-04-BICcristal2008-03-26.jpg", "page": "https://commons.wikimedia.org/wiki/File:04-BICcristal2008-03-26.jpg", "author": "Trounce", "licence": "CC BY 3.0", "caption": "A blue pen with its cap"}]
+    },
+    "language": {
+      "scenes": [
+        {
+          "place": "airport",
+          "lines": [
+            { "who": { "en": "Ravi", "fr": "Ravi", "ar": "رافي" }, "text": { "en": "People here speak so many languages!", "fr": "Les gens ici parlent tellement de langues !", "ar": "الناس هنا يتكلمون لغات كثيرة جدا!" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Yes, they come from all over the world.", "fr": "Oui, ils viennent du monde entier.", "ar": "نعم، إنهم يأتون من كل أنحاء العالم." } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "How many languages do you speak, Aisha?", "fr": "Combien de langues parles-tu, Aïcha ?", "ar": "كم لغة تتكلمين يا عائشة؟" } },
+            { "who": { "en": "Aisha", "fr": "Aïcha", "ar": "عائشة" }, "text": { "en": "Three: Arabic, French and English!", "fr": "Trois : l’arabe, le français et l’anglais !", "ar": "ثلاث: العربية والفرنسية والإنجليزية!" } }
+          ]
+        },
+        {
+          "place": "market",
+          "lines": [
+            { "who": { "en": "Seller", "fr": "Le marchand", "ar": "البائع" }, "text": { "en": "Hello! Which language do you speak?", "fr": "Bonjour ! Quelle langue parlez-vous ?", "ar": "مرحبا! أي لغة تتكلم؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "French. And a little English!", "fr": "Le français. Et un peu d’anglais !", "ar": "الفرنسية. وقليلا من الإنجليزية!" } }
+          ]
+        },
+        {
+          "place": "hotel",
+          "lines": [
+            { "who": { "en": "Receptionist", "fr": "La réceptionniste", "ar": "موظفة الاستقبال" }, "text": { "en": "We can help you in four languages.", "fr": "Nous pouvons vous aider dans quatre langues.", "ar": "يمكننا مساعدتك بأربع لغات." } },
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "Wonderful! Arabic, please.", "fr": "Formidable ! En arabe, s’il vous plaît.", "ar": "رائع! بالعربية، من فضلك." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "English": {
+      "scenes": [
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le professeur", "ar": "المعلم" }, "text": { "en": "Today we speak only English!", "fr": "Aujourd’hui, on parle seulement anglais !", "ar": "اليوم نتكلم الإنجليزية فقط!" } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "OK! Hello, teacher!", "fr": "D’accord ! Bonjour, monsieur !", "ar": "حسنا! مرحبا يا أستاذ!" } }
+          ]
+        },
+        {
+          "place": "cinema",
+          "lines": [
+            { "who": { "en": "Malik", "fr": "Malik", "ar": "مالك" }, "text": { "en": "Is the film in English?", "fr": "Le film est en anglais ?", "ar": "هل الفيلم بالإنجليزية؟" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Yes. It is good for your English!", "fr": "Oui. C’est bien pour ton anglais !", "ar": "نعم. هذا مفيد للغتك الإنجليزية!" } }
+          ]
+        },
+        {
+          "place": "friends-house",
+          "lines": [
+            { "who": { "en": "Emma", "fr": "Emma", "ar": "إيما" }, "text": { "en": "Can you speak English?", "fr": "Tu parles anglais ?", "ar": "هل تتكلم الإنجليزية؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yes, a little. I learn it at school.", "fr": "Oui, un peu. Je l’apprends à l’école.", "ar": "نعم، قليلا. أتعلمها في المدرسة." } }
+          ]
+        },
+        {
+          "place": "taxi",
+          "lines": [
+            { "who": { "en": "Taxi driver", "fr": "Le chauffeur de taxi", "ar": "سائق سيارة الأجرة" }, "text": { "en": "Where to?", "fr": "Vous allez où ?", "ar": "إلى أين؟" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "To the station, please.", "fr": "À la gare, s’il vous plaît.", "ar": "إلى المحطة، من فضلك." } },
+            { "who": { "en": "Taxi driver", "fr": "Le chauffeur de taxi", "ar": "سائق سيارة الأجرة" }, "text": { "en": "Your English is very good!", "fr": "Votre anglais est très bon !", "ar": "لغتك الإنجليزية جيدة جدا!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "paper": {
+      "scenes": [
+        {
+          "place": "home",
+          "lines": [
+            { "who": { "en": "Mei", "fr": "Mei", "ar": "مي" }, "text": { "en": "Mum, I need some paper to draw.", "fr": "Maman, j’ai besoin de papier pour dessiner.", "ar": "أمي، أحتاج إلى بعض الورق لأرسم." } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "There is paper on the desk.", "fr": "Il y a du papier sur le bureau.", "ar": "هناك ورق على المكتب." } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "Take a piece of paper and write your name.", "fr": "Prenez une feuille de papier et écrivez votre nom.", "ar": "خذوا ورقة واكتبوا أسماءكم." } },
+            { "who": { "en": "Hugo", "fr": "Hugo", "ar": "هوغو" }, "text": { "en": "With a pen or a pencil?", "fr": "Au stylo ou au crayon ?", "ar": "بالقلم أم بقلم الرصاص؟" } }
+          ]
+        },
+        {
+          "place": "birthday-party",
+          "lines": [
+            { "who": { "en": "Zara", "fr": "Zara", "ar": "زارا" }, "text": { "en": "Look at this paper! It has little stars on it.", "fr": "Regarde ce papier ! Il y a des petites étoiles dessus.", "ar": "انظر إلى هذا الورق! عليه نجوم صغيرة." } },
+            { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "It is your present. Open it!", "fr": "C’est ton cadeau. Ouvre-le !", "ar": "إنها هديتك. افتحيها!" } }
+          ]
+        },
+        {
+          "place": "street",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Put the paper in the blue bin, please.", "fr": "Mets le papier dans la poubelle bleue, s’il te plaît.", "ar": "ضع الورق في الحاوية الزرقاء، من فضلك." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "OK! And the bottles?", "fr": "D’accord ! Et les bouteilles ?", "ar": "حسنا! والزجاجات؟" } }
+          ]
+        }
+      ],
+      "pictures": [{"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Paper_450x450.jpg/330px-Paper_450x450.jpg", "page": "https://commons.wikimedia.org/wiki/File:Paper_450x450.jpg", "author": "Rfc1394", "licence": "Public domain", "caption": "A sheet of white paper"}]
+    },
+    "pencil": {
+      "scenes": [
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Draw a line with your pencil.", "fr": "Tracez une ligne avec votre crayon.", "ar": "ارسموا خطا بقلم الرصاص." } },
+            { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "Oh no, my pencil is broken!", "fr": "Oh non, mon crayon est cassé !", "ar": "أوه، لا! قلم رصاصي مكسور!" } },
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Here, take this one.", "fr": "Tiens, prends celui-ci.", "ar": "تفضل، خذ هذا." } }
+          ]
+        },
+        {
+          "place": "bookshop",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Do you have coloured pencils?", "fr": "Vous avez des crayons de couleur ?", "ar": "هل لديكم أقلام تلوين؟" } },
+            { "who": { "en": "Bookseller", "fr": "Le libraire", "ar": "البائع" }, "text": { "en": "Yes, here is a box of twelve.", "fr": "Oui, voici une boîte de douze.", "ar": "نعم، هذه علبة فيها اثنا عشر قلما." } }
+          ]
+        },
+        {
+          "place": "living-room",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "Who wants to draw with me?", "fr": "Qui veut dessiner avec moi ?", "ar": "من يريد أن يرسم معي؟" } },
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "Me! Can I use your pencils?", "fr": "Moi ! Je peux prendre tes crayons ?", "ar": "أنا! هل يمكنني استخدام أقلام الرصاص التي عندك؟" } }
+          ]
+        },
+        {
+          "place": "park",
+          "lines": [
+            { "who": { "en": "Kenji", "fr": "Kenji", "ar": "كينجي" }, "text": { "en": "I am drawing the trees with a pencil.", "fr": "Je dessine les arbres au crayon.", "ar": "أرسم الأشجار بقلم الرصاص." } },
+            { "who": { "en": "Maya", "fr": "Maya", "ar": "مايا" }, "text": { "en": "Your picture is very nice!", "fr": "Ton dessin est très beau !", "ar": "رسمك جميل جدا!" } }
+          ]
+        }
+      ],
+      "pictures": [{"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Yellow_Pencil.jpg/330px-Yellow_Pencil.jpg", "page": "https://commons.wikimedia.org/wiki/File:Yellow_Pencil.jpg", "author": "Oktaeder at German Wikipedia", "licence": "Public domain", "caption": "A yellow pencil"}]
+    },
+    "desk": {
+      "scenes": [
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "Please put your homework on my desk.", "fr": "Posez vos devoirs sur mon bureau, s’il vous plaît.", "ar": "ضعوا واجباتكم على مكتبي من فضلكم." } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Yes, sir!", "fr": "Oui, maître !", "ar": "حاضر يا أستاذ!" } }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Look at your desk! There are books everywhere.", "fr": "Regarde ton bureau ! Il y a des livres partout.", "ar": "انظر إلى مكتبك! هناك كتب في كل مكان." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Sorry, Dad. I will tidy it now.", "fr": "Pardon, papa. Je vais le ranger maintenant.", "ar": "آسف يا أبي. سأرتبه الآن." } }
+          ]
+        },
+        {
+          "place": "office",
+          "lines": [
+            { "who": { "en": "Amara", "fr": "Amara", "ar": "أمارا" }, "text": { "en": "Is this your desk, Mum?", "fr": "C’est ton bureau, maman ?", "ar": "هل هذا مكتبك يا أمي؟" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Yes! Look, there is a photo of you.", "fr": "Oui ! Regarde, il y a une photo de toi.", "ar": "نعم! انظري، هناك صورة لك." } }
+          ]
+        },
+        {
+          "place": "shopping-centre",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "This desk is perfect for your room.", "fr": "Ce bureau est parfait pour ta chambre.", "ar": "هذا المكتب مثالي لغرفتك." } },
+            { "who": { "en": "Adam", "fr": "Adam", "ar": "آدم" }, "text": { "en": "Yes! And it is not too big.", "fr": "Oui ! Et il n’est pas trop grand.", "ar": "نعم! وليس كبيرا جدا." } }
+          ]
+        }
+      ],
+      "pictures": [{"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/School_desk_-_Kolomna_local_museum.jpg/330px-School_desk_-_Kolomna_local_museum.jpg", "page": "https://commons.wikimedia.org/wiki/File:School_desk_-_Kolomna_local_museum.jpg", "author": "Лапоть", "licence": "CC0", "caption": "A wooden school desk"}]
+    },
+    "mistake": {
+      "scenes": [
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Oh no, I made a mistake!", "fr": "Oh non, j’ai fait une erreur !", "ar": "أوه، لا! لقد ارتكبت خطأ!" } },
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "That is OK. Everyone makes mistakes.", "fr": "Ce n’est pas grave. Tout le monde fait des erreurs.", "ar": "لا بأس. الجميع يرتكبون الأخطاء." } }
+          ]
+        },
+        {
+          "place": "restaurant",
+          "lines": [
+            { "who": { "en": "Waiter", "fr": "Le serveur", "ar": "النادل" }, "text": { "en": "Here is your fish.", "fr": "Voici votre poisson.", "ar": "تفضل سمكك." } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Sorry, I think there is a mistake. I asked for chicken.", "fr": "Pardon, je crois qu’il y a une erreur. J’ai demandé du poulet.", "ar": "عفوا، أظن أن هناك خطأ. طلبت دجاجا." } },
+            { "who": { "en": "Waiter", "fr": "Le serveur", "ar": "النادل" }, "text": { "en": "Oh, sorry! One moment, please.", "fr": "Oh, désolé ! Un instant, s’il vous plaît.", "ar": "آسف! لحظة من فضلك." } }
+          ]
+        },
+        {
+          "place": "music-room",
+          "lines": [
+            { "who": { "en": "Inès", "fr": "Inès", "ar": "إيناس" }, "text": { "en": "I made a mistake in the song!", "fr": "J’ai fait une erreur dans la chanson !", "ar": "أخطأت في الأغنية!" } },
+            { "who": { "en": "Teacher", "fr": "Le professeur", "ar": "المعلم" }, "text": { "en": "No problem. Let’s sing it again.", "fr": "Pas de problème. On la chante encore une fois.", "ar": "لا مشكلة. لنغنها مرة أخرى." } }
+          ]
+        },
+        {
+          "place": "bus-stop",
+          "lines": [
+            { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "Dad, this is not our bus!", "fr": "Papa, ce n’est pas notre bus !", "ar": "أبي، هذه ليست حافلتنا!" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "You are right. My mistake! Our bus is number nine.", "fr": "Tu as raison, je me suis trompé ! Notre bus, c’est le numéro neuf.", "ar": "أنت محق. هذا خطئي! حافلتنا هي رقم تسعة." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "example": {
+      "scenes": [
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "Here is an example: a cat is an animal.", "fr": "Voici un exemple : le chat est un animal.", "ar": "إليكم مثالا: القط حيوان." } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "And a dog is an animal too!", "fr": "Et le chien aussi, c’est un animal !", "ar": "والكلب حيوان أيضا!" } }
+          ]
+        },
+        {
+          "place": "science-lab",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La professeure", "ar": "المعلمة" }, "text": { "en": "Give me an example of a plant.", "fr": "Donne-moi un exemple de plante.", "ar": "أعطني مثالا على نبات." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "A tree! Or a flower.", "fr": "Un arbre ! Ou une fleur.", "ar": "شجرة! أو زهرة." } }
+          ]
+        },
+        {
+          "place": "kitchen",
+          "lines": [
+            { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "Mum, I don’t understand this question.", "fr": "Maman, je ne comprends pas cette question.", "ar": "أمي، لا أفهم هذا السؤال." } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Look, here is an example.", "fr": "Regarde, voici un exemple.", "ar": "انظر، إليك مثالا." } },
+            { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "Oh, I see! Now I can do it.", "fr": "Ah, je vois ! Maintenant, je sais le faire.", "ar": "آه، فهمت! الآن أستطيع حله." } }
+          ]
+        },
+        {
+          "place": "train-station",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "From here, trains go to many cities, for example London and Paris.", "fr": "D’ici, les trains vont dans beaucoup de villes, par exemple Londres et Paris.", "ar": "من هنا تذهب القطارات إلى مدن كثيرة، مثلا لندن وباريس." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Can we go to London one day?", "fr": "On pourra aller à Londres un jour ?", "ar": "هل يمكننا الذهاب إلى لندن يوما ما؟" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "science": {
+      "scenes": [
+        {
+          "place": "science-lab",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La professeure", "ar": "المعلمة" }, "text": { "en": "Welcome to the science room!", "fr": "Bienvenue dans la salle de sciences !", "ar": "مرحبا بكم في قاعة العلوم!" } },
+            { "who": { "en": "Chen", "fr": "Chen", "ar": "تشين" }, "text": { "en": "Wow, look at all the plants!", "fr": "Waouh, regardez toutes ces plantes !", "ar": "رائع، انظروا إلى كل هذه النباتات!" } }
+          ]
+        },
+        {
+          "place": "garden",
+          "lines": [
+            { "who": { "en": "Maya", "fr": "Maya", "ar": "مايا" }, "text": { "en": "We learn about plants in science.", "fr": "En sciences, on apprend des choses sur les plantes.", "ar": "نتعلم عن النباتات في حصة العلوم." } },
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "Then help me with my tomatoes!", "fr": "Alors, aide-moi à m’occuper de mes tomates !", "ar": "إذن ساعديني في العناية بالطماطم!" } }
+          ]
+        },
+        {
+          "place": "museum",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "This museum is all about science.", "fr": "C’est un musée des sciences.", "ar": "هذا المتحف كله عن العلوم." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Look! A big rocket!", "fr": "Regarde ! Une grande fusée !", "ar": "انظري! صاروخ كبير!" } }
+          ]
+        },
+        {
+          "place": "school-gate",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "What was your favourite lesson today?", "fr": "Quelle était ta leçon préférée aujourd’hui ?", "ar": "ما الدرس الذي أحببته أكثر اليوم؟" } },
+            { "who": { "en": "Adam", "fr": "Adam", "ar": "آدم" }, "text": { "en": "Science! We made a little volcano.", "fr": "Les sciences ! On a fait un petit volcan.", "ar": "العلوم! صنعنا بركانا صغيرا." } }
+          ]
+        }
+      ],
+      "pictures": [{"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/STEM_Tour_at_METC_170302-N-GA424-017.jpg/330px-STEM_Tour_at_METC_170302-N-GA424-017.jpg", "page": "https://commons.wikimedia.org/wiki/File:STEM_Tour_at_METC_170302-N-GA424-017.jpg", "author": "Jacquelyn Childs, U.S. Navy", "licence": "Public domain", "caption": "Students using microscopes in a science lab"}]
+    },
+    "university": {
+      "scenes": [
+        {
+          "place": "university",
+          "lines": [
+            { "who": { "en": "Big sister", "fr": "La grande sœur", "ar": "الأخت الكبرى" }, "text": { "en": "Welcome to my university!", "fr": "Bienvenue dans mon université !", "ar": "مرحبا بك في جامعتي!" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "It is so big!", "fr": "Elle est tellement grande !", "ar": "إنها كبيرة جدا!" } }
+          ]
+        },
+        {
+          "place": "dining-table",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "What do you want to study at university?", "fr": "Qu’est-ce que tu veux étudier à l’université ?", "ar": "ماذا تريدين أن تدرسي في الجامعة؟" } },
+            { "who": { "en": "Sofia", "fr": "Sofia", "ar": "صوفيا" }, "text": { "en": "Science! I want to be a doctor.", "fr": "Les sciences ! Je veux être médecin.", "ar": "العلوم! أريد أن أصبح طبيبة." } }
+          ]
+        },
+        {
+          "place": "train",
+          "lines": [
+            { "who": { "en": "Tariq", "fr": "Tariq", "ar": "طارق" }, "text": { "en": "My brother goes to university in a big city.", "fr": "Mon frère va à l’université dans une grande ville.", "ar": "أخي يدرس في الجامعة في مدينة كبيرة." } },
+            { "who": { "en": "Mei", "fr": "Mei", "ar": "مي" }, "text": { "en": "Does he come home every weekend?", "fr": "Il rentre à la maison tous les week-ends ?", "ar": "هل يعود إلى البيت كل عطلة نهاية أسبوع؟" } }
+          ]
+        },
+        {
+          "place": "family-party",
+          "lines": [
+            { "who": { "en": "Uncle", "fr": "L’oncle", "ar": "العم" }, "text": { "en": "Well done, Nadia! You finished university!", "fr": "Bravo, Nadia ! Tu as fini l’université !", "ar": "أحسنت يا نادية! لقد أنهيت دراستك في الجامعة!" } },
+            { "who": { "en": "Nadia", "fr": "Nadia", "ar": "نادية" }, "text": { "en": "Thank you! I am so happy.", "fr": "Merci ! Je suis tellement contente.", "ar": "شكرا! أنا سعيدة جدا." } }
+          ]
+        }
+      ],
+      "pictures": [{"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Burton_Hall%2C_University_of_Minnesota%2C_Minneapolis_Campus%2C_1901.jpg/330px-Burton_Hall%2C_University_of_Minnesota%2C_Minneapolis_Campus%2C_1901.jpg", "page": "https://commons.wikimedia.org/wiki/File:Burton_Hall,_University_of_Minnesota,_Minneapolis_Campus,_1901.jpg", "author": "Unknown", "licence": "Public domain", "caption": "A university building"}]
+    }
+  }
+}

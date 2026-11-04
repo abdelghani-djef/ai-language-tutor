@@ -1,0 +1,854 @@
+{
+  "pack": "nature",
+  "complete": true,
+  "words": {
+    "weather": {
+      "scenes": [
+        {
+          "place": "home",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "What is the weather like today?", "fr": "Quel temps fait-il aujourd’hui ?", "ar": "كيف هو الطقس اليوم؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "The weather is nice. Can we go to the park?", "fr": "Il fait beau. On peut aller au parc ?", "ar": "الطقس جميل. هل يمكننا الذهاب إلى الحديقة؟" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Yes, let’s go!", "fr": "Oui, allons-y !", "ar": "نعم، هيا بنا!" } }
+          ]
+        },
+        {
+          "place": "airport",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "The weather is bad. Our plane is late.", "fr": "Il fait mauvais. Notre avion a du retard.", "ar": "الطقس سيئ. طائرتنا متأخرة." } },
+            { "who": { "en": "Yuki", "fr": "Yuki", "ar": "يوكي" }, "text": { "en": "Oh no! Let’s wait here, then.", "fr": "Oh non ! Alors, attendons ici.", "ar": "يا للأسف! لننتظر هنا إذن." } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "Look out of the window. How is the weather?", "fr": "Regardez par la fenêtre. Quel temps fait-il ?", "ar": "انظروا من النافذة. كيف هو الطقس؟" } },
+            { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "The weather is cold and grey today.", "fr": "Il fait froid et gris aujourd’hui.", "ar": "الطقس بارد وغائم اليوم." } }
+          ]
+        },
+        {
+          "place": "campsite",
+          "lines": [
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "Will the weather be good tomorrow?", "fr": "Il fera beau demain ?", "ar": "هل سيكون الطقس جميلا غدا؟" } },
+            { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "Yes, sun all day!", "fr": "Oui, du soleil toute la journée !", "ar": "نعم، ستشرق الشمس طوال اليوم!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "sun": {
+      "scenes": [
+        {
+          "place": "beach",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "The sun is very hot. Come and sit under the tree.", "fr": "Le soleil tape fort. Viens t’asseoir sous l’arbre.", "ar": "الشمس حارة جدا. تعال واجلس تحت الشجرة." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "OK, Mum!", "fr": "D’accord, maman !", "ar": "حسنا يا أمي!" } }
+          ]
+        },
+        {
+          "place": "garden",
+          "lines": [
+            { "who": { "en": "Aisha", "fr": "Aïcha", "ar": "عائشة" }, "text": { "en": "Grandpa, why do plants need the sun?", "fr": "Papi, pourquoi les plantes ont-elles besoin du soleil ?", "ar": "يا جدي، لماذا تحتاج النباتات إلى الشمس؟" } },
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "The sun helps them grow.", "fr": "Le soleil les aide à pousser.", "ar": "الشمس تساعدها على النمو." } }
+          ]
+        },
+        {
+          "place": "balcony",
+          "lines": [
+            { "who": { "en": "Leo", "fr": "Léo", "ar": "ليو" }, "text": { "en": "Good morning! The sun is out.", "fr": "Bonjour ! Il y a du soleil.", "ar": "صباح الخير! الشمس مشرقة." } },
+            { "who": { "en": "Mei", "fr": "Mei", "ar": "مي" }, "text": { "en": "Yes! Let’s have breakfast here.", "fr": "Oui ! Prenons le petit-déjeuner ici.", "ar": "نعم! لنتناول الفطور هنا." } }
+          ]
+        },
+        {
+          "place": "mountain",
+          "lines": [
+            { "who": { "en": "Hugo", "fr": "Hugo", "ar": "هوغو" }, "text": { "en": "Look! The sun is going down behind the mountain.", "fr": "Regarde ! Le soleil se couche derrière la montagne.", "ar": "انظري! الشمس تغرب خلف الجبل." } },
+            { "who": { "en": "Sara", "fr": "Sara", "ar": "سارة" }, "text": { "en": "It is beautiful. Now it is time to go home.", "fr": "C’est magnifique. Maintenant, il est temps de rentrer.", "ar": "إنه منظر جميل. حان الآن وقت العودة إلى البيت." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Image_of_The_Sun_and_Clouds.jpg/330px-Image_of_The_Sun_and_Clouds.jpg", "page": "https://commons.wikimedia.org/wiki/File:Image_of_The_Sun_and_Clouds.jpg", "author": "RohithReddy1234", "licence": "CC BY-SA 4.0", "caption": "The sun shines in the sky." }
+      ]
+    },
+    "rain": {
+      "scenes": [
+        {
+          "place": "bus-stop",
+          "lines": [
+            { "who": { "en": "Ali", "fr": "Ali", "ar": "علي" }, "text": { "en": "Oh no, here comes the rain!", "fr": "Oh non, voilà la pluie !", "ar": "يا للأسف، ها هو المطر!" } },
+            { "who": { "en": "Zoe", "fr": "Zoé", "ar": "زوي" }, "text": { "en": "Stand here with me. The bus is coming.", "fr": "Mets-toi ici avec moi. Le bus arrive.", "ar": "قف هنا معي. الحافلة قادمة." } }
+          ]
+        },
+        {
+          "place": "living-room",
+          "lines": [
+            { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "Can we play outside?", "fr": "On peut jouer dehors ?", "ar": "هل يمكننا اللعب في الخارج؟" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Not now. Listen to the rain!", "fr": "Pas maintenant. Écoute la pluie !", "ar": "ليس الآن. اسمع صوت المطر!" } }
+          ]
+        },
+        {
+          "place": "farm",
+          "lines": [
+            { "who": { "en": "Farmer", "fr": "Le fermier", "ar": "المزارع" }, "text": { "en": "The rain is good for the fields.", "fr": "La pluie est bonne pour les champs.", "ar": "المطر مفيد للحقول." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "And for the trees too!", "fr": "Et pour les arbres aussi !", "ar": "وللأشجار أيضا!" } }
+          ]
+        },
+        {
+          "place": "school-gate",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Come in quickly, children! Don’t stay in the rain.", "fr": "Entrez vite, les enfants ! Ne restez pas sous la pluie.", "ar": "ادخلوا بسرعة يا أطفال! لا تبقوا تحت المطر." } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "We’re coming!", "fr": "On arrive !", "ar": "نحن قادمون!" } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Falling_rain_in_mexico.jpg/330px-Falling_rain_in_mexico.jpg", "page": "https://commons.wikimedia.org/wiki/File:Falling_rain_in_mexico.jpg", "author": "Tomascastelazo", "licence": "CC BY-SA 3.0", "caption": "Two people run in the rain." }
+      ]
+    },
+    "tree": {
+      "scenes": [
+        {
+          "place": "park",
+          "lines": [
+            { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "Look! A bird is in the tree.", "fr": "Regarde ! Il y a un oiseau dans l’arbre.", "ar": "انظر! هناك طائر على الشجرة." } },
+            { "who": { "en": "Ben", "fr": "Ben", "ar": "بن" }, "text": { "en": "Listen, it’s singing!", "fr": "Écoute, il chante !", "ar": "اسمع، إنه يغرد!" } }
+          ]
+        },
+        {
+          "place": "garden",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "This apple tree is older than me!", "fr": "Ce pommier est plus vieux que moi !", "ar": "شجرة التفاح هذه أكبر مني سنا!" } },
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "Wow! Can we eat the apples?", "fr": "Waouh ! On peut manger les pommes ?", "ar": "واو! هل يمكننا أن نأكل التفاح؟" } }
+          ]
+        },
+        {
+          "place": "forest",
+          "lines": [
+            { "who": { "en": "Diego", "fr": "Diego", "ar": "دييغو" }, "text": { "en": "There are so many trees here!", "fr": "Il y a tellement d’arbres ici !", "ar": "هناك أشجار كثيرة هنا!" } },
+            { "who": { "en": "Priya", "fr": "Priya", "ar": "بريا" }, "text": { "en": "Yes, and they are very tall.", "fr": "Oui, et ils sont très grands.", "ar": "نعم، وهي طويلة جدا." } }
+          ]
+        },
+        {
+          "place": "town-square",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Let’s sit under the big tree.", "fr": "Asseyons-nous sous le grand arbre.", "ar": "لنجلس تحت الشجرة الكبيرة." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Good idea. It is cool here.", "fr": "Bonne idée. Il fait frais ici.", "ar": "فكرة جيدة. الجو منعش هنا." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Lone_oak_tree_-_geograph.org.uk_-_5572799.jpg/330px-Lone_oak_tree_-_geograph.org.uk_-_5572799.jpg", "page": "https://commons.wikimedia.org/wiki/File:Lone_oak_tree_-_geograph.org.uk_-_5572799.jpg", "author": "Peter Holmes", "licence": "CC BY-SA 2.0", "caption": "A big green tree." }
+      ]
+    },
+    "sky": {
+      "scenes": [
+        {
+          "place": "beach",
+          "lines": [
+            { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "The sky is so blue today!", "fr": "Le ciel est tellement bleu aujourd’hui !", "ar": "السماء زرقاء جدا اليوم!" } },
+            { "who": { "en": "Amara", "fr": "Amara", "ar": "أمارا" }, "text": { "en": "And there are no clouds.", "fr": "Et il n’y a pas de nuages.", "ar": "ولا توجد أي سحب." } }
+          ]
+        },
+        {
+          "place": "balcony",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Look at the sky. It is orange and pink.", "fr": "Regarde le ciel. Il est orange et rose.", "ar": "انظر إلى السماء. إنها برتقالية ووردية." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "It’s beautiful!", "fr": "C’est magnifique !", "ar": "إنها جميلة!" } }
+          ]
+        },
+        {
+          "place": "plane",
+          "lines": [
+            { "who": { "en": "Yuki", "fr": "Yuki", "ar": "يوكي" }, "text": { "en": "Look out of the window, Dad! We are in the sky.", "fr": "Regarde par le hublot, papa ! On est dans le ciel.", "ar": "انظر من النافذة يا أبي! نحن في السماء." } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Yes, we are above the clouds.", "fr": "Oui, on est au-dessus des nuages.", "ar": "نعم، نحن فوق السحب." } }
+          ]
+        },
+        {
+          "place": "playground",
+          "lines": [
+            { "who": { "en": "Ben", "fr": "Ben", "ar": "بن" }, "text": { "en": "The sky is very dark.", "fr": "Le ciel est très sombre.", "ar": "السماء مظلمة جدا." } },
+            { "who": { "en": "Mei", "fr": "Mei", "ar": "مي" }, "text": { "en": "Let’s go inside before the rain.", "fr": "Rentrons avant la pluie.", "ar": "لندخل قبل أن يهطل المطر." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Leaning_trees_over_the_grassy_hillock_of_Nodong-ri_tombs_clouds_and_blue_sky_in_Gyeongju_South_Korea.jpg/330px-Leaning_trees_over_the_grassy_hillock_of_Nodong-ri_tombs_clouds_and_blue_sky_in_Gyeongju_South_Korea.jpg", "page": "https://commons.wikimedia.org/wiki/File:Leaning_trees_over_the_grassy_hillock_of_Nodong-ri_tombs_clouds_and_blue_sky_in_Gyeongju_South_Korea.jpg", "author": "Basile Morin", "licence": "CC BY-SA 4.0", "caption": "A blue sky with white clouds." }
+      ]
+    },
+    "sea": {
+      "scenes": [
+        {
+          "place": "beach",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Can I swim in the sea?", "fr": "Je peux nager dans la mer ?", "ar": "هل يمكنني السباحة في البحر؟" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Yes, but stay near me.", "fr": "Oui, mais reste près de moi.", "ar": "نعم، ولكن ابق قريبا مني." } }
+          ]
+        },
+        {
+          "place": "boat",
+          "lines": [
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "The sea is very calm today.", "fr": "La mer est très calme aujourd’hui.", "ar": "البحر هادئ جدا اليوم." } },
+            { "who": { "en": "Sara", "fr": "Sara", "ar": "سارة" }, "text": { "en": "I can see fish in the water!", "fr": "Je vois des poissons dans l’eau !", "ar": "أرى أسماكا في الماء!" } }
+          ]
+        },
+        {
+          "place": "hotel",
+          "lines": [
+            { "who": { "en": "Receptionist", "fr": "Le réceptionniste", "ar": "موظف الاستقبال" }, "text": { "en": "From your room, you can see the sea.", "fr": "De votre chambre, vous pouvez voir la mer.", "ar": "يمكنك رؤية البحر من غرفتك." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Wonderful, thank you!", "fr": "Super, merci !", "ar": "رائع، شكرا!" } }
+          ]
+        },
+        {
+          "place": "port",
+          "lines": [
+            { "who": { "en": "Nadia", "fr": "Nadia", "ar": "نادية" }, "text": { "en": "Where do these big ships go?", "fr": "Où vont ces grands bateaux ?", "ar": "إلى أين تذهب هذه السفن الكبيرة؟" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Across the sea, to other countries.", "fr": "De l’autre côté de la mer, vers d’autres pays.", "ar": "تعبر البحر إلى بلدان أخرى." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Baltic_Sea_view_from_Schmiedeberg_hill_in_Rerik%2C_2025-06-23.jpg/330px-Baltic_Sea_view_from_Schmiedeberg_hill_in_Rerik%2C_2025-06-23.jpg", "page": "https://commons.wikimedia.org/wiki/File:Baltic_Sea_view_from_Schmiedeberg_hill_in_Rerik,_2025-06-23.jpg", "author": "Radomianin", "licence": "CC BY-SA 4.0", "caption": "The blue sea and the beach." }
+      ]
+    },
+    "flower": {
+      "scenes": [
+        {
+          "place": "flower-shop",
+          "lines": [
+            { "who": { "en": "Florist", "fr": "La fleuriste", "ar": "بائعة الزهور" }, "text": { "en": "Hello! Which flowers do you like?", "fr": "Bonjour ! Quelles fleurs vous plaisent ?", "ar": "مرحبا! أي الزهور تعجبك؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "The red ones, please. They are for my mum.", "fr": "Les rouges, s’il vous plaît. C’est pour ma maman.", "ar": "الحمراء، من فضلك. إنها لأمي." } }
+          ]
+        },
+        {
+          "place": "garden",
+          "lines": [
+            { "who": { "en": "Aisha", "fr": "Aïcha", "ar": "عائشة" }, "text": { "en": "Grandma, what is this yellow flower?", "fr": "Mamie, c’est quoi, cette fleur jaune ?", "ar": "يا جدتي، ما هذه الزهرة الصفراء؟" } },
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "It is a sunflower. It loves the sun.", "fr": "C’est un tournesol. Il adore le soleil.", "ar": "إنها زهرة عباد الشمس. إنها تحب الشمس." } }
+          ]
+        },
+        {
+          "place": "birthday-party",
+          "lines": [
+            { "who": { "en": "Leo", "fr": "Léo", "ar": "ليو" }, "text": { "en": "Happy birthday, Zoe! This flower is for you.", "fr": "Joyeux anniversaire, Zoé ! Cette fleur est pour toi.", "ar": "عيد ميلاد سعيد يا زوي! هذه الزهرة لك." } },
+            { "who": { "en": "Zoe", "fr": "Zoé", "ar": "زوي" }, "text": { "en": "Thank you, Leo! It smells so nice.", "fr": "Merci, Léo ! Elle sent tellement bon.", "ar": "شكرا يا ليو! رائحتها جميلة جدا." } }
+          ]
+        },
+        {
+          "place": "field",
+          "lines": [
+            { "who": { "en": "Hugo", "fr": "Hugo", "ar": "هوغو" }, "text": { "en": "Look at all the flowers in the field!", "fr": "Regarde toutes ces fleurs dans le champ !", "ar": "انظري إلى كل هذه الزهور في الحقل!" } },
+            { "who": { "en": "Mei", "fr": "Mei", "ar": "مي" }, "text": { "en": "Don’t pick them. Let them grow.", "fr": "Ne les cueille pas. Laisse-les pousser.", "ar": "لا تقطفها. دعها تنمو." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Red_Hibiscus_rosa-sinensis_flower_close-up.jpg/330px-Red_Hibiscus_rosa-sinensis_flower_close-up.jpg", "page": "https://commons.wikimedia.org/wiki/File:Red_Hibiscus_rosa-sinensis_flower_close-up.jpg", "author": "Saadtitan12", "licence": "CC BY-SA 4.0", "caption": "A red flower." }
+      ]
+    },
+    "wind": {
+      "scenes": [
+        {
+          "place": "park",
+          "lines": [
+            { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "The wind is very strong today!", "fr": "Le vent souffle très fort aujourd’hui !", "ar": "الريح قوية جدا اليوم!" } },
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "Yes! Look at the trees moving.", "fr": "Oui ! Regarde les arbres bouger.", "ar": "نعم! انظر إلى الأشجار وهي تتحرك." } }
+          ]
+        },
+        {
+          "place": "balcony",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Close the door. The wind is cold.", "fr": "Ferme la porte. Le vent est froid.", "ar": "أغلق الباب. الريح باردة." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "OK, Mum. Brr, it is cold!", "fr": "D’accord, maman. Brr, il fait froid !", "ar": "حسنا يا أمي. برر، الجو بارد!" } }
+          ]
+        },
+        {
+          "place": "boat",
+          "lines": [
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "We need wind to move the boat.", "fr": "Il nous faut du vent pour faire avancer le bateau.", "ar": "نحتاج إلى الريح لكي يتحرك القارب." } },
+            { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "There is a lot of wind today. Let’s go!", "fr": "Il y a beaucoup de vent aujourd’hui. On y va !", "ar": "الريح قوية اليوم. هيا بنا!" } }
+          ]
+        },
+        {
+          "place": "street",
+          "lines": [
+            { "who": { "en": "Amara", "fr": "Amara", "ar": "أمارا" }, "text": { "en": "Oh! The wind took my paper!", "fr": "Oh ! Le vent a emporté ma feuille !", "ar": "آه! أخذت الريح ورقتي!" } },
+            { "who": { "en": "Ali", "fr": "Ali", "ar": "علي" }, "text": { "en": "Don’t worry, I’ve got it!", "fr": "Ne t’inquiète pas, je l’ai attrapée !", "ar": "لا تقلقي، أمسكتها!" } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Strong_Winds.jpg/330px-Strong_Winds.jpg", "page": "https://commons.wikimedia.org/wiki/File:Strong_Winds.jpg", "author": "Mona Hassan Abo-Abda", "licence": "CC BY-SA 4.0", "caption": "The wind moves the trees." },
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Windsock_Hodenhagen_Aerodrome_2013.jpg/330px-Windsock_Hodenhagen_Aerodrome_2013.jpg", "page": "https://commons.wikimedia.org/wiki/File:Windsock_Hodenhagen_Aerodrome_2013.jpg", "author": "Olaf Oliviero Riemer", "licence": "CC BY-SA 3.0", "caption": "A windsock in the wind." }
+      ]
+    },
+    "snow": {
+      "scenes": [
+        {
+          "place": "garden",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Look, Dad! There is snow everywhere!", "fr": "Regarde, papa ! Il y a de la neige partout !", "ar": "انظر يا أبي! الثلج في كل مكان!" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Let’s make a snowman!", "fr": "Faisons un bonhomme de neige !", "ar": "لنصنع رجل ثلج!" } }
+          ]
+        },
+        {
+          "place": "mountain",
+          "lines": [
+            { "who": { "en": "Priya", "fr": "Priya", "ar": "بريا" }, "text": { "en": "The mountain is white with snow.", "fr": "La montagne est toute blanche de neige.", "ar": "الجبل مغطى بالثلج الأبيض." } },
+            { "who": { "en": "Diego", "fr": "Diego", "ar": "دييغو" }, "text": { "en": "Can we play in the snow?", "fr": "On peut jouer dans la neige ?", "ar": "هل يمكننا اللعب في الثلج؟" } }
+          ]
+        },
+        {
+          "place": "school-gate",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Is the school open today?", "fr": "L’école est ouverte aujourd’hui ?", "ar": "هل المدرسة مفتوحة اليوم؟" } },
+            { "who": { "en": "Head teacher", "fr": "Le directeur", "ar": "مدير المدرسة" }, "text": { "en": "No, it is closed because of the snow.", "fr": "Non, elle est fermée à cause de la neige.", "ar": "لا، إنها مغلقة بسبب الثلج." } }
+          ]
+        },
+        {
+          "place": "car",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Drive slowly. There is snow on the road.", "fr": "Roule doucement. Il y a de la neige sur la route.", "ar": "قد ببطء. هناك ثلج على الطريق." } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Yes, I know. We have time.", "fr": "Oui, je sais. On a le temps.", "ar": "نعم، أعرف. لدينا وقت." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Children_playing_on_snow_in_Iwate.jpg/330px-Children_playing_on_snow_in_Iwate.jpg", "page": "https://commons.wikimedia.org/wiki/File:Children_playing_on_snow_in_Iwate.jpg", "author": "Dquai", "licence": "CC BY-SA 4.0", "caption": "Children play in the snow." }
+      ]
+    },
+    "cloud": {
+      "scenes": [
+        {
+          "place": "field",
+          "lines": [
+            { "who": { "en": "Mei", "fr": "Mei", "ar": "مي" }, "text": { "en": "Look at that cloud! It looks like a rabbit.", "fr": "Regarde ce nuage ! On dirait un lapin.", "ar": "انظر إلى تلك السحابة! إنها تشبه أرنبا." } },
+            { "who": { "en": "Ben", "fr": "Ben", "ar": "بن" }, "text": { "en": "Yes! And that one looks like a boat.", "fr": "Oui ! Et celui-là, on dirait un bateau.", "ar": "نعم! وتلك تشبه قاربا." } }
+          ]
+        },
+        {
+          "place": "plane",
+          "lines": [
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "Mum, we are flying over the clouds!", "fr": "Maman, on vole au-dessus des nuages !", "ar": "أمي، نحن نطير فوق السحب!" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Yes, they look like white snow.", "fr": "Oui, on dirait de la neige blanche.", "ar": "نعم، تبدو مثل الثلج الأبيض." } }
+          ]
+        },
+        {
+          "place": "campsite",
+          "lines": [
+            { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "There is a big black cloud over there.", "fr": "Il y a un gros nuage noir là-bas.", "ar": "توجد سحابة سوداء كبيرة هناك." } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Quick, let’s put everything in the tent!", "fr": "Vite, mettons tout dans la tente !", "ar": "بسرعة، لنضع كل شيء في الخيمة!" } }
+          ]
+        },
+        {
+          "place": "balcony",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Will it rain today?", "fr": "Il va pleuvoir aujourd’hui ?", "ar": "هل ستمطر اليوم؟" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Maybe. There are a lot of clouds.", "fr": "Peut-être. Il y a beaucoup de nuages.", "ar": "ربما. هناك سحب كثيرة." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Cumulus_cloud_above_Lechtaler_Alps_at_tannheim%2C_Austria.jpg/330px-Cumulus_cloud_above_Lechtaler_Alps_at_tannheim%2C_Austria.jpg", "page": "https://commons.wikimedia.org/wiki/File:Cumulus_cloud_above_Lechtaler_Alps_at_tannheim,_Austria.jpg", "author": "Glg", "licence": "CC BY-SA 2.0 de", "caption": "A white cloud in the blue sky." }
+      ]
+    },
+    "river": {
+      "scenes": [
+        {
+          "place": "river",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Look, there are fish in the river.", "fr": "Regarde, il y a des poissons dans la rivière.", "ar": "انظر، هناك أسماك في النهر." } },
+            { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "Can we catch one?", "fr": "On peut en attraper un ?", "ar": "هل يمكننا أن نصطاد واحدة؟" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "No, let’s just watch them.", "fr": "Non, regardons-les seulement.", "ar": "لا، لنكتف بمشاهدتها." } }
+          ]
+        },
+        {
+          "place": "bridge",
+          "lines": [
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "Let’s stop on the bridge.", "fr": "Arrêtons-nous sur le pont.", "ar": "لنتوقف على الجسر." } },
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "Look down. The river is very fast here.", "fr": "Regarde en bas. La rivière coule très vite ici.", "ar": "انظري إلى الأسفل. النهر سريع جدا هنا." } }
+          ]
+        },
+        {
+          "place": "village",
+          "lines": [
+            { "who": { "en": "Aisha", "fr": "Aïcha", "ar": "عائشة" }, "text": { "en": "Grandma, where does the river go?", "fr": "Mamie, où va la rivière ?", "ar": "يا جدتي، إلى أين يذهب النهر؟" } },
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "It goes all the way to the big lake.", "fr": "Elle va jusqu’au grand lac.", "ar": "يجري حتى البحيرة الكبيرة." } }
+          ]
+        },
+        {
+          "place": "forest",
+          "lines": [
+            { "who": { "en": "Priya", "fr": "Priya", "ar": "بريا" }, "text": { "en": "I can hear water.", "fr": "J’entends de l’eau.", "ar": "أسمع صوت الماء." } },
+            { "who": { "en": "Diego", "fr": "Diego", "ar": "دييغو" }, "text": { "en": "Yes, there is a small river near here.", "fr": "Oui, il y a une petite rivière près d’ici.", "ar": "نعم، هناك نهر صغير قريب من هنا." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Chandrabhaga_river_flowing_through_the_Pangi_Valley_in_Chamba_District_of_Himachal_Pradesh.jpg/330px-Chandrabhaga_river_flowing_through_the_Pangi_Valley_in_Chamba_District_of_Himachal_Pradesh.jpg", "page": "https://commons.wikimedia.org/wiki/File:Chandrabhaga_river_flowing_through_the_Pangi_Valley_in_Chamba_District_of_Himachal_Pradesh.jpg", "author": "Forestbreather", "licence": "CC BY-SA 4.0", "caption": "A river between the mountains." }
+      ]
+    },
+    "mountain": {
+      "scenes": [
+        {
+          "place": "mountain",
+          "lines": [
+            { "who": { "en": "Hugo", "fr": "Hugo", "ar": "هوغو" }, "text": { "en": "We are at the top of the mountain!", "fr": "On est au sommet de la montagne !", "ar": "نحن على قمة الجبل!" } },
+            { "who": { "en": "Sara", "fr": "Sara", "ar": "سارة" }, "text": { "en": "I can see our village from here!", "fr": "Je vois notre village d’ici !", "ar": "أستطيع رؤية قريتنا من هنا!" } }
+          ]
+        },
+        {
+          "place": "train",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "What is that big white mountain?", "fr": "C’est quoi, cette grande montagne blanche ?", "ar": "ما ذلك الجبل الأبيض الكبير؟" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "It has snow on top. It is very high.", "fr": "Il y a de la neige au sommet. Elle est très haute.", "ar": "على قمته ثلج. إنه عال جدا." } }
+          ]
+        },
+        {
+          "place": "hotel",
+          "lines": [
+            { "who": { "en": "Receptionist", "fr": "La réceptionniste", "ar": "موظفة الاستقبال" }, "text": { "en": "Tomorrow, you can walk up the mountain.", "fr": "Demain, vous pouvez monter à pied jusqu’en haut de la montagne.", "ar": "غدا يمكنك صعود الجبل سيرا على الأقدام." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Great! Is it far?", "fr": "Super ! C’est loin ?", "ar": "رائع! هل هو بعيد؟" } },
+            { "who": { "en": "Receptionist", "fr": "La réceptionniste", "ar": "موظفة الاستقبال" }, "text": { "en": "No, it is very near.", "fr": "Non, c’est tout près.", "ar": "لا، إنه قريب جدا." } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "What is the highest mountain in the world?", "fr": "Quelle est la plus haute montagne du monde ?", "ar": "ما هو أعلى جبل في العالم؟" } },
+            { "who": { "en": "Yuki", "fr": "Yuki", "ar": "يوكي" }, "text": { "en": "Mount Everest!", "fr": "L’Everest !", "ar": "جبل إيفرست!" } },
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "Very good!", "fr": "Très bien !", "ar": "أحسنت!" } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Mountains_in_snow%2C_Mountain_lake%2C_Chola_Valley%2C_Nepal%2C_Himalayas.jpg/330px-Mountains_in_snow%2C_Mountain_lake%2C_Chola_Valley%2C_Nepal%2C_Himalayas.jpg", "page": "https://commons.wikimedia.org/wiki/File:Mountains_in_snow,_Mountain_lake,_Chola_Valley,_Nepal,_Himalayas.jpg", "author": "Vyacheslav Argenberg", "licence": "CC BY 4.0", "caption": "Big mountains with snow." }
+      ]
+    },
+    "moon": {
+      "scenes": [
+        {
+          "place": "bedroom",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Mum, the moon is so bright tonight.", "fr": "Maman, la lune brille tellement ce soir.", "ar": "أمي، القمر ساطع جدا الليلة." } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Yes. Now close your eyes and sleep.", "fr": "Oui. Maintenant, ferme les yeux et dors.", "ar": "نعم. والآن أغمض عينيك ونم." } }
+          ]
+        },
+        {
+          "place": "campsite",
+          "lines": [
+            { "who": { "en": "Ali", "fr": "Ali", "ar": "علي" }, "text": { "en": "Look, there is a full moon tonight!", "fr": "Regarde, c’est la pleine lune ce soir !", "ar": "انظري، القمر مكتمل الليلة!" } },
+            { "who": { "en": "Zoe", "fr": "Zoé", "ar": "زوي" }, "text": { "en": "It is big and round like a ball.", "fr": "Elle est grande et ronde comme un ballon.", "ar": "إنه كبير ومستدير مثل الكرة." } }
+          ]
+        },
+        {
+          "place": "museum",
+          "lines": [
+            { "who": { "en": "Guide", "fr": "Le guide", "ar": "المرشد" }, "text": { "en": "People walked on the moon in 1969.", "fr": "Des hommes ont marché sur la Lune en 1969.", "ar": "مشى الإنسان على القمر سنة 1969." } },
+            { "who": { "en": "Ben", "fr": "Ben", "ar": "بن" }, "text": { "en": "Wow! I want to go to the moon too!", "fr": "Waouh ! Moi aussi, je veux aller sur la Lune !", "ar": "واو! أريد أن أذهب إلى القمر أنا أيضا!" } }
+          ]
+        },
+        {
+          "place": "lake",
+          "lines": [
+            { "who": { "en": "Mei", "fr": "Mei", "ar": "مي" }, "text": { "en": "You can see the moon in the water.", "fr": "On voit la lune dans l’eau.", "ar": "يمكنك أن ترى القمر في الماء." } },
+            { "who": { "en": "Leo", "fr": "Léo", "ar": "ليو" }, "text": { "en": "Now there are two moons!", "fr": "Maintenant, il y a deux lunes !", "ar": "الآن هناك قمران!" } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Full_Moon_Luc_Viatour.jpg/330px-Full_Moon_Luc_Viatour.jpg", "page": "https://commons.wikimedia.org/wiki/File:Full_Moon_Luc_Viatour.jpg", "author": "Luc Viatour", "licence": "CC BY-SA 3.0", "caption": "The full moon." }
+      ]
+    },
+    "star": {
+      "scenes": [
+        {
+          "place": "desert",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "In the desert, you can see many stars.", "fr": "Dans le désert, on peut voir beaucoup d’étoiles.", "ar": "في الصحراء يمكنك أن ترى نجوما كثيرة." } },
+            { "who": { "en": "Amara", "fr": "Amara", "ar": "أمارا" }, "text": { "en": "There are millions of them!", "fr": "Il y en a des millions !", "ar": "هناك الملايين منها!" } }
+          ]
+        },
+        {
+          "place": "balcony",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Grandpa, I can see a star!", "fr": "Papi, je vois une étoile !", "ar": "يا جدي، أرى نجمة!" } },
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "Make a wish!", "fr": "Fais un vœu !", "ar": "تمن أمنية!" } }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            { "who": { "en": "Sara", "fr": "Sara", "ar": "سارة" }, "text": { "en": "Look, my stars shine in the dark!", "fr": "Regarde, mes étoiles brillent dans le noir !", "ar": "انظري، نجومي تلمع في الظلام!" } },
+            { "who": { "en": "Nadia", "fr": "Nadia", "ar": "نادية" }, "text": { "en": "Wow, it’s like the sky at night!", "fr": "Waouh, on dirait le ciel la nuit !", "ar": "واو، كأنها سماء الليل!" } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "The sun is a star.", "fr": "Le soleil est une étoile.", "ar": "الشمس نجمة." } },
+            { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "Really? But it is so big!", "fr": "C’est vrai ? Mais il est si grand !", "ar": "حقا؟ لكنها كبيرة جدا!" } },
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "It looks big because it is near us.", "fr": "Il paraît grand parce qu’il est près de nous.", "ar": "تبدو كبيرة لأنها قريبة منا." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Night_Sky_Stars_Trees_02.jpg/330px-Night_Sky_Stars_Trees_02.jpg", "page": "https://commons.wikimedia.org/wiki/File:Night_Sky_Stars_Trees_02.jpg", "author": "Michael J. Bennett", "licence": "CC BY-SA 3.0", "caption": "Many stars in the night sky." }
+      ]
+    },
+    "plant": {
+      "scenes": [
+        {
+          "place": "living-room",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Can you give the plant some water?", "fr": "Tu peux arroser la plante ?", "ar": "هل يمكنك أن تسقي النبات؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yes, Mum. Here you are, little plant!", "fr": "Oui, maman. Tiens, petite plante !", "ar": "نعم يا أمي. تفضل أيها النبات الصغير!" } }
+          ]
+        },
+        {
+          "place": "flower-shop",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I want a plant for my bedroom.", "fr": "Je voudrais une plante pour ma chambre.", "ar": "أريد نباتا لغرفتي." } },
+            { "who": { "en": "Florist", "fr": "Le fleuriste", "ar": "بائع الزهور" }, "text": { "en": "This green plant is easy. It needs a little water.", "fr": "Cette plante verte est facile à entretenir. Elle a besoin d’un peu d’eau.", "ar": "هذا النبات الأخضر سهل العناية. يحتاج إلى قليل من الماء." } }
+          ]
+        },
+        {
+          "place": "science-lab",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le professeur", "ar": "الأستاذ" }, "text": { "en": "Today we look at plants. What do they need?", "fr": "Aujourd’hui, on étudie les plantes. De quoi ont-elles besoin ?", "ar": "اليوم ندرس النباتات. ماذا تحتاج؟" } },
+            { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "Water and sun!", "fr": "D’eau et de soleil !", "ar": "الماء والشمس!" } }
+          ]
+        },
+        {
+          "place": "office",
+          "lines": [
+            { "who": { "en": "Nadia", "fr": "Nadia", "ar": "نادية" }, "text": { "en": "There is a nice plant on your desk.", "fr": "Il y a une jolie plante sur ton bureau.", "ar": "على مكتبك نبات جميل." } },
+            { "who": { "en": "Ali", "fr": "Ali", "ar": "علي" }, "text": { "en": "Thanks! It makes the office nicer.", "fr": "Merci ! Elle rend le bureau plus agréable.", "ar": "شكرا! إنه يجعل المكتب أجمل." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Epipremnum_aureum_%28Marble_Queen%29_houseplant_%282%29.png/330px-Epipremnum_aureum_%28Marble_Queen%29_houseplant_%282%29.png", "page": "https://commons.wikimedia.org/wiki/File:Epipremnum_aureum_(Marble_Queen)_houseplant_(2).png", "author": "Spnq", "licence": "CC BY-SA 4.0", "caption": "A green plant in a pot." }
+      ]
+    },
+    "grass": {
+      "scenes": [
+        {
+          "place": "park",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Let’s sit on the grass.", "fr": "Asseyons-nous sur l’herbe.", "ar": "لنجلس على العشب." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yes! It is soft and green.", "fr": "Oui ! Elle est douce et verte.", "ar": "نعم! إنه ناعم وأخضر." } }
+          ]
+        },
+        {
+          "place": "football-pitch",
+          "lines": [
+            { "who": { "en": "Coach", "fr": "L’entraîneur", "ar": "المدرب" }, "text": { "en": "The grass is wet. Be careful!", "fr": "L’herbe est mouillée. Faites attention !", "ar": "العشب مبلل. انتبهوا!" } },
+            { "who": { "en": "Diego", "fr": "Diego", "ar": "دييغو" }, "text": { "en": "OK, coach!", "fr": "D’accord, coach !", "ar": "حسنا أيها المدرب!" } }
+          ]
+        },
+        {
+          "place": "farm",
+          "lines": [
+            { "who": { "en": "Farmer", "fr": "La fermière", "ar": "المزارعة" }, "text": { "en": "The sheep eat grass all day.", "fr": "Les moutons mangent de l’herbe toute la journée.", "ar": "تأكل الخراف العشب طوال اليوم." } },
+            { "who": { "en": "Hugo", "fr": "Hugo", "ar": "هوغو" }, "text": { "en": "Are they hungry all the time?", "fr": "Ils ont faim tout le temps ?", "ar": "هل هي جائعة طوال الوقت؟" } }
+          ]
+        },
+        {
+          "place": "garden",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "The grass is very long. I must cut it.", "fr": "L’herbe est très haute. Je dois la couper.", "ar": "العشب طويل جدا. يجب أن أقصه." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Can I help you, Dad?", "fr": "Je peux t’aider, papa ?", "ar": "هل يمكنني مساعدتك يا أبي؟" } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Blades_of_grass.jpg/330px-Blades_of_grass.jpg", "page": "https://commons.wikimedia.org/wiki/File:Blades_of_grass.jpg", "author": "Catarina Carvalho from Lisboa, Portugal", "licence": "CC BY 2.0", "caption": "Green grass." }
+      ]
+    },
+    "forest": {
+      "scenes": [
+        {
+          "place": "forest",
+          "lines": [
+            { "who": { "en": "Guide", "fr": "La guide", "ar": "المرشدة" }, "text": { "en": "Many animals live in this forest.", "fr": "Beaucoup d’animaux vivent dans cette forêt.", "ar": "تعيش حيوانات كثيرة في هذه الغابة." } },
+            { "who": { "en": "Mei", "fr": "Mei", "ar": "مي" }, "text": { "en": "Can we see them?", "fr": "On peut les voir ?", "ar": "هل يمكننا أن نراها؟" } },
+            { "who": { "en": "Guide", "fr": "La guide", "ar": "المرشدة" }, "text": { "en": "Maybe, if you are very quiet!", "fr": "Peut-être, si vous êtes très silencieux !", "ar": "ربما، إذا كنتم هادئين جدا!" } }
+          ]
+        },
+        {
+          "place": "campsite",
+          "lines": [
+            { "who": { "en": "Leo", "fr": "Léo", "ar": "ليو" }, "text": { "en": "Our tent is near the forest.", "fr": "Notre tente est près de la forêt.", "ar": "خيمتنا قريبة من الغابة." } },
+            { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "Let’s walk in the forest tomorrow.", "fr": "Allons nous promener dans la forêt demain.", "ar": "لنتمش في الغابة غدا." } }
+          ]
+        },
+        {
+          "place": "library",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Do you have a book about the forest?", "fr": "Vous avez un livre sur la forêt ?", "ar": "هل لديكم كتاب عن الغابة؟" } },
+            { "who": { "en": "Librarian", "fr": "La bibliothécaire", "ar": "أمينة المكتبة" }, "text": { "en": "Yes, look on this shelf.", "fr": "Oui, regardez sur cette étagère.", "ar": "نعم، ابحث في هذا الرف." } }
+          ]
+        },
+        {
+          "place": "village",
+          "lines": [
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "When I was young, there was a forest here.", "fr": "Quand j’étais petit, il y avait une forêt ici.", "ar": "عندما كنت صغيرا، كانت هنا غابة." } },
+            { "who": { "en": "Aisha", "fr": "Aïcha", "ar": "عائشة" }, "text": { "en": "Where did the trees go?", "fr": "Où sont partis les arbres ?", "ar": "أين ذهبت الأشجار؟" } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Forest_path_surrounded_by_green_trees.jpg/330px-Forest_path_surrounded_by_green_trees.jpg", "page": "https://commons.wikimedia.org/wiki/File:Forest_path_surrounded_by_green_trees.jpg", "author": "Zed Can77", "licence": "CC0", "caption": "A path in a green forest." }
+      ]
+    },
+    "lake": {
+      "scenes": [
+        {
+          "place": "lake",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Let’s have a picnic by the lake.", "fr": "Faisons un pique-nique au bord du lac.", "ar": "لنقم بنزهة بجانب البحيرة." } },
+            { "who": { "en": "Yuki", "fr": "Yuki", "ar": "يوكي" }, "text": { "en": "Yes! I can see ducks on the water.", "fr": "Oui ! Je vois des canards sur l’eau.", "ar": "نعم! أرى بطا على الماء." } }
+          ]
+        },
+        {
+          "place": "boat",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "The lake is very calm today.", "fr": "Le lac est très calme aujourd’hui.", "ar": "البحيرة هادئة جدا اليوم." } },
+            { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "Can I put my hand in the water?", "fr": "Je peux mettre ma main dans l’eau ?", "ar": "هل يمكنني أن أضع يدي في الماء؟" } }
+          ]
+        },
+        {
+          "place": "hotel",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Is the lake far from the hotel?", "fr": "Le lac est loin de l’hôtel ?", "ar": "هل البحيرة بعيدة عن الفندق؟" } },
+            { "who": { "en": "Receptionist", "fr": "Le réceptionniste", "ar": "موظف الاستقبال" }, "text": { "en": "No, it is five minutes on foot.", "fr": "Non, c’est à cinq minutes à pied.", "ar": "لا، إنها على بعد خمس دقائق سيرا على الأقدام." } }
+          ]
+        },
+        {
+          "place": "mountain",
+          "lines": [
+            { "who": { "en": "Sara", "fr": "Sara", "ar": "سارة" }, "text": { "en": "Look, there is a blue lake down there!", "fr": "Regarde, il y a un lac bleu tout en bas !", "ar": "انظر، هناك بحيرة زرقاء في الأسفل!" } },
+            { "who": { "en": "Hugo", "fr": "Hugo", "ar": "هوغو" }, "text": { "en": "It looks like a mirror.", "fr": "On dirait un miroir.", "ar": "تبدو مثل المرآة." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Zagedan_Lakes%2C_Mountain_cirque%2C_Caucasus_Mountains.jpg/330px-Zagedan_Lakes%2C_Mountain_cirque%2C_Caucasus_Mountains.jpg", "page": "https://commons.wikimedia.org/wiki/File:Zagedan_Lakes,_Mountain_cirque,_Caucasus_Mountains.jpg", "author": "Vyacheslav Argenberg", "licence": "CC BY 4.0", "caption": "A lake near the mountains." }
+      ]
+    },
+    "beach": {
+      "scenes": [
+        {
+          "place": "beach",
+          "lines": [
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "Let’s make a big sandcastle on the beach!", "fr": "Construisons un grand château de sable sur la plage !", "ar": "لنبن قلعة رملية كبيرة على الشاطئ!" } },
+            { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "Yes! I will get some water.", "fr": "Oui ! Je vais chercher de l’eau.", "ar": "نعم! سأحضر بعض الماء." } }
+          ]
+        },
+        {
+          "place": "car",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Are we at the beach yet?", "fr": "On est bientôt à la plage ?", "ar": "هل وصلنا إلى الشاطئ؟" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Nearly! I can see the sea.", "fr": "Presque ! Je vois la mer.", "ar": "تقريبا! أرى البحر." } }
+          ]
+        },
+        {
+          "place": "train-station",
+          "lines": [
+            { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "Which train goes to the beach?", "fr": "Quel train va jusqu’à la plage ?", "ar": "أي قطار يذهب إلى الشاطئ؟" } },
+            { "who": { "en": "Station worker", "fr": "L’agent de gare", "ar": "موظف المحطة" }, "text": { "en": "The red train. It leaves in ten minutes.", "fr": "Le train rouge. Il part dans dix minutes.", "ar": "القطار الأحمر. ينطلق بعد عشر دقائق." } }
+          ]
+        },
+        {
+          "place": "home",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "We are going to the beach today!", "fr": "On va à la plage aujourd’hui !", "ar": "سنذهب إلى الشاطئ اليوم!" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yay! I love the beach!", "fr": "Youpi ! J’adore la plage !", "ar": "رائع! أحب الشاطئ كثيرا!" } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Under_my_umbrella.jpg/330px-Under_my_umbrella.jpg", "page": "https://commons.wikimedia.org/wiki/File:Under_my_umbrella.jpg", "author": "Janine from Mililani, Hawaii, United States", "licence": "CC BY 2.0", "caption": "A sunny beach by the sea." }
+      ]
+    },
+    "field": {
+      "scenes": [
+        {
+          "place": "farm",
+          "lines": [
+            { "who": { "en": "Farmer", "fr": "Le fermier", "ar": "المزارع" }, "text": { "en": "The cows are in the field.", "fr": "Les vaches sont dans le champ.", "ar": "الأبقار في الحقل." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Can I see them?", "fr": "Je peux les voir ?", "ar": "هل يمكنني أن أراها؟" } },
+            { "who": { "en": "Farmer", "fr": "Le fermier", "ar": "المزارع" }, "text": { "en": "Yes, come with me.", "fr": "Oui, viens avec moi.", "ar": "نعم، تعال معي." } }
+          ]
+        },
+        {
+          "place": "train",
+          "lines": [
+            { "who": { "en": "Zoe", "fr": "Zoé", "ar": "زوي" }, "text": { "en": "Look at all the fields! They are green and yellow.", "fr": "Regarde tous ces champs ! Ils sont verts et jaunes.", "ar": "انظر إلى كل هذه الحقول! إنها خضراء وصفراء." } },
+            { "who": { "en": "Ali", "fr": "Ali", "ar": "علي" }, "text": { "en": "It is so beautiful.", "fr": "C’est tellement beau.", "ar": "المنظر جميل جدا." } }
+          ]
+        },
+        {
+          "place": "village",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "My father worked in this field.", "fr": "Mon père travaillait dans ce champ.", "ar": "كان أبي يعمل في هذا الحقل." } },
+            { "who": { "en": "Priya", "fr": "Priya", "ar": "بريا" }, "text": { "en": "What did he grow?", "fr": "Qu’est-ce qu’il faisait pousser ?", "ar": "ماذا كان يزرع؟" } },
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "Potatoes and carrots.", "fr": "Des pommes de terre et des carottes.", "ar": "البطاطا والجزر." } }
+          ]
+        },
+        {
+          "place": "field",
+          "lines": [
+            { "who": { "en": "Ben", "fr": "Ben", "ar": "بن" }, "text": { "en": "Let’s run across the field!", "fr": "Traversons le champ en courant !", "ar": "لنركض عبر الحقل!" } },
+            { "who": { "en": "Mei", "fr": "Mei", "ar": "مي" }, "text": { "en": "Wait! Look, there are horses.", "fr": "Attends ! Regarde, il y a des chevaux.", "ar": "انتظر! انظر، هناك خيول." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Cows_in_field_near_Gretna_Green_station_-_geograph.org.uk_-_7155387.jpg/330px-Cows_in_field_near_Gretna_Green_station_-_geograph.org.uk_-_7155387.jpg", "page": "https://commons.wikimedia.org/wiki/File:Cows_in_field_near_Gretna_Green_station_-_geograph.org.uk_-_7155387.jpg", "author": "Roger Templeman", "licence": "CC BY-SA 2.0", "caption": "Cows in a green field." }
+      ]
+    },
+    "island": {
+      "scenes": [
+        {
+          "place": "boat",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Look, there is the island!", "fr": "Regarde, voilà l’île !", "ar": "انظري، ها هي الجزيرة!" } },
+            { "who": { "en": "Nadia", "fr": "Nadia", "ar": "نادية" }, "text": { "en": "It is so small and green!", "fr": "Elle est si petite et si verte !", "ar": "إنها صغيرة وخضراء جدا!" } }
+          ]
+        },
+        {
+          "place": "port",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "When is the next boat to the island?", "fr": "À quelle heure part le prochain bateau pour l’île ?", "ar": "متى يغادر القارب التالي إلى الجزيرة؟" } },
+            { "who": { "en": "Ticket seller", "fr": "Le vendeur de billets", "ar": "بائع التذاكر" }, "text": { "en": "At ten o’clock.", "fr": "À dix heures.", "ar": "في الساعة العاشرة." } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "An island has water all around it.", "fr": "Une île est entourée d’eau.", "ar": "الجزيرة أرض يحيط بها الماء من كل جانب." } },
+            { "who": { "en": "Diego", "fr": "Diego", "ar": "دييغو" }, "text": { "en": "Like a little country in the sea!", "fr": "Comme un petit pays dans la mer !", "ar": "مثل بلد صغير في البحر!" } }
+          ]
+        },
+        {
+          "place": "beach",
+          "lines": [
+            { "who": { "en": "Hugo", "fr": "Hugo", "ar": "هوغو" }, "text": { "en": "Can we swim to that island?", "fr": "On peut nager jusqu’à cette île ?", "ar": "هل يمكننا السباحة إلى تلك الجزيرة؟" } },
+            { "who": { "en": "Lifeguard", "fr": "Le maître-nageur", "ar": "المنقذ" }, "text": { "en": "No, it is too far. Stay near the beach.", "fr": "Non, c’est trop loin. Restez près de la plage.", "ar": "لا، إنها بعيدة جدا. ابقوا قرب الشاطئ." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Aerial_view_of_small_clouds_over_Gueishan_Island.jpg/330px-Aerial_view_of_small_clouds_over_Gueishan_Island.jpg", "page": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_small_clouds_over_Gueishan_Island.jpg", "author": "xiangyang17", "licence": "CC BY 2.0", "caption": "An island in the sea." }
+      ]
+    },
+    "stone": {
+      "scenes": [
+        {
+          "place": "river",
+          "lines": [
+            { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "Watch me! I can make this stone jump on the water.", "fr": "Regarde-moi ! Je sais faire ricocher cette pierre sur l’eau.", "ar": "شاهديني! أستطيع أن أجعل هذا الحجر يقفز على الماء." } },
+            { "who": { "en": "Sara", "fr": "Sara", "ar": "سارة" }, "text": { "en": "Wow! It jumped three times!", "fr": "Waouh ! Elle a fait trois ricochets !", "ar": "واو! قفز ثلاث مرات!" } }
+          ]
+        },
+        {
+          "place": "beach",
+          "lines": [
+            { "who": { "en": "Mei", "fr": "Mei", "ar": "مي" }, "text": { "en": "I found a white stone.", "fr": "J’ai trouvé une pierre blanche.", "ar": "وجدت حجرا أبيض." } },
+            { "who": { "en": "Leo", "fr": "Léo", "ar": "ليو" }, "text": { "en": "It is very pretty. Keep it!", "fr": "Elle est très jolie. Garde-la !", "ar": "إنه جميل جدا. احتفظي به!" } }
+          ]
+        },
+        {
+          "place": "museum",
+          "lines": [
+            { "who": { "en": "Guide", "fr": "La guide", "ar": "المرشدة" }, "text": { "en": "This stone is very, very old.", "fr": "Cette pierre est très, très ancienne.", "ar": "هذا الحجر قديم جدا جدا." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "What is written on it?", "fr": "Qu’est-ce qui est écrit dessus ?", "ar": "ماذا كتب عليه؟" } }
+          ]
+        },
+        {
+          "place": "building-site",
+          "lines": [
+            { "who": { "en": "Worker", "fr": "L’ouvrier", "ar": "العامل" }, "text": { "en": "Stay behind the fence. The stones are heavy.", "fr": "Restez derrière la barrière. Les pierres sont lourdes.", "ar": "ابقوا خلف السياج. الحجارة ثقيلة." } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Yes, of course. Come, Omar.", "fr": "Oui, bien sûr. Viens, Omar.", "ar": "نعم، بالتأكيد. تعال يا عمر." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Smooth_Rocks_Collected_Near_Government_Wash_%2899c89344-aa92-4eea-8642-4b365438a73e%29.jpg/330px-Smooth_Rocks_Collected_Near_Government_Wash_%2899c89344-aa92-4eea-8642-4b365438a73e%29.jpg", "page": "https://commons.wikimedia.org/wiki/File:Smooth_Rocks_Collected_Near_Government_Wash_(99c89344-aa92-4eea-8642-4b365438a73e).jpg", "author": "Andrew Cattoir (NPS)", "licence": "Public domain", "caption": "Many small stones." }
+      ]
+    },
+    "leaf": {
+      "scenes": [
+        {
+          "place": "park",
+          "lines": [
+            { "who": { "en": "Aisha", "fr": "Aïcha", "ar": "عائشة" }, "text": { "en": "The leaves are red and yellow!", "fr": "Les feuilles sont rouges et jaunes !", "ar": "أوراق الشجر حمراء وصفراء!" } },
+            { "who": { "en": "Ben", "fr": "Ben", "ar": "بن" }, "text": { "en": "It’s autumn. Let’s jump in them!", "fr": "C’est l’automne. Sautons dedans !", "ar": "إنه الخريف. لنقفز فيها!" } }
+          ]
+        },
+        {
+          "place": "garden",
+          "lines": [
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "Look, a leaf is falling from the tree.", "fr": "Regarde, une feuille tombe de l’arbre.", "ar": "انظر، ورقة تسقط من الشجرة." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I can catch it!", "fr": "Je peux l’attraper !", "ar": "يمكنني أن أمسكها!" } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "Bring a leaf to school tomorrow.", "fr": "Apportez une feuille d’arbre à l’école demain.", "ar": "أحضروا ورقة شجر إلى المدرسة غدا." } },
+            { "who": { "en": "Priya", "fr": "Priya", "ar": "بريا" }, "text": { "en": "Any leaf?", "fr": "N’importe quelle feuille ?", "ar": "أي ورقة؟" } },
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "Yes. We will draw them.", "fr": "Oui. Nous allons les dessiner.", "ar": "نعم. سنرسمها." } }
+          ]
+        },
+        {
+          "place": "forest",
+          "lines": [
+            { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "This leaf is bigger than my hand!", "fr": "Cette feuille est plus grande que ma main !", "ar": "ورقة الشجر هذه أكبر من يدي!" } },
+            { "who": { "en": "Zoe", "fr": "Zoé", "ar": "زوي" }, "text": { "en": "Wow, that’s a big leaf!", "fr": "Waouh, c’est une grande feuille !", "ar": "واو، إنها ورقة كبيرة!" } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Maple_leaf_held_up_in_autumn%2C_Vieux-Limoilou.jpg/330px-Maple_leaf_held_up_in_autumn%2C_Vieux-Limoilou.jpg", "page": "https://commons.wikimedia.org/wiki/File:Maple_leaf_held_up_in_autumn,_Vieux-Limoilou.jpg", "author": "Wilfredor", "licence": "CC BY-SA 4.0", "caption": "An orange leaf in autumn." }
+      ]
+    },
+    "storm": {
+      "scenes": [
+        {
+          "place": "living-room",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "What is that noise?", "fr": "C’est quoi, ce bruit ?", "ar": "ما هذا الصوت؟" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "It is a storm. Don’t worry, we are safe inside.", "fr": "C’est une tempête. Ne t’inquiète pas, on est à l’abri à la maison.", "ar": "إنها عاصفة. لا تقلق، نحن في أمان داخل البيت." } }
+          ]
+        },
+        {
+          "place": "port",
+          "lines": [
+            { "who": { "en": "Fisherman", "fr": "Le pêcheur", "ar": "الصياد" }, "text": { "en": "No boats today. A storm is coming.", "fr": "Pas de bateaux aujourd’hui. Une tempête arrive.", "ar": "لا قوارب اليوم. هناك عاصفة قادمة." } },
+            { "who": { "en": "Ali", "fr": "Ali", "ar": "علي" }, "text": { "en": "The sea looks angry!", "fr": "La mer a l’air en colère !", "ar": "يبدو البحر غاضبا!" } }
+          ]
+        },
+        {
+          "place": "train-station",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "The trains are late because of the storm.", "fr": "Les trains sont en retard à cause de la tempête.", "ar": "القطارات متأخرة بسبب العاصفة." } },
+            { "who": { "en": "Yuki", "fr": "Yuki", "ar": "يوكي" }, "text": { "en": "Then let’s read a book while we wait.", "fr": "Alors, lisons un livre en attendant.", "ar": "إذن لنقرأ كتابا ونحن ننتظر." } }
+          ]
+        },
+        {
+          "place": "garden",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Look, the storm broke some flowers.", "fr": "Regarde, la tempête a cassé des fleurs.", "ar": "انظري، كسرت العاصفة بعض الزهور." } },
+            { "who": { "en": "Amara", "fr": "Amara", "ar": "أمارا" }, "text": { "en": "Poor flowers! Let’s help them.", "fr": "Pauvres fleurs ! Aidons-les.", "ar": "يا لها من زهور مسكينة! لنساعدها." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Port_and_lighthouse_overnight_storm_with_lightning_in_Port-la-Nouvelle.jpg/330px-Port_and_lighthouse_overnight_storm_with_lightning_in_Port-la-Nouvelle.jpg", "page": "https://commons.wikimedia.org/wiki/File:Port_and_lighthouse_overnight_storm_with_lightning_in_Port-la-Nouvelle.jpg", "author": "Maxime Raynal from France", "licence": "CC BY 2.0", "caption": "A storm with lightning over the sea." }
+      ]
+    }
+  }
+}

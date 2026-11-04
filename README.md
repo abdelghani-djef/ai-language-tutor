@@ -65,17 +65,24 @@ npx vercel        # preview deployment (asks you to log in and link the project 
 npx vercel --prod # production
 ```
 
-Data stays in each visitor's browser (`localStorage`), so each domain has its own data. Moving from `localhost` to the Vercel URL, or later to a custom domain, starts empty. Use **Export** and **Import** on the Decks page to carry data over.
+Data stays in each visitor's browser (`localStorage`), so each domain has its own data. Moving from `localhost` to the Vercel URL, or later to a custom domain, starts empty. Use **Export** and **Import** at the bottom of the My words page to carry data over.
 
 ## Features
 
 - **Home** (`/`): explains the method in seven principles, each linked to its sources, with a forgetting-curve illustration of spaced review, the myths the research doesn't support, and its limits. Principles the app doesn't implement yet are marked "In development".
-- **Add words** (`/add`): the input looks like the flashcard it becomes, with the word on the front and the translation on the back. Pick the two languages (or swap them), type a word and press Enter to translate. Edit the translation or type your own, then press Enter again to add the card. The translator is chosen for you: the small Opus-MT model when the pair has one, otherwise NLLB-200, which is downloaded only after you click **Download and translate**. The first card for a language pair starts a deck (for example "My French words"). Cards typed after a swap go into the same deck, stored the deck's way round. **Recently added** lists the latest cards, each with a pencil to edit its details, and a link to study the deck.
-- **Decks** (`/decks`): create, rename and delete decks. Each deck shows its total, due and learned counts. **Export/Import** downloads or restores a JSON backup, which matters because your data lives only in this browser. Import checks the file first, shows what it contains and asks before replacing your data, with an **Export current** button right there.
-- **Deck** (`/deck?id=…`): add cards by hand, edit or delete cards (with **Undo**), and see each card's FSRS state and next due time. Deleting cards or decks keeps their review log, so past study days still count toward your streak and heatmap. Search the deck's cards, or filter them by tag and then study or quiz only that tag.
+- **Menu**: **My words · Study · Stories · Stats**. Everything about your word lists (the lists, one list, ready-made lists and Add words) sits under **My words**, and the interface calls a group of words a **list** and each saved item a **word**. In the code these are still `Deck` and `Flashcard`.
+- **My words** (`/decks`): the hub. It first asks **How do you want to add words?** with three choices: **Ready-made lists** (recommended for beginners), **Translate your own words**, or **an empty list** you fill by hand. Below that are your lists, each with its total, due and learned counts and **Study**, **Quiz** and **Manage** buttons, then the backup. **Export/Import** downloads or restores a JSON backup, which matters because your data lives only in this browser. Import checks the file first, shows what it contains and asks before replacing your data, with an **Export current** button right there.
+- **Add words** (`/add`, or `/add?deck=…` to add to one list): the input looks like the flashcard it becomes, with the word on the front and the translation on the back. Pick the two languages (or swap them), type a word and press Enter to translate. Edit the translation or type your own, then press Enter again to add the card. The translator is chosen for you: the small Opus-MT model when the pair has one, otherwise NLLB-200, which is downloaded only after you click **Download and translate**. The first word for a language pair starts a list (for example "My French words"). Words typed after a swap go into the same list, stored the list's way round. Opened from a list (**Translate a word for this list**), the page uses that list's languages and saves into it. **Recently added** shows the latest words, each with a pencil to edit its details, and a link to study the list.
+- **One list** (`/deck?id=…`): add a word by hand or with **Translate a word for this list**, rename the list, edit or delete words (with **Undo**), and see each word's FSRS state and next due time. Deleting words or lists keeps their review log, so past study days still count toward your streak and heatmap. Search the list, or filter it by tag and then study or quiz only that tag.
 - **Richer cards**: the card editor (**More details…**, or the pencil on a card) adds an **example sentence** (with a speaker button), **notes**, **tags** and a **picture**. You can pick a picture file or paste one. Pictures are shrunk to 320 px WebP (or JPEG) of about 10–30 KB, because they are stored in `localStorage` with everything else. The example, notes and picture show on the answer side while you study.
-- **Starter words** (`/words`): about 500 of the most frequent English words in 20 themed packs (greetings, people, numbers, food, core verbs…). Each word has a French or Arabic translation, an emoji picture where one fits, and an English example. Adding a pack puts its words in a "Starter words (French)" or "(Arabic)" deck, in frequency order.
-- **Stories** (`/story`): 40 short reading stories, two per starter pack, with French and Arabic translations. They were written with AI and checked by a second reviewer, and each uses only words from its own pack and earlier packs (plus basic words like "the" or "is"), so you know almost every word. After a study session, **Read a story with these words** opens the story that uses the most of the words you just studied. Every word you've met is tappable and shows its meaning, picture, example and audio; words studied today stand out. **Read aloud** uses the browser's voice. An in-browser story writer was tried first (Qwen2.5-0.5B), but it was slow without WebGPU and often wrote chat replies instead of stories, so the stories are written ahead of time instead.
+- **Ready-made lists** (`/words`): about 500 of the most frequent English words in 20 lists by theme (greetings, people, numbers, food, core verbs…). Each word has a French or Arabic translation, an emoji picture where one fits, and an English example. Adding a ready-made list creates a list of your own with the same name (one per translation language), so the group you chose is the group you see in My words; **Open list** goes to it. The first list not added yet is marked **Start here**.
+- **Stories** (`/story`): 40 short reading stories, two per ready-made list, with French and Arabic translations. They were written with AI and checked by a second reviewer, and each uses only words from its own list and earlier lists (plus basic words like "the" or "is"), so you know almost every word. After a study session, **Read a story with these words** opens the story that uses the most of the words you just studied. Every word you've met is tappable and shows its meaning, picture, example and audio; words studied today stand out. **Read aloud** uses the browser's voice. An in-browser story writer was tried first (Qwen2.5-0.5B), but it was slow without WebGPU and often wrote chat replies instead of stories, so the stories are written ahead of time instead.
+- **Word page** (`/word?w=…&lang=…&to=…`): tap a word in a list, in Recently added, on the ready-made lists page, on the answer side while studying (**See everything about this word**) or in a story, and a whole page about it opens. From study and stories it opens as a layer on top, so Back or Escape returns you to the same card or the same place in the story. The page shows:
+  - **In real life**: four short conversations that use the word, each at a place ("At the bakery") with a picture, audio for every line and its French or Arabic translation. Swipe them on a phone. On a computer, use the round arrows, the ← → keys or the row of places. About 2,000 scenes for the ~500 ready-made words were written ahead of time with AI and checked by a second pass for natural English, correct translations and simple words (`public/scenes/<list>.json`, loaded one list at a time; places and their pictures are in `public/scenes/_places.json`). Your own words get real example sentences from Tatoeba instead.
+  - **Meaning**, word type, written pronunciation and recorded UK/US audio from the Free Dictionary API, with Wiktionary as a fallback and for other languages. A definition is translated on your device; if the translation model isn't downloaded yet, a **Translate** button asks first.
+  - **Pictures**: for ready-made words, pictures from Wikimedia Commons, chosen ahead of time and checked by eye (all of them are in `docs/pictures.html`, made by `scripts/contact-sheet.mjs`). For your own words, pictures only come from a Wikipedia article whose title matches the word, never from open search.
+  - **Did you know?**: the start of the Wikipedia article in your language, **Words that go with it** from Datamuse (tap one to open its page), and the credits each free licence asks for.
+  Everything runs in your browser: only the word you look up is sent, to those public sources, with no key and no account. Answers are kept in the browser's Cache API (not in `localStorage`, which holds your data). Live sentences and word partners pass a small filter of words unsuitable for children.
 - **Study** (`/study`, or `/study?deck=…` for one deck), following the research method:
   - **Recall first, no typing**: a word appears and you think of the answer, then tap **Show answer** (or Space). One tap says how it went: **Forgot**, **Almost** or **Knew it**. Recalling in your head works about as well as typing the answer (Smith, Roediger & Karpicke 2013), as long as you try before you look. For children, or anyone who prefers it, the **Pick** mode shows four answers to tap instead, graded automatically. The choice is remembered.
   - **A first look at new words**: a brand-new word is shown first (both sides, picture, example, audio) and asked a minute later. The first look isn't given to the scheduler as a rating.
@@ -161,15 +168,19 @@ FSRS's default parameters were fitted on hundreds of millions of real Anki revie
 src/
   app/
     page.tsx            Home: the research-based method
-    add/page.tsx        Add words (translate a word, add it as a card)
-    decks/page.tsx      Deck list, export/import
-    deck/page.tsx       One deck: add/edit/delete cards
+    add/page.tsx        Add words (translate a word, add it to a list)
+    decks/page.tsx      My words: ways to add words, your lists, export/import
+    deck/page.tsx       One list: add/edit/delete words
+    words/page.tsx      Ready-made lists
+    word/page.tsx       Word page (also opened as a layer from study and stories)
+    story/page.tsx      Stories with tappable words
     study/page.tsx      Flip-and-rate review session
     quiz/page.tsx       Typing / multiple-choice quiz
     stats/page.tsx      Stats + heatmap
+  components/word/      Word page: header, scene stage (swipe, arrows, places row), overlay
   components/           App components (flip card, card editor, heatmap, goal ring, badges…) and shadcn/ui in components/ui
   messages/             Interface strings per screen, in English, French and Arabic
-  data/                 Starter word packs and their stories
+  data/                 Ready-made word lists and their stories
   lib/
     store.ts            localStorage-backed store (useSyncExternalStore) + actions
     srs.ts              ts-fsrs wrapper
@@ -183,6 +194,10 @@ src/
     languages.ts        Languages, engines, pair → model (Opus-MT / NLLB), speech voices
     speech.ts           speechSynthesis helper
     translator.worker.ts / useTranslator.ts   Transformers.js in a Web Worker
+    word/               Word page data: which word and list (target), the free sources and their parsing,
+                        Cache API fetch, child-safety filter, scenes loading and checks, useWordData
+public/scenes/          Ready-made scenes, one JSON file per list, plus _places.json
+scripts/contact-sheet.mjs   Writes docs/pictures.html, every chosen picture with its credit
 ```
 
 ## Limitations
@@ -191,4 +206,5 @@ src/
 - `localStorage` holds about 5 MB, which is plenty for many thousands of text cards, or a few hundred cards with pictures. If the browser refuses to save, a banner says so.
 - Available pronunciation voices depend on your OS and browser. Arabic in particular may have no voice on some systems.
 - opus-mt models are small. They handle words and short sentences well but are not as fluent as large cloud translators, so you can edit translations before saving.
+- The word page's free sources are run by volunteers and can be slow or down for a while. Each section then says it couldn't load and offers **Try again**; scenes and your own data still show. The English dictionary, word partners and audio exist for English words only.
 - NLLB needs about 900 MB of download and cache space and a fair amount of memory. It works best in a desktop browser.

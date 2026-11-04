@@ -1,0 +1,588 @@
+{
+  "pack": "food",
+  "complete": true,
+  "words": {
+    "water": {
+      "scenes": [
+        { "place": "gym", "lines": [
+          { "who": { "en": "Coach", "fr": "L’entraîneur", "ar": "المدرب" }, "text": { "en": "Drink some water, everyone!", "fr": "Buvez de l’eau, tout le monde !", "ar": "اشربوا بعض الماء جميعا!" } },
+          { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Okay, thank you!", "fr": "D’accord, merci !", "ar": "حسنا، شكرا!" } }
+        ] },
+        { "place": "restaurant", "lines": [
+          { "who": { "en": "Waiter", "fr": "Le serveur", "ar": "النادل" }, "text": { "en": "Good evening! What would you like to drink?", "fr": "Bonsoir ! Qu’est-ce que vous voulez boire ?", "ar": "مساء الخير! ماذا تريد أن تشرب؟" } },
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Some water, please.", "fr": "De l’eau, s’il vous plaît.", "ar": "بعض الماء، من فضلك." } },
+          { "who": { "en": "Waiter", "fr": "Le serveur", "ar": "النادل" }, "text": { "en": "Of course. Here you are.", "fr": "Bien sûr. Voilà.", "ar": "بالطبع. تفضل." } }
+        ] },
+        { "place": "beach", "lines": [
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "It is hot today, Leo. Have some water.", "fr": "Il fait chaud aujourd’hui, Leo. Bois un peu d’eau.", "ar": "الجو حار اليوم يا ليو. اشرب بعض الماء." } },
+          { "who": { "en": "Leo", "fr": "Leo", "ar": "ليو" }, "text": { "en": "Thank you, Mum!", "fr": "Merci, maman !", "ar": "شكرا يا أمي!" } }
+        ] },
+        { "place": "park", "lines": [
+          { "who": { "en": "Sara", "fr": "Sara", "ar": "سارة" }, "text": { "en": "Oh no, I have no water.", "fr": "Oh non, je n’ai plus d’eau.", "ar": "يا إلهي، ليس معي ماء." } },
+          { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "Here, have some of my water.", "fr": "Tiens, prends un peu de mon eau.", "ar": "تفضلي، خذي قليلا من مائي." } },
+          { "who": { "en": "Sara", "fr": "Sara", "ar": "سارة" }, "text": { "en": "Thank you, Omar!", "fr": "Merci, Omar !", "ar": "شكرا يا عمر!" } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Water_pouring_from_a_faucet_into_a_clear_glass_cup._%2815054813052%29.jpg/330px-Water_pouring_from_a_faucet_into_a_clear_glass_cup._%2815054813052%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Water_pouring_from_a_faucet_into_a_clear_glass_cup._(15054813052).jpg", "author": "USEPA Environmental-Protection-Agency", "licence": "Public domain", "caption": "Water from a tap filling a glass"}
+      ]
+    },
+    "food": {
+      "scenes": [
+        { "place": "restaurant", "lines": [
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "The food here is very good.", "fr": "La nourriture est très bonne ici.", "ar": "الطعام هنا لذيذ جدا." } },
+          { "who": { "en": "Maya", "fr": "Maya", "ar": "مايا" }, "text": { "en": "Yes! I like it a lot.", "fr": "Oui ! J’aime beaucoup.", "ar": "نعم! يعجبني كثيرا." } }
+        ] },
+        { "place": "pet-shop", "lines": [
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Hello! Do you have food for my cat?", "fr": "Bonjour ! Vous avez de la nourriture pour mon chat ?", "ar": "مرحبا! هل لديكم طعام لقطتي؟" } },
+          { "who": { "en": "Shopkeeper", "fr": "La vendeuse", "ar": "البائعة" }, "text": { "en": "Yes, here it is.", "fr": "Oui, la voilà.", "ar": "نعم، ها هو." } }
+        ] },
+        { "place": "kitchen", "lines": [
+          { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "Mum, is there any food, please?", "fr": "Maman, il y a quelque chose à manger, s’il te plaît ?", "ar": "أمي، هل يوجد طعام، من فضلك؟" } },
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Yes, the food is on the table.", "fr": "Oui, c’est sur la table.", "ar": "نعم، الطعام على الطاولة." } }
+        ] },
+        { "place": "family-party", "lines": [
+          { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "There is a lot of food today!", "fr": "Il y a beaucoup à manger aujourd’hui !", "ar": "هناك الكثير من الطعام اليوم!" } },
+          { "who": { "en": "Uncle", "fr": "L’oncle", "ar": "العم" }, "text": { "en": "Yes, and all of it is very good!", "fr": "Oui, et tout est très bon !", "ar": "نعم، وكله لذيذ جدا!" } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/330px-Good_Food_Display_-_NCI_Visuals_Online.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Good_Food_Display_-_NCI_Visuals_Online.jpg", "author": "Unknown author (NCI)", "licence": "Public domain", "caption": "Lots of different food"}
+      ]
+    },
+    "bread": {
+      "scenes": [
+        { "place": "bakery", "lines": [
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Good morning! Is the bread fresh?", "fr": "Bonjour ! Le pain est frais ?", "ar": "صباح الخير! هل الخبز طازج؟" } },
+          { "who": { "en": "Baker", "fr": "Le boulanger", "ar": "الخباز" }, "text": { "en": "Yes, it is from this morning.", "fr": "Oui, il est de ce matin.", "ar": "نعم، إنه من هذا الصباح." } }
+        ] },
+        { "place": "dining-table", "lines": [
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Lina, can you pass the bread, please?", "fr": "Lina, tu peux me passer le pain, s’il te plaît ?", "ar": "لينا، هل يمكنك أن تناوليني الخبز، من فضلك؟" } },
+          { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "Here you are, Mum.", "fr": "Tiens, maman.", "ar": "تفضلي يا أمي." } }
+        ] },
+        { "place": "park", "lines": [
+          { "who": { "en": "Tom", "fr": "Tom", "ar": "توم" }, "text": { "en": "I have some bread. Do you want some?", "fr": "J’ai du pain. Tu en veux ?", "ar": "معي بعض الخبز. هل تريد قليلا منه؟" } },
+          { "who": { "en": "Amir", "fr": "Amir", "ar": "أمير" }, "text": { "en": "Yes, please! Thank you, Tom.", "fr": "Oui, s’il te plaît ! Merci, Tom.", "ar": "نعم، من فضلك! شكرا يا توم." } }
+        ] },
+        { "place": "supermarket", "lines": [
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "We need bread and milk.", "fr": "Il nous faut du pain et du lait.", "ar": "نحتاج إلى الخبز والحليب." } },
+          { "who": { "en": "Sofia", "fr": "Sofia", "ar": "صوفيا" }, "text": { "en": "The bread is here, Dad!", "fr": "Le pain est là, papa !", "ar": "الخبز هنا يا أبي!" } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Fresh_made_bread_05.jpg/330px-Fresh_made_bread_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Fresh_made_bread_05.jpg", "author": "FranHogan", "licence": "CC BY-SA 4.0", "caption": "A loaf of bread and slices"}
+      ]
+    },
+    "milk": {
+      "scenes": [
+        { "place": "kitchen", "lines": [
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Dad, can I have some milk, please?", "fr": "Papa, je peux avoir du lait, s’il te plaît ?", "ar": "أبي، هل يمكنني أن آخذ بعض الحليب، من فضلك؟" } },
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Of course. Here you are.", "fr": "Bien sûr. Tiens.", "ar": "بالطبع. تفضل." } }
+        ] },
+        { "place": "farm", "lines": [
+          { "who": { "en": "Farmer", "fr": "Le fermier", "ar": "المزارع" }, "text": { "en": "Our cows give milk every day.", "fr": "Nos vaches donnent du lait tous les jours.", "ar": "أبقارنا تعطي الحليب كل يوم." } },
+          { "who": { "en": "Nadia", "fr": "Nadia", "ar": "نادية" }, "text": { "en": "Can I drink some?", "fr": "Je peux en boire un peu ?", "ar": "هل يمكنني أن أشرب قليلا منه؟" } },
+          { "who": { "en": "Farmer", "fr": "Le fermier", "ar": "المزارع" }, "text": { "en": "Yes, of course!", "fr": "Oui, bien sûr !", "ar": "نعم، بالطبع!" } }
+        ] },
+        { "place": "cafe", "lines": [
+          { "who": { "en": "Waitress", "fr": "La serveuse", "ar": "النادلة" }, "text": { "en": "Coffee with milk?", "fr": "Un café au lait ?", "ar": "قهوة بالحليب؟" } },
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yes, please. Only a little milk.", "fr": "Oui, s’il vous plaît. Juste un peu de lait.", "ar": "نعم، من فضلك. قليل من الحليب فقط." } }
+        ] },
+        { "place": "corner-shop", "lines": [
+          { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "Excuse me, is there any milk?", "fr": "Excusez-moi, vous avez du lait ?", "ar": "عفوا، هل يوجد حليب؟" } },
+          { "who": { "en": "Shopkeeper", "fr": "Le vendeur", "ar": "البائع" }, "text": { "en": "Sorry, no milk today.", "fr": "Désolé, pas de lait aujourd’hui.", "ar": "آسف، لا يوجد حليب اليوم." } },
+          { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "Okay, thank you.", "fr": "D’accord, merci.", "ar": "حسنا، شكرا." } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Glass_of_Milk_%2833657535532%29.jpg/330px-Glass_of_Milk_%2833657535532%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Glass_of_Milk_(33657535532).jpg", "author": "NIAID", "licence": "CC BY 2.0", "caption": "A glass of milk"}
+      ]
+    },
+    "breakfast": {
+      "scenes": [
+        { "place": "kitchen", "lines": [
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Good morning, Mum! What is for breakfast?", "fr": "Bonjour, maman ! Qu’est-ce qu’il y a au petit-déjeuner ?", "ar": "صباح الخير يا أمي! ماذا لدينا للفطور؟" } },
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Eggs and bread.", "fr": "Des œufs et du pain.", "ar": "بيض وخبز." } }
+        ] },
+        { "place": "hotel", "lines": [
+          { "who": { "en": "Receptionist", "fr": "La réceptionniste", "ar": "موظفة الاستقبال" }, "text": { "en": "Breakfast is from seven to ten.", "fr": "Le petit-déjeuner est servi de sept heures à dix heures.", "ar": "الفطور من السابعة إلى العاشرة." } },
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Thank you very much.", "fr": "Merci beaucoup.", "ar": "شكرا جزيلا." } }
+        ] },
+        { "place": "classroom", "lines": [
+          { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Did you all have breakfast this morning?", "fr": "Vous avez tous pris votre petit-déjeuner ce matin ?", "ar": "هل تناولتم جميعا الفطور هذا الصباح؟" } },
+          { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Yes!", "fr": "Oui !", "ar": "نعم!" } },
+          { "who": { "en": "Ines", "fr": "Ines", "ar": "إيناس" }, "text": { "en": "No, not today.", "fr": "Non, pas aujourd’hui.", "ar": "لا، ليس اليوم." } }
+        ] },
+        { "place": "balcony", "lines": [
+          { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "I like to have breakfast here in the morning.", "fr": "J’aime prendre mon petit-déjeuner ici le matin.", "ar": "أحب أن أتناول الفطور هنا في الصباح." } },
+          { "who": { "en": "Yuki", "fr": "Yuki", "ar": "يوكي" }, "text": { "en": "Me too, Grandpa!", "fr": "Moi aussi, papi !", "ar": "وأنا أيضا يا جدي!" } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Fresh_breakfast_served_with_eggs%2C_sausage%2C_vegetables%2C_and_toast_in_a_cafe.jpg/330px-Fresh_breakfast_served_with_eggs%2C_sausage%2C_vegetables%2C_and_toast_in_a_cafe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Fresh_breakfast_served_with_eggs,_sausage,_vegetables,_and_toast_in_a_cafe.jpg", "author": "Shixart1985", "licence": "CC BY 2.0", "caption": "Breakfast with eggs and toast"}
+      ]
+    },
+    "lunch": {
+      "scenes": [
+        { "place": "canteen", "lines": [
+          { "who": { "en": "Cook", "fr": "La cuisinière", "ar": "الطباخة" }, "text": { "en": "Lunch is ready! Today we have rice and vegetables.", "fr": "Le déjeuner est prêt ! Aujourd’hui, il y a du riz et des légumes.", "ar": "الغداء جاهز! اليوم لدينا أرز وخضار." } },
+          { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Thank you!", "fr": "Merci !", "ar": "شكرا!" } }
+        ] },
+        { "place": "school-gate", "lines": [
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Musa, do you have your lunch?", "fr": "Musa, tu as ton déjeuner ?", "ar": "موسى، هل معك غداؤك؟" } },
+          { "who": { "en": "Musa", "fr": "Musa", "ar": "موسى" }, "text": { "en": "Yes, Mum. It is in my bag.", "fr": "Oui, maman. Il est dans mon sac.", "ar": "نعم يا أمي. إنه في حقيبتي." } }
+        ] },
+        { "place": "office", "lines": [
+          { "who": { "en": "Chen", "fr": "Chen", "ar": "تشين" }, "text": { "en": "Priya, do you want to have lunch with me?", "fr": "Priya, tu veux déjeuner avec moi ?", "ar": "بريا، هل تريدين أن تتناولي الغداء معي؟" } },
+          { "who": { "en": "Priya", "fr": "Priya", "ar": "بريا" }, "text": { "en": "Yes! At one o’clock?", "fr": "Oui ! À une heure ?", "ar": "نعم! في الساعة الواحدة؟" } },
+          { "who": { "en": "Chen", "fr": "Chen", "ar": "تشين" }, "text": { "en": "Okay, see you later!", "fr": "D’accord, à plus tard !", "ar": "حسنا، أراك لاحقا!" } }
+        ] },
+        { "place": "grandparents-house", "lines": [
+          { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "Please stay for lunch!", "fr": "Restez déjeuner, s’il vous plaît !", "ar": "ابقوا لتناول الغداء، من فضلكم!" } },
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Thank you, Mum. Yes, we will stay.", "fr": "Merci, maman. Oui, on reste.", "ar": "شكرا يا أمي. نعم، سنبقى." } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/School_lunch_tray_MyPlate_20210810-FNS-UNC-0015.jpg/330px-School_lunch_tray_MyPlate_20210810-FNS-UNC-0015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:School_lunch_tray_MyPlate_20210810-FNS-UNC-0015.jpg", "author": "U.S. Department of Agriculture", "licence": "Public domain", "caption": "A school lunch on a tray"}
+      ]
+    },
+    "dinner": {
+      "scenes": [
+        { "place": "dining-table", "lines": [
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Dinner is ready!", "fr": "Le dîner est prêt !", "ar": "العشاء جاهز!" } },
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Great! What is for dinner?", "fr": "Super ! Qu’est-ce qu’il y a pour le dîner ?", "ar": "رائع! ماذا لدينا للعشاء؟" } },
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Soup and bread.", "fr": "De la soupe et du pain.", "ar": "حساء وخبز." } }
+        ] },
+        { "place": "restaurant", "lines": [
+          { "who": { "en": "Waiter", "fr": "Le serveur", "ar": "النادل" }, "text": { "en": "Good evening! A table for dinner?", "fr": "Bonsoir ! Une table pour le dîner ?", "ar": "مساء الخير! طاولة للعشاء؟" } },
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Yes, for four people, please.", "fr": "Oui, pour quatre personnes, s’il vous plaît.", "ar": "نعم، لأربعة أشخاص، من فضلك." } }
+        ] },
+        { "place": "living-room", "lines": [
+          { "who": { "en": "Aisha", "fr": "Aisha", "ar": "عائشة" }, "text": { "en": "Mum, can Zara stay for dinner?", "fr": "Maman, Zara peut rester dîner ?", "ar": "أمي، هل يمكن أن تبقى زارا للعشاء؟" } },
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Yes, of course!", "fr": "Oui, bien sûr !", "ar": "نعم، بالطبع!" } },
+          { "who": { "en": "Zara", "fr": "Zara", "ar": "زارا" }, "text": { "en": "Thank you!", "fr": "Merci !", "ar": "شكرا!" } }
+        ] },
+        { "place": "campsite", "lines": [
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Tonight we cook dinner outside!", "fr": "Ce soir, on prépare le dîner dehors !", "ar": "الليلة نطبخ العشاء في الخارج!" } },
+          { "who": { "en": "Hugo", "fr": "Hugo", "ar": "هوغو" }, "text": { "en": "Yes! Can I help?", "fr": "Oui ! Je peux aider ?", "ar": "رائع! هل يمكنني المساعدة؟" } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Special_foods_%26_cuisines_in_Chongqing_-_Family_Dinner_3rd.jpg/330px-Special_foods_%26_cuisines_in_Chongqing_-_Family_Dinner_3rd.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Special_foods_%26_cuisines_in_Chongqing_-_Family_Dinner_3rd.jpg", "author": "Jason M. C., Han", "licence": "CC BY-SA 4.0", "caption": "A family dinner on the table"}
+      ]
+    },
+    "meal": {
+      "scenes": [
+        { "place": "home", "lines": [
+          { "who": { "en": "Leila", "fr": "Leila", "ar": "ليلى" }, "text": { "en": "Breakfast is my favourite meal. And you?", "fr": "Le petit-déjeuner est mon repas préféré. Et toi ?", "ar": "الفطور هو وجبتي المفضلة. وأنت؟" } },
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "My favourite meal is dinner.", "fr": "Moi, mon repas préféré, c’est le dîner.", "ar": "وجبتي المفضلة هي العشاء." } }
+        ] },
+        { "place": "restaurant", "lines": [
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Thank you for the meal. It was very good.", "fr": "Merci pour le repas. C’était très bon.", "ar": "شكرا على الوجبة. كانت لذيذة جدا." } },
+          { "who": { "en": "Waiter", "fr": "Le serveur", "ar": "النادل" }, "text": { "en": "You’re welcome! Goodbye.", "fr": "Je vous en prie ! Au revoir.", "ar": "عفوا! مع السلامة." } }
+        ] },
+        { "place": "hospital", "lines": [
+          { "who": { "en": "Nurse", "fr": "L’infirmier", "ar": "الممرض" }, "text": { "en": "Here is your meal.", "fr": "Voici votre repas.", "ar": "هذه وجبتك." } },
+          { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "Thank you very much!", "fr": "Merci beaucoup !", "ar": "شكرا جزيلا!" } }
+        ] },
+        { "place": "plane", "lines": [
+          { "who": { "en": "Flight attendant", "fr": "L’hôtesse de l’air", "ar": "المضيفة" }, "text": { "en": "Would you like a meal?", "fr": "Vous voulez un repas ?", "ar": "هل تريد وجبة؟" } },
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yes, please. Thank you.", "fr": "Oui, s’il vous plaît. Merci.", "ar": "نعم، من فضلك. شكرا." } }
+        ] }
+      ],
+      "pictures": []
+    },
+    "tea": {
+      "scenes": [
+        { "place": "grandparents-house", "lines": [
+          { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "Do you want some tea with mint?", "fr": "Tu veux du thé à la menthe ?", "ar": "هل تريد بعض الشاي بالنعناع؟" } },
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yes, please, Grandma!", "fr": "Oui, s’il te plaît, mamie !", "ar": "نعم، من فضلك يا جدتي!" } }
+        ] },
+        { "place": "cafe", "lines": [
+          { "who": { "en": "Waiter", "fr": "Le serveur", "ar": "النادل" }, "text": { "en": "Tea or coffee?", "fr": "Thé ou café ?", "ar": "شاي أم قهوة؟" } },
+          { "who": { "en": "Fatima", "fr": "Fatima", "ar": "فاطمة" }, "text": { "en": "Tea, please. No sugar.", "fr": "Un thé, s’il vous plaît. Sans sucre.", "ar": "شاي، من فضلك. بدون سكر." } }
+        ] },
+        { "place": "living-room", "lines": [
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "The tea is very hot, Omar. Wait a minute.", "fr": "Le thé est très chaud, Omar. Attends une minute.", "ar": "الشاي ساخن جدا يا عمر. انتظر دقيقة." } },
+          { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "Okay, Dad.", "fr": "D’accord, papa.", "ar": "حسنا يا أبي." } }
+        ] },
+        { "place": "train", "lines": [
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Excuse me, is there tea on the train?", "fr": "Excusez-moi, il y a du thé dans le train ?", "ar": "عفوا، هل يوجد شاي في القطار؟" } },
+          { "who": { "en": "Ticket inspector", "fr": "Le contrôleur", "ar": "مراقب التذاكر" }, "text": { "en": "Yes. The café is in car three.", "fr": "Oui. Le bar est dans la voiture trois.", "ar": "نعم. المقهى في العربة رقم ثلاثة." } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Cup_of_black_tea.JPG/330px-Cup_of_black_tea.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Cup_of_black_tea.JPG", "author": "AntanO", "licence": "CC BY-SA 4.0", "caption": "A cup of tea"}
+      ]
+    },
+    "coffee": {
+      "scenes": [
+        { "place": "kitchen", "lines": [
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Good morning! Is the coffee ready?", "fr": "Bonjour ! Le café est prêt ?", "ar": "صباح الخير! هل القهوة جاهزة؟" } },
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Yes, here you are.", "fr": "Oui, tiens.", "ar": "نعم، تفضلي." } }
+        ] },
+        { "place": "cafe", "lines": [
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "A coffee and an orange juice, please.", "fr": "Un café et un jus d’orange, s’il vous plaît.", "ar": "قهوة وعصير برتقال، من فضلك." } },
+          { "who": { "en": "Waitress", "fr": "La serveuse", "ar": "النادلة" }, "text": { "en": "Of course!", "fr": "Bien sûr !", "ar": "بالطبع!" } }
+        ] },
+        { "place": "office", "lines": [
+          { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "Do you want a coffee, Sofia?", "fr": "Tu veux un café, Sofia ?", "ar": "هل تريدين قهوة يا صوفيا؟" } },
+          { "who": { "en": "Sofia", "fr": "Sofia", "ar": "صوفيا" }, "text": { "en": "No, thank you. I have some tea.", "fr": "Non, merci. J’ai du thé.", "ar": "لا، شكرا. لدي شاي." } }
+        ] },
+        { "place": "petrol-station", "lines": [
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "I need a coffee!", "fr": "J’ai besoin d’un café !", "ar": "أحتاج إلى قهوة!" } },
+          { "who": { "en": "Maya", "fr": "Maya", "ar": "مايا" }, "text": { "en": "There is coffee in the shop, Dad.", "fr": "Il y a du café dans la boutique, papa.", "ar": "توجد قهوة في المتجر يا أبي." } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/330px-A_small_cup_of_coffee.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:A_small_cup_of_coffee.JPG", "author": "Julius Schorzman", "licence": "CC BY-SA 2.0", "caption": "A cup of coffee"}
+      ]
+    },
+    "juice": {
+      "scenes": [
+        { "place": "birthday-party", "lines": [
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Who wants some juice?", "fr": "Qui veut du jus ?", "ar": "من يريد بعض العصير؟" } },
+          { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Me! Me!", "fr": "Moi ! Moi !", "ar": "أنا! أنا!" } }
+        ] },
+        { "place": "dining-table", "lines": [
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I like orange juice.", "fr": "J’aime le jus d’orange.", "ar": "أحب عصير البرتقال." } },
+          { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "Me too! It is very good.", "fr": "Moi aussi ! Il est très bon.", "ar": "وأنا أيضا! إنه لذيذ جدا." } }
+        ] },
+        { "place": "fruit-shop", "lines": [
+          { "who": { "en": "Shopkeeper", "fr": "La vendeuse", "ar": "البائعة" }, "text": { "en": "These oranges are good for juice.", "fr": "Ces oranges sont bonnes pour faire du jus.", "ar": "هذا البرتقال جيد للعصير." } },
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Okay, ten oranges, please.", "fr": "D’accord, dix oranges, s’il vous plaît.", "ar": "حسنا، عشر برتقالات، من فضلك." } }
+        ] },
+        { "place": "car", "lines": [
+          { "who": { "en": "Paulo", "fr": "Paulo", "ar": "باولو" }, "text": { "en": "Mum, can I have some juice, please?", "fr": "Maman, je peux avoir du jus, s’il te plaît ?", "ar": "أمي، هل يمكنني أن آخذ بعض العصير، من فضلك؟" } },
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Yes. Here is an apple juice for you.", "fr": "Oui. Tiens, voilà un jus de pomme.", "ar": "نعم. تفضل، هذا عصير تفاح لك." } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Orange_juice_1_edit1.jpg/330px-Orange_juice_1_edit1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Orange_juice_1_edit1.jpg", "author": "Agency of the United States Department of Agriculture", "licence": "Public domain", "caption": "A glass of orange juice"}
+      ]
+    },
+    "meat": {
+      "scenes": [
+        { "place": "butcher", "lines": [
+          { "who": { "en": "Butcher", "fr": "Le boucher", "ar": "الجزار" }, "text": { "en": "Hello! What would you like?", "fr": "Bonjour ! Qu’est-ce que je vous sers ?", "ar": "مرحبا! ماذا تريدين؟" } },
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Some meat for dinner, please.", "fr": "De la viande pour le dîner, s’il vous plaît.", "ar": "بعض اللحم للعشاء، من فضلك." } }
+        ] },
+        { "place": "restaurant", "lines": [
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Sorry, I don’t eat meat.", "fr": "Pardon, je ne mange pas de viande.", "ar": "عذرا، أنا لا آكل اللحم." } },
+          { "who": { "en": "Waiter", "fr": "Le serveur", "ar": "النادل" }, "text": { "en": "No problem. We have rice and vegetables.", "fr": "Pas de problème. Nous avons du riz et des légumes.", "ar": "لا مشكلة. لدينا أرز وخضار." } }
+        ] },
+        { "place": "garden", "lines": [
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "The meat is ready! Who wants some?", "fr": "La viande est prête ! Qui en veut ?", "ar": "اللحم جاهز! من يريد بعضه؟" } },
+          { "who": { "en": "Ali", "fr": "Ali", "ar": "علي" }, "text": { "en": "Me, please!", "fr": "Moi, s’il te plaît !", "ar": "أنا، من فضلك!" } }
+        ] },
+        { "place": "market", "lines": [
+          { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "Is this meat fresh?", "fr": "Cette viande est fraîche ?", "ar": "هل هذا اللحم طازج؟" } },
+          { "who": { "en": "Seller", "fr": "Le marchand", "ar": "البائع" }, "text": { "en": "Yes, it is from today.", "fr": "Oui, elle est d’aujourd’hui.", "ar": "نعم، إنه من اليوم." } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Raw_Meat_%286737753521%29.jpg/330px-Raw_Meat_%286737753521%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Raw_Meat_(6737753521).jpg", "author": "Jen Arrr", "licence": "CC BY-SA 2.0", "caption": "Pieces of raw meat"}
+      ]
+    },
+    "egg": {
+      "scenes": [
+        { "place": "kitchen", "lines": [
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Do you want an egg for breakfast?", "fr": "Tu veux un œuf au petit-déjeuner ?", "ar": "هل تريد بيضة للفطور؟" } },
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yes, two eggs, please!", "fr": "Oui, deux œufs, s’il te plaît !", "ar": "نعم، بيضتين من فضلك!" } }
+        ] },
+        { "place": "farm", "lines": [
+          { "who": { "en": "Farmer", "fr": "La fermière", "ar": "المزارعة" }, "text": { "en": "Look, Lina! Here are some eggs.", "fr": "Regarde, Lina ! Voici des œufs.", "ar": "انظري يا لينا! هذا بعض البيض." } },
+          { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "Wow! Can I have one?", "fr": "Oh ! Je peux en prendre un ?", "ar": "رائع! هل يمكنني أن آخذ واحدة؟" } },
+          { "who": { "en": "Farmer", "fr": "La fermière", "ar": "المزارعة" }, "text": { "en": "Of course!", "fr": "Bien sûr !", "ar": "بالطبع!" } }
+        ] },
+        { "place": "supermarket", "lines": [
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "We need six eggs, Sam.", "fr": "Il nous faut six œufs, Sam.", "ar": "نحتاج إلى ست بيضات يا سام." } },
+          { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "Here they are, Mum.", "fr": "Les voilà, maman.", "ar": "ها هي يا أمي." } }
+        ] },
+        { "place": "grandparents-house", "lines": [
+          { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "I am cooking an egg for you, Yuki.", "fr": "Je te prépare un œuf, Yuki.", "ar": "أنا أطبخ لك بيضة يا يوكي." } },
+          { "who": { "en": "Yuki", "fr": "Yuki", "ar": "يوكي" }, "text": { "en": "Thank you, Grandpa!", "fr": "Merci, papi !", "ar": "شكرا يا جدي!" } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/6-Pack-Chicken-Eggs.jpg/330px-6-Pack-Chicken-Eggs.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:6-Pack-Chicken-Eggs.jpg", "author": "Evan-Amos", "licence": "Public domain", "caption": "Eggs in a box"}
+      ]
+    },
+    "fruit": {
+      "scenes": [
+        { "place": "fruit-shop", "lines": [
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "What fruit do you have today?", "fr": "Quels fruits avez-vous aujourd’hui ?", "ar": "ما الفاكهة التي لديكم اليوم؟" } },
+          { "who": { "en": "Shopkeeper", "fr": "La vendeuse", "ar": "البائعة" }, "text": { "en": "Apples, oranges and many more!", "fr": "Des pommes, des oranges et beaucoup d’autres !", "ar": "تفاح وبرتقال وأنواع أخرى كثيرة!" } }
+        ] },
+        { "place": "doctor", "lines": [
+          { "who": { "en": "Doctor", "fr": "La médecin", "ar": "الطبيبة" }, "text": { "en": "Eat fruit every day, Omar. It is good for you.", "fr": "Mange des fruits tous les jours, Omar. C’est bon pour toi.", "ar": "كل الفاكهة كل يوم يا عمر. إنها مفيدة لك." } },
+          { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "Okay, doctor.", "fr": "D’accord, docteur.", "ar": "حسنا يا دكتورة." } }
+        ] },
+        { "place": "classroom", "lines": [
+          { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Today we talk about fruit.", "fr": "Aujourd’hui, nous parlons des fruits.", "ar": "اليوم نتحدث عن الفاكهة." } },
+          { "who": { "en": "Nadia", "fr": "Nadia", "ar": "نادية" }, "text": { "en": "I like all fruit!", "fr": "J’aime tous les fruits !", "ar": "أحب كل الفواكه!" } }
+        ] },
+        { "place": "park", "lines": [
+          { "who": { "en": "Sofia", "fr": "Sofia", "ar": "صوفيا" }, "text": { "en": "I have some fruit. Do you want some, Leo?", "fr": "J’ai des fruits. Tu en veux, Leo ?", "ar": "معي بعض الفاكهة. هل تريد قليلا منها يا ليو؟" } },
+          { "who": { "en": "Leo", "fr": "Leo", "ar": "ليو" }, "text": { "en": "Yes, please! Thank you.", "fr": "Oui, s’il te plaît ! Merci.", "ar": "نعم، من فضلك! شكرا." } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Assorted_fruits_zc.jpg/330px-Assorted_fruits_zc.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Assorted_fruits_zc.jpg", "author": "LuzViMindaLife", "licence": "CC BY-SA 4.0", "caption": "Fruit at a market"}
+      ]
+    },
+    "vegetable": {
+      "scenes": [
+        { "place": "dining-table", "lines": [
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Eat your vegetables, please, Tom.", "fr": "Mange tes légumes, s’il te plaît, Tom.", "ar": "كل خضارك من فضلك يا توم." } },
+          { "who": { "en": "Tom", "fr": "Tom", "ar": "توم" }, "text": { "en": "Okay, Mum. But only the potatoes!", "fr": "D’accord, maman. Mais seulement les pommes de terre !", "ar": "حسنا يا أمي. لكن البطاطس فقط!" } }
+        ] },
+        { "place": "garden", "lines": [
+          { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "We have many vegetables in the garden.", "fr": "Nous avons beaucoup de légumes dans le jardin.", "ar": "لدينا الكثير من الخضار في الحديقة." } },
+          { "who": { "en": "Amir", "fr": "Amir", "ar": "أمير" }, "text": { "en": "Can I help you, Grandpa?", "fr": "Je peux t’aider, papi ?", "ar": "هل يمكنني مساعدتك يا جدي؟" } }
+        ] },
+        { "place": "market", "lines": [
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Are these vegetables fresh?", "fr": "Ces légumes sont frais ?", "ar": "هل هذه الخضار طازجة؟" } },
+          { "who": { "en": "Seller", "fr": "La marchande", "ar": "البائعة" }, "text": { "en": "Yes, they are from my farm.", "fr": "Oui, ils viennent de ma ferme.", "ar": "نعم، إنها من مزرعتي." } }
+        ] },
+        { "place": "canteen", "lines": [
+          { "who": { "en": "Cook", "fr": "La cuisinière", "ar": "الطباخة" }, "text": { "en": "Musa, do you want some vegetables with your rice?", "fr": "Musa, tu veux des légumes avec ton riz ?", "ar": "موسى، هل تريد بعض الخضار مع الأرز؟" } },
+          { "who": { "en": "Musa", "fr": "Musa", "ar": "موسى" }, "text": { "en": "Yes, please!", "fr": "Oui, s’il vous plaît !", "ar": "نعم، من فضلك!" } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Fresh_homegrown_vegetables_assortment_Dabrica%2C_Bosnia_and_Herzegovina_%282026%29-bs.jpg/330px-Fresh_homegrown_vegetables_assortment_Dabrica%2C_Bosnia_and_Herzegovina_%282026%29-bs.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Fresh_homegrown_vegetables_assortment_Dabrica,_Bosnia_and_Herzegovina_(2026)-bs.jpg", "author": "Minja Klarić", "licence": "CC BY-SA 4.0", "caption": "Fresh vegetables"}
+      ]
+    },
+    "apple": {
+      "scenes": [
+        { "place": "fruit-shop", "lines": [
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Three apples, please.", "fr": "Trois pommes, s’il vous plaît.", "ar": "ثلاث تفاحات، من فضلك." } },
+          { "who": { "en": "Shopkeeper", "fr": "Le vendeur", "ar": "البائع" }, "text": { "en": "Here you are. They are very sweet.", "fr": "Voilà. Elles sont très sucrées.", "ar": "تفضل. إنها حلوة جدا." } }
+        ] },
+        { "place": "school-gate", "lines": [
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Here is an apple for later, Ines.", "fr": "Voici une pomme pour plus tard, Ines.", "ar": "هذه تفاحة لوقت لاحق يا إيناس." } },
+          { "who": { "en": "Ines", "fr": "Ines", "ar": "إيناس" }, "text": { "en": "Thank you, Dad! See you later.", "fr": "Merci, papa ! À plus tard.", "ar": "شكرا يا أبي! أراك لاحقا." } }
+        ] },
+        { "place": "farm", "lines": [
+          { "who": { "en": "Farmer", "fr": "Le fermier", "ar": "المزارع" }, "text": { "en": "These apples are very fresh. Take one, Hugo!", "fr": "Ces pommes sont toutes fraîches. Prends-en une, Hugo !", "ar": "هذا التفاح طازج جدا. خذ واحدة يا هوغو!" } },
+          { "who": { "en": "Hugo", "fr": "Hugo", "ar": "هوغو" }, "text": { "en": "Thank you! It is very good.", "fr": "Merci ! Elle est très bonne.", "ar": "شكرا! إنها لذيذة جدا." } }
+        ] },
+        { "place": "classroom", "lines": [
+          { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Look! How many apples are there?", "fr": "Regardez ! Combien de pommes y a-t-il ?", "ar": "انظروا! كم تفاحة هناك؟" } },
+          { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Five apples!", "fr": "Cinq pommes !", "ar": "خمس تفاحات!" } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/330px-Red_Apple.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Red_Apple.jpg", "author": "Abhijit Tembhekar from Mumbai, India", "licence": "CC BY 2.0", "caption": "A red apple"}
+      ]
+    },
+    "orange": {
+      "scenes": [
+        { "place": "market", "lines": [
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Are the oranges sweet?", "fr": "Les oranges sont sucrées ?", "ar": "هل البرتقال حلو؟" } },
+          { "who": { "en": "Seller", "fr": "La marchande", "ar": "البائعة" }, "text": { "en": "Yes! Try one.", "fr": "Oui ! Goûtez-en une.", "ar": "نعم! جرب واحدة." } }
+        ] },
+        { "place": "kitchen", "lines": [
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "This orange is very sweet.", "fr": "Cette orange est très sucrée.", "ar": "هذه البرتقالة حلوة جدا." } },
+          { "who": { "en": "Maya", "fr": "Maya", "ar": "مايا" }, "text": { "en": "Can I have half, please?", "fr": "Je peux en avoir la moitié, s’il te plaît ?", "ar": "هل يمكنني أن آخذ نصفها، من فضلك؟" } }
+        ] },
+        { "place": "football-pitch", "lines": [
+          { "who": { "en": "Coach", "fr": "L’entraîneur", "ar": "المدرب" }, "text": { "en": "Good work, everyone! Here are some oranges.", "fr": "Bravo, tout le monde ! Voici des oranges.", "ar": "أحسنتم جميعا! هذا بعض البرتقال." } },
+          { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Thank you, coach!", "fr": "Merci, coach !", "ar": "شكرا أيها المدرب!" } }
+        ] },
+        { "place": "beach", "lines": [
+          { "who": { "en": "Zara", "fr": "Zara", "ar": "زارا" }, "text": { "en": "Aisha, do you want an orange?", "fr": "Aisha, tu veux une orange ?", "ar": "عائشة، هل تريدين برتقالة؟" } },
+          { "who": { "en": "Aisha", "fr": "Aisha", "ar": "عائشة" }, "text": { "en": "Yes, please! Thank you, Zara.", "fr": "Oui, s’il te plaît ! Merci, Zara.", "ar": "نعم، من فضلك! شكرا يا زارا." } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Oranges_-_whole-halved-segment.jpg/330px-Oranges_-_whole-halved-segment.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Oranges_-_whole-halved-segment.jpg", "author": "Ivar Leidus", "licence": "CC BY-SA 4.0", "caption": "An orange, half an orange and a piece"}
+      ]
+    },
+    "potato": {
+      "scenes": [
+        { "place": "kitchen", "lines": [
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "We have potatoes for dinner, Karim.", "fr": "On a des pommes de terre pour le dîner, Karim.", "ar": "لدينا بطاطس للعشاء يا كريم." } },
+          { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "Great! I love potatoes!", "fr": "Super ! J’adore les pommes de terre !", "ar": "رائع! أحب البطاطس كثيرا!" } }
+        ] },
+        { "place": "market", "lines": [
+          { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "One kilo of potatoes, please.", "fr": "Un kilo de pommes de terre, s’il vous plaît.", "ar": "كيلو من البطاطس، من فضلك." } },
+          { "who": { "en": "Seller", "fr": "Le marchand", "ar": "البائع" }, "text": { "en": "Here you are, madam.", "fr": "Voilà, madame.", "ar": "تفضلي يا سيدتي." } }
+        ] },
+        { "place": "garden", "lines": [
+          { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "Look, Chen! Our potatoes are ready.", "fr": "Regarde, Chen ! Nos pommes de terre sont prêtes.", "ar": "انظر يا تشين! البطاطس جاهزة." } },
+          { "who": { "en": "Chen", "fr": "Chen", "ar": "تشين" }, "text": { "en": "Wow, so many!", "fr": "Oh là là, il y en a beaucoup !", "ar": "واو، إنها كثيرة!" } }
+        ] },
+        { "place": "canteen", "lines": [
+          { "who": { "en": "Ali", "fr": "Ali", "ar": "علي" }, "text": { "en": "Can I have more potatoes, please?", "fr": "Je peux avoir encore des pommes de terre, s’il vous plaît ?", "ar": "هل يمكنني أن آخذ المزيد من البطاطس، من فضلك؟" } },
+          { "who": { "en": "Cook", "fr": "La cuisinière", "ar": "الطباخة" }, "text": { "en": "Of course! Here you are.", "fr": "Bien sûr ! Tiens.", "ar": "بالطبع! تفضل." } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Solanum_tuberosum_Red_Scarlett20170523_7825.jpg/330px-Solanum_tuberosum_Red_Scarlett20170523_7825.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Solanum_tuberosum_Red_Scarlett20170523_7825.jpg", "author": "Bff", "licence": "CC BY-SA 4.0", "caption": "Red potatoes"}
+      ]
+    },
+    "rice": {
+      "scenes": [
+        { "place": "dining-table", "lines": [
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Tonight we have rice with meat.", "fr": "Ce soir, on mange du riz avec de la viande.", "ar": "الليلة نأكل الأرز مع اللحم." } },
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yes! I like rice.", "fr": "Oui ! J’aime le riz.", "ar": "رائع! أحب الأرز." } }
+        ] },
+        { "place": "supermarket", "lines": [
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Where is the rice?", "fr": "Où est le riz ?", "ar": "أين الأرز؟" } },
+          { "who": { "en": "Sara", "fr": "Sara", "ar": "سارة" }, "text": { "en": "It is here, Dad, next to the sugar.", "fr": "Il est ici, papa, à côté du sucre.", "ar": "إنه هنا يا أبي، بجانب السكر." } }
+        ] },
+        { "place": "wedding", "lines": [
+          { "who": { "en": "Leila", "fr": "Leila", "ar": "ليلى" }, "text": { "en": "Look at all this rice!", "fr": "Regarde tout ce riz !", "ar": "انظر إلى كل هذا الأرز!" } },
+          { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "Yes, and the food is very good.", "fr": "Oui, et c’est très bon.", "ar": "نعم، والطعام لذيذ جدا." } }
+        ] },
+        { "place": "restaurant", "lines": [
+          { "who": { "en": "Waiter", "fr": "Le serveur", "ar": "النادل" }, "text": { "en": "Rice or potatoes?", "fr": "Du riz ou des pommes de terre ?", "ar": "أرز أم بطاطس؟" } },
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Rice, please.", "fr": "Du riz, s’il vous plaît.", "ar": "أرز، من فضلك." } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/A_bowl_of_rice.jpg/330px-A_bowl_of_rice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:A_bowl_of_rice.jpg", "author": "Douglas Perkins", "licence": "CC0", "caption": "A bowl of rice"}
+      ]
+    },
+    "soup": {
+      "scenes": [
+        { "place": "dining-table", "lines": [
+          { "who": { "en": "Tom", "fr": "Tom", "ar": "توم" }, "text": { "en": "This soup is too hot!", "fr": "Cette soupe est trop chaude !", "ar": "هذا الحساء ساخن جدا!" } },
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Wait a minute, Tom.", "fr": "Attends une minute, Tom.", "ar": "انتظر دقيقة يا توم." } }
+        ] },
+        { "place": "restaurant", "lines": [
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "What soup do you have today?", "fr": "Quelle est la soupe du jour ?", "ar": "ما هو حساء اليوم؟" } },
+          { "who": { "en": "Waitress", "fr": "La serveuse", "ar": "النادلة" }, "text": { "en": "Vegetable soup.", "fr": "Une soupe de légumes.", "ar": "حساء الخضار." } }
+        ] },
+        { "place": "bedroom", "lines": [
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Here is some soup for you, Lina.", "fr": "Voici de la soupe pour toi, Lina.", "ar": "هذا بعض الحساء لك يا لينا." } },
+          { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "Thank you, Mum. It is very good.", "fr": "Merci, maman. Elle est très bonne.", "ar": "شكرا يا أمي. إنه لذيذ جدا." } }
+        ] },
+        { "place": "mountain", "lines": [
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "It is cold. Here is some hot soup!", "fr": "Il fait froid. Voici de la soupe chaude !", "ar": "الجو بارد. إليك بعض الحساء الساخن!" } },
+          { "who": { "en": "Yuki", "fr": "Yuki", "ar": "يوكي" }, "text": { "en": "Yes! Thank you, Dad.", "fr": "Oui ! Merci, papa.", "ar": "نعم! شكرا يا أبي." } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Traditional_Vegetable_Soup_from_Argentina.jpg/330px-Traditional_Vegetable_Soup_from_Argentina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Traditional_Vegetable_Soup_from_Argentina.jpg", "author": "Horacio Cambeiro", "licence": "CC BY-SA 3.0", "caption": "A bowl of vegetable soup"}
+      ]
+    },
+    "cheese": {
+      "scenes": [
+        { "place": "dining-table", "lines": [
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I like bread and cheese.", "fr": "J’aime le pain et le fromage.", "ar": "أحب الخبز والجبن." } },
+          { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "Me too! Here, have some more.", "fr": "Moi aussi ! Tiens, prends-en encore.", "ar": "وأنا أيضا! تفضل، خذ المزيد." } }
+        ] },
+        { "place": "market", "lines": [
+          { "who": { "en": "Seller", "fr": "Le marchand", "ar": "البائع" }, "text": { "en": "Try this cheese! It is from our farm.", "fr": "Goûtez ce fromage ! Il vient de notre ferme.", "ar": "جربي هذا الجبن! إنه من مزرعتنا." } },
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Mmm, very good! I want some, please.", "fr": "Mmm, très bon ! J’en voudrais un peu, s’il vous plaît.", "ar": "ممم، لذيذ جدا! أريد بعضه، من فضلك." } }
+        ] },
+        { "place": "supermarket", "lines": [
+          { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "Dad, can we have some cheese?", "fr": "Papa, on peut prendre du fromage ?", "ar": "أبي، هل يمكننا أن نأخذ بعض الجبن؟" } },
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Yes, okay.", "fr": "Oui, d’accord.", "ar": "نعم، حسنا." } }
+        ] },
+        { "place": "train", "lines": [
+          { "who": { "en": "Priya", "fr": "Priya", "ar": "بريا" }, "text": { "en": "Hugo, do you want some cheese?", "fr": "Hugo, tu veux du fromage ?", "ar": "هوغو، هل تريد بعض الجبن؟" } },
+          { "who": { "en": "Hugo", "fr": "Hugo", "ar": "هوغو" }, "text": { "en": "Yes, please! Thank you.", "fr": "Oui, s’il te plaît ! Merci.", "ar": "نعم، من فضلك! شكرا." } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Brie_Cheese_and_Chedder_Cheese_and_Emmental_in_plate.jpg/330px-Brie_Cheese_and_Chedder_Cheese_and_Emmental_in_plate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Brie_Cheese_and_Chedder_Cheese_and_Emmental_in_plate.jpg", "author": "Peachyeung316", "licence": "CC BY-SA 4.0", "caption": "Different cheeses on a plate"}
+      ]
+    },
+    "butter": {
+      "scenes": [
+        { "place": "kitchen", "lines": [
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Put some butter on your bread.", "fr": "Mets du beurre sur ton pain.", "ar": "ضع بعض الزبدة على خبزك." } },
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Okay, Mum. Thank you!", "fr": "D’accord, maman. Merci !", "ar": "حسنا يا أمي. شكرا!" } }
+        ] },
+        { "place": "bakery", "lines": [
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Is there butter in this cake?", "fr": "Il y a du beurre dans ce gâteau ?", "ar": "هل توجد زبدة في هذه الكعكة؟" } },
+          { "who": { "en": "Baker", "fr": "La boulangère", "ar": "الخبازة" }, "text": { "en": "Yes, a lot of butter!", "fr": "Oui, beaucoup de beurre !", "ar": "نعم، الكثير من الزبدة!" } }
+        ] },
+        { "place": "corner-shop", "lines": [
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Excuse me, do you have butter?", "fr": "Excusez-moi, vous avez du beurre ?", "ar": "عفوا، هل لديكم زبدة؟" } },
+          { "who": { "en": "Shopkeeper", "fr": "La vendeuse", "ar": "البائعة" }, "text": { "en": "Yes, it is there, next to the milk.", "fr": "Oui, il est là-bas, à côté du lait.", "ar": "نعم، إنها هناك بجانب الحليب." } }
+        ] },
+        { "place": "hotel", "lines": [
+          { "who": { "en": "Leo", "fr": "Leo", "ar": "ليو" }, "text": { "en": "Mum, is there butter for my bread?", "fr": "Maman, il y a du beurre pour mon pain ?", "ar": "أمي، هل توجد زبدة لخبزي؟" } },
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Yes, here you are, Leo.", "fr": "Oui, tiens, Leo.", "ar": "نعم، تفضل يا ليو." } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/2023_Mas%C5%82o_w_maselniczce.jpg/330px-2023_Mas%C5%82o_w_maselniczce.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:2023_Mas%C5%82o_w_maselniczce.jpg", "author": "Jacek Halicki", "licence": "CC BY-SA 4.0", "caption": "Butter in a butter dish"}
+      ]
+    },
+    "cake": {
+      "scenes": [
+        { "place": "birthday-party", "lines": [
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Happy birthday, Nadia! Here is your cake!", "fr": "Joyeux anniversaire, Nadia ! Voici ton gâteau !", "ar": "عيد ميلاد سعيد يا نادية! هذه كعكتك!" } },
+          { "who": { "en": "Nadia", "fr": "Nadia", "ar": "نادية" }, "text": { "en": "Wow! Thank you, Mum!", "fr": "Oh ! Merci, maman !", "ar": "واو! شكرا يا أمي!" } }
+        ] },
+        { "place": "bakery", "lines": [
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Can I have this cake, please?", "fr": "Je peux avoir ce gâteau, s’il vous plaît ?", "ar": "هل يمكنني أن آخذ هذه الكعكة، من فضلك؟" } },
+          { "who": { "en": "Baker", "fr": "Le boulanger", "ar": "الخباز" }, "text": { "en": "Of course! It is a chocolate cake.", "fr": "Bien sûr ! C’est un gâteau au chocolat.", "ar": "بالطبع! إنها كعكة بالشوكولاتة." } }
+        ] },
+        { "place": "kitchen", "lines": [
+          { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "Amir, let’s make a cake together!", "fr": "Amir, faisons un gâteau ensemble !", "ar": "أمير، لنصنع كعكة معا!" } },
+          { "who": { "en": "Amir", "fr": "Amir", "ar": "أمير" }, "text": { "en": "Yes! Can I put in the sugar?", "fr": "Oui ! Je peux mettre le sucre ?", "ar": "نعم! هل يمكنني أن أضع السكر؟" } }
+        ] },
+        { "place": "wedding", "lines": [
+          { "who": { "en": "Sofia", "fr": "Sofia", "ar": "صوفيا" }, "text": { "en": "Look at the cake, Paulo! It is so big!", "fr": "Regarde le gâteau, Paulo ! Il est très grand !", "ar": "انظر إلى الكعكة يا باولو! إنها كبيرة جدا!" } },
+          { "who": { "en": "Paulo", "fr": "Paulo", "ar": "باولو" }, "text": { "en": "Yes! And it is very good.", "fr": "Oui ! Et il est très bon.", "ar": "نعم! وهي لذيذة جدا." } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Victoria_sponge.jpg/330px-Victoria_sponge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Victoria_sponge.jpg", "author": "Gordonplant", "licence": "CC BY 2.0", "caption": "A sponge cake with jam and cream"}
+      ]
+    },
+    "sugar": {
+      "scenes": [
+        { "place": "cafe", "lines": [
+          { "who": { "en": "Waiter", "fr": "Le serveur", "ar": "النادل" }, "text": { "en": "Sugar in your coffee?", "fr": "Du sucre dans votre café ?", "ar": "هل تريد السكر في قهوتك؟" } },
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "No sugar, please.", "fr": "Pas de sucre, s’il vous plaît.", "ar": "بدون سكر، من فضلك." } }
+        ] },
+        { "place": "dentist", "lines": [
+          { "who": { "en": "Dentist", "fr": "Le dentiste", "ar": "طبيب الأسنان" }, "text": { "en": "Not too much sugar, Ines, okay?", "fr": "Pas trop de sucre, Ines, d’accord ?", "ar": "لا تأكلي الكثير من السكر يا إيناس، حسنا؟" } },
+          { "who": { "en": "Ines", "fr": "Ines", "ar": "إيناس" }, "text": { "en": "Okay, doctor.", "fr": "D’accord, docteur.", "ar": "حسنا يا دكتور." } }
+        ] },
+        { "place": "supermarket", "lines": [
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "We need sugar for the cake.", "fr": "Il nous faut du sucre pour le gâteau.", "ar": "نحتاج إلى السكر للكعكة." } },
+          { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "Here it is, Mum!", "fr": "Le voilà, maman !", "ar": "ها هو يا أمي!" } }
+        ] },
+        { "place": "grandparents-house", "lines": [
+          { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "Your tea is ready. One sugar or two?", "fr": "Ton thé est prêt. Un sucre ou deux ?", "ar": "شايك جاهز. قطعة سكر أم اثنتان؟" } },
+          { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "Two, please.", "fr": "Deux, s’il te plaît.", "ar": "اثنتان، من فضلك." } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/W%C3%BCrfelzucker_--_2018_--_3564.jpg/330px-W%C3%BCrfelzucker_--_2018_--_3564.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:W%C3%BCrfelzucker_--_2018_--_3564.jpg", "author": "Dietmar Rabich", "licence": "CC BY-SA 4.0", "caption": "Sugar cubes"}
+      ]
+    },
+    "salt": {
+      "scenes": [
+        { "place": "dining-table", "lines": [
+          { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Can you pass the salt, please?", "fr": "Tu peux me passer le sel, s’il te plaît ?", "ar": "هل يمكنك أن تناولني الملح، من فضلك؟" } },
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Here you are, Dad.", "fr": "Tiens, papa.", "ar": "تفضل يا أبي." } }
+        ] },
+        { "place": "kitchen", "lines": [
+          { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Karim, is there salt in the soup?", "fr": "Karim, il y a du sel dans la soupe ?", "ar": "كريم، هل يوجد ملح في الحساء؟" } },
+          { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "No, Mum. Not yet.", "fr": "Non, maman. Pas encore.", "ar": "لا يا أمي. ليس بعد." } }
+        ] },
+        { "place": "restaurant", "lines": [
+          { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "Excuse me, can I have some salt?", "fr": "Excusez-moi, je peux avoir du sel ?", "ar": "عفوا، هل يمكنني الحصول على بعض الملح؟" } },
+          { "who": { "en": "Waiter", "fr": "Le serveur", "ar": "النادل" }, "text": { "en": "Of course, madam.", "fr": "Bien sûr, madame.", "ar": "بالطبع يا سيدتي." } }
+        ] },
+        { "place": "corner-shop", "lines": [
+          { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Hello! Do you have salt?", "fr": "Bonjour ! Vous avez du sel ?", "ar": "مرحبا! هل لديكم ملح؟" } },
+          { "who": { "en": "Shopkeeper", "fr": "Le vendeur", "ar": "البائع" }, "text": { "en": "Yes, here it is.", "fr": "Oui, le voilà.", "ar": "نعم، ها هو." } }
+        ] }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Salt_and_pepper_by_Sierra.jpg/330px-Salt_and_pepper_by_Sierra.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Salt_and_pepper_by_Sierra.jpg", "author": "Josuiván Sierra Barrera", "licence": "CC BY 2.0", "caption": "Salt and pepper shakers"}
+      ]
+    }
+  }
+}

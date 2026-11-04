@@ -1,11 +1,12 @@
 "use client";
 
-import { BookOpen, Languages, Square, Volume2, X } from "lucide-react";
+import { BookA, BookOpen, Languages, Square, Volume2, X } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { SpeakButton } from "@/components/speak-button";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { WordOverlay } from "@/components/word/word-overlay";
 import { STARTER_STORIES } from "@/data/starter-stories";
 import { useFormat } from "@/lib/format";
 import { useLocale, useT } from "@/lib/i18n";
@@ -14,7 +15,9 @@ import { speak, speechSupported } from "@/lib/speech";
 import { englishWord, highlightWords, metCards, rankStories, todaysCards, type StoryPart } from "@/lib/story";
 import { useHydrated, useStore, useToday, type Flashcard } from "@/lib/store";
 import { cn } from "@/lib/utils";
+import { targetFromCard, type WordTarget } from "@/lib/word/target";
 import { story as messages } from "@/messages/story";
+import { word as wordMessages } from "@/messages/word";
 
 type StoryLang = "fr" | "ar";
 
@@ -39,6 +42,8 @@ function StoryPage() {
   const [showTranslation, setShowTranslation] = useState(false);
   const [reading, setReading] = useState(false);
   const lastWordButton = useRef<HTMLElement | null>(null);
+  // The word page, opened over the story so the story and its scroll stay put.
+  const [wordPage, setWordPage] = useState<WordTarget | null>(null);
 
   // Stop reading when leaving the page.
   useEffect(() => () => void (speechSupported && speechSynthesis.cancel()), []);
@@ -142,7 +147,11 @@ function StoryPage() {
 
       <section aria-live="polite" className="min-h-16">
         {selectedCard ? (
-          <WordDetails card={selectedCard} onClose={closeDetails} />
+          <WordDetails
+            card={selectedCard}
+            onClose={closeDetails}
+            onSeeAll={() => setWordPage(targetFromCard(selectedCard))}
+          />
         ) : (
           <p className="text-sm text-muted-foreground">{t("tapWord")}</p>
         )}
@@ -177,6 +186,8 @@ function StoryPage() {
           </ul>
         </section>
       )}
+
+      <WordOverlay target={wordPage} onClose={() => setWordPage(null)} />
     </div>
   );
 }
@@ -229,9 +240,10 @@ function Linked({
   );
 }
 
-/** What a tapped word means: its picture, translation, example and audio. */
-function WordDetails({ card, onClose }: { card: Flashcard; onClose: () => void }) {
+/** What a tapped word means: its picture, translation, example and audio, and a way to its word page. */
+function WordDetails({ card, onClose, onSeeAll }: { card: Flashcard; onClose: () => void; onSeeAll: () => void }) {
   const t = useT(messages);
+  const tw = useT(wordMessages);
   const fmt = useFormat();
   const english = englishWord(card) ?? card.front;
   const otherLang = card.src === "en" ? card.tgt : card.src;
@@ -273,6 +285,9 @@ function WordDetails({ card, onClose }: { card: Flashcard; onClose: () => void }
           <SpeakButton text={card.example} lang={exampleLang} label={t("pronounceWord", { word: card.example })} />
         </p>
       )}
+      <Button variant="outline" size="sm" className="mt-1 w-fit" onClick={onSeeAll}>
+        <BookA /> {tw("seeAll")}
+      </Button>
     </div>
   );
 }

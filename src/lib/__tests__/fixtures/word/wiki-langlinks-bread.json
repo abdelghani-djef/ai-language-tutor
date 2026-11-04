@@ -1,0 +1,18 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "pages": {
+      "36969": {
+        "pageid": 36969,
+        "ns": 0,
+        "title": "Bread",
+        "langlinks": [
+          {
+            "lang": "ar",
+            "*": "خبز"
+          }
+        ]
+      }
+    }
+  }
+}

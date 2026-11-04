@@ -1,0 +1,39 @@
+{
+  "type": "disambiguation",
+  "title": "Fine",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Fine</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q413061",
+  "titles": {
+    "canonical": "Fine",
+    "normalized": "Fine",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Fine</span></span>"
+  },
+  "pageid": 2811281,
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1344065500",
+  "tid": "7386e6ed-2273-11f1-8a18-dd85dd80f0e1",
+  "timestamp": "2026-03-18T02:37:48Z",
+  "description": "Topics referred to by the same term",
+  "description_source": "local",
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Fine",
+      "revisions": "https://en.wikipedia.org/wiki/Fine?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Fine?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Fine"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Fine",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Fine",
+      "edit": "https://en.wikipedia.org/wiki/Fine?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Fine"
+    }
+  },
+  "extract": "Fine may refer to:",
+  "extract_html": "<p><b>Fine</b> may refer to:</p>"
+}

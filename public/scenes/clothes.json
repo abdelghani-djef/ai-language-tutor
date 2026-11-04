@@ -1,0 +1,844 @@
+{
+  "pack": "clothes",
+  "complete": true,
+  "words": {
+    "clothes": {
+      "scenes": [
+        {
+          "place": "clothes-shop",
+          "lines": [
+            { "who": { "en": "Shop assistant", "fr": "La vendeuse", "ar": "البائعة" }, "text": { "en": "Hello! Can I help you?", "fr": "Bonjour ! Je peux vous aider ?", "ar": "مرحبا! هل يمكنني مساعدتك؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yes, please. I need new clothes for school.", "fr": "Oui, s’il vous plaît. J’ai besoin de nouveaux vêtements pour l’école.", "ar": "نعم، من فضلك. أحتاج إلى ملابس جديدة للمدرسة." } },
+            { "who": { "en": "Shop assistant", "fr": "La vendeuse", "ar": "البائعة" }, "text": { "en": "The children’s clothes are over there.", "fr": "Les vêtements pour enfants sont là-bas.", "ar": "ملابس الأطفال هناك." } }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Omar, your clothes are on the floor. Put them away, please.", "fr": "Omar, tes vêtements sont par terre. Range-les, s’il te plaît.", "ar": "يا عمر، ملابسك على الأرض. رتبها من فضلك." } },
+            { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "Sorry, Mum! I can do it now.", "fr": "Pardon, maman ! Je le fais tout de suite.", "ar": "آسف يا أمي! سأفعل ذلك الآن." } }
+          ]
+        },
+        {
+          "place": "garden",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "The clothes are dry now. Can you help me, Lina?", "fr": "Les vêtements sont secs maintenant. Tu peux m’aider, Lina ?", "ar": "الملابس جافة الآن. هل يمكنك مساعدتي يا لينا؟" } },
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "Yes, Grandma! I can help you.", "fr": "Oui, mamie ! Je peux t’aider.", "ar": "نعم يا جدتي! يمكنني مساعدتك." } }
+          ]
+        },
+        {
+          "place": "campsite",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "It is cold at night here. Is your bag ready, Sam?", "fr": "Il fait froid la nuit ici. Ton sac est prêt, Sam ?", "ar": "الجو بارد في الليل هنا. هل حقيبتك جاهزة يا سام؟" } },
+            { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "Yes, Dad. My warm clothes are in it.", "fr": "Oui, papa. Mes vêtements chauds sont dedans.", "ar": "نعم يا أبي. ملابسي الدافئة فيها." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "wear": {
+      "scenes": [
+        {
+          "place": "playground",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "It is sunny today. Wear your hat, Kofi!", "fr": "Il fait beau aujourd’hui. Mets ton chapeau, Kofi !", "ar": "الجو مشمس اليوم. ارتد قبعتك يا كوفي!" } },
+            { "who": { "en": "Kofi", "fr": "Kofi", "ar": "كوفي" }, "text": { "en": "Okay, Miss!", "fr": "D’accord, maîtresse !", "ar": "حسنا يا معلمتي!" } }
+          ]
+        },
+        {
+          "place": "wedding",
+          "lines": [
+            { "who": { "en": "Aisha", "fr": "Aïcha", "ar": "عائشة" }, "text": { "en": "What are you wearing to the wedding, Nour?", "fr": "Qu’est-ce que tu vas porter au mariage, Nour ?", "ar": "ماذا سترتدين في العرس يا نور؟" } },
+            { "who": { "en": "Nour", "fr": "Nour", "ar": "نور" }, "text": { "en": "I am wearing my new green dress.", "fr": "Je porte ma nouvelle robe verte.", "ar": "سأرتدي فستاني الأخضر الجديد." } }
+          ]
+        },
+        {
+          "place": "mountain",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "It is cold up here. I am happy I wore my coat.", "fr": "Il fait froid ici. Heureusement que j’ai porté mon manteau.", "ar": "الجو بارد هنا في الأعلى. من الجيد أنني ارتديت معطفي." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Me too!", "fr": "Moi aussi !", "ar": "وأنا أيضا!" } }
+          ]
+        },
+        {
+          "place": "beach",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Wear your T-shirt in the sun, please, Leo.", "fr": "Garde ton tee-shirt au soleil, s’il te plaît, Leo.", "ar": "ارتد التيشيرت تحت الشمس من فضلك يا ليو." } },
+            { "who": { "en": "Leo", "fr": "Leo", "ar": "ليو" }, "text": { "en": "But it is hot, Mum!", "fr": "Mais il fait chaud, maman !", "ar": "لكن الجو حار يا أمي!" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Yes, and the sun is very strong.", "fr": "Oui, et le soleil est très fort.", "ar": "نعم، والشمس قوية جدا." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "shirt": {
+      "scenes": [
+        {
+          "place": "clothes-shop",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Excuse me, do you have this shirt in blue?", "fr": "Excusez-moi, vous avez cette chemise en bleu ?", "ar": "عذرا، هل لديكم هذا القميص باللون الأزرق؟" } },
+            { "who": { "en": "Shop assistant", "fr": "Le vendeur", "ar": "البائع" }, "text": { "en": "Yes, of course. Here you are.", "fr": "Oui, bien sûr. Voilà.", "ar": "نعم، بالطبع. تفضل." } }
+          ]
+        },
+        {
+          "place": "office",
+          "lines": [
+            { "who": { "en": "Ravi", "fr": "Ravi", "ar": "رافي" }, "text": { "en": "I like your shirt, Hana.", "fr": "J’aime bien ta chemise, Hana.", "ar": "يعجبني قميصك يا هنا." } },
+            { "who": { "en": "Hana", "fr": "Hana", "ar": "هنا" }, "text": { "en": "Thank you! It is new.", "fr": "Merci ! Elle est neuve.", "ar": "شكرا! إنه جديد." } }
+          ]
+        },
+        {
+          "place": "dining-table",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Oh no! There is soup on my shirt.", "fr": "Oh non ! Il y a de la soupe sur ma chemise.", "ar": "أوه لا! هناك حساء على قميصي." } },
+            { "who": { "en": "Maya", "fr": "Maya", "ar": "مايا" }, "text": { "en": "Don’t worry, Dad. We can wash it.", "fr": "Ne t’inquiète pas, papa. On peut la laver.", "ar": "لا تقلق يا أبي. يمكننا غسله." } }
+          ]
+        },
+        {
+          "place": "family-party",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "You look nice in that white shirt, Karim.", "fr": "Tu es beau avec cette chemise blanche, Karim.", "ar": "تبدو أنيقا بهذا القميص الأبيض يا كريم." } },
+            { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "Thank you, Grandma!", "fr": "Merci, mamie !", "ar": "شكرا يا جدتي!" } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Banana_Republic_Button-Down_Shirt_2_2019-03-21.jpg/330px-Banana_Republic_Button-Down_Shirt_2_2019-03-21.jpg", "page": "https://commons.wikimedia.org/wiki/File:Banana_Republic_Button-Down_Shirt_2_2019-03-21.jpg", "author": "FASTILY", "licence": "CC BY-SA 4.0", "caption": "A blue shirt on a hanger." }
+      ]
+    },
+    "shoe": {
+      "scenes": [
+        {
+          "place": "shoe-shop",
+          "lines": [
+            { "who": { "en": "Shop assistant", "fr": "La vendeuse", "ar": "البائعة" }, "text": { "en": "How are the shoes?", "fr": "Alors, ces chaussures ?", "ar": "كيف هو الحذاء؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "This shoe is too small.", "fr": "Cette chaussure est trop petite.", "ar": "هذا الحذاء صغير جدا." } },
+            { "who": { "en": "Shop assistant", "fr": "La vendeuse", "ar": "البائعة" }, "text": { "en": "Then try these.", "fr": "Alors, essayez celles-ci.", "ar": "إذن جرب هذا." } }
+          ]
+        },
+        {
+          "place": "front-door",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Hurry, Omar! We are late.", "fr": "Dépêche-toi, Omar ! On est en retard.", "ar": "أسرع يا عمر! لقد تأخرنا." } },
+            { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "I can’t find my other shoe!", "fr": "Je ne trouve pas mon autre chaussure !", "ar": "لا أجد فردة حذائي الأخرى!" } }
+          ]
+        },
+        {
+          "place": "gym",
+          "lines": [
+            { "who": { "en": "Coach", "fr": "L’entraîneur", "ar": "المدرب" }, "text": { "en": "Please wear clean shoes in the gym.", "fr": "Mettez des chaussures propres dans le gymnase, s’il vous plaît.", "ar": "من فضلكم، البسوا أحذية نظيفة في الصالة الرياضية." } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Okay!", "fr": "D’accord !", "ar": "حسنا!" } }
+          ]
+        },
+        {
+          "place": "park",
+          "lines": [
+            { "who": { "en": "Zara", "fr": "Zara", "ar": "زارا" }, "text": { "en": "Look, Diego! My shoe is wet!", "fr": "Regarde, Diego ! Ma chaussure est mouillée !", "ar": "انظر يا دييغو! حذائي مبلل!" } },
+            { "who": { "en": "Diego", "fr": "Diego", "ar": "دييغو" }, "text": { "en": "You walked in the water!", "fr": "Tu as marché dans l’eau !", "ar": "لقد مشيت في الماء!" } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Pair_of_Brown_Shoes_%282%29.jpg/330px-Pair_of_Brown_Shoes_%282%29.jpg", "page": "https://commons.wikimedia.org/wiki/File:Pair_of_Brown_Shoes_(2).jpg", "author": "Jonatan Svensson Glad", "licence": "CC BY-SA 4.0", "caption": "A pair of brown shoes." }
+      ]
+    },
+    "dress": {
+      "scenes": [
+        {
+          "place": "clothes-shop",
+          "lines": [
+            { "who": { "en": "Mei", "fr": "Mei", "ar": "مي" }, "text": { "en": "Mum, can I try this dress?", "fr": "Maman, je peux essayer cette robe ?", "ar": "أمي، هل يمكنني تجربة هذا الفستان؟" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Yes, of course. It is very pretty.", "fr": "Oui, bien sûr. Elle est très jolie.", "ar": "نعم، بالطبع. إنه جميل جدا." } }
+          ]
+        },
+        {
+          "place": "wedding",
+          "lines": [
+            { "who": { "en": "Ana", "fr": "Ana", "ar": "آنا" }, "text": { "en": "Look at her long white dress!", "fr": "Regarde sa longue robe blanche !", "ar": "انظري إلى فستانها الأبيض الطويل!" } },
+            { "who": { "en": "Emma", "fr": "Emma", "ar": "إيما" }, "text": { "en": "It is beautiful. I love it.", "fr": "Elle est magnifique. Je l’adore.", "ar": "إنه جميل. أحبه كثيرا." } }
+          ]
+        },
+        {
+          "place": "birthday-party",
+          "lines": [
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "Happy birthday, Sara! I love your dress.", "fr": "Joyeux anniversaire, Sara ! J’adore ta robe.", "ar": "عيد ميلاد سعيد يا سارة! أحب فستانك." } },
+            { "who": { "en": "Sara", "fr": "Sara", "ar": "سارة" }, "text": { "en": "Thank you! It is a present from Grandma.", "fr": "Merci ! C’est un cadeau de mamie.", "ar": "شكرا! إنه هدية من جدتي." } }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            { "who": { "en": "Hana", "fr": "Hana", "ar": "هنا" }, "text": { "en": "Which dress do you like, the blue one or the yellow one?", "fr": "Quelle robe tu préfères, la bleue ou la jaune ?", "ar": "أي فستان يعجبك، الأزرق أم الأصفر؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "The yellow one!", "fr": "La jaune !", "ar": "الأصفر!" } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Tamara_Taylor_wearing_Mark_Belford_%E2%80%93_Heart_and_Stroke_Foundation_-_The_Heart_Truth_celebrity_fashion_show_-_Red_Dress_-_Red_Gown_-_Thursday_February_8%2C_2012_-_Creative_Commons.jpg/330px-thumbnail.jpg", "page": "https://commons.wikimedia.org/wiki/File:Tamara_Taylor_wearing_Mark_Belford_%E2%80%93_Heart_and_Stroke_Foundation_-_The_Heart_Truth_celebrity_fashion_show_-_Red_Dress_-_Red_Gown_-_Thursday_February_8,_2012_-_Creative_Commons.jpg", "author": "Jason Hargrove", "licence": "CC BY 2.0", "caption": "A woman in a red dress." }
+      ]
+    },
+    "trousers": {
+      "scenes": [
+        {
+          "place": "clothes-shop",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "These trousers are too long.", "fr": "Ce pantalon est trop long.", "ar": "هذا البنطال طويل جدا." } },
+            { "who": { "en": "Shop assistant", "fr": "Le vendeur", "ar": "البائع" }, "text": { "en": "Here is a smaller size.", "fr": "Voici une taille plus petite.", "ar": "إليك مقاسا أصغر." } }
+          ]
+        },
+        {
+          "place": "playground",
+          "lines": [
+            { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "Oh no, my trousers are dirty!", "fr": "Oh non, mon pantalon est sale !", "ar": "أوه لا، بنطالي متسخ!" } },
+            { "who": { "en": "Leo", "fr": "Leo", "ar": "ليو" }, "text": { "en": "It’s okay. Your mum can wash them.", "fr": "Ce n’est pas grave. Ta maman peut le laver.", "ar": "لا بأس. يمكن لأمك أن تغسله." } }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Wear your warm trousers today, Amir. It is cold.", "fr": "Mets ton pantalon chaud aujourd’hui, Amir. Il fait froid.", "ar": "ارتد بنطالك الدافئ اليوم يا أمير. الجو بارد." } },
+            { "who": { "en": "Amir", "fr": "Amir", "ar": "أمير" }, "text": { "en": "Okay, Dad.", "fr": "D’accord, papa.", "ar": "حسنا يا أبي." } }
+          ]
+        },
+        {
+          "place": "farm",
+          "lines": [
+            { "who": { "en": "Farmer", "fr": "Le fermier", "ar": "المزارع" }, "text": { "en": "Wear old trousers. We are going to work in the field.", "fr": "Mets un vieux pantalon. On va travailler dans le champ.", "ar": "ارتد بنطالا قديما. سنعمل في الحقل." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Okay! Let’s go!", "fr": "D’accord ! On y va !", "ar": "حسنا! هيا بنا!" } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Trousers-colourisolated.jpg/330px-Trousers-colourisolated.jpg", "page": "https://commons.wikimedia.org/wiki/File:Trousers-colourisolated.jpg", "author": "Ed Yourdon (edit: Themightyquill)", "licence": "CC BY-SA 2.0", "caption": "A man in light trousers." }
+      ]
+    },
+    "coat": {
+      "scenes": [
+        {
+          "place": "front-door",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Put on your coat, Yuki. It is cold.", "fr": "Mets ton manteau, Yuki. Il fait froid.", "ar": "البسي معطفك يا يوكي. الجو بارد." } },
+            { "who": { "en": "Yuki", "fr": "Yuki", "ar": "يوكي" }, "text": { "en": "Okay, Mum.", "fr": "D’accord, maman.", "ar": "حسنا يا أمي." } }
+          ]
+        },
+        {
+          "place": "restaurant",
+          "lines": [
+            { "who": { "en": "Waiter", "fr": "Le serveur", "ar": "النادل" }, "text": { "en": "Good evening! Can I take your coat?", "fr": "Bonsoir ! Je peux prendre votre manteau ?", "ar": "مساء الخير! هل يمكنني أن آخذ معطفك؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yes, thank you.", "fr": "Oui, merci.", "ar": "نعم، شكرا." } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "Is this your coat, Ravi?", "fr": "C’est ton manteau, Ravi ?", "ar": "هل هذا معطفك يا رافي؟" } },
+            { "who": { "en": "Ravi", "fr": "Ravi", "ar": "رافي" }, "text": { "en": "No, it is Nour’s coat.", "fr": "Non, c’est le manteau de Nour.", "ar": "لا، إنه معطف نور." } }
+          ]
+        },
+        {
+          "place": "bus-stop",
+          "lines": [
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "The wind is very cold today.", "fr": "Le vent est très froid aujourd’hui.", "ar": "الرياح باردة جدا اليوم." } },
+            { "who": { "en": "Kofi", "fr": "Kofi", "ar": "كوفي" }, "text": { "en": "Yes, Grandpa. I am happy I have my big coat.", "fr": "Oui, papi. Heureusement que j’ai mon gros manteau.", "ar": "نعم يا جدي. أنا سعيد لأن معي معطفي الكبير." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Winter_coat_with_houndstooth_pattern_over_long_knitted_dress_with_boots.jpg/330px-Winter_coat_with_houndstooth_pattern_over_long_knitted_dress_with_boots.jpg", "page": "https://commons.wikimedia.org/wiki/File:Winter_coat_with_houndstooth_pattern_over_long_knitted_dress_with_boots.jpg", "author": "Tobias ToMar Maier", "licence": "CC BY-SA 4.0", "caption": "A woman in a warm winter coat." }
+      ]
+    },
+    "jacket": {
+      "scenes": [
+        {
+          "place": "street",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Take your jacket, Diego. It is windy.", "fr": "Prends ta veste, Diego. Il y a du vent.", "ar": "خذ سترتك يا دييغو. الرياح قوية." } },
+            { "who": { "en": "Diego", "fr": "Diego", "ar": "دييغو" }, "text": { "en": "Okay, Dad!", "fr": "D’accord, papa !", "ar": "حسنا يا أبي!" } }
+          ]
+        },
+        {
+          "place": "school-gate",
+          "lines": [
+            { "who": { "en": "Maya", "fr": "Maya", "ar": "مايا" }, "text": { "en": "Tom, is this your jacket? It was on the floor.", "fr": "Tom, c’est ta veste ? Elle était par terre.", "ar": "يا توم، هل هذه سترتك؟ كانت على الأرض." } },
+            { "who": { "en": "Tom", "fr": "Tom", "ar": "توم" }, "text": { "en": "Yes! Thank you, Maya.", "fr": "Oui ! Merci, Maya.", "ar": "نعم! شكرا يا مايا." } }
+          ]
+        },
+        {
+          "place": "shopping-centre",
+          "lines": [
+            { "who": { "en": "Emma", "fr": "Emma", "ar": "إيما" }, "text": { "en": "Mum, I like this green jacket.", "fr": "Maman, j’aime bien cette veste verte.", "ar": "أمي، تعجبني هذه السترة الخضراء." } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "It is nice, but it is too big for you.", "fr": "Elle est jolie, mais elle est trop grande pour toi.", "ar": "إنها جميلة، لكنها كبيرة جدا عليك." } }
+          ]
+        },
+        {
+          "place": "bike-path",
+          "lines": [
+            { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "Brr! It is cold now.", "fr": "Brr ! Il fait froid maintenant.", "ar": "برر! الجو بارد الآن." } },
+            { "who": { "en": "Ana", "fr": "Ana", "ar": "آنا" }, "text": { "en": "Here, wear my jacket.", "fr": "Tiens, mets ma veste.", "ar": "تفضل، ارتد سترتي." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Jean_jacket.jpg/330px-Jean_jacket.jpg", "page": "https://commons.wikimedia.org/wiki/File:Jean_jacket.jpg", "author": "NikosLikomitros", "licence": "CC0", "caption": "A blue jean jacket." }
+      ]
+    },
+    "hat": {
+      "scenes": [
+        {
+          "place": "beach",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "The sun is hot, Lina. Wear a hat.", "fr": "Le soleil tape fort, Lina. Mets un chapeau.", "ar": "الشمس حارة يا لينا. ارتدي قبعة." } },
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "Where is my hat?", "fr": "Où est mon chapeau ?", "ar": "أين قبعتي؟" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "It is in the bag.", "fr": "Il est dans le sac.", "ar": "إنها في الحقيبة." } }
+          ]
+        },
+        {
+          "place": "garden",
+          "lines": [
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "I always wear my old hat in the garden.", "fr": "Je mets toujours mon vieux chapeau dans le jardin.", "ar": "أرتدي دائما قبعتي القديمة في الحديقة." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "It is a nice hat, Grandpa!", "fr": "Il est beau, ton chapeau, papi !", "ar": "إنها قبعة جميلة يا جدي!" } }
+          ]
+        },
+        {
+          "place": "birthday-party",
+          "lines": [
+            { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "Look at my party hat, Mei!", "fr": "Regarde mon chapeau de fête, Mei !", "ar": "انظري إلى قبعتي للحفلة يا مي!" } },
+            { "who": { "en": "Mei", "fr": "Mei", "ar": "مي" }, "text": { "en": "It’s funny! I want one too.", "fr": "Il est rigolo ! J’en veux un aussi.", "ar": "إنها مضحكة! أريد واحدة أيضا." } }
+          ]
+        },
+        {
+          "place": "market",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Can I try this hat, please?", "fr": "Je peux essayer ce chapeau, s’il vous plaît ?", "ar": "هل يمكنني تجربة هذه القبعة من فضلك؟" } },
+            { "who": { "en": "Seller", "fr": "Le marchand", "ar": "البائع" }, "text": { "en": "Of course. It looks good on you!", "fr": "Bien sûr. Il vous va très bien !", "ar": "بالطبع. تبدو جميلة عليك!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "skirt": {
+      "scenes": [
+        {
+          "place": "clothes-shop",
+          "lines": [
+            { "who": { "en": "Aisha", "fr": "Aïcha", "ar": "عائشة" }, "text": { "en": "Do you like this skirt, Nour?", "fr": "Tu aimes cette jupe, Nour ?", "ar": "هل تعجبك هذه التنورة يا نور؟" } },
+            { "who": { "en": "Nour", "fr": "Nour", "ar": "نور" }, "text": { "en": "Yes, the blue is very pretty.", "fr": "Oui, le bleu est très joli.", "ar": "نعم، لونها الأزرق جميل جدا." } }
+          ]
+        },
+        {
+          "place": "school-gate",
+          "lines": [
+            { "who": { "en": "Sara", "fr": "Sara", "ar": "سارة" }, "text": { "en": "Look! Her skirt is blue, like my skirt!", "fr": "Regarde ! Sa jupe est bleue, comme la mienne !", "ar": "انظري! تنورتها زرقاء مثل تنورتي!" } },
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "Yes! The same blue!", "fr": "Oui ! Le même bleu !", "ar": "نعم! اللون الأزرق نفسه!" } }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Your skirt is too short now, Mei.", "fr": "Ta jupe est trop courte maintenant, Mei.", "ar": "تنورتك قصيرة جدا الآن يا مي." } },
+            { "who": { "en": "Mei", "fr": "Mei", "ar": "مي" }, "text": { "en": "Yes. I am taller now!", "fr": "Oui. J’ai grandi !", "ar": "نعم. لقد أصبحت أطول!" } }
+          ]
+        },
+        {
+          "place": "family-party",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "What a pretty skirt, Hana!", "fr": "Quelle jolie jupe, Hana !", "ar": "يا لها من تنورة جميلة يا هنا!" } },
+            { "who": { "en": "Hana", "fr": "Hana", "ar": "هنا" }, "text": { "en": "Thank you, Grandma! Mum made it.", "fr": "Merci, mamie ! C’est maman qui l’a faite.", "ar": "شكرا يا جدتي! أمي صنعتها." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/7_For_All_Mankind_Denim_Skirt_%283182146721%29.jpg/330px-7_For_All_Mankind_Denim_Skirt_%283182146721%29.jpg", "page": "https://commons.wikimedia.org/wiki/File:7_For_All_Mankind_Denim_Skirt_(3182146721).jpg", "author": "Housing Works Thrift Shops", "licence": "CC BY-SA 2.0", "caption": "A blue denim skirt." }
+      ]
+    },
+    "T-shirt": {
+      "scenes": [
+        {
+          "place": "shopping-centre",
+          "lines": [
+            { "who": { "en": "Leo", "fr": "Leo", "ar": "ليو" }, "text": { "en": "I like your new T-shirt, Ravi.", "fr": "J’aime bien ton nouveau tee-shirt, Ravi.", "ar": "يعجبني تيشيرتك الجديد يا رافي." } },
+            { "who": { "en": "Ravi", "fr": "Ravi", "ar": "رافي" }, "text": { "en": "Thanks! It has a lion on it.", "fr": "Merci ! Il y a un lion dessus.", "ar": "شكرا! عليه صورة أسد." } }
+          ]
+        },
+        {
+          "place": "football-pitch",
+          "lines": [
+            { "who": { "en": "Coach", "fr": "L’entraîneur", "ar": "المدرب" }, "text": { "en": "Red team, put on your red T-shirts!", "fr": "L’équipe rouge, mettez vos tee-shirts rouges !", "ar": "أيها الفريق الأحمر، البسوا التيشيرتات الحمراء!" } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Okay!", "fr": "D’accord !", "ar": "حسنا!" } }
+          ]
+        },
+        {
+          "place": "beach",
+          "lines": [
+            { "who": { "en": "Tom", "fr": "Tom", "ar": "توم" }, "text": { "en": "Dad, can I swim in my T-shirt?", "fr": "Papa, je peux nager avec mon tee-shirt ?", "ar": "أبي، هل يمكنني السباحة بالتيشيرت؟" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Yes. That is good in the hot sun.", "fr": "Oui. C’est bien, avec ce soleil.", "ar": "نعم. هذا جيد تحت الشمس الحارة." } }
+          ]
+        },
+        {
+          "place": "birthday-party",
+          "lines": [
+            { "who": { "en": "Kofi", "fr": "Kofi", "ar": "كوفي" }, "text": { "en": "Open your present, Sam!", "fr": "Ouvre ton cadeau, Sam !", "ar": "افتح هديتك يا سام!" } },
+            { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "Wow, a football T-shirt! Thank you!", "fr": "Waouh, un tee-shirt de foot ! Merci !", "ar": "رائع، تيشيرت كرة قدم! شكرا!" } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Young_North_Indian_man_with_beard_in_white_t-shirt.jpg/330px-Young_North_Indian_man_with_beard_in_white_t-shirt.jpg", "page": "https://commons.wikimedia.org/wiki/File:Young_North_Indian_man_with_beard_in_white_t-shirt.jpg", "author": "Singhjayreena", "licence": "CC0", "caption": "A man in a white T-shirt." }
+      ]
+    },
+    "sock": {
+      "scenes": [
+        {
+          "place": "bedroom",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Mum, I can’t find my other sock.", "fr": "Maman, je ne trouve pas mon autre chaussette.", "ar": "أمي، لا أجد جوربي الآخر." } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Look under the bed.", "fr": "Regarde sous le lit.", "ar": "انظر تحت السرير." } }
+          ]
+        },
+        {
+          "place": "living-room",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "Look, Yuki. I made you some warm socks.", "fr": "Regarde, Yuki. Je t’ai fait des chaussettes bien chaudes.", "ar": "انظري يا يوكي. صنعت لك جوارب دافئة." } },
+            { "who": { "en": "Yuki", "fr": "Yuki", "ar": "يوكي" }, "text": { "en": "Thank you, Grandma! They are so soft.", "fr": "Merci, mamie ! Elles sont si douces.", "ar": "شكرا يا جدتي! إنها ناعمة جدا." } }
+          ]
+        },
+        {
+          "place": "shoe-shop",
+          "lines": [
+            { "who": { "en": "Shop assistant", "fr": "Le vendeur", "ar": "البائع" }, "text": { "en": "Please wear socks when you try the shoes.", "fr": "Mettez des chaussettes pour essayer les chaussures, s’il vous plaît.", "ar": "من فضلك، البس جوارب عندما تجرب الأحذية." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Okay, no problem.", "fr": "D’accord, pas de problème.", "ar": "حسنا، لا مشكلة." } }
+          ]
+        },
+        {
+          "place": "friends-house",
+          "lines": [
+            { "who": { "en": "Diego", "fr": "Diego", "ar": "دييغو" }, "text": { "en": "Oh! There is a hole in my sock!", "fr": "Oh ! Il y a un trou dans ma chaussette !", "ar": "أوه! هناك ثقب في جوربي!" } },
+            { "who": { "en": "Amir", "fr": "Amir", "ar": "أمير" }, "text": { "en": "Ha ha! I can see your toe!", "fr": "Ha ha ! Je vois ton orteil !", "ar": "ها ها! أستطيع رؤية إصبع قدمك!" } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Bj%C3%B6rn_Borg_socks_3.jpg/330px-Bj%C3%B6rn_Borg_socks_3.jpg", "page": "https://commons.wikimedia.org/wiki/File:Bj%C3%B6rn_Borg_socks_3.jpg", "author": "W.carter", "licence": "CC BY-SA 4.0", "caption": "A pair of black socks." }
+      ]
+    },
+    "jeans": {
+      "scenes": [
+        {
+          "place": "clothes-shop",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Can I try these jeans, please?", "fr": "Je peux essayer ce jean, s’il vous plaît ?", "ar": "هل يمكنني تجربة هذا الجينز من فضلك؟" } },
+            { "who": { "en": "Shop assistant", "fr": "La vendeuse", "ar": "البائعة" }, "text": { "en": "Of course. You can try them over there.", "fr": "Bien sûr. Vous pouvez l’essayer là-bas.", "ar": "بالطبع. يمكنك تجربته هناك." } }
+          ]
+        },
+        {
+          "place": "garage",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "I always wear my old jeans when I fix the car.", "fr": "Je mets toujours mon vieux jean pour réparer la voiture.", "ar": "أرتدي دائما الجينز القديم عندما أصلح السيارة." } },
+            { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "Can I help you, Dad?", "fr": "Je peux t’aider, papa ?", "ar": "هل يمكنني مساعدتك يا أبي؟" } }
+          ]
+        },
+        {
+          "place": "university",
+          "lines": [
+            { "who": { "en": "Ana", "fr": "Ana", "ar": "آنا" }, "text": { "en": "Is that your brother, Emma?", "fr": "C’est ton frère, Emma ?", "ar": "هل هذا أخوك يا إيما؟" } },
+            { "who": { "en": "Emma", "fr": "Emma", "ar": "إيما" }, "text": { "en": "Yes, the man in jeans and a black T-shirt.", "fr": "Oui, celui en jean et en tee-shirt noir.", "ar": "نعم، الشاب الذي يرتدي الجينز وتيشيرتا أسود." } }
+          ]
+        },
+        {
+          "place": "park",
+          "lines": [
+            { "who": { "en": "Maya", "fr": "Maya", "ar": "مايا" }, "text": { "en": "Oh no! My jeans have a hole in the knee.", "fr": "Oh non ! Mon jean a un trou au genou.", "ar": "أوه لا! في جينزي ثقب عند الركبة." } },
+            { "who": { "en": "Tom", "fr": "Tom", "ar": "توم" }, "text": { "en": "Did you fall?", "fr": "Tu es tombée ?", "ar": "هل وقعت؟" } },
+            { "who": { "en": "Maya", "fr": "Maya", "ar": "مايا" }, "text": { "en": "Yes, but I am okay.", "fr": "Oui, mais ça va.", "ar": "نعم، لكنني بخير." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://upload.wikimedia.org/wikipedia/commons/5/54/High_waisted_jeans_1435042736.jpg", "page": "https://commons.wikimedia.org/wiki/File:High_waisted_jeans_1435042736.jpg", "author": "iluvrhinestones", "licence": "CC BY-SA 2.0", "caption": "A pair of blue jeans." }
+      ]
+    },
+    "sweater": {
+      "scenes": [
+        {
+          "place": "living-room",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "This sweater is warm and soft.", "fr": "Ce pull est chaud et doux.", "ar": "هذه الكنزة دافئة وناعمة." } },
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "Can I wear it today?", "fr": "Je peux le mettre aujourd’hui ?", "ar": "هل يمكنني ارتداؤها اليوم؟" } }
+          ]
+        },
+        {
+          "place": "campsite",
+          "lines": [
+            { "who": { "en": "Ravi", "fr": "Ravi", "ar": "رافي" }, "text": { "en": "It is cold tonight.", "fr": "Il fait froid ce soir.", "ar": "الجو بارد الليلة." } },
+            { "who": { "en": "Ana", "fr": "Ana", "ar": "آنا" }, "text": { "en": "Put on your sweater, then.", "fr": "Mets ton pull, alors.", "ar": "البس كنزتك إذن." } }
+          ]
+        },
+        {
+          "place": "library",
+          "lines": [
+            { "who": { "en": "Nour", "fr": "Nour", "ar": "نور" }, "text": { "en": "I like your sweater, Mei. Is it new?", "fr": "J’aime bien ton pull, Mei. Il est neuf ?", "ar": "تعجبني كنزتك يا مي. هل هي جديدة؟" } },
+            { "who": { "en": "Mei", "fr": "Mei", "ar": "مي" }, "text": { "en": "Yes, it is a present from my uncle.", "fr": "Oui, c’est un cadeau de mon oncle.", "ar": "نعم، إنها هدية من عمي." } }
+          ]
+        },
+        {
+          "place": "market",
+          "lines": [
+            { "who": { "en": "Seller", "fr": "La marchande", "ar": "البائعة" }, "text": { "en": "Look at this sweater! It is very warm.", "fr": "Regardez ce pull ! Il est très chaud.", "ar": "انظر إلى هذه الكنزة! إنها دافئة جدا." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "How much is it?", "fr": "Il coûte combien ?", "ar": "كم ثمنها؟" } },
+            { "who": { "en": "Seller", "fr": "La marchande", "ar": "البائعة" }, "text": { "en": "It is not expensive.", "fr": "Il n’est pas cher.", "ar": "ليست غالية." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Knitted_Sweater.jpg/330px-Knitted_Sweater.jpg", "page": "https://commons.wikimedia.org/wiki/File:Knitted_Sweater.jpg", "author": "Kyle Cassidy", "licence": "CC BY-SA 4.0", "caption": "A woman in a warm blue sweater." }
+      ]
+    },
+    "boot": {
+      "scenes": [
+        {
+          "place": "front-door",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Wear your boots in the snow, Omar.", "fr": "Mets tes bottes pour la neige, Omar.", "ar": "البس جزمتك في الثلج يا عمر." } },
+            { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "Where are my boots?", "fr": "Où sont mes bottes ?", "ar": "أين جزمتي؟" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Next to the door.", "fr": "À côté de la porte.", "ar": "بجانب الباب." } }
+          ]
+        },
+        {
+          "place": "farm",
+          "lines": [
+            { "who": { "en": "Farmer", "fr": "La fermière", "ar": "المزارعة" }, "text": { "en": "Wear these boots. The field is wet.", "fr": "Mets ces bottes. Le champ est mouillé.", "ar": "البس هذه الجزمة. الحقل مبلل." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Thank you!", "fr": "Merci !", "ar": "شكرا!" } }
+          ]
+        },
+        {
+          "place": "shoe-shop",
+          "lines": [
+            { "who": { "en": "Zara", "fr": "Zara", "ar": "زارا" }, "text": { "en": "Mum, I like these red boots!", "fr": "Maman, j’aime bien ces bottes rouges !", "ar": "أمي، تعجبني هذه الجزمة الحمراء!" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Try them on, then.", "fr": "Essaie-les, alors.", "ar": "جربيها إذن." } }
+          ]
+        },
+        {
+          "place": "forest",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Diego, your boots are very dirty!", "fr": "Diego, tes bottes sont très sales !", "ar": "يا دييغو، جزمتك متسخة جدا!" } },
+            { "who": { "en": "Diego", "fr": "Diego", "ar": "دييغو" }, "text": { "en": "Yes! It was a great walk!", "fr": "Oui ! C’était une super promenade !", "ar": "نعم! كانت نزهة رائعة!" } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Rain_boots_on_Stairs.jpg/330px-Rain_boots_on_Stairs.jpg", "page": "https://commons.wikimedia.org/wiki/File:Rain_boots_on_Stairs.jpg", "author": "Erikamthompson", "licence": "CC BY-SA 3.0", "caption": "Rain boots on the steps." }
+      ]
+    },
+    "put on": {
+      "scenes": [
+        {
+          "place": "bedroom",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Put on your shoes, please, Leo.", "fr": "Mets tes chaussures, s’il te plaît, Leo.", "ar": "البس حذاءك من فضلك يا ليو." } },
+            { "who": { "en": "Leo", "fr": "Leo", "ar": "ليو" }, "text": { "en": "I am putting them on!", "fr": "Je les mets !", "ar": "أنا ألبسه الآن!" } }
+          ]
+        },
+        {
+          "place": "front-door",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "It is raining. Put on your coat and your boots, Sara.", "fr": "Il pleut. Mets ton manteau et tes bottes, Sara.", "ar": "السماء تمطر. البسي معطفك وجزمتك يا سارة." } },
+            { "who": { "en": "Sara", "fr": "Sara", "ar": "سارة" }, "text": { "en": "Okay, Dad. I am ready!", "fr": "D’accord, papa. Je suis prête !", "ar": "حسنا يا أبي. أنا جاهزة!" } }
+          ]
+        },
+        {
+          "place": "doctor",
+          "lines": [
+            { "who": { "en": "Doctor", "fr": "La médecin", "ar": "الطبيبة" }, "text": { "en": "All done! You can put on your shirt now.", "fr": "C’est fini ! Tu peux remettre ta chemise maintenant.", "ar": "انتهينا! يمكنك أن تلبس قميصك الآن." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Thank you, doctor.", "fr": "Merci, docteure.", "ar": "شكرا يا دكتورة." } }
+          ]
+        },
+        {
+          "place": "school-gate",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "It is cold. Put on your gloves, everyone.", "fr": "Il fait froid. Mettez vos gants, tout le monde.", "ar": "الجو بارد. البسوا قفازاتكم جميعا." } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Yes, sir!", "fr": "Oui, maître !", "ar": "نعم يا أستاذ!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "take off": {
+      "scenes": [
+        {
+          "place": "grandparents-house",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "Take off your shoes at the door, please.", "fr": "Enlève tes chaussures à l’entrée, s’il te plaît.", "ar": "اخلع حذاءك عند الباب من فضلك." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Of course, Grandma.", "fr": "Bien sûr, mamie.", "ar": "بالطبع يا جدتي." } }
+          ]
+        },
+        {
+          "place": "mosque",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "We take off our shoes before we go in.", "fr": "On enlève nos chaussures avant d’entrer.", "ar": "نخلع أحذيتنا قبل أن ندخل." } },
+            { "who": { "en": "Amir", "fr": "Amir", "ar": "أمير" }, "text": { "en": "Where do I put them?", "fr": "Je les mets où ?", "ar": "أين أضعها؟" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Here, on the shelf.", "fr": "Ici, sur l’étagère.", "ar": "هنا، على الرف." } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "It is warm in here. You can take off your coats.", "fr": "Il fait chaud ici. Vous pouvez enlever vos manteaux.", "ar": "الجو دافئ هنا. يمكنكم خلع معاطفكم." } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Thank you, Miss!", "fr": "Merci, maîtresse !", "ar": "شكرا يا معلمتي!" } }
+          ]
+        },
+        {
+          "place": "swimming-pool",
+          "lines": [
+            { "who": { "en": "Swimming teacher", "fr": "Le maître-nageur", "ar": "مدرب السباحة" }, "text": { "en": "Ravi, take off your glasses before you swim.", "fr": "Ravi, enlève tes lunettes avant de nager.", "ar": "يا رافي، اخلع نظارتك قبل أن تسبح." } },
+            { "who": { "en": "Ravi", "fr": "Ravi", "ar": "رافي" }, "text": { "en": "Okay. Can you keep them for me?", "fr": "D’accord. Vous pouvez me les garder ?", "ar": "حسنا. هل يمكنك أن تحتفظ بها لي؟" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "glove": {
+      "scenes": [
+        {
+          "place": "park",
+          "lines": [
+            { "who": { "en": "Hana", "fr": "Hana", "ar": "هنا" }, "text": { "en": "My hands are cold without gloves.", "fr": "J’ai froid aux mains sans gants.", "ar": "يداي باردتان بدون قفازات." } },
+            { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "Here, take my gloves.", "fr": "Tiens, prends mes gants.", "ar": "تفضلي، خذي قفازاتي." } }
+          ]
+        },
+        {
+          "place": "kitchen",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Careful, it is hot! Wear the kitchen gloves.", "fr": "Attention, c’est chaud ! Mets les gants de cuisine.", "ar": "انتبه، إنه ساخن! البس قفازات المطبخ." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Okay, Mum.", "fr": "D’accord, maman.", "ar": "حسنا يا أمي." } }
+          ]
+        },
+        {
+          "place": "mountain",
+          "lines": [
+            { "who": { "en": "Kofi", "fr": "Kofi", "ar": "كوفي" }, "text": { "en": "Dad, I lost a glove in the snow!", "fr": "Papa, j’ai perdu un gant dans la neige !", "ar": "أبي، أضعت قفازا في الثلج!" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Here it is! It was next to the tree.", "fr": "Le voilà ! Il était à côté de l’arbre.", "ar": "ها هو! كان بجانب الشجرة." } }
+          ]
+        },
+        {
+          "place": "garden",
+          "lines": [
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "Wear gloves. These plants can hurt your hands.", "fr": "Mets des gants. Ces plantes peuvent te faire mal aux mains.", "ar": "البس القفازات. هذه النباتات قد تؤذي يديك." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Thank you, Grandpa.", "fr": "Merci, papi.", "ar": "شكرا يا جدي." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Gloves%2C_pair%2C_women%27s_%28AM_538427-1%29.jpg/330px-Gloves%2C_pair%2C_women%27s_%28AM_538427-1%29.jpg", "page": "https://commons.wikimedia.org/wiki/File:Gloves,_pair,_women%27s_(AM_538427-1).jpg", "author": "Auckland Museum", "licence": "CC BY 4.0", "caption": "A pair of gloves." }
+      ]
+    },
+    "scarf": {
+      "scenes": [
+        {
+          "place": "front-door",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "It is very cold, Mei. Take your scarf.", "fr": "Il fait très froid, Mei. Prends ton écharpe.", "ar": "الجو بارد جدا يا مي. خذي وشاحك." } },
+            { "who": { "en": "Mei", "fr": "Mei", "ar": "مي" }, "text": { "en": "Okay. Can I take the red scarf?", "fr": "D’accord. Je peux prendre l’écharpe rouge ?", "ar": "حسنا. هل يمكنني أن آخذ الوشاح الأحمر؟" } }
+          ]
+        },
+        {
+          "place": "bus",
+          "lines": [
+            { "who": { "en": "Ana", "fr": "Ana", "ar": "آنا" }, "text": { "en": "I like your scarf, Nour.", "fr": "J’aime bien ton écharpe, Nour.", "ar": "يعجبني وشاحك يا نور." } },
+            { "who": { "en": "Nour", "fr": "Nour", "ar": "نور" }, "text": { "en": "Thank you! It is very warm.", "fr": "Merci ! Elle est très chaude.", "ar": "شكرا! إنه دافئ جدا." } }
+          ]
+        },
+        {
+          "place": "stadium",
+          "lines": [
+            { "who": { "en": "Karim", "fr": "Karim", "ar": "كريم" }, "text": { "en": "Look, Dad! My scarf has the colours of my team.", "fr": "Regarde, papa ! Mon écharpe a les couleurs de mon équipe.", "ar": "انظر يا أبي! وشاحي بألوان فريقي." } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Great! Wear it for the match.", "fr": "Super ! Porte-la pour le match.", "ar": "رائع! ارتده في المباراة." } }
+          ]
+        },
+        {
+          "place": "train-station",
+          "lines": [
+            { "who": { "en": "Emma", "fr": "Emma", "ar": "إيما" }, "text": { "en": "Oh no! I left my scarf on the train!", "fr": "Oh non ! J’ai oublié mon écharpe dans le train !", "ar": "أوه لا! نسيت وشاحي في القطار!" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Don’t worry. We can ask at the desk.", "fr": "Ne t’inquiète pas. On peut demander au guichet.", "ar": "لا تقلقي. يمكننا أن نسأل في مكتب الاستعلامات." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Knit_cap_and_loop_scarf_set.jpg/330px-Knit_cap_and_loop_scarf_set.jpg", "page": "https://commons.wikimedia.org/wiki/File:Knit_cap_and_loop_scarf_set.jpg", "author": "Tobias ToMar Maier", "licence": "CC BY-SA 4.0", "caption": "A warm blue scarf and hat." }
+      ]
+    },
+    "belt": {
+      "scenes": [
+        {
+          "place": "clothes-shop",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I need a belt for these trousers.", "fr": "J’ai besoin d’une ceinture pour ce pantalon.", "ar": "أحتاج إلى حزام لهذا البنطال." } },
+            { "who": { "en": "Shop assistant", "fr": "Le vendeur", "ar": "البائع" }, "text": { "en": "The belts are here. Which colour do you like?", "fr": "Les ceintures sont ici. Quelle couleur vous plaît ?", "ar": "الأحزمة هنا. أي لون يعجبك؟" } }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "These trousers are too big for me now!", "fr": "Ce pantalon est trop grand pour moi maintenant !", "ar": "هذا البنطال أصبح كبيرا علي!" } },
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "You need a belt, Dad!", "fr": "Il te faut une ceinture, papa !", "ar": "أنت تحتاج إلى حزام يا أبي!" } }
+          ]
+        },
+        {
+          "place": "plane",
+          "lines": [
+            { "who": { "en": "Flight attendant", "fr": "L’hôtesse de l’air", "ar": "المضيفة" }, "text": { "en": "Please put on your seat belt.", "fr": "Attachez votre ceinture, s’il vous plaît.", "ar": "من فضلك، اربط حزام الأمان." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Okay. Thank you.", "fr": "D’accord. Merci.", "ar": "حسنا. شكرا." } }
+          ]
+        },
+        {
+          "place": "gym",
+          "lines": [
+            { "who": { "en": "Coach", "fr": "L’entraîneur", "ar": "المدرب" }, "text": { "en": "Well done, Yuki! Here is your yellow belt.", "fr": "Bravo, Yuki ! Voici ta ceinture jaune.", "ar": "أحسنت يا يوكي! هذا حزامك الأصفر." } },
+            { "who": { "en": "Yuki", "fr": "Yuki", "ar": "يوكي" }, "text": { "en": "Thank you! I am so happy!", "fr": "Merci ! Je suis tellement contente !", "ar": "شكرا! أنا سعيدة جدا!" } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Belt-clothing.jpg/330px-Belt-clothing.jpg", "page": "https://commons.wikimedia.org/wiki/File:Belt-clothing.jpg", "author": "Evan-Amos", "licence": "Public domain", "caption": "A black leather belt." }
+      ]
+    },
+    "pocket": {
+      "scenes": [
+        {
+          "place": "street",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Where is the key?", "fr": "Où est la clé ?", "ar": "أين المفتاح؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "The key is in my pocket.", "fr": "La clé est dans ma poche.", "ar": "المفتاح في جيبي." } }
+          ]
+        },
+        {
+          "place": "bus",
+          "lines": [
+            { "who": { "en": "Bus driver", "fr": "Le chauffeur", "ar": "سائق الحافلة" }, "text": { "en": "Your ticket, please.", "fr": "Ton ticket, s’il te plaît.", "ar": "تذكرتك من فضلك." } },
+            { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "One minute… It is in my pocket! Here you are.", "fr": "Une minute… Il est dans ma poche ! Voilà.", "ar": "لحظة... إنها في جيبي! تفضل." } }
+          ]
+        },
+        {
+          "place": "forest",
+          "lines": [
+            { "who": { "en": "Maya", "fr": "Maya", "ar": "مايا" }, "text": { "en": "Look, Grandpa! I have a stone and a leaf in my pocket.", "fr": "Regarde, papi ! J’ai une pierre et une feuille dans ma poche.", "ar": "انظر يا جدي! معي حجر وورقة شجر في جيبي." } },
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "Can I see them?", "fr": "Je peux les voir ?", "ar": "هل يمكنني رؤيتهما؟" } }
+          ]
+        },
+        {
+          "place": "shopping-centre",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "This coat has big pockets, Aisha.", "fr": "Ce manteau a de grandes poches, Aïcha.", "ar": "هذا المعطف فيه جيوب كبيرة يا عائشة." } },
+            { "who": { "en": "Aisha", "fr": "Aïcha", "ar": "عائشة" }, "text": { "en": "Good! My hands can stay warm.", "fr": "Super ! Mes mains vont rester au chaud.", "ar": "جيد! ستبقى يداي دافئتين." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Jeans_pocket_front.jpg/330px-Jeans_pocket_front.jpg", "page": "https://commons.wikimedia.org/wiki/File:Jeans_pocket_front.jpg", "author": "Dvortygirl", "licence": "CC BY-SA 4.0", "caption": "The pocket of blue jeans." }
+      ]
+    },
+    "button": {
+      "scenes": [
+        {
+          "place": "bedroom",
+          "lines": [
+            { "who": { "en": "Leo", "fr": "Leo", "ar": "ليو" }, "text": { "en": "Mum, a button is missing from my shirt.", "fr": "Maman, il manque un bouton à ma chemise.", "ar": "أمي، هناك زر ناقص في قميصي." } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Give it to me. I can fix it.", "fr": "Donne-la-moi. Je peux la réparer.", "ar": "أعطني إياه. يمكنني إصلاحه." } }
+          ]
+        },
+        {
+          "place": "school-gate",
+          "lines": [
+            { "who": { "en": "Sara", "fr": "Sara", "ar": "سارة" }, "text": { "en": "Kofi, your coat is open! Can I help you with the buttons?", "fr": "Kofi, ton manteau est ouvert ! Je t’aide avec les boutons ?", "ar": "يا كوفي، معطفك مفتوح! هل أساعدك في الأزرار؟" } },
+            { "who": { "en": "Kofi", "fr": "Kofi", "ar": "كوفي" }, "text": { "en": "Yes, please. These buttons are so small!", "fr": "Oui, s’il te plaît. Ces boutons sont tout petits !", "ar": "نعم، من فضلك. هذه الأزرار صغيرة جدا!" } }
+          ]
+        },
+        {
+          "place": "market",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Do you have a blue button like this one?", "fr": "Vous avez un bouton bleu comme celui-ci ?", "ar": "هل لديك زر أزرق مثل هذا؟" } },
+            { "who": { "en": "Seller", "fr": "La marchande", "ar": "البائعة" }, "text": { "en": "Yes, here. One or two?", "fr": "Oui, voilà. Un ou deux ?", "ar": "نعم، تفضل. واحد أم اثنان؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Two, please.", "fr": "Deux, s’il vous plaît.", "ar": "اثنان، من فضلك." } }
+          ]
+        },
+        {
+          "place": "living-room",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "Look, Hana. This old box is full of buttons!", "fr": "Regarde, Hana. Cette vieille boîte est pleine de boutons !", "ar": "انظري يا هنا. هذا الصندوق القديم مليء بالأزرار!" } },
+            { "who": { "en": "Hana", "fr": "Hana", "ar": "هنا" }, "text": { "en": "Wow! They are all different colours!", "fr": "Waouh ! Il y en a de toutes les couleurs !", "ar": "رائع! كلها بألوان مختلفة!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "size": {
+      "scenes": [
+        {
+          "place": "clothes-shop",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "What size is this dress?", "fr": "Quelle taille fait cette robe ?", "ar": "ما مقاس هذا الفستان؟" } },
+            { "who": { "en": "Shop assistant", "fr": "La vendeuse", "ar": "البائعة" }, "text": { "en": "It is small. Do you want a bigger size?", "fr": "C’est une petite taille. Vous voulez une taille plus grande ?", "ar": "إنه مقاس صغير. هل تريد مقاسا أكبر؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yes, please.", "fr": "Oui, s’il vous plaît.", "ar": "نعم، من فضلك." } }
+          ]
+        },
+        {
+          "place": "shopping-centre",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "This jacket is the wrong size, Ravi.", "fr": "Cette veste n’est pas à la bonne taille, Ravi.", "ar": "مقاس هذه السترة غير مناسب يا رافي." } },
+            { "who": { "en": "Ravi", "fr": "Ravi", "ar": "رافي" }, "text": { "en": "Yes, it is too small.", "fr": "Oui, elle est trop petite.", "ar": "نعم، إنها صغيرة جدا." } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Let’s ask for a bigger one.", "fr": "Demandons une taille au-dessus.", "ar": "لنطلب مقاسا أكبر." } }
+          ]
+        },
+        {
+          "place": "home",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "I want to buy you a sweater. What size are you?", "fr": "Je veux t’acheter un pull. Tu fais quelle taille ?", "ar": "أريد أن أشتري لك كنزة. ما مقاسك؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I am not sure. Let’s ask Mum.", "fr": "Je ne sais pas trop. Demandons à maman.", "ar": "لا أعرف بالضبط. لنسأل أمي." } }
+          ]
+        },
+        {
+          "place": "market",
+          "lines": [
+            { "who": { "en": "Seller", "fr": "Le marchand", "ar": "البائع" }, "text": { "en": "These T-shirts are all the same size.", "fr": "Ces tee-shirts sont tous de la même taille.", "ar": "هذه التيشيرتات كلها بنفس المقاس." } },
+            { "who": { "en": "Diego", "fr": "Diego", "ar": "دييغو" }, "text": { "en": "Oh. Then they are too big for me.", "fr": "Ah. Alors ils sont trop grands pour moi.", "ar": "آه. إذن هي كبيرة جدا علي." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "glasses": {
+      "scenes": [
+        {
+          "place": "library",
+          "lines": [
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "I can’t read without my glasses.", "fr": "Je ne peux pas lire sans mes lunettes.", "ar": "لا أستطيع القراءة بدون نظارتي." } },
+            { "who": { "en": "Mei", "fr": "Mei", "ar": "مي" }, "text": { "en": "Here they are, Grandpa. They were on the table.", "fr": "Les voilà, papi. Elles étaient sur la table.", "ar": "ها هي يا جدي. كانت على الطاولة." } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Nour, you have new glasses!", "fr": "Nour, tu as de nouvelles lunettes !", "ar": "يا نور، لديك نظارة جديدة!" } },
+            { "who": { "en": "Nour", "fr": "Nour", "ar": "نور" }, "text": { "en": "Yes! Now I can see the board.", "fr": "Oui ! Maintenant, je vois bien le tableau.", "ar": "نعم! الآن أستطيع رؤية السبورة." } }
+          ]
+        },
+        {
+          "place": "cinema",
+          "lines": [
+            { "who": { "en": "Cinema worker", "fr": "L’employée du cinéma", "ar": "موظفة السينما" }, "text": { "en": "Here are your glasses for the film.", "fr": "Voici vos lunettes pour le film.", "ar": "هذه نظاراتكم للفيلم." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Wow, everything looks real!", "fr": "Waouh, tout a l’air vrai !", "ar": "رائع، كل شيء يبدو حقيقيا!" } }
+          ]
+        },
+        {
+          "place": "doctor",
+          "lines": [
+            { "who": { "en": "Doctor", "fr": "Le médecin", "ar": "الطبيب" }, "text": { "en": "Can you read the letters on the wall?", "fr": "Tu peux lire les lettres sur le mur ?", "ar": "هل يمكنك قراءة الحروف على الحائط؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Not the small ones.", "fr": "Pas les petites.", "ar": "لا أستطيع قراءة الصغيرة." } },
+            { "who": { "en": "Doctor", "fr": "Le médecin", "ar": "الطبيب" }, "text": { "en": "I think you need glasses.", "fr": "Je crois que tu as besoin de lunettes.", "ar": "أظن أنك تحتاج إلى نظارة." } }
+          ]
+        }
+      ],
+      "pictures": [
+        { "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Hou_Yifan_%2829762728494%29_%28cropped%29.jpg/330px-Hou_Yifan_%2829762728494%29_%28cropped%29.jpg", "page": "https://commons.wikimedia.org/wiki/File:Hou_Yifan_(29762728494)_(cropped).jpg", "author": "Andreas Kontokanis", "licence": "CC BY-SA 2.0", "caption": "A woman with glasses." }
+      ]
+    }
+  }
+}

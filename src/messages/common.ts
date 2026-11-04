@@ -3,15 +3,15 @@ import { defineMessages } from "@/lib/i18n";
 // Header, menus and small shared components.
 export const common = defineMessages({
   en: {
-    navTranslate: "Add words",
-    navDecks: "Decks",
+    navDecks: "My words",
+    navStories: "Stories",
     navStudy: "Study",
     navStats: "Stats",
     mainNav: "Main",
     streakTitle: "Study streak: days with at least one review. One missed day never breaks it; two in a row do.",
     streakLabel: { one: "{count}-day streak", other: "{count}-day streak" },
     saveError:
-      "Your browser refused to save ({error}). New progress will be lost when you close this tab — export a backup from the Decks page.",
+      "Your browser refused to save ({error}). New progress will be lost when you close this tab — export a backup from the My words page.",
     changeTheme: "Change theme",
     theme: "Theme",
     forKids: "For kids",
@@ -28,15 +28,15 @@ export const common = defineMessages({
     toLanguage: "To language",
   },
   fr: {
-    navTranslate: "Ajouter des mots",
-    navDecks: "Paquets",
+    navDecks: "Mes mots",
+    navStories: "Histoires",
     navStudy: "Réviser",
     navStats: "Stats",
     mainNav: "Navigation principale",
     streakTitle: "Série de révisions : jours avec au moins une révision. Un jour manqué ne la casse jamais ; deux jours d’affilée, si.",
     streakLabel: { one: "Série de {count} jour", other: "Série de {count} jours" },
     saveError:
-      "Votre navigateur a refusé d’enregistrer ({error}). Vos progrès récents seront perdus à la fermeture de cet onglet — exportez une sauvegarde depuis la page Paquets.",
+      "Votre navigateur a refusé d’enregistrer ({error}). Vos progrès récents seront perdus à la fermeture de cet onglet — exportez une sauvegarde depuis la page Mes mots.",
     changeTheme: "Changer de thème",
     theme: "Thème",
     forKids: "Pour les enfants",
@@ -53,11 +53,11 @@ export const common = defineMessages({
     toLanguage: "Langue d’arrivée",
   },
   ar: {
-    navTranslate: "أضف كلمات",
-    navDecks: "المجموعات",
+    navDecks: "كلماتي",
+    navStories: "قصص",
     navStudy: "مراجعة",
     navStats: "الإحصاءات",
-    mainNav: "القائمة الرئيسية",
+    mainNav: "التنقل الرئيسي",
     streakTitle: "سلسلة المراجعة: أيام فيها مراجعة واحدة على الأقل. يوم واحد فائت لا يقطعها أبدًا، أما يومان متتاليان فيقطعانها.",
     streakLabel: {
       zero: "لا توجد سلسلة",
@@ -68,7 +68,7 @@ export const common = defineMessages({
       other: "سلسلة {count} يوم",
     },
     saveError:
-      "رفض متصفحك الحفظ ({error}). سيضيع تقدّمك الجديد عند إغلاق هذا التبويب — صدّر نسخة احتياطية من صفحة المجموعات.",
+      "رفض متصفحك الحفظ ({error}). سيضيع تقدّمك الجديد عند إغلاق هذا التبويب — صدّر نسخة احتياطية من صفحة كلماتي.",
     changeTheme: "تغيير المظهر",
     theme: "المظهر",
     forKids: "للأطفال",

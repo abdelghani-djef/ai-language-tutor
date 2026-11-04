@@ -1,0 +1,845 @@
+{
+  "pack": "work",
+  "complete": true,
+  "words": {
+    "work": {
+      "scenes": [
+        {
+          "place": "home",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "I am going to work now. See you later!", "fr": "Je pars au travail. À plus tard !", "ar": "أنا ذاهبة إلى العمل الآن. أراك لاحقا!" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Goodbye, Mum! Have a good day at work.", "fr": "Au revoir, maman ! Bonne journée au travail !", "ar": "مع السلامة يا أمي! يوما سعيدا في العمل." } }
+          ]
+        },
+        {
+          "place": "dining-table",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "I had a lot of work today.", "fr": "J’ai eu beaucoup de travail aujourd’hui.", "ar": "كان لدي الكثير من العمل اليوم." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Come and eat, Dad. Dinner is on the table!", "fr": "Viens manger, papa. Le dîner est sur la table !", "ar": "تعال لتأكل يا أبي. العشاء على الطاولة!" } }
+          ]
+        },
+        {
+          "place": "office",
+          "lines": [
+            { "who": { "en": "Yuki", "fr": "Yuki", "ar": "يوكي" }, "text": { "en": "Good morning! Is this your first day at work?", "fr": "Bonjour ! C’est votre premier jour de travail ?", "ar": "صباح الخير! هل هذا أول يوم لك في العمل؟" } },
+            { "who": { "en": "Carlos", "fr": "Carlos", "ar": "كارلوس" }, "text": { "en": "Yes! I like my work here.", "fr": "Oui ! J’aime mon travail ici.", "ar": "نعم! أحب عملي هنا." } }
+          ]
+        },
+        {
+          "place": "street",
+          "lines": [
+            { "who": { "en": "Neighbour", "fr": "La voisine", "ar": "الجارة" }, "text": { "en": "Good evening! Are you back from work?", "fr": "Bonsoir ! Vous rentrez du travail ?", "ar": "مساء الخير! هل عدت من العمل؟" } },
+            { "who": { "en": "Ahmed", "fr": "Ahmed", "ar": "أحمد" }, "text": { "en": "Yes, I walk home from work every day.", "fr": "Oui, je rentre du travail à pied tous les jours.", "ar": "نعم، أعود من العمل إلى البيت مشيا كل يوم." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "job": {
+      "scenes": [
+        {
+          "place": "kitchen",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "I have a new job!", "fr": "J’ai un nouvel emploi !", "ar": "لدي وظيفة جديدة!" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Where is it, Dad?", "fr": "Où ça, papa ?", "ar": "أين هي يا أبي؟" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "At the hospital in the city centre.", "fr": "À l’hôpital du centre-ville.", "ar": "في المستشفى في وسط المدينة." } }
+          ]
+        },
+        {
+          "place": "cafe",
+          "lines": [
+            { "who": { "en": "Fatima", "fr": "Fatima", "ar": "فاطمة" }, "text": { "en": "Do you like your job, Leo?", "fr": "Tu aimes ton emploi, Léo ?", "ar": "هل تحب وظيفتك يا ليو؟" } },
+            { "who": { "en": "Leo", "fr": "Léo", "ar": "ليو" }, "text": { "en": "Yes! I make coffee and tea for people all day.", "fr": "Oui ! Je prépare du café et du thé pour les gens toute la journée.", "ar": "نعم! أعد القهوة والشاي للناس طوال اليوم." } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "What job do you want to do one day, Amir?", "fr": "Quel métier veux-tu faire plus tard, Amir ?", "ar": "ما الوظيفة التي تريدها في المستقبل يا أمير؟" } },
+            { "who": { "en": "Amir", "fr": "Amir", "ar": "أمير" }, "text": { "en": "I want to be a teacher, like you!", "fr": "Je veux être maître d’école, comme vous !", "ar": "أريد أن أكون معلما مثلك!" } }
+          ]
+        },
+        {
+          "place": "corner-shop",
+          "lines": [
+            { "who": { "en": "Shopkeeper", "fr": "La commerçante", "ar": "البائعة" }, "text": { "en": "I need help in my shop. Do you want a job?", "fr": "J’ai besoin d’aide dans ma boutique. Vous voulez un emploi ?", "ar": "أحتاج إلى مساعدة في متجري. هل تريدين وظيفة؟" } },
+            { "who": { "en": "Sara", "fr": "Sara", "ar": "سارة" }, "text": { "en": "Yes, please! I can come on Monday.", "fr": "Oui, avec plaisir ! Je peux venir lundi.", "ar": "نعم، بكل سرور! يمكنني أن آتي يوم الاثنين." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "office": {
+      "scenes": [
+        {
+          "place": "office",
+          "lines": [
+            { "who": { "en": "Ben", "fr": "Ben", "ar": "بن" }, "text": { "en": "Welcome to our office!", "fr": "Bienvenue dans notre bureau !", "ar": "مرحبا بك في مكتبنا!" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Thank you! It is very big.", "fr": "Merci ! Il est très grand.", "ar": "شكرا! إنه كبير جدا." } }
+          ]
+        },
+        {
+          "place": "home",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Where is Mum?", "fr": "Où est maman ?", "ar": "أين أمي؟" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "She is at the office. She comes home at six.", "fr": "Elle est au bureau. Elle rentre à six heures.", "ar": "إنها في المكتب. ستعود إلى البيت في الساعة السادسة." } }
+          ]
+        },
+        {
+          "place": "city-centre",
+          "lines": [
+            { "who": { "en": "Aunt Nadia", "fr": "Tante Nadia", "ar": "الخالة نادية" }, "text": { "en": "My office is in this big building.", "fr": "Mon bureau est dans ce grand immeuble.", "ar": "مكتبي في هذا المبنى الكبير." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Wow! Can you see the park from your office?", "fr": "Waouh ! Tu vois le parc depuis ton bureau ?", "ar": "رائع! هل ترين الحديقة من مكتبك؟" } },
+            { "who": { "en": "Aunt Nadia", "fr": "Tante Nadia", "ar": "الخالة نادية" }, "text": { "en": "Yes, I can!", "fr": "Oui, je le vois !", "ar": "نعم، أراها!" } }
+          ]
+        },
+        {
+          "place": "playground",
+          "lines": [
+            { "who": { "en": "Mia", "fr": "Mia", "ar": "ميا" }, "text": { "en": "My mum works in an office. She uses a computer all day.", "fr": "Ma maman travaille dans un bureau. Elle utilise un ordinateur toute la journée.", "ar": "أمي تعمل في مكتب. إنها تستخدم الحاسوب طوال اليوم." } },
+            { "who": { "en": "Kofi", "fr": "Kofi", "ar": "كوفي" }, "text": { "en": "My dad works in an office too!", "fr": "Mon papa travaille aussi dans un bureau !", "ar": "أبي أيضا يعمل في مكتب!" } }
+          ]
+        }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Workspace_setup_with_a_computer_monitor_and_desk_lamp_in_an_office_environment.jpg/330px-Workspace_setup_with_a_computer_monitor_and_desk_lamp_in_an_office_environment.jpg", "page": "https://commons.wikimedia.org/wiki/File:Workspace_setup_with_a_computer_monitor_and_desk_lamp_in_an_office_environment.jpg", "author": "Shixart1985", "licence": "CC BY 2.0", "caption": "A desk with a computer in an office"}
+      ]
+    },
+    "money": {
+      "scenes": [
+        {
+          "place": "market",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Oh no! Where is my money?", "fr": "Oh non ! Où est mon argent ?", "ar": "أوه لا! أين مالي؟" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "It is in your bag. Look!", "fr": "Il est dans ton sac. Regarde !", "ar": "إنه في حقيبتك. انظر!" } }
+          ]
+        },
+        {
+          "place": "bank",
+          "lines": [
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "We put our money in the bank.", "fr": "Nous mettons notre argent à la banque.", "ar": "نضع مالنا في البنك." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Can I put my money here too?", "fr": "Je peux mettre mon argent ici aussi ?", "ar": "هل يمكنني أن أضع مالي هنا أيضا؟" } },
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "Of course you can!", "fr": "Bien sûr que tu peux !", "ar": "طبعا يمكنك ذلك!" } }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            { "who": { "en": "Ali", "fr": "Ali", "ar": "علي" }, "text": { "en": "I put my money in this box.", "fr": "Je mets mon argent dans cette boîte.", "ar": "أضع مالي في هذا الصندوق." } },
+            { "who": { "en": "Emma", "fr": "Emma", "ar": "إيما" }, "text": { "en": "Me too! I want to buy a new book.", "fr": "Moi aussi ! Je veux acheter un nouveau livre.", "ar": "وأنا أيضا! أريد أن أشتري كتابا جديدا." } }
+          ]
+        },
+        {
+          "place": "toy-shop",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Mum, I have some money. Can I buy this?", "fr": "Maman, j’ai un peu d’argent. Je peux acheter ça ?", "ar": "أمي، لدي بعض المال. هل يمكنني أن أشتري هذا؟" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Yes, it is your money.", "fr": "Oui, c’est ton argent.", "ar": "نعم، إنه مالك." } }
+          ]
+        }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Euro_coins_and_banknotes_%28cropped%29.jpg/330px-Euro_coins_and_banknotes_%28cropped%29.jpg", "page": "https://commons.wikimedia.org/wiki/File:Euro_coins_and_banknotes_(cropped).jpg", "author": "Avij (talk · contribs)", "licence": "Public domain", "caption": "Coins and banknotes"}
+      ]
+    },
+    "company": {
+      "scenes": [
+        {
+          "place": "dining-table",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Where do you work, Uncle Karim?", "fr": "Tu travailles où, tonton Karim ?", "ar": "أين تعمل يا عمي كريم؟" } },
+            { "who": { "en": "Uncle Karim", "fr": "Tonton Karim", "ar": "العم كريم" }, "text": { "en": "I work for a big company. We make computers.", "fr": "Je travaille pour une grande entreprise. Nous fabriquons des ordinateurs.", "ar": "أعمل في شركة كبيرة. نحن نصنع الحواسيب." } }
+          ]
+        },
+        {
+          "place": "meeting-room",
+          "lines": [
+            { "who": { "en": "Manager", "fr": "La directrice", "ar": "المديرة" }, "text": { "en": "Our company is ten years old today!", "fr": "Notre entreprise a dix ans aujourd’hui !", "ar": "شركتنا تبلغ من العمر عشر سنوات اليوم!" } },
+            { "who": { "en": "Everyone", "fr": "Tout le monde", "ar": "الجميع" }, "text": { "en": "Wow! Can we have some cake?", "fr": "Waouh ! On peut avoir du gâteau ?", "ar": "رائع! هل يمكننا أن نأكل بعض الكعك؟" } },
+            { "who": { "en": "Manager", "fr": "La directrice", "ar": "المديرة" }, "text": { "en": "Yes! The cake is on the table.", "fr": "Oui ! Le gâteau est sur la table.", "ar": "نعم! الكعكة على الطاولة." } }
+          ]
+        },
+        {
+          "place": "factory",
+          "lines": [
+            { "who": { "en": "Lena", "fr": "Lena", "ar": "لينا" }, "text": { "en": "This company makes juice.", "fr": "Cette entreprise fabrique du jus de fruits.", "ar": "هذه الشركة تصنع العصير." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Can we drink some?", "fr": "On peut en boire un peu ?", "ar": "هل يمكننا أن نشرب بعضه؟" } },
+            { "who": { "en": "Lena", "fr": "Lena", "ar": "لينا" }, "text": { "en": "Yes, one cup each!", "fr": "Oui, un verre chacun !", "ar": "نعم، كوب لكل واحد!" } }
+          ]
+        },
+        {
+          "place": "friends-house",
+          "lines": [
+            { "who": { "en": "Jack", "fr": "Jack", "ar": "جاك" }, "text": { "en": "My mum has a small company. She makes cakes.", "fr": "Ma mère a une petite entreprise. Elle fait des gâteaux.", "ar": "أمي لديها شركة صغيرة. إنها تصنع الكعك." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I like cakes!", "fr": "J’aime les gâteaux !", "ar": "أحب الكعك!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "business": {
+      "scenes": [
+        {
+          "place": "bakery",
+          "lines": [
+            { "who": { "en": "Baker", "fr": "Le boulanger", "ar": "الخباز" }, "text": { "en": "Business is good this month. Everyone wants bread!", "fr": "Les affaires marchent bien ce mois-ci. Tout le monde veut du pain !", "ar": "الأعمال تسير بشكل جيد هذا الشهر. الجميع يريد الخبز!" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Your bread is very good!", "fr": "Votre pain est très bon !", "ar": "خبزك لذيذ جدا!" } }
+          ]
+        },
+        {
+          "place": "airport",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Where are you going, Dad?", "fr": "Où vas-tu, papa ?", "ar": "إلى أين أنت ذاهب يا أبي؟" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "To Paris, on business. I am back on Friday.", "fr": "À Paris, pour affaires. Je rentre vendredi.", "ar": "إلى باريس في رحلة أعمال. سأعود يوم الجمعة." } }
+          ]
+        },
+        {
+          "place": "fruit-shop",
+          "lines": [
+            { "who": { "en": "Rosa", "fr": "Rosa", "ar": "روزا" }, "text": { "en": "How is business today?", "fr": "Comment vont les affaires aujourd’hui ?", "ar": "كيف حال الأعمال اليوم؟" } },
+            { "who": { "en": "Fruit seller", "fr": "Le marchand de fruits", "ar": "بائع الفواكه" }, "text": { "en": "Very good! Many people want fruit and vegetables.", "fr": "Très bien ! Beaucoup de gens veulent des fruits et des légumes.", "ar": "جيدة جدا! كثير من الناس يريدون الفواكه والخضروات." } }
+          ]
+        },
+        {
+          "place": "restaurant",
+          "lines": [
+            { "who": { "en": "Mr Chen", "fr": "M. Chen", "ar": "السيد تشين" }, "text": { "en": "This is a business lunch. We need a table for four.", "fr": "C’est un déjeuner d’affaires. Il nous faut une table pour quatre.", "ar": "هذا غداء عمل. نحتاج إلى طاولة لأربعة أشخاص." } },
+            { "who": { "en": "Waiter", "fr": "Le serveur", "ar": "النادل" }, "text": { "en": "Of course, Mr Chen. Here is your table.", "fr": "Bien sûr, monsieur Chen. Voici votre table.", "ar": "بالطبع يا سيد تشين. هذه طاولتكم." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "boss": {
+      "scenes": [
+        {
+          "place": "office",
+          "lines": [
+            { "who": { "en": "Lucy", "fr": "Lucy", "ar": "لوسي" }, "text": { "en": "Is the boss here today?", "fr": "Le patron est là aujourd’hui ?", "ar": "هل رئيس العمل هنا اليوم؟" } },
+            { "who": { "en": "Sam", "fr": "Sam", "ar": "سام" }, "text": { "en": "No, he is in a meeting.", "fr": "Non, il est en réunion.", "ar": "لا، إنه في اجتماع." } }
+          ]
+        },
+        {
+          "place": "kitchen",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "My boss gives us a cake every Friday!", "fr": "Mon patron nous apporte un gâteau tous les vendredis !", "ar": "رئيسي في العمل يعطينا كعكة كل يوم جمعة!" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Can I come to your work on Friday?", "fr": "Je peux venir à ton travail vendredi ?", "ar": "هل يمكنني أن آتي إلى عملك يوم الجمعة؟" } }
+          ]
+        },
+        {
+          "place": "restaurant",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "The food is very good! Can I tell the boss?", "fr": "C’est très bon ! Je peux le dire au patron ?", "ar": "الطعام لذيذ جدا! هل يمكنني أن أخبر صاحب المطعم؟" } },
+            { "who": { "en": "Waiter", "fr": "Le serveur", "ar": "النادل" }, "text": { "en": "Of course! He is in the kitchen.", "fr": "Bien sûr ! Il est dans la cuisine.", "ar": "بالطبع! إنه في المطبخ." } }
+          ]
+        },
+        {
+          "place": "building-site",
+          "lines": [
+            { "who": { "en": "Worker", "fr": "L’ouvrier", "ar": "العامل" }, "text": { "en": "Where do we put these boxes, boss?", "fr": "On met ces cartons où, patron ?", "ar": "أين نضع هذه الصناديق يا سيدي؟" } },
+            { "who": { "en": "Boss", "fr": "Le patron", "ar": "رئيس العمل" }, "text": { "en": "Put them by the wall, please.", "fr": "Mettez-les contre le mur, s’il vous plaît.", "ar": "ضعوها بجانب الجدار، من فضلكم." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "worker": {
+      "scenes": [
+        {
+          "place": "building-site",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "What are the workers making?", "fr": "Qu’est-ce que les ouvriers construisent ?", "ar": "ماذا يبني العمال؟" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "A new school! It opens next year.", "fr": "Une nouvelle école ! Elle ouvre l’année prochaine.", "ar": "مدرسة جديدة! ستفتح في العام القادم." } }
+          ]
+        },
+        {
+          "place": "factory",
+          "lines": [
+            { "who": { "en": "Manager", "fr": "Le directeur", "ar": "المدير" }, "text": { "en": "Two hundred workers work in this factory.", "fr": "Deux cents ouvriers travaillent dans cette usine.", "ar": "يعمل مئتا عامل في هذا المصنع." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "That is a lot of people!", "fr": "Ça fait beaucoup de monde !", "ar": "هذا عدد كبير من الناس!" } }
+          ]
+        },
+        {
+          "place": "street",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "Look! The workers are making a new road.", "fr": "Regarde ! Les ouvriers construisent une nouvelle route.", "ar": "انظر! العمال يبنون طريقا جديدا." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "They work all day!", "fr": "Ils travaillent toute la journée !", "ar": "إنهم يعملون طوال اليوم!" } }
+          ]
+        },
+        {
+          "place": "farm",
+          "lines": [
+            { "who": { "en": "Farmer", "fr": "L’agricultrice", "ar": "المزارعة" }, "text": { "en": "I need more workers for the apples.", "fr": "J’ai besoin de plus d’ouvriers pour cueillir les pommes.", "ar": "أحتاج إلى مزيد من العمال لقطف التفاح." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I can help!", "fr": "Je peux aider !", "ar": "يمكنني أن أساعد!" } }
+          ]
+        }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/WomanFactory1940s.jpg/330px-WomanFactory1940s.jpg", "page": "https://commons.wikimedia.org/wiki/File:WomanFactory1940s.jpg", "author": "Howard R. Hollem", "licence": "Public domain", "caption": "A worker using a machine in a factory"}
+      ]
+    },
+    "doctor": {
+      "scenes": [
+        {
+          "place": "doctor",
+          "lines": [
+            { "who": { "en": "Doctor", "fr": "La médecin", "ar": "الطبيبة" }, "text": { "en": "Hello! What is wrong?", "fr": "Bonjour ! Qu’est-ce qui ne va pas ?", "ar": "مرحبا! ما المشكلة؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Hello, doctor. My ear hurts.", "fr": "Bonjour, docteure. J’ai mal à l’oreille.", "ar": "مرحبا يا دكتورة. أذني تؤلمني." } },
+            { "who": { "en": "Doctor", "fr": "La médecin", "ar": "الطبيبة" }, "text": { "en": "Let me look. Sit here, please.", "fr": "Je vais regarder. Assieds-toi ici, s’il te plaît.", "ar": "دعني أنظر. اجلس هنا من فضلك." } }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "You are sick. We need to see a doctor.", "fr": "Tu es malade. Il faut aller voir un médecin.", "ar": "أنت مريض. يجب أن نذهب إلى الطبيب." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Okay, Mum.", "fr": "D’accord, maman.", "ar": "حسنا يا أمي." } }
+          ]
+        },
+        {
+          "place": "hospital",
+          "lines": [
+            { "who": { "en": "Nurse", "fr": "L’infirmière", "ar": "الممرضة" }, "text": { "en": "The doctor can see you now.", "fr": "Le médecin peut vous recevoir maintenant.", "ar": "يمكن للطبيب أن يراك الآن." } },
+            { "who": { "en": "Mr Diallo", "fr": "M. Diallo", "ar": "السيد ديالو" }, "text": { "en": "Thank you!", "fr": "Merci !", "ar": "شكرا!" } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "Who wants to be a doctor?", "fr": "Qui veut devenir médecin ?", "ar": "من يريد أن يصبح طبيبا؟" } },
+            { "who": { "en": "Aisha", "fr": "Aïcha", "ar": "عائشة" }, "text": { "en": "Me! I want to help sick people.", "fr": "Moi ! Je veux aider les malades.", "ar": "أنا! أريد أن أساعد المرضى." } }
+          ]
+        }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Doctor_Holding_Stethoscope_Cartoon.svg/330px-Doctor_Holding_Stethoscope_Cartoon.svg.png", "page": "https://commons.wikimedia.org/wiki/File:Doctor_Holding_Stethoscope_Cartoon.svg", "author": "VideoPlasty", "licence": "CC BY-SA 4.0", "caption": "A doctor with a stethoscope"},
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Female_doctor_uses_stethoscope_on_teddy_bear_to_help_girl_closeup.jpg/330px-Female_doctor_uses_stethoscope_on_teddy_bear_to_help_girl_closeup.jpg", "page": "https://commons.wikimedia.org/wiki/File:Female_doctor_uses_stethoscope_on_teddy_bear_to_help_girl_closeup.jpg", "author": "Shixart1985", "licence": "CC BY 2.0", "caption": "A doctor listens to a teddy bear"}
+      ]
+    },
+    "manager": {
+      "scenes": [
+        {
+          "place": "supermarket",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Excuse me, where is the milk?", "fr": "Excusez-moi, où est le lait ?", "ar": "عذرا، أين الحليب؟" } },
+            { "who": { "en": "Manager", "fr": "La directrice", "ar": "المديرة" }, "text": { "en": "I am the manager. Come with me, I can help you.", "fr": "Je suis la directrice du magasin. Viens avec moi, je peux t’aider.", "ar": "أنا المديرة. تعال معي، يمكنني مساعدتك." } }
+          ]
+        },
+        {
+          "place": "restaurant",
+          "lines": [
+            { "who": { "en": "Ella", "fr": "Ella", "ar": "إيلا" }, "text": { "en": "Excuse me, this soup is cold.", "fr": "Excusez-moi, cette soupe est froide.", "ar": "عذرا، هذا الحساء بارد." } },
+            { "who": { "en": "Waiter", "fr": "Le serveur", "ar": "النادل" }, "text": { "en": "Sorry! I can call the manager.", "fr": "Désolé ! Je vais appeler le responsable.", "ar": "آسف! سأنادي المدير." } },
+            { "who": { "en": "Manager", "fr": "Le responsable", "ar": "المدير" }, "text": { "en": "I am very sorry. Here is some hot soup.", "fr": "Je suis vraiment désolé. Voici une soupe bien chaude.", "ar": "أنا آسف جدا. تفضلي حساء ساخنا." } }
+          ]
+        },
+        {
+          "place": "bank",
+          "lines": [
+            { "who": { "en": "Mr Okafor", "fr": "M. Okafor", "ar": "السيد أوكافور" }, "text": { "en": "Can I speak to the manager, please?", "fr": "Je peux parler au directeur, s’il vous plaît ?", "ar": "هل يمكنني أن أتحدث مع المدير، من فضلك؟" } },
+            { "who": { "en": "Mrs Ruiz", "fr": "Mme Ruiz", "ar": "السيدة رويز" }, "text": { "en": "Yes, sir. He can see you in five minutes.", "fr": "Oui, monsieur. Il peut vous recevoir dans cinq minutes.", "ar": "نعم يا سيدي. يمكنه أن يقابلك بعد خمس دقائق." } }
+          ]
+        },
+        {
+          "place": "meeting-room",
+          "lines": [
+            { "who": { "en": "Manager", "fr": "La directrice", "ar": "المديرة" }, "text": { "en": "Good morning, team! I am your new manager.", "fr": "Bonjour à toute l’équipe ! Je suis votre nouvelle directrice.", "ar": "صباح الخير يا فريق! أنا مديرتكم الجديدة." } },
+            { "who": { "en": "Tariq", "fr": "Tariq", "ar": "طارق" }, "text": { "en": "Welcome! Nice to meet you.", "fr": "Bienvenue ! Enchanté.", "ar": "أهلا بك! تشرفت بمعرفتك." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "meeting": {
+      "scenes": [
+        {
+          "place": "meeting-room",
+          "lines": [
+            { "who": { "en": "Manager", "fr": "Le directeur", "ar": "المدير" }, "text": { "en": "Hello, everyone. Please sit down for the meeting.", "fr": "Bonjour à tous. Asseyez-vous, s’il vous plaît, la réunion commence.", "ar": "مرحبا بالجميع. تفضلوا بالجلوس، الاجتماع سيبدأ." } },
+            { "who": { "en": "Priya", "fr": "Priya", "ar": "بريا" }, "text": { "en": "Can I open the window first?", "fr": "Je peux d’abord ouvrir la fenêtre ?", "ar": "هل يمكنني أن أفتح النافذة أولا؟" } }
+          ]
+        },
+        {
+          "place": "home",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Dad, can we play now?", "fr": "Papa, on peut jouer maintenant ?", "ar": "أبي، هل يمكننا أن نلعب الآن؟" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Sorry, I have a meeting on the computer. We can play in one hour!", "fr": "Désolé, j’ai une réunion sur l’ordinateur. On jouera dans une heure !", "ar": "آسف، لدي اجتماع على الحاسوب. سنلعب بعد ساعة!" } }
+          ]
+        },
+        {
+          "place": "school-gate",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "I have a meeting with your teacher today.", "fr": "J’ai une réunion avec ta maîtresse aujourd’hui.", "ar": "لدي اجتماع مع معلمتك اليوم." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Oh! Is it about my homework?", "fr": "Oh ! C’est à propos de mes devoirs ?", "ar": "أوه! هل هو بخصوص واجباتي؟" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "No, it is a meeting for all the parents.", "fr": "Non, c’est une réunion pour tous les parents.", "ar": "لا، إنه اجتماع لجميع أولياء الأمور." } }
+          ]
+        },
+        {
+          "place": "town-hall",
+          "lines": [
+            { "who": { "en": "Neighbour", "fr": "Le voisin", "ar": "الجار" }, "text": { "en": "Are you going to the meeting at the town hall?", "fr": "Vous allez à la réunion à la mairie ?", "ar": "هل ستذهبين إلى الاجتماع في البلدية؟" } },
+            { "who": { "en": "Mrs Haddad", "fr": "Mme Haddad", "ar": "السيدة حداد" }, "text": { "en": "Yes! It is about a new park for the children.", "fr": "Oui ! C’est au sujet d’un nouveau parc pour les enfants.", "ar": "نعم! إنه بخصوص حديقة جديدة للأطفال." } }
+          ]
+        }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/AGM_Annual_General_Meeting_of_a_typical_small_%28141_member%29_volunteer_organisation.jpg/330px-AGM_Annual_General_Meeting_of_a_typical_small_%28141_member%29_volunteer_organisation.jpg", "page": "https://commons.wikimedia.org/wiki/File:AGM_Annual_General_Meeting_of_a_typical_small_(141_member)_volunteer_organisation.jpg", "author": "Johnscotaus", "licence": "CC BY-SA 4.0", "caption": "People at a meeting"}
+      ]
+    },
+    "earn": {
+      "scenes": [
+        {
+          "place": "garden",
+          "lines": [
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "Can you help me in the garden? You can earn some money.", "fr": "Tu peux m’aider au jardin ? Tu peux gagner un peu d’argent.", "ar": "هل يمكنك أن تساعدني في الحديقة؟ يمكنك أن تكسب بعض المال." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yes, please, Grandpa!", "fr": "Oh oui, papi !", "ar": "نعم يا جدي!" } }
+          ]
+        },
+        {
+          "place": "bedroom",
+          "lines": [
+            { "who": { "en": "Nina", "fr": "Nina", "ar": "نينا" }, "text": { "en": "I earned some money this week!", "fr": "J’ai gagné un peu d’argent cette semaine !", "ar": "كسبت بعض المال هذا الأسبوع!" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "How?", "fr": "Comment ?", "ar": "كيف؟" } },
+            { "who": { "en": "Nina", "fr": "Nina", "ar": "نينا" }, "text": { "en": "I helped my neighbour in her garden.", "fr": "J’ai aidé ma voisine dans son jardin.", "ar": "ساعدت جارتي في حديقتها." } }
+          ]
+        },
+        {
+          "place": "cafe",
+          "lines": [
+            { "who": { "en": "Sami", "fr": "Sami", "ar": "سامي" }, "text": { "en": "I earn money here on Saturdays.", "fr": "Je gagne de l’argent ici le samedi.", "ar": "أكسب المال هنا أيام السبت." } },
+            { "who": { "en": "Maya", "fr": "Maya", "ar": "مايا" }, "text": { "en": "Nice! What do you do?", "fr": "Super ! Tu fais quoi ?", "ar": "جميل! ماذا تفعل؟" } },
+            { "who": { "en": "Sami", "fr": "Sami", "ar": "سامي" }, "text": { "en": "I wash the cups.", "fr": "Je lave les tasses.", "ar": "أغسل الأكواب." } }
+          ]
+        },
+        {
+          "place": "market",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "The farmers earn money at the market.", "fr": "Les agriculteurs gagnent de l’argent au marché.", "ar": "المزارعون يكسبون المال في السوق." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "People buy their fruit and vegetables!", "fr": "Les gens achètent leurs fruits et leurs légumes !", "ar": "الناس يشترون منهم الفواكه والخضروات!" } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "customer": {
+      "scenes": [
+        {
+          "place": "shoe-shop",
+          "lines": [
+            { "who": { "en": "Shopkeeper", "fr": "La vendeuse", "ar": "البائعة" }, "text": { "en": "Hello! You are my first customer today!", "fr": "Bonjour ! Vous êtes mon premier client aujourd’hui !", "ar": "مرحبا! أنت أول زبون لي اليوم!" } },
+            { "who": { "en": "Omar", "fr": "Omar", "ar": "عمر" }, "text": { "en": "Thank you! Can you help me, please?", "fr": "Merci ! Vous pouvez m’aider, s’il vous plaît ?", "ar": "شكرا! هل يمكنك أن تساعديني من فضلك؟" } }
+          ]
+        },
+        {
+          "place": "bakery",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Look, there are many customers this morning!", "fr": "Regarde, il y a beaucoup de clients ce matin !", "ar": "انظر، هناك الكثير من الزبائن هذا الصباح!" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Everyone wants your bread, Mum!", "fr": "Tout le monde veut ton pain, maman !", "ar": "الجميع يريد خبزك يا أمي!" } }
+          ]
+        },
+        {
+          "place": "restaurant",
+          "lines": [
+            { "who": { "en": "Cook", "fr": "Le cuisinier", "ar": "الطباخ" }, "text": { "en": "What does the customer at table five want?", "fr": "Que veut le client de la table cinq ?", "ar": "ماذا يريد الزبون على الطاولة الخامسة؟" } },
+            { "who": { "en": "Waiter", "fr": "La serveuse", "ar": "النادلة" }, "text": { "en": "Rice and meat, please!", "fr": "Du riz et de la viande, s’il te plaît !", "ar": "أرز ولحم من فضلك!" } }
+          ]
+        },
+        {
+          "place": "pharmacy",
+          "lines": [
+            { "who": { "en": "Pharmacist", "fr": "Le pharmacien", "ar": "الصيدلي" }, "text": { "en": "Next customer, please!", "fr": "Au suivant, s’il vous plaît !", "ar": "الزبون التالي، من فضلك!" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Hello! I need some medicine for my mum.", "fr": "Bonjour ! J’ai besoin d’un médicament pour ma maman.", "ar": "مرحبا! أحتاج إلى دواء لأمي." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "factory": {
+      "scenes": [
+        {
+          "place": "factory",
+          "lines": [
+            { "who": { "en": "Mr Rossi", "fr": "M. Rossi", "ar": "السيد روسي" }, "text": { "en": "Welcome to our factory! We make bread here.", "fr": "Bienvenue dans notre usine ! Ici, nous fabriquons du pain.", "ar": "مرحبا بكم في مصنعنا! نحن نصنع الخبز هنا." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Mmm! I love bread!", "fr": "Mmm ! J’adore le pain !", "ar": "ممم! أحب الخبز!" } }
+          ]
+        },
+        {
+          "place": "dining-table",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Where does Uncle Ravi work?", "fr": "Où travaille tonton Ravi ?", "ar": "أين يعمل عمي رافي؟" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "In a factory. He makes phones.", "fr": "Dans une usine. Il fabrique des téléphones.", "ar": "في مصنع. إنه يصنع الهواتف." } }
+          ]
+        },
+        {
+          "place": "village",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "There was a big factory here.", "fr": "Avant, il y avait une grande usine ici.", "ar": "كان هناك مصنع كبير هنا في الماضي." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "What did it make?", "fr": "Qu’est-ce qu’elle fabriquait ?", "ar": "ماذا كان يصنع؟" } },
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "Cheese! Very good cheese.", "fr": "Du fromage ! Du très bon fromage.", "ar": "الجبن! جبن لذيذ جدا." } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Tomorrow, we are going to a factory.", "fr": "Demain, nous allons visiter une usine.", "ar": "غدا سنزور مصنعا." } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Yes! What do they make there?", "fr": "Super ! Qu’est-ce qu’on y fabrique ?", "ar": "رائع! ماذا يصنعون هناك؟" } },
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Paper and books!", "fr": "Du papier et des livres !", "ar": "الورق والكتب!" } }
+          ]
+        }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Continental_AG_tire_factory_Mittellandkanal_Stoecken_Hannover_Germany_02.jpg/330px-Continental_AG_tire_factory_Mittellandkanal_Stoecken_Hannover_Germany_02.jpg", "page": "https://commons.wikimedia.org/wiki/File:Continental_AG_tire_factory_Mittellandkanal_Stoecken_Hannover_Germany_02.jpg", "author": "Christian A. Schröder (ChristianSchd)", "licence": "CC BY-SA 4.0", "caption": "A big factory by the water"}
+      ]
+    },
+    "driver": {
+      "scenes": [
+        {
+          "place": "bus",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Excuse me, is this the bus to the city centre?", "fr": "Excusez-moi, ce bus va au centre-ville ?", "ar": "عذرا، هل تذهب هذه الحافلة إلى وسط المدينة؟" } },
+            { "who": { "en": "Driver", "fr": "Le chauffeur", "ar": "السائق" }, "text": { "en": "Yes, it is. Sit down, please.", "fr": "Oui. Assieds-toi, s’il te plaît.", "ar": "نعم. اجلس من فضلك." } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "Say thank you to the driver!", "fr": "Dis merci au chauffeur !", "ar": "قل شكرا للسائق!" } }
+          ]
+        },
+        {
+          "place": "taxi",
+          "lines": [
+            { "who": { "en": "Mr Silva", "fr": "M. Silva", "ar": "السيد سيلفا" }, "text": { "en": "To the train station, please.", "fr": "À la gare, s’il vous plaît.", "ar": "إلى محطة القطار من فضلك." } },
+            { "who": { "en": "Driver", "fr": "Le chauffeur", "ar": "السائق" }, "text": { "en": "Here is the train station.", "fr": "Voici la gare.", "ar": "ها هي محطة القطار." } },
+            { "who": { "en": "Mr Silva", "fr": "M. Silva", "ar": "السيد سيلفا" }, "text": { "en": "Thank you! You are a very good driver.", "fr": "Merci ! Vous êtes un très bon chauffeur.", "ar": "شكرا! أنت سائق ماهر جدا." } }
+          ]
+        },
+        {
+          "place": "school-gate",
+          "lines": [
+            { "who": { "en": "Kenji", "fr": "Kenji", "ar": "كنجي" }, "text": { "en": "Who is that man?", "fr": "C’est qui, ce monsieur ?", "ar": "من ذلك الرجل؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "That is our school bus driver. He is very nice!", "fr": "C’est le chauffeur du bus de l’école. Il est très gentil !", "ar": "إنه سائق حافلة مدرستنا. إنه لطيف جدا!" } }
+          ]
+        },
+        {
+          "place": "bus-stop",
+          "lines": [
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "Here is the bus. Say hello to the driver!", "fr": "Voilà le bus. Dis bonjour au chauffeur !", "ar": "ها هي الحافلة. قل مرحبا للسائق!" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Hello! Good morning!", "fr": "Bonjour, monsieur !", "ar": "مرحبا! صباح الخير!" } }
+          ]
+        }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Driver_Dave_Marshall_The_Friendly_Bus_Driver.jpg/330px-Driver_Dave_Marshall_The_Friendly_Bus_Driver.jpg", "page": "https://commons.wikimedia.org/wiki/File:Driver_Dave_Marshall_The_Friendly_Bus_Driver.jpg", "author": "Mrdavo85", "licence": "CC BY-SA 3.0", "caption": "A bus driver in his bus"}
+      ]
+    },
+    "police officer": {
+      "scenes": [
+        {
+          "place": "police-station",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Excuse me, I can’t find my mum.", "fr": "Excusez-moi, je ne trouve pas ma maman.", "ar": "عذرا، لا أجد أمي." } },
+            { "who": { "en": "Police officer", "fr": "La policière", "ar": "الشرطية" }, "text": { "en": "It is okay. I am a police officer. I can help you.", "fr": "Ce n’est pas grave. Je suis policière, je peux t’aider.", "ar": "لا بأس. أنا شرطية، يمكنني مساعدتك." } }
+          ]
+        },
+        {
+          "place": "crossing",
+          "lines": [
+            { "who": { "en": "Police officer", "fr": "Le policier", "ar": "الشرطي" }, "text": { "en": "Wait, children! Okay, now you can go.", "fr": "Attendez, les enfants ! Voilà, maintenant vous pouvez traverser.", "ar": "انتظروا يا أطفال! حسنا، الآن يمكنكم العبور." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Thank you, police officer!", "fr": "Merci, monsieur l’agent !", "ar": "شكرا يا حضرة الشرطي!" } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "Today, a police officer is here to speak to the class.", "fr": "Aujourd’hui, un policier vient parler à la classe.", "ar": "اليوم جاء شرطي ليتحدث إلى الصف." } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Hello!", "fr": "Bonjour !", "ar": "مرحبا!" } }
+          ]
+        },
+        {
+          "place": "park",
+          "lines": [
+            { "who": { "en": "Lina", "fr": "Lina", "ar": "لينا" }, "text": { "en": "My mother is a police officer.", "fr": "Ma mère est policière.", "ar": "أمي شرطية." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Wow! She helps a lot of people.", "fr": "Waouh ! Elle aide beaucoup de gens.", "ar": "رائع! إنها تساعد الكثير من الناس." } }
+          ]
+        }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/HH_Polizeihauptmeister_MZ.jpg/330px-HH_Polizeihauptmeister_MZ.jpg", "page": "https://commons.wikimedia.org/wiki/File:HH_Polizeihauptmeister_MZ.jpg", "author": "Daniel Schwen", "licence": "CC BY-SA 2.5", "caption": "A police officer in uniform"},
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Mansfield_MA_Police_Officer_Brendan_Fayles.jpg/330px-Mansfield_MA_Police_Officer_Brendan_Fayles.jpg", "page": "https://commons.wikimedia.org/wiki/File:Mansfield_MA_Police_Officer_Brendan_Fayles.jpg", "author": "Matthew Daley", "licence": "CC BY-SA 4.0", "caption": "A police officer next to a police car"}
+      ]
+    },
+    "nurse": {
+      "scenes": [
+        {
+          "place": "hospital",
+          "lines": [
+            { "who": { "en": "Nurse", "fr": "L’infirmier", "ar": "الممرض" }, "text": { "en": "Hello, I am your nurse. My name is Paul.", "fr": "Bonjour, je suis ton infirmier. Je m’appelle Paul.", "ar": "مرحبا، أنا ممرضك. اسمي بول." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Hello, Paul. My arm hurts.", "fr": "Bonjour, Paul. J’ai mal au bras.", "ar": "مرحبا يا بول. ذراعي تؤلمني." } },
+            { "who": { "en": "Nurse", "fr": "L’infirmier", "ar": "الممرض" }, "text": { "en": "Let me look.", "fr": "Je vais regarder.", "ar": "دعني أرى." } }
+          ]
+        },
+        {
+          "place": "doctor",
+          "lines": [
+            { "who": { "en": "Doctor", "fr": "Le médecin", "ar": "الطبيب" }, "text": { "en": "The nurse can give you your medicine.", "fr": "L’infirmière va te donner ton médicament.", "ar": "ستعطيك الممرضة دواءك." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Thank you, doctor.", "fr": "Merci, docteur.", "ar": "شكرا يا دكتور." } }
+          ]
+        },
+        {
+          "place": "gym",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La prof de sport", "ar": "معلمة الرياضة" }, "text": { "en": "Your leg hurts? Go and see the school nurse.", "fr": "Tu as mal à la jambe ? Va voir l’infirmière de l’école.", "ar": "رجلك تؤلمك؟ اذهب إلى ممرضة المدرسة." } },
+            { "who": { "en": "Yusuf", "fr": "Youssef", "ar": "يوسف" }, "text": { "en": "Okay. Thank you.", "fr": "D’accord. Merci.", "ar": "حسنا. شكرا." } }
+          ]
+        },
+        {
+          "place": "dining-table",
+          "lines": [
+            { "who": { "en": "Aunt Sofia", "fr": "Tante Sofia", "ar": "الخالة صوفيا" }, "text": { "en": "I work at night. I am a nurse.", "fr": "Je travaille la nuit. Je suis infirmière.", "ar": "أعمل في الليل. أنا ممرضة." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "You help sick people at night? Wow!", "fr": "Tu aides les malades la nuit ? Waouh !", "ar": "تساعدين المرضى في الليل؟ رائع!" } }
+          ]
+        }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Nurse_caring_for_elderly_patient_LCCN2003665237.jpg/330px-Nurse_caring_for_elderly_patient_LCCN2003665237.jpg", "page": "https://commons.wikimedia.org/wiki/File:Nurse_caring_for_elderly_patient_LCCN2003665237.jpg", "author": "Library of Congress", "licence": "Public domain", "caption": "A nurse helps a man in a hospital bed"}
+      ]
+    },
+    "farmer": {
+      "scenes": [
+        {
+          "place": "farm",
+          "lines": [
+            { "who": { "en": "Farmer", "fr": "L’agriculteur", "ar": "المزارع" }, "text": { "en": "Good morning! I am the farmer here.", "fr": "Bonjour ! Ici, c’est moi l’agriculteur.", "ar": "صباح الخير! أنا المزارع هنا." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Good morning! Can I help you today?", "fr": "Bonjour ! Je peux vous aider aujourd’hui ?", "ar": "صباح الخير! هل يمكنني أن أساعدك اليوم؟" } }
+          ]
+        },
+        {
+          "place": "market",
+          "lines": [
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "These apples come from a farmer in our village.", "fr": "Ces pommes viennent d’un agriculteur de notre village.", "ar": "هذا التفاح من مزارع في قريتنا." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Can we buy some?", "fr": "On peut en acheter ?", "ar": "هل يمكننا أن نشتري بعضه؟" } }
+          ]
+        },
+        {
+          "place": "field",
+          "lines": [
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "My father was a farmer. He worked here every day.", "fr": "Mon père était agriculteur. Il travaillait ici tous les jours.", "ar": "كان أبي مزارعا. كان يعمل هنا كل يوم." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Every day? On Sunday too?", "fr": "Tous les jours ? Même le dimanche ?", "ar": "كل يوم؟ حتى يوم الأحد؟" } }
+          ]
+        },
+        {
+          "place": "library",
+          "lines": [
+            { "who": { "en": "Chloe", "fr": "Chloé", "ar": "كلوي" }, "text": { "en": "This book is about a farmer and his family.", "fr": "Ce livre parle d’un agriculteur et de sa famille.", "ar": "هذا الكتاب عن مزارع وعائلته." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Can I read it after you?", "fr": "Je peux le lire après toi ?", "ar": "هل يمكنني أن أقرأه بعدك؟" } }
+          ]
+        }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Farmer_James_Boyd_sells_the_fruits_%28and_vegetables%29_of_the_field_at_this_roadside_produce_market_in_Hearne%2C_a_small_town_in_Robertson_County%2C_Texas_LCCN2014633921.tif/lossy-page1-330px-thumbnail.tif.jpg", "page": "https://commons.wikimedia.org/wiki/File:Farmer_James_Boyd_sells_the_fruits_(and_vegetables)_of_the_field_at_this_roadside_produce_market_in_Hearne,_a_small_town_in_Robertson_County,_Texas_LCCN2014633921.tif", "author": "Carol M. Highsmith", "licence": "Public domain", "caption": "A farmer with his vegetables"}
+      ]
+    },
+    "cook": {
+      "scenes": [
+        {
+          "place": "restaurant",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "This soup is very good!", "fr": "Cette soupe est très bonne !", "ar": "هذا الحساء لذيذ جدا!" } },
+            { "who": { "en": "Waiter", "fr": "Le serveur", "ar": "النادل" }, "text": { "en": "Thank you! I can tell the cook.", "fr": "Merci ! Je vais le dire au cuisinier.", "ar": "شكرا! سأخبر الطباخ." } }
+          ]
+        },
+        {
+          "place": "canteen",
+          "lines": [
+            { "who": { "en": "Aya", "fr": "Aya", "ar": "آية" }, "text": { "en": "Who is the new cook?", "fr": "Qui est la nouvelle cuisinière ?", "ar": "من هي الطباخة الجديدة؟" } },
+            { "who": { "en": "Tom", "fr": "Tom", "ar": "توم" }, "text": { "en": "Her name is Mrs Garcia. Her rice is very good!", "fr": "Elle s’appelle madame Garcia. Son riz est très bon !", "ar": "اسمها السيدة غارسيا. الأرز الذي تعده لذيذ جدا!" } }
+          ]
+        },
+        {
+          "place": "kitchen",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "Your dad is a very good cook.", "fr": "Ton papa est un très bon cuisinier.", "ar": "أبوك طباخ ماهر جدا." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yes! His cake is the best.", "fr": "Oui ! Son gâteau est le meilleur.", "ar": "نعم! كعكته هي الأفضل." } }
+          ]
+        },
+        {
+          "place": "campsite",
+          "lines": [
+            { "who": { "en": "Mia", "fr": "Mia", "ar": "ميا" }, "text": { "en": "Who is the cook tonight?", "fr": "Qui est le cuisinier ce soir ?", "ar": "من الطباخ الليلة؟" } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Me! We have eggs and bread.", "fr": "Moi ! On a des œufs et du pain.", "ar": "أنا! لدينا بيض وخبز." } }
+          ]
+        }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Cooks_in_kitchen%2C_1930_%2820981103874%29.jpg/330px-Cooks_in_kitchen%2C_1930_%2820981103874%29.jpg", "page": "https://commons.wikimedia.org/wiki/File:Cooks_in_kitchen,_1930_(20981103874).jpg", "author": "Seattle Municipal Archives from Seattle, WA", "licence": "CC BY 2.0", "caption": "Cooks in a kitchen"}
+      ]
+    },
+    "engineer": {
+      "scenes": [
+        {
+          "place": "bridge",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "An engineer made this bridge.", "fr": "C’est un ingénieur qui a construit ce pont.", "ar": "مهندس هو الذي بنى هذا الجسر." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "It is very long!", "fr": "Il est très long !", "ar": "إنه طويل جدا!" } }
+          ]
+        },
+        {
+          "place": "building-site",
+          "lines": [
+            { "who": { "en": "Engineer", "fr": "L’ingénieure", "ar": "المهندسة" }, "text": { "en": "Hello! I am the engineer here. Look at this new building!", "fr": "Bonjour ! Je suis l’ingénieure du chantier. Regarde ce nouveau bâtiment !", "ar": "مرحبا! أنا مهندسة هذا الموقع. انظر إلى هذا المبنى الجديد!" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Wow! It is very high!", "fr": "Waouh ! Il est très haut !", "ar": "رائع! إنه عال جدا!" } }
+          ]
+        },
+        {
+          "place": "science-lab",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La professeure", "ar": "المعلمة" }, "text": { "en": "Do you like science? You can be an engineer.", "fr": "Tu aimes les sciences ? Tu peux devenir ingénieur.", "ar": "هل تحب العلوم؟ يمكنك أن تصبح مهندسا." } },
+            { "who": { "en": "Malik", "fr": "Malik", "ar": "مالك" }, "text": { "en": "Yes! I want to make computers!", "fr": "Oui ! Je veux fabriquer des ordinateurs !", "ar": "نعم! أريد أن أصنع الحواسيب!" } }
+          ]
+        },
+        {
+          "place": "university",
+          "lines": [
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "Your sister studies here. She wants to be an engineer.", "fr": "Ta sœur étudie ici. Elle veut devenir ingénieure.", "ar": "أختك تدرس هنا. إنها تريد أن تصبح مهندسة." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "I want to study here too!", "fr": "Moi aussi, je veux étudier ici !", "ar": "أنا أيضا أريد أن أدرس هنا!" } }
+          ]
+        }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Baustelle_H%C3%B6lzla_6066312.jpg/330px-Baustelle_H%C3%B6lzla_6066312.jpg", "page": "https://commons.wikimedia.org/wiki/File:Baustelle_H%C3%B6lzla_6066312.jpg", "author": "Ermell", "licence": "CC BY-SA 4.0", "caption": "An engineer looks at plans"}
+      ]
+    },
+    "team": {
+      "scenes": [
+        {
+          "place": "football-pitch",
+          "lines": [
+            { "who": { "en": "Coach", "fr": "L’entraîneur", "ar": "المدرب" }, "text": { "en": "Well done, team!", "fr": "Bravo, l’équipe !", "ar": "أحسنتم يا فريق!" } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "Thank you! We are a good team!", "fr": "Merci ! On est une bonne équipe !", "ar": "شكرا! نحن فريق جيد!" } }
+          ]
+        },
+        {
+          "place": "office",
+          "lines": [
+            { "who": { "en": "Manager", "fr": "Le directeur", "ar": "المدير" }, "text": { "en": "This is our team. We all work together.", "fr": "Voici notre équipe. Nous travaillons tous ensemble.", "ar": "هذا فريقنا. نعمل جميعا معا." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Hello, everyone!", "fr": "Bonjour à tous !", "ar": "مرحبا بالجميع!" } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Today, you work in teams of four.", "fr": "Aujourd’hui, vous travaillez en équipes de quatre.", "ar": "اليوم ستعملون في فرق من أربعة." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Can I be in a team with Omar?", "fr": "Je peux être dans l’équipe d’Omar ?", "ar": "هل يمكنني أن أكون في فريق عمر؟" } },
+            { "who": { "en": "Teacher", "fr": "La maîtresse", "ar": "المعلمة" }, "text": { "en": "Yes, you can.", "fr": "Oui, tu peux.", "ar": "نعم، يمكنك ذلك." } }
+          ]
+        },
+        {
+          "place": "fire-station",
+          "lines": [
+            { "who": { "en": "Firefighter", "fr": "Le pompier", "ar": "رجل الإطفاء" }, "text": { "en": "We are a team. We help each other.", "fr": "Nous sommes une équipe. Nous nous aidons les uns les autres.", "ar": "نحن فريق. نساعد بعضنا بعضا." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Can I be in your team one day?", "fr": "Je peux être dans votre équipe un jour ?", "ar": "هل يمكنني أن أكون في فريقكم يوما ما؟" } }
+          ]
+        }
+      ],
+      "pictures": [
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/20180602_FIFA_Friendly_Match_Austria_vs._Germany_Team_Germany_850_0740.jpg/330px-20180602_FIFA_Friendly_Match_Austria_vs._Germany_Team_Germany_850_0740.jpg", "page": "https://commons.wikimedia.org/wiki/File:20180602_FIFA_Friendly_Match_Austria_vs._Germany_Team_Germany_850_0740.jpg", "author": "Granada", "licence": "CC BY-SA 4.0", "caption": "A football team"}
+      ]
+    },
+    "lawyer": {
+      "scenes": [
+        {
+          "place": "living-room",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "What do you do, Aunt Leila?", "fr": "Tu fais quel métier, tante Leila ?", "ar": "ما عملك يا خالتي ليلى؟" } },
+            { "who": { "en": "Aunt Leila", "fr": "Tante Leila", "ar": "الخالة ليلى" }, "text": { "en": "I am a lawyer. I help people.", "fr": "Je suis avocate. J’aide les gens.", "ar": "أنا محامية. أساعد الناس." } }
+          ]
+        },
+        {
+          "place": "office",
+          "lines": [
+            { "who": { "en": "Mr Haddad", "fr": "M. Haddad", "ar": "السيد حداد" }, "text": { "en": "I need a good lawyer.", "fr": "J’ai besoin d’un bon avocat.", "ar": "أحتاج إلى محام جيد." } },
+            { "who": { "en": "Lawyer", "fr": "L’avocate", "ar": "المحامية" }, "text": { "en": "Sit down, please. How can I help you?", "fr": "Asseyez-vous, s’il vous plaît. Comment puis-je vous aider ?", "ar": "تفضل بالجلوس. كيف يمكنني مساعدتك؟" } }
+          ]
+        },
+        {
+          "place": "library",
+          "lines": [
+            { "who": { "en": "Zara", "fr": "Zara", "ar": "زارا" }, "text": { "en": "I read a lot of books. I want to be a lawyer.", "fr": "Je lis beaucoup de livres. Je veux devenir avocate.", "ar": "أقرأ الكثير من الكتب. أريد أن أصبح محامية." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "You can do it!", "fr": "Tu vas y arriver !", "ar": "يمكنك أن تحققي ذلك!" } }
+          ]
+        },
+        {
+          "place": "family-party",
+          "lines": [
+            { "who": { "en": "Grandma", "fr": "Mamie", "ar": "الجدة" }, "text": { "en": "This is your cousin Adam. He is a lawyer now.", "fr": "Voici ton cousin Adam. Il est avocat maintenant.", "ar": "هذا ابن عمك آدم. لقد أصبح محاميا الآن." } },
+            { "who": { "en": "Adam", "fr": "Adam", "ar": "آدم" }, "text": { "en": "Hello! Nice to see you again.", "fr": "Salut ! Ça me fait plaisir de te revoir.", "ar": "مرحبا! سعيد برؤيتك مجددا." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "secretary": {
+      "scenes": [
+        {
+          "place": "office",
+          "lines": [
+            { "who": { "en": "Mr Novak", "fr": "M. Novak", "ar": "السيد نوفاك" }, "text": { "en": "Hello! Are you the secretary?", "fr": "Bonjour ! Vous êtes la secrétaire ?", "ar": "مرحبا! هل أنت السكرتيرة؟" } },
+            { "who": { "en": "Secretary", "fr": "La secrétaire", "ar": "السكرتيرة" }, "text": { "en": "Yes. Can I help you?", "fr": "Oui. Je peux vous aider ?", "ar": "نعم. هل يمكنني مساعدتك؟" } },
+            { "who": { "en": "Mr Novak", "fr": "M. Novak", "ar": "السيد نوفاك" }, "text": { "en": "I have a meeting with Mrs Ali at ten.", "fr": "J’ai une réunion avec Mme Ali à dix heures.", "ar": "لدي اجتماع مع السيدة علي في الساعة العاشرة." } }
+          ]
+        },
+        {
+          "place": "dentist",
+          "lines": [
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "The secretary says we need to wait ten minutes.", "fr": "La secrétaire dit qu’on doit attendre dix minutes.", "ar": "تقول السكرتيرة إنه علينا أن ننتظر عشر دقائق." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Okay. Can I read a book?", "fr": "D’accord. Je peux lire un livre ?", "ar": "حسنا. هل يمكنني أن أقرأ كتابا؟" } }
+          ]
+        },
+        {
+          "place": "town-hall",
+          "lines": [
+            { "who": { "en": "Mrs Tanaka", "fr": "Mme Tanaka", "ar": "السيدة تاناكا" }, "text": { "en": "Excuse me, I need to see the secretary.", "fr": "Excusez-moi, je dois voir le secrétaire.", "ar": "عذرا، أحتاج إلى أن أرى السكرتير." } },
+            { "who": { "en": "Man", "fr": "Un monsieur", "ar": "رجل" }, "text": { "en": "He is in room two, by the stairs.", "fr": "Il est dans la salle deux, à côté de l’escalier.", "ar": "إنه في الغرفة الثانية، بجانب الدرج." } }
+          ]
+        },
+        {
+          "place": "home",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Mum, the phone!", "fr": "Maman, le téléphone !", "ar": "أمي، الهاتف!" } },
+            { "who": { "en": "Mum", "fr": "Maman", "ar": "الأم" }, "text": { "en": "It is my secretary. I need to answer it.", "fr": "C’est mon secrétaire. Je dois répondre.", "ar": "إنه سكرتيري. يجب أن أرد." } }
+          ]
+        }
+      ],
+      "pictures": []
+    },
+    "writer": {
+      "scenes": [
+        {
+          "place": "bookshop",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Look! A new book by this writer! I like his books.", "fr": "Regarde ! Un nouveau livre de cet écrivain ! J’aime ses livres.", "ar": "انظر! كتاب جديد لهذا الكاتب! أحب كتبه." } },
+            { "who": { "en": "Dad", "fr": "Papa", "ar": "الأب" }, "text": { "en": "Do you want it?", "fr": "Tu le veux ?", "ar": "هل تريده؟" } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Yes, please!", "fr": "Oui, s’il te plaît !", "ar": "نعم، من فضلك!" } }
+          ]
+        },
+        {
+          "place": "library",
+          "lines": [
+            { "who": { "en": "Librarian", "fr": "La bibliothécaire", "ar": "أمينة المكتبة" }, "text": { "en": "Today, a writer is here to read her new book.", "fr": "Aujourd’hui, une écrivaine est là pour lire son nouveau livre.", "ar": "اليوم معنا كاتبة لتقرأ كتابها الجديد." } },
+            { "who": { "en": "Children", "fr": "Les enfants", "ar": "الأطفال" }, "text": { "en": "We want to listen!", "fr": "On veut écouter !", "ar": "نريد أن نستمع!" } }
+          ]
+        },
+        {
+          "place": "classroom",
+          "lines": [
+            { "who": { "en": "Teacher", "fr": "Le maître", "ar": "المعلم" }, "text": { "en": "You write very well, Hana. You can be a writer!", "fr": "Tu écris très bien, Hana. Tu peux devenir écrivaine !", "ar": "أنت تكتبين جيدا جدا يا هناء. يمكنك أن تصبحي كاتبة!" } },
+            { "who": { "en": "Hana", "fr": "Hana", "ar": "هناء" }, "text": { "en": "Thank you! I write every day.", "fr": "Merci ! J’écris tous les jours.", "ar": "شكرا! أكتب كل يوم." } }
+          ]
+        },
+        {
+          "place": "cafe",
+          "lines": [
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "What are you writing, Grandpa?", "fr": "Qu’est-ce que tu écris, papi ?", "ar": "ماذا تكتب يا جدي؟" } },
+            { "who": { "en": "Grandpa", "fr": "Papi", "ar": "الجد" }, "text": { "en": "A book for children! I am a writer now.", "fr": "Un livre pour enfants ! Je suis écrivain maintenant.", "ar": "كتابا للأطفال! أصبحت كاتبا الآن." } },
+            { "who": { "en": "You", "fr": "Toi", "ar": "أنت" }, "text": { "en": "Can I read it first?", "fr": "Je peux le lire en premier ?", "ar": "هل يمكنني أن أقرأه أولا؟" } }
+          ]
+        }
+      ],
+      "pictures": []
+    }
+  }
+}
