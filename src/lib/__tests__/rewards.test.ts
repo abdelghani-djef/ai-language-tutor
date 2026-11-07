@@ -6,9 +6,9 @@ const now = new Date(2026, 10, 2, 15); // Mon 2 Nov 2026
 
 function data(reviews: Review[], extra: Partial<Data> = {}): Data {
   return {
-    version: 1,
-    decks: [],
+    version: 2,
     cards: [],
+    known: {},
     reviews,
     settings: { dailyGoal: 3, newPerDay: 10 },
     rewards: EMPTY_REWARDS,

@@ -1,19 +1,17 @@
 import { defineMessages } from "@/lib/i18n";
 
-// The ready-made lists page.
+// The ready-made lists page, where the learner picks lists to sort.
 export const words = defineMessages({
   en: {
     title: "Ready-made lists",
     intro:
-      "About 500 of the most useful English words, in 20 themed ready-made lists. Add a list, and the app teaches its words a few each day, with a picture, a translation, audio and an example.",
-    translations: "Translations in",
-    startHere: "Start here",
+      "About 3,500 useful English words in 35 lists by theme: 20 everyday lists and 15 advanced ones. The words you choose to learn come a few at a time each day, each with a picture, a translation, audio and an example.",
+    pickHint: "Tick the lists you want, then go through their words one by one: the ones you already know, and the ones to learn.",
     wordCount: { one: "{count} word", other: "{count} words" },
-    addPack: "Add list",
-    added: "Added",
-    openList: "Open list",
-    addedToast: { one: "Added {count} word to “{deck}”.", other: "Added {count} words to “{deck}”." },
-    addedHint: { one: "New words come in at {count} a day.", other: "New words come in at {count} a day." },
+    leftToSort: { one: "{count} left to sort", other: "{count} left to sort" },
+    allSorted: "All sorted — Already know: {known}, Should learn: {learn}",
+    continueWith: { one: "Continue with {count} word", other: "Continue with {count} words" },
+    advancedTitle: "Advanced lists",
     study: "Study now",
     stories: "Read stories with your words",
     why: "Why these words?",
@@ -24,15 +22,14 @@ export const words = defineMessages({
   fr: {
     title: "Listes toutes prêtes",
     intro:
-      "Environ 500 des mots anglais les plus utiles, en 20 listes toutes prêtes par thème. Ajoutez une liste : l’application vous apprend quelques mots chaque jour, avec une image, une traduction, l’audio et un exemple.",
-    translations: "Traductions en",
-    startHere: "Commencez ici",
+      "Environ 3 500 mots anglais utiles, répartis en 35 listes par thème : 20 listes du quotidien et 15 listes avancées. Les mots que vous choisissez d’apprendre arrivent quelques-uns par jour, chacun avec une image, une traduction, l’audio et un exemple.",
+    pickHint:
+      "Cochez les listes qui vous intéressent, puis parcourez leurs mots un par un : ceux que vous connaissez déjà, et ceux à apprendre.",
     wordCount: { one: "{count} mot", other: "{count} mots" },
-    addPack: "Ajouter la liste",
-    added: "Ajoutée",
-    openList: "Ouvrir la liste",
-    addedToast: { one: "{count} mot ajouté à « {deck} ».", other: "{count} mots ajoutés à « {deck} »." },
-    addedHint: { one: "Les nouveaux mots arrivent au rythme de {count} par jour.", other: "Les nouveaux mots arrivent au rythme de {count} par jour." },
+    leftToSort: { one: "{count} mot à trier", other: "{count} mots à trier" },
+    allSorted: "Tout est trié — déjà connus : {known}, à apprendre : {learn}",
+    continueWith: { one: "Continuer avec {count} mot", other: "Continuer avec {count} mots" },
+    advancedTitle: "Listes avancées",
     study: "Réviser maintenant",
     stories: "Lire des histoires avec vos mots",
     why: "Pourquoi ces mots ?",
@@ -43,9 +40,8 @@ export const words = defineMessages({
   ar: {
     title: "قوائم جاهزة",
     intro:
-      "حوالي 500 من أكثر الكلمات الإنجليزية فائدة، في 20 قائمة جاهزة حسب الموضوع. أضف قائمة، وسيعلّمك التطبيق بضع كلمات منها كل يوم، مع صورة وترجمة ونطق ومثال.",
-    translations: "الترجمة إلى",
-    startHere: "ابدأ من هنا",
+      "نحو 3500 كلمة إنجليزية مفيدة، موزّعة على 35 قائمة حسب الموضوع: 20 قائمة للحياة اليومية و15 قائمة متقدّمة. تصلك الكلمات التي تختار تعلّمها بضعًا كل يوم، ومع كل كلمة صورة وترجمة ونطق ومثال.",
+    pickHint: "اختر القوائم التي تريدها، ثم مرّ على كلماتها واحدة واحدة: ما تعرفه من قبل، وما ستتعلّمه.",
     wordCount: {
       zero: "لا كلمات",
       one: "كلمة واحدة",
@@ -54,23 +50,24 @@ export const words = defineMessages({
       many: "{count} كلمة",
       other: "{count} كلمة",
     },
-    addPack: "أضف القائمة",
-    added: "أضيفت",
-    openList: "افتح القائمة",
-    addedToast: {
-      one: "أضيفت كلمة واحدة إلى «{deck}».",
-      two: "أضيفت كلمتان إلى «{deck}».",
-      few: "أضيفت {count} كلمات إلى «{deck}».",
-      many: "أضيفت {count} كلمة إلى «{deck}».",
-      other: "أضيفت {count} كلمة إلى «{deck}».",
+    leftToSort: {
+      zero: "لم تبقَ كلمات للفرز",
+      one: "بقيت كلمة واحدة للفرز",
+      two: "بقيت كلمتان للفرز",
+      few: "بقيت {count} كلمات للفرز",
+      many: "بقيت {count} كلمة للفرز",
+      other: "بقيت {count} كلمة للفرز",
     },
-    addedHint: {
-      one: "تصلك كلمة جديدة واحدة كل يوم.",
-      two: "تصلك كلمتان جديدتان كل يوم.",
-      few: "تصلك {count} كلمات جديدة كل يوم.",
-      many: "تصلك {count} كلمة جديدة كل يوم.",
-      other: "تصلك {count} كلمة جديدة كل يوم.",
+    allSorted: "فُرزت كلها — أعرفها: {known}، للتعلّم: {learn}",
+    continueWith: {
+      zero: "تابع",
+      one: "افرز كلمة واحدة",
+      two: "افرز كلمتين",
+      few: "افرز {count} كلمات",
+      many: "افرز {count} كلمة",
+      other: "افرز {count} كلمة",
     },
+    advancedTitle: "قوائم متقدّمة",
     study: "راجع الآن",
     stories: "اقرأ قصصًا بكلماتك",
     why: "لماذا هذه الكلمات؟",

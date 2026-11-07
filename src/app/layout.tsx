@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Fredoka, Geist, Geist_Mono, Noto_Sans_Arabic, Nunito } from "next/font/google";
 import { Providers } from "@/components/providers";
+import { SetupGate } from "@/components/setup-gate";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
@@ -35,7 +36,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <Providers>
           <SiteHeader />
-          <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8 sm:px-6">{children}</main>
+          <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8 sm:px-6">
+            <SetupGate>{children}</SetupGate>
+          </main>
         </Providers>
       </body>
     </html>

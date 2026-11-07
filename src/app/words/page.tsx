@@ -1,186 +1,176 @@
 "use client";
 
-import { Check, Plus } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Fragment, useState } from "react";
-import { toast } from "sonner";
+import { Fragment, useId, useMemo, useState } from "react";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { STARTER_LANGS, STARTER_PACKS, type StarterLang, type StarterPack } from "@/data/starter-packs";
-import { useFormat } from "@/lib/format";
+import { isAdvanced, packWords, STARTER_PACKS, type StarterPack } from "@/data/starter-packs";
 import { useLocale, useT } from "@/lib/i18n";
-import { addCards, createDeck, saveFailed, useHydrated, usePref, useStore, type Deck } from "@/lib/store";
+import { packProgress, sortedPacks } from "@/lib/mywords";
+import { useStarterWords } from "@/lib/starter-words";
+import { useHydrated, useStore, type LearnerLang } from "@/lib/store";
 import { cn } from "@/lib/utils";
 import { wordHref } from "@/lib/word/target";
-import { cards as cardMessages } from "@/messages/cards";
 import { words as messages } from "@/messages/words";
 
-const LANG_KEY = "linguacards:starter-lang";
-/** Where each ready-made list went: JSON map of "lang:pack" → list id. */
-const DECK_KEY = "linguacards:pack-decks";
 const PREVIEW = 8;
 
-const isStarterLang = (v: string): v is StarterLang => (STARTER_LANGS as readonly string[]).includes(v);
+type Progress = ReturnType<typeof packProgress>;
 
-export default function StarterWordsPage() {
+// Regular lists first, then the advanced ones. This is also the order the
+// ticked lists are sorted in.
+const REGULAR = STARTER_PACKS.filter((p) => !isAdvanced(p.id));
+const ADVANCED = STARTER_PACKS.filter((p) => isAdvanced(p.id));
+const ORDERED = [...REGULAR, ...ADVANCED];
+
+export default function PickListsPage() {
   const t = useT(messages);
-  const tc = useT(cardMessages);
-  const fmt = useFormat();
   const [locale] = useLocale();
   const hydrated = useHydrated();
-  const { decks, cards, settings } = useStore();
-  // Translations default to the interface language when the packs have it.
-  const [langPref, setLangPref] = usePref(LANG_KEY, "");
-  const lang: StarterLang = isStarterLang(langPref) ? langPref : isStarterLang(locale) ? locale : "fr";
-  const [deckPref, setDeckPref] = usePref(DECK_KEY, "{}");
-  const [adding, setAdding] = useState<string | null>(null);
+  const data = useStore();
   const router = useRouter();
+  const idBase = useId();
+  // The setup gate makes sure there is a profile on this page.
+  const lang: LearnerLang = data.profile?.lang ?? "fr";
+  const [picked, setPicked] = useState<ReadonlySet<string>>(() => new Set());
+  // The lists' words: the previews and how far each list is sorted. The lists show once they are here.
+  const words = useStarterWords();
+  const ready = hydrated && !!words;
 
-  let deckIds: Record<string, string> = {};
-  try {
-    deckIds = JSON.parse(deckPref);
-  } catch {
-    // A damaged preference just means the lists are looked up again.
-  }
-  /** The list a pack was added to for this language: saved, or found by its cards (preferences aren't in backups). */
-  const deckFor = (packId: string): Deck | undefined => {
-    const saved = decks.find((d) => d.id === deckIds[`${lang}:${packId}`]);
-    if (saved) return saved;
-    const card = cards.find((c) => c.pack === packId && c.tgt === lang);
-    return card ? decks.find((d) => d.id === card.deckId) : undefined;
+  const progress = useMemo(
+    () => new Map(words ? STARTER_PACKS.map((p) => [p.id, packProgress(data, p.id, words)]) : []),
+    [data, words],
+  );
+  const anySorted = useMemo(() => !!words && sortedPacks(data, words).size > 0, [data, words]);
+
+  // A list sorted to the end since it was ticked (say, in another tab) drops out.
+  const chosen = ORDERED.filter((p) => picked.has(p.id) && (progress.get(p.id)?.left ?? 0) > 0);
+  const count = chosen.reduce((sum, p) => sum + (progress.get(p.id)?.left ?? 0), 0);
+
+  const toggle = (id: string) =>
+    setPicked((prev) => {
+      const next = new Set(prev);
+      if (!next.delete(id)) next.add(id);
+      return next;
+    });
+
+  // Card titles are h2 among the regular lists and h3 under the advanced heading.
+  const card = (pack: StarterPack, Heading: "h2" | "h3" = "h2") => {
+    const rows = (words && packWords(words, pack.id)) ?? [];
+    const p: Progress = progress.get(pack.id) ?? { total: rows.length, known: 0, learn: 0, left: rows.length };
+    const done = p.left === 0;
+    const checked = !done && picked.has(pack.id);
+    const inputId = `${idBase}-${pack.id}`;
+    const statusId = `${inputId}-status`;
+    return (
+      <li
+        key={pack.id}
+        // The title's label stretches over the whole card (its ::after), so a
+        // click anywhere ticks the box; the box and the word links sit above it.
+        className={cn(
+          "relative grid content-start gap-3 rounded-2xl border bg-card p-5 transition-colors",
+          "has-[input:focus-visible]:ring-3 has-[input:focus-visible]:ring-ring/50",
+          checked && "border-primary/60 bg-primary/5 ring-3 ring-primary/15",
+          done && "bg-muted/40",
+          !done && !checked && "hover:border-primary/40",
+        )}
+      >
+        <div className="flex items-start justify-between gap-3">
+          <Heading className="font-display text-xl font-semibold">
+            <label
+              htmlFor={inputId}
+              className={cn(
+                "flex items-center gap-2 after:absolute after:inset-0 after:rounded-2xl",
+                done ? "cursor-default" : "cursor-pointer",
+              )}
+            >
+              <span className="text-2xl" aria-hidden>
+                {pack.emoji}
+              </span>
+              {pack.title[locale]}
+            </label>
+          </Heading>
+          <input
+            id={inputId}
+            type="checkbox"
+            checked={checked}
+            disabled={done}
+            onChange={() => toggle(pack.id)}
+            aria-describedby={statusId}
+            className="relative z-10 mt-1 size-5 shrink-0 scroll-mb-28 cursor-pointer accent-primary disabled:cursor-default"
+          />
+        </div>
+        <p className="text-sm text-muted-foreground">
+          {/* The English list is its own left-to-right run inside the page's direction. */}
+          <bdi lang="en" dir="ltr">
+            {rows.slice(0, PREVIEW).map(([en], i) => (
+              <Fragment key={en}>
+                {i > 0 && ", "}
+                <Link
+                  href={wordHref({ word: en, lang: "en", to: lang, pack: pack.id })}
+                  className="relative z-10 scroll-mb-28 underline-offset-2 hover:text-foreground hover:underline"
+                >
+                  {en}
+                </Link>
+              </Fragment>
+            ))}
+          </bdi>{" "}
+          {t("andMore", { count: rows.length - PREVIEW })}
+        </p>
+        <p id={statusId} className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+          <span>{t("wordCount", { count: p.total })}</span>
+          {done ? (
+            <span className="flex items-center gap-1 font-medium text-emerald-600 dark:text-emerald-400">
+              <Check className="size-4" aria-hidden /> {t("allSorted", { known: p.known, learn: p.learn })}
+            </span>
+          ) : (
+            p.left < p.total && <span className="font-medium text-foreground">{t("leftToSort", { count: p.left })}</span>
+          )}
+        </p>
+      </li>
+    );
   };
-  const firstNotAdded = STARTER_PACKS.find((p) => !deckFor(p.id))?.id;
-
-  // Each ready-made pack becomes its own list, named after the pack, so the
-  // group you chose is the group you see in My words.
-  async function addPack(pack: StarterPack) {
-    if (adding) return;
-    setAdding(pack.id);
-    try {
-      const target = createDeck(pack.title[locale], "en", lang);
-      setDeckPref(JSON.stringify({ ...deckIds, [`${lang}:${pack.id}`]: target.id }));
-      const made = await addCards(
-        target.id,
-        "en",
-        lang,
-        pack.words.map(([en, fr, ar, emoji, example]) => ({
-          front: en,
-          back: lang === "fr" ? fr : ar,
-          pack: pack.id,
-          exampleLang: "en",
-          details: { example, emoji: emoji || undefined },
-        })),
-      );
-      if (saveFailed()) toast.error(tc("saveFailed"));
-      else
-        toast.success(t("addedToast", { count: made.length, deck: target.name }), {
-          description: t("addedHint", { count: settings.newPerDay }),
-          action: { label: t("study"), onClick: () => router.push(`/study?deck=${target.id}`) },
-        });
-    } finally {
-      setAdding(null);
-    }
-  }
 
   return (
     <div className="grid gap-8">
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div className="grid max-w-2xl gap-2">
-          <h1 className="font-display text-3xl font-semibold tracking-tight">{t("title")}</h1>
-          <p className="text-muted-foreground">{t("intro")}</p>
-        </div>
-        <div className="grid gap-1.5">
-          <span id="starter-lang" className="text-sm text-muted-foreground">
-            {t("translations")}
-          </span>
-          <Tabs value={lang} onValueChange={(v) => isStarterLang(String(v)) && setLangPref(String(v))}>
-            <TabsList aria-labelledby="starter-lang">
-              {STARTER_LANGS.map((l) => (
-                <TabsTrigger key={l} value={l}>
-                  {fmt.languageName(l)}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-          </Tabs>
-        </div>
+      <div className="grid max-w-2xl gap-2">
+        <h1 className="font-display text-3xl font-semibold tracking-tight">{t("title")}</h1>
+        <p className="text-muted-foreground">{t("intro")}</p>
+        <p className="font-medium">{t("pickHint")}</p>
       </div>
 
-      {hydrated && (
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {STARTER_PACKS.map((pack) => {
-            const list = deckFor(pack.id);
-            const highlight = pack.id === firstNotAdded;
-            return (
-              <li
-                key={pack.id}
-                className={cn(
-                  "grid content-start gap-3 rounded-2xl border bg-card p-5",
-                  highlight && "border-primary/50 ring-3 ring-primary/15",
-                )}
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <h2 className="flex items-center gap-2 font-display text-xl font-semibold">
-                    <span className="text-2xl" aria-hidden>
-                      {pack.emoji}
-                    </span>
-                    {pack.title[locale]}
-                  </h2>
-                  {highlight && (
-                    <span className="shrink-0 rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary">
-                      {t("startHere")}
-                    </span>
-                  )}
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  {/* The English list is its own left-to-right run inside the page's direction. */}
-                  <bdi lang="en" dir="ltr">
-                    {pack.words.slice(0, PREVIEW).map(([en], i) => (
-                      <Fragment key={en}>
-                        {i > 0 && ", "}
-                        <Link
-                          href={wordHref({ word: en, lang: "en", to: lang, pack: pack.id })}
-                          className="underline-offset-2 hover:text-foreground hover:underline"
-                        >
-                          {en}
-                        </Link>
-                      </Fragment>
-                    ))}
-                  </bdi>{" "}
-                  {t("andMore", { count: pack.words.length - PREVIEW })}
-                </p>
-                <div className="flex items-center justify-between gap-2">
-                  <span className="text-sm text-muted-foreground">{t("wordCount", { count: pack.words.length })}</span>
-                  {list ? (
-                    <span className="flex items-center gap-3">
-                      <span className="flex items-center gap-1 text-sm font-medium text-emerald-600 dark:text-emerald-400">
-                        <Check className="size-4" aria-hidden /> {t("added")}
-                      </span>
-                      <Link href={`/deck?id=${list.id}`} className={buttonVariants({ size: "sm", variant: "outline" })}>
-                        {t("openList")}
-                      </Link>
-                    </span>
-                  ) : (
-                    <Button
-                      size="sm"
-                      variant={highlight ? "default" : "outline"}
-                      disabled={adding !== null}
-                      onClick={() => addPack(pack)}
-                    >
-                      <Plus /> {t("addPack")}
-                    </Button>
-                  )}
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+      {ready && (
+        // The bar is the last thing in this block, so it stops above the footer.
+        <div className="grid gap-8">
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{REGULAR.map((p) => card(p))}</ul>
+
+          {ADVANCED.length > 0 && (
+            <section className="grid gap-4" aria-labelledby={`${idBase}-advanced`}>
+              <h2 id={`${idBase}-advanced`} className="font-display text-2xl font-semibold">
+                {t("advancedTitle")}
+              </h2>
+              <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{ADVANCED.map((p) => card(p, "h3"))}</ul>
+            </section>
+          )}
+
+          <div className="sticky bottom-[max(1rem,env(safe-area-inset-bottom))] z-20 flex justify-end rounded-2xl border bg-background/95 p-3 shadow-lg backdrop-blur">
+            <Button
+              size="lg"
+              className="h-11 w-full px-5 text-base sm:w-auto"
+              disabled={chosen.length === 0}
+              onClick={() => router.push("/sort/?lists=" + chosen.map((p) => p.id).join(","))}
+            >
+              {t("continueWith", { count })} <ArrowRight className="rtl:rotate-180" aria-hidden />
+            </Button>
+          </div>
+        </div>
       )}
 
       <section className="grid max-w-2xl gap-2">
         <h2 className="font-display text-xl font-semibold">{t("why")}</h2>
         <p className="text-muted-foreground">{t("whyText")}</p>
-        {STARTER_PACKS.some((p) => deckFor(p.id)) && (
+        {ready && anySorted && (
           <div className="mt-2 flex flex-wrap gap-2">
             <Link href="/study" className={buttonVariants()}>
               {t("study")}

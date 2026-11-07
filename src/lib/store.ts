@@ -5,22 +5,31 @@ import { LANGUAGES } from "./languages";
 import { DEFAULT_GOAL, DEFAULT_NEW_PER_DAY, EMPTY_REWARDS, evaluate, ROUTINES, type RewardEvent } from "./rewards";
 import { newSrsCard, reviewSrsCard, State, type Grade, type SrsCard } from "./srs";
 import { dayKey } from "./stats";
+import { isCard, lateV1Seen, mergeLateV1, migrateV1, newSrsState, validSrs } from "./migrate";
+import { isSorted, knownKey, studyCards } from "./mywords";
+import { cleanName } from "./profile";
+import { cleanTags } from "./tags";
+import { rowOf, type StarterLang, type StarterRow } from "../data/starter-packs";
+import { loadStarterWords } from "./starter-words";
 
 // All app data lives in localStorage under one key: no database, no server.
 // Components read it with useStore() and re-render whenever it changes,
 // including changes made in another tab.
 
-export interface Deck {
-  id: string;
-  name: string;
-  src: string;
-  tgt: string;
-  createdAt: number;
+/** The learner's language: translations appear in it. The words studied are English. */
+export type LearnerLang = StarterLang;
+
+/** Which part of My words a word is in: Should learn, or Already know. */
+export type WordStatus = "learn" | "known";
+
+export interface Profile {
+  lang: LearnerLang;
+  name?: string;
+  setupAt: number;
 }
 
 export interface Flashcard {
   id: string;
-  deckId: string;
   front: string;
   back: string;
   src: string;
@@ -48,6 +57,11 @@ export interface Flashcard {
    * given to the scheduler; the first real recall follows a minute later.
    */
   introducedAt?: number;
+  status: WordStatus;
+  /** When it moved to Already know. */
+  knownAt?: number;
+  /** When it was moved back to Should learn. */
+  returnedAt?: number;
 }
 
 /** How long after the first look at a new word it is asked for the first time. */
@@ -107,19 +121,41 @@ export interface Rewards {
 }
 
 export interface Data {
-  version: 1;
-  decks: Deck[];
+  version: 2;
+  profile?: Profile;
   cards: Flashcard[];
+  /** Ready-made words sorted as Already know and never studied: "<lang>:<pack>:<english>" → when sorted. */
+  known: Record<string, number>;
   reviews: Review[];
   settings: Settings;
   rewards: Rewards;
+  /**
+   * When version 1 data was moved here. A tab still running the old version
+   * saves to version 1 after that; its later work is brought in (mergeLateV1).
+   */
+  movedFromV1At?: number;
+  /**
+   * The late merge's high-water mark: version 1 words created up to then were
+   * already brought in (or looked at), so a word deleted here is not brought back.
+   * Set to movedFromV1At by the move; raised by each merge.
+   */
+  lateV1Through?: number;
+  /** Version 1 words looked at that were created shortly before lateV1Through: id → createdAt. */
+  lateV1Seen?: Record<string, number>;
 }
 
-const KEY = "linguacards:v1";
+const KEY = "linguacards:v2";
+/**
+ * Version 1 data. Never written by this version: it stays as a safety copy until
+ * space runs out, and is read again only for what an old-version tab saves after the move.
+ */
+const OLD_KEY = "linguacards:v1";
+/** Version 1 preferences about lists, which no longer exist. `starter-lang` stays: setup reads it. */
+const LIST_PREFS = ["linguacards:pair", "linguacards:decks", "linguacards:pack-decks"];
 const EMPTY: Data = {
-  version: 1,
-  decks: [],
+  version: 2,
   cards: [],
+  known: {},
   reviews: [],
   settings: { dailyGoal: DEFAULT_GOAL, newPerDay: DEFAULT_NEW_PER_DAY },
   rewards: EMPTY_REWARDS,
@@ -128,24 +164,19 @@ const EMPTY: Data = {
 let data: Data = EMPTY;
 let loaded = false;
 let saveError: string | null = null;
+/**
+ * Saved data failed to load this visit (v2 unreadable, or the move from v1
+ * failed): the v1 copy may then be the only good one, so it is never dropped.
+ */
+let loadFailed = false;
 const listeners = new Set<() => void>();
 
-export const MAX_TAGS = 10;
-const MAX_TAG_LENGTH = 30;
+export { cleanTags, MAX_TAGS } from "./tags";
 
-/** Trims tags, drops "#", empties and case-insensitive duplicates. */
-export function cleanTags(tags: readonly string[]): string[] {
-  const seen = new Set<string>();
-  const out: string[] = [];
-  for (const raw of tags) {
-    const tag = raw.trim().replace(/^#+/, "").trim().replace(/\s+/g, " ").slice(0, MAX_TAG_LENGTH);
-    const key = tag.toLocaleLowerCase();
-    if (!tag || seen.has(key)) continue;
-    seen.add(key);
-    out.push(tag);
-  }
-  return out.slice(0, MAX_TAGS);
-}
+const isStr = (v: unknown): v is string => typeof v === "string";
+const isNum = (v: unknown): v is number => typeof v === "number" && Number.isFinite(v);
+const isObject = (v: unknown): v is Record<string, unknown> => !!v && typeof v === "object" && !Array.isArray(v);
+const isLearnerLang = (v: unknown): v is LearnerLang => v === "fr" || v === "ar";
 
 const text = (v: unknown) => (typeof v === "string" && v.trim() ? v.trim() : undefined);
 
@@ -198,35 +229,58 @@ function reviveSrs(srs: SrsCard): SrsCard {
   return { ...srs, dueAt: new Date(srs.dueAt), lastReviewAt: srs.lastReviewAt ? new Date(srs.lastReviewAt) : null };
 }
 
-/** A well-formed review state from a backup, or undefined. */
-function validSrs(v: unknown): v is SrsCard {
-  const srs = v as Partial<SrsCard> | null;
-  return (
-    !!srs &&
-    !Number.isNaN(new Date(srs.dueAt as unknown as string).getTime()) &&
-    typeof srs.state === "number" &&
-    typeof srs.stability === "number" &&
-    typeof srs.difficulty === "number"
-  );
+/** "<lang>:<pack>:<english>", as Already know words are stored. */
+const KNOWN_KEY = /^(fr|ar):[^:]+:.+$/;
+
+function cleanTimes(v: Record<string, unknown>): Record<string, number> {
+  const times: Record<string, number> = {};
+  for (const [k, at] of Object.entries(v)) if (isNum(at)) times[k] = at;
+  return times;
+}
+
+function cleanKnown(v: unknown): Record<string, number> {
+  const known: Record<string, number> = {};
+  if (isObject(v)) for (const [k, at] of Object.entries(v)) if (KNOWN_KEY.test(k) && isNum(at)) known[k] = at;
+  return known;
+}
+
+function cleanProfile(v: unknown): Profile | undefined {
+  if (!isObject(v) || !isLearnerLang(v.lang) || !isNum(v.setupAt)) return undefined;
+  return { lang: v.lang, name: cleanName(v.name), setupAt: v.setupAt };
+}
+
+/** A saved card made safe to use. A broken review state starts again as a new word. */
+function reviveCard(c: Flashcard): Flashcard {
+  return {
+    ...c,
+    ...cleanDetails(c),
+    pack: typeof c.pack === "string" ? c.pack : undefined,
+    exampleLang: typeof c.exampleLang === "string" && c.exampleLang in LANGUAGES ? c.exampleLang : undefined,
+    introducedAt: typeof c.introducedAt === "number" ? c.introducedAt : undefined,
+    status: c.status === "known" ? "known" : "learn",
+    knownAt: isNum(c.knownAt) ? c.knownAt : undefined,
+    returnedAt: isNum(c.returnedAt) ? c.returnedAt : undefined,
+    srs: validSrs(c.srs) ? reviveSrs(c.srs) : newSrsState(c.id, Date.now()),
+    srsReverse: validSrs(c.srsReverse) ? reviveSrs(c.srsReverse) : undefined,
+  };
 }
 
 /** JSON turns Dates into strings; ts-fsrs needs them back as Dates. Older data has no settings or rewards yet. */
-function revive(raw: Data): Data {
+function revive(raw: Partial<Data>): Data {
   return {
-    ...EMPTY,
-    ...raw,
+    version: 2,
+    profile: cleanProfile(raw.profile),
+    // Something that isn't a card (not an object, or without its words and languages) is skipped.
+    cards: (Array.isArray(raw.cards) ? (raw.cards as unknown[]) : [])
+      .filter(isCard)
+      .map((c) => reviveCard(c as unknown as Flashcard)),
+    known: cleanKnown(raw.known),
     reviews: Array.isArray(raw.reviews) ? raw.reviews : [],
     settings: cleanSettings(raw.settings),
     rewards: cleanRewards(raw.rewards),
-    cards: (raw.cards ?? []).map((c) => ({
-      ...c,
-      ...cleanDetails(c),
-      pack: typeof c.pack === "string" ? c.pack : undefined,
-      exampleLang: typeof c.exampleLang === "string" && c.exampleLang in LANGUAGES ? c.exampleLang : undefined,
-      introducedAt: typeof c.introducedAt === "number" ? c.introducedAt : undefined,
-      srs: reviveSrs(c.srs),
-      srsReverse: validSrs(c.srsReverse) ? reviveSrs(c.srsReverse) : undefined,
-    })),
+    movedFromV1At: isNum(raw.movedFromV1At) ? raw.movedFromV1At : undefined,
+    lateV1Through: isNum(raw.lateV1Through) ? raw.lateV1Through : undefined,
+    lateV1Seen: isObject(raw.lateV1Seen) ? cleanTimes(raw.lateV1Seen) : undefined,
   };
 }
 
@@ -242,29 +296,124 @@ function load() {
       // quietly, so the Stats page doesn't show earned badges as locked.
       if (parsed.rewards === undefined) {
         data = withRewards(data);
-        localStorage.setItem(KEY, JSON.stringify(data));
+        write(data);
       }
+      takeLateV1(localStorage.getItem(OLD_KEY));
+    } else {
+      const old = localStorage.getItem(OLD_KEY);
+      if (old) moveFromV1(old);
     }
   } catch {
     data = EMPTY;
+    loadFailed = true;
   }
   window.addEventListener("storage", (e) => {
-    if (e.key === KEY) data = e.newValue ? revive(JSON.parse(e.newValue)) : EMPTY;
-    // Preferences (language, pair, engine) changed in another tab apply here too.
+    if (e.key === KEY) {
+      try {
+        data = e.newValue ? revive(JSON.parse(e.newValue)) : EMPTY;
+      } catch {
+        // Unreadable data from another tab: keep what this tab has.
+        return;
+      }
+    }
+    // A tab still on the old version saved: bring in its new work.
+    else if (e.key === OLD_KEY) {
+      if (!takeLateV1(e.newValue)) return;
+    }
+    // Preferences (language, engine) changed in another tab apply here too.
     else if (!e.key?.startsWith("linguacards:")) return;
     listeners.forEach((l) => l());
   });
 }
 
-function set(next: Data) {
-  data = next;
+/**
+ * Brings into the loaded data what a tab still running the old version saved
+ * to version 1 after the move: otherwise that work would never be read.
+ * Returns whether anything was added.
+ */
+function takeLateV1(json: string | null): boolean {
+  const movedAt = data.movedFromV1At;
+  if (!json || movedAt === undefined) return false;
   try {
-    localStorage.setItem(KEY, JSON.stringify(next));
+    const merged = mergeLateV1(data, JSON.parse(json), movedAt);
+    if (!merged) return false;
+    data = withRewards(revive(merged));
+  } catch {
+    return false;
+  }
+  write(data);
+  return true;
+}
+
+/**
+ * Moves version 1 data (several lists) to version 2 (one My words list), once.
+ * If anything about it fails, nothing is written or removed, so it is tried
+ * again next time; the app starts empty meanwhile.
+ */
+function moveFromV1(old: string) {
+  let moved: Data;
+  try {
+    const parsed = JSON.parse(old);
+    const movedAt = Date.now();
+    moved = {
+      ...revive(migrateV1(parsed)),
+      movedFromV1At: movedAt,
+      lateV1Through: movedAt,
+      lateV1Seen: lateV1Seen(parsed, movedAt),
+    };
+    if (parsed.rewards === undefined) moved = withRewards(moved);
+  } catch {
+    loadFailed = true;
+    return;
+  }
+  data = moved;
+  // The safety copy is never dropped to make room for the move itself: if the
+  // move doesn't fit, the app runs from memory and says saving failed.
+  if (!write(moved, { dropOld: false })) return;
+  try {
+    for (const k of LIST_PREFS) localStorage.removeItem(k);
+  } catch {
+    // Leftover preferences are harmless.
+  }
+}
+
+/** Tries to save `json`; on failure, records why for the UI. */
+function trySave(json: string): boolean {
+  try {
+    localStorage.setItem(KEY, json);
     saveError = null;
+    return true;
   } catch (e) {
     // Quota exceeded or storage disabled: keep working in memory, but tell the user.
     saveError = e instanceof Error ? e.message : "write failed";
+    return false;
   }
+}
+
+/**
+ * Saves `next`. When it doesn't fit, the version 1 safety copy is dropped to
+ * make room (unless `dropOld` is false) and the save tried once more; if it
+ * still doesn't fit, the copy is put back. After a failed load that copy may
+ * be the learner's only good data, so it stays.
+ */
+function write(next: Data, { dropOld = true }: { dropOld?: boolean } = {}): boolean {
+  const json = JSON.stringify(next);
+  if (trySave(json)) return true;
+  try {
+    const old = loadFailed || !dropOld ? null : localStorage.getItem(OLD_KEY);
+    if (old === null) return false;
+    localStorage.removeItem(OLD_KEY);
+    if (trySave(json)) return true;
+    localStorage.setItem(OLD_KEY, old);
+  } catch {
+    // Storage unavailable: saveError already says the save failed.
+  }
+  return false;
+}
+
+function set(next: Data) {
+  data = next;
+  write(next);
   listeners.forEach((l) => l());
 }
 
@@ -290,7 +439,8 @@ function setAndReward(next: Data): boolean {
   return !!result;
 }
 
-function subscribe(l: () => void) {
+/** Calls `l` whenever the data or a preference changes, here or in another tab. Returns a function that stops it. */
+export function subscribe(l: () => void): () => void {
   listeners.add(l);
   return () => listeners.delete(l);
 }
@@ -298,6 +448,15 @@ function subscribe(l: () => void) {
 function getSnapshot(): Data {
   load();
   return data;
+}
+
+/** Test-only: forgets the in-memory state and loads again from the current localStorage. */
+export function __resetForTests(): Data {
+  data = EMPTY;
+  loaded = false;
+  saveError = null;
+  loadFailed = false;
+  return getSnapshot();
 }
 
 export function useStore(): Data {
@@ -385,65 +544,79 @@ export function usePref(key: string, fallback: string): [string, (v: string) => 
 
 // ---------- actions ----------
 
-export function createDeck(name: string, src: string, tgt: string): Deck {
-  const deck: Deck = { id: crypto.randomUUID(), name: name.trim(), src, tgt, createdAt: Date.now() };
-  set({ ...getSnapshot(), decks: [...data.decks, deck] });
-  return deck;
-}
-
-export function renameDeck(id: string, name: string) {
-  set({ ...getSnapshot(), decks: data.decks.map((d) => (d.id === id ? { ...d, name: name.trim() } : d)) });
-}
-
-// Deleting cards keeps their review log entries: they record days you studied,
-// so streaks and the heatmap don't change after the fact.
-export function deleteDeck(id: string) {
+/**
+ * Sets the learner's language and name. A name left out keeps the current one;
+ * an empty one clears it. The first setup time is kept. Not studying: it writes
+ * no review and earns nothing.
+ */
+export function setProfile(p: { lang: LearnerLang; name?: string }) {
   const d = getSnapshot();
-  set({ ...d, decks: d.decks.filter((x) => x.id !== id), cards: d.cards.filter((c) => c.deckId !== id) });
+  const name = p.name === undefined ? d.profile?.name : cleanName(p.name);
+  set({ ...d, profile: { lang: p.lang, name, setupAt: d.profile?.setupAt ?? Date.now() } });
 }
 
+/** A new word, in Should learn. */
 export async function addCard(
-  deckId: string,
   front: string,
   back: string,
   src: string,
   tgt: string,
   details: CardDetails = {},
+  extra: { pack?: string; exampleLang?: string } = {},
 ): Promise<Flashcard> {
-  const card: Flashcard = {
+  const card = await makeCard(front, back, src, tgt, details, extra);
+  set({ ...getSnapshot(), cards: [...data.cards, card] });
+  return card;
+}
+
+/** A new word in Should learn, not saved yet. */
+async function makeCard(
+  front: string,
+  back: string,
+  src: string,
+  tgt: string,
+  details: CardDetails,
+  extra: { pack?: string; exampleLang?: string },
+): Promise<Flashcard> {
+  return {
     id: crypto.randomUUID(),
-    deckId,
     front: front.trim(),
     back: back.trim(),
     src,
     tgt,
     srs: await newSrsCard(),
     createdAt: Date.now(),
+    pack: extra.pack,
+    exampleLang: extra.exampleLang,
+    status: "learn",
     ...cleanDetails(details),
   };
-  set({ ...getSnapshot(), cards: [...data.cards, card] });
-  return card;
 }
 
-/** Changes a card's text and details. Details left out of `details` are removed. */
+/**
+ * Changes a card's text and details. Details left out of `details` are removed.
+ * A ready-made word keeps its English word: the list knows the word by it.
+ */
 export function updateCard(id: string, front: string, back: string, details: CardDetails = {}) {
   set({
     ...getSnapshot(),
     cards: data.cards.map((c) =>
-      c.id === id ? { ...c, front: front.trim(), back: back.trim(), ...cleanDetails(details) } : c,
+      c.id === id ? { ...c, front: c.pack ? c.front : front.trim(), back: back.trim(), ...cleanDetails(details) } : c,
     ),
   });
 }
 
+// Deleting cards keeps their review log entries: they record days you studied,
+// so streaks and the heatmap don't change after the fact.
 export function deleteCard(id: string) {
   const d = getSnapshot();
   set({ ...d, cards: d.cards.filter((c) => c.id !== id) });
 }
 
-/** Undo for deleteCard: puts the card back if its deck still exists. */
+/** Undo for deleteCard: puts the card back unless it is there already. */
 export function restoreCard(card: Flashcard) {
   const d = getSnapshot();
-  if (d.cards.some((c) => c.id === card.id) || !d.decks.some((x) => x.id === card.deckId)) return;
+  if (d.cards.some((c) => c.id === card.id)) return;
   set({ ...d, cards: [...d.cards, card] });
 }
 
@@ -468,11 +641,19 @@ export async function gradeCard(
     : dir === "reverse"
       ? { ...card, srsReverse: next }
       : { ...card, srs: next };
-  const startsWord = dir === "forward" && srs.state === State.New && (intro || !card.introducedAt);
+  // A word moved back from Already know was chosen by the learner: it doesn't use the daily limit on new words.
+  const startsWord =
+    dir === "forward" && srs.state === State.New && (intro || !card.introducedAt) && !card.returnedAt;
   // Once the word is known one way, start asking it the other way, from tomorrow
   // so it isn't crammed into the same sitting.
   if (dir === "forward" && !card.srsReverse && next.state === State.Review) {
     updated.srsReverse = await newSrsCard(startOfTomorrow(now));
+  }
+  // A word moved back to Should learn was just forgotten: it can't graduate again the same day.
+  const returnedToday = !!card.returnedAt && dayKey(new Date(card.returnedAt)) >= dayKey(now);
+  if (updated.status === "learn" && !returnedToday && isLearnedWell(updated, now.getTime())) {
+    updated.status = "known";
+    updated.knownAt = now.getTime();
   }
   const d = getSnapshot();
   setAndReward({
@@ -495,9 +676,146 @@ export async function gradeCard(
   return updated;
 }
 
-/** Several cards in one save, kept in the given order (e.g. most frequent word first). */
+/** A Should learn word moves to Already know by itself once both directions are due at least this many days ahead. */
+export const GRADUATE_DAYS = 21;
+
+const DAY_MS = 86_400_000;
+
+/** Whether both directions are in Review and due at least `GRADUATE_DAYS` days after `now`. */
+export function isLearnedWell(c: Flashcard, now = Date.now()): boolean {
+  const far = (s: SrsCard | undefined) =>
+    !!s && s.state === State.Review && new Date(s.dueAt).getTime() >= now + GRADUATE_DAYS * DAY_MS;
+  return far(c.srs) && far(c.srsReverse);
+}
+
+const sameWord = (a: string, b: string) => a.trim().toLowerCase() === b.trim().toLowerCase();
+
+/** The card a ready-made word becomes in Should learn, as the words page made it. */
+function makePackCard(pack: string, row: StarterRow, lang: LearnerLang): Promise<Flashcard> {
+  const [en, fr, ar, emoji, example] = row;
+  return makeCard(en, lang === "fr" ? fr : ar, "en", lang, { example, emoji: emoji || undefined }, { pack, exampleLang: "en" });
+}
+
+/** The learner's card for a ready-made word, in their language. */
+function packCardOf(d: Data, lang: LearnerLang, pack: string, word: string): Flashcard | undefined {
+  return d.cards.find((c) => c.pack === pack && c.src === "en" && c.tgt === lang && sameWord(c.front, word));
+}
+
+function withoutKey(known: Record<string, number>, key: string): Record<string, number> {
+  const next = { ...known };
+  delete next[key];
+  return next;
+}
+
+// Sorting actions run one after another, so a second tap on the same word finds
+// it sorted already and does nothing.
+let sortChain: Promise<void> = Promise.resolve();
+
+function inTurn<T>(task: () => Promise<T>): Promise<T> {
+  const run = sortChain.then(task);
+  sortChain = run.then(
+    () => {},
+    () => {},
+  );
+  return run;
+}
+
+/**
+ * Sorts a ready-made word: Already know marks it in `known` (no card), Should
+ * learn makes its card. Does nothing if it is sorted already or there is no
+ * profile yet. Sorting is not studying: no review, no rewards. Rejects when the
+ * lists' words can't be loaded (nothing is saved then).
+ */
+export function sortWord(pack: string, word: string, choice: WordStatus): Promise<void> {
+  return inTurn(async () => {
+    const words = await loadStarterWords();
+    const lang = getSnapshot().profile?.lang;
+    const row = rowOf(words, pack, word);
+    if (!lang || !row || isSorted(getSnapshot(), pack, word, words)) return;
+    if (choice === "known") {
+      const d = getSnapshot();
+      set({ ...d, known: { ...d.known, [knownKey(lang, pack, word)]: Date.now() } });
+      return;
+    }
+    const card = await makePackCard(pack, row, lang);
+    const d = getSnapshot();
+    set({ ...d, cards: [...d.cards, card] });
+  });
+}
+
+/**
+ * Undo for sortWord, meant only straight after it: removes the `known` mark, or
+ * the word's card if nobody has looked at it yet. It runs in turn with sortWord,
+ * so an Undo tapped while the card is still being made removes that card. A
+ * card moved back from Already know (`returnedAt`) is left alone: removing it
+ * would take the word out of both parts.
+ */
+export function unsortWord(pack: string, word: string): Promise<void> {
+  return inTurn(async () => {
+    const d = getSnapshot();
+    const lang = d.profile?.lang;
+    if (!lang) return;
+    const key = knownKey(lang, pack, word);
+    const card = packCardOf(d, lang, pack, word);
+    const drop =
+      card && card.srs.state === State.New && !card.introducedAt && !card.returnedAt ? card.id : undefined;
+    if (typeof d.known[key] !== "number" && !drop) return;
+    set({ ...d, known: withoutKey(d.known, key), cards: drop ? d.cards.filter((c) => c.id !== drop) : d.cards });
+  });
+}
+
+/**
+ * Moves a card to Already know or back to Should learn. Moved back, a studied
+ * word comes up today in both directions; a word not started stays new. Not studying: no review, no rewards.
+ */
+export function setStatus(cardId: string, status: WordStatus) {
+  const d = getSnapshot();
+  const card = d.cards.find((c) => c.id === cardId);
+  if (!card || card.status === status) return;
+  const now = Date.now();
+  let moved: Flashcard;
+  if (status === "known") moved = { ...card, status, knownAt: now };
+  else {
+    const dueNow = (s: SrsCard): SrsCard => ({ ...s, dueAt: new Date(now) });
+    moved = {
+      ...card,
+      status,
+      returnedAt: now,
+      srs: card.srs.state === State.New ? card.srs : dueNow(card.srs),
+      srsReverse: card.srsReverse && dueNow(card.srsReverse),
+    };
+  }
+  set({ ...d, cards: d.cards.map((c) => (c.id === cardId ? moved : c)) });
+}
+
+/**
+ * Moves a ready-made word sorted as Already know (a `known` mark) back to
+ * Should learn: the mark becomes a new card, studied without the daily limit.
+ * Resolves to whether it moved anything (not when the mark is gone already, say moved in another tab).
+ * Rejects when the lists' words can't be loaded.
+ */
+export function learnKnownWord(pack: string, word: string): Promise<boolean> {
+  return inTurn(async () => {
+    const words = await loadStarterWords();
+    const lang = getSnapshot().profile?.lang;
+    const row = rowOf(words, pack, word);
+    if (!lang || !row) return false;
+    const key = knownKey(lang, pack, word);
+    if (typeof getSnapshot().known[key] !== "number") return false;
+    // A card for the word already stands for it: only the mark goes.
+    const card = packCardOf(getSnapshot(), lang, pack, word) ? undefined : await makePackCard(pack, row, lang);
+    const d = getSnapshot();
+    set({
+      ...d,
+      known: withoutKey(d.known, key),
+      cards: card ? [...d.cards, { ...card, returnedAt: Date.now() }] : d.cards,
+    });
+    return true;
+  });
+}
+
+/** Several new words in one save, in Should learn, kept in the given order (e.g. most frequent word first). */
 export async function addCards(
-  deckId: string,
   src: string,
   tgt: string,
   items: { front: string; back: string; details?: CardDetails; pack?: string; exampleLang?: string }[],
@@ -507,7 +825,6 @@ export async function addCards(
   for (const [i, item] of items.entries()) {
     made.push({
       id: crypto.randomUUID(),
-      deckId,
       front: item.front.trim(),
       back: item.back.trim(),
       src,
@@ -517,6 +834,7 @@ export async function addCards(
       createdAt: base + i,
       pack: item.pack,
       exampleLang: item.exampleLang,
+      status: "learn",
       ...cleanDetails(item.details ?? {}),
     });
   }
@@ -559,54 +877,74 @@ export function exportData(): string {
   return JSON.stringify(getSnapshot(), null, 2);
 }
 
-const isStr = (v: unknown): v is string => typeof v === "string";
-const isNum = (v: unknown): v is number => typeof v === "number" && Number.isFinite(v);
 const isLang = (v: unknown) => isStr(v) && v in LANGUAGES;
+
+/** A backup's card: version 1 cards also name their list. */
+function validCard(v: unknown, v1: boolean): boolean {
+  if (!isObject(v)) return false;
+  const srs = v.srs as Partial<Record<keyof SrsCard, unknown>> | null | undefined;
+  return (
+    isStr(v.id) &&
+    (!v1 || isStr(v.deckId)) &&
+    isStr(v.front) &&
+    isStr(v.back) &&
+    isLang(v.src) &&
+    isLang(v.tgt) &&
+    isObject(srs) &&
+    !Number.isNaN(new Date(srs.dueAt as string).getTime()) &&
+    isNum(srs.state) &&
+    isNum(srs.stability) &&
+    isNum(srs.difficulty)
+  );
+}
 
 /**
  * Parses and checks a backup file without changing anything, so the caller can
  * show what it contains before replacing the current data with importData().
+ * A version 1 backup (several lists) goes through the same move as saved data.
  */
 export function parseBackup(json: string): Data {
   const invalid = new Error("Not a valid LinguaCards backup file.");
-  let raw: Partial<Data>;
+  let raw: unknown;
   try {
     raw = JSON.parse(json);
   } catch {
     throw invalid;
   }
-  if (!raw || !Array.isArray(raw.decks) || !Array.isArray(raw.cards)) throw invalid;
+  if (!isObject(raw) || !Array.isArray(raw.cards)) throw invalid;
+  const v1 = raw.version !== 2;
   const reviews = raw.reviews ?? [];
   if (!Array.isArray(reviews)) throw invalid;
-  for (const d of raw.decks) {
-    if (!d || !isStr(d.id) || !isStr(d.name) || !isLang(d.src) || !isLang(d.tgt)) throw invalid;
-  }
-  for (const c of raw.cards) {
-    const ok =
-      c &&
-      isStr(c.id) &&
-      isStr(c.deckId) &&
-      isStr(c.front) &&
-      isStr(c.back) &&
-      isLang(c.src) &&
-      isLang(c.tgt) &&
-      c.srs &&
-      !Number.isNaN(new Date(c.srs.dueAt).getTime()) &&
-      isNum(c.srs.state) &&
-      isNum(c.srs.stability) &&
-      isNum(c.srs.difficulty);
-    if (!ok) throw invalid;
-  }
+  if (v1) {
+    if (!Array.isArray(raw.decks)) throw invalid;
+    for (const d of raw.decks) {
+      if (!isObject(d) || !isStr(d.id) || !isStr(d.name) || !isLang(d.src) || !isLang(d.tgt)) throw invalid;
+    }
+  } else if (!isObject(raw.known)) throw invalid;
+  for (const c of raw.cards) if (!validCard(c, v1)) throw invalid;
   for (const r of reviews) {
-    if (!r || !isStr(r.day) || !isNum(r.rating) || !isNum(r.reviewedAt)) throw invalid;
+    if (!isObject(r) || !isStr(r.day) || !isNum(r.rating) || !isNum(r.reviewedAt)) throw invalid;
   }
-  return revive({ ...(raw as Data), version: 1, reviews });
+  const checked = { ...raw, reviews };
+  return revive(v1 ? migrateV1(checked) : (checked as Partial<Data>));
 }
 
-/** Replaces all data with a parsed backup. Returns false if it could not be saved to storage. */
+/**
+ * Replaces all data with a parsed backup. A backup without a profile keeps the
+ * current one. Returns false if it could not be saved to storage.
+ */
 export function importData(next: Data): boolean {
   // Older backups have no badges yet; fill them in without a celebration.
-  set(withRewards(next));
+  // Work a tab on the old version saves later is not mixed into the backup.
+  set(
+    withRewards({
+      ...next,
+      profile: next.profile ?? getSnapshot().profile,
+      movedFromV1At: undefined,
+      lateV1Through: undefined,
+      lateV1Seen: undefined,
+    }),
+  );
   return saveError === null;
 }
 
@@ -653,34 +991,49 @@ export function itemsOf(card: Flashcard): StudyItem[] {
 const notStarted = (i: StudyItem) => i.dir === "forward" && i.srs.state === State.New && !i.card.introducedAt;
 
 /** Started items (everything but words not yet shown) that pass `keep`, soonest first. */
-export function startedItems(
-  cards: Flashcard[],
-  deckId: string | null | undefined,
-  keep: (i: StudyItem) => boolean,
-): StudyItem[] {
+export function startedItems(cards: Flashcard[], keep: (i: StudyItem) => boolean): StudyItem[] {
   return cards
-    .filter((c) => !deckId || c.deckId === deckId)
     .flatMap(itemsOf)
     .filter((i) => !notStarted(i) && keep(i))
     .sort((a, b) => dueTime(a) - dueTime(b));
 }
 
 /** Reviews (not new words) that can be studied now, most overdue first. */
-export function dueReviews(cards: Flashcard[], deckId?: string | null, now = Date.now()): StudyItem[] {
-  return startedItems(cards, deckId, (i) => isDue(i, now));
+export function dueReviews(cards: Flashcard[], now = Date.now()): StudyItem[] {
+  return startedItems(cards, (i) => isDue(i, now));
 }
 
-/** New words not started yet, in the order they were added (starter packs: most frequent first). */
-export function newWords(cards: Flashcard[], deckId?: string | null): Flashcard[] {
-  return cards
-    .filter((c) => (!deckId || c.deckId === deckId) && c.srs.state === State.New && !c.introducedAt)
-    .sort((a, b) => a.createdAt - b.createdAt);
+/** A word nobody has looked at yet. */
+const unseen = (c: Flashcard) => c.srs.state === State.New && !c.introducedAt;
+
+/**
+ * New words not started yet, in the order they were added (starter packs: most
+ * frequent first). Words moved back to Should learn are left to `returnedWords`.
+ */
+export function newWords(cards: Flashcard[]): Flashcard[] {
+  return cards.filter((c) => unseen(c) && !c.returnedAt).sort((a, b) => a.createdAt - b.createdAt);
 }
 
-/** How many items are waiting today: due reviews plus the new words today's limit still allows. */
-export function dueCount(data: Pick<Data, "cards" | "reviews" | "settings">, today: string, deckId?: string | null): number {
-  const left = Math.max(0, data.settings.newPerDay - newStartedOn(data.reviews, today));
-  return dueReviews(data.cards, deckId).length + Math.min(left, newWords(data.cards, deckId).length);
+/**
+ * New words moved back from Already know, not started yet, oldest return first.
+ * The learner chose them, so the daily limit on new words doesn't hold them back.
+ */
+export function returnedWords(cards: Flashcard[]): Flashcard[] {
+  return cards.filter((c) => unseen(c) && !!c.returnedAt).sort((a, b) => a.returnedAt! - b.returnedAt!);
+}
+
+/**
+ * How many items are waiting today in the learner's language (in `list` if
+ * given): due reviews, returned words, and the new words today's limit still allows.
+ */
+export function dueCount(
+  d: Pick<Data, "cards" | "reviews" | "settings" | "profile">,
+  today: string,
+  list?: string | null,
+): number {
+  const sc = studyCards(d, list);
+  const left = Math.max(0, d.settings.newPerDay - newStartedOn(d.reviews, today));
+  return dueReviews(sc).length + returnedWords(sc).length + Math.min(left, newWords(sc).length);
 }
 
 /** Case-insensitive tag match; no tag means every card. */

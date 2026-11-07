@@ -1,8 +1,10 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { gzipSync } from "node:zlib";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { loadPackScenes, loadPlaces, validatePackScenes, wordScenes, type PackScenes, type Place, type Scene } from "../word/scenes";
-import { STARTER_PACKS } from "../../data/starter-packs";
+import { loadPackScenes, loadPlaces, SCENES_VERSION, validatePackScenes, wordScenes, type PackScenes, type Place, type Scene } from "../word/scenes";
+import { STARTER_WORDS } from "../../data/starter-words";
+import type { Picture } from "../word/sources";
 import { failLoading, planSources, sectionOf, type WordData } from "../word/useWordData";
 
 const tri = (en: string, fr = `${en} (fr)`, ar = `${en} (ar)`) => ({ en, fr, ar });
@@ -30,7 +32,7 @@ function pack(over: Partial<Scene>[] = []): PackScenes {
 
 describe("validatePackScenes", () => {
   it("accepts a valid pack", () => {
-    expect(validatePackScenes(pack(), PLACES)).toEqual([]);
+    expect(validatePackScenes(pack(), PLACES, STARTER_WORDS)).toEqual([]);
   });
 
   it("finds the word in any of its forms and ignores case", () => {
@@ -38,7 +40,7 @@ describe("validatePackScenes", () => {
       pack: "verbs-daily",
       words: { "wake up": { scenes: ["park", "bakery", "classroom", "kitchen"].map((p) => scene(p, "I woke up at seven.")), pictures: [] } },
     };
-    expect(validatePackScenes(json, PLACES)).toEqual([]);
+    expect(validatePackScenes(json, PLACES, STARTER_WORDS)).toEqual([]);
   });
 
   it("matches words with a question mark or a curly apostrophe", () => {
@@ -49,33 +51,33 @@ describe("validatePackScenes", () => {
         "you’re welcome": { scenes: ["park", "bakery", "classroom", "kitchen"].map((p) => scene(p, "You're welcome!")), pictures: [] },
       },
     };
-    expect(validatePackScenes(json, PLACES)).toEqual([]);
+    expect(validatePackScenes(json, PLACES, STARTER_WORDS)).toEqual([]);
   });
 
   it("reports a scene that does not use the word", () => {
-    expect(validatePackScenes(pack([{}, scene("bakery", "Good morning!")]), PLACES)).toEqual([
+    expect(validatePackScenes(pack([{}, scene("bakery", "Good morning!")]), PLACES, STARTER_WORDS)).toEqual([
       "hello: scene 2 does not use the word",
     ]);
   });
 
   it("reports an unknown place", () => {
-    expect(validatePackScenes(pack([{ place: "moon" }]), PLACES)).toEqual(['hello: scene 1 has an unknown place "moon"']);
+    expect(validatePackScenes(pack([{ place: "moon" }]), PLACES, STARTER_WORDS)).toEqual(['hello: scene 1 has an unknown place "moon"']);
   });
 
   it("reports the same place twice in one word", () => {
-    expect(validatePackScenes(pack([{}, { place: "park" }]), PLACES)).toEqual(['hello: place "park" is used twice']);
+    expect(validatePackScenes(pack([{}, { place: "park" }]), PLACES, STARTER_WORDS)).toEqual(['hello: place "park" is used twice']);
   });
 
   it("reports a word with 3 scenes", () => {
     const json = pack();
     json.words.hello.scenes.pop();
-    expect(validatePackScenes(json, PLACES)).toEqual(["hello: has 3 scenes, needs 4"]);
+    expect(validatePackScenes(json, PLACES, STARTER_WORDS)).toEqual(["hello: has 3 scenes, needs 4"]);
   });
 
   it("reports scenes with too few or too many lines", () => {
     const one = { lines: scene("bakery").lines.slice(0, 1) };
     const five = { lines: [...scene("park").lines, ...scene("park").lines, scene("park").lines[0]] };
-    expect(validatePackScenes(pack([five, one]), PLACES)).toEqual([
+    expect(validatePackScenes(pack([five, one]), PLACES, STARTER_WORDS)).toEqual([
       "hello: scene 1 has 5 lines, needs 2 to 4",
       "hello: scene 2 has 1 line, needs 2 to 4",
     ]);
@@ -85,7 +87,7 @@ describe("validatePackScenes", () => {
     const json = pack();
     json.words.hello.scenes[0].lines[1].text.ar = " ";
     json.words.hello.scenes[2].lines[0].who.fr = "";
-    expect(validatePackScenes(json, PLACES)).toEqual([
+    expect(validatePackScenes(json, PLACES, STARTER_WORDS)).toEqual([
       "hello: scene 1 line 2 has no text.ar",
       "hello: scene 3 line 1 has no who.fr",
     ]);
@@ -94,20 +96,20 @@ describe("validatePackScenes", () => {
   it("reports pictures without a thumbnail or a page", () => {
     const json = pack();
     json.words.hello.pictures = [{ thumb: "https://upload.wikimedia.org/a.jpg", page: "" }];
-    expect(validatePackScenes(json, PLACES)).toEqual(["hello: picture 1 needs thumb and page"]);
+    expect(validatePackScenes(json, PLACES, STARTER_WORDS)).toEqual(["hello: picture 1 needs thumb and page"]);
   });
 
   it("reports a word that is not in the list, and an unknown list", () => {
     const json = pack();
     json.words.hullo = json.words.hello;
-    expect(validatePackScenes(json, PLACES)).toEqual(["hullo: not a word of the greetings list"]);
-    expect(validatePackScenes({ ...pack(), pack: "nope" }, PLACES)).toEqual(['"nope" is not a ready-made list']);
-    expect(validatePackScenes(null, PLACES)).toEqual(["not a scenes file"]);
+    expect(validatePackScenes(json, PLACES, STARTER_WORDS)).toEqual(["hullo: not a word of the greetings list"]);
+    expect(validatePackScenes({ ...pack(), pack: "nope" }, PLACES, STARTER_WORDS)).toEqual(['"nope" is not a ready-made list']);
+    expect(validatePackScenes(null, PLACES, STARTER_WORDS)).toEqual(["not a scenes file"]);
   });
 
   it("requires every word of the list only when the file says it is complete", () => {
-    expect(validatePackScenes(pack(), PLACES)).toEqual([]);
-    const problems = validatePackScenes({ ...pack(), complete: true }, PLACES);
+    expect(validatePackScenes(pack(), PLACES, STARTER_WORDS)).toEqual([]);
+    const problems = validatePackScenes({ ...pack(), complete: true }, PLACES, STARTER_WORDS);
     expect(problems).toContain("thank you: missing");
     expect(problems).toContain("good luck: missing");
     expect(problems).not.toContain("hello: missing");
@@ -133,7 +135,8 @@ describe("loaders", () => {
 
   function stubFetch(routes: Record<string, unknown>) {
     const fn = vi.fn(async (input: RequestInfo | URL) => {
-      const body = routes[String(input)];
+      // The site serves a file whatever its query; the version only keeps caches apart.
+      const body = routes[String(input).split("?")[0]];
       if (body === undefined) return new Response("not found", { status: 404 });
       if (typeof body === "number") return new Response("error", { status: body });
       return new Response(JSON.stringify(body), { status: 200 });
@@ -145,7 +148,13 @@ describe("loaders", () => {
   it("loads a list's scenes from the site itself", async () => {
     const fn = stubFetch({ "/scenes/greetings.json": pack() });
     expect(await loadPackScenes("greetings")).toEqual(pack());
-    expect(fn.mock.calls.map((c) => String(c[0]))).toEqual(["/scenes/greetings.json"]);
+    expect(fn.mock.calls.map((c) => String(c[0]))).toEqual([`/scenes/greetings.json?v=${SCENES_VERSION}`]);
+  });
+
+  it("asks for new scene files when the ready-made words change", () => {
+    // Counted from the index, it is still the number of real rows.
+    expect(SCENES_VERSION).toBe(Object.values(STARTER_WORDS).reduce((n, rows) => n + rows.length, 0));
+    expect(SCENES_VERSION).toBeGreaterThan(0);
   });
 
   it("is null when the list has no scenes file or the file is not one", async () => {
@@ -262,16 +271,66 @@ describe("shipped scenes files", () => {
   const places = read("_places.json") as Record<string, Place>;
   const files = readdirSync(dir).filter((f) => f.endsWith(".json") && f !== "_places.json");
 
-  it("has a complete file for every ready-made list", () => {
-    for (const pack of STARTER_PACKS) {
-      expect(files).toContain(`${pack.id}.json`);
-      expect((read(`${pack.id}.json`) as PackScenes).complete).toBe(true);
+  // Words added after part 2 (and the advanced lists) have no prepared scenes: the word page
+  // loads sentences and pictures live for them. Every word that had scenes keeps them.
+  it("keeps the scenes of every word that had them", () => {
+    const heads: Record<string, [string, ...string[]][]> = JSON.parse(
+      readFileSync(join(process.cwd(), "src", "lib", "__tests__", "fixtures", "pack-heads.json"), "utf8"),
+    );
+    for (const [id, rows] of Object.entries(heads)) {
+      expect(files).toContain(`${id}.json`);
+      const words = (read(`${id}.json`) as PackScenes).words;
+      const missing = rows.map((row) => row[0]).filter((word) => !Object.hasOwn(words, word));
+      expect(missing, id).toEqual([]);
     }
+    const greetings = STARTER_WORDS.greetings;
+    expect(greetings).toHaveLength(100);
+    expect((read("greetings.json") as PackScenes).complete).toBe(true);
+    const greetingWords = (read("greetings.json") as PackScenes).words;
+    expect(greetings.map((row) => row[0]).filter((word) => !Object.hasOwn(greetingWords, word))).toEqual([]);
   });
 
   it.each(files)("%s passes the content checks", (file) => {
     const json = read(file) as PackScenes;
     expect(`${json.pack}.json`).toBe(file);
-    expect(validatePackScenes(json, places)).toEqual([]);
+    expect(validatePackScenes(json, places, STARTER_WORDS)).toEqual([]);
+  });
+
+  /** Every picture shipped, word pictures and place pictures, with where it is. */
+  const pictures: { at: string; picture: Picture }[] = [
+    ...Object.entries(places).flatMap(([key, place]) => (place.picture ? [{ at: `_places.json:${key}`, picture: place.picture }] : [])),
+    ...files.flatMap((file) =>
+      Object.entries((read(file) as PackScenes).words).flatMap(([word, entry]) =>
+        // A word without a pictures list is reported by the content checks above, not here.
+        (Array.isArray(entry.pictures) ? entry.pictures : []).map((picture, i) => ({ at: `${file}:${word}:${i + 1}`, picture })),
+      ),
+    ),
+  ];
+
+  it("pictures are clean Wikimedia links", () => {
+    const bad = pictures
+      .filter(({ picture: { thumb, page } }) =>
+        !/^https:\/\/(upload|thumb)\.wikimedia\.org\//.test(thumb) ||
+        !/^https:\/\/commons\.wikimedia\.org\//.test(page) ||
+        thumb.includes("utm_") ||
+        page.includes("utm_"),
+      )
+      .map(({ at }) => at);
+    expect(bad).toEqual([]);
+  });
+
+  it("licences are free", () => {
+    const free = ["CC0", "PD", "PUBLIC DOMAIN", "CC BY"];
+    // CC BY and CC BY-SA only: the non-commercial and no-derivatives variants are not free.
+    const isFree = (licence: string) =>
+      free.some((start) => licence.startsWith(start)) && !/\b(NC|ND)\b/.test(licence);
+    const bad = pictures
+      .filter(({ picture }) => !isFree((picture.licence ?? "").toUpperCase()))
+      .map(({ at, picture }) => `${at} ${JSON.stringify(picture.licence)}`);
+    expect(bad).toEqual([]);
+  });
+
+  it.each([...files, "_places.json"])("scene files stay light: %s", (file) => {
+    expect(gzipSync(readFileSync(join(dir, file))).length).toBeLessThanOrEqual(100 * 1024);
   });
 });

@@ -6,7 +6,7 @@ export const story = defineMessages({
     title: "Stories",
     intro:
       "Short stories that use the words you’re learning. Tap a highlighted word to see what it means. Words you studied today are the brightest.",
-    noStories: "Stories come with the ready-made lists. Add a ready-made list, study a few words, then come back.",
+    noStories: "Stories come with the ready-made lists. Pick a list and sort its words, then come back.",
     addPack: "Choose a ready-made list",
     readAloud: "Read aloud",
     stop: "Stop",
@@ -25,7 +25,7 @@ export const story = defineMessages({
     title: "Histoires",
     intro:
       "De courtes histoires avec les mots que vous apprenez. Touchez un mot surligné pour voir ce qu’il veut dire. Les mots révisés aujourd’hui sont les plus visibles.",
-    noStories: "Les histoires accompagnent les listes toutes prêtes. Ajoutez une liste toute prête, révisez quelques mots, puis revenez.",
+    noStories: "Les histoires accompagnent les listes toutes prêtes. Choisissez une liste et triez ses mots, puis revenez.",
     addPack: "Choisir une liste toute prête",
     readAloud: "Lire à voix haute",
     stop: "Arrêter",
@@ -46,7 +46,7 @@ export const story = defineMessages({
   ar: {
     title: "قصص",
     intro: "قصص قصيرة تستعمل الكلمات التي تتعلّمها. اضغط على كلمة مميّزة لترى معناها. الكلمات التي راجعتها اليوم هي الأوضح.",
-    noStories: "تأتي القصص مع القوائم الجاهزة. أضف قائمة جاهزة، وراجع بعض الكلمات، ثم عد.",
+    noStories: "تأتي القصص مع القوائم الجاهزة. اختر قائمة وافرز كلماتها، ثم عد.",
     addPack: "اختر قائمة جاهزة",
     readAloud: "اقرأ بصوت عالٍ",
     stop: "أوقف",

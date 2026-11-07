@@ -6,11 +6,12 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { SpeakButton } from "@/components/speak-button";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { STARTER_PACKS, type StarterPack } from "@/data/starter-packs";
+import { packWords, type StarterRow, type StarterWords } from "@/data/starter-packs";
 import { useFormat } from "@/lib/format";
 import { LOCALES, useLocale, useT, type Translate } from "@/lib/i18n";
 import { useStore, type Flashcard } from "@/lib/store";
 import { useTranslator } from "@/lib/useTranslator";
+import { useStarterWords } from "@/lib/starter-words";
 import { cn } from "@/lib/utils";
 import type { Picture, Recording, Sentence } from "@/lib/word/sources";
 import { cleanWord, packOf, wordHref, type WordTarget } from "@/lib/word/target";
@@ -43,7 +44,11 @@ const keyOf = (t: WordTarget) => `${t.word}|${t.lang}|${t.to}`;
 export function WordView(props: { target: WordTarget; onOpenWord?: (t: WordTarget) => void }) {
   // "Try again" starts over: every section is fetched again (answers already cached come back at once).
   const [attempt, setAttempt] = useState(0);
-  return <View key={`${keyOf(props.target)}|${attempt}`} {...props} retry={() => setAttempt((n) => n + 1)} />;
+  // The lists' words, for the word's own row and its partners. The pages that make a target have
+  // loaded them already, so this is only a safeguard.
+  const words = useStarterWords();
+  if (!words) return null;
+  return <View key={`${keyOf(props.target)}|${attempt}`} {...props} words={words} retry={() => setAttempt((n) => n + 1)} />;
 }
 
 type Example = { text: string; translation?: string; sentence?: Sentence };
@@ -56,10 +61,10 @@ function shownOf<D>(section: Section<D>, empty: (data: D) => boolean): Shown {
 }
 
 /** The row for the word in its ready-made list (`target.pack`, the card's own): [English, French, Arabic, emoji, example]. */
-function packRow(target: WordTarget): StarterPack["words"][number] | undefined {
+function packRow(target: WordTarget, words: StarterWords): StarterRow | undefined {
   if (!target.pack) return undefined;
   const w = target.word.toLowerCase();
-  return STARTER_PACKS.find((p) => p.id === target.pack)?.words.find((row) => cleanWord(row[0]).toLowerCase() === w);
+  return packWords(words, target.pack)?.find((row) => cleanWord(row[0]).toLowerCase() === w);
 }
 
 /** The saved word's other side: the page's word in the learner's language. */
@@ -149,13 +154,23 @@ function useTranslations(jobs: Job[], to: string) {
   };
 }
 
-function View({ target, onOpenWord, retry }: { target: WordTarget; onOpenWord?: (t: WordTarget) => void; retry: () => void }) {
+function View({
+  target,
+  onOpenWord,
+  words,
+  retry,
+}: {
+  target: WordTarget;
+  onOpenWord?: (t: WordTarget) => void;
+  words: StarterWords;
+  retry: () => void;
+}) {
   const t = useT(messages);
   const [locale] = useLocale();
   const { cards } = useStore();
-  const data = useWordData(target);
+  const data = useWordData(target, words);
   const card = target.cardId ? cards.find((c) => c.id === target.cardId) : undefined;
-  const row = packRow(target);
+  const row = packRow(target, words);
   const rtl = LOCALES[locale].dir === "rtl";
   const wordAttrs = { lang: target.lang, dir: dirOf(target.lang) } as const;
 
@@ -429,7 +444,7 @@ function View({ target, onOpenWord, retry }: { target: WordTarget; onOpenWord?: 
                           type="button"
                           className={chip}
                           onClick={() => {
-                            const pack = target.lang === "en" ? packOf(partner.word) : undefined;
+                            const pack = target.lang === "en" ? packOf(partner.word, words) : undefined;
                             onOpenWord(pack ? { ...partner, pack } : partner);
                           }}
                         >

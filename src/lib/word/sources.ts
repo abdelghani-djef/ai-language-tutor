@@ -5,7 +5,7 @@
  * when the source has nothing for the word (a 404 or an empty answer), and rejects when the source
  * couldn't be reached, so the page shows "couldn't load" instead of hiding the section.
  */
-import { STARTER_PACKS } from "../../data/starter-packs";
+import type { StarterWords } from "../../data/starter-packs";
 import { cleanEntry } from "../story";
 import { isCleanSentence, stripHtml } from "./clean";
 import { fetchJson } from "./fetch";
@@ -170,18 +170,25 @@ function siteKey(): string {
   return `&md=${h}`;
 }
 
-let readyMade: Set<string> | undefined;
+const readyMade = new WeakMap<StarterWords, Set<string>>();
 /** The English words of the ready-made lists, cleaned and lowercased. */
-const readyMadeWords = () =>
-  (readyMade ??= new Set(STARTER_PACKS.flatMap((p) => p.words.map((row) => cleanEntry(row[0]).toLowerCase()))));
+function readyMadeWords(words: StarterWords): Set<string> {
+  let set = readyMade.get(words);
+  if (!set) {
+    set = new Set(Object.values(words).flatMap((rows) => rows.map((row) => cleanEntry(row[0]).toLowerCase())));
+    readyMade.set(words, set);
+  }
+  return set;
+}
 
 /**
  * Word partners, English only, at most 8: "fresh bread"-style adjectives first, then related words
  * that are themselves in a ready-made list (Datamuse's "triggered by" words are often names, songs or
- * worse: "hello" gives kitty, sailor, nasty). Each one passes the blocklist; no repeats, never the word.
- * Rejects when both Datamuse calls fail; one failing leaves the other's words.
+ * worse: "hello" gives kitty, sailor, nasty; `words` are the lists' loaded words). Each one passes the
+ * blocklist; no repeats, never the word. Rejects when both Datamuse calls fail; one failing leaves the
+ * other's words.
  */
-export async function fetchPartners(word: string, lang = "en"): Promise<string[]> {
+export async function fetchPartners(word: string, lang: string, words: StarterWords): Promise<string[]> {
   if (lang !== "en") return [];
   const base = "https://api.datamuse.com/words";
   const k = siteKey();
@@ -201,7 +208,7 @@ export async function fetchPartners(word: string, lang = "en"): Promise<string[]
   for (const a of parseDatamuse(jjb)) add(cleanEntry(a).toLowerCase(), `${a} ${word}`);
   for (const w of parseDatamuse(trg, MAX_RELATED)) {
     const key = cleanEntry(w).toLowerCase();
-    if (readyMadeWords().has(key)) add(key, w);
+    if (readyMadeWords(words).has(key)) add(key, w);
   }
   return out;
 }

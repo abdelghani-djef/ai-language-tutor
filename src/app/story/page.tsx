@@ -9,17 +9,17 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { WordOverlay } from "@/components/word/word-overlay";
 import { STARTER_STORIES } from "@/data/starter-stories";
 import { useFormat } from "@/lib/format";
-import { useLocale, useT } from "@/lib/i18n";
+import { useT } from "@/lib/i18n";
 import { LANGUAGES } from "@/lib/languages";
+import { myCards, sortedPacks } from "@/lib/mywords";
 import { speak, speechSupported } from "@/lib/speech";
+import { useStarterWords } from "@/lib/starter-words";
 import { englishWord, highlightWords, metCards, rankStories, todaysCards, type StoryPart } from "@/lib/story";
 import { useHydrated, useStore, useToday, type Flashcard } from "@/lib/store";
 import { cn } from "@/lib/utils";
 import { targetFromCard, type WordTarget } from "@/lib/word/target";
 import { story as messages } from "@/messages/story";
 import { word as wordMessages } from "@/messages/word";
-
-type StoryLang = "fr" | "ar";
 
 export default function StoryPageWrapper() {
   return (
@@ -31,12 +31,10 @@ export default function StoryPageWrapper() {
 
 function StoryPage() {
   const params = useSearchParams();
-  const deckId = params.get("deck");
   const storyId = params.get("id");
   const t = useT(messages);
-  const [locale] = useLocale();
   const hydrated = useHydrated();
-  const { cards, reviews } = useStore();
+  const data = useStore();
   const today = useToday();
   const [selected, setSelected] = useState<string | null>(null);
   const [showTranslation, setShowTranslation] = useState(false);
@@ -44,14 +42,20 @@ function StoryPage() {
   const lastWordButton = useRef<HTMLElement | null>(null);
   // The word page, opened over the story so the story and its scroll stay put.
   const [wordPage, setWordPage] = useState<WordTarget | null>(null);
+  // The lists' words: which lists the learner has sorted words from, and each word's list.
+  const words = useStarterWords();
 
   // Stop reading when leaving the page.
   useEffect(() => () => void (speechSupported && speechSynthesis.cancel()), []);
 
-  if (!hydrated) return null;
+  // The setup gate makes sure there is a profile on this page.
+  if (!hydrated || !data.profile || !words) return null;
 
-  const packs = new Set(cards.map((c) => c.pack).filter((p): p is string => !!p));
-  const todays = todaysCards(cards, reviews, today, deckId);
+  // Stories of the ready-made lists the learner has sorted words from, with
+  // the learner's words in their current language.
+  const cards = myCards(data);
+  const packs = sortedPacks(data, words);
+  const todays = todaysCards(cards, data.reviews, today);
   const ranked = rankStories(STARTER_STORIES, packs, todays);
   const current = ranked.find((r) => r.story.id === storyId) ?? ranked[0];
 
@@ -61,7 +65,7 @@ function StoryPage() {
         <Heading />
         <p>{t("noStories")}</p>
         <div>
-          <Link href="/words" className={buttonVariants()}>
+          <Link href="/words/" className={buttonVariants()}>
             {t("addPack")}
           </Link>
         </div>
@@ -76,11 +80,9 @@ function StoryPage() {
   const linked = met.map((c) => ({ id: c.id, word: englishWord(c) ?? "" }));
   const titleParts = highlightWords(story.title.en, linked);
   const paragraphs = story.text.en.split(/\n\s*\n/).map((p) => highlightWords(p, linked));
-  // Translations are in the interface language when the stories have it, else the starter words' language.
-  const packLang = cards.find((c) => c.pack)?.tgt;
-  const lang: StoryLang | null =
-    locale === "fr" || locale === "ar" ? locale : packLang === "fr" || packLang === "ar" ? packLang : null;
-  const translated = lang ? story.text[lang].split(/\n\s*\n/) : [];
+  // Translations are in the language the learner learns English in.
+  const lang = data.profile.lang;
+  const translated = story.text[lang].split(/\n\s*\n/);
   const selectedCard = met.find((c) => c.id === selected);
 
   function select(id: string | null, from?: HTMLElement) {
@@ -118,7 +120,7 @@ function StoryPage() {
               <p className="font-display text-xl leading-relaxed">
                 <Linked parts={parts} today={todayIds} selected={selected} onSelect={select} />
               </p>
-              {showTranslation && lang && translated[i] && (
+              {showTranslation && translated[i] && (
                 <p className="text-muted-foreground" lang={lang} dir={LANGUAGES[lang].rtl ? "rtl" : "ltr"}>
                   {translated[i]}
                 </p>
@@ -133,11 +135,9 @@ function StoryPage() {
               {reading ? <Square /> : <Volume2 />} {reading ? t("stop") : t("readAloud")}
             </Button>
           )}
-          {lang && (
-            <Button variant="outline" size="sm" aria-pressed={showTranslation} onClick={() => setShowTranslation((s) => !s)}>
-              <Languages /> {showTranslation ? t("hideTranslation") : t("showTranslation")}
-            </Button>
-          )}
+          <Button variant="outline" size="sm" aria-pressed={showTranslation} onClick={() => setShowTranslation((s) => !s)}>
+            <Languages /> {showTranslation ? t("hideTranslation") : t("showTranslation")}
+          </Button>
           {current.used > 0 && (
             <span className="text-sm text-muted-foreground">{t("todayWords", { count: current.used })}</span>
           )}
@@ -150,7 +150,7 @@ function StoryPage() {
           <WordDetails
             card={selectedCard}
             onClose={closeDetails}
-            onSeeAll={() => setWordPage(targetFromCard(selectedCard))}
+            onSeeAll={() => setWordPage(targetFromCard(selectedCard, words))}
           />
         ) : (
           <p className="text-sm text-muted-foreground">{t("tapWord")}</p>
@@ -169,17 +169,15 @@ function StoryPage() {
               .map(({ story: s }) => (
                 <li key={s.id}>
                   <Link
-                    href={`/story?id=${s.id}${deckId ? `&deck=${deckId}` : ""}`}
+                    href={`/story/?id=${encodeURIComponent(s.id)}`}
                     className="block rounded-xl border bg-card px-4 py-3 hover:bg-muted"
                   >
                     <span className="block font-medium" lang="en" dir="ltr">
                       {s.title.en}
                     </span>
-                    {lang && (
-                      <span className="block text-sm text-muted-foreground" lang={lang} dir="auto">
-                        {s.title[lang]}
-                      </span>
-                    )}
+                    <span className="block text-sm text-muted-foreground" lang={lang} dir="auto">
+                      {s.title[lang]}
+                    </span>
                   </Link>
                 </li>
               ))}

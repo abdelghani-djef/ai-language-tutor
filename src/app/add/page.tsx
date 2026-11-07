@@ -1,33 +1,21 @@
 "use client";
 
-import { ArrowLeftRight, Download, Languages, Loader2, Pencil, Plus } from "lucide-react";
+import { Download, Languages, Loader2, Pencil, Plus } from "lucide-react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { Suspense, useRef, useState, type FormEvent, type KeyboardEvent, type ReactNode } from "react";
+import { useRef, useState, type FormEvent, type KeyboardEvent, type ReactNode } from "react";
 import { toast } from "sonner";
 import { CardEditor } from "@/components/card-editor";
-import { NewDeckDialog } from "@/components/new-deck-dialog";
-import { PairSelect } from "@/components/pair-select";
 import { SpeakButton } from "@/components/speak-button";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useFormat } from "@/lib/format";
-import { useLocale, useT } from "@/lib/i18n";
-import { getPair, LANGUAGES, modelFor, pairId, type ModelChoice } from "@/lib/languages";
-import {
-  addCard,
-  createDeck,
-  saveFailed,
-  useHydrated,
-  usePref,
-  useStore,
-  type Deck,
-  type Flashcard,
-} from "@/lib/store";
+import { useT } from "@/lib/i18n";
+import { LANGUAGES, modelFor, pairId, type ModelChoice } from "@/lib/languages";
+import { myCards, OWN, sameWordIn, toStored } from "@/lib/mywords";
+import { addCard, saveFailed, useHydrated, usePref, useStore, type Flashcard, type LearnerLang } from "@/lib/store";
 import { useTranslator } from "@/lib/useTranslator";
 import { cn } from "@/lib/utils";
-import { targetFromCard, wordHref } from "@/lib/word/target";
+import { cardHref } from "@/lib/word/target";
 import { cards as cardMessages } from "@/messages/cards";
 import { common } from "@/messages/common";
 import { translate as messages } from "@/messages/translate";
@@ -37,9 +25,6 @@ import { translate as messages } from "@/messages/translate";
 const BIG_MODEL_KEY = "linguacards:engine";
 /** JSON list of models that have loaded at least once, so "downloads about N MB" isn't repeated. */
 const LOADED_KEY = "linguacards:loaded-models";
-/** JSON map of language pair → the deck new cards go to. */
-const DECK_KEY = "linguacards:decks";
-const NEW_DECK = "__new";
 const RECENT = 5;
 
 function parseJson<T>(raw: string, fallback: T): T {
@@ -50,28 +35,27 @@ function parseJson<T>(raw: string, fallback: T): T {
   }
 }
 
-export default function AddWordsPageWrapper() {
-  return (
-    <Suspense>
-      <AddWordsPage />
-    </Suspense>
-  );
+/** "/add/": English words with the learner's language, added to My words. */
+export default function AddWordsPage() {
+  const hydrated = useHydrated();
+  const { profile } = useStore();
+  // The setup gate makes sure there is a profile on this page.
+  if (!hydrated || !profile) return null;
+  // A new language starts a fresh form: nothing typed in one language carries over to the other.
+  return <AddWordsForm key={profile.lang} lang={profile.lang} />;
 }
 
-function AddWordsPage() {
-  const deckParam = useSearchParams().get("deck");
+function AddWordsForm({ lang }: { lang: LearnerLang }) {
   const t = useT(messages);
   const tc = useT(cardMessages);
   const tcommon = useT(common);
   const fmt = useFormat();
-  const [locale] = useLocale();
-  const hydrated = useHydrated();
-  const { decks, cards } = useStore();
+  const data = useStore();
   const { translate, status, progress, error, clearError } = useTranslator();
-  const [pairPref, setPairPref] = usePref("linguacards:pair", "en-fr");
   const [bigModelPref, setBigModelPref] = usePref(BIG_MODEL_KEY, "opus");
   const [loadedPref, setLoadedPref] = usePref(LOADED_KEY, "[]");
-  const [deckPref, setDeckPref] = usePref(DECK_KEY, "{}");
+  // The language of the word field; the translation is in the other one. Not saved: each visit starts on English.
+  const [typingIn, setTypingIn] = useState<string>("en");
   const [front, setFront] = useState("");
   const [back, setBack] = useState("");
   // A translation from the model is replaced when the word changes; one the user typed is kept.
@@ -79,69 +63,46 @@ function AddWordsPage() {
   const [live, setLive] = useState("");
   const [adding, setAdding] = useState(false);
   const [lastAddedId, setLastAddedId] = useState<string | null>(null);
-  const [newDeckOpen, setNewDeckOpen] = useState(false);
   const [editing, setEditing] = useState<Flashcard | null>(null);
-  // Bumped whenever the word, the pair or a typed translation changes, so a
+  // Bumped whenever the word, the direction or a typed translation changes, so a
   // translation that finishes afterwards is dropped instead of overwriting it.
   const runToken = useRef(0);
   const frontRef = useRef<HTMLInputElement>(null);
   const downloadRef = useRef<HTMLButtonElement>(null);
 
-  const pair = getPair(pairPref);
-  const src = LANGUAGES[pair.src];
-  const tgt = LANGUAGES[pair.tgt];
-  const smallModel = modelFor(pair, "opus");
-  const bigModel = modelFor(pair, "nllb");
+  // Words are always stored English first; only the direction of typing changes.
+  const pair = { src: "en", tgt: lang };
+  const from = typingIn === lang ? lang : "en";
+  const to = from === "en" ? lang : "en";
+  const direction = { id: pairId(from, to), src: from, tgt: to };
+  const src = LANGUAGES[from];
+  const tgt = LANGUAGES[to];
+  const smallModel = modelFor(direction, "opus");
+  const bigModel = modelFor(direction, "nllb");
   const choice = smallModel ?? (bigModelPref === "nllb" ? bigModel : null);
   const needsConsent = !choice;
   const busy = status === "loading" || status === "translating";
   const loadedModels = parseJson<string[]>(loadedPref, []);
 
-  // Cards for this pair go to a deck in either direction: after a swap, the
-  // learner's words stay together (stored the deck's way round).
-  const sameWay = decks.filter((d) => d.src === pair.src && d.tgt === pair.tgt);
-  const otherWay = decks.filter((d) => d.src === pair.tgt && d.tgt === pair.src);
-  const pairDecks = [...sameWay, ...otherWay];
-  const deckChoice = parseJson<Record<string, string>>(deckPref, {});
-  const deck = pairDecks.find((d) => d.id === deckChoice[pair.id]) ?? sameWay[0] ?? otherWay[0];
-  const recent = cards
-    .filter((c) => (c.src === pair.src && c.tgt === pair.tgt) || (c.src === pair.tgt && c.tgt === pair.src))
+  const recent = myCards(data)
+    .filter((c) => !c.pack)
     .sort((a, b) => b.createdAt - a.createdAt)
     .slice(0, RECENT);
-  // Name a new deck after the language being learned: the side that isn't the interface language.
-  const learning = pair.tgt === locale && pair.src !== locale ? pair.src : pair.tgt;
-  const defaultDeckName = t("defaultDeckName", { lang: fmt.languageNameInline(learning) });
-
-  // Opened from a list ("Translate a word for this list"): use its languages and save into it.
-  const [appliedDeck, setAppliedDeck] = useState<string | null>(null);
-  if (hydrated && deckParam && appliedDeck !== deckParam) {
-    setAppliedDeck(deckParam);
-    const d = decks.find((x) => x.id === deckParam);
-    if (d) {
-      if (d.src !== pair.src || d.tgt !== pair.tgt) setPairPref(pairId(d.src, d.tgt));
-      chooseDeck(d);
-    }
-  }
-
-  function chooseDeck(d: Deck) {
-    setDeckPref(JSON.stringify({ ...deckChoice, [pairId(d.src, d.tgt)]: d.id, [pairId(d.tgt, d.src)]: d.id }));
-  }
 
   function clearModelBack() {
     if (backFromModel) setBack("");
     setBackFromModel(false);
   }
 
-  function changePair(id: string) {
+  function chooseTypingIn(code: string) {
+    if (code === typingIn) return;
     runToken.current++;
-    setPairPref(id);
+    setTypingIn(code);
     clearModelBack();
     clearError();
-  }
-
-  function swap() {
-    changePair(pairId(pair.tgt, pair.src));
+    setLive("");
     // With only a word typed, keep it as the word: the learner is switching which language they type in.
+    // With both sides filled, they swap, so the word and its translation stay together.
     if (back.trim()) {
       setFront(back);
       setBack(front);
@@ -174,8 +135,22 @@ function AddWordsPage() {
     const f = front.trim();
     const b = back.trim();
     if (!f || !b || adding) return;
+    const { front: english, back: other } = toStored(from, f, b);
+    // The same word twice would be studied twice: say so, and keep what was typed.
+    if (sameWordIn(data, english, other)) {
+      toast.info(
+        t.rich("alreadyAdded", {
+          word: (
+            <bdi lang="en" dir="ltr">
+              {english}
+            </bdi>
+          ),
+        }),
+      );
+      return;
+    }
     setAdding(true);
-    // Clear first so the next word can be typed while the card is saved.
+    // Clear first so the next word can be typed while the word is saved.
     runToken.current++;
     setFront("");
     setBack("");
@@ -183,20 +158,10 @@ function AddWordsPage() {
     setLive("");
     clearError();
     try {
-      // The first card for a pair starts its own deck, so there is nothing to set up first.
-      const target = deck ?? createDeck(defaultDeckName, pair.src, pair.tgt);
-      if (!deck) chooseDeck(target);
-      const sameDirection = target.src === pair.src;
-      const card = await addCard(
-        target.id,
-        sameDirection ? f : b,
-        sameDirection ? b : f,
-        target.src,
-        target.tgt,
-      );
+      const card = await addCard(english, other, "en", lang, {});
       setLastAddedId(card.id);
       if (saveFailed()) toast.error(tc("saveFailed"));
-      else toast.success(t("added", { deck: target.name }));
+      else toast.success(t("added"));
     } catch {
       setFront((v) => v || f);
       setBack((v) => v || b);
@@ -207,7 +172,7 @@ function AddWordsPage() {
     }
   }
 
-  // Enter translates; once there is a translation, Enter adds the card.
+  // Enter translates; once there is a translation, Enter adds the word.
   function next() {
     if (back.trim()) add();
     // A 900 MB download needs a deliberate click, so Enter only points at the button.
@@ -262,16 +227,31 @@ function AddWordsPage() {
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div className="grid gap-1">
           <h1 className="font-display text-3xl font-semibold tracking-tight">{t("title")}</h1>
-          <p className="text-muted-foreground">{t("intro", { lang: fmt.languageNameInline(pair.src) })}</p>
+          <p className="text-muted-foreground">{t("intro", { lang: fmt.languageNameInline(from) })}</p>
           <Link href="/words" className="text-sm font-medium text-primary underline-offset-4 hover:underline">
             {t("starterLink")}
           </Link>
         </div>
-        <div className="flex w-full items-center gap-2 sm:w-auto">
-          <PairSelect value={pair.id} onChange={changePair} className="flex-1 sm:w-80" />
-          <Button variant="outline" size="icon" onClick={swap} aria-label={t("swap")} title={t("swap")}>
-            <ArrowLeftRight />
-          </Button>
+        <div role="group" aria-labelledby="typing-in" className="flex flex-wrap items-center gap-2">
+          <span id="typing-in" className="text-sm text-muted-foreground">
+            {t("typingIn")}
+          </span>
+          <div className="inline-flex rounded-lg bg-muted p-[3px]">
+            {(["en", lang] as const).map((code) => (
+              <Button
+                key={code}
+                type="button"
+                variant="ghost"
+                size="sm"
+                aria-pressed={typingIn === code}
+                onClick={() => chooseTypingIn(code)}
+                // Styled like a tab: the chosen language stands out, the other is muted.
+                className="text-foreground/60 hover:text-foreground aria-pressed:bg-background aria-pressed:text-foreground aria-pressed:shadow-sm dark:text-muted-foreground dark:aria-pressed:border-input dark:aria-pressed:bg-input/30 dark:aria-pressed:text-foreground"
+              >
+                {fmt.languageName(code)}
+              </Button>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -334,7 +314,7 @@ function AddWordsPage() {
             )}
             {needsConsent && !back && (
               <p id="big-download" className="mt-3 text-sm text-muted-foreground">
-                {t("bigDownload", { src: fmt.languageNameInline(pair.src), tgt: fmt.languageNameInline(pair.tgt) })}
+                {t("bigDownload", { src: fmt.languageNameInline(from), tgt: fmt.languageNameInline(to) })}
               </p>
             )}
             {error && (
@@ -353,60 +333,29 @@ function AddWordsPage() {
           {live}
         </p>
 
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-          {primary}
-          {hydrated && (
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              {pairDecks.length > 0 ? (
-                <>
-                  <span id="add-to">{t("addTo")}</span>
-                  <Select
-                    items={[
-                      ...pairDecks.map((d) => ({ value: d.id, label: d.name })),
-                      { value: NEW_DECK, label: t("newDeckOption") },
-                    ]}
-                    value={deck?.id ?? null}
-                    onValueChange={(v) => {
-                      if (v === NEW_DECK) setNewDeckOpen(true);
-                      else {
-                        const d = pairDecks.find((x) => x.id === v);
-                        if (d) chooseDeck(d);
-                      }
-                    }}
-                  >
-                    <SelectTrigger className="w-48" aria-labelledby="add-to">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {pairDecks.map((d) => (
-                        <SelectItem key={d.id} value={d.id}>
-                          {d.name}
-                        </SelectItem>
-                      ))}
-                      <SelectItem value={NEW_DECK}>{t("newDeckOption")}</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </>
-              ) : (
-                <span>{t("willCreate", { deck: defaultDeckName })}</span>
-              )}
-            </div>
-          )}
-        </div>
-        {!(needsConsent && !back) && <p className="text-xs text-muted-foreground">{t("hint")}</p>}
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">{primary}</div>
+        {!(needsConsent && !back) && (
+          <p className="text-xs text-muted-foreground">
+            {t.rich("hint", {
+              enter: (
+                <bdi lang="en" dir="ltr">
+                  Enter
+                </bdi>
+              ),
+            })}
+          </p>
+        )}
       </form>
 
-      {hydrated && recent.length > 0 && (
+      {recent.length > 0 && (
         <section aria-labelledby="recent-title" className="grid gap-3">
           <div className="flex flex-wrap items-baseline justify-between gap-3">
             <h2 id="recent-title" className="font-display text-xl font-semibold">
               {t("recentTitle")}
             </h2>
-            {deck && (
-              <Link href={`/study?deck=${deck.id}`} className={buttonVariants({ variant: "outline", size: "sm" })}>
-                {t("studyDeck", { deck: deck.name })}
-              </Link>
-            )}
+            <Link href={`/study/?list=${OWN}`} className={buttonVariants({ variant: "outline", size: "sm" })}>
+              {t("studyMine")}
+            </Link>
           </div>
           <ul className="divide-y rounded-xl border bg-card">
             {recent.map((c) => (
@@ -414,7 +363,7 @@ function AddWordsPage() {
                 key={c.id}
                 className={cn(
                   "flex items-center gap-3 px-4 py-2.5",
-                  // The one motion on the page: the card you just added lands in the list.
+                  // The one motion on the page: the word you just added lands in the list.
                   c.id === lastAddedId && "motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-top-2",
                 )}
               >
@@ -423,7 +372,7 @@ function AddWordsPage() {
                   <img src={c.image} alt="" className="size-9 shrink-0 rounded-md border object-cover" />
                 )}
                 <Link
-                  href={wordHref(targetFromCard(c))}
+                  href={cardHref(c)}
                   className="min-w-0 flex-1 truncate font-medium underline-offset-2 hover:underline"
                   dir="auto"
                   lang={c.src}
@@ -449,28 +398,19 @@ function AddWordsPage() {
         </section>
       )}
 
-      <NewDeckDialog
-        open={newDeckOpen}
-        onOpenChange={setNewDeckOpen}
-        defaultPair={pair.id}
-        onCreated={(d) => {
-          chooseDeck(d);
-          if (d.src !== pair.src || d.tgt !== pair.tgt) changePair(pairId(d.src, d.tgt));
-        }}
-      />
-      {editing && decks.some((d) => d.id === editing.deckId) && (
+      {editing && (
         <CardEditor
           open
           onOpenChange={(open) => !open && setEditing(null)}
-          deck={decks.find((d) => d.id === editing.deckId)!}
-          card={cards.find((c) => c.id === editing.id) ?? editing}
+          pair={pair}
+          card={data.cards.find((c) => c.id === editing.id) ?? editing}
         />
       )}
     </div>
   );
 }
 
-/** One side of the card being written: its language, a pronounce button and the field. */
+/** One side of the word being written: its language, a pronounce button and the field. */
 function Side({
   label,
   htmlFor,

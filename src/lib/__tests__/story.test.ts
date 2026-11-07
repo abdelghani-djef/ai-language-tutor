@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { highlightWords, wordForms } from "../story";
+import { newSrsState } from "../migrate";
+import { highlightWords, todaysCards, wordForms } from "../story";
+import type { Flashcard, Review } from "../store";
 
 describe("wordForms", () => {
   it("adds regular and irregular forms", () => {
@@ -57,5 +59,40 @@ describe("starter stories", () => {
       cards.forEach((c) => found.has(c.id) || missing.push(`${s.id}: ${c.word}`));
     }
     expect(missing).toEqual([]);
+  });
+});
+
+describe("todaysCards", () => {
+  const card = (id: string, p: Partial<Flashcard> = {}): Flashcard => ({
+    id,
+    front: id,
+    back: `${id}-fr`,
+    src: "en",
+    tgt: "fr",
+    srs: newSrsState(id, 0),
+    createdAt: 0,
+    status: "learn",
+    ...p,
+  });
+  const review = (cardId: string, day: string, reviewedAt: number): Review => ({ cardId, rating: 3, reviewedAt, day });
+  const today = "2026-11-07";
+
+  it("lists the words reviewed today, most recent first, one per English word", () => {
+    const cards = [card("cat"), card("dog"), card("cat2", { front: "Cat" }), card("old")];
+    const reviews = [
+      review("old", "2026-11-06", 1),
+      review("cat", today, 2),
+      review("dog", today, 3),
+      review("cat2", today, 4),
+      review("cat", today, 5),
+    ];
+    expect(todaysCards(cards, reviews, today).map((c) => c.id)).toEqual(["cat", "dog"]);
+  });
+
+  it("keeps only the given cards and words with an English side", () => {
+    const cards = [card("cat"), card("perro", { src: "es", tgt: "de", back: "Hund" })];
+    const reviews = [review("cat", today, 1), review("perro", today, 2), review("gone", today, 3)];
+    expect(todaysCards(cards, reviews, today).map((c) => c.id)).toEqual(["cat"]);
+    expect(todaysCards([], reviews, today)).toEqual([]);
   });
 });

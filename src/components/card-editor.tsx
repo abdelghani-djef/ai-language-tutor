@@ -21,7 +21,7 @@ import { useFormat } from "@/lib/format";
 import { useT } from "@/lib/i18n";
 import { ImageError, toThumbnail } from "@/lib/image";
 import { LANGUAGES } from "@/lib/languages";
-import { addCard, saveFailed, updateCard, type Deck, type Flashcard } from "@/lib/store";
+import { addCard, saveFailed, updateCard, type Flashcard } from "@/lib/store";
 import { cards } from "@/messages/cards";
 
 interface Initial {
@@ -54,13 +54,13 @@ function draftOf(card?: Flashcard, initial?: Initial): Draft {
 }
 
 /**
- * Edits every part of a card, or creates a new one in `deck` when `card` is
- * left out (starting from `initial`, e.g. what was typed in the quick-add form).
+ * Edits every part of a card, or creates a new one in the language `pair` when
+ * `card` is left out (starting from `initial`, e.g. what was typed in the quick-add form).
  */
 export function CardEditor({
   open,
   onOpenChange,
-  deck,
+  pair,
   card,
   initial,
   suggestions,
@@ -68,7 +68,8 @@ export function CardEditor({
 }: {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  deck: Deck;
+  /** The languages of a new word: `src` on the front, `tgt` on the back. */
+  pair: { src: string; tgt: string };
   card?: Flashcard;
   initial?: Initial;
   suggestions?: string[];
@@ -86,8 +87,8 @@ export function CardEditor({
     if (open) setDraft(draftOf(card, initial));
   }
 
-  const src = card?.src ?? deck.src;
-  const tgt = card?.tgt ?? deck.tgt;
+  const src = card?.src ?? pair.src;
+  const tgt = card?.tgt ?? pair.tgt;
   const patch = (p: Partial<Draft>) => setDraft((d) => ({ ...d, ...p }));
 
   async function takePicture(file: Blob) {
@@ -118,7 +119,7 @@ export function CardEditor({
     setSaving(true);
     try {
       if (card) updateCard(card.id, draft.front, draft.back, details);
-      else await addCard(deck.id, draft.front, draft.back, deck.src, deck.tgt, details);
+      else await addCard(draft.front, draft.back, pair.src, pair.tgt, details);
       if (saveFailed()) toast.error(t("saveFailed"));
       else toast.success(t(card ? "saved" : "added"));
       onOpenChange(false);
@@ -147,7 +148,16 @@ export function CardEditor({
                 lang={src}
                 onChange={(e) => patch({ front: e.target.value })}
                 required
+                // A ready-made word is known by its list and English word: changing it would unsort the word.
+                readOnly={!!card?.pack}
+                className={card?.pack ? "bg-muted" : undefined}
+                aria-describedby={card?.pack ? "card-front-hint" : undefined}
               />
+              {card?.pack && (
+                <p id="card-front-hint" className="text-xs text-muted-foreground">
+                  {t("packWordFixed")}
+                </p>
+              )}
             </div>
             <div className="grid gap-1.5">
               <Label htmlFor="card-back">{t("back", { lang: fmt.languageName(tgt) })}</Label>

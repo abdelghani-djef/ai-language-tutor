@@ -1,26 +1,37 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
+import { useState, type ReactNode } from "react";
 import { BadgesCard } from "@/components/badges-card";
 import { GoalCard } from "@/components/goal-card";
 import { PlanCard } from "@/components/plan-card";
 import { Heatmap } from "@/components/heatmap";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { YouCard } from "@/components/you-card";
+import { STARTER_PACKS } from "@/data/starter-packs";
 import { useFormat } from "@/lib/format";
-import { useT } from "@/lib/i18n";
+import { useLocale, useT } from "@/lib/i18n";
+import { knownWords, levelOf, myCards, packProgress, sortedPacks, type LevelId } from "@/lib/mywords";
 import { isLearned, Rating, State } from "@/lib/srs";
 import { countByDay, dayKey, studyStreak, totalStudyDays } from "@/lib/stats";
+import { useStarterWords } from "@/lib/starter-words";
 import { dueCount, useHydrated, useStore } from "@/lib/store";
+import { levelName, sort as sortMessages } from "@/messages/sort";
 import { stats } from "@/messages/stats";
 
 export default function StatsPage() {
   const store = useStore();
-  const { decks, cards, reviews } = store;
+  const { reviews } = store;
   const hydrated = useHydrated();
   const [now] = useState(Date.now);
   const t = useT(stats);
+  const ts = useT(sortMessages);
   const fmt = useFormat();
-  if (!hydrated) return null;
+  const [locale] = useLocale();
+  // The lists' words: Already know, the level and each list's progress count them.
+  const words = useStarterWords();
+  if (!hydrated || !words) return null;
 
   const days = reviews.map((r) => r.day);
   const today = dayKey(new Date());
@@ -31,14 +42,30 @@ export default function StatsPage() {
     (r) => r.reviewedAt >= monthAgo && !r.intro && (r.prevState === undefined || r.prevState === State.Review),
   );
   const recalled = recent.filter((r) => r.rating !== Rating.Again).length;
-  const learned = cards.filter((c) => isLearned(c.srs)).length;
+  // My words in the learner's current language, like the rest of the page (badges still count every word).
+  const mine = myCards(store);
+  const learned = mine.filter((c) => isLearned(c.srs)).length;
 
   const streak = studyStreak(days);
   const studiedDays = totalStudyDays(days);
   const due = dueCount(store, today);
   const reviewedToday = days.filter((d) => d === today).length;
+
+  // My words, in the learner's current language only.
+  const learnCount = mine.filter((c) => c.status === "learn").length;
+  const knownCount = knownWords(store, words).length;
+  const level = levelOf(store, words);
+  const levelLabel = (id: LevelId): ReactNode =>
+    // A1–B2 are Latin codes: their own left-to-right run inside Arabic text.
+    id === "starter" ? ts(levelName[id]) : <bdi dir="ltr">{ts(levelName[id])}</bdi>;
+  // A line for each ready-made list with words sorted in this language, in the lists' order.
+  const sortedIds = sortedPacks(store, words);
+  const packs = STARTER_PACKS.filter((p) => sortedIds.has(p.id)).map((pack) => ({
+    pack,
+    p: packProgress(store, pack.id, words),
+  }));
   const tiles = [
-    { label: t("cardsLearned"), value: fmt.number(learned), hint: t("cardsLearnedHint", { count: cards.length }) },
+    { label: t("cardsLearned"), value: fmt.number(learned), hint: t("cardsLearnedHint", { count: mine.length }) },
     { label: t("currentStreak"), value: fmt.number(streak), hint: t("currentStreakHint", { count: streak }) },
     // A running total next to the streak: progress that a missed day can't take away.
     { label: t("daysStudied"), value: fmt.number(studiedDays), hint: t("daysStudiedHint", { count: studiedDays }) },
@@ -90,38 +117,76 @@ export default function StatsPage() {
 
       <BadgesCard />
 
-      {decks.length > 0 && (
+      {store.profile && (
         <Card>
           <CardHeader>
-            <CardTitle>{t("byDeck")}</CardTitle>
+            <CardTitle>{t("myWordsTitle")}</CardTitle>
+            <CardDescription>
+              {t("myWordsDescription", { language: fmt.languageNameInline(store.profile.lang) })}
+            </CardDescription>
           </CardHeader>
-          <CardContent>
-            <ul className="grid gap-3">
-              {decks.map((d) => {
-                const dc = cards.filter((c) => c.deckId === d.id);
-                const l = dc.filter((c) => isLearned(c.srs)).length;
-                const pct = dc.length ? (l / dc.length) * 100 : 0;
-                return (
-                  <li key={d.id} className="grid gap-1">
-                    <div className="flex justify-between text-sm">
-                      <span>
-                        <span className="font-medium">{d.name}</span>{" "}
-                        <span className="text-muted-foreground">· {fmt.pairLabel(d)}</span>
-                      </span>
-                      <span className="text-muted-foreground tabular-nums">
-                        {t("deckLearned", { count: l, total: dc.length })}
-                      </span>
-                    </div>
-                    <div className="h-2 overflow-hidden rounded-full bg-muted">
-                      <div className="h-full rounded-full bg-primary" style={{ width: `${pct}%` }} />
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
+          <CardContent className="grid gap-5">
+            <dl className="grid grid-cols-3 gap-2 sm:gap-3">
+              {[
+                { label: t("shouldLearn"), value: fmt.number(learnCount) },
+                { label: t("alreadyKnow"), value: fmt.number(knownCount) },
+                { label: t("level"), value: levelLabel(level.id) },
+              ].map((item) => (
+                <div key={item.label} className="grid min-w-0 content-start gap-0.5 rounded-xl border p-2.5 sm:p-3">
+                  <dt className="text-sm text-muted-foreground">{item.label}</dt>
+                  <dd className="font-display text-xl font-semibold break-words tabular-nums sm:text-2xl">{item.value}</dd>
+                </div>
+              ))}
+            </dl>
+
+            {packs.length > 0 && (
+              <section className="grid gap-3" aria-labelledby="stats-by-list">
+                <p id="stats-by-list" className="text-sm font-medium">
+                  {t("byList")}
+                </p>
+                <ul className="grid gap-4">
+                  {packs.map(({ pack, p }) => {
+                    const sorted = p.known + p.learn;
+                    const pct = (n: number) => (p.total ? (n / p.total) * 100 : 0);
+                    return (
+                      <li key={pack.id} className="grid gap-1">
+                        <div className="flex flex-wrap justify-between gap-x-3 text-sm">
+                          <span className="font-medium">
+                            <span aria-hidden>{pack.emoji}</span> {pack.title[locale]}
+                          </span>
+                          <span className="text-muted-foreground tabular-nums">
+                            {t("listSorted", { sorted: fmt.number(sorted), total: fmt.number(p.total) })}
+                          </span>
+                        </div>
+                        {/* Already know, then Should learn; what is left to sort stays empty. */}
+                        <div className="flex h-2 overflow-hidden rounded-full bg-muted" aria-hidden>
+                          <div className="h-full bg-primary" style={{ width: `${pct(p.known)}%` }} />
+                          <div className="h-full bg-primary/40" style={{ width: `${pct(p.learn)}%` }} />
+                        </div>
+                        <p className="text-xs text-muted-foreground tabular-nums">
+                          {t("listParts", {
+                            known: fmt.number(p.known),
+                            learn: fmt.number(p.learn),
+                            left: fmt.number(p.left),
+                          })}
+                        </p>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </section>
+            )}
+
+            <div>
+              <Link href="/my-words/" className={buttonVariants({ variant: "outline" })}>
+                {t("openMyWords")}
+              </Link>
+            </div>
           </CardContent>
         </Card>
       )}
+
+      <YouCard />
     </div>
   );
 }

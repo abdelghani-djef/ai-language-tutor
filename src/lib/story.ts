@@ -149,8 +149,8 @@ export function metCards(cards: Flashcard[]): Flashcard[] {
 }
 
 /** Cards studied or first seen today, most recent first, one per English word. */
-export function todaysCards(cards: Flashcard[], reviews: Review[], today: string, deckId?: string | null): Flashcard[] {
-  const byId = new Map(cards.filter((c) => (!deckId || c.deckId === deckId) && englishWord(c)).map((c) => [c.id, c]));
+export function todaysCards(cards: Flashcard[], reviews: Review[], today: string): Flashcard[] {
+  const byId = new Map(cards.filter((c) => englishWord(c)).map((c) => [c.id, c]));
   const out: Flashcard[] = [];
   const seen = new Set<string>();
   for (const r of [...reviews].reverse()) {

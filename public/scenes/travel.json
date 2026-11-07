@@ -1,6 +1,6 @@
 {
   "pack": "travel",
-  "complete": true,
+  "complete": false,
   "words": {
     "car": {
       "scenes": [

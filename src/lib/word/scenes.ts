@@ -3,7 +3,7 @@
  * the ready-made lists. They are not in the app bundle: one file per list, `public/scenes/<list>.json`,
  * fetched when a word page opens, plus the shared places in `public/scenes/_places.json` (underscore: no list id starts with one).
  */
-import { STARTER_PACKS } from "../../data/starter-packs";
+import { packWords, STARTER_PACKS, type StarterWords } from "../../data/starter-packs";
 import { highlightWords } from "../story";
 import { fetchJson } from "./fetch";
 import type { Picture } from "./sources";
@@ -17,10 +17,13 @@ export interface SceneLine { who: Tri; text: Tri }
 export interface Scene { place: string; lines: SceneLine[] }
 /** Where scenes happen ("🥖 At the bakery"), shared by every scene set there. */
 export interface Place { emoji: string; label: Tri; picture?: Picture }
-/** One list's file. `words` is keyed by the English word exactly as in STARTER_PACKS. */
+/** One list's file. `words` is keyed by the English word exactly as in the list's rows (starter-words.ts). */
 export interface PackScenes {
   pack: string;
-  /** True once every word of the list has its scenes; the checks then require all of them. */
+  /**
+   * True when every word of the list has its scenes; the checks then require all of them. A list
+   * that grew after its scenes were written says false: its newer words load sentences and pictures live.
+   */
   complete?: boolean;
   words: Record<string, { scenes: Scene[]; pictures: Picture[] }>;
 }
@@ -30,6 +33,12 @@ const MIN_LINES = 2;
 const MAX_LINES = 4;
 /** Scene files change only with an app release; a day keeps them fresh enough. */
 const MAX_AGE_DAYS = 1;
+/**
+ * Part of every scenes URL, so a release that adds words or lists asks for new files instead of the
+ * cached ones (the cache is keyed by URL). The number of ready-made words changes whenever a list grows.
+ * Counted from the lists' index, so it is there before (and without) their words.
+ */
+export const SCENES_VERSION = STARTER_PACKS.reduce((n, p) => n + p.size, 0);
 
 type Obj = Record<string, unknown>;
 const isObj = (x: unknown): x is Obj => typeof x === "object" && x !== null && !Array.isArray(x);
@@ -68,13 +77,14 @@ function sceneProblems(word: string, n: number, scene: unknown, places: Record<s
  * The content checks for a list's scenes file: problems as "word: what is wrong", [] when valid.
  * Every word belongs to the list, has 4 scenes in 4 different known places, each with 2–4 lines,
  * every en/fr/ar text filled and at least one English line using the word. Every word of the list
- * must be there only once the file says `complete: true`.
+ * must be there only once the file says `complete: true`. `words`: the lists' words (starter-words.ts).
  */
-export function validatePackScenes(json: unknown, places: Record<string, Place>): string[] {
+export function validatePackScenes(json: unknown, places: Record<string, Place>, words: StarterWords): string[] {
   if (!isObj(json) || typeof json.pack !== "string" || !isObj(json.words)) return ["not a scenes file"];
   const list = STARTER_PACKS.find((p) => p.id === json.pack);
-  if (!list) return [`${JSON.stringify(json.pack)} is not a ready-made list`];
-  const listWords = list.words.map((row) => row[0]);
+  const rows = list && packWords(words, list.id);
+  if (!list || !rows) return [`${JSON.stringify(json.pack)} is not a ready-made list`];
+  const listWords = rows.map((row) => row[0]);
   const out: string[] = [];
 
   for (const [word, entry] of Object.entries(json.words)) {
@@ -117,12 +127,12 @@ export function wordScenes(pack: PackScenes, word: string): PackScenes["words"][
  * or the file is not one; rejects when it couldn't be loaded.
  */
 export async function loadPackScenes(pack: string): Promise<PackScenes | null> {
-  const json = await fetchJson<unknown>(`/scenes/${encodeURIComponent(pack)}.json`, MAX_AGE_DAYS);
+  const json = await fetchJson<unknown>(`/scenes/${encodeURIComponent(pack)}.json?v=${SCENES_VERSION}`, MAX_AGE_DAYS);
   return isObj(json) && typeof json.pack === "string" && isObj(json.words) ? (json as unknown as PackScenes) : null;
 }
 
 /** Every place scenes happen in, keyed by id. None when there is no places file (404); rejects when it couldn't be loaded. */
 export async function loadPlaces(): Promise<Record<string, Place>> {
-  const json = await fetchJson<unknown>("/scenes/_places.json", MAX_AGE_DAYS);
+  const json = await fetchJson<unknown>(`/scenes/_places.json?v=${SCENES_VERSION}`, MAX_AGE_DAYS);
   return isObj(json) ? (json as Record<string, Place>) : {};
 }

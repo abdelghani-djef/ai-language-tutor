@@ -16,9 +16,9 @@ import { cn } from "@/lib/utils";
 import { common } from "@/messages/common";
 import { rewards } from "@/messages/rewards";
 
-// "My words" covers every page about your lists: the lists, one list, ready-made lists, adding words and a word's page.
+// "My words" covers every page about your words: ready-made lists, sorting, adding words, a word's page and the old list pages.
 const LINKS = [
-  { href: "/decks", label: "navDecks", also: ["/deck", "/words", "/add", "/word"] },
+  { href: "/my-words", label: "navDecks", also: ["/words", "/sort", "/add", "/word", "/decks", "/deck"] },
   { href: "/study", label: "navStudy" },
   { href: "/story", label: "navStories" },
   { href: "/stats", label: "navStats" },

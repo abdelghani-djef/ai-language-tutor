@@ -1,6 +1,6 @@
 {
   "pack": "places",
-  "complete": true,
+  "complete": false,
   "words": {
     "city": {
       "scenes": [
@@ -123,7 +123,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Skyline_of_Skyscrapers_in_Taipei_Xinyi_District.jpg/330px-Skyline_of_Skyscrapers_in_Taipei_Xinyi_District.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Skyline_of_Skyscrapers_in_Taipei_Xinyi_District.jpg/330px-Skyline_of_Skyscrapers_in_Taipei_Xinyi_District.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:Skyline_of_Skyscrapers_in_Taipei_Xinyi_District.jpg",
           "author": "MiNe",
           "licence": "CC BY 2.0",
@@ -252,7 +252,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/The_High_Street%2C_Newport_Pagnell_-_geograph.org.uk_-_368877.jpg/330px-The_High_Street%2C_Newport_Pagnell_-_geograph.org.uk_-_368877.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/The_High_Street%2C_Newport_Pagnell_-_geograph.org.uk_-_368877.jpg/330px-The_High_Street%2C_Newport_Pagnell_-_geograph.org.uk_-_368877.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:The_High_Street,_Newport_Pagnell_-_geograph.org.uk_-_368877.jpg",
           "author": "Richard Schmidt",
           "licence": "CC BY-SA 2.0",
@@ -393,7 +393,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Houses_and_parked_cars%2C_Culm_Lea_-_geograph.org.uk_-_5585915.jpg/330px-Houses_and_parked_cars%2C_Culm_Lea_-_geograph.org.uk_-_5585915.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Houses_and_parked_cars%2C_Culm_Lea_-_geograph.org.uk_-_5585915.jpg/330px-Houses_and_parked_cars%2C_Culm_Lea_-_geograph.org.uk_-_5585915.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:Houses_and_parked_cars,_Culm_Lea_-_geograph.org.uk_-_5585915.jpg",
           "author": "Rob Purvis",
           "licence": "CC BY-SA 2.0",
@@ -643,7 +643,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Shaded_asphalt_road_with_dense_tree_canopy_in_Bangladesh_02.jpg/330px-Shaded_asphalt_road_with_dense_tree_canopy_in_Bangladesh_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Shaded_asphalt_road_with_dense_tree_canopy_in_Bangladesh_02.jpg/330px-Shaded_asphalt_road_with_dense_tree_canopy_in_Bangladesh_02.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:Shaded_asphalt_road_with_dense_tree_canopy_in_Bangladesh_02.jpg",
           "author": "A S M Jobaer",
           "licence": "CC BY-SA 4.0",
@@ -772,7 +772,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Small_countryside_village%2C_Lishui%2C_China.jpg/330px-Small_countryside_village%2C_Lishui%2C_China.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Small_countryside_village%2C_Lishui%2C_China.jpg/330px-Small_countryside_village%2C_Lishui%2C_China.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:Small_countryside_village,_Lishui,_China.jpg",
           "author": "Lishuilynn",
           "licence": "CC BY-SA 4.0",
@@ -925,7 +925,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Fruit_and_vegetable_stalls%2C_Surrey_Street_Market%2C_Croydon_-_geograph.org.uk_-_6286398.jpg/330px-Fruit_and_vegetable_stalls%2C_Surrey_Street_Market%2C_Croydon_-_geograph.org.uk_-_6286398.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Fruit_and_vegetable_stalls%2C_Surrey_Street_Market%2C_Croydon_-_geograph.org.uk_-_6286398.jpg/330px-Fruit_and_vegetable_stalls%2C_Surrey_Street_Market%2C_Croydon_-_geograph.org.uk_-_6286398.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:Fruit_and_vegetable_stalls,_Surrey_Street_Market,_Croydon_-_geograph.org.uk_-_6286398.jpg",
           "author": "Robin Webster",
           "licence": "CC BY-SA 2.0",
@@ -1078,7 +1078,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/A%26E_ambulance_entrance%2C_RCH_Treliske%2C_Truro%2C_Cornwall_-_July_2022.jpg/330px-A%26E_ambulance_entrance%2C_RCH_Treliske%2C_Truro%2C_Cornwall_-_July_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/A%26E_ambulance_entrance%2C_RCH_Treliske%2C_Truro%2C_Cornwall_-_July_2022.jpg/330px-A%26E_ambulance_entrance%2C_RCH_Treliske%2C_Truro%2C_Cornwall_-_July_2022.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:A%26E_ambulance_entrance,_RCH_Treliske,_Truro,_Cornwall_-_July_2022.jpg",
           "author": "Mutney",
           "licence": "CC BY-SA 4.0",
@@ -1231,7 +1231,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Main_facade_of_First_National_Bank_Building_in_Portland_%282018%29.jpg/330px-Main_facade_of_First_National_Bank_Building_in_Portland_%282018%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Main_facade_of_First_National_Bank_Building_in_Portland_%282018%29.jpg/330px-Main_facade_of_First_National_Bank_Building_in_Portland_%282018%29.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:Main_facade_of_First_National_Bank_Building_in_Portland_(2018).jpg",
           "author": "Steve Morgan",
           "licence": "CC BY-SA 4.0",
@@ -1360,7 +1360,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Trees_and_Lawn_in_Washington_Square_Park._Part_of_the_the_WSP_Eco_Projects_Phenology_program.jpg/330px-Trees_and_Lawn_in_Washington_Square_Park._Part_of_the_the_WSP_Eco_Projects_Phenology_program.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Trees_and_Lawn_in_Washington_Square_Park._Part_of_the_the_WSP_Eco_Projects_Phenology_program.jpg/330px-Trees_and_Lawn_in_Washington_Square_Park._Part_of_the_the_WSP_Eco_Projects_Phenology_program.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:Trees_and_Lawn_in_Washington_Square_Park._Part_of_the_the_WSP_Eco_Projects_Phenology_program.jpg",
           "author": "LocalNatureLab",
           "licence": "CC BY 4.0",
@@ -1489,7 +1489,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Family_eating_at_Pho_Hung_Vietnamese_restaurant_in_Toronto_Chinatown.jpg/330px-Family_eating_at_Pho_Hung_Vietnamese_restaurant_in_Toronto_Chinatown.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Family_eating_at_Pho_Hung_Vietnamese_restaurant_in_Toronto_Chinatown.jpg/330px-Family_eating_at_Pho_Hung_Vietnamese_restaurant_in_Toronto_Chinatown.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:Family_eating_at_Pho_Hung_Vietnamese_restaurant_in_Toronto_Chinatown.jpg",
           "author": "atallasianguy",
           "licence": "CC BY-SA 4.0",
@@ -1642,7 +1642,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Tall_office_building_at_Leith_-_geograph.org.uk_-_3729795.jpg/330px-Tall_office_building_at_Leith_-_geograph.org.uk_-_3729795.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Tall_office_building_at_Leith_-_geograph.org.uk_-_3729795.jpg/330px-Tall_office_building_at_Leith_-_geograph.org.uk_-_3729795.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:Tall_office_building_at_Leith_-_geograph.org.uk_-_3729795.jpg",
           "author": "Bill Boaden",
           "licence": "CC BY-SA 2.0",
@@ -1783,7 +1783,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Ainderby-Steeple-Parish-Church.jpg/330px-Ainderby-Steeple-Parish-Church.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Ainderby-Steeple-Parish-Church.jpg/330px-Ainderby-Steeple-Parish-Church.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:Ainderby-Steeple-Parish-Church.jpg",
           "author": "Kreuzschnabel",
           "licence": "CC BY-SA 3.0",
@@ -1924,7 +1924,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Shinshiro_City_Public_Library_bookshelves_ac_%281%29.jpg/330px-Shinshiro_City_Public_Library_bookshelves_ac_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Shinshiro_City_Public_Library_bookshelves_ac_%281%29.jpg/330px-Shinshiro_City_Public_Library_bookshelves_ac_%281%29.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:Shinshiro_City_Public_Library_bookshelves_ac_(1).jpg",
           "author": "Asturio Cantabrio",
           "licence": "CC BY-SA 4.0",
@@ -2222,7 +2222,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/British_Virgin_Islands_%E2%80%94_Jost_van_Dyke_%E2%80%94_Police_station_with_Patrol_car_Toyota_RAV4_%28XA30%2C_2008%29_2015-02-27_Mattes.JPG/330px-British_Virgin_Islands_%E2%80%94_Jost_van_Dyke_%E2%80%94_Police_station_with_Patrol_car_Toyota_RAV4_%28XA30%2C_2008%29_2015-02-27_Mattes.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/British_Virgin_Islands_%E2%80%94_Jost_van_Dyke_%E2%80%94_Police_station_with_Patrol_car_Toyota_RAV4_%28XA30%2C_2008%29_2015-02-27_Mattes.JPG/330px-British_Virgin_Islands_%E2%80%94_Jost_van_Dyke_%E2%80%94_Police_station_with_Patrol_car_Toyota_RAV4_%28XA30%2C_2008%29_2015-02-27_Mattes.JPG",
           "page": "https://commons.wikimedia.org/wiki/File:British_Virgin_Islands_%E2%80%94_Jost_van_Dyke_%E2%80%94_Police_station_with_Patrol_car_Toyota_RAV4_(XA30,_2008)_2015-02-27_Mattes.JPG",
           "author": "Mattes",
           "licence": "CC BY 2.0 de",
@@ -2363,7 +2363,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/A_stone_arch_bridge_in_L%C3%A6rdalen%2C_2013_June.jpg/330px-A_stone_arch_bridge_in_L%C3%A6rdalen%2C_2013_June.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/A_stone_arch_bridge_in_L%C3%A6rdalen%2C_2013_June.jpg/330px-A_stone_arch_bridge_in_L%C3%A6rdalen%2C_2013_June.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:A_stone_arch_bridge_in_L%C3%A6rdalen,_2013_June.jpg",
           "author": "Ximonic (Simo Räsänen)",
           "licence": "CC BY-SA 3.0",
@@ -2504,7 +2504,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Fountain_at_the_Town_Hall_square_%288123188170%29.jpg/330px-Fountain_at_the_Town_Hall_square_%288123188170%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Fountain_at_the_Town_Hall_square_%288123188170%29.jpg/330px-Fountain_at_the_Town_Hall_square_%288123188170%29.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:Fountain_at_the_Town_Hall_square_(8123188170).jpg",
           "author": "Guillaume Speurt",
           "licence": "CC BY-SA 2.0",
@@ -2754,7 +2754,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Pedestrian_precinct%2C_Coventry_city_centre_-_geograph.org.uk_-_3944911.jpg/330px-Pedestrian_precinct%2C_Coventry_city_centre_-_geograph.org.uk_-_3944911.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Pedestrian_precinct%2C_Coventry_city_centre_-_geograph.org.uk_-_3944911.jpg/330px-Pedestrian_precinct%2C_Coventry_city_centre_-_geograph.org.uk_-_3944911.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:Pedestrian_precinct,_Coventry_city_centre_-_geograph.org.uk_-_3944911.jpg",
           "author": "David Martin",
           "licence": "CC BY-SA 2.0",
@@ -2907,7 +2907,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Duck-Billed_Dinosaur_skeletons_at_American_Museum_of_Natural_History.jpg/330px-Duck-Billed_Dinosaur_skeletons_at_American_Museum_of_Natural_History.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Duck-Billed_Dinosaur_skeletons_at_American_Museum_of_Natural_History.jpg/330px-Duck-Billed_Dinosaur_skeletons_at_American_Museum_of_Natural_History.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:Duck-Billed_Dinosaur_skeletons_at_American_Museum_of_Natural_History.jpg",
           "author": "Vicpeters",
           "licence": "CC BY 4.0",
@@ -3036,7 +3036,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/4DX_seats_in_cinema_%28motion_and_environmental_effects_synced_with_the_on-screen_action%29_bench_rows_in_a_movie_theater_hall_Kinostoler_kinosal_Kilden_kino_T%C3%B8nsberg%2C_Norway_2023_IMG_7849.jpg/330px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/4DX_seats_in_cinema_%28motion_and_environmental_effects_synced_with_the_on-screen_action%29_bench_rows_in_a_movie_theater_hall_Kinostoler_kinosal_Kilden_kino_T%C3%B8nsberg%2C_Norway_2023_IMG_7849.jpg/330px-thumbnail.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:4DX_seats_in_cinema_(motion_and_environmental_effects_synced_with_the_on-screen_action)_bench_rows_in_a_movie_theater_hall_Kinostoler_kinosal_Kilden_kino_T%C3%B8nsberg,_Norway_2023_IMG_7849.jpg",
           "author": "Wolfmann",
           "licence": "CC BY-SA 4.0",
@@ -3189,7 +3189,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/His_Majesty%27s_Theatre_-_Dome_and_Curtain_-_ROBERT_GARVEY.jpg/330px-His_Majesty%27s_Theatre_-_Dome_and_Curtain_-_ROBERT_GARVEY.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/His_Majesty%27s_Theatre_-_Dome_and_Curtain_-_ROBERT_GARVEY.jpg/330px-His_Majesty%27s_Theatre_-_Dome_and_Curtain_-_ROBERT_GARVEY.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:His_Majesty%27s_Theatre_-_Dome_and_Curtain_-_ROBERT_GARVEY.jpg",
           "author": "Perth Theatre Trust",
           "licence": "CC BY-SA 4.0",
@@ -3318,7 +3318,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Public_Swimming_Pool_in_Melbourne_VIC_Australia.jpg/330px-Public_Swimming_Pool_in_Melbourne_VIC_Australia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Public_Swimming_Pool_in_Melbourne_VIC_Australia.jpg/330px-Public_Swimming_Pool_in_Melbourne_VIC_Australia.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:Public_Swimming_Pool_in_Melbourne_VIC_Australia.jpg",
           "author": "KeepActive Australia",
           "licence": "CC BY-SA 4.0",
@@ -3459,7 +3459,7 @@
       ],
       "pictures": [
         {
-          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Town_hall_of_Aosta_%283%29.jpg/330px-Town_hall_of_Aosta_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Town_hall_of_Aosta_%283%29.jpg/330px-Town_hall_of_Aosta_%283%29.jpg",
           "page": "https://commons.wikimedia.org/wiki/File:Town_hall_of_Aosta_(3).jpg",
           "author": "Krzysztof Golik",
           "licence": "CC BY-SA 4.0",

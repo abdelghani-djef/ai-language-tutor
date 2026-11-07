@@ -1,6 +1,6 @@
 {
   "pack": "clothes",
-  "complete": true,
+  "complete": false,
   "words": {
     "clothes": {
       "scenes": [

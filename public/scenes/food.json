@@ -1,6 +1,6 @@
 {
   "pack": "food",
-  "complete": true,
+  "complete": false,
   "words": {
     "water": {
       "scenes": [
@@ -24,7 +24,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Water_pouring_from_a_faucet_into_a_clear_glass_cup._%2815054813052%29.jpg/330px-Water_pouring_from_a_faucet_into_a_clear_glass_cup._%2815054813052%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Water_pouring_from_a_faucet_into_a_clear_glass_cup._(15054813052).jpg", "author": "USEPA Environmental-Protection-Agency", "licence": "Public domain", "caption": "Water from a tap filling a glass"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Water_pouring_from_a_faucet_into_a_clear_glass_cup._%2815054813052%29.jpg/330px-Water_pouring_from_a_faucet_into_a_clear_glass_cup._%2815054813052%29.jpg", "page": "https://commons.wikimedia.org/wiki/File:Water_pouring_from_a_faucet_into_a_clear_glass_cup._(15054813052).jpg", "author": "USEPA Environmental-Protection-Agency", "licence": "Public domain", "caption": "Water from a tap filling a glass"}
       ]
     },
     "food": {
@@ -47,7 +47,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/330px-Good_Food_Display_-_NCI_Visuals_Online.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Good_Food_Display_-_NCI_Visuals_Online.jpg", "author": "Unknown author (NCI)", "licence": "Public domain", "caption": "Lots of different food"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/330px-Good_Food_Display_-_NCI_Visuals_Online.jpg", "page": "https://commons.wikimedia.org/wiki/File:Good_Food_Display_-_NCI_Visuals_Online.jpg", "author": "Unknown author (NCI)", "licence": "Public domain", "caption": "Lots of different food"}
       ]
     },
     "bread": {
@@ -70,7 +70,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Fresh_made_bread_05.jpg/330px-Fresh_made_bread_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Fresh_made_bread_05.jpg", "author": "FranHogan", "licence": "CC BY-SA 4.0", "caption": "A loaf of bread and slices"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Fresh_made_bread_05.jpg/330px-Fresh_made_bread_05.jpg", "page": "https://commons.wikimedia.org/wiki/File:Fresh_made_bread_05.jpg", "author": "FranHogan", "licence": "CC BY-SA 4.0", "caption": "A loaf of bread and slices"}
       ]
     },
     "milk": {
@@ -95,7 +95,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Glass_of_Milk_%2833657535532%29.jpg/330px-Glass_of_Milk_%2833657535532%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Glass_of_Milk_(33657535532).jpg", "author": "NIAID", "licence": "CC BY 2.0", "caption": "A glass of milk"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Glass_of_Milk_%2833657535532%29.jpg/330px-Glass_of_Milk_%2833657535532%29.jpg", "page": "https://commons.wikimedia.org/wiki/File:Glass_of_Milk_(33657535532).jpg", "author": "NIAID", "licence": "CC BY 2.0", "caption": "A glass of milk"}
       ]
     },
     "breakfast": {
@@ -119,7 +119,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Fresh_breakfast_served_with_eggs%2C_sausage%2C_vegetables%2C_and_toast_in_a_cafe.jpg/330px-Fresh_breakfast_served_with_eggs%2C_sausage%2C_vegetables%2C_and_toast_in_a_cafe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Fresh_breakfast_served_with_eggs,_sausage,_vegetables,_and_toast_in_a_cafe.jpg", "author": "Shixart1985", "licence": "CC BY 2.0", "caption": "Breakfast with eggs and toast"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Fresh_breakfast_served_with_eggs%2C_sausage%2C_vegetables%2C_and_toast_in_a_cafe.jpg/330px-Fresh_breakfast_served_with_eggs%2C_sausage%2C_vegetables%2C_and_toast_in_a_cafe.jpg", "page": "https://commons.wikimedia.org/wiki/File:Fresh_breakfast_served_with_eggs,_sausage,_vegetables,_and_toast_in_a_cafe.jpg", "author": "Shixart1985", "licence": "CC BY 2.0", "caption": "Breakfast with eggs and toast"}
       ]
     },
     "lunch": {
@@ -143,7 +143,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/School_lunch_tray_MyPlate_20210810-FNS-UNC-0015.jpg/330px-School_lunch_tray_MyPlate_20210810-FNS-UNC-0015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:School_lunch_tray_MyPlate_20210810-FNS-UNC-0015.jpg", "author": "U.S. Department of Agriculture", "licence": "Public domain", "caption": "A school lunch on a tray"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/School_lunch_tray_MyPlate_20210810-FNS-UNC-0015.jpg/330px-School_lunch_tray_MyPlate_20210810-FNS-UNC-0015.jpg", "page": "https://commons.wikimedia.org/wiki/File:School_lunch_tray_MyPlate_20210810-FNS-UNC-0015.jpg", "author": "U.S. Department of Agriculture", "licence": "Public domain", "caption": "A school lunch on a tray"}
       ]
     },
     "dinner": {
@@ -168,7 +168,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Special_foods_%26_cuisines_in_Chongqing_-_Family_Dinner_3rd.jpg/330px-Special_foods_%26_cuisines_in_Chongqing_-_Family_Dinner_3rd.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Special_foods_%26_cuisines_in_Chongqing_-_Family_Dinner_3rd.jpg", "author": "Jason M. C., Han", "licence": "CC BY-SA 4.0", "caption": "A family dinner on the table"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Special_foods_%26_cuisines_in_Chongqing_-_Family_Dinner_3rd.jpg/330px-Special_foods_%26_cuisines_in_Chongqing_-_Family_Dinner_3rd.jpg", "page": "https://commons.wikimedia.org/wiki/File:Special_foods_%26_cuisines_in_Chongqing_-_Family_Dinner_3rd.jpg", "author": "Jason M. C., Han", "licence": "CC BY-SA 4.0", "caption": "A family dinner on the table"}
       ]
     },
     "meal": {
@@ -212,7 +212,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Cup_of_black_tea.JPG/330px-Cup_of_black_tea.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Cup_of_black_tea.JPG", "author": "AntanO", "licence": "CC BY-SA 4.0", "caption": "A cup of tea"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Cup_of_black_tea.JPG/330px-Cup_of_black_tea.JPG", "page": "https://commons.wikimedia.org/wiki/File:Cup_of_black_tea.JPG", "author": "AntanO", "licence": "CC BY-SA 4.0", "caption": "A cup of tea"}
       ]
     },
     "coffee": {
@@ -235,7 +235,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/330px-A_small_cup_of_coffee.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:A_small_cup_of_coffee.JPG", "author": "Julius Schorzman", "licence": "CC BY-SA 2.0", "caption": "A cup of coffee"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/330px-A_small_cup_of_coffee.JPG", "page": "https://commons.wikimedia.org/wiki/File:A_small_cup_of_coffee.JPG", "author": "Julius Schorzman", "licence": "CC BY-SA 2.0", "caption": "A cup of coffee"}
       ]
     },
     "juice": {
@@ -258,7 +258,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Orange_juice_1_edit1.jpg/330px-Orange_juice_1_edit1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Orange_juice_1_edit1.jpg", "author": "Agency of the United States Department of Agriculture", "licence": "Public domain", "caption": "A glass of orange juice"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Orange_juice_1_edit1.jpg/330px-Orange_juice_1_edit1.jpg", "page": "https://commons.wikimedia.org/wiki/File:Orange_juice_1_edit1.jpg", "author": "Agency of the United States Department of Agriculture", "licence": "Public domain", "caption": "A glass of orange juice"}
       ]
     },
     "meat": {
@@ -281,7 +281,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Raw_Meat_%286737753521%29.jpg/330px-Raw_Meat_%286737753521%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Raw_Meat_(6737753521).jpg", "author": "Jen Arrr", "licence": "CC BY-SA 2.0", "caption": "Pieces of raw meat"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Raw_Meat_%286737753521%29.jpg/330px-Raw_Meat_%286737753521%29.jpg", "page": "https://commons.wikimedia.org/wiki/File:Raw_Meat_(6737753521).jpg", "author": "Jen Arrr", "licence": "CC BY-SA 2.0", "caption": "Pieces of raw meat"}
       ]
     },
     "egg": {
@@ -305,7 +305,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/6-Pack-Chicken-Eggs.jpg/330px-6-Pack-Chicken-Eggs.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:6-Pack-Chicken-Eggs.jpg", "author": "Evan-Amos", "licence": "Public domain", "caption": "Eggs in a box"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/6-Pack-Chicken-Eggs.jpg/330px-6-Pack-Chicken-Eggs.jpg", "page": "https://commons.wikimedia.org/wiki/File:6-Pack-Chicken-Eggs.jpg", "author": "Evan-Amos", "licence": "Public domain", "caption": "Eggs in a box"}
       ]
     },
     "fruit": {
@@ -328,7 +328,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Assorted_fruits_zc.jpg/330px-Assorted_fruits_zc.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Assorted_fruits_zc.jpg", "author": "LuzViMindaLife", "licence": "CC BY-SA 4.0", "caption": "Fruit at a market"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Assorted_fruits_zc.jpg/330px-Assorted_fruits_zc.jpg", "page": "https://commons.wikimedia.org/wiki/File:Assorted_fruits_zc.jpg", "author": "LuzViMindaLife", "licence": "CC BY-SA 4.0", "caption": "Fruit at a market"}
       ]
     },
     "vegetable": {
@@ -351,7 +351,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Fresh_homegrown_vegetables_assortment_Dabrica%2C_Bosnia_and_Herzegovina_%282026%29-bs.jpg/330px-Fresh_homegrown_vegetables_assortment_Dabrica%2C_Bosnia_and_Herzegovina_%282026%29-bs.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Fresh_homegrown_vegetables_assortment_Dabrica,_Bosnia_and_Herzegovina_(2026)-bs.jpg", "author": "Minja Klarić", "licence": "CC BY-SA 4.0", "caption": "Fresh vegetables"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Fresh_homegrown_vegetables_assortment_Dabrica%2C_Bosnia_and_Herzegovina_%282026%29-bs.jpg/330px-Fresh_homegrown_vegetables_assortment_Dabrica%2C_Bosnia_and_Herzegovina_%282026%29-bs.jpg", "page": "https://commons.wikimedia.org/wiki/File:Fresh_homegrown_vegetables_assortment_Dabrica,_Bosnia_and_Herzegovina_(2026)-bs.jpg", "author": "Minja Klarić", "licence": "CC BY-SA 4.0", "caption": "Fresh vegetables"}
       ]
     },
     "apple": {
@@ -374,7 +374,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/330px-Red_Apple.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Red_Apple.jpg", "author": "Abhijit Tembhekar from Mumbai, India", "licence": "CC BY 2.0", "caption": "A red apple"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/330px-Red_Apple.jpg", "page": "https://commons.wikimedia.org/wiki/File:Red_Apple.jpg", "author": "Abhijit Tembhekar from Mumbai, India", "licence": "CC BY 2.0", "caption": "A red apple"}
       ]
     },
     "orange": {
@@ -397,7 +397,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Oranges_-_whole-halved-segment.jpg/330px-Oranges_-_whole-halved-segment.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Oranges_-_whole-halved-segment.jpg", "author": "Ivar Leidus", "licence": "CC BY-SA 4.0", "caption": "An orange, half an orange and a piece"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Oranges_-_whole-halved-segment.jpg/330px-Oranges_-_whole-halved-segment.jpg", "page": "https://commons.wikimedia.org/wiki/File:Oranges_-_whole-halved-segment.jpg", "author": "Ivar Leidus", "licence": "CC BY-SA 4.0", "caption": "An orange, half an orange and a piece"}
       ]
     },
     "potato": {
@@ -420,7 +420,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Solanum_tuberosum_Red_Scarlett20170523_7825.jpg/330px-Solanum_tuberosum_Red_Scarlett20170523_7825.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Solanum_tuberosum_Red_Scarlett20170523_7825.jpg", "author": "Bff", "licence": "CC BY-SA 4.0", "caption": "Red potatoes"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Solanum_tuberosum_Red_Scarlett20170523_7825.jpg/330px-Solanum_tuberosum_Red_Scarlett20170523_7825.jpg", "page": "https://commons.wikimedia.org/wiki/File:Solanum_tuberosum_Red_Scarlett20170523_7825.jpg", "author": "Bff", "licence": "CC BY-SA 4.0", "caption": "Red potatoes"}
       ]
     },
     "rice": {
@@ -443,7 +443,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/A_bowl_of_rice.jpg/330px-A_bowl_of_rice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:A_bowl_of_rice.jpg", "author": "Douglas Perkins", "licence": "CC0", "caption": "A bowl of rice"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/A_bowl_of_rice.jpg/330px-A_bowl_of_rice.jpg", "page": "https://commons.wikimedia.org/wiki/File:A_bowl_of_rice.jpg", "author": "Douglas Perkins", "licence": "CC0", "caption": "A bowl of rice"}
       ]
     },
     "soup": {
@@ -466,7 +466,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Traditional_Vegetable_Soup_from_Argentina.jpg/330px-Traditional_Vegetable_Soup_from_Argentina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Traditional_Vegetable_Soup_from_Argentina.jpg", "author": "Horacio Cambeiro", "licence": "CC BY-SA 3.0", "caption": "A bowl of vegetable soup"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Traditional_Vegetable_Soup_from_Argentina.jpg/330px-Traditional_Vegetable_Soup_from_Argentina.jpg", "page": "https://commons.wikimedia.org/wiki/File:Traditional_Vegetable_Soup_from_Argentina.jpg", "author": "Horacio Cambeiro", "licence": "CC BY-SA 3.0", "caption": "A bowl of vegetable soup"}
       ]
     },
     "cheese": {
@@ -489,7 +489,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Brie_Cheese_and_Chedder_Cheese_and_Emmental_in_plate.jpg/330px-Brie_Cheese_and_Chedder_Cheese_and_Emmental_in_plate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Brie_Cheese_and_Chedder_Cheese_and_Emmental_in_plate.jpg", "author": "Peachyeung316", "licence": "CC BY-SA 4.0", "caption": "Different cheeses on a plate"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Brie_Cheese_and_Chedder_Cheese_and_Emmental_in_plate.jpg/330px-Brie_Cheese_and_Chedder_Cheese_and_Emmental_in_plate.jpg", "page": "https://commons.wikimedia.org/wiki/File:Brie_Cheese_and_Chedder_Cheese_and_Emmental_in_plate.jpg", "author": "Peachyeung316", "licence": "CC BY-SA 4.0", "caption": "Different cheeses on a plate"}
       ]
     },
     "butter": {
@@ -512,7 +512,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/2023_Mas%C5%82o_w_maselniczce.jpg/330px-2023_Mas%C5%82o_w_maselniczce.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:2023_Mas%C5%82o_w_maselniczce.jpg", "author": "Jacek Halicki", "licence": "CC BY-SA 4.0", "caption": "Butter in a butter dish"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/2023_Mas%C5%82o_w_maselniczce.jpg/330px-2023_Mas%C5%82o_w_maselniczce.jpg", "page": "https://commons.wikimedia.org/wiki/File:2023_Mas%C5%82o_w_maselniczce.jpg", "author": "Jacek Halicki", "licence": "CC BY-SA 4.0", "caption": "Butter in a butter dish"}
       ]
     },
     "cake": {
@@ -535,7 +535,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Victoria_sponge.jpg/330px-Victoria_sponge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Victoria_sponge.jpg", "author": "Gordonplant", "licence": "CC BY 2.0", "caption": "A sponge cake with jam and cream"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Victoria_sponge.jpg/330px-Victoria_sponge.jpg", "page": "https://commons.wikimedia.org/wiki/File:Victoria_sponge.jpg", "author": "Gordonplant", "licence": "CC BY 2.0", "caption": "A sponge cake with jam and cream"}
       ]
     },
     "sugar": {
@@ -558,7 +558,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/W%C3%BCrfelzucker_--_2018_--_3564.jpg/330px-W%C3%BCrfelzucker_--_2018_--_3564.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:W%C3%BCrfelzucker_--_2018_--_3564.jpg", "author": "Dietmar Rabich", "licence": "CC BY-SA 4.0", "caption": "Sugar cubes"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/W%C3%BCrfelzucker_--_2018_--_3564.jpg/330px-W%C3%BCrfelzucker_--_2018_--_3564.jpg", "page": "https://commons.wikimedia.org/wiki/File:W%C3%BCrfelzucker_--_2018_--_3564.jpg", "author": "Dietmar Rabich", "licence": "CC BY-SA 4.0", "caption": "Sugar cubes"}
       ]
     },
     "salt": {
@@ -581,7 +581,7 @@
         ] }
       ],
       "pictures": [
-        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Salt_and_pepper_by_Sierra.jpg/330px-Salt_and_pepper_by_Sierra.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail", "page": "https://commons.wikimedia.org/wiki/File:Salt_and_pepper_by_Sierra.jpg", "author": "Josuiván Sierra Barrera", "licence": "CC BY 2.0", "caption": "Salt and pepper shakers"}
+        {"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Salt_and_pepper_by_Sierra.jpg/330px-Salt_and_pepper_by_Sierra.jpg", "page": "https://commons.wikimedia.org/wiki/File:Salt_and_pepper_by_Sierra.jpg", "author": "Josuiván Sierra Barrera", "licence": "CC BY 2.0", "caption": "Salt and pepper shakers"}
       ]
     }
   }

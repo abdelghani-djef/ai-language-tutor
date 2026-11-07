@@ -4,6 +4,7 @@ import { BookA, BookOpen, CheckCircle2, Clock, RotateCw, Sparkles } from "lucide
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
+import { toast } from "sonner";
 import { FlipCard } from "@/components/flip-card";
 import { PlanCard } from "@/components/plan-card";
 import { WordOverlay } from "@/components/word/word-overlay";
@@ -25,6 +26,7 @@ import {
   itemsOf,
   newStartedOn,
   newWords,
+  returnedWords,
   startedItems,
   useHydrated,
   usePref,
@@ -33,6 +35,9 @@ import {
   type Flashcard,
   type StudyItem,
 } from "@/lib/store";
+import { useListTitle } from "@/lib/list-title";
+import { myCards, sortedPacks, studyCards, validList } from "@/lib/mywords";
+import { loadStarterWords, useStarterWords } from "@/lib/starter-words";
 import { cn } from "@/lib/utils";
 import { targetFromCard, type WordTarget } from "@/lib/word/target";
 import { STARTER_STORIES } from "@/data/starter-stories";
@@ -71,17 +76,19 @@ export default function StudyPageWrapper() {
   );
 }
 
+/** "/study/?list=food&tag=x": the Should learn words of My words, of one list if given. An old `?deck=` is ignored. */
 function StudyPage() {
   const params = useSearchParams();
-  const deckId = params.get("deck");
+  // An unknown list (or none) means all of My words.
+  const list = validList(params.get("list"));
   const tag = params.get("tag");
   const hydrated = useHydrated();
   // Bumped by "Check again" to start a fresh session (e.g. after midnight).
   const [round, setRound] = useState(0);
   return hydrated ? (
     <Session
-      key={`${deckId ?? "all"}:${tag ?? ""}:${round}`}
-      deckId={deckId}
+      key={`${list ?? "all"}:${tag ?? ""}:${round}`}
+      list={list}
       tag={tag}
       restarted={round > 0}
       onRestart={() => setRound((r) => r + 1)}
@@ -109,36 +116,42 @@ type Phase =
   | { kind: "revealed"; picked: string | null; right: boolean };
 
 function Session({
-  deckId,
+  list,
   tag,
   restarted,
   onRestart,
 }: {
-  deckId: string | null;
+  list: string | null;
   tag: string | null;
   restarted: boolean;
   onRestart: () => void;
 }) {
   const data = useStore();
-  const { decks, cards, reviews, settings } = data;
-  const deck = deckId ? decks.find((d) => d.id === deckId) : undefined;
+  const { cards, reviews, settings } = data;
+  const listTitle = useListTitle(list);
   const today = useToday();
   const fmt = useFormat();
   const t = useT(study);
   const ts = useT(story);
   const tw = useT(wordMessages);
 
+  // Only Should learn words in the learner's language are studied (in the list, with the tag, if given).
+  const listCards = studyCards(data, list);
+  const inScope = listCards.filter((c) => hasTag(c, tag));
+
   // Fix the session's items and their order when it starts: due reviews, with
-  // the new words today's limit allows mixed in (one after every two reviews),
-  // so new and old practice interleave instead of coming in blocks.
+  // words moved back to Should learn and the new words today's limit allows
+  // mixed in (one after every two reviews), so new and old practice interleave
+  // instead of coming in blocks.
   const [start] = useState(() => Date.now());
   const [sessionEnd] = useState(() => endOfToday(new Date(start)));
   const [order] = useState(() => {
-    const inScope = cards.filter((c) => hasTag(c, tag));
     // Started items due today, or a learning step coming back within the wait window.
-    const due = startedItems(inScope, deckId, (i) => inSession(i, start, sessionEnd));
+    const due = startedItems(inScope, (i) => inSession(i, start, sessionEnd));
+    // What is left of today's allowance of new words. Words moved back from
+    // Already know come first and don't use it up: they aren't new to the learner.
     const left = Math.max(0, settings.newPerDay - newStartedOn(reviews, today));
-    const fresh = newWords(inScope, deckId).slice(0, left).map((c) => itemsOf(c)[0]);
+    const fresh = [...returnedWords(inScope), ...newWords(inScope).slice(0, left)].map((c) => itemsOf(c)[0]);
     const merged: string[] = [];
     while (due.length || fresh.length) {
       merged.push(...due.splice(0, 2).map((i) => i.key));
@@ -159,7 +172,19 @@ function Session({
   const [wordPage, setWordPage] = useState<WordTarget | null>(null);
   const actionRef = useRef<HTMLButtonElement>(null);
 
-  const byKey = useMemo(() => new Map(cards.flatMap(itemsOf).map((i) => [i.key, i])), [cards]);
+  // Only words still in Should learn, in the learner's language: one moved to
+  // Already know (here or in another tab) leaves the session.
+  const lang = data.profile?.lang;
+  const byKey = useMemo(
+    () =>
+      new Map(
+        cards
+          .filter((c) => c.status === "learn" && c.src === "en" && c.tgt === lang)
+          .flatMap(itemsOf)
+          .map((i) => [i.key, i]),
+      ),
+    [cards, lang],
+  );
   const remaining = useMemo(
     () => order.map((k) => byKey.get(k)).filter((i): i is StudyItem => !!i && inSession(i, now, sessionEnd)),
     [order, byKey, now, sessionEnd],
@@ -168,6 +193,10 @@ function Session({
     remaining.find((i) => i.key === currentKey && isDue(i, now, sessionEnd)) ??
     remaining.find((i) => isDue(i, now, sessionEnd));
   const nextLater = !current && remaining.length > 0 ? [...remaining].sort((a, b) => dueTime(a) - dueTime(b))[0] : undefined;
+  // The end of a lesson may offer a story, and which stories there are needs the lists' words
+  // (the lists sorted from). They load only then, so studying itself never downloads them.
+  const lessonOver = !current && !nextLater && reviewed > 0;
+  const words = useStarterWords(lessonOver);
 
   // A new item on screen starts in its first phase.
   if (current && current.key !== currentKey) {
@@ -242,6 +271,24 @@ function Session({
     setPhase({ kind: "revealed", picked: choice, right: choice === sides(current).answer.text });
   }
 
+  /** The item on screen, for a word page that opens after the words load: by then it may have moved on. */
+  const shownKey = useRef<string | undefined>(undefined);
+  useEffect(() => {
+    shownKey.current = current?.key;
+  }, [current?.key]);
+
+  /** Opens the word page over the session once the lists' words are here (the first time, they load now). */
+  function openWord(card: Flashcard) {
+    const key = current?.key;
+    loadStarterWords().then(
+      (words) => {
+        // Graded and moved on while the words were loading: don't open the last word over the next one.
+        if (shownKey.current === key) setWordPage(targetFromCard(card, words));
+      },
+      () => toast.error(tw("couldntLoad")),
+    );
+  }
+
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (!current || e.repeat || e.ctrlKey || e.metaKey || e.altKey) return;
@@ -264,10 +311,16 @@ function Session({
   const total = reviewed + remaining.length;
   // A story to read at the end of the lesson, if one uses the words just studied.
   const storyReady =
-    !current &&
-    (rankStories(STARTER_STORIES, new Set(cards.map((c) => c.pack).filter((p): p is string => !!p)), todaysCards(cards, reviews, today, deckId))[0]
-      ?.used ?? 0) > 0;
-  const title = `${deck ? deck.name : t("allDecks")}${tag ? ` · ${fmt.tag(tag)}` : ""}`;
+    lessonOver &&
+    !!words &&
+    (rankStories(STARTER_STORIES, sortedPacks(data, words), todaysCards(myCards(data), reviews, today))[0]?.used ?? 0) > 0;
+  const title = `${listTitle}${tag ? ` · ${fmt.tag(tag)}` : ""}`;
+  // The quiz practises the same words, once some of them have been started.
+  const canQuiz = inScope.some((c) => c.srs.state !== State.New || !!c.introducedAt);
+  const scopeQuery = new URLSearchParams();
+  if (list) scopeQuery.set("list", list);
+  if (tag) scopeQuery.set("tag", tag);
+  const qs = scopeQuery.toString() ? `?${scopeQuery}` : "";
 
   if (!current) {
     return (
@@ -284,20 +337,29 @@ function Session({
           <>
             <CheckCircle2 className="size-12 text-emerald-500" />
             <h1 className="font-display text-2xl font-semibold">
-              {reviewed > 0 ? t("doneTitle") : restarted ? t("stillNothingTitle") : t("nothingTitle")}
+              {reviewed > 0
+                ? t("doneTitle")
+                : inScope.length === 0
+                  ? t("emptyTitle")
+                  : restarted
+                    ? t("stillNothingTitle")
+                    : t("nothingTitle")}
             </h1>
             <p className="text-muted-foreground">
               {reviewed > 0
                 ? t("doneText", { count: reviewed, title })
-                : restarted
-                  ? t("stillNothingText")
-                  : t("nothingText")}
+                : inScope.length === 0
+                  ? // Only the tag left nothing: picking more lists wouldn't help.
+                    listCards.length === 0
+                    ? t("nothingText")
+                    : t("tagEmptyText")
+                  : t("stillNothingText")}
             </p>
           </>
         )}
         {!nextLater && reviewed > 0 && storyReady && (
           // The end of a lesson: read the words just practised in a story (more input, same words).
-          <Link href={deck ? `/story?deck=${deck.id}` : "/story"} className={buttonVariants({ size: "lg" })}>
+          <Link href="/story/" className={buttonVariants({ size: "lg" })}>
             <BookOpen /> {ts("readStory")}
           </Link>
         )}
@@ -307,15 +369,15 @@ function Session({
               <RotateCw /> {t("checkAgain")}
             </Button>
           )}
-          <Link href="/words" className={buttonVariants({ variant: "outline" })}>
+          <Link href="/words/" className={buttonVariants({ variant: "outline" })}>
             {t("starterWords")}
           </Link>
-          {deck && (
-            <Link href={`/quiz?deck=${deck.id}`} className={buttonVariants({ variant: "outline" })}>
-              {t("quizDeck")}
+          {canQuiz && (
+            <Link href={`/quiz/${qs}`} className={buttonVariants({ variant: "outline" })}>
+              {t("quizMine")}
             </Link>
           )}
-          <Link href="/stats" className={buttonVariants()}>
+          <Link href="/stats/" className={buttonVariants()}>
             {t("seeStats")}
           </Link>
         </div>
@@ -383,7 +445,7 @@ function Session({
             variant="ghost"
             size="sm"
             className="justify-self-center text-muted-foreground"
-            onClick={() => setWordPage(targetFromCard(current.card))}
+            onClick={() => openWord(current.card)}
           >
             <BookA /> {tw("seeAll")}
           </Button>

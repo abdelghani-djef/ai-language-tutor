@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import type { StarterWords } from "../../data/starter-packs";
 import { loadPackScenes, loadPlaces, wordScenes, type Place, type Scene } from "./scenes";
 import {
   fetchArticle,
@@ -88,8 +89,9 @@ export function failLoading(data: WordData, sections: readonly (keyof WordData)[
 /**
  * Everything the word page shows beyond the saved word itself. All fetches start at once and each
  * section fills in on its own; results for an earlier word, or after the page closes, are dropped.
+ * `words`: the lists' loaded words (word partners are checked against them).
  */
-export function useWordData(target: WordTarget): WordData {
+export function useWordData(target: WordTarget, words: StarterWords): WordData {
   const { word, lang, to, pack } = target;
   const key = keyOf(target);
   const [state, setState] = useState<{ key: string; data: WordData }>({ key, data: LOADING });
@@ -121,7 +123,7 @@ export function useWordData(target: WordTarget): WordData {
     // Not waiting for the scenes: these don't depend on them.
     const always = planSources(t, false);
     settle("dictionary", always.dictionary ? fetchDictionary(word, lang) : Promise.resolve(null));
-    settle("partners", always.partners ? fetchPartners(word, lang) : Promise.resolve([]));
+    settle("partners", always.partners ? fetchPartners(word, lang, words) : Promise.resolve([]));
     const none: { article: Article | null; pictures: Picture[] } = { article: null, pictures: [] };
     const article = always.article ? fetchArticle(word, lang, to) : Promise.resolve(none);
     settle("article", article.then((a) => a.article));
@@ -153,7 +155,8 @@ export function useWordData(target: WordTarget): WordData {
     return () => {
       live = false;
     };
-  }, [word, lang, to, pack]);
+    // `words` is loaded once and never changes.
+  }, [word, lang, to, pack, words]);
 
   return state.key === key ? state.data : LOADING;
 }

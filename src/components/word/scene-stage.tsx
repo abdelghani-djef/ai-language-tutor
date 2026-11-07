@@ -5,6 +5,7 @@ import { useEffect, useRef, useState, type KeyboardEvent, type ReactNode } from 
 import { SpeakButton } from "@/components/speak-button";
 import { Button } from "@/components/ui/button";
 import { useLocale, useT, type Locale, type Translate } from "@/lib/i18n";
+import { useStore } from "@/lib/store";
 import { highlightWords } from "@/lib/story";
 import { cn } from "@/lib/utils";
 import type { Place, Scene, SceneLine } from "@/lib/word/scenes";
@@ -23,8 +24,10 @@ const translated = (to: string): to is "fr" | "ar" => to === "fr" || to === "ar"
  * dots and small arrows at its edges. The arrow keys move between scenes when focus is inside.
  */
 export function SceneStage(props: StageProps) {
+  // Read once here: your own lines carry your name when you gave one.
+  const myName = useStore().profile?.name;
   // A new word starts again from its first scene, with the phone strip scrolled back.
-  return <Stage key={props.word} {...props} />;
+  return <Stage key={props.word} {...props} myName={myName} />;
 }
 
 type StageProps = {
@@ -35,7 +38,7 @@ type StageProps = {
   rtl: boolean;
 };
 
-function Stage({ word, scenes, places, to, rtl }: StageProps) {
+function Stage({ word, scenes, places, to, rtl, myName }: StageProps & { myName?: string }) {
   const t = useT(messages);
   const [locale] = useLocale();
   const [index, setIndex] = useState(0);
@@ -148,7 +151,7 @@ function Stage({ word, scenes, places, to, rtl }: StageProps) {
               <div className="grid content-center gap-3 px-6 py-5">
                 <PlaceLabel place={place} />
                 {scene.lines.map((line, i) => (
-                  <Line key={i} line={line} word={word} to={to} locale={locale} t={t} />
+                  <Line key={i} line={line} word={word} to={to} locale={locale} t={t} myName={myName} />
                 ))}
               </div>
             </div>
@@ -208,7 +211,7 @@ function Stage({ word, scenes, places, to, rtl }: StageProps) {
                 <div className="grid gap-2.5 p-3">
                   <PlaceLabel place={p} />
                   {s.lines.map((line, j) => (
-                    <Line key={j} line={line} word={word} to={to} locale={locale} t={t} compact />
+                    <Line key={j} line={line} word={word} to={to} locale={locale} t={t} myName={myName} compact />
                   ))}
                 </div>
               </div>
@@ -359,6 +362,7 @@ function Line({
   to,
   locale,
   t,
+  myName,
   compact,
 }: {
   line: SceneLine;
@@ -366,9 +370,20 @@ function Line({
   to: string;
   locale: Locale;
   t: T;
+  /** The learner's name, shown for their own lines instead of "You". */
+  myName?: string;
   compact?: boolean;
 }) {
-  const who = line.who[locale] || line.who.en;
+  const mine = line.who.en.trim().toLowerCase() === "you";
+  // Your own lines carry your name when you gave one, isolated so it keeps its own direction.
+  const name = mine ? myName : undefined;
+  const who = name ? (
+    <bdi title={name} className="inline-block max-w-full truncate align-top">
+      {name}
+    </bdi>
+  ) : (
+    line.who[locale] || line.who.en
+  );
   const translation = translated(to) ? line.text[to] : "";
   const speak = <SpeakButton text={line.text.en} lang="en" label={`${t("listen")}: ${line.text.en}`} className="text-muted-foreground" />;
   const text = (
@@ -390,7 +405,6 @@ function Line({
   );
 
   if (compact) {
-    const mine = line.who.en.trim().toLowerCase() === "you";
     return (
       <div className={cn("flex max-w-[92%] items-start gap-1", mine && "flex-row-reverse justify-self-end")}>
         <div className={cn("min-w-0 rounded-xl px-2.5 py-1.5", mine ? "bg-primary/15" : "bg-muted")}>
@@ -403,7 +417,7 @@ function Line({
   }
   return (
     <div className="grid grid-cols-[86px_1fr_28px] items-start gap-2.5">
-      <span className="pt-1 text-sm text-muted-foreground">{who}</span>
+      <span className="min-w-0 pt-1 text-sm text-muted-foreground">{who}</span>
       <div className="min-w-0">{text}</div>
       {speak}
     </div>

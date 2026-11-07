@@ -15,8 +15,12 @@ import { useFormat } from "@/lib/format";
 import { useT } from "@/lib/i18n";
 import { LANGUAGES } from "@/lib/languages";
 import { checkAnswer, choicesFor, distinctCount, shuffle, type Verdict } from "@/lib/quiz";
+import { useListTitle } from "@/lib/list-title";
+import { studyCards, validList } from "@/lib/mywords";
+import { State } from "@/lib/srs";
 import { hasTag, recordQuiz, useHydrated, useStore, type Flashcard } from "@/lib/store";
 import { cn } from "@/lib/utils";
+import { mywords } from "@/messages/mywords";
 import { quiz } from "@/messages/quiz";
 
 type Mode = "type" | "choice";
@@ -43,43 +47,47 @@ export default function QuizPageWrapper() {
   );
 }
 
+/** A word that has been shown or studied at least once: you can't quiz a word you've never seen. */
+const started = (c: Flashcard) => c.srs.state !== State.New || !!c.introducedAt;
+
+/** "/quiz/?list=food&tag=x": practice on the started Should learn words of My words. An old `?deck=` is ignored. */
 function QuizPage() {
   const params = useSearchParams();
-  const deckId = params.get("deck");
+  // An unknown list (or none) means all of My words.
+  const list = validList(params.get("list"));
   const tag = params.get("tag");
   const hydrated = useHydrated();
-  const { decks, cards } = useStore();
+  const data = useStore();
   const [mode, setMode] = useState<Mode>("type");
   const [direction, setDirection] = useState<Direction>("forward");
   const [round, setRound] = useState(0);
   const t = useT(quiz);
+  const tm = useT(mywords);
   const fmt = useFormat();
+  const listTitle = useListTitle(list);
 
-  if (!hydrated) return null;
-  const deck = decks.find((d) => d.id === deckId);
-  if (!deck) {
-    return (
-      <div className="grid justify-items-start gap-3">
-        <p>{t("pickDeck")}</p>
-        <Link href="/decks" className={buttonVariants({ variant: "outline" })}>
-          {t("goToDecks")}
-        </Link>
-      </div>
-    );
-  }
-  const allDeckCards = cards.filter((c) => c.deckId === deck.id);
-  const deckCards = allDeckCards.filter((c) => hasTag(c, tag));
+  // The setup gate makes sure there is a profile on this page.
+  if (!hydrated || !data.profile) return null;
+  const pair = { src: "en", tgt: data.profile.lang };
+  const listCards = studyCards(data, list);
+  const allCards = listCards.filter(started);
+  const quizCards = allCards.filter((c) => hasTag(c, tag));
   // Multiple choice needs four answers that actually look different.
-  const canChoose = distinctCount(deckCards.map((c) => (direction === "forward" ? c.back : c.front))) >= 4;
+  const canChoose = distinctCount(quizCards.map((c) => (direction === "forward" ? c.back : c.front))) >= 4;
   const effectiveMode = canChoose ? mode : "type";
+  const listQuery = list ? `?list=${encodeURIComponent(list)}` : "";
+  const studyQuery = new URLSearchParams();
+  if (list) studyQuery.set("list", list);
+  if (tag) studyQuery.set("tag", tag);
+  const studyHref = `/study/${studyQuery.toString() ? `?${studyQuery}` : ""}`;
 
   return (
     <div className="mx-auto grid max-w-2xl gap-6">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <h1 className="font-display text-2xl font-semibold">
-            {t("title", { deck: deck.name })}
-            {/* bdi keeps a Latin tag next to a Latin deck name from running together in Arabic. */}
+            {t("title", { title: listTitle })}
+            {/* bdi keeps a Latin tag next to a Latin list title from running together in Arabic. */}
             {tag && (
               <>
                 {" · "}
@@ -89,52 +97,67 @@ function QuizPage() {
           </h1>
           <p className="text-sm text-muted-foreground">{t("practiceOnly")}</p>
         </div>
-        <div className="flex flex-wrap gap-2">
-          <Tabs value={effectiveMode} onValueChange={(v) => setMode(v as Mode)}>
-            <TabsList>
-              <TabsTrigger value="type">{t("modeType")}</TabsTrigger>
-              <TabsTrigger value="choice" disabled={!canChoose}>
-                {t("modeChoice")}
-              </TabsTrigger>
-            </TabsList>
-          </Tabs>
-          <Tabs value={direction} onValueChange={(v) => setDirection(v as Direction)}>
-            <TabsList>
-              {/* Latin language codes always read left to right, even in Arabic. */}
-              <TabsTrigger value="forward" title={fmt.pairLabel(deck)}>
-                <span dir="ltr">
-                  {t("direction", { from: deck.src.toUpperCase(), arrow: "→", to: deck.tgt.toUpperCase() })}
-                </span>
-              </TabsTrigger>
-              <TabsTrigger value="reverse" title={fmt.pairLabel({ src: deck.tgt, tgt: deck.src })}>
-                <span dir="ltr">
-                  {t("direction", { from: deck.tgt.toUpperCase(), arrow: "→", to: deck.src.toUpperCase() })}
-                </span>
-              </TabsTrigger>
-            </TabsList>
-          </Tabs>
-        </div>
+        {quizCards.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            <Tabs value={effectiveMode} onValueChange={(v) => setMode(v as Mode)}>
+              <TabsList>
+                <TabsTrigger value="type">{t("modeType")}</TabsTrigger>
+                <TabsTrigger value="choice" disabled={!canChoose}>
+                  {t("modeChoice")}
+                </TabsTrigger>
+              </TabsList>
+            </Tabs>
+            <Tabs value={direction} onValueChange={(v) => setDirection(v as Direction)}>
+              <TabsList>
+                {/* Latin language codes always read left to right, even in Arabic. */}
+                <TabsTrigger value="forward" title={fmt.pairLabel(pair)}>
+                  <span dir="ltr">
+                    {t("direction", { from: pair.src.toUpperCase(), arrow: "→", to: pair.tgt.toUpperCase() })}
+                  </span>
+                </TabsTrigger>
+                <TabsTrigger value="reverse" title={fmt.pairLabel({ src: pair.tgt, tgt: pair.src })}>
+                  <span dir="ltr">
+                    {t("direction", { from: pair.tgt.toUpperCase(), arrow: "→", to: pair.src.toUpperCase() })}
+                  </span>
+                </TabsTrigger>
+              </TabsList>
+            </Tabs>
+          </div>
+        )}
       </div>
 
-      {!canChoose && deckCards.length > 0 && (
+      {!canChoose && quizCards.length > 0 && (
         <p className="-mt-3 text-xs text-muted-foreground">{t("choiceNeeds", { count: 4 })}</p>
       )}
 
-      {deckCards.length === 0 && tag && allDeckCards.length > 0 ? (
+      {quizCards.length === 0 && tag && allCards.length > 0 ? (
         <div className="grid justify-items-start gap-3">
           <p className="text-muted-foreground" dir="auto">
             {t("noTagged", { tag: fmt.tag(tag) })}
           </p>
-          <Link href={`/quiz?deck=${deck.id}`} className={buttonVariants({ variant: "outline" })}>
-            {t("wholeDeck")}
+          <Link href={`/quiz/${listQuery}`} className={buttonVariants({ variant: "outline" })}>
+            {t("wholeList")}
           </Link>
         </div>
-      ) : deckCards.length === 0 ? (
-        <p className="text-muted-foreground">{t("noCards")}</p>
+      ) : listCards.length === 0 ? (
+        // Nothing to learn in this scope at all: studying won't help, picking lists will.
+        <div className="grid justify-items-start gap-3">
+          <p className="text-muted-foreground">{tm("emptyLearn")}</p>
+          <Link href="/words/" className={buttonVariants({ variant: "outline" })}>
+            {tm("pickLists")}
+          </Link>
+        </div>
+      ) : quizCards.length === 0 ? (
+        <div className="grid justify-items-start gap-3">
+          <p className="text-muted-foreground">{t("noStarted")}</p>
+          <Link href={studyHref} className={buttonVariants({ variant: "outline" })}>
+            {tm("study")}
+          </Link>
+        </div>
       ) : (
         <QuizRun
-          key={`${effectiveMode}-${direction}-${tag ?? ""}-${round}`}
-          cards={deckCards}
+          key={`${effectiveMode}-${direction}-${list ?? ""}-${tag ?? ""}-${round}`}
+          cards={quizCards}
           mode={effectiveMode}
           direction={direction}
           onRestart={() => setRound((r) => r + 1)}

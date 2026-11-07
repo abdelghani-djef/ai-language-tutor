@@ -1,4 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
+import { STARTER_WORDS } from "../../data/starter-words";
 import { isCleanSentence, stripHtml } from "../word/clean";
 import { fetchJson } from "../word/fetch";
 import {
@@ -479,7 +480,7 @@ describe("fetchPartners", () => {
     const keyFor = async (origin: string) => {
       vi.stubGlobal("location", { origin });
       const fn = stubFetch({});
-      await fetchPartners("bread");
+      await fetchPartners("bread", "en", STARTER_WORDS);
       return urls(fn).map((u) => new URL(u).searchParams.get("md"));
     };
     const [a1, a2] = await keyFor("https://ai-language-tutor-alpha.vercel.app");
@@ -494,7 +495,7 @@ describe("fetchPartners", () => {
       [JJB("bread")]: words("white", "unleavened", "fresh"),
       [TRG("bread")]: words("unleavened", "butter", "cheese", "Butter"),
     });
-    const partners = await fetchPartners("bread");
+    const partners = await fetchPartners("bread", "en", STARTER_WORDS);
     expect(urls(fn)).toHaveLength(2);
     expect(partners).toEqual(["white bread", "unleavened bread", "fresh bread", "butter", "cheese"]);
   });
@@ -502,9 +503,9 @@ describe("fetchPartners", () => {
   it("keeps only the related words that are in the ready-made lists", async () => {
     // crumbs, sourdough, loaf…: not in a list.
     stubFetch({ [JJB("bread")]: words("fresh"), [TRG("bread")]: [...trgBread, ...words("egg", "milk")] });
-    expect(await fetchPartners("bread")).toEqual(["fresh bread", "egg", "milk"]);
+    expect(await fetchPartners("bread", "en", STARTER_WORDS)).toEqual(["fresh bread", "egg", "milk"]);
     stubFetch({ [JJB("bread")]: jjbBread, [TRG("bread")]: words("egg") });
-    expect(await fetchPartners("bread")).toEqual(jjbBread.map((x) => `${x.word} bread`));
+    expect(await fetchPartners("bread", "en", STARTER_WORDS)).toEqual(jjbBread.map((x) => `${x.word} bread`));
   });
 
   it("drops junk for 'hello': only ready-made related words, nothing crude, never the word itself", async () => {
@@ -512,12 +513,13 @@ describe("fetchPartners", () => {
       [JJB("hello")]: words("big", "warm"),
       [TRG("hello")]: words("dolly", "kitty", "goodbye", "cute", "nasty", "sailor", "gorgeous", "hello", "Hello", "egg", "welcome", "morning", "kiss"),
     });
-    expect(await fetchPartners("hello")).toEqual(["big hello", "warm hello", "goodbye", "egg", "welcome", "morning"]);
+    // "cute", "sailor" and "gorgeous" are ready-made words since the lists grew to 100; the cap then drops "morning".
+    expect(await fetchPartners("hello", "en", STARTER_WORDS)).toEqual(["big hello", "warm hello", "goodbye", "cute", "sailor", "gorgeous", "egg", "welcome"]);
   });
 
   it("passes every partner through the blocklist", async () => {
     stubFetch({ [JJB("bread")]: words("fresh", "bloody", "sexy"), [TRG("bread")]: words("gun", "kill", "cheese") });
-    expect(await fetchPartners("bread")).toEqual(["fresh bread", "cheese"]);
+    expect(await fetchPartners("bread", "en", STARTER_WORDS)).toEqual(["fresh bread", "cheese"]);
   });
 
   it("gives at most 8", async () => {
@@ -525,36 +527,43 @@ describe("fetchPartners", () => {
       [JJB("bread")]: words("a1", "b1", "c1", "d1", "e1"),
       [TRG("bread")]: words("egg", "milk", "cheese", "butter", "water", "rice"),
     });
-    const partners = await fetchPartners("bread");
+    const partners = await fetchPartners("bread", "en", STARTER_WORDS);
     expect(partners).toHaveLength(8);
     expect(partners.slice(0, 5)).toEqual(["a1 bread", "b1 bread", "c1 bread", "d1 bread", "e1 bread"]);
   });
 
   it("encodes the word", async () => {
     const fn = stubFetch({});
-    await fetchPartners("ice cream");
+    await fetchPartners("ice cream", "en", STARTER_WORDS);
     expect(urls(fn)).toContain(JJB("ice%20cream"));
     expect(urls(fn)).toContain(TRG("ice%20cream"));
   });
 
   it("is empty when Datamuse knows nothing (404)", async () => {
     stubFetch({});
-    expect(await fetchPartners("bread")).toEqual([]);
+    expect(await fetchPartners("bread", "en", STARTER_WORDS)).toEqual([]);
   });
 
   it("keeps the other answer when one Datamuse call fails", async () => {
     stubFetch({ [JJB("bread")]: 502, [TRG("bread")]: words("crumbs", "butter") });
-    expect(await fetchPartners("bread")).toEqual(["butter"]);
+    expect(await fetchPartners("bread", "en", STARTER_WORDS)).toEqual(["butter"]);
+  });
+
+  it("keeps the related words of the lists it is given", async () => {
+    stubFetch({ [JJB("bread")]: words(), [TRG("bread")]: words("egg", "cheese") });
+    const only: typeof STARTER_WORDS = { food: [["cheese", "le fromage", "الجبن", "🧀", "I like cheese."]] };
+    expect(await fetchPartners("bread", "en", only)).toEqual(["cheese"]);
+    expect(await fetchPartners("bread", "en", {})).toEqual([]);
   });
 
   it("rejects when both Datamuse calls fail", async () => {
     stubFetch({ [JJB("bread")]: 502, [TRG("bread")]: 502 });
-    await expect(fetchPartners("bread")).rejects.toThrow();
+    await expect(fetchPartners("bread", "en", STARTER_WORDS)).rejects.toThrow();
   });
 
   it("is empty for other languages without fetching", async () => {
     const fn = stubFetch({});
-    expect(await fetchPartners("pain", "fr")).toEqual([]);
+    expect(await fetchPartners("pain", "fr", STARTER_WORDS)).toEqual([]);
     expect(fn).not.toHaveBeenCalled();
   });
 });

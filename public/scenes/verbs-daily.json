@@ -1,6 +1,6 @@
 {
   "pack": "verbs-daily",
-  "complete": true,
+  "complete": false,
   "words": {
     "eat": {
       "scenes": [

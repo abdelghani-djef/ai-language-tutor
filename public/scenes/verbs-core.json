@@ -1,6 +1,6 @@
 {
   "pack": "verbs-core",
-  "complete": true,
+  "complete": false,
   "words": {
     "be": {
       "scenes": [
