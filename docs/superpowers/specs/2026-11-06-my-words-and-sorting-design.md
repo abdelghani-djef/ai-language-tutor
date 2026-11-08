@@ -156,7 +156,7 @@ Badges stay as they are. They count words **learned through study** only, not wo
 
 ### Changing language
 
-Each language keeps its own words **(my call)**. My words shows only the words in the learner's current language. If an Arabic learner switches to French, they see their French words, or an empty list ready to pick, and switching back shows their Arabic words again with all their progress. Nothing is deleted.
+Switching language starts the new language afresh **(owner change, 2026-11-08; it replaces "each language keeps its own words")**. My words shows only the words in the learner's current language. When a learner with a profile switches, say from Arabic to French, every word in another language and every Already know mark in another language is deleted, after a confirmation that says how many words go and offers a backup first. Reviews, streak and badges stay. The first-use setup deletes nothing, since there is no previous language yet. Once a profile exists, the setup page keeps its language and the other choice is disabled, so the only way to switch is on Stats, behind that confirmation.
 
 ## Existing learners: moving to My words
 

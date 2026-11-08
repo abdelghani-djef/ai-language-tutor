@@ -15,7 +15,8 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { useT } from "@/lib/i18n";
-import { exportData, importData, parseBackup, useStore, type Data } from "@/lib/store";
+import { downloadBackup } from "@/lib/backup-file";
+import { importData, parseBackup, useStore, type Data } from "@/lib/store";
 import { backup as messages } from "@/messages/backup";
 
 /** Every saved word, in every language: cards plus ready-made words sorted as known without a card. */
@@ -32,15 +33,6 @@ export function BackupCard() {
   // animates closed so its text doesn't change.
   const [pending, setPending] = useState<{ backup: Data; words: number } | null>(null);
   const [importOpen, setImportOpen] = useState(false);
-
-  function download() {
-    const url = URL.createObjectURL(new Blob([exportData()], { type: "application/json" }));
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `linguacards-backup-${new Date().toISOString().slice(0, 10)}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
-  }
 
   async function upload(file: File) {
     try {
@@ -66,7 +58,7 @@ export function BackupCard() {
       </h2>
       <p className="max-w-[60ch] text-sm text-muted-foreground">{t("savedLocally")}</p>
       <div className="flex flex-wrap gap-2">
-        <Button variant="outline" size="sm" onClick={download} title={t("exportTitle")}>
+        <Button variant="outline" size="sm" onClick={downloadBackup} title={t("exportTitle")}>
           <Download /> {t("export")}
         </Button>
         <Button variant="outline" size="sm" onClick={() => fileRef.current?.click()} title={t("importTitle")}>
@@ -99,7 +91,7 @@ export function BackupCard() {
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>{t("cancel")}</AlertDialogCancel>
-            <Button variant="outline" onClick={download}>
+            <Button variant="outline" onClick={downloadBackup}>
               <Download /> {t("exportCurrent")}
             </Button>
             <AlertDialogAction variant="destructive" onClick={confirmImport}>

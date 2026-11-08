@@ -37,7 +37,9 @@ function StartPage() {
 
   if (!hydrated) return null;
 
-  const lang = langChoice ?? profile?.lang ?? guessLang(cards, starterPref, locale);
+  // Once there is a profile (another tab finished setup, or a bookmark), the language is
+  // changed only on Stats, which asks before deleting the other language's words.
+  const lang = profile?.lang ?? langChoice ?? guessLang(cards, starterPref, locale);
   const name = nameInput ?? profile?.name ?? "";
 
   /** Saves the language, and the name unless skipped, then goes on (see afterSetup). */
@@ -83,13 +85,14 @@ function StartPage() {
               key={code}
               lang={code}
               dir={LOCALES[code].dir}
-              className="flex min-h-24 cursor-pointer items-center justify-center rounded-2xl border-2 bg-card p-4 text-center font-display text-2xl font-semibold transition-colors hover:bg-muted has-checked:border-primary has-checked:bg-primary/10 has-focus-visible:ring-3 has-focus-visible:ring-ring/50"
+              className="flex min-h-24 cursor-pointer items-center justify-center rounded-2xl border-2 bg-card p-4 text-center font-display text-2xl font-semibold transition-colors hover:bg-muted has-checked:border-primary has-checked:bg-primary/10 has-focus-visible:ring-3 has-focus-visible:ring-ring/50 has-disabled:cursor-not-allowed has-disabled:opacity-50"
             >
               <input
                 type="radio"
                 name="lang"
                 value={code}
                 checked={lang === code}
+                disabled={!!profile && code !== profile.lang}
                 onChange={() => setLangChoice(code)}
                 aria-label={LOCALES[code].name}
                 className="sr-only"

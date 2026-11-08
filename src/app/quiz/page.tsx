@@ -58,7 +58,8 @@ function QuizPage() {
   const tag = params.get("tag");
   const hydrated = useHydrated();
   const data = useStore();
-  const [mode, setMode] = useState<Mode>("type");
+  // Multiple choice by default; typing when the cards don't have four different answers.
+  const [mode, setMode] = useState<Mode>("choice");
   const [direction, setDirection] = useState<Direction>("forward");
   const [round, setRound] = useState(0);
   const t = useT(quiz);
@@ -101,10 +102,10 @@ function QuizPage() {
           <div className="flex flex-wrap gap-2">
             <Tabs value={effectiveMode} onValueChange={(v) => setMode(v as Mode)}>
               <TabsList>
-                <TabsTrigger value="type">{t("modeType")}</TabsTrigger>
                 <TabsTrigger value="choice" disabled={!canChoose}>
                   {t("modeChoice")}
                 </TabsTrigger>
+                <TabsTrigger value="type">{t("modeType")}</TabsTrigger>
               </TabsList>
             </Tabs>
             <Tabs value={direction} onValueChange={(v) => setDirection(v as Direction)}>

@@ -5,6 +5,7 @@ import {
   deleteCard,
   exportData,
   importData,
+  otherLanguageData,
   parseBackup,
   restoreCard,
   saveFailed,
@@ -330,6 +331,35 @@ describe("profile", () => {
     const d = __resetForTests();
     expect(d.profile?.lang).toBe("fr");
     expect(d.profile?.name).toBeUndefined();
+  });
+
+  it("changing the language deletes the other languages' words and Already know marks", async () => {
+    setProfile({ lang: "fr", name: "Sam" });
+    await addCard("cat", "chat", "en", "fr");
+    const qitt = await addCard("cat", "قطة", "en", "ar");
+    // A word in a pair no language shows (left over from older data) goes too.
+    await addCard("perro", "dog", "es", "en");
+    storage.setItem(KEY, JSON.stringify({ ...JSON.parse(storage.getItem(KEY)!), known: { "fr:food:milk": 7, "ar:food:bread": 8 } }));
+    let d = __resetForTests();
+    expect(otherLanguageData(d, "ar")).toEqual({ words: 2, known: 1 });
+
+    setProfile({ lang: "ar" });
+    d = __resetForTests();
+    expect(d.cards.map((c) => c.id)).toEqual([qitt.id]);
+    expect(d.known).toEqual({ "ar:food:bread": 8 });
+    expect(d.profile).toMatchObject({ lang: "ar", name: "Sam" });
+    expect(otherLanguageData(d, "ar")).toEqual({ words: 0, known: 0 });
+  });
+
+  it("keeps everything when the language stays or on the first setup", async () => {
+    await addCard("cat", "chat", "en", "fr");
+    await addCard("cat", "قطة", "en", "ar");
+    // First setup: there is no previous language, so nothing goes.
+    setProfile({ lang: "fr" });
+    expect(__resetForTests().cards).toHaveLength(2);
+    // Saving the name with the same language deletes nothing either.
+    setProfile({ lang: "fr", name: "Sam" });
+    expect(__resetForTests().cards).toHaveLength(2);
   });
 
   it("profile changes write no reviews", () => {

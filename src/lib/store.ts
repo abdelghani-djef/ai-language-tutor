@@ -544,15 +544,44 @@ export function usePref(key: string, fallback: string): [string, (v: string) => 
 
 // ---------- actions ----------
 
+/** A card shown in `lang`: an English word with its translation in that language. */
+const inLang = (c: Flashcard, lang: LearnerLang) => c.src === "en" && c.tgt === lang;
+
+/**
+ * What switching to `lang` deletes: the words in any other language, and the
+ * ready-made words marked Already know in another language.
+ */
+export function otherLanguageData(d: Pick<Data, "cards" | "known">, lang: LearnerLang): { words: number; known: number } {
+  return {
+    words: d.cards.filter((c) => !inLang(c, lang)).length,
+    known: Object.keys(d.known).filter((k) => !k.startsWith(`${lang}:`)).length,
+  };
+}
+
 /**
  * Sets the learner's language and name. A name left out keeps the current one;
  * an empty one clears it. The first setup time is kept. Not studying: it writes
  * no review and earns nothing.
+ *
+ * Changing the language of an existing profile starts that language afresh: it
+ * deletes every word in another language and the other languages' Already know
+ * marks (see otherLanguageData). Reviews, streak and badges stay. The first
+ * setup deletes nothing: there is no previous language yet.
  */
 export function setProfile(p: { lang: LearnerLang; name?: string }) {
   const d = getSnapshot();
   const name = p.name === undefined ? d.profile?.name : cleanName(p.name);
-  set({ ...d, profile: { lang: p.lang, name, setupAt: d.profile?.setupAt ?? Date.now() } });
+  const profile = { lang: p.lang, name, setupAt: d.profile?.setupAt ?? Date.now() };
+  if (!d.profile || d.profile.lang === p.lang) {
+    set({ ...d, profile });
+    return;
+  }
+  set({
+    ...d,
+    profile,
+    cards: d.cards.filter((c) => inLang(c, p.lang)),
+    known: Object.fromEntries(Object.entries(d.known).filter(([k]) => k.startsWith(`${p.lang}:`))),
+  });
 }
 
 /** A new word, in Should learn. */
