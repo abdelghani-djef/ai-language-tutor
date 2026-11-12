@@ -38,6 +38,19 @@ describe("isModelCached", () => {
     await expect(isModelCached("Xenova/opus-mt-en-ar")).resolves.toBe(false);
   });
 
+  it("narrows to a file name part, so a download stopped after the config files does not count", async () => {
+    const cache = {
+      keys: async () => [
+        new Request("https://huggingface.co/org/m/resolve/main/config.json"),
+        new Request("https://huggingface.co/org/m/resolve/main/onnx/model_q4f16.onnx"),
+      ],
+    };
+    vi.stubGlobal("caches", { has: async () => true, open: async () => cache });
+    await expect(isModelCached("org/m", "q4f16")).resolves.toBe(true);
+    await expect(isModelCached("org/m", "fp16")).resolves.toBe(false);
+    await expect(isModelCached("org/m")).resolves.toBe(true);
+  });
+
   it("is false when opening the cache throws", async () => {
     vi.stubGlobal("caches", {
       has: async () => true,
