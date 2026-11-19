@@ -320,7 +320,7 @@ function ScenePicture({ place, t, className }: { place: PlaceView; t: T; classNa
   return (
     <figure className={cn("relative m-0 bg-muted", className)}>
       {/* The place's name in the interface language (the caption is English only). */}
-      {/* eslint-disable-next-line @next/next/no-img-element -- static export, remote Commons thumbnails */}
+      {/* eslint-disable-next-line @next/next/no-img-element -- images are unoptimized; remote Commons thumbnails shown as they are */}
       <img src={pic.thumb} alt={place.label} loading="lazy" className="size-full object-cover" />
       {credit && (
         <figcaption className="absolute inset-x-0 bottom-0 bg-black/55 px-2 py-0.5 text-[11px] text-white">

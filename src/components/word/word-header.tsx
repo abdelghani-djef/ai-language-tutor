@@ -34,7 +34,7 @@ const POS_KEYS = {
 
 /**
  * The word, with its picture on the start side on a computer: its translation (or `translate`, the
- * control that gets one on the device), word type, pronunciation and the learner's own example.
+ * control that asks for a machine translation), word type, pronunciation and the learner's own example.
  * English text sits in an isolate, so in right to left it starts on the right like the rest.
  */
 export function WordHeader({
@@ -160,7 +160,7 @@ function HeaderPictureView({ picture, word, lang }: { picture: HeaderPicture; wo
   return (
     <a href={p.page} target="_blank" rel="noreferrer" className={cn(box, "block outline-none focus-visible:ring-3 focus-visible:ring-ring/50")}>
       {/* The caption comes from the word's Wikipedia (or the list's English file), so it is in the word's language. */}
-      {/* eslint-disable-next-line @next/next/no-img-element -- static export, remote Commons thumbnails */}
+      {/* eslint-disable-next-line @next/next/no-img-element -- images are unoptimized; remote Commons thumbnails shown as they are */}
       <img src={p.thumb} alt={p.caption ?? word} lang={lang} className="size-full object-cover" />
     </a>
   );

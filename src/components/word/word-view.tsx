@@ -5,17 +5,15 @@ import Link from "next/link";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { SpeakButton } from "@/components/speak-button";
 import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
 import { packWords, type StarterRow, type StarterWords } from "@/data/starter-packs";
-import { useFormat } from "@/lib/format";
 import { LOCALES, useLocale, useT, type Translate } from "@/lib/i18n";
 import { useStore, type Flashcard } from "@/lib/store";
-import { useTranslator } from "@/lib/useTranslator";
+import { AI_LIMITS } from "@/lib/ai-api";
+import { cachedTranslation, useTranslator } from "@/lib/useTranslator";
 import { useStarterWords } from "@/lib/starter-words";
 import { cn } from "@/lib/utils";
 import type { Picture, Recording, Sentence } from "@/lib/word/sources";
 import { cleanWord, packOf, wordHref, type WordTarget } from "@/lib/word/target";
-import { isModelCached, translatorFor } from "@/lib/word/translate";
 import { useWordData, type Section } from "@/lib/word/useWordData";
 import { word as messages } from "@/messages/word";
 import { SceneStage } from "./scene-stage";
@@ -85,71 +83,81 @@ function pictureCredit(p: Picture, t: T): string {
 }
 
 type Job = { from: string; text: string };
-const jobKey = (j: Job) => `${j.from}|${j.text}`;
+// One line each: texts are sent together, one per line.
+const oneLine = (text: string) => text.replace(/\s+/g, " ").trim();
+const jobKey = (j: Job) => `${j.from}|${oneLine(j.text)}`;
 
 /**
- * Translations into `to` with the on-device translator, one text at a time (one queue for the
- * whole page). They start on their own only when the model is already in the browser's cache;
- * otherwise `offer` is true and nothing is downloaded until `start()` (the "Translate" button).
+ * Translations into `to` through the app's server. Nothing is sent until the learner presses a
+ * section's "Translate" (`start`): every request uses the shared free allowance, so opening a
+ * page must not. Texts this tab has translated before show at once. One request at a time, the
+ * waiting texts of one language together, one per line.
  */
 function useTranslations(jobs: Job[], to: string) {
-  const { translate, status, progress } = useTranslator();
-  /** Models already in the browser's cache. */
-  const [cached, setCached] = useState<ReadonlySet<string>>(new Set());
-  const [wanted, setWanted] = useState(false);
+  const { translate, status } = useTranslator();
+  /** Keys of the texts the learner asked to translate. */
+  const [wanted, setWanted] = useState<ReadonlySet<string>>(new Set());
   /** Job key → its translation, or null when translating it failed. */
   const [done, setDone] = useState<ReadonlyMap<string, string | null>>(new Map());
   const running = useRef(false);
-  const choiceOf = (from: string) => (from === to ? null : translatorFor(from, to));
 
-  const models = [...new Set(jobs.map((j) => choiceOf(j.from)?.model).filter((m) => m !== undefined))].sort().join(" ");
-  useEffect(() => {
-    if (!models) return;
-    let live = true;
-    Promise.all(models.split(" ").map(async (m) => ((await isModelCached(m)) ? [m] : []))).then(
-      (found) => live && setCached(new Set(found.flat())),
-    );
-    return () => {
-      live = false;
-    };
-  }, [models]);
+  const result = (j: Job): string | null | undefined =>
+    done.has(jobKey(j)) ? done.get(jobKey(j)) : cachedTranslation(oneLine(j.text), j.from, to);
+  const waiting = (from: string, texts: string[]) =>
+    from === to ? [] : texts.map((text) => ({ from, text })).filter((j) => result(j) === undefined);
 
-  const next = jobs.find((j) => {
-    const choice = choiceOf(j.from);
-    return choice && !done.has(jobKey(j)) && (wanted || cached.has(choice.model));
-  });
-  const nextFrom = next?.from;
-  const nextText = next?.text;
+  // The next request: texts asked for and not translated yet, in one language, within the size limit.
+  const lines: string[] = [];
+  let batchFrom: string | undefined;
+  for (const j of jobs) {
+    if (j.from === to || !wanted.has(jobKey(j)) || result(j) !== undefined) continue;
+    const line = oneLine(j.text);
+    if (batchFrom !== undefined && (j.from !== batchFrom || lines.includes(line))) continue;
+    if (lines.length && [...lines, line].join("\n").length > AI_LIMITS.maxTranslateChars) continue;
+    batchFrom = j.from;
+    lines.push(line);
+  }
+  const batchText = lines.join("\n");
 
   useEffect(() => {
-    const choice = nextFrom !== undefined && nextFrom !== to ? translatorFor(nextFrom, to) : null;
-    if (!choice || nextText === undefined || running.current) return;
+    const from = batchFrom;
+    if (from === undefined || !batchText || running.current) return;
     running.current = true;
-    translate(nextText, choice).then((result) => {
+    const sent = batchText.split("\n");
+    translate(batchText, from, to).then((text) => {
       running.current = false;
-      setDone((d) => new Map(d).set(jobKey({ from: nextFrom!, text: nextText }), result?.trim() || null));
+      const got = text?.split("\n");
+      // A reply with a different number of lines can't be matched to the texts: they count as failed.
+      const lineOf = (i: number) => (got && got.length === sent.length ? got[i].trim() : "");
+      setDone((d) => {
+        const next = new Map(d);
+        sent.forEach((line, i) => next.set(jobKey({ from, text: line }), lineOf(i) || null));
+        return next;
+      });
     });
-    // `done` is a dependency so the queue moves on once a result is in, even when the next job is unchanged.
-  }, [nextFrom, nextText, to, translate, done]);
+    // `done` is a dependency so the queue moves on once a result is in, even when the next batch is unchanged.
+  }, [batchFrom, batchText, to, translate, done]);
 
-  const busy = status === "loading" || status === "translating";
-  const waiting = (from: string, texts: string[]) => texts.filter((text) => !done.has(jobKey({ from, text })));
+  const busy = status === "translating";
   return {
-    get: (from: string, text: string) => done.get(jobKey({ from, text })) ?? undefined,
-    /** Show "Translate" for these texts: their model isn't downloaded yet, or translating failed. */
-    offer: (from: string, texts: string[]) => {
-      const choice = choiceOf(from);
-      if (!choice) return false;
+    get: (from: string, text: string) => result({ from, text }) ?? undefined,
+    /** Props for a section's TranslateControl, for its texts in `from`. */
+    control: (from: string, texts: string[]) => {
+      const left = waiting(from, texts);
       const failed = texts.some((text) => done.get(jobKey({ from, text })) === null);
-      return (!cached.has(choice.model) && !wanted && waiting(from, texts).length > 0) || (status === "error" && failed);
-    },
-    /** Show "Translating…" for these texts. */
-    working: (from: string, texts: string[]) => busy && !!choiceOf(from) && waiting(from, texts).length > 0,
-    /** Download progress (0–1) while the model loads, else null. */
-    progress: status === "loading" ? progress : null,
-    start: () => {
-      setWanted(true);
-      setDone((d) => new Map([...d].filter(([, v]) => v !== null)));
+      const asked = left.filter((j) => wanted.has(jobKey(j)));
+      const working = busy && asked.length > 0;
+      return {
+        working,
+        offer: !working && (left.length > asked.length || failed),
+        failed: !working && failed,
+        onStart: () => {
+          const keys = texts.map((text) => jobKey({ from, text }));
+          setWanted((w) => new Set([...w, ...keys]));
+          // Failed texts are tried again.
+          setDone((d) => new Map([...d].filter(([k, v]) => v !== null || !keys.includes(k))));
+        },
+      };
     },
   };
 }
@@ -180,7 +188,7 @@ function View({
   const article = data.article.status === "ready" ? data.article.data : null;
   const senses = entry?.senses.slice(0, MAX_SENSES) ?? [];
 
-  // ---- header: the saved card's translation, its list's, or else one from the on-device translator
+  // ---- header: the saved card's translation, its list's, or else a machine translation
   const fixedTranslation = card
     ? cardTranslation(card, target)
     : row && (target.to === "fr" || target.to === "ar")
@@ -236,8 +244,7 @@ function View({
   );
   const translatedWord = fixedTranslation ? undefined : tr.get(target.lang, target.word);
   const translation = fixedTranslation ?? (translatedWord ? { text: translatedWord, lang: target.to } : null);
-  const wordWorking = tr.working(target.lang, wordJobs);
-  const wordOffer = tr.offer(target.lang, wordJobs);
+  const wordControl = tr.control(target.lang, wordJobs);
 
   const examplesShown: Shown = !showExamples
     ? "hidden"
@@ -288,9 +295,7 @@ function View({
         picture={header}
         translation={translation}
         translate={
-          (wordWorking || wordOffer) && (
-            <TranslateControl working={wordWorking} offer={wordOffer} progress={tr.progress} onStart={tr.start} t={t} />
-          )
+          (wordControl.working || wordControl.offer) && <TranslateControl {...wordControl} t={t} />
         }
         loading={data.dictionary.status === "loading"}
         pos={senses[0]?.partOfSpeech}
@@ -314,13 +319,7 @@ function View({
             retry={retry}
             t={t}
             action={
-              <TranslateControl
-                working={tr.working(target.lang, untranslated)}
-                offer={tr.offer(target.lang, untranslated)}
-                progress={tr.progress}
-                onStart={tr.start}
-                t={t}
-              />
+              <TranslateControl {...tr.control(target.lang, untranslated)} t={t} />
             }
           >
             <ul className="grid gap-4">
@@ -372,7 +371,7 @@ function View({
                   className="block overflow-hidden rounded-xl border bg-muted outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
                 >
                   {/* The caption comes from the word's Wikipedia (or the list's English file), in the word's language. */}
-                  {/* eslint-disable-next-line @next/next/no-img-element -- static export, remote Commons thumbnails */}
+                  {/* eslint-disable-next-line @next/next/no-img-element -- images are unoptimized; remote Commons thumbnails shown as they are */}
                   <img src={p.thumb} alt={p.caption ?? target.word} lang={target.lang} loading="lazy" className="h-32 w-full object-cover" />
                 </a>
               </li>
@@ -397,13 +396,7 @@ function View({
               retry={retry}
               t={t}
               action={
-                <TranslateControl
-                  working={tr.working("en", definitions)}
-                  offer={tr.offer("en", definitions)}
-                  progress={tr.progress}
-                  onStart={tr.start}
-                  t={t}
-                />
+                <TranslateControl {...tr.control("en", definitions)} t={t} />
               }
             >
               <ul className="grid gap-3">
@@ -564,37 +557,39 @@ function Block({
   );
 }
 
-/** "Translate" when the model isn't downloaded yet; "Translating…" (with the download's progress) while it works. */
+/** "Translate" until the learner asks (with a note when it failed); "Translating…" while it works. */
 function TranslateControl({
   working,
   offer,
-  progress,
+  failed,
   onStart,
   t,
 }: {
   working: boolean;
   offer: boolean;
-  progress: number | null;
+  failed: boolean;
   onStart: () => void;
   t: T;
 }) {
-  const fmt = useFormat();
   if (working) {
     return (
-      <span className="grid min-w-32 gap-1 text-xs text-muted-foreground" role="status">
-        <span className="flex justify-between gap-2">
-          {t("translating")}
-          {progress !== null && <span className="tabular-nums">{fmt.percent(progress)}</span>}
-        </span>
-        {progress !== null && <Progress value={progress * 100} aria-label={t("translating")} />}
+      <span className="text-xs text-muted-foreground" role="status">
+        {t("translating")}
       </span>
     );
   }
   if (!offer) return null;
   return (
-    <Button variant="outline" size="sm" onClick={onStart}>
-      <Languages /> {t("translate")}
-    </Button>
+    <span className="flex flex-wrap items-center justify-end gap-2">
+      {failed && (
+        <span className="text-xs text-muted-foreground" role="status">
+          {t("translateFailed")}
+        </span>
+      )}
+      <Button variant="outline" size="sm" onClick={onStart}>
+        <Languages /> {t("translate")}
+      </Button>
+    </span>
   );
 }
 

@@ -1,38 +1,30 @@
 "use client";
 
-import { Download, Languages, Loader2, Pencil, Plus } from "lucide-react";
+import { Languages, Loader2, Pencil, Plus } from "lucide-react";
 import Link from "next/link";
 import { useRef, useState, type FormEvent, type KeyboardEvent, type ReactNode } from "react";
 import { toast } from "sonner";
 import { CardEditor } from "@/components/card-editor";
 import { SpeakButton } from "@/components/speak-button";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
 import { useFormat } from "@/lib/format";
 import { useT } from "@/lib/i18n";
-import { LANGUAGES, modelFor, pairId, type ModelChoice } from "@/lib/languages";
+import { LANGUAGES } from "@/lib/languages";
 import { myCards, OWN, sameWordIn, toStored } from "@/lib/mywords";
-import { addCard, saveFailed, useHydrated, usePref, useStore, type Flashcard, type LearnerLang } from "@/lib/store";
-import { useTranslator } from "@/lib/useTranslator";
+import { addCard, saveFailed, useHydrated, useStore, type Flashcard, type LearnerLang } from "@/lib/store";
+import { useTranslator, type TranslatorError } from "@/lib/useTranslator";
 import { cn } from "@/lib/utils";
 import { cardHref } from "@/lib/word/target";
 import { cards as cardMessages } from "@/messages/cards";
 import { common } from "@/messages/common";
 import { translate as messages } from "@/messages/translate";
 
-// "nllb" once the user agreed to the large translator, which is only needed for
-// pairs the small per-direction models don't cover. (Kept under the old key.)
-const BIG_MODEL_KEY = "linguacards:engine";
-/** JSON list of models that have loaded at least once, so "downloads about N MB" isn't repeated. */
-const LOADED_KEY = "linguacards:loaded-models";
 const RECENT = 5;
 
-function parseJson<T>(raw: string, fallback: T): T {
-  try {
-    return JSON.parse(raw) as T;
-  } catch {
-    return fallback;
-  }
+/** The message for a failed translation. */
+function errorKey(error: TranslatorError): "offline" | "busy" | "tooLong" | "unavailable" {
+  if (error.code === "offline" || error.code === "busy") return error.code;
+  return error.code === "too_long" ? "tooLong" : "unavailable";
 }
 
 /** "/add/": English words with the learner's language, added to My words. */
@@ -51,14 +43,12 @@ function AddWordsForm({ lang }: { lang: LearnerLang }) {
   const tcommon = useT(common);
   const fmt = useFormat();
   const data = useStore();
-  const { translate, status, progress, error, clearError } = useTranslator();
-  const [bigModelPref, setBigModelPref] = usePref(BIG_MODEL_KEY, "opus");
-  const [loadedPref, setLoadedPref] = usePref(LOADED_KEY, "[]");
+  const { translate, status, error, clearError } = useTranslator();
   // The language of the word field; the translation is in the other one. Not saved: each visit starts on English.
   const [typingIn, setTypingIn] = useState<string>("en");
   const [front, setFront] = useState("");
   const [back, setBack] = useState("");
-  // A translation from the model is replaced when the word changes; one the user typed is kept.
+  // A machine translation is replaced when the word changes; one the user typed is kept.
   const [backFromModel, setBackFromModel] = useState(false);
   const [live, setLive] = useState("");
   const [adding, setAdding] = useState(false);
@@ -68,21 +58,14 @@ function AddWordsForm({ lang }: { lang: LearnerLang }) {
   // translation that finishes afterwards is dropped instead of overwriting it.
   const runToken = useRef(0);
   const frontRef = useRef<HTMLInputElement>(null);
-  const downloadRef = useRef<HTMLButtonElement>(null);
 
   // Words are always stored English first; only the direction of typing changes.
   const pair = { src: "en", tgt: lang };
   const from = typingIn === lang ? lang : "en";
   const to = from === "en" ? lang : "en";
-  const direction = { id: pairId(from, to), src: from, tgt: to };
   const src = LANGUAGES[from];
   const tgt = LANGUAGES[to];
-  const smallModel = modelFor(direction, "opus");
-  const bigModel = modelFor(direction, "nllb");
-  const choice = smallModel ?? (bigModelPref === "nllb" ? bigModel : null);
-  const needsConsent = !choice;
-  const busy = status === "loading" || status === "translating";
-  const loadedModels = parseJson<string[]>(loadedPref, []);
+  const busy = status === "translating";
 
   const recent = myCards(data)
     .filter((c) => !c.pack)
@@ -110,25 +93,22 @@ function AddWordsForm({ lang }: { lang: LearnerLang }) {
     }
   }
 
-  async function run(model: ModelChoice | null = choice) {
+  async function run() {
     const text = front.trim();
-    if (!text || busy || !model) return;
+    if (!text || busy) return;
     const token = ++runToken.current;
     setLive(t("translating"));
-    const result = await translate(text, model);
+    const result = await translate(text, from, to);
     if (token !== runToken.current) return;
     if (result === null) {
       setLive("");
-      // If the large translator failed, ask again next time instead of retrying silently.
-      if (model === bigModel) setBigModelPref("opus");
       return;
     }
-    // The models end single words with a full stop ("bonjour" → "Bonjour."); a card shouldn't.
-    const translation = /[.!?。！？]$/.test(text) ? result : result.replace(/[.。]$/, "");
+    // Translators may end a single word with a full stop ("bonjour" → "Bonjour."); a card shouldn't.
+    const translation = /[.!?。！？]$/.test(text) ? result.trim() : result.trim().replace(/[.。]$/, "");
     setBack(translation);
     setBackFromModel(true);
     setLive(t("translatedLive", { text: translation }));
-    if (!loadedModels.includes(model.model)) setLoadedPref(JSON.stringify([...loadedModels, model.model]));
   }
 
   async function add() {
@@ -175,8 +155,6 @@ function AddWordsForm({ lang }: { lang: LearnerLang }) {
   // Enter translates; once there is a translation, Enter adds the word.
   function next() {
     if (back.trim()) add();
-    // A 900 MB download needs a deliberate click, so Enter only points at the button.
-    else if (needsConsent) downloadRef.current?.focus();
     else run();
   }
 
@@ -185,8 +163,8 @@ function AddWordsForm({ lang }: { lang: LearnerLang }) {
     next();
   }
 
-  // Handled here rather than by the browser: with two fields and no submit
-  // button (the download case), Enter would otherwise do nothing.
+  // Handled here rather than by the browser, so Enter does the same in both fields
+  // and never acts while an input method is still composing.
   function onFieldKeyDown(e: KeyboardEvent<HTMLInputElement>) {
     if (e.key !== "Enter" || e.nativeEvent.isComposing || e.keyCode === 229) return;
     e.preventDefault();
@@ -194,23 +172,9 @@ function AddWordsForm({ lang }: { lang: LearnerLang }) {
   }
 
   const primary = back.trim() ? (
-    // Adding doesn't need the translator, so it works even while a model is still loading.
+    // Adding doesn't need the translator, so it works even while a translation is on its way.
     <Button type="submit" size="lg" disabled={!front.trim() || adding}>
       <Plus /> {t("addCard")}
-    </Button>
-  ) : needsConsent ? (
-    <Button
-      ref={downloadRef}
-      type="button"
-      size="lg"
-      disabled={!front.trim() || busy}
-      aria-describedby="big-download"
-      onClick={() => {
-        setBigModelPref("nllb");
-        run(bigModel);
-      }}
-    >
-      <Download /> {t("downloadAndTranslate")}
     </Button>
   ) : (
     <Button type="submit" size="lg" disabled={!front.trim() || busy}>
@@ -218,9 +182,6 @@ function AddWordsForm({ lang }: { lang: LearnerLang }) {
       {busy ? t("translating") : t("translate")}
     </Button>
   );
-
-  const loadingModel = busy ? (choice ?? bigModel) : null;
-  const firstLoad = loadingModel ? !loadedModels.includes(loadingModel.model) : false;
 
   return (
     <div className="mx-auto grid max-w-2xl gap-6">
@@ -295,7 +256,7 @@ function AddWordsForm({ lang }: { lang: LearnerLang }) {
               lang={back ? tgt.code : undefined}
               autoComplete="off"
               onChange={(e) => {
-                // A translation the user types wins over one the model is still working on.
+                // A translation the user types wins over one still on its way.
                 runToken.current++;
                 setBack(e.target.value);
                 setBackFromModel(false);
@@ -303,27 +264,9 @@ function AddWordsForm({ lang }: { lang: LearnerLang }) {
               placeholder={busy ? t("translating") : t("backPlaceholder")}
               className="w-full bg-transparent font-display text-xl outline-none placeholder:text-muted-foreground sm:text-2xl"
             />
-            {status === "loading" && loadingModel && (
-              <div className="mt-3 grid gap-1.5 text-sm text-muted-foreground">
-                <p>
-                  {firstLoad ? t("preparing", { size: smallModel ? 75 : 900 }) : t("loadingTranslator")}{" "}
-                  {progress !== null && <span className="tabular-nums">{fmt.percent(progress)}</span>}
-                </p>
-                <Progress value={progress === null ? null : progress * 100} aria-label={t("progressLabel")} />
-              </div>
-            )}
-            {needsConsent && !back && (
-              <p id="big-download" className="mt-3 text-sm text-muted-foreground">
-                {t("bigDownload", { src: fmt.languageNameInline(from), tgt: fmt.languageNameInline(to) })}
-              </p>
-            )}
             {error && (
-              <p
-                role="alert"
-                className="mt-3 text-sm text-destructive"
-                title={error.code === "failed" ? error.message : undefined}
-              >
-                {t("failed")}
+              <p role="alert" className="mt-3 text-sm text-destructive">
+                {t(errorKey(error))}
               </p>
             )}
           </Side>
@@ -334,17 +277,15 @@ function AddWordsForm({ lang }: { lang: LearnerLang }) {
         </p>
 
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">{primary}</div>
-        {!(needsConsent && !back) && (
-          <p className="text-xs text-muted-foreground">
-            {t.rich("hint", {
-              enter: (
-                <bdi lang="en" dir="ltr">
-                  Enter
-                </bdi>
-              ),
-            })}
-          </p>
-        )}
+        <p className="text-xs text-muted-foreground">
+          {t.rich("hint", {
+            enter: (
+              <bdi lang="en" dir="ltr">
+                Enter
+              </bdi>
+            ),
+          })}
+        </p>
       </form>
 
       {recent.length > 0 && (

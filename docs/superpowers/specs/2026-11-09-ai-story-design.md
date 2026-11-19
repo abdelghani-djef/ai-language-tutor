@@ -146,3 +146,11 @@ The model gate (Task 2) and the final browser check left three changes to this d
   load on onnxruntime-web's WASM backend ("Could not find an implementation for GatherBlockQuantized"). The
   worker loads `q4f16` on WebGPU only; without a WebGPU adapter (with 16-bit float shaders) the page says so before
   any download. The WebGPU path has not been run on the build machine (no adapter there).
+
+## Changes after launch (2026-11-14)
+
+The on-device story model is gone. Being WebGPU-only left out too many learners (most phones and many
+laptops), so the owner chose an API instead: AI Story, and all translation, now go to Groq through the
+app's one server route, `POST /api/ai/`, which keeps the key on the server. The model writes the whole story
+with a translation of each sentence in one call; the title and every English sentence still pass the
+child-safety filter, on the server and again in the browser.

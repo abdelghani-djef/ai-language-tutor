@@ -240,7 +240,7 @@ export function parseTatoeba(json: unknown, to: string): Sentence[] {
 /**
  * Real example sentences from Tatoeba, without crude or violent ones, at most 6; the ones with a human
  * translation into `to` first. Tatoeba is asked to show translations into `to`, not to require one
- * (`trans:lang=` would: Arabic then gets almost nothing), so the rest are translated on the device.
+ * (`trans:lang=` would: Arabic then gets almost nothing), so the rest are translated through /api/ai/ when the learner asks.
  * Rejects when Tatoeba fails.
  */
 export async function fetchSentences(word: string, lang: string, to: string): Promise<Sentence[]> {

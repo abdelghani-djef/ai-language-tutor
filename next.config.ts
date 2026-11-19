@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
-// Fully static site: `next build` writes plain HTML/JS to out/, no server needed.
+// Pages are still prerendered as static HTML; the one server route is POST /api/ai/
+// (src/app/api/ai/route.ts), which calls Groq with a key that must stay on the server.
+// That route is why this is no longer a static export: it needs a Node host such as Vercel.
 const nextConfig: NextConfig = {
-  output: "export",
-  // Emit out/deck/index.html etc., so plain static hosts serve /deck/ on reload.
+  // URLs end in a slash (/deck/, /api/ai/), as they did on the static site, so saved links still work.
   trailingSlash: true,
   images: { unoptimized: true },
   turbopack: {
